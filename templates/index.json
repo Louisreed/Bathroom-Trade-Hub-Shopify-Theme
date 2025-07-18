@@ -1,1 +1,1071 @@
-{"sections":{"slideshow":{"type":"slideshow","blocks":{"slide-1":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Durdle_Door_Overview.jpg","heading":"<em>Supporting the Local <\/em>Trade<em> and DIY of Dorset!<\/em>","heading_size":"title-md","heading_tag":"h2","button_label":"SHOP OUR ESSENTIALS","button_link":"shopify:\/\/collections\/hub-essentials","button_external":false,"button_icon":false}},"image_h8F3QR":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/IMG_8017.heic","heading":"<em>Join HubPRO to see prices!<\/em>","heading_size":"title-md","heading_tag":"h2","button_label":"BECOME A MEMBER","button_link":"shopify:\/\/pages\/trade-sign-up","button_external":false,"button_icon":false}},"image_WNzL7A":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/IMG_7744.heic","heading":"Save BIG on essentials!","heading_size":"title-md","heading_tag":"h2","button_label":"Join HubPRO","button_link":"shopify:\/\/pages\/trade-sign-up","button_external":false,"button_icon":false}},"slide-2":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/MAXIPANELBANNER-01.png","heading":"","heading_size":"title-md","heading_tag":"h2","button_label":"SHOP MAXI PANELS","button_link":"shopify:\/\/metaobjects\/Page\/page-z3aq3vqc","button_external":false,"button_icon":false}},"image_NhPc9m":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/IMG_7740.heic","heading":"In-stock Products for Same-day Delivery","heading_size":"title-lg tracking-heading","heading_tag":"h2","button_label":"SHOP IN-STOCK PRODUCTS","button_link":"shopify:\/\/collections\/all","button_external":false,"button_icon":false}}},"block_order":["slide-1","image_h8F3QR","image_WNzL7A","slide-2","image_NhPc9m"],"settings":{"autoplay":true,"autoplay_speed":5,"show_navigation":true,"image_height":"600px","content_width":"small","image_height_mobile":"500px","color_text":"#ffffff","color_background":"#ffffff","gradient_background":"","color_button_text":"#171717","color_button_background":"#ffffff","color_button_gradient":"","color_overlay":"#000000","overlay_opacity":0,"padding_top":0,"padding_bottom":0,"divider":false,"full_width":false,"rounded":false,"enable_parallax":false,"parallax_direction":"vertical"}},"rich-text":{"type":"rich-text","blocks":{"text":{"type":"text","settings":{"text":"<p>We stock a lot of the essentials needed for the modern day Bathroom Installer.. all at the best prices!<\/p><ul><li>Wall Panels<\/li><li>Toilets<\/li><li>Showers\/Shower Trays\/Enclosures<\/li><li>Brassware<\/li><li>Basins\/Basin Vanity Units<\/li><li>Radiators<\/li><li>Tools and Consumables<\/li><li>Mirrors<\/li><li>and Much more!<\/li><\/ul>","text_font":"body","text_size":"subtext-md","text_max_size":32,"secondary_color":false,"highlighted_text":"none","highlighted_scribble":"circle"}},"image_8yRV46":{"type":"image","settings":{"image_width":"custom","image_max_width":50,"image_max_width_mobile":50}}},"block_order":["text","image_8yRV46"],"settings":{"text_alignment":"left","text_alignment_mobile":"left","heading":"Exclusively For <em>Trade and DIY<\/em>","heading_size":"title-md","heading_alignment":"text-left md:items-end md:flex-row","heading_width":"small","heading_tag":"h2","subheading":"We sell quality products","description":"<p>Bathroom Trade Hub has been created with the local tradesman in mind, the days of overpaying for what we class as 'the essentials' are over, join our exclusive and trade-only savers club where you can save money on everything!<\/p>","button_label":"SIGN UP FOR A TRADE ACCOUNT","button_link":"shopify:\/\/pages\/trade-sign-up","button_external":false,"button_icon":true,"highlighted_text":"scribble","highlighted_scribble":"basic-underline","color_text":"","color_background":"rgba(0,0,0,0)","gradient_background":"","color_highlight":"","gradient_highlight":"","color_button_text":"","color_button_background":"","color_button_gradient":"","padding_top":72,"padding_bottom":0,"divider":false,"narrow":false,"rounded":false}},"multicolumn_zT87yk":{"type":"multicolumn","blocks":{"column_XDxCDy":{"type":"column","settings":{"show_border":false,"text_alignment":"left","text_alignment_mobile":"left","image_ratio":"adapt","heading":"Dorset Based Business","heading_size":"text-lg-2xl","text":"<p>We specifically cater for customers in Dorset. We offer FREE delivery on orders over £100+VAT within Dorset Postcodes. We also ship anywhere in the UK over a certain spend.<\/p>","button_label":"","button_link":"","button_external":false,"button_icon":true,"highlighted_text":"none","highlighted_scribble":"circle"}},"column_JGfhgY":{"type":"column","settings":{"show_border":false,"text_alignment":"left","text_alignment_mobile":"left","image_ratio":"adapt","heading":"Trade Counter","heading_size":"text-lg-2xl","text":"<p>Our Weymouth Branch is the perfect place to shop bathroom supplies in-store. We are open 8am - 5pm Monday to Friday and 8am-12pm Saturdays. Feel free to pop down!<\/p>","button_label":"","button_link":"","button_external":false,"button_icon":true,"highlighted_text":"none","highlighted_scribble":"circle"}},"column_qTJKEz":{"type":"column","settings":{"show_border":false,"text_alignment":"left","text_alignment_mobile":"left","image_ratio":"adapt","heading":"Trade Portal","heading_size":"text-lg-2xl","text":"<p>Create a Bathroom Trade Hub account to access our products at your bespoke trade price and see stock levels in real time quickly and efficiently saving you time shopping around for prices!<\/p>","button_label":"","button_link":"","button_external":false,"button_icon":true,"highlighted_text":"none","highlighted_scribble":"circle"}}},"block_order":["column_XDxCDy","column_JGfhgY","column_qTJKEz"],"name":"Multicolumn","settings":{"gap":"large","columns":3,"columns_mobile":"1","swipe_on_mobile":true,"heading":"Supporting Local Trade and DIY","heading_size":"title-md","heading_alignment":"text-center md:items-center","heading_tag":"h2","subheading":"","description":"","button_label":"","button_link":"","button_external":false,"button_icon":true,"highlighted_text":"none","highlighted_scribble":"circle","color_text":"","color_background":"","gradient_background":"","color_highlight":"","gradient_highlight":"","color_button_text":"","color_button_background":"","color_button_gradient":"","padding_top":72,"padding_bottom":72,"divider":false,"full_width":false,"rounded":false}},"featured-product":{"type":"featured-product","blocks":{"text":{"type":"text","settings":{"text":"{{ section.settings.product.vendor }}","text_size":"text-base"}},"title":{"type":"title","settings":{"title_size":"product-title-md","title_size_mobile":"product-title-md","show_price":true,"show_rating":true}},"description":{"type":"description","settings":{"text_size":"text-base"}},"countdown":{"type":"countdown","settings":{"heading":"Hurry up!","subheading":"Sale end in:","color_text":"#e11d48","color_background":"#fff1f2","gradient_background":""}},"variant_picker":{"type":"variant_picker","settings":{"show_variant_labels":true,"picker_type":"button","enable_color_swatches":true,"color_swatch_type":"color","size_chart":""}},"inventory":{"type":"inventory","settings":{"inventory_threshold":15,"show_inventory_transfer":true,"show_inventory_quantity":"low","color_scheme":"accent-1"}},"buy_buttons":{"type":"buy_buttons","settings":{"show_quantity_selector":false,"show_dynamic_checkout":false,"show_gift_card_recipient":false,"enable_back_in_stock":false,"show_back_in_stock_name":false,"show_back_in_stock_phone":false}},"pickup_availability":{"type":"pickup_availability","settings":{}},"share":{"type":"share","disabled":true,"settings":{"share_label":"Share","show_help_desk":true,"help_label":"Need help?","help_page":""}},"read_more":{"type":"read_more","disabled":true,"settings":{}},"spinning_text":{"type":"spinning_text","settings":{"text":"Featured product"}}},"block_order":["text","title","description","countdown","variant_picker","inventory","buy_buttons","pickup_availability","share","read_more","spinning_text"],"settings":{"product":"maxi-shower-panel-sparkle-white","enable_sticky_info":true,"media_size":64,"gallery_layout":"thumbnail","thumbnail_position":"beside","image_ratio":"adapt_first","image_zoom":"lightbox","hide_variants":false,"enable_video_autoplay":true,"enable_video_looping":true,"mobile_layout":"full_width","image_ratio_mobile":"adapt_first","mobile_thumbnail":false,"padding_top":120,"padding_bottom":0,"divider":false,"full_width":false,"rounded":true}},"collection-list":{"type":"collection-list","blocks":{"collection-1":{"type":"collection","settings":{"collection":"consumables","image":"shopify:\/\/shop_images\/Screenshot_2024-11-14_at_11.40.58_AM.png","title":"Consumables","description":"View our range of consumables","overlay_content":false,"color_text":"#ffffff","color_overlay":"#000000","overlay_opacity":30}},"collection-2":{"type":"collection","settings":{"collection":"showering","image":"shopify:\/\/shop_images\/JTY035-nuie-web.png","title":"Showers","description":"View our range of showers","overlay_content":false,"color_text":"#ffffff","color_overlay":"#000000","overlay_opacity":40}},"collection-3":{"type":"collection","settings":{"collection":"perform-panel","image":"shopify:\/\/shop_images\/perform_panel.jpg","title":"Wall Panels","description":"View our range of wall panels","overlay_content":false,"color_text":"#ffffff","color_overlay":"#000000","overlay_opacity":40}},"collection-4":{"type":"collection","settings":{"collection":"heating","image":"shopify:\/\/shop_images\/ST-50120-A_CUTOUT_001.jpg","title":"Towel Heating","description":"View our range of radiators","overlay_content":false,"color_text":"#ffffff","color_overlay":"#000000","overlay_opacity":40}},"collection-5":{"type":"collection","settings":{"collection":"taps","image":"shopify:\/\/shop_images\/HDY305-nuie-web.png","title":"Brassware","description":"View our range of brassware","overlay_content":false,"color_text":"#ffffff","color_overlay":"#000000","overlay_opacity":40}},"collection-6":{"type":"collection","settings":{"collection":"wall-panels","image":"shopify:\/\/shop_images\/multipanel-classic-Type-B-External-Corner_jpg.webp","title":"Finishing Trims","description":"View our range of finishing trims","overlay_content":false,"color_text":"#ffffff","color_overlay":"#000000","overlay_opacity":40}}},"block_order":["collection-1","collection-2","collection-3","collection-4","collection-5","collection-6"],"disabled":true,"settings":{"columns":4,"carousel_on_desktop":true,"image_type":"collection","image_ratio":"square","show_products_count":true,"show_view_all":false,"columns_mobile":"1","swipe_on_mobile":true,"heading":"","heading_size":"title-md","heading_alignment":"text-left md:items-end md:flex-row","heading_tag":"h2","subheading":"","description":"","highlighted_text":"none","highlighted_scribble":"circle","color_text":"","color_background":"","gradient_background":"","color_highlight":"","gradient_highlight":"","color_button_text":"","color_button_background":"","color_button_gradient":"","padding_top":100,"padding_bottom":100,"divider":false,"full_width":false,"rounded":false}},"image-comparison":{"type":"image-comparison","blocks":{"image-1":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/SEICENTO-PAN-SEAT_institu_28345430-7d27-4242-aa1a-eeec0937f54b.jpg","subheading":"RIMLESS CLOSE-COUPLED WC PACK","heading":"RRP - £289 + VAT","content_position":"end","color_text":"#ffffff"}},"image-2":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/SEICENTO-PAN-SEAT_institu2-1.jpg","subheading":"CREATE A TRADE ACCOUNT AND","heading":"LOG IN TO SEE YOUR PRICE","content_position":"end","color_text":"#ffffff"}}},"block_order":["image-1","image-2"],"settings":{"layout":"horizontal","image_height":"750px","image_height_mobile":"300px","heading":"<em>Bespoke discount structures<\/em>","heading_size":"title-md","heading_alignment":"text-center md:items-center","heading_tag":"h2","subheading":"Every product to create the dream bathroom for your customer with","description":"","button_label":"","button_link":"","button_external":false,"button_icon":true,"highlighted_text":"text","highlighted_scribble":"circle","color_text":"","color_background":"","gradient_background":"","color_highlight":"","gradient_highlight":"linear-gradient(90deg, rgba(249, 197, 141, 1), rgba(43, 43, 43, 1) 100%)","color_button_text":"","color_button_background":"","color_button_gradient":"","padding_top":100,"padding_bottom":0,"divider":false,"full_width":false,"rounded":false}},"shop-the-look":{"type":"shop-the-look","blocks":{"product-1":{"type":"product","settings":{"product":"","color_text":"#ffffff","vertical":27,"horizontal":8,"vertical_mobile":25,"horizontal_mobile":25}},"product-2":{"type":"product","settings":{"product":"","color_text":"#ffffff","vertical":55,"horizontal":24,"vertical_mobile":75,"horizontal_mobile":65}},"product-3":{"type":"product","settings":{"product":"","color_text":"#ffffff","vertical":56,"horizontal":53,"vertical_mobile":50,"horizontal_mobile":50}}},"block_order":["product-1","product-2","product-3"],"disabled":true,"settings":{"heading":"Popular Essentials","heading_size":"title-sm","heading_alignment":"text-center md:items-center","heading_tag":"h2","subheading":"Add a tagline","description":"","button_label":"","button_link":"","button_external":false,"button_icon":true,"highlighted_text":"scribble","highlighted_scribble":"squiggle-underline","color_text":"","color_background":"","gradient_background":"","color_highlight":"","gradient_highlight":"","color_button_text":"","color_button_background":"","color_button_gradient":"","color_overlay":"#171717","overlay_opacity":40,"padding_top":100,"padding_bottom":100,"divider":false,"full_width":false,"rounded":true}},"testimonials-banner":{"type":"testimonials-banner","blocks":{"testimonial-1":{"type":"testimonial","settings":{"icon":"quote","text":"<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>","author":"Author's name","author_info":"","author_url":"","image_ratio":"rounded","highlighted_text":"none","highlighted_scribble":"circle"}},"testimonial-2":{"type":"testimonial","settings":{"icon":"quote","text":"<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>","author":"Author's name","author_info":"","author_url":"","image_ratio":"rounded","highlighted_text":"none","highlighted_scribble":"circle"}},"testimonial-3":{"type":"testimonial","settings":{"icon":"quote","text":"<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>","author":"Author's name","author_info":"","author_url":"","image_ratio":"rounded","highlighted_text":"none","highlighted_scribble":"circle"}}},"block_order":["testimonial-1","testimonial-2","testimonial-3"],"disabled":true,"settings":{"transparent_header":false,"image_height":"750px","content_position":"md:items-center md:justify-center","image_height_mobile":"500px","content_position_mobile":"items-center justify-center","color_text":"#ffffff","color_highlight":"","gradient_highlight":"","color_overlay":"#171717","overlay_opacity":40,"padding_top":0,"padding_bottom":0,"divider":false,"rounded":true,"enable_parallax":true,"parallax_direction":"vertical"}},"scrolling-text-2":{"type":"scrolling-text","blocks":{"image-1":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/nuie-logo_black_new.svg","height":60}},"image-2":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Big_2020-12-14--12-38-11-273_jpg.webp","height":60}},"image-3":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/scudo-brand-logo_png.webp","height":60}},"image-4":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/hr-page-logo.png","height":60}},"image-5":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/perform_panel.jpg","height":60}},"image-6":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/multipanel-brand-logo.png","height":60}},"image_g6EkgF":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/everbuild-logo.png","height":60}},"image_73TxH6":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Soudal-logo-CB8DD414BB-seeklogo.com.png","height":60}},"image_QBgeEz":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Logo_WEB-09.jpg","height":60}},"image_LTCM7w":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/viva.jpg","height":80}},"image_UVLarq":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/Screenshot_2025-06-30_at_13.20.56.jpg","height":80}}},"block_order":["image-1","image-2","image-3","image-4","image-5","image-6","image_g6EkgF","image_73TxH6","image_QBgeEz","image_LTCM7w","image_UVLarq"],"settings":{"direction":"right","speed":5,"grid_horizontal":140,"enable_twin":true,"enable_parallax":true,"color_text":"","color_background":"#ffffff","gradient_background":"","color_highlight":"#2acaf1","gradient_highlight":"linear-gradient(0deg, rgba(137, 143, 239, 1), rgba(120, 196, 245, 1) 100%)","padding_top":36,"padding_bottom":36,"divider":false,"rounded":false}},"blog-posts-collage":{"type":"blog-posts-collage","disabled":true,"settings":{"blog":"","post_limit":3,"show_view_all":true,"image_ratio":"landscape","show_tags":true,"show_date":true,"show_comments":true,"show_author":false,"show_excerpt":true,"heading":"Latest Stories","heading_size":"title-md","heading_alignment":"text-left md:items-end md:flex-row","heading_tag":"h2","subheading":"","description":"","highlighted_text":"none","highlighted_scribble":"circle","color_text":"","color_background":"","gradient_background":"","color_highlight":"","gradient_highlight":"","color_button_text":"","color_button_background":"","color_button_gradient":"","padding_top":100,"padding_bottom":100,"divider":false,"full_width":false,"rounded":false}},"logo_list_HAj8VP":{"type":"logo-list","blocks":{"logo_6YCLjM":{"type":"logo","settings":{"image":"shopify:\/\/shop_images\/scudo_logo_fc32d616-c756-426d-9f85-1c7687bd73e2.jpg","height":80,"link":""}},"logo_e9TGjE":{"type":"logo","settings":{"image":"shopify:\/\/shop_images\/nuie_loho.jpg","height":80,"link":""}},"logo_iNKeRN":{"type":"logo","settings":{"height":80,"link":""}},"logo_cQJj9J":{"type":"logo","settings":{"height":80,"link":""}},"logo_fGVbmj":{"type":"logo","settings":{"height":80,"link":""}},"logo_r6MtUT":{"type":"logo","settings":{"height":80,"link":""}}},"block_order":["logo_6YCLjM","logo_e9TGjE","logo_iNKeRN","logo_cQJj9J","logo_fGVbmj","logo_r6MtUT"],"disabled":true,"settings":{"layout":"default","grid_horizontal":70,"direction":"left","speed":5,"heading":"Popular Brands","heading_size":"title-md","heading_alignment":"text-center md:items-center","heading_tag":"h2","subheading":"","description":"","button_label":"","button_link":"","button_external":false,"button_icon":true,"highlighted_text":"none","highlighted_scribble":"circle","color_text":"","color_background":"","gradient_background":"","color_highlight":"","gradient_highlight":"","color_button_text":"","color_button_background":"","color_button_gradient":"","padding_top":72,"padding_bottom":72,"divider":false,"full_width":false,"rounded":false}},"173167681616b98a6e":{"type":"apps","disabled":true,"settings":{"color_text":"","color_background":"","gradient_background":"","color_highlight":"","gradient_highlight":"","color_button_text":"","color_button_background":"","color_button_gradient":"","padding_top":72,"padding_bottom":72,"divider":false,"full_width":false,"rounded":false}},"featured_collection_ctYK44":{"type":"featured-collection","disabled":true,"settings":{"collection":"best-sellers","products":[],"product_limit":6,"columns":4,"carousel_on_desktop":true,"show_view_all":false,"columns_mobile":"1","swipe_on_mobile":true,"heading":"Popular Products","heading_size":"title-sm","heading_alignment":"text-left md:items-end md:flex-row","heading_tag":"h2","subheading":"","description":"","highlighted_text":"none","highlighted_scribble":"circle","color_text":"","color_background":"","gradient_background":"","color_highlight":"","gradient_highlight":"","color_button_text":"","color_button_background":"","color_button_gradient":"","padding_top":28,"padding_bottom":28,"divider":false,"full_width":false,"rounded":false}}},"order":["slideshow","rich-text","multicolumn_zT87yk","featured-product","collection-list","image-comparison","shop-the-look","testimonials-banner","scrolling-text-2","blog-posts-collage","logo_list_HAj8VP","173167681616b98a6e","featured_collection_ctYK44"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "slideshow": {
+      "type": "slideshow",
+      "blocks": {
+        "slide-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Durdle_Door_Overview.jpg",
+            "heading": "<em>Supporting the Local </em>Trade<em> and DIY of Dorset!</em>",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "button_label": "SHOP OUR ESSENTIALS",
+            "button_link": "shopify://collections/hub-essentials",
+            "button_style": "primary",
+            "button_external": false,
+            "button_icon": false
+          }
+        },
+        "image_h8F3QR": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_8017.heic",
+            "heading": "<em>Join HubPRO to see prices!</em>",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "button_label": "BECOME A MEMBER",
+            "button_link": "shopify://pages/trade-sign-up",
+            "button_style": "primary",
+            "button_external": false,
+            "button_icon": false
+          }
+        },
+        "image_WNzL7A": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_7744.heic",
+            "heading": "Save BIG on essentials!",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "button_label": "Join HubPRO",
+            "button_link": "shopify://pages/trade-sign-up",
+            "button_style": "primary",
+            "button_external": false,
+            "button_icon": false
+          }
+        },
+        "slide-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/MAXIPANELBANNER-01.png",
+            "heading": "",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "button_label": "SHOP MAXI PANELS",
+            "button_link": "shopify://metaobjects/Page/page-z3aq3vqc",
+            "button_style": "primary",
+            "button_external": false,
+            "button_icon": false
+          }
+        },
+        "image_NhPc9m": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_7740.heic",
+            "heading": "In-stock Products for Same-day Delivery",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "button_label": "SHOP IN-STOCK PRODUCTS",
+            "button_link": "shopify://collections/all",
+            "button_style": "primary",
+            "button_external": false,
+            "button_icon": false
+          }
+        }
+      },
+      "block_order": [
+        "slide-1",
+        "image_h8F3QR",
+        "image_WNzL7A",
+        "slide-2",
+        "image_NhPc9m"
+      ],
+      "settings": {
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "show_navigation": true,
+        "image_height": "600px",
+        "content_width": "small",
+        "image_height_mobile": "500px",
+        "accessibility_info": "Slideshow about our brand",
+        "color_text": "#ffffff",
+        "color_background": "#ffffff",
+        "gradient_background": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#2acaf1",
+        "overlay_opacity": 25,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": true,
+        "parallax_direction": "zoom"
+      }
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>We stock a lot of the essentials needed for the modern day Bathroom Installer.. all at the best prices!</p><ul><li>Wall Panels</li><li>Toilets</li><li>Showers/Shower Trays/Enclosures</li><li>Brassware</li><li>Basins/Basin Vanity Units</li><li>Radiators</li><li>Tools and Consumables</li><li>Mirrors</li><li>and Much more!</li></ul>",
+            "text_font": "body",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "image_8yRV46": {
+          "type": "image",
+          "settings": {
+            "image_width": "custom",
+            "image_max_width": 50,
+            "image_max_width_mobile": 50
+          }
+        }
+      },
+      "block_order": [
+        "text",
+        "image_8yRV46"
+      ],
+      "settings": {
+        "text_alignment": "left",
+        "text_alignment_mobile": "left",
+        "heading": "Exclusively For <em>Trade and DIY</em>",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "We sell quality products",
+        "description": "<p>Bathroom Trade Hub has been created with the local tradesman in mind, the days of overpaying for what we class as 'the essentials' are over, join our exclusive and trade-only savers club where you can save money on everything!</p>",
+        "button_label": "SIGN UP FOR A TRADE ACCOUNT",
+        "button_link": "shopify://pages/trade-sign-up",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "scribble",
+        "highlighted_scribble": "basic-underline",
+        "color_text": "",
+        "color_background": "rgba(0,0,0,0)",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 0,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "multicolumn_zT87yk": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_XDxCDy": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image_ratio": "adapt",
+            "heading": "Dorset Based Business",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>We specifically cater for customers in Dorset. We offer FREE delivery on orders over £100+VAT within Dorset Postcodes. We also ship anywhere in the UK over a certain spend.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_JGfhgY": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image_ratio": "adapt",
+            "heading": "Trade Counter",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>Our Weymouth Branch is the perfect place to shop bathroom supplies in-store. We are open 8am - 5pm Monday to Friday and 8am-12pm Saturdays. Feel free to pop down!</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_qTJKEz": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image_ratio": "adapt",
+            "heading": "Trade Portal",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>Create a Bathroom Trade Hub account to access our products at your bespoke trade price and see stock levels in real time quickly and efficiently saving you time shopping around for prices!</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "column_XDxCDy",
+        "column_JGfhgY",
+        "column_qTJKEz"
+      ],
+      "name": "Multicolumn",
+      "settings": {
+        "gap": "large",
+        "columns": 3,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Supporting Local Trade and DIY",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "featured-product": {
+      "type": "featured-product",
+      "blocks": {
+        "text": {
+          "type": "text",
+          "settings": {
+            "icon": "none",
+            "iwidth": "custom",
+            "icon_width": 24,
+            "text": "{{ section.settings.product.vendor }}",
+            "text_size": "text-base"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "title_size": "product-title-md",
+            "title_size_mobile": "product-title-md",
+            "show_price": true,
+            "show_rating": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "text_size": "text-base"
+          }
+        },
+        "countdown": {
+          "type": "countdown",
+          "settings": {
+            "heading": "Hurry up!",
+            "subheading": "Sale end in:",
+            "color_text": "#e11d48",
+            "color_background": "#fff1f2",
+            "gradient_background": ""
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "show_variant_labels": true,
+            "picker_type": "button",
+            "enable_color_swatches": true,
+            "color_swatch_type": "color",
+            "size_chart": ""
+          }
+        },
+        "inventory": {
+          "type": "inventory",
+          "settings": {
+            "inventory_threshold": 15,
+            "show_inventory_transfer": true,
+            "show_inventory_quantity": "low",
+            "color_scheme": "accent-1"
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": false,
+            "show_price": false,
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false,
+            "enable_back_in_stock": false,
+            "show_back_in_stock_name": false,
+            "show_back_in_stock_phone": false
+          }
+        },
+        "pickup_availability": {
+          "type": "pickup_availability",
+          "settings": {}
+        },
+        "share": {
+          "type": "share",
+          "disabled": true,
+          "settings": {
+            "share_label": "Share",
+            "show_help_desk": true,
+            "help_label": "Need help?",
+            "help_page": "",
+            "help_page_external": false
+          }
+        },
+        "read_more": {
+          "type": "read_more",
+          "disabled": true,
+          "settings": {}
+        },
+        "spinning_text": {
+          "type": "spinning_text",
+          "settings": {
+            "text": "Featured product"
+          }
+        }
+      },
+      "block_order": [
+        "text",
+        "title",
+        "description",
+        "countdown",
+        "variant_picker",
+        "inventory",
+        "buy_buttons",
+        "pickup_availability",
+        "share",
+        "read_more",
+        "spinning_text"
+      ],
+      "settings": {
+        "product": "maxi-shower-panel-sparkle-white",
+        "enable_sticky_info": true,
+        "media_size": 64,
+        "gallery_layout": "thumbnail",
+        "thumbnail_position": "beside",
+        "image_ratio": "adapt_first",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_autoplay": true,
+        "enable_video_looping": true,
+        "mobile_layout": "full_width",
+        "image_ratio_mobile": "adapt_first",
+        "mobile_thumbnail": false,
+        "padding_top": 120,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": false,
+        "rounded": true
+      }
+    },
+    "collection-list": {
+      "type": "collection-list",
+      "blocks": {
+        "collection-1": {
+          "type": "collection",
+          "settings": {
+            "collection": "consumables",
+            "image": "shopify://shop_images/Screenshot_2024-11-14_at_11.40.58_AM.png",
+            "title": "Consumables",
+            "description": "View our range of consumables",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection-2": {
+          "type": "collection",
+          "settings": {
+            "collection": "showering",
+            "image": "shopify://shop_images/JTY035-nuie-web.png",
+            "title": "Showers",
+            "description": "View our range of showers",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 40
+          }
+        },
+        "collection-3": {
+          "type": "collection",
+          "settings": {
+            "collection": "perform-panel",
+            "image": "shopify://shop_images/perform_panel.jpg",
+            "title": "Wall Panels",
+            "description": "View our range of wall panels",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 40
+          }
+        },
+        "collection-4": {
+          "type": "collection",
+          "settings": {
+            "collection": "heating",
+            "image": "shopify://shop_images/ST-50120-A_CUTOUT_001.jpg",
+            "title": "Towel Heating",
+            "description": "View our range of radiators",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 40
+          }
+        },
+        "collection-5": {
+          "type": "collection",
+          "settings": {
+            "collection": "taps",
+            "image": "shopify://shop_images/HDY305-nuie-web.png",
+            "title": "Brassware",
+            "description": "View our range of brassware",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 40
+          }
+        },
+        "collection-6": {
+          "type": "collection",
+          "settings": {
+            "collection": "wall-panels",
+            "image": "shopify://shop_images/multipanel-classic-Type-B-External-Corner_jpg.webp",
+            "title": "Finishing Trims",
+            "description": "View our range of finishing trims",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 40
+          }
+        }
+      },
+      "block_order": [
+        "collection-1",
+        "collection-2",
+        "collection-3",
+        "collection-4",
+        "collection-5",
+        "collection-6"
+      ],
+      "disabled": true,
+      "settings": {
+        "columns": 4,
+        "carousel_on_desktop": true,
+        "image_type": "collection",
+        "image_ratio": "square",
+        "show_products_count": true,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "image-comparison": {
+      "type": "image-comparison",
+      "blocks": {
+        "image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SEICENTO-PAN-SEAT_institu_28345430-7d27-4242-aa1a-eeec0937f54b.jpg",
+            "subheading": "RIMLESS CLOSE-COUPLED WC PACK",
+            "heading": "RRP - £289 + VAT",
+            "content_position": "end",
+            "color_text": "#ffffff"
+          }
+        },
+        "image-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/SEICENTO-PAN-SEAT_institu2-1.jpg",
+            "subheading": "CREATE A TRADE ACCOUNT AND",
+            "heading": "LOG IN TO SEE YOUR PRICE",
+            "content_position": "end",
+            "color_text": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "image-1",
+        "image-2"
+      ],
+      "settings": {
+        "layout": "horizontal",
+        "image_height": "750px",
+        "image_height_mobile": "300px",
+        "heading": "<em>Bespoke discount structures</em>",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "Every product to create the dream bathroom for your customer with",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "text",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "linear-gradient(90deg, rgba(249, 197, 141, 1), rgba(43, 43, 43, 1) 100%)",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 100,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "shop-the-look": {
+      "type": "shop-the-look",
+      "blocks": {
+        "product-1": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "color_text": "#ffffff",
+            "vertical": 27,
+            "horizontal": 8,
+            "vertical_mobile": 25,
+            "horizontal_mobile": 25
+          }
+        },
+        "product-2": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "color_text": "#ffffff",
+            "vertical": 55,
+            "horizontal": 24,
+            "vertical_mobile": 75,
+            "horizontal_mobile": 65
+          }
+        },
+        "product-3": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "color_text": "#ffffff",
+            "vertical": 56,
+            "horizontal": 53,
+            "vertical_mobile": 50,
+            "horizontal_mobile": 50
+          }
+        }
+      },
+      "block_order": [
+        "product-1",
+        "product-2",
+        "product-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading": "Popular Essentials",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "Add a tagline",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "scribble",
+        "highlighted_scribble": "squiggle-underline",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 40,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "divider": false,
+        "full_width": false,
+        "rounded": true
+      }
+    },
+    "testimonials-banner": {
+      "type": "testimonials-banner",
+      "blocks": {
+        "testimonial-1": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "quote",
+            "text": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author's name",
+            "author_info": "",
+            "author_url": "",
+            "image_ratio": "rounded",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "testimonial-2": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "quote",
+            "text": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author's name",
+            "author_info": "",
+            "author_url": "",
+            "image_ratio": "rounded",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "testimonial-3": {
+          "type": "testimonial",
+          "settings": {
+            "icon": "quote",
+            "text": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
+            "author": "Author's name",
+            "author_info": "",
+            "author_url": "",
+            "image_ratio": "rounded",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial-1",
+        "testimonial-2",
+        "testimonial-3"
+      ],
+      "disabled": true,
+      "settings": {
+        "transparent_header": false,
+        "image_height": "750px",
+        "content_position": "md:items-center md:justify-center",
+        "image_height_mobile": "500px",
+        "content_position_mobile": "items-center justify-center",
+        "color_text": "#ffffff",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 40,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "rounded": true,
+        "enable_parallax": true,
+        "parallax_direction": "vertical"
+      }
+    },
+    "scrolling-text-2": {
+      "type": "scrolling-text",
+      "blocks": {
+        "image-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/nuie-logo_black_new.svg",
+            "height": 60,
+            "link": "",
+            "accessibility_info": "",
+            "external": false
+          }
+        },
+        "image-2": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Big_2020-12-14--12-38-11-273_jpg.webp",
+            "height": 60,
+            "link": "",
+            "accessibility_info": "",
+            "external": false
+          }
+        },
+        "image-3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/scudo-brand-logo_png.webp",
+            "height": 60,
+            "link": "",
+            "accessibility_info": "",
+            "external": false
+          }
+        },
+        "image-4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/hr-page-logo.png",
+            "height": 60,
+            "link": "",
+            "accessibility_info": "",
+            "external": false
+          }
+        },
+        "image-5": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/perform_panel.jpg",
+            "height": 60,
+            "link": "",
+            "accessibility_info": "",
+            "external": false
+          }
+        },
+        "image-6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/multipanel-brand-logo.png",
+            "height": 60,
+            "link": "",
+            "accessibility_info": "",
+            "external": false
+          }
+        },
+        "image_g6EkgF": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/everbuild-logo.png",
+            "height": 60,
+            "link": "",
+            "accessibility_info": "",
+            "external": false
+          }
+        },
+        "image_73TxH6": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Soudal-logo-CB8DD414BB-seeklogo.com.png",
+            "height": 60,
+            "link": "",
+            "accessibility_info": "",
+            "external": false
+          }
+        },
+        "image_QBgeEz": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Logo_WEB-09.jpg",
+            "height": 60,
+            "link": "",
+            "accessibility_info": "",
+            "external": false
+          }
+        },
+        "image_LTCM7w": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/viva.jpg",
+            "height": 80,
+            "link": "",
+            "accessibility_info": "",
+            "external": false
+          }
+        },
+        "image_UVLarq": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-06-30_at_13.20.56.jpg",
+            "height": 80,
+            "link": "",
+            "accessibility_info": "",
+            "external": false
+          }
+        }
+      },
+      "block_order": [
+        "image-1",
+        "image-2",
+        "image-3",
+        "image-4",
+        "image-5",
+        "image-6",
+        "image_g6EkgF",
+        "image_73TxH6",
+        "image_QBgeEz",
+        "image_LTCM7w",
+        "image_UVLarq"
+      ],
+      "settings": {
+        "direction": "right",
+        "speed": 5,
+        "grid_horizontal": 140,
+        "enable_twin": true,
+        "enable_parallax": true,
+        "color_text": "",
+        "color_background": "#ffffff",
+        "gradient_background": "",
+        "color_highlight": "#2acaf1",
+        "gradient_highlight": "linear-gradient(0deg, rgba(137, 143, 239, 1), rgba(120, 196, 245, 1) 100%)",
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "divider": false,
+        "rounded": false
+      }
+    },
+    "blog-posts-collage": {
+      "type": "blog-posts-collage",
+      "disabled": true,
+      "settings": {
+        "blog": "",
+        "post_limit": 3,
+        "show_view_all": true,
+        "image_ratio": "landscape",
+        "show_tags": true,
+        "show_date": true,
+        "show_comments": true,
+        "show_author": false,
+        "show_excerpt": true,
+        "heading": "Latest Stories",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "logo_list_HAj8VP": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_6YCLjM": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/scudo_logo_fc32d616-c756-426d-9f85-1c7687bd73e2.jpg",
+            "height": 80,
+            "link": ""
+          }
+        },
+        "logo_e9TGjE": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/nuie_loho.jpg",
+            "height": 80,
+            "link": ""
+          }
+        },
+        "logo_iNKeRN": {
+          "type": "logo",
+          "settings": {
+            "height": 80,
+            "link": ""
+          }
+        },
+        "logo_cQJj9J": {
+          "type": "logo",
+          "settings": {
+            "height": 80,
+            "link": ""
+          }
+        },
+        "logo_fGVbmj": {
+          "type": "logo",
+          "settings": {
+            "height": 80,
+            "link": ""
+          }
+        },
+        "logo_r6MtUT": {
+          "type": "logo",
+          "settings": {
+            "height": 80,
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_6YCLjM",
+        "logo_e9TGjE",
+        "logo_iNKeRN",
+        "logo_cQJj9J",
+        "logo_fGVbmj",
+        "logo_r6MtUT"
+      ],
+      "disabled": true,
+      "settings": {
+        "layout": "default",
+        "grid_horizontal": 70,
+        "direction": "left",
+        "speed": 5,
+        "heading": "Popular Brands",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "173167681616b98a6e": {
+      "type": "apps",
+      "disabled": true,
+      "settings": {
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "featured_collection_ctYK44": {
+      "type": "featured-collection",
+      "disabled": true,
+      "settings": {
+        "collection": "best-sellers",
+        "products": [],
+        "product_limit": 6,
+        "columns": 4,
+        "carousel_on_desktop": true,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Popular Products",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "slideshow",
+    "rich-text",
+    "multicolumn_zT87yk",
+    "featured-product",
+    "collection-list",
+    "image-comparison",
+    "shop-the-look",
+    "testimonials-banner",
+    "scrolling-text-2",
+    "blog-posts-collage",
+    "logo_list_HAj8VP",
+    "173167681616b98a6e",
+    "featured_collection_ctYK44"
+  ]
+}
