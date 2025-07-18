@@ -1,0 +1,349 @@
+{%- comment -%}
+  =============================================================================
+  DEPRECATED LIQUID PATTERNS TEST SUITE
+  =============================================================================
+
+  This test suite validates the behavior of deprecated {% include %} patterns
+  before conversion to {% render %} to ensure no functionality is broken.
+
+  Test Categories:
+  1. WCP (Wholesale Club Pricing) Integration Tests
+  2. WLM (Wholesale Lockdown Manager) Integration Tests
+  3. WPD (Wholesale Pricing Discount) Integration Tests
+  4. Variable Scope and Assignment Tests
+  5. Error Handling Tests
+
+  Usage:
+  - Add ?view=test-deprecated-patterns to any product/collection URL
+  - Compare output before and after conversion
+  - Validate all variable assignments and data flow
+{%- endcomment -%}
+
+{% if request.design_mode or request.host contains 'myshopify.com' %}
+  {% layout none %}
+  {% assign test_mode = true %}
+{% else %}
+  {% assign test_mode = false %}
+{% endif %}
+
+{% if test_mode %}
+  <!doctype html>
+  <html>
+    <head>
+      <title>Deprecated Liquid Patterns Test Suite</title>
+      <style>
+        body {
+          font-family: monospace;
+          margin: 20px;
+          background: #f5f5f5;
+        }
+        .test-section {
+          background: white;
+          margin: 20px 0;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .test-title {
+          color: #333;
+          border-bottom: 2px solid #007acc;
+          padding-bottom: 10px;
+          margin-bottom: 15px;
+        }
+        .test-result {
+          background: #f8f9fa;
+          padding: 10px;
+          margin: 10px 0;
+          border-left: 4px solid #28a745;
+        }
+        .test-error {
+          background: #fff5f5;
+          border-left: 4px solid #dc3545;
+        }
+        .test-warning {
+          background: #fff8e1;
+          border-left: 4px solid #ffc107;
+        }
+        .variable-dump {
+          background: #f1f3f4;
+          padding: 10px;
+          margin: 5px 0;
+          font-size: 12px;
+          overflow-x: auto;
+        }
+        .test-comparison {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 20px;
+        }
+        .before-after {
+          background: #e3f2fd;
+          padding: 10px;
+          border-radius: 4px;
+        }
+      </style>
+    </head>
+    <body>
+      <h1>🧪 Deprecated Liquid Patterns Test Suite</h1>
+      <p>
+        <strong>Test Environment:</strong> {{ request.host }} | <strong>Template:</strong> {{ template.name }} |
+        <strong>Date:</strong> {{ 'now' | date: '%Y-%m-%d %H:%M:%S' }}
+      </p>
+
+      {% comment %} =================================================================== {% endcomment %}
+      {% comment %} TEST 1: WCP (Wholesale Club Pricing) Integration Tests {% endcomment %}
+      {% comment %} =================================================================== {% endcomment %}
+
+      <div class="test-section">
+        <h2 class="test-title">🔍 Test 1: WCP Integration - {% include %} vs {% render %}</h2>
+
+        {% if collection.products.size > 0 %}
+          {% assign test_product = collection.products.first %}
+        {% elsif product %}
+          {% assign test_product = product %}
+        {% else %}
+          {% assign test_product = collections.all.products.first %}
+        {% endif %}
+
+        {% if test_product %}
+          <h3>Testing with Product: {{ test_product.title | truncate: 50 }}</h3>
+
+          <div class="test-comparison">
+            <div class="before-after">
+              <h4>BEFORE (using {% include %})</h4>
+
+              {% comment %} Test WCP Discount Include {% endcomment %}
+              {% assign wcp_test_variables_before = '' %}
+              {% capture wpd_check_before %}{% include 'wcp_discount' with test_product %}{% endcapture %}
+
+              {% unless wpd_check_before contains 'Liquid error' %}
+                {% include 'wcp_variant' with test_product.selected_or_first_available_variant %}
+                {% include 'wcp_vd_product' with test_product %}
+
+                <div class="variable-dump">
+                  <strong>Variables Set by WCP includes:</strong><br>
+                  - wcp_price_min: {{ wcp_price_min | default: 'NOT SET' -}}
+                  <br>
+                  - wcp_price_max: {{ wcp_price_max | default: 'NOT SET' -}}
+                  <br>
+                  - wcp_v_price: {{ wcp_v_price | default: 'NOT SET' -}}
+                  <br>
+                  - wcp_v_compare_at_price: {{ wcp_v_compare_at_price | default: 'NOT SET' -}}
+                  <br>
+                  - wcp_vd_HTML_table: {{ wcp_vd_HTML_table | strip | truncate: 100 | default: 'NOT SET' -}}
+                  <br>
+                  - wpd_check_error: {{ wpd_check_before | strip | truncate: 200 }}
+                </div>
+              {% else %}
+                <div class="test-error variable-dump"><strong>WCP Include Error:</strong> {{ wpd_check_before }}</div>
+              {% endunless %}
+            </div>
+
+            <div class="before-after">
+              <h4>AFTER (using {% render %}) - SIMULATION</h4>
+              {% comment %}
+                Note: This simulates what would happen with render
+                Render doesn't share variable scope, so we need to check if snippets
+                return data or if they need to be refactored
+              {% endcomment %}
+
+              <div class="test-warning variable-dump">
+                <strong>⚠️ Critical Issue Identified:</strong><br>
+                The WCP snippets set global variables (wcp_price_min, wcp_v_price, etc.) that are used in the parent
+                template.<br>
+                When converted to {% render %}, these variables will NOT be available in the parent scope.<br>
+                <strong>Action Required:</strong> WCP snippets need to be refactored to return data via return
+                statements.
+              </div>
+            </div>
+          </div>
+        {% else %}
+          <div class="test-error">No test product available for WCP testing</div>
+        {% endif %}
+      </div>
+
+      {% comment %} =================================================================== {% endcomment %}
+      {% comment %} TEST 2: WLM (Wholesale Lockdown Manager) Integration Tests {% endcomment %}
+      {% comment %} =================================================================== {% endcomment %}
+
+      <div class="test-section">
+        <h2 class="test-title">🔒 Test 2: WLM Integration - {% include %} vs {% render %}</h2>
+
+        {% if test_product %}
+          <div class="test-comparison">
+            <div class="before-after">
+              <h4>BEFORE (using {% include %})</h4>
+
+              {% capture wlm_check_before %}{% include 'wlm-product' with test_product %}{% endcapture %}
+              {% unless wlm_check_before contains 'Liquid error' %}
+                {% include 'wlm-product' with test_product %}
+
+                <div class="variable-dump">
+                  <strong>WLM Include Result:</strong><br>
+                  - Error Check: {{ wlm_check_before | strip | truncate: 100 -}}
+                  <br>
+                  - Include executed successfully
+                </div>
+              {% else %}
+                <div class="test-error variable-dump"><strong>WLM Include Error:</strong> {{ wlm_check_before }}</div>
+              {% endunless %}
+            </div>
+
+            <div class="before-after">
+              <h4>AFTER (using {% render %}) - SIMULATION</h4>
+
+              <div class="test-warning variable-dump">
+                <strong>⚠️ WLM Compatibility Check Required:</strong><br>
+                WLM snippets may set global variables or modify the DOM.<br>
+                Need to verify if WLM snippets are compatible with {% render %} isolation.<br>
+                <strong>Action Required:</strong> Test WLM functionality after conversion.
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+      {% comment %} =================================================================== {% endcomment %}
+      {% comment %} TEST 3: Variable Scope Analysis {% endcomment %}
+      {% comment %} =================================================================== {% endcomment %}
+
+      <div class="test-section">
+        <h2 class="test-title">📊 Test 3: Variable Scope Analysis</h2>
+
+        <div class="test-result">
+          <h4>Current Variable State (Before Any Includes)</h4>
+          <div class="variable-dump">
+            Global variables that might be affected by includes:<br>
+            - productMinPrice: {{ productMinPrice | default: 'NOT SET' -}}
+            <br>
+            - productMaxPrice: {{ productMaxPrice | default: 'NOT SET' -}}
+            <br>
+            - productDefaultVariantPrice: {{ productDefaultVariantPrice | default: 'NOT SET' -}}
+            <br>
+            - WPDVdTable: {{ WPDVdTable | default: 'NOT SET' -}}
+            <br>
+            - wcp_price_min: {{ wcp_price_min | default: 'NOT SET' -}}
+            <br>
+            - wcp_price_max: {{ wcp_price_max | default: 'NOT SET' -}}
+            <br>
+          </div>
+        </div>
+      </div>
+
+      {% comment %} =================================================================== {% endcomment %}
+      {% comment %} TEST 4: File Dependency Analysis {% endcomment %}
+      {% comment %} =================================================================== {% endcomment %}
+
+      <div class="test-section">
+        <h2 class="test-title">📋 Test 4: Files Requiring Update</h2>
+
+        <div class="test-result">
+          <h4>Files with Deprecated {% include %} Patterns:</h4>
+          <div class="variable-dump">
+            <strong>Templates (High Priority):</strong><br>
+            • templates/collection.wpd_collection_data.liquid (7 includes)<br>
+            • templates/cart.wpd_cart_data.liquid (1 include)<br>
+            • templates/product.wpd_product_data.liquid (7 includes)<br>
+            • templates/search.wpd_search_data.liquid (6 includes)<br>
+            • templates/search.wcp_discount_api.liquid (2 includes)<br>
+            • templates/search.wlm-api.liquid (1 include)<br>
+            • templates/search.wcp_cart.liquid (3 includes)<br>
+            • templates/search.wpd_cart_refresh.liquid (3 includes)<br>
+            <br>
+            <strong>Snippets (Medium Priority):</strong><br>
+            • snippets/wcp_i_vdtable.liquid (4 includes)<br>
+            • snippets/wlm-head.liquid (6 includes)<br>
+            • snippets/wlm-body.liquid (1 include)<br>
+            • snippets/wcp_cart.liquid (4 includes)<br>
+            <br>
+            <strong>Legacy Files (Should be removed):</strong><br>
+            • layout/theme-bak-wlm.liquid (2 includes)<br>
+            • layout/theme-bak-WPD.liquid (1 include)<br>
+          </div>
+        </div>
+      </div>
+
+      {% comment %} =================================================================== {% endcomment %}
+      {% comment %} TEST 5: Conversion Strategy {% endcomment %}
+      {% comment %} =================================================================== {% endcomment %}
+
+      <div class="test-section">
+        <h2 class="test-title">🔄 Test 5: Recommended Conversion Strategy</h2>
+
+        <div class="test-result">
+          <h4>Step-by-Step Conversion Plan:</h4>
+          <div class="variable-dump">
+            <strong>Phase 1: Preparation</strong><br>
+            1. Backup all files with {% include %} patterns<br>
+            2. Document all variable dependencies<br>
+            3. Create test scenarios for each integration<br>
+            <br>
+            <strong>Phase 2: WCP Integration Refactor</strong><br>
+            1. Modify WCP snippets to use return statements<br>
+            2. Update parent templates to handle returned data<br>
+            3. Test wholesale pricing functionality<br>
+            <br>
+            <strong>Phase 3: WLM Integration Update</strong><br>
+            1. Convert WLM includes to render statements<br>
+            2. Verify access control functionality<br>
+            3. Test with different customer groups<br>
+            <br>
+            <strong>Phase 4: Template Updates</strong><br>
+            1. Convert simple includes to render statements<br>
+            2. Update error handling patterns<br>
+            3. Test all affected templates<br>
+            <br>
+            <strong>Phase 5: Cleanup</strong><br>
+            1. Remove backup layout files<br>
+            2. Update documentation<br>
+            3. Performance testing<br>
+          </div>
+        </div>
+      </div>
+
+      {% comment %} =================================================================== {% endcomment %}
+      {% comment %} TEST 6: Critical Warnings {% endcomment %}
+      {% comment %} =================================================================== {% endcomment %}
+
+      <div class="test-section">
+        <h2 class="test-title">⚠️ Test 6: Critical Warnings</h2>
+
+        <div class="test-error">
+          <h4>🚨 BREAKING CHANGE ALERT</h4>
+          <div class="variable-dump">
+            <strong>Variable Scope Issue:</strong><br>
+            The current code relies on {% include %} sharing variable scope with parent templates.<br>
+            Converting to {% render %} will BREAK this functionality unless snippets are refactored.<br>
+            <br>
+            <strong>Affected Variables:</strong><br>
+            • wcp_price_min, wcp_price_max (used for product pricing)<br>
+            • wcp_v_price, wcp_v_compare_at_price (used for variant pricing)<br>
+            • wcp_vd_HTML_table (used for volume discount tables)<br>
+            <br>
+            <strong>Required Actions:</strong><br>
+            1. Refactor WCP snippets to return data objects<br>
+            2. Update parent templates to capture returned data<br>
+            3. Extensive testing of pricing functionality<br>
+            4. Coordinate with WCP app developers if possible<br>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-section">
+        <h2 class="test-title">📝 Test Summary & Next Steps</h2>
+
+        <div class="test-result">
+          <strong>Testing Complete:</strong> {{ 'now' | date: '%Y-%m-%d %H:%M:%S' -}}
+          <br>
+          <strong>Status:</strong> ⚠️ CONVERSION WILL REQUIRE SIGNIFICANT REFACTORING<br>
+          <br>
+          <strong>Immediate Actions Required:</strong><br>
+          1. Do NOT perform simple find-replace conversion<br>
+          2. Plan comprehensive refactoring of WCP integration<br>
+          3. Create backup of current working state<br>
+          4. Consider phased rollout with feature flags<br>
+        </div>
+      </div>
+    </body>
+  </html>
+{% endif %}

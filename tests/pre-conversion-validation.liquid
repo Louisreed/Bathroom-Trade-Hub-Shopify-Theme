@@ -1,0 +1,327 @@
+{%- comment -%}
+  PRE-CONVERSION VALIDATION TEST
+
+  This template captures the current behavior of deprecated includes
+  Run this test before making any changes to establish baseline behavior
+
+  Usage: Create a test page and assign this template, then compare results
+{%- endcomment -%}
+
+{% layout none %}
+{% assign test_timestamp = 'now' | date: '%Y-%m-%d_%H-%M-%S' %}
+
+<!doctype html>
+<html>
+  <head>
+    <title>Pre-Conversion Validation Test</title>
+    <style>
+      body {
+        font-family: monospace;
+        margin: 20px;
+        background: #f8f9fa;
+      }
+      .test-block {
+        background: white;
+        padding: 15px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+      }
+      .success {
+        border-left: 4px solid #28a745;
+      }
+      .error {
+        border-left: 4px solid #dc3545;
+        background: #fff5f5;
+      }
+      .warning {
+        border-left: 4px solid #ffc107;
+        background: #fff8e1;
+      }
+      .code {
+        background: #f1f3f4;
+        padding: 8px;
+        margin: 5px 0;
+        font-family: monospace;
+        font-size: 12px;
+      }
+      .variable {
+        color: #0066cc;
+        font-weight: bold;
+      }
+      .value {
+        color: #d63384;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>🧪 Pre-Conversion Validation Test</h1>
+    <p><strong>Test Run:</strong> {{ test_timestamp }}</p>
+
+    {% comment %} Get test product {% endcomment %}
+    {% assign test_product = collections.all.products.first %}
+    {% if test_product == blank %}
+      <div class="test-block error">
+        <h3>❌ No Test Product Available</h3>
+        <p>Unable to run tests - no products found in store</p>
+      </div>
+    {% else %}
+      <div class="test-block success">
+        <h3>✅ Test Product: {{ test_product.title }}</h3>
+        <p>
+          <strong>Handle:</strong> {{ test_product.handle }} | <strong>Price:</strong> {{ test_product.price | money }}
+        </p>
+      </div>
+
+      {% comment %} =================================================================== {% endcomment %}
+      {% comment %} TEST 1: WCP Integration Current State {% endcomment %}
+      {% comment %} =================================================================== {% endcomment %}
+
+      <div class="test-block">
+        <h3>🔍 WCP Integration Test</h3>
+
+        {% comment %} Capture initial state {% endcomment %}
+        <div class="code">
+          <strong>Before WCP Include:</strong><br>
+          <span class="variable">wcp_price_min:</span>
+          <span class="value">{{ wcp_price_min | default: 'UNDEFINED' }}</span><br>
+          <span class="variable">wcp_price_max:</span>
+          <span class="value">{{ wcp_price_max | default: 'UNDEFINED' }}</span><br>
+          <span class="variable">wcp_v_price:</span> <span class="value">{{ wcp_v_price | default: 'UNDEFINED' }}</span
+          ><br>
+          <span class="variable">wcp_v_compare_at_price:</span>
+          <span class="value">{{ wcp_v_compare_at_price | default: 'UNDEFINED' }}</span><br>
+          <span class="variable">wcp_vd_HTML_table:</span>
+          <span class="value">{{ wcp_vd_HTML_table | default: 'UNDEFINED' | strip | truncate: 50 }}</span>
+        </div>
+
+        {% comment %} Test WCP Discount Include {% endcomment %}
+        {% capture wcp_discount_test %}{% include 'wcp_discount' with test_product %}{% endcapture %}
+
+        {% if wcp_discount_test contains 'Liquid error' %}
+          <div class="error">
+            <strong>❌ WCP Discount Include Failed:</strong><br>
+            <div class="code">{{ wcp_discount_test }}</div>
+          </div>
+        {% else %}
+          <div class="success">
+            <strong>✅ WCP Discount Include Successful</strong>
+            {% comment %} Test WCP Variant Include {% endcomment %}
+            {% capture wcp_variant_test %}{% include 'wcp_variant' with test_product.selected_or_first_available_variant %}{% endcapture %}
+
+            {% if wcp_variant_test contains 'Liquid error' %}
+              <div class="error">
+                <strong>❌ WCP Variant Include Failed:</strong><br>
+                <div class="code">{{ wcp_variant_test }}</div>
+              </div>
+            {% else %}
+              <div class="success">
+                <strong>✅ WCP Variant Include Successful</strong>
+
+                {% comment %} Test WCP VD Product Include {% endcomment %}
+                {% capture wcp_vd_test %}{% include 'wcp_vd_product' with test_product %}{% endcapture %}
+
+                {% if wcp_vd_test contains 'Liquid error' %}
+                  <div class="error">
+                    <strong>❌ WCP VD Product Include Failed:</strong><br>
+                    <div class="code">{{ wcp_vd_test }}</div>
+                  </div>
+                {% else %}
+                  <div class="success">
+                    <strong>✅ WCP VD Product Include Successful</strong>
+
+                    <div class="code">
+                      <strong>After WCP Includes:</strong><br>
+                      <span class="variable">wcp_price_min:</span>
+                      <span class="value">{{ wcp_price_min | default: 'UNDEFINED' }}</span><br>
+                      <span class="variable">wcp_price_max:</span>
+                      <span class="value">{{ wcp_price_max | default: 'UNDEFINED' }}</span><br>
+                      <span class="variable">wcp_v_price:</span>
+                      <span class="value">{{ wcp_v_price | default: 'UNDEFINED' }}</span><br>
+                      <span class="variable">wcp_v_compare_at_price:</span>
+                      <span class="value">{{ wcp_v_compare_at_price | default: 'UNDEFINED' }}</span><br>
+                      <span class="variable">wcp_vd_HTML_table:</span>
+                      <span class="value">{{ wcp_vd_HTML_table | default: 'UNDEFINED' | strip | truncate: 100 }}</span>
+                    </div>
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        {% endif %}
+      </div>
+
+      {% comment %} =================================================================== {% endcomment %}
+      {% comment %} TEST 2: WLM Integration Current State {% endcomment %}
+      {% comment %} =================================================================== {% endcomment %}
+
+      <div class="test-block">
+        <h3>🔒 WLM Integration Test</h3>
+
+        {% capture wlm_product_test %}{% include 'wlm-product' with test_product %}{% endcapture %}
+
+        {% if wlm_product_test contains 'Liquid error' %}
+          <div class="error">
+            <strong>❌ WLM Product Include Failed:</strong><br>
+            <div class="code">{{ wlm_product_test }}</div>
+          </div>
+        {% else %}
+          <div class="success">
+            <strong>✅ WLM Product Include Successful</strong>
+            {% include 'wlm-product' with test_product %}
+            <div class="code">
+              <strong>WLM Include completed without errors</strong>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+      {% comment %} =================================================================== {% endcomment %}
+      {% comment %} TEST 3: WPD Product Limit Test {% endcomment %}
+      {% comment %} =================================================================== {% endcomment %}
+
+      <div class="test-block">
+        <h3>📊 WPD Product Limit Test</h3>
+
+        {% capture wpd_product_limit_test %}{% include 'wpd_product_limit' %}{% endcapture %}
+
+        {% if wpd_product_limit_test contains 'Liquid error' %}
+          <div class="error">
+            <strong>❌ WPD Product Limit Include Failed:</strong><br>
+            <div class="code">{{ wpd_product_limit_test }}</div>
+          </div>
+        {% else %}
+          <div class="success">
+            <strong>✅ WPD Product Limit Include Successful</strong>
+            {% include 'wpd_product_limit' %}
+            <div class="code">
+              <strong>WPD Product Limit completed without errors</strong>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
+      {% comment %} =================================================================== {% endcomment %}
+      {% comment %} TEST 4: Variable Persistence Test {% endcomment %}
+      {% comment %} =================================================================== {% endcomment %}
+
+      <div class="test-block">
+        <h3>🔄 Variable Persistence Test</h3>
+
+        <div class="code">
+          <strong>Critical Variables Status:</strong><br>
+          <span class="variable">wcp_price_min:</span>
+          <span class="value">{{ wcp_price_min | default: 'NOT SET' }}</span><br>
+          <span class="variable">wcp_price_max:</span>
+          <span class="value">{{ wcp_price_max | default: 'NOT SET' }}</span><br>
+          <span class="variable">wcp_v_price:</span> <span class="value">{{ wcp_v_price | default: 'NOT SET' }}</span
+          ><br>
+          <span class="variable">wcp_v_compare_at_price:</span>
+          <span class="value">{{ wcp_v_compare_at_price | default: 'NOT SET' }}</span><br>
+          <span class="variable">wcp_vd_HTML_table exists:</span>
+          <span class="value">{{ wcp_vd_HTML_table != blank }}</span><br>
+          <span class="variable">wcp_vd_HTML_table length:</span>
+          <span class="value">{{ wcp_vd_HTML_table | size | default: 0 }}</span>
+        </div>
+
+        {% if wcp_price_min != blank and wcp_v_price != blank %}
+          <div class="success">
+            <strong>✅ WCP Variables Successfully Set</strong>
+            <p>This confirms that the WCP includes are working and setting global variables correctly.</p>
+          </div>
+        {% else %}
+          <div class="warning">
+            <strong>⚠️ WCP Variables Not Set</strong>
+            <p>WCP integration may not be active or may have failed silently.</p>
+          </div>
+        {% endif %}
+      </div>
+
+      {% comment %} =================================================================== {% endcomment %}
+      {% comment %} TEST 5: Formatted Output Test {% endcomment %}
+      {% comment %} =================================================================== {% endcomment %}
+
+      <div class="test-block">
+        <h3>💰 Formatted Output Test</h3>
+
+        <div class="code">
+          <strong>Original Product Pricing:</strong><br>
+          <span class="variable">product.price_min:</span>
+          <span class="value">{{ test_product.price_min | money }}</span><br>
+          <span class="variable">product.price_max:</span>
+          <span class="value">{{ test_product.price_max | money }}</span><br>
+          <span class="variable">variant.price:</span>
+          <span class="value">{{ test_product.selected_or_first_available_variant.price | money }}</span><br>
+          <span class="variable">variant.compare_at_price:</span>
+          <span class="value">
+            {{- test_product.selected_or_first_available_variant.compare_at_price | money | default: 'None' -}}</span
+          ><br>
+          <br>
+          <strong>WCP Modified Pricing:</strong><br>
+          <span class="variable">wcp_price_min:</span>
+          <span class="value">{{ wcp_price_min | money | default: 'Not Set' }}</span><br>
+          <span class="variable">wcp_price_max:</span>
+          <span class="value">{{ wcp_price_max | money | default: 'Not Set' }}</span><br>
+          <span class="variable">wcp_v_price:</span>
+          <span class="value">{{ wcp_v_price | money | default: 'Not Set' }}</span><br>
+          <span class="variable">wcp_v_compare_at_price:</span>
+          <span class="value">{{ wcp_v_compare_at_price | money | default: 'Not Set' }}</span>
+        </div>
+
+        {% if wcp_v_price != blank and wcp_v_price != test_product.selected_or_first_available_variant.price %}
+          <div class="success">
+            <strong>✅ WCP Price Modification Detected</strong>
+            <p>
+              Original: {{ test_product.selected_or_first_available_variant.price | money }} → WCP:
+              {{ wcp_v_price | money }}
+            </p>
+          </div>
+        {% elsif wcp_v_price == test_product.selected_or_first_available_variant.price %}
+          <div class="warning">
+            <strong>⚠️ WCP Price Same as Original</strong>
+            <p>WCP may not be applying any discounts for this product/customer.</p>
+          </div>
+        {% else %}
+          <div class="error">
+            <strong>❌ WCP Price Not Set</strong>
+            <p>WCP integration may not be working correctly.</p>
+          </div>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    {% comment %} =================================================================== {% endcomment %}
+    {% comment %} TEST SUMMARY {% endcomment %}
+    {% comment %} =================================================================== {% endcomment %}
+
+    <div class="test-block">
+      <h3>📋 Test Summary</h3>
+
+      <div class="code">
+        <strong>Test Completion Status:</strong><br>
+        <span class="variable">Timestamp:</span> <span class="value">{{ test_timestamp }}</span><br>
+        <span class="variable">Test Product:</span>
+        <span class="value">{{ test_product.title | default: 'None Available' }}</span><br>
+        <span class="variable">WCP Integration:</span>
+        <span class="value">
+          {%- if wcp_v_price != blank %}✅ Working{% else %}❌ Not Working{% endif -%}</span
+        ><br>
+        <span class="variable">WLM Integration:</span>
+        <span class="value">
+          {% capture wlm_test %}{% include 'wlm-product' with test_product %}{% endcapture -%}
+          {%- if wlm_test contains 'Liquid error' %}❌ Error{% else %}✅ Working{% endif -%}</span
+        ><br>
+        <span class="variable">WPD Integration:</span>
+        <span class="value">
+          {% capture wpd_test %}{% include 'wpd_product_limit' %}{% endcapture -%}
+          {%- if wpd_test contains 'Liquid error' %}❌ Error{% else %}✅ Working{% endif -%}
+        </span>
+      </div>
+
+      <div class="warning">
+        <strong>⚠️ Important Note for Conversion:</strong><br>
+        Save this test output as a reference before making any changes to deprecated includes. After conversion, run the
+        same tests to ensure identical behavior.
+      </div>
+    </div>
+  </body>
+</html>
