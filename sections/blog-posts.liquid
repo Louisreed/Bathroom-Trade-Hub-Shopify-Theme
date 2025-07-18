@@ -53,12 +53,13 @@
     {%- render 'section-heading', section: section, section_button: indicators -%}
 
     {%- if blog != blank -%}
-      <slider-element id="Slider-{{ section.id }}" class="grid slider{% if section.settings.carousel_on_desktop %} slider--desktop{% endif %}{% if section.settings.swipe_on_mobile %} slider--tablet{% endif %}" selector=".card-grid>.card">
+      <slider-element id="Slider-{{ section.id }}" class="grid slider{% if section.settings.carousel_on_desktop %} slider--desktop{% endif %}{% if section.settings.swipe_on_mobile %} slider--tablet{% endif %}" selector=".card-grid>.card"{% if section.settings.carousel_on_desktop or section.settings.swipe_on_mobile %} tabindex="0"{% endif %}>
         <motion-list class="blog-grid card-grid card-grid--{{ section.settings.columns }} mobile:card-grid--{{ section.settings.columns_mobile }} grid">
           {%- capture sizes -%}(max-width: 639px) 100vw, (max-width: 1023px) calc(100vw / 2 - 40px), (max-width: 1535px) calc(min(100vw, {{ settings.page_width }}px) / 3 - 40px), calc(min(100vw, {{ settings.page_width }}px) / 3 - 80px){%- endcapture -%}
           {%- for article in blog.articles limit: section.settings.post_limit -%}
             {%- render 'article-card',
               article: article,
+              blog: blog,
               sizes: sizes,
               image_ratio: section.settings.image_ratio,
               show_tags: section.settings.show_tags,
@@ -384,6 +385,7 @@
       "label": "t:sections.global.settings.highlighted_text.label"
     },
     {
+      "visible_if": "{{ section.settings.highlighted_text == 'scribble' }}",
       "type": "select",
       "id": "highlighted_scribble",
       "options": [
@@ -502,7 +504,7 @@
   ],
   "presets": [
     {
-      "name": "t:sections.blog-posts.presets.name",
+      "name": "t:sections.blog-posts.name",
       "settings": {
         "blog": "",
         "post_limit": 3

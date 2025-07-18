@@ -13,8 +13,8 @@
 -%}
 <div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}">
   <div class="page-width{% if section.settings.full_width %} page-width--full{% endif %} relative">
-    <div class="product-bundle-wrapper block lg:flex gap-8 lg:gap-10">
-      <div class="grow">
+    <div class="product-bundle-wrapper block lg:flex lg:gap-10">
+      <div class="lg:grow">
         <motion-list class="product-grid card-grid card-grid--{{ section.settings.columns }} mobile:card-grid--{{ section.settings.columns_mobile }} grid">
           {%- for product in products limit: section.settings.product_limit -%}
             {%- render 'product-card-bundle',
@@ -24,7 +24,7 @@
               lazy_load: false,
               image_ratio: settings.product_image_ratio,
               image_fill: settings.product_image_fill,
-              show_secondary_image: false,
+              show_secondary_image: settings.product_secondary_image,
               show_vendor: settings.product_vendor,
               show_rating: settings.product_rating,
               show_color_swatches: settings.product_color_swatches,
@@ -43,30 +43,16 @@
             {%- for i in (1..section.settings.product_limit) -%}
               {%- capture placeholder -%}product-{% cycle '1', '2', '3', '4', '5', '6' %}{%- endcapture -%}
               {%- render 'product-card-placeholder',
-                lazy_load: false,
-                image_ratio: settings.product_image_ratio,
-                image_fill: settings.product_image_fill,
-                show_secondary_image: settings.product_secondary_image,
-                show_vendor: settings.product_vendor,
-                show_rating: settings.product_rating,
-                show_color_swatches: settings.product_color_swatches,
-                show_countdown: settings.product_countdown,
-                show_quick_add: settings.product_quick_add,
-                show_quick_view: settings.product_quick_view,
-                show_save_amount: settings.product_save_amount,
-                save_type: settings.product_save_type,
-                picker_type: section.settings.picker_type,
-                enable_color_swatches: section.settings.enable_color_swatches,
-                color_swatch_type: section.settings.color_swatch_type,
-                controls: controls,
                 placeholder: placeholder
+                image_ratio: settings.product_image_ratio,
+                show_vendor: settings.product_vendor
               -%}
             {%- endfor -%}
           {%- endfor -%}
         </motion-list>
       </div>
-      <product-bundle class="product-bundle grow-0 block" id="{{ controls }}" data-minimum="{{ section.settings.minimum_quantity }}" data-maximum="{{ section.settings.maximum_quantity }}"{% if section.settings.prevent_duplicate_products %} data-prevent-duplicate{% endif %}>
-        <sticky-element class="product-bundle__sidebar flex flex-col gap-7d5 md:gap-10 sticky top-0">
+      <product-bundle class="product-bundle lg:grow-0 block pointer-events-none" id="{{ controls }}" data-minimum="{{ section.settings.minimum_quantity }}" data-maximum="{{ section.settings.maximum_quantity }}"{% if section.settings.prevent_duplicate_products %} data-prevent-duplicate{% endif %}>
+        <sticky-element class="product-bundle__sidebar flex flex-col gap-7d5 md:gap-10 sticky top-0 pointer-events-auto overflow-hidden">
           {%- if section.settings.heading != blank or section.settings.subheading != blank or section.settings.description != blank -%}
             <div class="title-wrapper leading-none grid gap-2 {{ section.settings.heading_alignment }} relative z-1">
               {%- if section.settings.subheading != blank -%}
@@ -78,7 +64,7 @@
                 <product-bundle-toggle-button class="product-bundle__toggle flex items-center justify-between gap-3" aria-controls="{{ controls }}">
                   <{{ section.settings.heading_tag }} class="heading {{ section.settings.heading_size }} leading-none tracking-tight">
                     {%- if section.settings.highlighted_text == 'none' -%}
-                      <split-words class="split-words block" data-animate="fade-up-large">{{ section.settings.heading }}</split-words>
+                      <split-words class="split-words js-invisible block" data-animate="fade-up-large">{{ section.settings.heading }}</split-words>
                     {%- else -%}
                       {%- liquid
                         assign with_gradient = false
@@ -109,7 +95,7 @@
             {%- for i in (1..section.settings.minimum_quantity) -%}
               {%- assign product = products[forloop.index0] -%}
               <div class="horizontal-product flex items-center gap-3" data-product-bundle-variant available>
-                <figure class="horizontal-product__media media media--square aspect-square relative overflow-hidden flex-auto" data-product-bundle-variant-media></figure>
+                <figure class="horizontal-product__media media media--{{ settings.product_image_ratio }}{% unless settings.product_image_fill %} media--contain{% endunless %} aspect-{{ settings.product_image_ratio }} relative overflow-hidden shrink-0" data-product-bundle-variant-media></figure>
                 <div class="horizontal-product__details grow flex flex-col justify-start gap-2d5" data-product-bundle-variant-content>
                   <span class="horizontal-product__skeleton"></span>
                   <span class="horizontal-product__skeleton"></span>
@@ -153,7 +139,7 @@
           </div>
           <div class="product-bundle__footer grid gap-2d5">
             <div class="hidden lg:flex gap-4">
-              <div class="heading text-xl flex-auto">{{ 'sections.product_bundle.total' | t }}</div>
+              <div class="heading text-xl shrink-0">{{ 'sections.product_bundle.total' | t }}</div>
               <div class="heading text-xl grow font-bold text-right" data-product-bundle-total-with-currency>{{ 0 | money_with_currency }}</div>
             </div>
             <button type="button" class="button button--primary w-full" is="hover-button" data-product-bundle-submit disabled>
@@ -304,6 +290,7 @@
       "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.label"
     },
     {
+      "visible_if": "{{ section.settings.picker_type == 'button' }}",
       "type": "checkbox",
       "id": "enable_color_swatches",
       "default": true,
@@ -311,6 +298,7 @@
       "info": "t:sections.main-product.blocks.variant_picker.settings.enable_color_swatches.info"
     },
     {
+      "visible_if": "{{ section.settings.picker_type == 'button' and section.settings.enable_color_swatches == true }}",
       "type": "select",
       "id": "color_swatch_type",
       "options": [
@@ -335,7 +323,7 @@
       "type": "inline_richtext",
       "id": "heading",
       "label": "t:sections.global.settings.heading.label",
-      "default": "Product bundle"
+      "default": "Your bundle"
     },
     {
       "type": "select",
@@ -478,6 +466,7 @@
       "label": "t:sections.global.settings.highlighted_text.label"
     },
     {
+      "visible_if": "{{ section.settings.highlighted_text == 'scribble' }}",
       "type": "select",
       "id": "highlighted_scribble",
       "options": [
@@ -596,7 +585,7 @@
   ],
   "presets": [
     {
-      "name": "t:sections.product-bundle.presets.name"
+      "name": "t:sections.product-bundle.name"
     }
   ],
   "disabled_on": {

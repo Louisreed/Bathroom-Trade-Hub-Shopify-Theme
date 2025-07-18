@@ -7,7 +7,7 @@
       "vendor": "Anbieter:",
       "error": "Fehler",
       "star_reviews_count": {
-        "zero": "Keine Bewertungen",
+        "zero": "Noch keine Bewertungen",
         "one": "{{ count }} Bewertung",
         "other": "{{ count }} Bewertungen"
       },
@@ -25,7 +25,7 @@
     },
     "404": {
       "title": "Seite nicht gefunden",
-      "subtext_html": "Es sieht so aus, als ob die von Ihnen gesuchte Seite nicht mehr existiert.<br>Gehen Sie zurück zur vorherigen Seite oder zu den Seiten darunter.",
+      "subtext_html": "Es sieht so aus, als ob die von Ihnen gesuchte Seite nicht mehr existiert.<br>Gehen Sie zurück zur vorherigen Seite oder zu den anderen Seiten.",
       "back_to_home": "Zurück zur Startseite",
       "continue_shopping": "Weiter shoppen"
     },
@@ -83,7 +83,7 @@
       }
     },
     "newsletter": {
-      "label": "Melden Sie sich für unsere Mailingliste an",
+      "label": "Melden Sie sich für unseren Newsletter an",
       "success": "Danke für deine Anmeldung",
       "submit": "Abonnieren"
     },
@@ -117,12 +117,13 @@
         "other": "{{ count }} Artikel"
       },
       "free_shipping": {
-        "remaining_html": "Geben Sie {{ remaining_amount }} zusätzlich aus, um kostenlosen Versand zu erhalten!",
+        "remaining_html": "Nur noch {{ remaining_amount }} fehlen, um kostenlosen Versand zu erhalten!",
         "congratulations_html": "Sie haben Anspruch auf kostenlose Lieferung."
       },
       "note": {
         "title": "Notiz",
         "caption": "Sonderanweisung bestellen",
+        "placeholder": "Notiz",
         "button": "Anwenden"
       },
       "shipping_calculator": {
@@ -132,8 +133,18 @@
         "button": "Berechnen",
         "error": "Beim Abrufen der Versandtarife sind ein oder mehrere Fehler aufgetreten:",
         "not_found": "Wir liefern leider nicht an Ihre Adresse.",
-        "one_result": "Es gibt nur einen Versandtarif für Ihre Adresse:",
+        "one_result": "Es gibt einen Versandtarif für Ihre Adresse:",
         "multiple_results": "Es gibt mehrere Versandtarife für Ihre Adresse:"
+      },
+      "discount": {
+        "title": "Rabatt",
+        "caption": "Rabatt",
+        "placeholder": "Rabattcode",
+        "button": "Anwenden",
+        "error": "Rabattcode kann nicht auf den Warenkorb angewendet werden",
+        "shipping_error": "Versandrabatte werden beim Checkout angezeigt, nachdem die Adresse hinzugefügt wurde",
+        "applied": "Angewendeter Rabattcode: {{ code }}",
+        "remove": "Rabatt {{ code }} entfernen"
       },
       "recently_viewed": {
         "empty": "Ihre zuletzt angesehenen Produkte sind leer."
@@ -158,6 +169,11 @@
     }
   },
   "sections": {
+    "announcements": {
+      "carousel": "Karussell",
+      "announcement": "Ankündigung",
+      "announcement_bar": "Ankündigungsleiste"
+    },
     "blog_posts": {
       "view_all": "Alle anzeigen"
     },
@@ -169,12 +185,15 @@
       "view_all": "Alle anzeigen"
     },
     "map": {
+      "back": "Zurück",
+      "view_details": "Details anzeigen",
       "address_error": "Kann die Adresse nicht finden",
       "address_no_results": "Keine Ergebnisse für diese Adresse",
       "address_query_limit_html": "Sie haben die Google- API-Nutzungsgrenze überschritten. Betrachten wir zu einem <a href=\"https://developers.google.com/maps/premium/usage-limits\">Premium-Paket</a> zu aktualisieren.",
       "auth_error_html": "Es gab ein Problem bei Google Maps Konto zu authentifizieren. Erstellen und die <a href=\"https://developers.google.com/maps/documentation/javascript/get-api-key\">JavaScript- API</a> und  <a href=\"https://developers.google.com/maps/documentation/geocoding/get-api-key\">Geocoding API</a> -Berechtigungen der App aktivieren."
     },
     "slideshow": {
+      "carousel": "Karussell",
       "play_slideshow": "Diashow abspielen",
       "pause_slideshow": "Pause Diashow"
     },
@@ -185,7 +204,7 @@
       "discounts_at_checkout": "Rabatte werden an der Kasse abgezogen."
     },
     "quick_order_list": {
-      "product_total": "Produktzwischensumme",
+      "product_total": "Zwischensumme",
       "view_cart": "Warenkorb ansehen",
       "each": "{{ money }}/Stück",
       "product": "Produkt",
@@ -200,8 +219,8 @@
         "other": "{{ quantity }} Artikel entfernt"
       },
       "product_variants": "Produktvarianten",
-      "total_items": "Artikel gesamt",
-      "remove_all_items_confirmation": "Alle {{ quantity }} Artikel aus deinem Warenkorb entfernen?",
+      "total_items": "Artikel gesamt: {{ count }}",
+      "remove_all_items_confirmation": "Alle {{ quantity }} Artikel aus Ihrem Warenkorb entfernen?",
       "remove_all": "Alle entfernen",
       "cancel": "Abbrechen",
       "remove_all_single_item_confirmation": "1 Artikel aus dem Warenkorb entfernen?",
@@ -213,6 +232,7 @@
   "blogs": {
     "article": {
       "written_by_html": "von {{ author }}",
+      "filter": "Filter",
       "all_tags": "Alle",
       "read_more": "Weiterlesen"
     },
@@ -233,10 +253,12 @@
   },
   "cart": {
     "general": {
-      "title": "Dein Warenkorb",
+      "title": "Ihr Warenkorb",
       "remove": "Entfernen",
       "note": "Spezielle Bestellanweisungen",
       "subtotal": "Zwischensumme",
+      "cart_error": "Beim Aktualisieren Ihres Warenkorbs ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.",
+      "cart_quantity_error_html": "Sie können Ihrem Warenkorb nur {{ quantity }} Stück dieses Artikels hinzufügen.",
       "taxes_and_shipping_policy_at_checkout_html": "Steuern und <a href=\"{{ link }}\">Versand</a> werden beim Checkout berechnet",
       "taxes_included_but_shipping_at_checkout": "Inklusive Steuern, Versand wird beim Checkout berechnet",
       "taxes_included_and_shipping_policy_html": "Inklusive Steuern. <a href=\"{{ link }}\">Versand </a> wird beim Checkout berechnet",
@@ -244,11 +266,12 @@
       "update": "Aktualisieren",
       "checkout": "Auschecken",
       "we_accept": "Wir akzeptieren",
-      "empty": "Dein Warenkorb ist leer.",
+      "empty": "Ihr Warenkorb ist leer.",
       "continue_shopping": "Weiter shoppen"
     },
     "headings": {
       "product": "Produkt",
+      "price": "Preis",
       "total": "Gesamtsumme",
       "quantity": "Anzahl"
     },
@@ -380,6 +403,7 @@
       "payment_status": "Zahlungsstatus",
       "shipping_address": "Lieferadresse",
       "fulfillment_status": "Fulfillmentstatus",
+      "discounts": "Rabatte",
       "discount": "Rabatt",
       "shipping": "Versand",
       "tax": "Steuer",
@@ -435,7 +459,7 @@
       "color_swatch_trigger": "Farbe",
       "size_trigger": "Größe",
       "size_chart": "Größentabelle",
-      "save_html": "Sparen {{ saved_amount }}",
+      "save_html": "Sparen Sie {{ saved_amount }}",
       "sale": "Reduziert",
       "show_more": "Mehr anzeigen"
     },
@@ -449,12 +473,13 @@
       "view_product": "Produkt ansehen",
       "pre_order": "Vorbestellung",
       "add_to_bundle": "Zum Bundle hinzufügen",
+      "shop_the_look": "Shoppe den Look",
       "vendor": "Anbieter",
       "include_taxes": "inkl. MwSt.",
       "shipping_policy_html": "zzgl. <a href='{{ link }}'>Versandkosten</a>",
       "will_not_ship_until": "Wird nach dem {{ date }} versendet",
       "will_be_in_stock_after": "Wird nach dem {{ date }} auf Lager sein",
-      "waiting_for_stock": "Inventar auf dem Weg",
+      "waiting_for_stock": "Mehr ist auf dem Weg",
       "xr_button": "In deinem Bereich ansehen",
       "xr_button_label": "\"Ansicht in deinem Raum\" lädt den Artikel in ein Augmented-Reality-Fenster",
       "read_more": "Alle Details anzeigen",
@@ -465,7 +490,7 @@
       "regular_price": "Normaler Preis",
       "sale_price": "Verkaufspreis",
       "unit_price": "Grundpreis",
-      "from_price_html": "<small>Von</small> {{ price }}"
+      "from_price_html": "<small>Ab</small> {{ price }}"
     },
     "media": {
       "open_media": "Medien {{ index }} in Modal öffnen",
@@ -512,9 +537,9 @@
       "view_store_info": "Shop-Informationen anzeigen",
       "check_other_stores": "Verfügbarkeit in anderen Shops überprüfen",
       "pick_up_available": "Abholung verfügbar",
-      "pick_up_available_at_html": "Abholung bei <span class=\"color-foreground\">{{ location_name }}</span> verfügbar",
+      "pick_up_available_at_html": "Abholung bei {{ location_name }} verfügbar",
       "pick_up_unavailable": "Abholung momentan nicht möglich",
-      "pick_up_unavailable_at_html": "Abholung bei <span class=\"color-foreground\">{{ location_name }}</span> derzeit nicht verfügbar",
+      "pick_up_unavailable_at_html": "Abholung bei {{ location_name }} derzeit nicht verfügbar",
       "unavailable": "Verfügbarkeit für Abholungen konnte nicht geladen werden",
       "refresh": "Aktualisieren"
     },

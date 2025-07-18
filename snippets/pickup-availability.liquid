@@ -1,14 +1,25 @@
-{%- comment -%}
-  Renders the store availability for a given variant, along the associated modal.
-  Accepts:
-  - product: {Object} product object.
-  - product_form_id: {String} product form id.
-  - product_id: {String} The ID of the current product.
-  - section_id: {String} The ID of section to which this snippet belongs.
+{%- doc -%}
+  Displays store pickup availability with modal for viewing all pickup locations.
 
-  Usage:
-  {% render 'pickup-availability', product: product, product_form_id: product_form_id %}
-{%- endcomment -%}
+  Shows real-time pickup status and estimated times for the selected product variant.
+
+  @param {object} product - Product object containing variant and availability data
+  @param {object} block - Section block with pickup display settings
+  @param {string} product_form_id - Form ID for variant change integration
+  @param {string} product_id - Product ID for unique element targeting
+  @param {object} section - Section object for conditional asset loading
+  @param {string} section_id - Section ID for component identification
+
+  @example
+  {% render 'pickup-availability',
+     product: product,
+     block: block,
+     product_form_id: product_form_id,
+     product_id: product.id,
+     section: section,
+     section_id: section.id
+  %}
+{%- enddoc -%}
 
 {%- assign pick_up_availabilities = product.selected_or_first_available_variant.store_availabilities | where: 'pick_up_enabled', true -%}
 
@@ -34,7 +45,7 @@
     <template>
       <div class="pickup-availability-preview grid items-start justify-between gap-5">
         <div class="pickup-availability-info flex items-start gap-2d5">
-          {%- render 'icon', icon: 'alert-circle-filled', size: 'sm', class: 'flex-auto' -%}
+          {%- render 'icon', icon: 'alert-circle-filled', size: 'sm', class: 'shrink-0' -%}
           <div class="grid gap-1">
             <p class="text-sm font-medium leading-tight">{{ 'products.pickup_availability.unavailable' | t }}</p>
           </div>
@@ -51,7 +62,7 @@
       {%- assign closest_location = pick_up_availabilities.first -%}
       {%- if closest_location.available -%}
         <div class="pickup-availability-info flex items-start gap-2d5">
-          {%- render 'icon', icon: 'check-circle-filled', size: 'sm', class: 'flex-auto' -%}
+          {%- render 'icon', icon: 'check-circle-filled', size: 'sm', class: 'shrink-0' -%}
           <div class="grid gap-1">
             <p class="text-sm font-medium leading-tight">{{ 'products.pickup_availability.pick_up_available_at_html' | t: location_name: closest_location.location.name }}</p>
             <small class="text-xs leading-tight">{{ closest_location.pick_up_time }}</small>
@@ -70,7 +81,7 @@
         </button>
       {%- else -%}
         <div class="pickup-availability-info flex items-start gap-2d5">
-          {%- render 'icon', icon: 'alert-circle-filled', size: 'sm', class: 'flex-auto' -%}
+          {%- render 'icon', icon: 'alert-circle-filled', size: 'sm', class: 'shrink-0' -%}
           <div class="grid gap-1">
             <p class="text-sm font-medium leading-tight">{{ 'products.pickup_availability.pick_up_unavailable_at_html' | t: location_name: closest_location.location.name }}</p>
           </div>

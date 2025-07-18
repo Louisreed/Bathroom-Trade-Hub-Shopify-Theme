@@ -1,21 +1,28 @@
-{%- comment -%}
-  Renders a list of product's price (regular, sale)
+{%- doc -%}
+  Renders product pricing with sale detection, unit prices, and dynamic price ranges.
 
-  Accepts:
-  - product: {Object} Product Liquid object (optional)
-  - placeholder: {Boolean} Renders a placeholder price (optional)
-  - use_variant: {Boolean} Renders selected or first variant price instead of overall product pricing (optional)
-  - show_badges: {Boolean} Renders 'Sale' and 'Sold Out' tags if the product matches the condition (optional)
-  - hide_unit_price: if set to true, unit pricing are hidden (optional)
-  - skip_to_price: if set to true, quantity price breaks configured are hidden (optional)
-  - class: {String} Adds a price class to the price element (optional)
+  Displays comprehensive pricing information including regular prices, sale prices, price ranges for products with variants, and unit pricing. Automatically detects sales, formats currencies, and handles various pricing scenarios with proper accessibility support.
 
-  Usage:
-  {% render 'product-price', product: product %}
-{%- endcomment -%}
+  @param {object} [product] - Shopify product object for pricing
+  @param {object} [variant] - Specific variant for single price display
+  @param {boolean} [use_variant] - Show variant price vs product range
+  @param {boolean} [placeholder] - Display placeholder $19.99 price
+  @param {boolean} [hide_unit_price] - Hide unit price information
+  @param {boolean} [skip_to_price] - Skip quantity break considerations
+  @param {boolean} [show_badges] - Show sale/sold out badges (reserved)
+  @param {string} [class] - Additional CSS classes
+
+  @example
+  {% render 'product-price',
+     product: product,
+     variant: product.selected_variant,
+     use_variant: true
+  %}
+{%- enddoc -%}
+
 {%- liquid
   if use_variant
-    assign target = product.selected_or_first_available_variant
+    assign target = variant | default: product.selected_or_first_available_variant
   elsif placeholder
     assign target = null
   else
@@ -39,14 +46,7 @@
     <span class="sr-only">{{ 'products.price.sale_price' | t }}</span>
   {%- endif -%}
 
-  <span 
-    data-wpd-product-handle="{{ product.handle }}"
-    data-wpd-variant-id="{{ product.selected_or_first_available_variant.id }}"
-    data-wpd-variant-price="{{ product.selected_or_first_available_variant.price }}"
-    data-wpd-variant-compare-at-price="{{ product.selected_or_first_available_variant.compare_at_price }}"
-    data-wpd-product-collection-ids="{% assign wpdProductCollectionIds = product.collections | map:'id' %}{{ wpdProductCollectionIds | join:',' }}"
-    data-wpd-product-id="{{ product.id }}"
-    class="price__regular whitespace-nowrap">
+  <span class="price__regular whitespace-nowrap">
     {%- liquid
       if product.quantity_price_breaks_configured? != true or skip_to_price
         if target == product and product.price_varies
@@ -76,7 +76,7 @@
 
   {%- if on_sale -%}
     <span class="sr-only">{{ 'products.price.regular_price' | t }}</span>
-    <span class="data-wpd-hide price__sale inline-flex items-center h-auto relative">
+    <span class="price__sale inline-flex items-center h-auto relative">
       {%- liquid
         if settings.currency_code_enabled
           echo compare_at_price | money_with_currency

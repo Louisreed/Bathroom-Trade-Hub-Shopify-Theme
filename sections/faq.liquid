@@ -31,7 +31,7 @@
                     {%- if section.settings.heading != blank -%}
                       <{{ section.settings.heading_tag }} class="heading {{ section.settings.heading_size }}">
                         {%- if section.settings.highlighted_text == 'none' -%}
-                          <split-words class="split-words block" data-animate="fade-up-large">{{ section.settings.heading }}</split-words>
+                          <split-words class="split-words js-invisible block" data-animate="fade-up-large">{{ section.settings.heading }}</split-words>
                         {%- else -%}
                           {%- render 'highlighted-text', content: section.settings.heading, style: section.settings.highlighted_text, scribble: section.settings.highlighted_scribble, gradient: with_gradient -%}
                         {%- endif -%}
@@ -48,17 +48,13 @@
 
                 {%- if section.settings.button_label != blank -%}
                   <p>
-                    <a class="button button--secondary icon-with-text"{% if section.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ section.settings.button_link }}"{% if section.settings.button_external %} target="_blank" rel="noopener"{% endif %}{% endif %} is="hover-link">
-                      <span class="btn-fill" data-fill></span>
-                      <span class="btn-text">
-                        {%- liquid
-                          echo section.settings.button_label | escape
-                          if section.settings.button_icon
-                            render 'icon', icon: 'arrow-right', size: 'sm', class: 'transform'
-                          endif
-                        -%}
-                      </span>
-                    </a>
+                    {%- render 'button',
+                      style: 'secondary',
+                      label: section.settings.button_label,
+                      link: section.settings.button_link,
+                      external: section.settings.button_external,
+                      show_icon: section.settings.button_icon
+                    -%}
                   </p>
                 {%- endif -%}
               </div>
@@ -92,7 +88,7 @@
                         <span class="text-base lg:text-lg xl:text-xl font-medium leading-tight">
                           {%- render 'highlighted-text', content: block.settings.title, style: block.settings.highlighted_text, scribble: block.settings.highlighted_scribble, gradient: with_gradient -%}
                         </span>
-                        {%- render 'icon', icon: 'plus-alt', size: 'xs', class: 'flex-auto' -%}
+                        {%- render 'icon', icon: 'plus-2', size: 'xs', class: 'shrink-0' -%}
                       </summary>
                       <div class="details__content text-base rte">
                         {{- block.settings.text -}}
@@ -373,7 +369,8 @@
     {
       "type": "text",
       "id": "button_label",
-      "label": "t:sections.global.settings.button_label.label"
+      "label": "t:sections.global.settings.button_label.label",
+      "info": "t:sections.global.settings.button_label.info"
     },
     {
       "type": "url",
@@ -381,12 +378,14 @@
       "label": "t:sections.global.settings.button_link.label"
     },
     {
+      "visible_if": "{{ section.settings.button_label != blank }}",
       "type": "checkbox",
       "id": "button_external",
       "label": "t:sections.global.settings.button_external.label",
       "default": false
     },
     {
+      "visible_if": "{{ section.settings.button_label != blank }}",
       "type": "checkbox",
       "id": "button_icon",
       "label": "t:sections.global.settings.button_icon.label",
@@ -434,6 +433,7 @@
       "label": "t:sections.global.settings.highlighted_text.label"
     },
     {
+      "visible_if": "{{ section.settings.highlighted_text == 'scribble' }}",
       "type": "select",
       "id": "highlighted_scribble",
       "options": [
@@ -625,6 +625,7 @@
           "label": "t:sections.global.settings.highlighted_text.label"
         },
         {
+          "visible_if": "{{ block.settings.highlighted_text == 'scribble' }}",
           "type": "select",
           "id": "highlighted_scribble",
           "options": [
@@ -713,6 +714,7 @@
           "label": "t:sections.global.settings.highlighted_text.label"
         },
         {
+          "visible_if": "{{ block.settings.highlighted_text == 'scribble' }}",
           "type": "select",
           "id": "highlighted_scribble",
           "options": [
@@ -822,6 +824,7 @@
           "label": "t:sections.global.settings.highlighted_text.label"
         },
         {
+          "visible_if": "{{ block.settings.highlighted_text == 'scribble' }}",
           "type": "select",
           "id": "highlighted_scribble",
           "options": [
@@ -855,7 +858,7 @@
   ],
   "presets": [
     {
-      "name": "t:sections.faq.presets.name",
+      "name": "t:sections.faq.name",
       "blocks": [
         {
           "type": "question"

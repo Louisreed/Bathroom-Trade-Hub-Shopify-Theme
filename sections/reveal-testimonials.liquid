@@ -4,6 +4,12 @@
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
     {%- render 'section-variables', section: section -%}
   }
+
+  {%- if settings.color_background == section.settings.color_background or section.settings.color_background == blank or section.settings.color_background == 'rgba(0,0,0,0)'%}
+    #shopify-section-{{ section.id }} .reveal-testimonials .testimonial:nth-child(odd) {
+      border: 1px solid rgb(var(--color-border));
+    }
+  {% endif -%}
 </style>
 
 <div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}">
@@ -14,7 +20,7 @@
         assign limit = words.size | divided_by: 2
       -%}
       <{{ section.settings.heading_tag }} class="testimonials-title title-wrapper">
-        <split-words class="split-words heading {{ section.settings.heading_size }} md:flex md:justify-between" data-animate="fade-up-large">
+        <split-words class="split-words js-invisible heading {{ section.settings.heading_size }} md:flex md:justify-between" data-animate="fade-up-large">
           <span class="split-words inline">
             {%- liquid
               for word in words, limit: limit
@@ -42,7 +48,7 @@
 
     {%- if section.blocks.size > 0 -%}
       <div class="flex justify-center">
-        <reveal-testimonials class="reveal-testimonials grid gap-4 md:gap-10 rte relative z-1" initial-index="{{ section.blocks.size | minus: 1 }}" watch-css>
+        <div class="reveal-testimonials grid gap-4 md:gap-10 rte relative z-1" initial-index="{{ section.blocks.size | minus: 1 }}">
           {%- liquid
             assign with_gradient = false
             if section.settings.gradient_highlight != blank and section.settings.gradient_highlight != 'rgba(0,0,0,0)'
@@ -51,14 +57,29 @@
           -%}
           {%- for block in section.blocks -%}
             {%- liquid
-              assign start_y = 10
-              assign end_y = section.blocks.size | minus: forloop.index | times: 5
-              if forloop.first or forloop.last
+              assign start_y = 40
+
+              if section.blocks.size > 5
+                if forloop.index > 5
+                  assign end_y = section.blocks.size | minus: forloop.index | times: 20
+                else
+                  assign end_y = 5 | minus: forloop.index | times: 20
+                endif
+              else
+                assign end_y = section.blocks.size | minus: forloop.index | times: 20
+              endif
+
+              assign modulo = forloop.index | modulo: 2
+              if modulo == 0
+                assign start_y = start_y | plus: 20
+              endif
+
+              if forloop.first or forloop.last or forloop.index == 5
                 assign start_y = 0
                 assign end_y = 0
               endif
             -%}
-            <div class="testimonial with-{{ block.settings.icon }} w-full" is="testimonial-parallax" data-start="{{ start_y }}rem" data-stop="-{{ end_y }}rem" {{ block.shopify_attributes }}>
+            <div class="testimonial with-{{ block.settings.icon }} w-full" is="testimonial-parallax" data-start="{{ start_y }}%" data-stop="-{{ end_y | abs }}%" {{ block.shopify_attributes }}>
               <blockquote>
                 <div class="flex items-center gap-4 md:gap-6">
                   {%- if block.settings.image != blank -%}
@@ -86,7 +107,7 @@
               </blockquote>
             </div>
           {%- endfor -%}
-        </reveal-testimonials>
+        </div>
       </div>
     {%- endif -%}
   </div>
@@ -327,6 +348,7 @@
           "label": "t:sections.testimonials.blocks.testimonial.settings.image.label"
         },
         {
+          "visible_if": "{{ block.settings.image != blank }}",
           "type": "select",
           "id": "image_ratio",
           "options": [
@@ -388,6 +410,7 @@
           "label": "t:sections.global.settings.highlighted_text.label"
         },
         {
+          "visible_if": "{{ block.settings.highlighted_text == 'scribble' }}",
           "type": "select",
           "id": "highlighted_scribble",
           "options": [
@@ -421,7 +444,7 @@
   ],
   "presets": [
     {
-      "name": "t:sections.reveal-testimonials.presets.name",
+      "name": "t:sections.reveal-testimonials.name",
       "blocks": [
         {
           "type": "testimonial"

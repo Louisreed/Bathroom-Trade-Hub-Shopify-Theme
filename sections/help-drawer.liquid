@@ -30,7 +30,7 @@
         <div class="rte text-base">{{ section.settings.description }}</div>
 
         {%- if section.blocks.size > 0 -%}
-          <div class="help-list grid gap-4 md:gap-5">
+          <ul class="help-list grid gap-4 md:gap-5">
             {%- liquid
               assign with_gradient = false
               if section.settings.gradient_highlight != blank and section.settings.gradient_highlight != 'rgba(0,0,0,0)'
@@ -38,7 +38,7 @@
               endif
             -%}
             {%- for block in section.blocks -%}
-              <div class="help-list__item grid gap-2d5 md:gap-3d5 relative z-1" id="shopify-block-{{ block.id }}" {{ block.shopify_attributes }}>
+              <li class="help-list__item grid gap-2 md:gap-3 relative z-1" id="shopify-block-{{ block.id }}" {{ block.shopify_attributes }}>
                 <div class="flex items-center gap-3">
                   {%- render 'icon-guarantee', icon: block.settings.icon -%}
                   <p class="h4 font-medium leading-tight md:text-lg">
@@ -48,9 +48,9 @@
                 <div class="rte text-sm">
                   {{- block.settings.text -}}
                 </div>
-              </div>
+              </li>
             {%- endfor -%}
-          </div>
+          </ul>
         {%- endif -%}
       </div>
     </div>
@@ -368,6 +368,7 @@
           "label": "t:sections.global.settings.highlighted_text.label"
         },
         {
+          "visible_if": "{{ block.settings.highlighted_text == 'scribble' }}",
           "type": "select",
           "id": "highlighted_scribble",
           "options": [

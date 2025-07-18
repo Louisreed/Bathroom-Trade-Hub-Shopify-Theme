@@ -6,12 +6,6 @@
   }
 </style>
 
-{%- if request.page_type == 'product' and section.settings.enable_reviews_integration -%}
-  <noscript>{{ 'product-reviews.css' | asset_url | stylesheet_tag }}</noscript>
-  <link rel="stylesheet" href="{{ 'product-reviews.css' | asset_url }}" media="print" fetchpriority="low" onload="this.media='all'">
-  <script type="module" src="{{ 'product-reviews.js' | asset_url }}" fetchpriority="low"></script>
-{%- endif -%}
-
 <div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}">
   <div class="page-width{% if section.settings.full_width %} page-width--full{% endif %} relative">
     {%- for block in section.blocks -%}
@@ -24,18 +18,6 @@
 {
   "name": "t:sections.apps.name",
   "settings": [
-    {
-      "type": "header",
-      "content": "t:sections.apps.settings.header__reviews.content",
-      "info": "t:sections.apps.settings.header__reviews.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_reviews_integration",
-      "label": "t:sections.apps.settings.enable_reviews_integration.label",
-      "info": "t:sections.apps.settings.enable_reviews_integration.info",
-      "default": true
-    },
     {
       "type": "header",
       "content": "t:sections.global.settings.header__colors.content",
@@ -131,7 +113,7 @@
   ],
   "presets": [
     {
-      "name": "t:sections.apps.presets.name"
+      "name": "t:sections.apps.name"
     }
   ],
   "disabled_on": {

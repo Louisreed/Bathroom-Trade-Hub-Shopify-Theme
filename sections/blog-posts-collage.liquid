@@ -50,6 +50,7 @@
             {%- endif -%}
             {%- render 'article-card',
               article: article,
+              blog: blog,
               sizes: sizes,
               image_ratio: section.settings.image_ratio,
               show_tags: section.settings.show_tags,
@@ -311,6 +312,7 @@
       "label": "t:sections.global.settings.highlighted_text.label"
     },
     {
+      "visible_if": "{{ section.settings.highlighted_text == 'scribble' }}",
       "type": "select",
       "id": "highlighted_scribble",
       "options": [
@@ -429,7 +431,7 @@
   ],
   "presets": [
     {
-      "name": "t:sections.blog-posts-collage.presets.name",
+      "name": "t:sections.blog-posts-collage.name",
       "settings": {
         "blog": "",
         "post_limit": 3

@@ -63,7 +63,7 @@
               -%}
             {%- elsif filter_type == 'sidebar' -%}
               <div class="facet-wrapper">
-                <button class="button button--secondary icon-with-text" type="button" is="filters-toogle" aria-controls="FacetFiltersContainer" aria-expanded="true">
+                <button class="button button--secondary icon-with-text" type="button" is="filters-toggle" aria-controls="FacetFiltersContainer" aria-expanded="true">
                   <span class="btn-fill" data-fill></span>
                   <span class="btn-text">
                     {%- liquid
@@ -86,7 +86,6 @@
           {%- if subcollections != blank -%}
             {%- render 'subcollections',
               main_menu: subcollections.settings.menu,
-              per_row: subcollections.settings.per_row,
               show_count: subcollections.settings.show_count
             -%}
           {%- else -%}
@@ -178,7 +177,7 @@
                   <span class="btn-fill" data-fill></span>
                   <span class="btn-text">
                     {%- liquid
-                      render 'icon', icon: 'close-alt', size: 'xxxs'
+                      render 'icon', icon: 'close-2', size: 'xxxs'
                       echo 'collections.filtering.clear_all' | t
                     -%}
                   </span>
@@ -199,7 +198,6 @@
           {%- if collection.all_products_count > 0 -%}
             <motion-list class="card-grid card-grid--{{ section.settings.columns }} mobile:card-grid--{{ section.settings.columns_mobile }} grid relative">
               {%- for product in collection.products -%}
-                {% include 'wlm-product' with product %}
                 {%- liquid
                   for block in section.blocks
                     if block.type == 'promotion' or block.type == 'promotion_video'
@@ -231,7 +229,8 @@
                   show_quick_add: settings.product_quick_add,
                   show_quick_view: settings.product_quick_view,
                   show_save_amount: settings.product_save_amount,
-                  save_type: settings.product_save_type
+                  save_type: settings.product_save_type,
+                  show_icon_list: settings.product_icon_list
                 -%}
               {%- endfor -%}
             </motion-list>
@@ -337,12 +336,14 @@
       "info": "t:sections.main-collection.settings.enable_filtering.info"
     },
     {
+      "visible_if": "{{ section.settings.enable_filtering == true }}",
       "type": "checkbox",
       "id": "filter_collapsed",
       "label": "t:sections.main-collection.settings.filter_collapsed.label",
       "default": false
     },
     {
+      "visible_if": "{{ section.settings.enable_filtering == true }}",
       "type": "select",
       "id": "filter_type",
       "label": "t:sections.main-collection.settings.filter_type.label",
@@ -359,6 +360,7 @@
       ]
     },
     {
+      "visible_if": "{{ section.settings.enable_filtering == true }}",
       "type": "checkbox",
       "id": "filter_color_swatches",
       "label": "t:sections.main-collection.settings.filter_color_swatches.label",
@@ -433,15 +435,6 @@
           "label": "t:sections.main-collection.blocks.subcollections.settings.menu.label"
         },
         {
-          "type": "range",
-          "id": "per_row",
-          "label": "t:sections.main-collection.blocks.subcollections.settings.per_row.label",
-          "default": 5,
-          "min": 2,
-          "max": 5,
-          "step": 1
-        },
-        {
           "type": "checkbox",
           "id": "show_count",
           "label": "t:sections.main-collection.blocks.subcollections.settings.show_count.label",
@@ -510,7 +503,8 @@
           "type": "text",
           "id": "button_label",
           "default": "Button label",
-          "label": "t:sections.global.settings.button_label.label"
+          "label": "t:sections.global.settings.button_label.label",
+          "info": "t:sections.global.settings.button_label.info"
         },
         {
           "type": "url",
@@ -518,22 +512,39 @@
           "label": "t:sections.global.settings.button_link.label"
         },
         {
+          "visible_if": "{{ block.settings.button_label != blank }}",
+          "type": "select",
+          "id": "button_style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "t:sections.global.settings.button_style.options__1.label"
+            },
+            {
+              "value": "secondary",
+              "label": "t:sections.global.settings.button_style.options__2.label"
+            },
+            {
+              "value": "link",
+              "label": "t:sections.global.settings.button_style.options__3.label"
+            }
+          ],
+          "default": "secondary",
+          "label": "t:sections.global.settings.button_style.label"
+        },
+        {
+          "visible_if": "{{ block.settings.button_label != blank }}",
           "type": "checkbox",
           "id": "button_external",
           "label": "t:sections.global.settings.button_external.label",
           "default": false
         },
         {
+          "visible_if": "{{ block.settings.button_label != blank }}",
           "type": "checkbox",
           "id": "button_icon",
           "label": "t:sections.global.settings.button_icon.label",
           "default": true
-        },
-        {
-          "type": "checkbox",
-          "id": "button_secondary_style",
-          "default": true,
-          "label": "t:sections.global.settings.button_secondary_style.label"
         },
         {
           "type": "select",
@@ -730,7 +741,8 @@
           "type": "text",
           "id": "button_label",
           "default": "Button label",
-          "label": "t:sections.global.settings.button_label.label"
+          "label": "t:sections.global.settings.button_label.label",
+          "info": "t:sections.global.settings.button_label.info"
         },
         {
           "type": "url",
@@ -738,22 +750,39 @@
           "label": "t:sections.global.settings.button_link.label"
         },
         {
+          "visible_if": "{{ block.settings.button_label != blank }}",
+          "type": "select",
+          "id": "button_style",
+          "options": [
+            {
+              "value": "primary",
+              "label": "t:sections.global.settings.button_style.options__1.label"
+            },
+            {
+              "value": "secondary",
+              "label": "t:sections.global.settings.button_style.options__2.label"
+            },
+            {
+              "value": "link",
+              "label": "t:sections.global.settings.button_style.options__3.label"
+            }
+          ],
+          "default": "secondary",
+          "label": "t:sections.global.settings.button_style.label"
+        },
+        {
+          "visible_if": "{{ block.settings.button_label != blank }}",
           "type": "checkbox",
           "id": "button_external",
           "label": "t:sections.global.settings.button_external.label",
           "default": false
         },
         {
+          "visible_if": "{{ block.settings.button_label != blank }}",
           "type": "checkbox",
           "id": "button_icon",
           "label": "t:sections.global.settings.button_icon.label",
           "default": true
-        },
-        {
-          "type": "checkbox",
-          "id": "button_secondary_style",
-          "default": true,
-          "label": "t:sections.global.settings.button_secondary_style.label"
         },
         {
           "type": "select",

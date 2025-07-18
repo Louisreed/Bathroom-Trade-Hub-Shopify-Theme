@@ -123,6 +123,7 @@
       "note": {
         "title": "Nota",
         "caption": "Ordina istruzioni speciali",
+        "placeholder": "Nota",
         "button": "Applicare"
       },
       "shipping_calculator": {
@@ -134,6 +135,16 @@
         "not_found": "Siamo spiacenti, non effettuiamo spedizioni al tuo indirizzo.",
         "one_result": "C'è un'unica tariffa di spedizione per il tuo indirizzo:",
         "multiple_results": "Ci sono più tariffe di spedizione per il tuo indirizzo:"
+      },
+      "discount": {
+        "title": "Sconto",
+        "caption": "Sconto",
+        "placeholder": "Codice sconto",
+        "button": "Applicare",
+        "error": "Il codice sconto non può essere applicato al tuo carrello",
+        "shipping_error": "Gli sconti sulla spedizione vengono mostrati al momento del check-out dopo l'aggiunta di un indirizzo",
+        "applied": "Codice sconto applicato: {{ code }}",
+        "remove": "Rimuovi sconto {{ code }}"
       },
       "recently_viewed": {
         "empty": "Non ci sono articoli visualizzati di recente."
@@ -158,6 +169,11 @@
     }
   },
   "sections": {
+    "announcements": {
+      "carousel": "Carousel",
+      "announcement": "Annuncio",
+      "announcement_bar": "Barra degli annunci"
+    },
     "blog_posts": {
       "view_all": "Visualizza tutto"
     },
@@ -169,12 +185,15 @@
       "view_all": "Visualizza tutto"
     },
     "map": {
+      "back": "Indietro",
+      "view_details": "Visualizza i dettagli",
       "address_error": "Errore nella ricerca di questo indirizzo",
       "address_no_results": "Nessun risultato per questo indirizzo",
       "address_query_limit_html": "Hai superato il limite di utilizzo delle API di Google. Considera l'aggiornamento ad un <a href=\"https://developers.google.com/maps/premium/usage-limits\">Piano Premium</a>.",
       "auth_error_html": "Si è verificato un problema durante l'autenticazione del tuo account Google Maps. Crea e attiva i permessi <a href=\"https://developers.google.com/maps/documentation/javascript/get-api-key\">JavaScript API</a> e  <a href=\"https://developers.google.com/maps/documentation/geocoding/get-api-key\">Geocoding API</a> della tua applicazione."
     },
     "slideshow": {
+      "carousel": "Carousel",
       "play_slideshow": "Avvia presentazione",
       "pause_slideshow": "Metti in pausa presentazione"
     },
@@ -185,7 +204,7 @@
       "discounts_at_checkout": "Gli sconti verranno applicati al momento del pagamento."
     },
     "quick_order_list": {
-      "product_total": "Subtotale prodotto",
+      "product_total": "Subtotale",
       "view_cart": "Visualizza carrello",
       "each": "{{ money }}/ciascuno",
       "product": "Prodotto",
@@ -200,7 +219,7 @@
         "other": "{{ quantity }} articoli rimossi"
       },
       "product_variants": "Varianti di prodotto",
-      "total_items": "Articoli totali",
+      "total_items": "Articoli totali: {{ count }}",
       "remove_all_items_confirmation": "Rimuovere tutti i {{ quantity }} articoli dal tuo carrello?",
       "remove_all": "Rimuovi tutto",
       "cancel": "Annulla",
@@ -213,6 +232,7 @@
   "blogs": {
     "article": {
       "written_by_html": "scritto da {{ author }}",
+      "filter": "Filtra",
       "all_tags": "Tutto",
       "read_more": "Continua a leggere"
     },
@@ -237,6 +257,8 @@
       "remove": "Rimuovi",
       "note": "Istruzioni speciali per l'ordine",
       "subtotal": "Subtotale",
+      "cart_error": "Si è verificato un errore durante l'aggiornamento del carrello. Riprova più tardi.",
+      "cart_quantity_error_html": "Puoi aggiungere soltanto {{ quantity }} di questo articolo al tuo carrello.",
       "taxes_and_shipping_policy_at_checkout_html": "Imposte e <a href=\"{{ link }}\">spese di spedizione</a> calcolate al momento del check-out",
       "taxes_included_but_shipping_at_checkout": "Imposte incluse e spese di spedizione calcolate al momento del check-out",
       "taxes_included_and_shipping_policy_html": "Imposte incluse. <a href=\"{{ link }}\">Spese di spedizione</a> calcolate al check-out.",
@@ -249,6 +271,7 @@
     },
     "headings": {
       "product": "Prodotto",
+      "price": "Prezzo",
       "total": "Totale",
       "quantity": "Quantità"
     },
@@ -380,6 +403,7 @@
       "payment_status": "Stato del pagamento",
       "shipping_address": "Indirizzo di spedizione",
       "fulfillment_status": "Stato di evasione",
+      "discounts": "Sconti",
       "discount": "Sconto",
       "shipping": "Spedizione",
       "tax": "Imposta",
@@ -449,6 +473,7 @@
       "view_product": "Vedi prodotto",
       "pre_order": "Pre-ordine",
       "add_to_bundle": "Aggiungi al pacchetto",
+      "shop_the_look": "Acquista il Look",
       "vendor": "Fornitore",
       "include_taxes": "Imposte incluse.",
       "shipping_policy_html": "<a href='{{ link }}'>Spedizione</a> calcolata alla cassa.",
@@ -512,9 +537,9 @@
       "view_store_info": "Visualizza i dettagli del negozio",
       "check_other_stores": "Verifica la disponibilità in altri negozi",
       "pick_up_available": "Ritiro disponibile",
-      "pick_up_available_at_html": "Ritiro disponibile presso la sede <span class=\"color-foreground\">{{ location_name }}</span>",
+      "pick_up_available_at_html": "Ritiro disponibile presso la sede {{ location_name }}",
       "pick_up_unavailable": "Ritiro attualmente non disponibile",
-      "pick_up_unavailable_at_html": "Ritiro attualmente non disponibile presso la sede <span class=\"color-foreground\">{{ location_name }}</span>",
+      "pick_up_unavailable_at_html": "Ritiro attualmente non disponibile presso la sede {{ location_name }}",
       "unavailable": "Impossibile caricare la disponibilità di ritiro",
       "refresh": "Aggiorna"
     },

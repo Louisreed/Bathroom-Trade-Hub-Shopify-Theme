@@ -31,6 +31,10 @@
   height: var(--sp-4);
 }
 
+.article .page-width--narrow .banner__box {
+  padding-block: 0;
+}
+
 .article .badge {
   padding: var(--sp-2) var(--sp-4);
   font-size: var(--text-3xs);

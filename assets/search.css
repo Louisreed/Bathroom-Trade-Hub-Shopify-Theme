@@ -12,12 +12,6 @@
   padding-block-start: clamp(var(--sp-8), 2.526vw, var(--sp-12));
 }
 
-.collection .search__form {
-  width: 100%;
-  max-width: 50rem;
-  margin-inline: auto;
-}
-
 .collection .empty-state {
   margin-block: var(--sp-12) var(--sp-5);
 }

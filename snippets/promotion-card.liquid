@@ -1,3 +1,14 @@
+{%- doc -%}
+  Renders a promotional card with image or video background and optional content overlay.
+
+  Supports responsive media, parallax effects, and flexible content positioning with CTA buttons.
+
+  @param {object} block - Block object with settings and attributes
+
+  @example
+  {% render 'promotion-card', block: block %}
+{%- enddoc -%}
+
 {%- liquid
   assign promotion_has_content = false
   if block.settings.icon != blank or block.settings.heading != blank or block.settings.content != blank or block.settings.button_label != blank
@@ -5,14 +16,14 @@
   endif
 -%}
 
-<div class="card product-card product-card--promo block leading-none relative overflow-hidden" id="shopify-block-{{ block.id }}">
+<div class="card product-card product-card--promo block leading-none relative" id="shopify-block-{{ block.id }}">
   <style>
     #shopify-block-{{ block.id }} {
       {%- render 'section-variables', section: block -%}
       --card-column-size: {{ block.settings.column_size }};
     }
   </style>
-  <div class="product-card__media{% unless promotion_has_content %} without-content{% endunless %} relative top-0 left-0 w-full h-full">
+  <div class="product-card__media{% unless promotion_has_content %} without-content{% endunless %} relative top-0 left-0 w-full h-full overflow-hidden">
     <media-element class="flex relative top-0 left-0 w-full h-full"{% if block.type == 'promotion' %} data-parallax="0.3"{% endif %}>
       {%- if block.type == 'promotion' -%}
         <picture class="media block w-full h-full relative overflow-hidden">
@@ -85,17 +96,13 @@
           {%- endif -%}
   
           {%- if block.settings.button_label != blank -%}
-            <a class="button{% if block.settings.button_secondary_style %} button--secondary{% else %} button--primary{% endif %} icon-with-text"{% if block.settings.button_link != blank %} href="{{ block.settings.button_link }}"{% if block.settings.button_external %} target="_blank" rel="noopener"{% endif %}{% else %} role="link" aria-disabled="true"{% endif %} is="hover-link">
-              <span class="btn-fill" data-fill></span>
-              <span class="btn-text">
-                {%- liquid
-                  echo block.settings.button_label | escape
-                  if block.settings.button_icon
-                    render 'icon', icon: 'arrow-right', size: 'xs', class: 'transform'
-                  endif
-                -%}
-              </span>
-            </a>
+            {%- render 'button',
+              label: block.settings.button_label,
+              link: block.settings.button_link,
+              style: block.settings.button_style,
+              external: block.settings.button_external,
+              show_icon: block.settings.button_icon
+            -%}
           {%- endif -%}
         </div>
       </div>

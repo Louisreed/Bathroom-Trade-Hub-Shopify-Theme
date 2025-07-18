@@ -83,7 +83,7 @@
       }
     },
     "newsletter": {
-      "label": "Inscrivez-vous à notre infolettre",
+      "label": "Abonnez-vous aux messages privés",
       "success": "Merci de vous être inscrit",
       "submit": "Abonnieren"
     },
@@ -118,11 +118,12 @@
       },
       "free_shipping": {
         "remaining_html": "Dépensez {{ remaining_amount }} de plus pour obtenir la livraison gratuite!",
-        "congratulations_html": "Vous avez droit à la livraison gratuite."
+        "congratulations_html": "Votre livraison est gratuite."
       },
       "note": {
-        "title": "Remarque",
-        "caption": "Commander des instructions spéciales",
+        "title": "Notes",
+        "caption": "Ajouter des instructions spéciales",
+        "placeholder": "Notes",
         "button": "Appliquer"
       },
       "shipping_calculator": {
@@ -134,6 +135,16 @@
         "not_found": "Désolé, nous ne livrons pas à votre adresse.",
         "one_result": "Il n'y a qu'un seul tarif d'expédition pour votre adresse:",
         "multiple_results": "Il y a plusieurs tarifs d'expédition pour votre adresse:"
+      },
+      "discount": {
+        "title": "Réduction",
+        "caption": "Réduction",
+        "placeholder": "Code de réduction",
+        "button": "Appliquer",
+        "error": "Le code de réduction ne peut pas être appliqué à votre panier",
+        "shipping_error": "Les réductions sur l’expédition sont affichées lors du paiement après avoir ajouté une adresse",
+        "applied": "Code de réduction appliqué : {{ code }}",
+        "remove": "Supprimer le {{ code }} de réduction"
       },
       "recently_viewed": {
         "empty": "Votre liste de produits récemment consultés est vide."
@@ -158,6 +169,11 @@
     }
   },
   "sections": {
+    "announcements": {
+      "carousel": "Carrousel",
+      "announcement": "Annonce",
+      "announcement_bar": "Barre d’annonces"
+    },
     "blog_posts": {
       "view_all": "Tout afficher"
     },
@@ -169,12 +185,15 @@
       "view_all": "Tout afficher"
     },
     "map": {
+      "back": "Retour",
+      "view_details": "Afficher les détails",
       "address_error": "Vous ne trouvez pas cette adresse",
       "address_no_results": "Aucun résultat pour cette adresse",
       "address_query_limit_html": "Vous avez dépassé la limite de Google utilisation de l'API. Envisager la mise à niveau à un <a href=\"https://developers.google.com/maps/premium/usage-limits\">régime spécial</a>.",
       "auth_error_html": "Il y avait un problème authentifier votre compte Google Maps . Créer et activer <a href=\"https://developers.google.com/maps/documentation/javascript/get-api-key\">l'API JavaScript</a> et  <a href=\"https://developers.google.com/maps/documentation/geocoding/get-api-key\">l'API de géocodage</a> les autorisations de application."
     },
     "slideshow": {
+      "carousel": "Carrousel",
       "play_slideshow": "Lire le diaporama",
       "pause_slideshow": "Diaporama Pause"
     },
@@ -185,7 +204,7 @@
       "discounts_at_checkout": "Les réductions seront appliquées à la caisse."
     },
     "quick_order_list": {
-      "product_total": "Sous-total des produits",
+      "product_total": "Sous-total",
       "view_cart": "Voir le panier",
       "each": "{{ money }}/pièce",
       "product": "Produit",
@@ -200,7 +219,7 @@
         "other": "{{ quantity }} articles retirés"
       },
       "product_variants": "Variantes de produits",
-      "total_items": "Total des articles",
+      "total_items": "Total des articles: {{ count }}",
       "remove_all_items_confirmation": "Retirer les {{ quantity }} articles de votre panier ?",
       "remove_all": "Tout retirer",
       "cancel": "Annuler",
@@ -213,6 +232,7 @@
   "blogs": {
     "article": {
       "written_by_html": "par {{ author }}",
+      "filter": "Filtrer",
       "all_tags": "Tous",
       "read_more": "Plus"
     },
@@ -237,6 +257,8 @@
       "remove": "Retirer",
       "note": "Instructions spéciales concernant la commande",
       "subtotal": "Sous-total",
+      "cart_error": "Une erreur est survenue lors de l’actualisation de votre panier. Veuillez réessayer.",
+      "cart_quantity_error_html": "Vous ne pouvez pas ajouter plus de {{ quantity }} de ce produit à votre panier.",
       "taxes_and_shipping_policy_at_checkout_html": "Taxes et <a href=\"{{ link }}\">frais d'expédition</a> calculés lors du paiement",
       "taxes_included_but_shipping_at_checkout": "Taxes incluses et frais d'expédition calculés lors du paiement",
       "taxes_included_and_shipping_policy_html": "Taxes incluses. <a href=\"{{ link }}\">Frais d'expédition</a> calculés à l'étape de paiement.",
@@ -249,6 +271,7 @@
     },
     "headings": {
       "product": "Produit",
+      "price": "Prix",
       "total": "Total",
       "quantity": "Quantité"
     },
@@ -380,6 +403,7 @@
       "payment_status": "Statut de paiement",
       "shipping_address": "Adresse d'expédition",
       "fulfillment_status": "Statut des commandes",
+      "discounts": "Réductions",
       "discount": "Réduction",
       "shipping": "Expédition",
       "tax": "Taxes",
@@ -434,7 +458,7 @@
     "general": {
       "color_swatch_trigger": "Couleur",
       "size_trigger": "Taille",
-      "size_chart": "Tableau des tailles",
+      "size_chart": "Guide des tailles",
       "save_html": "Épargnez {{ saved_amount }}",
       "sale": "Réduit",
       "show_more": "Afficher plus"
@@ -449,12 +473,13 @@
       "view_product": "Voir produit",
       "pre_order": "Pré-commander",
       "add_to_bundle": "Ajouter au forfait",
+      "shop_the_look": "Achetez le look",
       "vendor": "Distributeur",
       "include_taxes": "Taxes incluses.",
       "shipping_policy_html": "<a href='{{ link }}'>Frais d'expédition</a> calculés lors du passage à la caisse.",
       "will_not_ship_until": "Sera expédié après {{ date }}",
       "will_be_in_stock_after": "Sera en stock à compter de {{ date }}",
-      "waiting_for_stock": "Inventaire sur le chemin",
+      "waiting_for_stock": "Réapprovisionnement prévu",
       "xr_button": "Afficher dans son espace",
       "xr_button_label": "Affichage dans votre espace, charge l'article dans une fenêtre de réalité augmentée",
       "read_more": "Afficher tous les détails",
@@ -512,9 +537,9 @@
       "view_store_info": "Afficher les informations de la boutique",
       "check_other_stores": "Vérifier la disponibilité dans d'autres boutiques",
       "pick_up_available": "Service de retrait disponible",
-      "pick_up_available_at_html": "Service de retrait disponible à <span class=\"color-foreground\">{{ location_name }}</span>",
+      "pick_up_available_at_html": "Service de retrait disponible à {{ location_name }}",
       "pick_up_unavailable": "Récupération actuellement indisponible",
-      "pick_up_unavailable_at_html": "Service de retrait non disponible actuellement à <span class=\"color-foreground\">{{ location_name }}</span>",
+      "pick_up_unavailable_at_html": "Service de retrait non disponible actuellement à {{ location_name }}",
       "unavailable": "Impossible de charger la disponibilité du service de retrait",
       "refresh": "Actualiser"
     },

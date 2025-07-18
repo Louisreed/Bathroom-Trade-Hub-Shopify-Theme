@@ -14,8 +14,7 @@
             <div class="page-width w-full h-full flex items-center justify-center">
               <div class="banner__box banner__box--{{ section.settings.content_width }} {{ section.settings.heading_alignment }}">
                 <div class="splitting-wrapper relative">
-                  <{{ section.settings.heading_tag }} class="heading leading-none {{ section.settings.heading_size }} text-opacity">{{ section.settings.heading }}</{{ section.settings.heading_tag }}>
-                  <div class="heading leading-none {{ section.settings.heading_size }} splitting absolute top-0 bottom-0 left-0 right-0 pointer-events-none">{{ section.settings.heading }}</div>
+                  <{{ section.settings.heading_tag }} class="heading leading-none {{ section.settings.heading_size }} splitting">{{ section.settings.heading }}</{{ section.settings.heading_tag }}>
                 </div>
               </div>
             </div>
@@ -43,17 +42,13 @@
         {%- if section.settings.button_label != blank -%}
           <span class="reveal-banner__tracker2nd absolute top-0 h-full"></span>
           <p class="button-wrapper {{ section.settings.heading_alignment }}">
-            <a class="button button--primary icon-with-text"{% if section.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ section.settings.button_link }}"{% if section.settings.button_external %} target="_blank" rel="noopener"{% endif %}{% endif %} is="hover-link">
-              <span class="btn-fill" data-fill></span>
-              <span class="btn-text">
-                {%- liquid
-                  echo section.settings.button_label | escape
-                  if section.settings.button_icon
-                    render 'icon', icon: 'arrow-right', size: 'sm', class: 'transform'
-                  endif
-                -%}
-              </span>
-            </a>
+            {%- render 'button',
+              style: 'primary',
+              label: section.settings.button_label,
+              link: section.settings.button_link,
+              external: section.settings.button_external,
+              show_icon: section.settings.button_icon
+            -%}
           </p>
         {%- endif -%}
       </div>
@@ -207,12 +202,14 @@
       "label": "t:sections.global.settings.button_link.label"
     },
     {
+      "visible_if": "{{ section.settings.button_label != blank }}",
       "type": "checkbox",
       "id": "button_external",
       "label": "t:sections.global.settings.button_external.label",
       "default": false
     },
     {
+      "visible_if": "{{ section.settings.button_label != blank }}",
       "type": "checkbox",
       "id": "button_icon",
       "label": "t:sections.global.settings.button_icon.label",
@@ -246,7 +243,7 @@
   ],
   "presets": [
     {
-      "name": "t:sections.reveal-image-with-text.presets.name"
+      "name": "t:sections.reveal-image-with-text.name"
     }
   ],
   "disabled_on": {

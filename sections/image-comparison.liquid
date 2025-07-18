@@ -62,7 +62,7 @@
             <div class="comparison__box comparison__box--{{ before_image.settings.content_position }} grid items-start absolute top-0 left-0 w-full h-full" style="--color-foreground: {{ before_image.settings.color_text.rgb }};">
               <div class="grid gap-1 md:gap-2">
                 {%- if before_image.settings.subheading != blank -%}
-                  <p class="text-xs md:text-base lg:text-lg text-medium leading-none">{{ before_image.settings.subheading | escape }}</p>
+                  <p class="text-xs md:text-base lg:text-lg leading-none font-medium">{{ before_image.settings.subheading | escape }}</p>
                 {%- endif -%}
                 {%- if before_image.settings.heading != blank -%}
                   <p class="heading text-base md:text-2xl lg:text-3xl leading-none tracking-tight">{{ before_image.settings.heading | escape }}</p>
@@ -92,10 +92,10 @@
             {%- endif -%}
           </picture>
           {%- if after_image.settings.subheading != blank or after_image.settings.heading != blank -%}
-            <div class="comparison__box comparison__box--{{ after_image.settings.content_position }} grid items-start absolute top-0 left-0 w-full h-full text-right" style="--color-foreground: {{ before_image.settings.color_text.rgb }};">
+            <div class="comparison__box comparison__box--{{ after_image.settings.content_position }} grid items-start absolute top-0 left-0 w-full h-full text-right" style="--color-foreground: {{ after_image.settings.color_text.rgb }};">
               <div class="grid gap-1 md:gap-2">
                 {%- if after_image.settings.subheading != blank -%}
-                  <p class="text-xs md:text-base lg:text-lg text-medium leading-none">{{ after_image.settings.subheading | escape }}</p>
+                  <p class="text-xs md:text-base lg:text-lg leading-none font-medium">{{ after_image.settings.subheading | escape }}</p>
                 {%- endif -%}
                 {%- if after_image.settings.heading != blank -%}
                   <p class="heading text-base md:text-2xl lg:text-3xl leading-none tracking-tight">{{ after_image.settings.heading | escape }}</p>
@@ -176,10 +176,22 @@
         },
         {
           "label": "t:sections.global.settings.image_height.options__10.label",
-          "value": "100vh"
+          "value": "800px"
         },
         {
           "label": "t:sections.global.settings.image_height.options__11.label",
+          "value": "850px"
+        },
+        {
+          "label": "t:sections.global.settings.image_height.options__12.label",
+          "value": "900px"
+        },
+        {
+          "label": "t:sections.global.settings.image_height.options__13.label",
+          "value": "100vh"
+        },
+        {
+          "label": "t:sections.global.settings.image_height.options__14.label",
           "value": "adapt"
         }
       ],
@@ -355,12 +367,14 @@
       "label": "t:sections.global.settings.button_link.label"
     },
     {
+      "visible_if": "{{ section.settings.button_label != blank }}",
       "type": "checkbox",
       "id": "button_external",
       "label": "t:sections.global.settings.button_external.label",
       "default": false
     },
     {
+      "visible_if": "{{ section.settings.button_label != blank }}",
       "type": "checkbox",
       "id": "button_icon",
       "label": "t:sections.global.settings.button_icon.label",
@@ -408,6 +422,7 @@
       "label": "t:sections.global.settings.highlighted_text.label"
     },
     {
+      "visible_if": "{{ section.settings.highlighted_text == 'scribble' }}",
       "type": "select",
       "id": "highlighted_scribble",
       "options": [
@@ -580,7 +595,7 @@
   ],
   "presets": [
     {
-      "name": "t:sections.image-comparison.presets.name",
+      "name": "t:sections.image-comparison.name",
       "blocks": [
         {
           "type": "image"

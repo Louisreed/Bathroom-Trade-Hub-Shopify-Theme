@@ -2,7 +2,8 @@
   {%- if request.page_type != 'search' -%}
     <script src="{{ 'search.js' | asset_url }}" defer></script>
   {%- endif -%}
-  <search-drawer id="SearchDrawer" class="search-drawer drawer drawer--end z-30 fixed bottom-0 left-0 h-full w-full pointer-events-none"
+  
+  <search-drawer id="SearchDrawer" class="search-drawer drawer drawer--end z-35 fixed bottom-0 left-0 h-full w-full pointer-events-none"
     role="dialog"
     aria-modal="true"
     aria-label="{{ 'general.search.title' | t | escape }}"

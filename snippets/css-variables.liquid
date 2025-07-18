@@ -5,15 +5,19 @@
     assign header_font_bold = header_font | font_modify: 'weight', '700'
 
     assign body_font = settings.type_body_font
+    assign body_font_medium = body_font | font_modify: 'weight', '500'
     assign body_font_bold = body_font | font_modify: 'weight', '700'
     assign body_font_italic = body_font | font_modify: 'style', 'italic'
     assign body_font_bold_italic = body_font_bold | font_modify: 'style', 'italic'
 
-    echo header_font | font_face: font_display: 'swap'
-    echo header_font_medium | font_face: font_display: 'swap'
-    echo header_font_bold | font_face: font_display: 'swap'
+    if header_font.family != body_font.family
+      echo header_font | font_face: font_display: 'swap'
+      echo header_font_medium | font_face: font_display: 'swap'
+      echo header_font_bold | font_face: font_display: 'swap'
+    endif
 
     echo body_font | font_face: font_display: 'swap'
+    echo body_font_medium | font_face: font_display: 'swap'
     echo body_font_bold | font_face: font_display: 'swap'
     echo body_font_italic | font_face: font_display: 'swap'
     echo body_font_bold_italic | font_face: font_display: 'swap'
@@ -151,18 +155,21 @@
 
     --font-navigation-family: var(--font-{{ settings.type_navigation_font }}-family);
     --font-navigation-size: clamp({{ settings.type_navigation_size | minus: 2 | at_least: 12 | divided_by: 16.0 }}rem, 0.748rem + 0.3174vw, {{ settings.type_navigation_size | plus: 2 | divided_by: 16.0 }}rem);
+    --font-navigation-weight: {{ settings.type_navigation_weight }};
     {% if settings.type_navigation_capitalize %}
       --font-navigation-text-transform: uppercase;
     {% endif %}
 
     --font-button-family: var(--font-{{ settings.type_button_font }}-family);
     --font-button-size: clamp({{ settings.type_button_size | minus: 2 | at_least: 12 | divided_by: 16.0 }}rem, 0.8115rem + 0.1587vw, {{ settings.type_button_size | divided_by: 16.0 }}rem);
+    --font-button-weight: {{ settings.type_button_weight }};
     {% if settings.type_button_capitalize %}
       --font-button-text-transform: uppercase;
     {% endif %}
 
     --font-product-family: var(--font-{{ settings.type_product_font }}-family);
     --font-product-size: clamp({{ settings.type_product_size | divided_by: 16.0 }}rem, 0.873rem + 0.3175vw, {{ settings.type_product_size | plus: 4 | divided_by: 16.0 }}rem);
+    --font-product-weight: {{ settings.type_product_weight }};
     {% if settings.type_product_capitalize %}
       --font-product-text-transform: uppercase;
     {% endif %}

@@ -63,7 +63,7 @@
               {%- if block.settings.heading != blank -%}
                 <{{ block.settings.heading_tag }} class="heading {{ block.settings.heading_size }}">
                   {%- if block.settings.highlighted_text == 'none' -%}
-                    <split-words class="split-words block" data-animate="fade-up-large">{{ block.settings.heading }}</split-words>
+                    <split-words class="split-words js-invisible block" data-animate="fade-up-large">{{ block.settings.heading }}</split-words>
                   {%- else -%}
                     {%- render 'highlighted-text', content: block.settings.heading, style: block.settings.highlighted_text, scribble: block.settings.highlighted_scribble, gradient: with_gradient -%}
                   {%- endif -%}
@@ -377,6 +377,7 @@
           "label": "t:sections.global.settings.highlighted_text.label"
         },
         {
+          "visible_if": "{{ block.settings.highlighted_text == 'scribble' }}",
           "type": "select",
           "id": "highlighted_scribble",
           "options": [
@@ -410,7 +411,7 @@
   ],
   "presets": [
     {
-      "name": "t:sections.video-hero.presets.name",
+      "name": "t:sections.video-hero.name",
       "blocks": [
         {
           "type": "slide"

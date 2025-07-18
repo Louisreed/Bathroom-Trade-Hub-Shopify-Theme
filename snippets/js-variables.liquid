@@ -10,7 +10,7 @@
     cart_change_url: '{{ routes.cart_change_url }}',
     cart_update_url: '{{ routes.cart_update_url }}',
     search_url: '{{ routes.search_url }}',
-    predictive_search_url: '{{ routes.predictive_search_url }}',
+    predictive_search_url: '{{ routes.predictive_search_url }}'
   };
 
   theme.variantStrings = {
@@ -19,19 +19,24 @@
     soldOut: {{ 'products.product.sold_out' | t | json }},
     unavailable: {{ 'products.product.unavailable' | t | json }},
     addToBundle: {{ 'products.product.add_to_bundle' | t | json }},
-    backInStock: {{ 'products.back_in_stock.label' | t | json }},
+    backInStock: {{ 'products.back_in_stock.label' | t | json }}
   };
 
   theme.shippingCalculatorStrings = {
     error: {{ 'general.cart.shipping_calculator.error' | t | json }},
     notFound: {{ 'general.cart.shipping_calculator.not_found' | t | json }},
     oneResult: {{ 'general.cart.shipping_calculator.one_result' | t | json }},
-    multipleResults: {{ 'general.cart.shipping_calculator.multiple_results' | t | json }},
+    multipleResults: {{ 'general.cart.shipping_calculator.multiple_results' | t | json }}
+  };
+
+  theme.discountStrings = {
+    error: {{ 'general.cart.discount.error' | t | json }},
+    shippingError: {{ 'general.cart.discount.shipping_error' | t | json }}
   };
 
   theme.recipientFormStrings = {
     expanded: {{ 'recipient.form.expanded' | t | json }},
-    collapsed: {{ 'recipient.form.collapsed' | t | json }},
+    collapsed: {{ 'recipient.form.collapsed' | t | json }}
   };
 
   theme.quickOrderListStrings = {
@@ -43,7 +48,12 @@
     each: {{ 'sections.quick_order_list.each' | t: money: '[money]' | json }},
     minError: {{ 'sections.quick_order_list.min_error' | t: min: '[min]' | json }},
     maxError: {{ 'sections.quick_order_list.max_error' | t: max: '[max]' | json }},
-    stepError: {{ 'sections.quick_order_list.step_error' | t: step: '[step]' | json }},
+    stepError: {{ 'sections.quick_order_list.step_error' | t: step: '[step]' | json }}
+  };
+
+  theme.cartStrings = {
+    error: {{ 'cart.general.cart_error' | t | json }},
+    quantityError: {{ 'cart.general.cart_quantity_error_html' | t: quantity: '[quantity]' | json }}
   };
 
   theme.dateStrings = {
@@ -58,8 +68,16 @@
     minutes: {{ 'general.date.minutes' | t | json }},
     s: {{ 'general.date.s' | t | json }},
     second: {{ 'general.date.second' | t | json }},
-    seconds: {{ 'general.date.seconds' | t | json }},
+    seconds: {{ 'general.date.seconds' | t | json }}
   };
+
+  {%- if settings.enable_tab_attention -%}
+    theme.tabAttentionStrings = {
+      firstMessage: {{ settings.tab_attention_message_1 | json }},
+      nextMessage: {{ settings.tab_attention_message_2 | json }},
+      messageDelay: {{ settings.tab_attention_message_delay | json }}
+    };
+  {%- endif -%}
 
   theme.strings = {
     recentlyViewedEmpty: {{ 'general.cart.recently_viewed.empty' | t | json }},
@@ -68,15 +86,17 @@
     previous: {{ 'general.pagination.previous' | t | json }},
     qrImageAlt: {{ 'gift_cards.issued.qr_image_alt' | t | json }}
   };
+
   theme.settings = {
     moneyFormat: {{ shop.money_format | json }},
     moneyWithCurrencyFormat: {{ shop.money_with_currency_format | json }},
     currencyCodeEnabled: {{ settings.currency_code_enabled | json }},
+    externalLinksNewTab: {{ settings.external_links_new_tab | json }},
     cartType: {{ settings.cart_type | json }},
     isCartTemplate: {% if request.page_type == 'cart' %}true{% else %}false{% endif %},
     pswpModule: {{ 'photoswipe.min.js' | asset_url | json }},
     themeName: 'Concept',
-    themeVersion: '2.1.0',
+    themeVersion: '4.3.0',
     agencyId: ''
   };
 

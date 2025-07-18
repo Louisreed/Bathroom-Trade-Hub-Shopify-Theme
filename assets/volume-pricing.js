@@ -33,7 +33,7 @@ if (!customElements.get('price-per-item')) {
         });
 
         this.updatePricePerItemUnsubscriber = theme.pubsub.subscribe(theme.pubsub.PUB_SUB_EVENTS.cartUpdate, (response) => {
-          if (!response.cart) return;
+          if (!response.cart || response.cart.errors) return;
 
           // Item was added to cart via product page
           if (response.cart['variant_id'] !== undefined) {

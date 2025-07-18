@@ -40,6 +40,10 @@
     <script src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'giftcard.js' | asset_url }}" defer="defer"></script>
     <script src="{{ 'vendor/qrcode.js' | shopify_asset_url }}" defer="defer"></script>
+
+    {%- if settings.enable_tab_attention -%}
+      <script src="{{ 'tab-attention.js' | asset_url }}" defer="defer"></script>
+    {%- endif -%}
   </head>
   
   <body class="template-giftcard"{% if request.design_mode %} shopify-design-mode{% endif %} data-rounded-button="{{ settings.rounded_button }}" data-rounded-input="{{ settings.rounded_input }}" data-rounded-block="{{ settings.rounded_block }}" data-rounded-card="{{ settings.rounded_card }}" data-button-hover="{{ settings.buttons_hover }}"{% if settings.enable_lazy_image %} data-lazy-image{% endif %} data-title-animation data-page-rendering>
@@ -115,7 +119,7 @@
                   
                   <div id="gift-card-success" class="alert alert--success flex items-start gap-3 text-sm md:text-base leading-tight" hidden>
                     {%- liquid
-                      render 'icon', icon: 'check-circle', size: 'sm', class: 'flex-auto'
+                      render 'icon', icon: 'check-circle', size: 'sm', class: 'shrink-0'
                       echo 'gift_cards.issued.copy_code_success' | t
                     -%}
                   </div>          

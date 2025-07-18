@@ -1,3 +1,20 @@
+{%- doc -%}
+  Renders a paginated grid collage with image/video blocks and customizable overlay content.
+
+  Supports subset rendering for performance optimization and pagination use cases.
+
+  @param {object} section - Shopify section object with blocks and settings
+  @param {number} [limit] - Maximum blocks to render
+  @param {number} [offset] - Blocks to skip from start
+
+  @example
+  {% render 'collage',
+     section: section,
+     limit: 6,
+     offset: 0
+  %}
+{%- enddoc -%}
+
 {%- liquid
   unless limit
     assign limit = section.blocks.size
@@ -58,7 +75,7 @@
 
   {%- case block.type -%}
     {%- when 'image' -%}
-      <div class="collage__item with-image banner relative overflow-hidden" style="--collage-column: {{ column_size }}; --collage-row: {{ row_size }}" id="shopify-block-{{ block.id }}" {{ block.shopify_attributes }}>
+      <div class="collage__item with-image banner relative overflow-hidden" style="--collage-column: {{ column_size }};--collage-row: {{ row_size }};" id="shopify-block-{{ block.id }}" {{ block.shopify_attributes }}>
         <picture class="media media--{{ image_ratio }} mobile:media--{{ image_ratio_mobile }} block relative overflow-hidden">
           {%- if block.settings.image != blank -%}
             {%- assign sizes = '(max-width: 767px) 100vw, 50vw' -%}
@@ -81,7 +98,7 @@
       </div>
 
     {%- when 'video' -%}
-      <div class="collage__item with-image banner relative overflow-hidden" style="--collage-column: {{ block.settings.column_size | default: 10 }}; --collage-row: {{ block.settings.row_size | default: 4 }}" id="shopify-block-{{ block.id }}" {{ block.shopify_attributes }}>
+      <div class="collage__item with-image banner relative overflow-hidden" style="--collage-column: {{ block.settings.column_size | default: 10 }};--collage-row: {{ block.settings.row_size | default: 4 }};" id="shopify-block-{{ block.id }}" {{ block.shopify_attributes }}>
         <div class="aspect-{{ image_ratio }} mobile:aspect-{{ image_ratio_mobile }} relative">
           {%- if block.settings.video_mobile or block.settings.video_url_mobile -%}
             {%- render 'video',
