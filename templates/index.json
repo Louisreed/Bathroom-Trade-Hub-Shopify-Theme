@@ -149,7 +149,7 @@
             "text_font": "heading",
             "text_size": "subtext-custom",
             "text_max_size": 42,
-            "text_line_height": 1.6,
+            "text_line_height": 1,
             "text_letter_spacing": 0,
             "text_capitalize": false,
             "secondary_color": false,
@@ -247,6 +247,7 @@
     },
     "rich-text": {
       "type": "rich-text",
+      "disabled": true,
       "settings": {
         "text_alignment": "center",
         "text_alignment_mobile": "center",
