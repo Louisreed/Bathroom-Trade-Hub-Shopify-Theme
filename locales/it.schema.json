@@ -395,6 +395,9 @@
         "header__section": {
           "content": "Sezione"
         },
+        "header__typography": {
+          "content": "Caratteri tipografici"
+        },
         "header__product": {
           "content": "Scheda prodotto"
         },
@@ -2061,6 +2064,9 @@
             },
             "button_link_4": {
               "label": "Link alla tagline 4"
+            },
+            "font_size": {
+              "label": "Dimensione carattere"
             }
           }
         }

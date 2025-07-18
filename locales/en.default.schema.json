@@ -395,6 +395,9 @@
         "header__section": {
           "content": "Section"
         },
+        "header__typography": {
+          "content": "Typography"
+        },
         "header__product": {
           "content": "Product card"
         },
@@ -2061,6 +2064,9 @@
             },
             "button_link_4": {
               "label": "Tagline 4 link"
+            },
+            "font_size": {
+              "label": "Font size"
             }
           }
         }

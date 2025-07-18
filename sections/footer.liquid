@@ -13,16 +13,35 @@
   endif
 -%}
 
-<div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded{% endif %}"{% if section.settings.enable_parallax %} is="footer-parallax"{% endif %}>
-  <div class="footer{% if enable_footer_info %}{% if section.settings.invert_newsletter_others %} footer--inverted{% endif %}{% else %} footer--no-info{% endif %} page-width{% if section.settings.full_width %} page-width--full{% endif %} relative grid" role="region" aria-label="Footer">
+<div
+  class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded{% endif %}"
+  {% if section.settings.enable_parallax %}
+    is="footer-parallax"
+  {% endif %}
+>
+  <div
+    class="footer{% if enable_footer_info %}{% if section.settings.invert_newsletter_others %} footer--inverted{% endif %}{% else %} footer--no-info{% endif %} page-width{% if section.settings.full_width %} page-width--full{% endif %} relative grid"
+    role="region"
+    aria-label="Footer"
+  >
     {%- if section.blocks.size > 0 -%}
       <div class="footer__left flex flex-col md:flex-row gap-10">
         {%- liquid
-          assign block = section.blocks | where: "type", "logo_social" | first
-          if block
-            render 'footer-logo', block: block
-          endif
+          assign logo_block = section.blocks | where: 'type', 'logo_social' | first
+          assign brand_block = section.blocks | where: 'type', 'brand_information' | first
         -%}
+
+        {%- if logo_block or brand_block -%}
+          <div class="footer__logo-column flex flex-col gap-10">
+            {%- if logo_block -%}
+              {%- render 'footer-logo', block: logo_block -%}
+            {%- endif -%}
+
+            {%- if brand_block -%}
+              {%- render 'footer-contact', block: brand_block -%}
+            {%- endif -%}
+          </div>
+        {%- endif -%}
 
         <div class="footer__accordions flex flex-wrap flex-col md:flex-row md:grow md:gap-12">
           {%- liquid
@@ -30,12 +49,8 @@
               case block.type
                 when 'link_list'
                   render 'footer-menu', block: block
-
                 when 'text'
                   render 'footer-text', block: block
-
-                when 'brand_information'
-                  render 'footer-contact', block: block
               endcase
             endfor
           -%}
@@ -43,7 +58,11 @@
       </div>
     {%- endif -%}
 
-    {%- if section.settings.enable_newsletter or section.settings.show_social or shop.features.follow_on_shop? and section.settings.enable_follow_on_shop -%}
+    {%- if section.settings.enable_newsletter
+      or section.settings.show_social
+      or shop.features.follow_on_shop?
+      and section.settings.enable_follow_on_shop
+    -%}
       <div class="footer__right grid gap-10">
         {%- if section.settings.enable_newsletter -%}
           <div class="footer__newsletter grid gap-6">
@@ -54,12 +73,24 @@
                   {%- capture sizes -%}{{ section.settings.newsletter_logo_height | times: section.settings.newsletter_logo.aspect_ratio }}px{%- endcapture -%}
                   {%- capture widths -%}{{ section.settings.newsletter_logo_height | times: section.settings.newsletter_logo.aspect_ratio }}, {{ section.settings.newsletter_logo_height | times: section.settings.newsletter_logo.aspect_ratio | times: 2 | at_most: section.settings.newsletter_logo.width }}{%- endcapture -%}
                   {%- capture style -%}--image-width: {{ section.settings.newsletter_logo_height | times: section.settings.newsletter_logo.aspect_ratio }}px; --image-height: {{ section.settings.newsletter_logo_height }}px;{%- endcapture -%}
-                  {{- section.settings.newsletter_logo | image_url: width: section.settings.newsletter_logo.width | image_tag: loading: 'lazy', widths: widths, sizes: sizes, style: style, preload: true, is: 'lazy-image' -}}
+                  {{-
+                    section.settings.newsletter_logo
+                    | image_url: width: section.settings.newsletter_logo.width
+                    | image_tag:
+                      loading: 'lazy',
+                      widths: widths,
+                      sizes: sizes,
+                      style: style,
+                      preload: true,
+                      is: 'lazy-image'
+                  -}}
                 </a>
               </p>
             {%- endif -%}
 
-            <p class="h3 text-xl {{ section.settings.newsletter_heading_size }} leading-none tracking-none font-medium lg:font-heading">{{ section.settings.newsletter_heading | escape }}</p>
+            <p class="h3 text-xl {{ section.settings.newsletter_heading_size }} leading-none tracking-none font-medium lg:font-heading">
+              {{ section.settings.newsletter_heading | escape }}
+            </p>
             {%- render 'newsletter-form', section_id: section.id, context: 'footer' -%}
 
             {%- if section.settings.newsletter_text != blank -%}
@@ -84,7 +115,12 @@
   </div>
 
   {%- if section.settings.enable_parallax -%}
-    <parallax-overlay class="footer-overlay hidden md:block z-20 absolute left-0 top-0 w-full pointer-events-none" data-target="height" data-start="100%" data-stop="0%"></parallax-overlay>
+    <parallax-overlay
+      class="footer-overlay hidden md:block z-20 absolute left-0 top-0 w-full pointer-events-none"
+      data-target="height"
+      data-start="100%"
+      data-stop="0%"
+    ></parallax-overlay>
   {%- endif -%}
 </div>
 
@@ -453,6 +489,20 @@
         },
         {
           "type": "header",
+          "content": "t:sections.global.settings.header__typography.content"
+        },
+        {
+          "type": "range",
+          "id": "font_size",
+          "label": "t:sections.footer.blocks.brand_information.settings.font_size.label",
+          "default": 16,
+          "min": 12,
+          "max": 24,
+          "step": 1,
+          "unit": "px"
+        },
+        {
+          "type": "header",
           "content": "t:sections.global.settings.header__mobile.content"
         },
         {
@@ -475,9 +525,7 @@
     ]
   },
   "enabled_on": {
-    "groups": [
-      "footer"
-    ]
+    "groups": ["footer"]
   }
 }
 {% endschema %}

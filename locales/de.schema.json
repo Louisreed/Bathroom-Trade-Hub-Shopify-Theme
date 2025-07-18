@@ -395,6 +395,9 @@
         "header__section": {
           "content": "Abschnitts"
         },
+        "header__typography": {
+          "content": "Typografie"
+        },
         "header__product": {
           "content": "Produktkarte"
         },
@@ -2061,6 +2064,9 @@
             },
             "button_link_4": {
               "label": "Slogan 4 Link"
+            },
+            "font_size": {
+              "label": "Schriftgröße"
             }
           }
         }

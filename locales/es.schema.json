@@ -395,6 +395,9 @@
         "header__section": {
           "content": "Sección"
         },
+        "header__typography": {
+          "content": "Tipografía"
+        },
         "header__product": {
           "content": "Tarjeta de producto"
         },
@@ -2061,6 +2064,9 @@
             },
             "button_link_4": {
               "label": "Enlace al eslogan 4"
+            },
+            "font_size": {
+              "label": "Tamaño de fuente"
             }
           }
         }

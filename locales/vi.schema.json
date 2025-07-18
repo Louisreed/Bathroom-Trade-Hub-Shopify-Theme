@@ -395,6 +395,9 @@
         "header__section": {
           "content": "Mục"
         },
+        "header__typography": {
+          "content": "Kiểu chữ"
+        },
         "header__product": {
           "content": "Thẻ sản phẩm"
         },
@@ -2061,6 +2064,9 @@
             },
             "button_link_4": {
               "label": "Liên kết dòng giới thiệu 4"
+            },
+            "font_size": {
+              "label": "Cỡ chữ"
             }
           }
         }
