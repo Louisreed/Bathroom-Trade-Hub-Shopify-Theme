@@ -282,19 +282,19 @@
     "featured_collections_pCKTEh": {
       "type": "featured-collections",
       "blocks": {
-        "collection_YpAPx3": {
-          "type": "collection",
-          "settings": {
-            "collection": "wall-panels",
-            "products": "{{ block.settings.collection.products }}",
-            "title": ""
-          }
-        },
         "collection_ygFAxr": {
           "type": "collection",
           "settings": {
             "collection": "toilets",
             "products": [],
+            "title": ""
+          }
+        },
+        "collection_YpAPx3": {
+          "type": "collection",
+          "settings": {
+            "collection": "wall-panels",
+            "products": "{{ block.settings.collection.products }}",
             "title": ""
           }
         },
@@ -332,8 +332,8 @@
         }
       },
       "block_order": [
-        "collection_YpAPx3",
         "collection_ygFAxr",
+        "collection_YpAPx3",
         "collection_PeftKB",
         "collection_6YknpD",
         "collection_AJb6iN",
