@@ -177,6 +177,97 @@
         "rounded": false
       }
     },
+    "featured_collections_pCKTEh": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_YpAPx3": {
+          "type": "collection",
+          "settings": {
+            "collection": "wall-panels",
+            "products": "{{ block.settings.collection.products }}",
+            "title": ""
+          }
+        },
+        "collection_ygFAxr": {
+          "type": "collection",
+          "settings": {
+            "collection": "toilets",
+            "products": [],
+            "title": ""
+          }
+        },
+        "collection_PeftKB": {
+          "type": "collection",
+          "settings": {
+            "collection": "shower-trays",
+            "products": [],
+            "title": ""
+          }
+        },
+        "collection_6YknpD": {
+          "type": "collection",
+          "settings": {
+            "collection": "basins-brassware",
+            "products": [],
+            "title": ""
+          }
+        },
+        "collection_AJb6iN": {
+          "type": "collection",
+          "settings": {
+            "collection": "wall-hung-basin",
+            "products": [],
+            "title": ""
+          }
+        },
+        "collection_MiHDUY": {
+          "type": "collection",
+          "settings": {
+            "collection": "heating",
+            "products": [],
+            "title": ""
+          }
+        }
+      },
+      "block_order": [
+        "collection_YpAPx3",
+        "collection_ygFAxr",
+        "collection_PeftKB",
+        "collection_6YknpD",
+        "collection_AJb6iN",
+        "collection_MiHDUY"
+      ],
+      "name": "t:sections.featured-collections.name",
+      "settings": {
+        "product_limit": 6,
+        "columns": 4,
+        "carousel_on_desktop": true,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Featured collections",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
     "multicolumn_zT87yk": {
       "type": "multicolumn",
       "blocks": {
@@ -1056,6 +1147,7 @@
   "order": [
     "slideshow",
     "rich-text",
+    "featured_collections_pCKTEh",
     "multicolumn_zT87yk",
     "featured-product",
     "collection-list",
