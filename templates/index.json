@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "slideshow": {
@@ -6,12 +15,12 @@
         "slide-1": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Durdle_Door_Overview.jpg",
-            "heading": "<em>Supporting the Local <\/em>Trade<em> and DIY of Dorset!<\/em>",
+            "image": "shopify://shop_images/Durdle_Door_Overview.jpg",
+            "heading": "<em>Supporting the Local </em>Trade<em> and DIY of Dorset!</em>",
             "heading_size": "title-md",
             "heading_tag": "h2",
             "button_label": "SHOP OUR ESSENTIALS",
-            "button_link": "shopify:\/\/collections\/hub-essentials",
+            "button_link": "shopify://collections/hub-essentials",
             "button_style": "primary",
             "button_external": false,
             "button_icon": false
@@ -20,12 +29,12 @@
         "image_h8F3QR": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_8017.heic",
-            "heading": "<em>Join HubPRO to see prices!<\/em>",
+            "image": "shopify://shop_images/IMG_8017.heic",
+            "heading": "<em>Join HubPRO to see prices!</em>",
             "heading_size": "title-md",
             "heading_tag": "h2",
             "button_label": "BECOME A MEMBER",
-            "button_link": "shopify:\/\/pages\/trade-sign-up",
+            "button_link": "shopify://pages/trade-sign-up",
             "button_style": "primary",
             "button_external": false,
             "button_icon": false
@@ -34,12 +43,12 @@
         "image_WNzL7A": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_7744.heic",
+            "image": "shopify://shop_images/IMG_7744.heic",
             "heading": "Save BIG on essentials!",
             "heading_size": "title-md",
             "heading_tag": "h2",
             "button_label": "Join HubPRO",
-            "button_link": "shopify:\/\/pages\/trade-sign-up",
+            "button_link": "shopify://pages/trade-sign-up",
             "button_style": "primary",
             "button_external": false,
             "button_icon": false
@@ -48,12 +57,12 @@
         "slide-2": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/MAXIPANELBANNER-01.png",
+            "image": "shopify://shop_images/MAXIPANELBANNER-01.png",
             "heading": "",
             "heading_size": "title-md",
             "heading_tag": "h2",
             "button_label": "SHOP MAXI PANELS",
-            "button_link": "shopify:\/\/metaobjects\/Page\/page-z3aq3vqc",
+            "button_link": "shopify://metaobjects/Page/page-z3aq3vqc",
             "button_style": "primary",
             "button_external": false,
             "button_icon": false
@@ -62,12 +71,12 @@
         "image_NhPc9m": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_7740.heic",
+            "image": "shopify://shop_images/IMG_7740.heic",
             "heading": "In-stock Products for Same-day Delivery",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "button_label": "SHOP IN-STOCK PRODUCTS",
-            "button_link": "shopify:\/\/collections\/all",
+            "button_link": "shopify://collections/all",
             "button_style": "primary",
             "button_external": false,
             "button_icon": false
@@ -112,7 +121,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>We stock a lot of the essentials needed for the modern day Bathroom Installer.. all at the best prices!<\/p><ul><li>Wall Panels<\/li><li>Toilets<\/li><li>Showers\/Shower Trays\/Enclosures<\/li><li>Brassware<\/li><li>Basins\/Basin Vanity Units<\/li><li>Radiators<\/li><li>Tools and Consumables<\/li><li>Mirrors<\/li><li>and Much more!<\/li><\/ul>",
+            "text": "<p>We stock a lot of the essentials needed for the modern day Bathroom Installer.. all at the best prices!</p><ul><li>Wall Panels</li><li>Toilets</li><li>Showers/Shower Trays/Enclosures</li><li>Brassware</li><li>Basins/Basin Vanity Units</li><li>Radiators</li><li>Tools and Consumables</li><li>Mirrors</li><li>and Much more!</li></ul>",
             "text_font": "body",
             "text_size": "subtext-md",
             "text_max_size": 32,
@@ -140,15 +149,15 @@
       "settings": {
         "text_alignment": "left",
         "text_alignment_mobile": "left",
-        "heading": "Exclusively For <em>Trade and DIY<\/em>",
+        "heading": "Exclusively For <em>Trade and DIY</em>",
         "heading_size": "title-md",
         "heading_alignment": "text-left md:items-end md:flex-row",
         "heading_width": "small",
         "heading_tag": "h2",
         "subheading": "We sell quality products",
-        "description": "<p>Bathroom Trade Hub has been created with the local tradesman in mind, the days of overpaying for what we class as 'the essentials' are over, join our exclusive and trade-only savers club where you can save money on everything!<\/p>",
+        "description": "<p>Bathroom Trade Hub has been created with the local tradesman in mind, the days of overpaying for what we class as 'the essentials' are over, join our exclusive and trade-only savers club where you can save money on everything!</p>",
         "button_label": "SIGN UP FOR A TRADE ACCOUNT",
-        "button_link": "shopify:\/\/pages\/trade-sign-up",
+        "button_link": "shopify://pages/trade-sign-up",
         "button_external": false,
         "button_icon": true,
         "highlighted_text": "scribble",
@@ -180,7 +189,7 @@
             "image_ratio": "adapt",
             "heading": "Dorset Based Business",
             "heading_size": "text-lg-2xl",
-            "text": "<p>We specifically cater for customers in Dorset. We offer FREE delivery on orders over £100+VAT within Dorset Postcodes. We also ship anywhere in the UK over a certain spend.<\/p>",
+            "text": "<p>We specifically cater for customers in Dorset. We offer FREE delivery on orders over £100+VAT within Dorset Postcodes. We also ship anywhere in the UK over a certain spend.</p>",
             "button_label": "",
             "button_link": "",
             "button_style": "secondary",
@@ -199,7 +208,7 @@
             "image_ratio": "adapt",
             "heading": "Trade Counter",
             "heading_size": "text-lg-2xl",
-            "text": "<p>Our Weymouth Branch is the perfect place to shop bathroom supplies in-store. We are open 8am - 5pm Monday to Friday and 8am-12pm Saturdays. Feel free to pop down!<\/p>",
+            "text": "<p>Our Weymouth Branch is the perfect place to shop bathroom supplies in-store. We are open 8am - 5pm Monday to Friday and 8am-12pm Saturdays. Feel free to pop down!</p>",
             "button_label": "",
             "button_link": "",
             "button_style": "secondary",
@@ -218,7 +227,7 @@
             "image_ratio": "adapt",
             "heading": "Trade Portal",
             "heading_size": "text-lg-2xl",
-            "text": "<p>Create a Bathroom Trade Hub account to access our products at your bespoke trade price and see stock levels in real time quickly and efficiently saving you time shopping around for prices!<\/p>",
+            "text": "<p>Create a Bathroom Trade Hub account to access our products at your bespoke trade price and see stock levels in real time quickly and efficiently saving you time shopping around for prices!</p>",
             "button_label": "",
             "button_link": "",
             "button_style": "secondary",
@@ -404,7 +413,7 @@
           "type": "collection",
           "settings": {
             "collection": "consumables",
-            "image": "shopify:\/\/shop_images\/Screenshot_2024-11-14_at_11.40.58_AM.png",
+            "image": "shopify://shop_images/Screenshot_2024-11-14_at_11.40.58_AM.png",
             "title": "Consumables",
             "description": "View our range of consumables",
             "overlay_content": false,
@@ -417,7 +426,7 @@
           "type": "collection",
           "settings": {
             "collection": "showering",
-            "image": "shopify:\/\/shop_images\/JTY035-nuie-web.png",
+            "image": "shopify://shop_images/JTY035-nuie-web.png",
             "title": "Showers",
             "description": "View our range of showers",
             "overlay_content": false,
@@ -430,7 +439,7 @@
           "type": "collection",
           "settings": {
             "collection": "perform-panel",
-            "image": "shopify:\/\/shop_images\/perform_panel.jpg",
+            "image": "shopify://shop_images/perform_panel.jpg",
             "title": "Wall Panels",
             "description": "View our range of wall panels",
             "overlay_content": false,
@@ -443,7 +452,7 @@
           "type": "collection",
           "settings": {
             "collection": "heating",
-            "image": "shopify:\/\/shop_images\/ST-50120-A_CUTOUT_001.jpg",
+            "image": "shopify://shop_images/ST-50120-A_CUTOUT_001.jpg",
             "title": "Towel Heating",
             "description": "View our range of radiators",
             "overlay_content": false,
@@ -456,7 +465,7 @@
           "type": "collection",
           "settings": {
             "collection": "taps",
-            "image": "shopify:\/\/shop_images\/HDY305-nuie-web.png",
+            "image": "shopify://shop_images/HDY305-nuie-web.png",
             "title": "Brassware",
             "description": "View our range of brassware",
             "overlay_content": false,
@@ -469,7 +478,7 @@
           "type": "collection",
           "settings": {
             "collection": "wall-panels",
-            "image": "shopify:\/\/shop_images\/multipanel-classic-Type-B-External-Corner_jpg.webp",
+            "image": "shopify://shop_images/multipanel-classic-Type-B-External-Corner_jpg.webp",
             "title": "Finishing Trims",
             "description": "View our range of finishing trims",
             "overlay_content": false,
@@ -526,7 +535,7 @@
         "image-1": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/SEICENTO-PAN-SEAT_institu_28345430-7d27-4242-aa1a-eeec0937f54b.jpg",
+            "image": "shopify://shop_images/SEICENTO-PAN-SEAT_institu_28345430-7d27-4242-aa1a-eeec0937f54b.jpg",
             "subheading": "RIMLESS CLOSE-COUPLED WC PACK",
             "heading": "RRP - £289 + VAT",
             "content_position": "end",
@@ -536,7 +545,7 @@
         "image-2": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/SEICENTO-PAN-SEAT_institu2-1.jpg",
+            "image": "shopify://shop_images/SEICENTO-PAN-SEAT_institu2-1.jpg",
             "subheading": "CREATE A TRADE ACCOUNT AND",
             "heading": "LOG IN TO SEE YOUR PRICE",
             "content_position": "end",
@@ -552,7 +561,7 @@
         "layout": "horizontal",
         "image_height": "750px",
         "image_height_mobile": "300px",
-        "heading": "<em>Bespoke discount structures<\/em>",
+        "heading": "<em>Bespoke discount structures</em>",
         "heading_size": "title-md",
         "heading_alignment": "text-center md:items-center",
         "heading_tag": "h2",
@@ -659,7 +668,7 @@
           "type": "testimonial",
           "settings": {
             "icon": "quote",
-            "text": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+            "text": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
             "author": "Author's name",
             "author_info": "",
             "author_url": "",
@@ -672,7 +681,7 @@
           "type": "testimonial",
           "settings": {
             "icon": "quote",
-            "text": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+            "text": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
             "author": "Author's name",
             "author_info": "",
             "author_url": "",
@@ -685,7 +694,7 @@
           "type": "testimonial",
           "settings": {
             "icon": "quote",
-            "text": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.<\/p>",
+            "text": "<p>Add customer reviews and testimonials to showcase your store’s happy customers.</p>",
             "author": "Author's name",
             "author_info": "",
             "author_url": "",
@@ -726,7 +735,7 @@
         "image-1": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/nuie-logo_black_new.svg",
+            "image": "shopify://shop_images/nuie-logo_black_new.svg",
             "height": 60,
             "link": "",
             "accessibility_info": "",
@@ -736,7 +745,7 @@
         "image-2": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Big_2020-12-14--12-38-11-273_jpg.webp",
+            "image": "shopify://shop_images/Big_2020-12-14--12-38-11-273_jpg.webp",
             "height": 60,
             "link": "",
             "accessibility_info": "",
@@ -746,7 +755,7 @@
         "image-3": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/scudo-brand-logo_png.webp",
+            "image": "shopify://shop_images/scudo-brand-logo_png.webp",
             "height": 60,
             "link": "",
             "accessibility_info": "",
@@ -756,7 +765,7 @@
         "image-4": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/hr-page-logo.png",
+            "image": "shopify://shop_images/hr-page-logo.png",
             "height": 60,
             "link": "",
             "accessibility_info": "",
@@ -766,7 +775,7 @@
         "image-5": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/perform_panel.jpg",
+            "image": "shopify://shop_images/perform_panel.jpg",
             "height": 60,
             "link": "",
             "accessibility_info": "",
@@ -776,7 +785,7 @@
         "image-6": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/multipanel-brand-logo.png",
+            "image": "shopify://shop_images/multipanel-brand-logo.png",
             "height": 60,
             "link": "",
             "accessibility_info": "",
@@ -786,7 +795,7 @@
         "image_g6EkgF": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/everbuild-logo.png",
+            "image": "shopify://shop_images/everbuild-logo.png",
             "height": 60,
             "link": "",
             "accessibility_info": "",
@@ -796,7 +805,7 @@
         "image_73TxH6": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Soudal-logo-CB8DD414BB-seeklogo.com.png",
+            "image": "shopify://shop_images/Soudal-logo-CB8DD414BB-seeklogo.com.png",
             "height": 60,
             "link": "",
             "accessibility_info": "",
@@ -806,7 +815,7 @@
         "image_QBgeEz": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Logo_WEB-09.jpg",
+            "image": "shopify://shop_images/Logo_WEB-09.jpg",
             "height": 60,
             "link": "",
             "accessibility_info": "",
@@ -816,7 +825,7 @@
         "image_LTCM7w": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/viva.jpg",
+            "image": "shopify://shop_images/viva.jpg",
             "height": 80,
             "link": "",
             "accessibility_info": "",
@@ -826,7 +835,7 @@
         "image_UVLarq": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Screenshot_2025-06-30_at_13.20.56.jpg",
+            "image": "shopify://shop_images/Screenshot_2025-06-30_at_13.20.56.jpg",
             "height": 80,
             "link": "",
             "accessibility_info": "",
@@ -906,7 +915,7 @@
         "logo_6YCLjM": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/scudo_logo_fc32d616-c756-426d-9f85-1c7687bd73e2.jpg",
+            "image": "shopify://shop_images/scudo_logo_fc32d616-c756-426d-9f85-1c7687bd73e2.jpg",
             "height": 80,
             "link": ""
           }
@@ -914,7 +923,7 @@
         "logo_e9TGjE": {
           "type": "logo",
           "settings": {
-            "image": "shopify:\/\/shop_images\/nuie_loho.jpg",
+            "image": "shopify://shop_images/nuie_loho.jpg",
             "height": 80,
             "link": ""
           }
