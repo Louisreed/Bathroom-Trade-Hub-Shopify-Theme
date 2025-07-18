@@ -115,44 +115,145 @@
         "parallax_direction": "zoom"
       }
     },
-    "rich-text": {
-      "type": "rich-text",
+    "custom_section_YD3ti7": {
+      "type": "custom-section",
       "blocks": {
-        "text": {
+        "text_3XqJjG": {
           "type": "text",
+          "name": "t:blocks.text.name",
           "settings": {
-            "text": "<p>We stock a lot of the essentials needed for the modern day Bathroom Installer.. all at the best prices!</p><ul><li>Wall Panels</li><li>Toilets</li><li>Showers/Shower Trays/Enclosures</li><li>Brassware</li><li>Basins/Basin Vanity Units</li><li>Radiators</li><li>Tools and Consumables</li><li>Mirrors</li><li>and Much more!</li></ul>",
+            "text": "<p><strong>We sell quality products</strong></p>",
             "text_font": "body",
-            "text_size": "subtext-md",
+            "text_size": "text-base lg:text-lg",
             "text_max_size": 32,
             "text_line_height": 1.6,
             "text_letter_spacing": 0,
             "text_capitalize": false,
             "secondary_color": false,
-            "highlighted_text": "none",
+            "width": "fill",
+            "custom_width": 100,
+            "alignment": "center",
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100,
+            "effects": "none",
+            "highlighted_text": "text",
             "highlighted_scribble": "circle"
-          }
+          },
+          "blocks": {}
         },
-        "image_8yRV46": {
-          "type": "image",
+        "text_rxTaf6": {
+          "type": "text",
+          "name": "t:blocks.text.name",
           "settings": {
-            "image_width": "custom",
-            "image_max_width": 50,
-            "image_max_width_mobile": 50
-          }
+            "text": "<p>Exclusively For Trade and DIY</p>",
+            "text_font": "heading",
+            "text_size": "subtext-custom",
+            "text_max_size": 42,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": false,
+            "width": "fill",
+            "custom_width": 100,
+            "alignment": "center",
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100,
+            "effects": "reveal",
+            "highlighted_text": "text",
+            "highlighted_scribble": "circle"
+          },
+          "blocks": {}
+        },
+        "text_nzrBgE": {
+          "type": "text",
+          "name": "t:blocks.text.name",
+          "settings": {
+            "text": "<p>Bathroom Trade Hub has been created with the local tradesman in mind, the days of overpaying for what we class as 'the essentials' are over, join our exclusive and trade-only savers club where you can save money on everything!</p>",
+            "text_font": "body",
+            "text_size": "text-base lg:text-lg",
+            "text_max_size": 42,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": false,
+            "width": "fill",
+            "custom_width": 100,
+            "alignment": "center",
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100,
+            "effects": "none",
+            "highlighted_text": "text",
+            "highlighted_scribble": "circle"
+          },
+          "blocks": {}
+        },
+        "button_Rfnxi3": {
+          "type": "button",
+          "name": "t:blocks.button.name",
+          "settings": {
+            "button_label": "SIGN UP FOR A TRADE ACCOUNT",
+            "button_link": "shopify://pages/trade-sign-up",
+            "button_style": "secondary",
+            "button_size": "md",
+            "button_external": false,
+            "button_icon": false,
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
         }
       },
       "block_order": [
-        "text",
-        "image_8yRV46"
+        "text_3XqJjG",
+        "text_rxTaf6",
+        "text_nzrBgE",
+        "button_Rfnxi3"
       ],
+      "name": "t:sections.custom-section.name",
       "settings": {
-        "text_alignment": "left",
-        "text_alignment_mobile": "left",
+        "content_direction": "col",
+        "vertical_on_mobile": true,
+        "content_wrap": false,
+        "horizontal_alignment": "start",
+        "vertical_alignment": "center",
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page",
+        "section_height": "auto",
+        "section_height_custom": 50,
+        "section_height_mobile": "auto",
+        "section_height_custom_mobile": 50,
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "rounded": false
+      }
+    },
+    "rich-text": {
+      "type": "rich-text",
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
         "heading": "Exclusively For <em>Trade and DIY</em>",
         "heading_size": "title-md",
-        "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_width": "small",
+        "heading_alignment": "text-center md:items-center",
+        "heading_width": "large",
         "heading_tag": "h2",
         "subheading": "We sell quality products",
         "description": "<p>Bathroom Trade Hub has been created with the local tradesman in mind, the days of overpaying for what we class as 'the essentials' are over, join our exclusive and trade-only savers club where you can save money on everything!</p>",
@@ -249,7 +350,7 @@
         "heading_size": "title-md",
         "heading_alignment": "text-left md:items-end md:flex-row",
         "heading_tag": "h2",
-        "subheading": "",
+        "subheading": "We stock a lot of the essentials needed for the modern day Bathroom Installer.. all at the best prices!",
         "description": "",
         "highlighted_text": "none",
         "highlighted_scribble": "circle",
@@ -1146,6 +1247,7 @@
   },
   "order": [
     "slideshow",
+    "custom_section_YD3ti7",
     "rich-text",
     "featured_collections_pCKTEh",
     "multicolumn_zT87yk",
