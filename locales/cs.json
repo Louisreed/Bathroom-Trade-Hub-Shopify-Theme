@@ -206,7 +206,7 @@
     "quick_order_list": {
       "product_total": "Mezisoučet produktu",
       "view_cart": "Zobrazit košík",
-      "each": "{{ money }}/ea",
+      "each": "{{ money }}\/ea",
       "product": "Produkt",
       "variant": "Varianta",
       "variant_total": "Celkový počet variant",
@@ -515,7 +515,7 @@
       "title": "Cenová sleva na základě objemu",
       "note": "Dostupná cenová sleva na základě objemu",
       "minimum": "{{ quantity }}+",
-      "price_at_each": "za {{ price }}/ea",
+      "price_at_each": "za {{ price }}\/ea",
       "price_range": "{{ minimum }} - {{ maximum }}"
     },
     "inventory": {

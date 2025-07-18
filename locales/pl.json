@@ -45,7 +45,7 @@
       "login_form_password": "Hasło",
       "login_form_error": "Złe hasło!",
       "login_form_submit": "Wchodzić",
-      "admin_link_html": "Czy jesteś właścicielem sklepu? <a href=\"/admin\" class=\"link\">Zaloguj się tutaj</a>",
+      "admin_link_html": "Czy jesteś właścicielem sklepu? <a href=\"\/admin\" class=\"link\">Zaloguj się tutaj<\/a>",
       "powered_by_shopify_html": "Ten sklep będzie obsługiwany przez {{ shopify }}"
     },
     "breadcrumbs": {
@@ -189,8 +189,8 @@
       "view_details": "Zobacz szczegóły",
       "address_error": "Podczas wyszukiwania tego adresu wystąpił błąd",
       "address_no_results": "Brak wyników dla tego adresu",
-      "address_query_limit_html": "Przekroczono limit wykorzystania interfejsu API Google. Rozważ przejście na <a href=\"https://developers.google.com/maps/premium/usage-limits\">plan Premium</a> .",
-      "auth_error_html": "Wystąpił problem z uwierzytelnieniem Twojego konta Map Google. Utwórz i włącz uprawnienia <a href=\"https://developers.google.com/maps/documentation/javascript/get-api-key\">JavaScript API</a> i <a href=\"https://developers.google.com/maps/documentation/geocoding/get-api-key\">Geocoding API</a> w swojej aplikacji."
+      "address_query_limit_html": "Przekroczono limit wykorzystania interfejsu API Google. Rozważ przejście na <a href=\"https:\/\/developers.google.com\/maps\/premium\/usage-limits\">plan Premium<\/a> .",
+      "auth_error_html": "Wystąpił problem z uwierzytelnieniem Twojego konta Map Google. Utwórz i włącz uprawnienia <a href=\"https:\/\/developers.google.com\/maps\/documentation\/javascript\/get-api-key\">JavaScript API<\/a> i <a href=\"https:\/\/developers.google.com\/maps\/documentation\/geocoding\/get-api-key\">Geocoding API<\/a> w swojej aplikacji."
     },
     "slideshow": {
       "carousel": "Karuzela",
@@ -206,7 +206,7 @@
     "quick_order_list": {
       "product_total": "Suma częściowa dla produktu",
       "view_cart": "Pokaż koszyk",
-      "each": "{{ money }}/szt.",
+      "each": "{{ money }}\/szt.",
       "product": "Produkt",
       "variant": "Wariant",
       "variant_total": "Suma wariantów",
@@ -261,7 +261,7 @@
       "cart_quantity_error_html": "Do koszyka możesz dodać tylko {{ quantity }} tego produktu.",
       "taxes_and_shipping_policy_at_checkout_html": "Podatki i wysyłka obliczane przy kasie",
       "taxes_included_but_shipping_at_checkout": "Podatek jest wliczony w cenę, a wysyłka obliczana przy kasie",
-      "taxes_included_and_shipping_policy_html": "<a href=\"{{ link }}\">Koszt wysyłki</a> obliczony przy kasie.",
+      "taxes_included_and_shipping_policy_html": "<a href=\"{{ link }}\">Koszt wysyłki<\/a> obliczony przy kasie.",
       "taxes_and_shipping_at_checkout": "Podatki są wliczone, a wysyłka obliczana przy kasie.",
       "update": "Zaktualizuj koszyk",
       "checkout": "Dokończ transakcję ",
@@ -318,10 +318,10 @@
     }
   },
   "localization": {
-    "country_label": "Kraj/region",
+    "country_label": "Kraj\/region",
     "language_label": "Język",
     "update_language": "Zaktualizuj język",
-    "update_country": "Zaktualizuj kraj/region"
+    "update_country": "Zaktualizuj kraj\/region"
   },
   "contact": {
     "form": {
@@ -360,9 +360,9 @@
       "address1": "Adres 1",
       "address2": "adres 2",
       "city": "Miasto",
-      "country": "Kraj/region",
+      "country": "Kraj\/region",
       "province": "Województwo",
-      "zip": "Kod pocztowy/kod pocztowy",
+      "zip": "Kod pocztowy\/kod pocztowy",
       "phone": "Telefon",
       "set_default": "Ustaw jako adres domyślny",
       "add": "Dodaj adres",
@@ -476,7 +476,7 @@
       "shop_the_look": "Kup Stylizację",
       "vendor": "Sprzedawca",
       "include_taxes": "Z wliczonym podatkiem.",
-      "shipping_policy_html": "<a href=\"&lt;span%20class=\" notranslate>{{ link }} '&gt;Wysyłka</a> obliczana przy kasie.",
+      "shipping_policy_html": "<a href=\"&lt;span%20class=\" notranslate>{{ link }} '&gt;Wysyłka<\/a> obliczana przy kasie.",
       "will_not_ship_until": "Gotowe do wysyłki {{ date }}",
       "will_be_in_stock_after": "Ponownie w magazynie {{ date }}",
       "waiting_for_stock": "Inwentarz w drodze",
@@ -490,7 +490,7 @@
       "regular_price": "Normalna cena",
       "sale_price": "Cena sprzedaży",
       "unit_price": "Cena jednostkowa",
-      "from_price_html": "<small>Od</small> {{ price }}"
+      "from_price_html": "<small>Od<\/small> {{ price }}"
     },
     "media": {
       "open_media": "Otwórz multimedia {{ index }} w trybie modalnym",
@@ -515,7 +515,7 @@
       "title": "Ceny zależne od wolumenu",
       "note": "Ceny zależne od wolumenu są dostępne",
       "minimum": "{{ quantity }}+",
-      "price_at_each": "{{ price }}/szt.",
+      "price_at_each": "{{ price }}\/szt.",
       "price_range": "{{ minimum }} - {{ maximum }}"
     },
     "inventory": {

@@ -1,12 +1,3 @@
-/*
- * ------------------------------------------------------------
- * IMPORTANT: The contents of this file are auto-generated.
- *
- * This file may be updated by the Shopify admin language editor
- * or related systems. Please exercise caution as any changes
- * made to this file may be overwritten.
- * ------------------------------------------------------------
- */
 {
   "categories": {
     "banners": "Banner",
@@ -338,7 +329,7 @@
       "name": "Social-Media-Icons",
       "settings": {
         "paragraph": {
-          "content": "Um deine Social-Media-Konten anzuzeigen, verlinke sie in deinen [Theme-Einstellungen](/editor?context=theme&category=social%20media)."
+          "content": "Um deine Social-Media-Konten anzuzeigen, verlinke sie in deinen [Theme-Einstellungen](\/editor?context=theme&category=social%20media)."
         }
       }
     },
@@ -1322,7 +1313,7 @@
           "info": "Positionen werden automatisch für die mobile Nutzung optimiert."
         },
         "paragraph": {
-          "content": "Erscheint nicht auf Mobilgeräten, um die Anforderungen von Google [interstitielle Leitlinien](https://developers.google.com/search/blog/2016/08/helping-users-easily-access-content-on) für verbessertes SEO zu erfüllen."
+          "content": "Erscheint nicht auf Mobilgeräten, um die Anforderungen von Google [interstitielle Leitlinien](https:\/\/developers.google.com\/search\/blog\/2016\/08\/helping-users-easily-access-content-on) für verbessertes SEO zu erfüllen."
         },
         "header": {
           "content": "Hintergrundbild"
@@ -1340,15 +1331,15 @@
         },
         "show_social": {
           "label": "Social-Media-Symbole anzeigen",
-          "info": "Um deine Social-Media-Konten anzuzeigen, verlinke sie in deinen [Theme-Einstellungen](/editor?context=theme&category=social%20media)."
+          "info": "Um deine Social-Media-Konten anzuzeigen, verlinke sie in deinen [Theme-Einstellungen](\/editor?context=theme&category=social%20media)."
         },
         "enable_country_selector": {
-          "label": "Auswahl für Land/Region aktivieren",
-          "info": "Gehe zu den [Markteinstellungen](/admin/settings/markets), um ein Land / eine Region hinzuzufügen."
+          "label": "Auswahl für Land\/Region aktivieren",
+          "info": "Gehe zu den [Markteinstellungen](\/admin\/settings\/markets), um ein Land \/ eine Region hinzuzufügen."
         },
         "enable_language_selector": {
           "label": "Sprachauswahl aktivieren",
-          "info": "Gehe zu den [Spracheinstellungen](/admin/settings/languages), um eine Sprache hinzuzufügen."
+          "info": "Gehe zu den [Spracheinstellungen](\/admin\/settings\/languages), um eine Sprache hinzuzufügen."
         },
         "invert_icons_selectors": {
           "label": "Symbole und Selektoren invertieren"
@@ -1415,7 +1406,7 @@
       "name": "Warenkorbeinschub",
       "settings": {
         "paragraph": {
-          "content": "Der Warenkorb wird Ihren Kunden nicht angezeigt, wenn Sie den Warenkorbtyp in Ihren [theme settings](/editor?context=theme&category=cart) auf „Seite“ eingestellt haben."
+          "content": "Der Warenkorb wird Ihren Kunden nicht angezeigt, wenn Sie den Warenkorbtyp in Ihren [theme settings](\/editor?context=theme&category=cart) auf „Seite“ eingestellt haben."
         },
         "show_cart_note": {
           "label": "Warenkorbanmerkung anzeigen"
@@ -1435,7 +1426,7 @@
         },
         "header__free_shipping": {
           "content": "Kostenloser versand leiste",
-          "info": "Stellen Sie sicher, dass Sie Ihre [Liefergebühren](/admin/settings/shipping) richtig konfiguriert haben."
+          "info": "Stellen Sie sicher, dass Sie Ihre [Liefergebühren](\/admin\/settings\/shipping) richtig konfiguriert haben."
         },
         "show_free_shipping_bar": {
           "label": "Kostenloser versand leiste anzeigen"
@@ -1446,7 +1437,7 @@
         },
         "header__cart_recommendations": {
           "content": "Einkaufswagenempfehlungen",
-          "info": "Dynamische Empfehlungen basieren auf den Artikeln in Ihrem Einkaufswagen. Sie ändern und verbessern sich mit der Zeit. [weitere Infos](https://help.shopify.com/manual/online-store/search-and-discovery/product-recommendations)."
+          "info": "Dynamische Empfehlungen basieren auf den Artikeln in Ihrem Einkaufswagen. Sie ändern und verbessern sich mit der Zeit. [weitere Infos](https:\/\/help.shopify.com\/manual\/online-store\/search-and-discovery\/product-recommendations)."
         },
         "cart_recommendations_enabled": {
           "label": "Aktivieren Sie Einkaufswagenempfehlungen"
@@ -1558,7 +1549,7 @@
       "name": "Kontaktformular",
       "settings": {
         "paragraph": {
-          "content": "Alle Einsendungen werden an die Kunden-E-Mail-Adresse deines Shops gesendet. [Mehr erfahren](https://help.shopify.com/en/manual/using-themes/change-the-layout/add-contact-form#view-contact-form-submissions)."
+          "content": "Alle Einsendungen werden an die Kunden-E-Mail-Adresse deines Shops gesendet. [Mehr erfahren](https:\/\/help.shopify.com\/en\/manual\/using-themes\/change-the-layout\/add-contact-form#view-contact-form-submissions)."
         }
       },
       "blocks": {
@@ -1569,7 +1560,7 @@
           "name": "Social-Media-Icons",
           "settings": {
             "paragraph": {
-              "content": "Um deine Social-Media-Konten anzuzeigen, verlinke sie in deinen [Theme-Einstellungen](/editor?context=theme&category=social%20media)."
+              "content": "Um deine Social-Media-Konten anzuzeigen, verlinke sie in deinen [Theme-Einstellungen](\/editor?context=theme&category=social%20media)."
             }
           }
         },
@@ -1644,7 +1635,7 @@
       "name": "Cookie-Banner",
       "settings": {
         "paragraph": {
-          "content": "Bitten Sie Ihre Kunden um ihre Zustimmung zur Verwendung von Cookies und zur Verarbeitung ihrer Daten, wie dies von der europäischen Datenschutzrichtlinie und der Allgemeinen Datenschutzverordnung gefordert wird. [Weitere Informationen](https://help.shopify.com/manual/your-account/privacy/GDPR)"
+          "content": "Bitten Sie Ihre Kunden um ihre Zustimmung zur Verwendung von Cookies und zur Verarbeitung ihrer Daten, wie dies von der europäischen Datenschutzrichtlinie und der Allgemeinen Datenschutzverordnung gefordert wird. [Weitere Informationen](https:\/\/help.shopify.com\/manual\/your-account\/privacy\/GDPR)"
         },
         "mode": {
           "options__1": {
@@ -1706,7 +1697,7 @@
           "name": "Timer",
           "settings": {
             "paragraph": {
-              "content": "Das Ablaufdatum basiert auf der [primären Zeitzone des Geschäfts](/admin/settings/general)."
+              "content": "Das Ablaufdatum basiert auf der [primären Zeitzone des Geschäfts](\/admin\/settings\/general)."
             },
             "compact": {
               "label": "Kompaktes Design verwenden"
@@ -1850,7 +1841,7 @@
       "settings": {
         "liquid": {
           "label": "Liquid-Code",
-          "info": "Füge App-Snippets oder anderen Code hinzu, um fortgeschrittene Anpassungen zu erstellen. [Mehr Informationen](https://shopify.dev/docs/api/liquid)"
+          "info": "Füge App-Snippets oder anderen Code hinzu, um fortgeschrittene Anpassungen zu erstellen. [Mehr Informationen](https:\/\/shopify.dev\/docs\/api\/liquid)"
         }
       }
     },
@@ -1939,22 +1930,22 @@
       "name": "Copyright in der Fußzeile",
       "settings": {
         "header__country_selector": {
-          "content": "Auswahl für Land/Region",
-          "info": "Gehe zu den [Markteinstellungen](/admin/settings/markets), um ein Land / eine Region hinzuzufügen."
+          "content": "Auswahl für Land\/Region",
+          "info": "Gehe zu den [Markteinstellungen](\/admin\/settings\/markets), um ein Land \/ eine Region hinzuzufügen."
         },
         "enable_country_selector": {
-          "label": "Auswahl für Land/Region aktivieren"
+          "label": "Auswahl für Land\/Region aktivieren"
         },
         "header__language_selector": {
           "content": "Sprachauswahl",
-          "info": "Gehe zu den [Spracheinstellungen](/admin/settings/languages), um eine Sprache hinzuzufügen."
+          "info": "Gehe zu den [Spracheinstellungen](\/admin\/settings\/languages), um eine Sprache hinzuzufügen."
         },
         "enable_language_selector": {
           "label": "Sprachauswahl aktivieren"
         },
         "header__policy": {
           "content": "Links zu Richtlinien",
-          "info": "Um Richtlinien für den Shop hinzuzufügen, gehe zu deinen [Richtlinien-Einstellungen](/admin/settings/legal)."
+          "info": "Um Richtlinien für den Shop hinzuzufügen, gehe zu deinen [Richtlinien-Einstellungen](\/admin\/settings\/legal)."
         },
         "show_policy": {
           "label": "Links zu Richtlinien anzeigen"
@@ -1987,7 +1978,7 @@
         },
         "header__newsletter": {
           "content": "E-Mail-Anmeldung",
-          "info": "Abonnenten, die automatisch zu deiner Kundenliste \"Akzeptiert Marketing\" hinzugefügt wurden. [Mehr Informationen](https://help.shopify.com/manual/customers/manage-customers)"
+          "info": "Abonnenten, die automatisch zu deiner Kundenliste \"Akzeptiert Marketing\" hinzugefügt wurden. [Mehr Informationen](https:\/\/help.shopify.com\/manual\/customers\/manage-customers)"
         },
         "enable_newsletter": {
           "label": "E-Mail-Anmeldung anzeigen"
@@ -2000,14 +1991,14 @@
         },
         "header__social": {
           "content": "Social Media-Symbole",
-          "info": "Um deine Social-Media-Konten anzuzeigen, verlinke sie in deinen [Theme-Einstellungen](/editor?context=theme&category=social%20media)."
+          "info": "Um deine Social-Media-Konten anzuzeigen, verlinke sie in deinen [Theme-Einstellungen](\/editor?context=theme&category=social%20media)."
         },
         "show_social": {
           "label": "Social-Media-Symbole anzeigen"
         },
         "header__follow": {
           "content": "In Shop folgen",
-          "info": "Damit Kunden deinem Shop in der Shop-App über deine Storefront folgen können, muss Shop Pay aktiviert sein. [Mehr Informationen](https://help.shopify.com/manual/online-store/themes/customizing-themes/follow-on-shop)"
+          "info": "Damit Kunden deinem Shop in der Shop-App über deine Storefront folgen können, muss Shop Pay aktiviert sein. [Mehr Informationen](https:\/\/help.shopify.com\/manual\/online-store\/themes\/customizing-themes\/follow-on-shop)"
         },
         "enable_follow_on_shop": {
           "label": "\"In Shop folgen\" aktivieren"
@@ -2085,7 +2076,7 @@
       "name": "Header",
       "settings": {
         "paragraph__logo_help": {
-          "content": "Bearbeite dein Logo in den [theme settings](/editor?context=theme&category=logo)."
+          "content": "Bearbeite dein Logo in den [theme settings](\/editor?context=theme&category=logo)."
         },
         "logo_h1": {
           "label": "Logo als H1 auf Startseite aktivieren",
@@ -2160,14 +2151,14 @@
         },
         "show_social": {
           "label": "Social-Media-Symbole anzeigen",
-          "info": "Um deine Social-Media-Konten anzuzeigen, verlinke sie in deinen [Theme-Einstellungen](/editor?context=theme&category=social%20media)."
+          "info": "Um deine Social-Media-Konten anzuzeigen, verlinke sie in deinen [Theme-Einstellungen](\/editor?context=theme&category=social%20media)."
         },
         "header__country_selector": {
-          "content": "Auswahl für Land/Region",
-          "info": "Gehe zu den [Markteinstellungen](/admin/settings/markets), um ein Land / eine Region hinzuzufügen."
+          "content": "Auswahl für Land\/Region",
+          "info": "Gehe zu den [Markteinstellungen](\/admin\/settings\/markets), um ein Land \/ eine Region hinzuzufügen."
         },
         "enable_country_selector": {
-          "label": "Auswahl für Land/Region aktivieren"
+          "label": "Auswahl für Land\/Region aktivieren"
         },
         "show_country_name": {
           "label": "Ländernamen anzeigen"
@@ -2177,7 +2168,7 @@
         },
         "header__language_selector": {
           "content": "Sprachauswahl",
-          "info": "Gehe zu den [Spracheinstellungen](/admin/settings/languages), um eine Sprache hinzuzufügen."
+          "info": "Gehe zu den [Spracheinstellungen](\/admin\/settings\/languages), um eine Sprache hinzuzufügen."
         },
         "enable_language_selector": {
           "label": "Sprachauswahl aktivieren"
@@ -2196,7 +2187,7 @@
           "settings": {
             "menu_title": {
               "label": "Menüelement",
-              "info": "Geben Sie den Namen des Menüeintrags ein, für den Sie ein Mega-Menü anwenden möchten. [weitere Infos](https://roartheme.co/blogs/concept/how-to-create-a-mega-menu)"
+              "info": "Geben Sie den Namen des Menüeintrags ein, für den Sie ein Mega-Menü anwenden möchten. [weitere Infos](https:\/\/roartheme.co\/blogs\/concept\/how-to-create-a-mega-menu)"
             },
             "menu_width": {
               "options__1": {
@@ -2603,7 +2594,7 @@
         },
         "show_image": {
           "label": "Vorgestelltes Bild anzeigen",
-          "info": "Verwende für Bilder ein Seitenverhältnis von 16:9 für optimale Ergebnisse. [Mehr Informationen](https://help.shopify.com/manual/shopify-admin/productivity-tools/image-editor#understanding-image-aspect-ratio)"
+          "info": "Verwende für Bilder ein Seitenverhältnis von 16:9 für optimale Ergebnisse. [Mehr Informationen](https:\/\/help.shopify.com\/manual\/shopify-admin\/productivity-tools\/image-editor#understanding-image-aspect-ratio)"
         },
         "image": {
           "info": "Standardmäßig vorgestelltes Bild verwenden."
@@ -2617,10 +2608,10 @@
           "name": "Teilen",
           "settings": {
             "featured_image_info": {
-              "content": "Wenn du einen Link in Social-Media-Posts einfügst, wird das Feature-Bild der Seite als Vorschaubild angezeigt. [Mehr Informationen](https://help.shopify.com/manual/online-store/images/showing-social-media-thumbnail-images)"
+              "content": "Wenn du einen Link in Social-Media-Posts einfügst, wird das Feature-Bild der Seite als Vorschaubild angezeigt. [Mehr Informationen](https:\/\/help.shopify.com\/manual\/online-store\/images\/showing-social-media-thumbnail-images)"
             },
             "title_info": {
-              "content": "Ein Titel und eine Beschreibung des Shops sind im Vorschaubild enthalten. [Mehr Informationen](https://help.shopify.com/manual/promoting-marketing/seo/adding-keywords#set-a-title-and-description-for-your-online-store)"
+              "content": "Ein Titel und eine Beschreibung des Shops sind im Vorschaubild enthalten. [Mehr Informationen](https:\/\/help.shopify.com\/manual\/promoting-marketing\/seo\/adding-keywords#set-a-title-and-description-for-your-online-store)"
             }
           }
         },
@@ -2672,7 +2663,7 @@
           "label": "Auszug anzeigen"
         },
         "paragraph": {
-          "content": "Bearbeite deine Blog-Beiträge, um Auszüge zu ändern. [Mehr Informationen](https://help.shopify.com/manual/online-store/blogs/writing-blogs#display-an-excerpt-from-a-blog-post)"
+          "content": "Bearbeite deine Blog-Beiträge, um Auszüge zu ändern. [Mehr Informationen](https:\/\/help.shopify.com\/manual\/online-store\/blogs\/writing-blogs#display-an-excerpt-from-a-blog-post)"
         }
       }
     },
@@ -2702,7 +2693,7 @@
           "settings": {
             "show_accelerated_buttons": {
               "label": "Beschleunigte Schaltflächen anzeigen",
-              "info": "Konfigurieren Sie Schaltflächen für beschleunigte Zahlungen in Ihren [Zahlungseinstellungen](/admin/settings/payments)"
+              "info": "Konfigurieren Sie Schaltflächen für beschleunigte Zahlungen in Ihren [Zahlungseinstellungen](\/admin\/settings\/payments)"
             }
           }
         },
@@ -2710,7 +2701,7 @@
           "name": "Kostenlose Versandnachricht",
           "settings": {
             "paragraph": {
-              "content": "Stellen Sie sicher, dass Sie Ihre [Liefergebühren] richtig konfiguriert haben (/admin/settings/shipping)"
+              "content": "Stellen Sie sicher, dass Sie Ihre [Liefergebühren] richtig konfiguriert haben (\/admin\/settings\/shipping)"
             },
             "minimum_amount": {
               "label": "Mindestbetrag für kostenlosen Versand",
@@ -2778,14 +2769,14 @@
       "name": "Kategoriebanner",
       "settings": {
         "paragraph": {
-          "content": "Bearbeite deine Kategorien, um eine Beschreibung oder ein Bild hinzuzufügen. [Mehr Informationen](https://help.shopify.com/manual/products/collections/collection-layout)"
+          "content": "Bearbeite deine Kategorien, um eine Beschreibung oder ein Bild hinzuzufügen. [Mehr Informationen](https:\/\/help.shopify.com\/manual\/products\/collections\/collection-layout)"
         },
         "show_description": {
           "label": "Kategoriebeschreibung anzeigen"
         },
         "show_image": {
           "label": "Kategoriebild anzeigen",
-          "info": "Verwende für Bilder ein Seitenverhältnis von 16:9 für optimale Ergebnisse. [Mehr Informationen](https://help.shopify.com/manual/shopify-admin/productivity-tools/image-editor#understanding-image-aspect-ratio)"
+          "info": "Verwende für Bilder ein Seitenverhältnis von 16:9 für optimale Ergebnisse. [Mehr Informationen](https:\/\/help.shopify.com\/manual\/shopify-admin\/productivity-tools\/image-editor#understanding-image-aspect-ratio)"
         },
         "image": {
           "info": "Standardmäßig auf Kollektionsbild eingestellt."
@@ -2833,7 +2824,7 @@
         },
         "enable_filtering": {
           "label": "Filtern aktivieren",
-          "info": "Passe Filter mit der App Search & Discovery an. [Mehr Informationen](https://help.shopify.com/manual/online-store/search-and-discovery/filters)"
+          "info": "Passe Filter mit der App Search & Discovery an. [Mehr Informationen](https:\/\/help.shopify.com\/manual\/online-store\/search-and-discovery\/filters)"
         },
         "filter_collapsed": {
           "label": "Filter einklappen"
@@ -2850,7 +2841,7 @@
         },
         "filter_color_swatches": {
           "label": "Color-Swatches aktivieren",
-          "info": "[Einrichtungsanleitung anzeigen](https://roartheme.co/blogs/concept/how-to-set-up-color-swatches)"
+          "info": "[Einrichtungsanleitung anzeigen](https:\/\/roartheme.co\/blogs\/concept\/how-to-set-up-color-swatches)"
         },
         "enable_sorting": {
           "label": "Sortieren aktivieren"
@@ -2864,7 +2855,7 @@
           "name": "Unterkategorien",
           "settings": {
             "paragraph": {
-              "content": "Hier werden Links zu den Kategorien aus deinem Menü angezeigt. [Mehr erfahren](https://roartheme.co/blogs/concept/how-to-create-sub-collections)"
+              "content": "Hier werden Links zu den Kategorien aus deinem Menü angezeigt. [Mehr erfahren](https:\/\/roartheme.co\/blogs\/concept\/how-to-create-sub-collections)"
             },
             "menu": {
               "label": "Menü"
@@ -2908,8 +2899,7 @@
         },
         "promotion-video": {
           "name": "Werbevideo",
-          "settings": {
-          }
+          "settings": {}
         }
       }
     },
@@ -2975,7 +2965,7 @@
           }
         },
         "image_ratio": {
-          "info": "Bearbeite deine Kategorien, um Bilder hinzuzufügen. [Mehr Informationen](https://help.shopify.com/manual/products/collections)"
+          "info": "Bearbeite deine Kategorien, um Bilder hinzuzufügen. [Mehr Informationen](https:\/\/help.shopify.com\/manual\/products\/collections)"
         },
         "overlay_content": {
           "label": "Text auf Bild überlagern"
@@ -3019,7 +3009,7 @@
         },
         "header__media": {
           "content": "Medien",
-          "info": "Mehr Informationen über [Medienarten](https://help.shopify.com/manual/products/product-media)."
+          "info": "Mehr Informationen über [Medienarten](https:\/\/help.shopify.com\/manual\/products\/product-media)."
         },
         "media_size": {
           "label": "Medienbreite für Desktop",
@@ -3149,7 +3139,7 @@
             },
             "enable_color_swatches": {
               "label": "Farbfelder aktivieren",
-              "info": "Der Typ der Variantenauswahl muss \"Button\" sein. [Erfahren Sie, wie Sie Farbfelder einrichten](https://roartheme.co/blogs/concept/how-to-set-up-color-swatches)"
+              "info": "Der Typ der Variantenauswahl muss \"Button\" sein. [Erfahren Sie, wie Sie Farbfelder einrichten](https:\/\/roartheme.co\/blogs\/concept\/how-to-set-up-color-swatches)"
             },
             "color_swatch_type": {
               "options__1": {
@@ -3159,13 +3149,13 @@
                 "label": "Bildvariation"
               },
               "label": "Musterabschnitt-Typ",
-              "info": "Der Bildvariationsmodus erfordert, dass alle Varianten ein zugehöriges Bild haben. [Mehr erfahren](https://help.shopify.com/en/manual/products/product-media/add-images-variants#add-images-to-existing-variants)"
+              "info": "Der Bildvariationsmodus erfordert, dass alle Varianten ein zugehöriges Bild haben. [Mehr erfahren](https:\/\/help.shopify.com\/en\/manual\/products\/product-media\/add-images-variants#add-images-to-existing-variants)"
             },
             "header__size": {
               "content": "Größentabelle"
             },
             "paragraph__size": {
-              "content": "Produkte, die für die Größentabellenfunktion geeignet sind [eine Größenoption haben müssen](https://roartheme.co/blogs/concept/how-to-enable-size-chart-on-product-pages)"
+              "content": "Produkte, die für die Größentabellenfunktion geeignet sind [eine Größenoption haben müssen](https:\/\/roartheme.co\/blogs\/concept\/how-to-enable-size-chart-on-product-pages)"
             },
             "size_chart": {
               "label": "Größentabellenseite"
@@ -3176,7 +3166,7 @@
           "name": "Produkt-Variationen",
           "settings": {
             "paragraph": {
-              "content": "Verknüpfen Sie Produkte verschiedener Farben mit Hilfe von Farbfeldern. [Mehr erfahren](https://roartheme.co/blogs/concept/creating-product-variations-to-link-to-different-pages)"
+              "content": "Verknüpfen Sie Produkte verschiedener Farben mit Hilfe von Farbfeldern. [Mehr erfahren](https:\/\/roartheme.co\/blogs\/concept\/creating-product-variations-to-link-to-different-pages)"
             },
             "option_name": {
               "label": "Name der Option",
@@ -3198,7 +3188,7 @@
                 "label": "Produktbild"
               },
               "label": "Musterabschnitt-Typ",
-              "info": "Der Produktbildmodus erfordert, dass alle Produkte ein zugehöriges Bild haben. [Mehr erfahren](https://help.shopify.com/en/manual/products/product-media/add-images-variants#add-images-to-existing-variants)"
+              "info": "Der Produktbildmodus erfordert, dass alle Produkte ein zugehöriges Bild haben. [Mehr erfahren](https:\/\/help.shopify.com\/en\/manual\/products\/product-media\/add-images-variants#add-images-to-existing-variants)"
             }
           }
         },
@@ -3223,7 +3213,7 @@
             },
             "show_inventory_transfer": {
               "label": "Benachrichtigung zur Lagerbestandsübertragung anzeigen",
-              "info": "Erfahren Sie [hier](https://help.shopify.com/manual/products/inventory/transfers/create-transfer), wie Sie Bestandsumbuchungen erstellen"
+              "info": "Erfahren Sie [hier](https:\/\/help.shopify.com\/manual\/products\/inventory\/transfers\/create-transfer), wie Sie Bestandsumbuchungen erstellen"
             },
             "color_scheme": {
               "options__1": {
@@ -3256,11 +3246,11 @@
             },
             "show_dynamic_checkout": {
               "label": "Dynamischer Checkout-Button anzeigen",
-              "info": "Wenn sie die Zahlungsmethoden verwenden, die in deinem Shop verfügbar sind, sehen Kunden ihre bevorzugte Option, z. B. PayPal oder Apple Pay. [Mehr Informationen](https://help.shopify.com/manual/using-themes/change-the-layout/dynamic-checkout)"
+              "info": "Wenn sie die Zahlungsmethoden verwenden, die in deinem Shop verfügbar sind, sehen Kunden ihre bevorzugte Option, z. B. PayPal oder Apple Pay. [Mehr Informationen](https:\/\/help.shopify.com\/manual\/using-themes\/change-the-layout\/dynamic-checkout)"
             },
             "show_gift_card_recipient": {
               "label": "Formular für Empfängerinformationen für Geschenkgutscheine anzeigen",
-              "info": "So können Käufer Geschenkgutscheine an einem bestimmten Datum mit einer persönlichen Nachricht versenden. [Mehr Informationen](https://help.shopify.com/manual/online-store/themes/customizing-themes/add-gift-card-recipient-fields)"
+              "info": "So können Käufer Geschenkgutscheine an einem bestimmten Datum mit einer persönlichen Nachricht versenden. [Mehr Informationen](https:\/\/help.shopify.com\/manual\/online-store\/themes\/customizing-themes\/add-gift-card-recipient-fields)"
             }
           }
         },
@@ -3268,7 +3258,7 @@
           "name": "Verfügbarkeit von Abholungen",
           "settings": {
             "paragraph": {
-              "content": "Ermöglichen Sie es Ihren Kunden, die Verfügbarkeit in Einzelhandelsgeschäften zu sehen, indem Sie [die Abholung vor Ort einrichten](https://help.shopify.com/manual/sell-in-person/shopify-pos/order-management/local-pickup-for-online-orders)."
+              "content": "Ermöglichen Sie es Ihren Kunden, die Verfügbarkeit in Einzelhandelsgeschäften zu sehen, indem Sie [die Abholung vor Ort einrichten](https:\/\/help.shopify.com\/manual\/sell-in-person\/shopify-pos\/order-management\/local-pickup-for-online-orders)."
             }
           }
         },
@@ -3279,10 +3269,10 @@
           "name": "Teilen",
           "settings": {
             "featured_image_info": {
-              "content": "Wenn du einen Link in Social-Media-Posts einfügst, wird das Feature-Bild der Seite als Vorschaubild angezeigt. [Mehr Informationen](https://help.shopify.com/manual/online-store/images/showing-social-media-thumbnail-images)."
+              "content": "Wenn du einen Link in Social-Media-Posts einfügst, wird das Feature-Bild der Seite als Vorschaubild angezeigt. [Mehr Informationen](https:\/\/help.shopify.com\/manual\/online-store\/images\/showing-social-media-thumbnail-images)."
             },
             "title_info": {
-              "content": "Ein Titel und eine Beschreibung des Shops sind im Vorschaubild enthalten. [Mehr Informationen](https://help.shopify.com/manual/promoting-marketing/seo/adding-keywords#set-a-title-and-description-for-your-online-store)."
+              "content": "Ein Titel und eine Beschreibung des Shops sind im Vorschaubild enthalten. [Mehr Informationen](https:\/\/help.shopify.com\/manual\/promoting-marketing\/seo\/adding-keywords#set-a-title-and-description-for-your-online-store)."
             },
             "header__help": {
               "content": "Helpdesk"
@@ -3324,7 +3314,7 @@
           "name": "Ergänzende Produkte",
           "settings": {
             "paragraph": {
-              "content": "Um ergänzende Produkte auszuwählen, füge die Search & Discovery-App hinzu. [Mehr Informationen](https://help.shopify.com/manual/online-store/search-and-discovery/product-recommendations)"
+              "content": "Um ergänzende Produkte auszuwählen, füge die Search & Discovery-App hinzu. [Mehr Informationen](https:\/\/help.shopify.com\/manual\/online-store\/search-and-discovery\/product-recommendations)"
             }
           }
         },
@@ -3358,7 +3348,7 @@
           "name": "Countdown-Timer",
           "settings": {
             "paragraph": {
-              "content": "Um einen Countdown-Timer für Ihre Produkte zu konfigurieren, befolgen Sie bitte die in [diesem Tutorial](https://roartheme.co/blogs/concept/can-i-add-countdown-timer-to-my-products) beschriebenen Schritte."
+              "content": "Um einen Countdown-Timer für Ihre Produkte zu konfigurieren, befolgen Sie bitte die in [diesem Tutorial](https:\/\/roartheme.co\/blogs\/concept\/can-i-add-countdown-timer-to-my-products) beschriebenen Schritte."
             }
           }
         },
@@ -3442,7 +3432,7 @@
           "name": "Produktpaket",
           "settings": {
             "paragraph": {
-              "content": "Ermöglicht Kunden, mehrere verwandte Produkte als kuratiertes Set zu kaufen. [Mehr erfahren](https://roartheme.co/blogs/concept/how-to-setup-popular-upgrades-in-product-pages)"
+              "content": "Ermöglicht Kunden, mehrere verwandte Produkte als kuratiertes Set zu kaufen. [Mehr erfahren](https:\/\/roartheme.co\/blogs\/concept\/how-to-setup-popular-upgrades-in-product-pages)"
             },
             "metafield": {
               "label": "Metafeld",
@@ -3457,7 +3447,7 @@
           "name": "Symbolliste",
           "settings": {
             "paragraph": {
-              "content": "Verwenden Sie dynamische Quellen, um einzigartige Attribute hervorzuheben, indem Sie ein Produkt-Metafeld für die Symbolliste erstellen. [Mehr erfahren](https://roartheme.co/blogs/concept/how-to-setup-product-icons)"
+              "content": "Verwenden Sie dynamische Quellen, um einzigartige Attribute hervorzuheben, indem Sie ein Produkt-Metafeld für die Symbolliste erstellen. [Mehr erfahren](https:\/\/roartheme.co\/blogs\/concept\/how-to-setup-product-icons)"
             },
             "enable_carousel": {
               "label": "Karussell auf Desktop aktivieren"
@@ -3506,7 +3496,7 @@
         },
         "map_api_key": {
           "label": "Google-Maps-API-Schlüssel",
-          "info": "Du musst [einen Google-Maps-API-Schlüssel registrieren](https://help.shopify.com/manual/using-themes/troubleshooting/map-section-api-key), um die Karte anzuzeigen."
+          "info": "Du musst [einen Google-Maps-API-Schlüssel registrieren](https:\/\/help.shopify.com\/manual\/using-themes\/troubleshooting\/map-section-api-key), um die Karte anzuzeigen."
         },
         "map_zoom": {
           "label": "Karten zoomen"
@@ -3577,7 +3567,7 @@
           "settings": {
             "custom_icon": {
               "label": "Individuelles SVG-Icon",
-              "info": "Mehr über [SVG](https://roartheme.co/blogs/news/what-you-need-to-know-about-svg) erfahren"
+              "info": "Mehr über [SVG](https:\/\/roartheme.co\/blogs\/news\/what-you-need-to-know-about-svg) erfahren"
             },
             "link": {
               "label": "Link"
@@ -3608,7 +3598,7 @@
           "settings": {
             "custom_icon": {
               "label": "Individuelles SVG-Icon",
-              "info": "Mehr über [SVG](https://roartheme.co/blogs/news/what-you-need-to-know-about-svg) erfahren"
+              "info": "Mehr über [SVG](https:\/\/roartheme.co\/blogs\/news\/what-you-need-to-know-about-svg) erfahren"
             },
             "show_border": {
               "label": "Rand anzeigen"
@@ -3635,7 +3625,7 @@
       "name": "E-Mail-Anmeldung",
       "settings": {
         "paragraph": {
-          "content": "Abonnenten, die automatisch zu deiner Kundenliste \"Akzeptiert Marketing\" hinzugefügt wurden. [Mehr Informationen](https://help.shopify.com/manual/customers/manage-customers)"
+          "content": "Abonnenten, die automatisch zu deiner Kundenliste \"Akzeptiert Marketing\" hinzugefügt wurden. [Mehr Informationen](https:\/\/help.shopify.com\/manual\/customers\/manage-customers)"
         }
       },
       "blocks": {
@@ -3646,7 +3636,7 @@
           "name": "Social-Media-Icons",
           "settings": {
             "paragraph": {
-              "content": "Um deine Social-Media-Konten anzuzeigen, verlinke sie in deinen [Theme-Einstellungen](/editor?context=theme&category=social%20media)."
+              "content": "Um deine Social-Media-Konten anzuzeigen, verlinke sie in deinen [Theme-Einstellungen](\/editor?context=theme&category=social%20media)."
             }
           }
         }
@@ -3710,7 +3700,7 @@
           "info": "Positionen werden automatisch für die mobile Nutzung optimiert."
         },
         "paragraph": {
-          "content": "Erscheint nicht auf Mobilgeräten, um die Anforderungen von Google [interstitielle Leitlinien](https://developers.google.com/search/blog/2016/08/helping-users-easily-access-content-on) für verbessertes SEO zu erfüllen."
+          "content": "Erscheint nicht auf Mobilgeräten, um die Anforderungen von Google [interstitielle Leitlinien](https:\/\/developers.google.com\/search\/blog\/2016\/08\/helping-users-easily-access-content-on) für verbessertes SEO zu erfüllen."
         }
       },
       "blocks": {
@@ -3731,7 +3721,7 @@
             },
             "show_social": {
               "label": "Social-Media-Symbole anzeigen",
-              "info": "Um deine Social-Media-Konten anzuzeigen, verlinke sie in deinen [Theme-Einstellungen](/editor?context=theme&category=social%20media)."
+              "info": "Um deine Social-Media-Konten anzuzeigen, verlinke sie in deinen [Theme-Einstellungen](\/editor?context=theme&category=social%20media)."
             },
             "social_heading": {
               "label": "Rubrik \"Soziale Medien\""
@@ -3792,7 +3782,7 @@
       "settings": {
         "header__discount": {
           "content": "Rabatt",
-          "info": "Erfahren Sie [hier](https://help.shopify.com/manual/discounts), wie Sie Rabattcodes erstellen."
+          "info": "Erfahren Sie [hier](https:\/\/help.shopify.com\/manual\/discounts), wie Sie Rabattcodes erstellen."
         },
         "minimum_quantity": {
           "label": "Mindestanzahl erforderlicher Artikel"
@@ -3864,7 +3854,7 @@
       "name": "Verwandte Produkte",
       "settings": {
         "paragraph": {
-          "content": "Dynamische Empfehlungen nutzen Bestell- und Produktinformationen, um sich mit der Zeit zu verändern und zu verbessern. [Weitere Informationen](https://help.shopify.com/themes/development/recommended-products)"
+          "content": "Dynamische Empfehlungen nutzen Bestell- und Produktinformationen, um sich mit der Zeit zu verändern und zu verbessern. [Weitere Informationen](https:\/\/help.shopify.com\/themes\/development\/recommended-products)"
         },
         "product_limit": {
           "label": "Anzahl der verwandten Produkte"
@@ -3921,7 +3911,7 @@
       "name": "Schublade suchen",
       "settings": {
         "paragraph": {
-          "content": "Die Suchleiste wird Ihren Kunden nicht angezeigt, wenn Sie die Suchfunktion in Ihren [Theme-Einstellungen](/editor?context=theme&category=search) aktiviert haben."
+          "content": "Die Suchleiste wird Ihren Kunden nicht angezeigt, wenn Sie die Suchfunktion in Ihren [Theme-Einstellungen](\/editor?context=theme&category=search) aktiviert haben."
         }
       }
     },
@@ -4149,7 +4139,7 @@
         },
         "description": {
           "label": "Video-Alt-Text",
-          "info": "Beschreibe das Video für Kunden, die Bildschirmlesegeräte benutzen. [Mehr Informationen](https://help.shopify.com/manual/online-store/themes/theme-structure/theme-features#video)"
+          "info": "Beschreibe das Video für Kunden, die Bildschirmlesegeräte benutzen. [Mehr Informationen](https:\/\/help.shopify.com\/manual\/online-store\/themes\/theme-structure\/theme-features#video)"
         }
       }
     },
@@ -4594,7 +4584,7 @@
       "settings": {
         "swatch_config": {
           "label": "Konfiguration",
-          "info": "Jede Regel muss in einer eigenen Zeile stehen. [Mehr erfahren](https://roartheme.co/blogs/concept/how-to-set-up-color-swatches) über die genaue Benennungskonvention."
+          "info": "Jede Regel muss in einer eigenen Zeile stehen. [Mehr erfahren](https:\/\/roartheme.co\/blogs\/concept\/how-to-set-up-color-swatches) über die genaue Benennungskonvention."
         },
         "header": {
           "content": "Bildmuster"
@@ -4640,7 +4630,7 @@
         },
         "show_countdown": {
           "label": "Countdown-Timer anzeigen",
-          "info": "Um einen Countdown-Timer für Ihre Produkte zu konfigurieren, befolgen Sie bitte die in [diesem Tutorial](https://roartheme.co/blogs/concept/can-i-add-countdown-timer-to-my-products) beschriebenen Schritte."
+          "info": "Um einen Countdown-Timer für Ihre Produkte zu konfigurieren, befolgen Sie bitte die in [diesem Tutorial](https:\/\/roartheme.co\/blogs\/concept\/can-i-add-countdown-timer-to-my-products) beschriebenen Schritte."
         },
         "enable_quick_add": {
           "label": "Schaltfläche zum schnellen Hinzufügen aktivieren"
@@ -4663,7 +4653,7 @@
             "label": "Bildvariation"
           },
           "label": "Musterabschnitt-Typ",
-          "info": "Der Bildvariationsmodus erfordert, dass alle Varianten ein zugehöriges Bild haben. [Mehr erfahren](https://help.shopify.com/en/manual/products/product-media/add-images-variants#add-images-to-existing-variants)"
+          "info": "Der Bildvariationsmodus erfordert, dass alle Varianten ein zugehöriges Bild haben. [Mehr erfahren](https:\/\/help.shopify.com\/en\/manual\/products\/product-media\/add-images-variants#add-images-to-existing-variants)"
         },
         "max_color_swatches": {
           "label": "Maximal anzuzeigende Farbmuster"
@@ -4688,7 +4678,7 @@
         },
         "header__icon_list": {
           "content": "Symbolliste",
-          "info": "Verwenden Sie dynamische Quellen, um einzigartige Attribute hervorzuheben, indem Sie ein Produkt-Metafeld für die Symbolliste erstellen. [Mehr erfahren](https://roartheme.co/blogs/concept/how-to-setup-product-icons)"
+          "info": "Verwenden Sie dynamische Quellen, um einzigartige Attribute hervorzuheben, indem Sie ein Produkt-Metafeld für die Symbolliste erstellen. [Mehr erfahren](https:\/\/roartheme.co\/blogs\/concept\/how-to-setup-product-icons)"
         },
         "product_icon_list": {
           "label": "Symbolliste anzeigen"
@@ -4748,43 +4738,43 @@
         },
         "social_twitter_link": {
           "label": "X (Twitter)",
-          "info": "https://x.com/shopify"
+          "info": "https:\/\/x.com\/shopify"
         },
         "social_facebook_link": {
           "label": "Facebook",
-          "info": "https://facebook.com/shopify"
+          "info": "https:\/\/facebook.com\/shopify"
         },
         "social_pinterest_link": {
           "label": "Pinterest",
-          "info": "https://pinterest.com/shopify"
+          "info": "https:\/\/pinterest.com\/shopify"
         },
         "social_instagram_link": {
           "label": "Instagram",
-          "info": "http://instagram.com/shopify"
+          "info": "http:\/\/instagram.com\/shopify"
         },
         "social_tiktok_link": {
           "label": "TikTok",
-          "info": "https://tiktok.com/@shopify"
+          "info": "https:\/\/tiktok.com\/@shopify"
         },
         "social_tumblr_link": {
           "label": "Tumblr",
-          "info": "https://shopify.tumblr.com"
+          "info": "https:\/\/shopify.tumblr.com"
         },
         "social_linkedin_link": {
           "label": "LinkedIn",
-          "info": "https://www.linkedin.com/in/shopify"
+          "info": "https:\/\/www.linkedin.com\/in\/shopify"
         },
         "social_snapchat_link": {
           "label": "Snapchat",
-          "info": "https://www.snapchat.com/add/shopify"
+          "info": "https:\/\/www.snapchat.com\/add\/shopify"
         },
         "social_youtube_link": {
           "label": "YouTube",
-          "info": "https://www.youtube.com/shopify"
+          "info": "https:\/\/www.youtube.com\/shopify"
         },
         "social_vimeo_link": {
           "label": "Vimeo",
-          "info": "https://vimeo.com/shopify"
+          "info": "https:\/\/vimeo.com\/shopify"
         },
         "header__sharing_options": {
           "content": "Optionen zum Teilen"

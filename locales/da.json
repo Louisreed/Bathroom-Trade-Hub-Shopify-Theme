@@ -45,7 +45,7 @@
       "login_form_password": "Adgangskode",
       "login_form_error": "Forkert adgangskode!",
       "login_form_submit": "Log ind",
-      "admin_link_html": "Er du butiksejeren? <a href=\"/admin\" class=\"link\">Log ind her</a>",
+      "admin_link_html": "Er du butiksejeren? <a href=\"\/admin\" class=\"link\">Log ind her<\/a>",
       "powered_by_shopify_html": "Denne butik vil blive drevet af {{ shopify }}"
     },
     "breadcrumbs": {
@@ -206,7 +206,7 @@
     "quick_order_list": {
       "product_total": "Subtotal for produkt",
       "view_cart": "Se indkøbskurv",
-      "each": "{{ money }}/stk.",
+      "each": "{{ money }}\/stk.",
       "product": "Produkt",
       "variant": "Variant",
       "variant_total": "Variant i alt",
@@ -259,9 +259,9 @@
       "subtotal": "I alt",
       "cart_error": "Der opstod en fejl under opdatering af din indkøbskurv. Prøv venligst igen.",
       "cart_quantity_error_html": "Du kan kun tilføje {{ quantity }} af denne vare til din indkøbskurv.",
-      "taxes_and_shipping_policy_at_checkout_html": "Skatter og <a href=\"{{ link }}\">forsendelse</a> beregnes ved kassen",
+      "taxes_and_shipping_policy_at_checkout_html": "Skatter og <a href=\"{{ link }}\">forsendelse<\/a> beregnes ved kassen",
       "taxes_included_but_shipping_at_checkout": "Inklusiv moms, fragt beregnes ved kassen",
-      "taxes_included_and_shipping_policy_html": "Skat inkluderet. <a href=\"{{ link }}\">Forsendelse</a> beregnes ved kassen.",
+      "taxes_included_and_shipping_policy_html": "Skat inkluderet. <a href=\"{{ link }}\">Forsendelse<\/a> beregnes ved kassen.",
       "taxes_and_shipping_at_checkout": "Inklusiv moms, fragt beregnes ved kassen",
       "update": "Opdater indkøbskurven",
       "checkout": "Gå til kassen",
@@ -318,10 +318,10 @@
     }
   },
   "localization": {
-    "country_label": "Land/Region",
+    "country_label": "Land\/Region",
     "language_label": "Sprog",
     "update_language": "Opdater sprog",
-    "update_country": "Opdater land/område"
+    "update_country": "Opdater land\/område"
   },
   "contact": {
     "form": {
@@ -360,9 +360,9 @@
       "address1": "Adresse 1",
       "address2": "Adresse 2",
       "city": "By",
-      "country": "Land/Region",
+      "country": "Land\/Region",
       "province": "Provins",
-      "zip": "Podkod/postnummer",
+      "zip": "Podkod\/postnummer",
       "phone": "Telefon",
       "set_default": "Indstil som standardadresse",
       "add": "Tilføj adresse",
@@ -476,7 +476,7 @@
       "shop_the_look": "Køb looket",
       "vendor": "Sælger",
       "include_taxes": "Skat inkluderet.",
-      "shipping_policy_html": "<a href=\"{{ link }}\">Levering</a> beregnes ved betaling.",
+      "shipping_policy_html": "<a href=\"{{ link }}\">Levering<\/a> beregnes ved betaling.",
       "will_not_ship_until": "Klar til at sende {{ date }}",
       "will_be_in_stock_after": "Tilbage på lager {{ date }}",
       "waiting_for_stock": "Lager på vej",
@@ -490,7 +490,7 @@
       "regular_price": "Almindelig pris",
       "sale_price": "Udsalgspris",
       "unit_price": "St pris",
-      "from_price_html": "<small>From</small> {{ price }}"
+      "from_price_html": "<small>From<\/small> {{ price }}"
     },
     "media": {
       "open_media": "Åbn medie {{ index }} i modul",
@@ -515,7 +515,7 @@
       "title": "Mængderabat",
       "note": "Mængderabat tilgængelig",
       "minimum": "Mere end {{ quantity }}",
-      "price_at_each": "til {{ price }}/stk",
+      "price_at_each": "til {{ price }}\/stk",
       "price_range": "{{ minimum }} – {{ maximum }}"
     },
     "inventory": {

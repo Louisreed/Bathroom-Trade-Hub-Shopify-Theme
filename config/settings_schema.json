@@ -4,8 +4,8 @@
     "theme_name": "Concept",
     "theme_author": "RoarTheme",
     "theme_version": "4.3.0",
-    "theme_documentation_url": "https://roartheme.co/blogs/concept",
-    "theme_support_url": "https://haloroar.ticksy.com"
+    "theme_documentation_url": "https:\/\/roartheme.co\/blogs\/concept",
+    "theme_support_url": "https:\/\/haloroar.ticksy.com"
   },
   {
     "name": "t:settings_schema.logo.name",

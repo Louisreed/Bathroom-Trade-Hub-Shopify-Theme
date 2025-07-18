@@ -45,7 +45,7 @@
       "login_form_password": "Contraseña",
       "login_form_error": "Contraseña incorrecta",
       "login_form_submit": "Iniciar sesión",
-      "admin_link_html": "¿Eres el propietario de la tienda? <a href=\"/admin\" class=\"link\">Inicia sesión aquí</a>",
+      "admin_link_html": "¿Eres el propietario de la tienda? <a href=\"\/admin\" class=\"link\">Inicia sesión aquí<\/a>",
       "powered_by_shopify_html": "Esta tienda contará con tecnología Shopify {{ shopify }}"
     },
     "breadcrumbs": {
@@ -189,8 +189,8 @@
       "view_details": "Ver detalles",
       "address_error": "No se puede encontrar esa dirección",
       "address_no_results": "No hay resultados para esa dirección",
-      "address_query_limit_html": "Se ha excedido el límite de uso de la API de Google . Considere la posibilidad de actualizar a un <a href=\"https://developers.google.com/maps/premium/usage-limits\">Plan Premium</a>.",
-      "auth_error_html": "Hubo un problema de autenticación con su cuenta de Google Maps. Crear y habilitar la <a href=\"https://developers.google.com/maps/documentation/javascript/get-api-key\">API de JavaScript</a> y  <a href=\"https://developers.google.com/maps/documentation/geocoding/get-api-key\">API de geocodificación</a> permiso para su aplicación."
+      "address_query_limit_html": "Se ha excedido el límite de uso de la API de Google . Considere la posibilidad de actualizar a un <a href=\"https:\/\/developers.google.com\/maps\/premium\/usage-limits\">Plan Premium<\/a>.",
+      "auth_error_html": "Hubo un problema de autenticación con su cuenta de Google Maps. Crear y habilitar la <a href=\"https:\/\/developers.google.com\/maps\/documentation\/javascript\/get-api-key\">API de JavaScript<\/a> y  <a href=\"https:\/\/developers.google.com\/maps\/documentation\/geocoding\/get-api-key\">API de geocodificación<\/a> permiso para su aplicación."
     },
     "slideshow": {
       "carousel": "Carrusel",
@@ -206,7 +206,7 @@
     "quick_order_list": {
       "product_total": "Subtotal de productos",
       "view_cart": "Ver carrito",
-      "each": "{{ money }}/unidad",
+      "each": "{{ money }}\/unidad",
       "product": "Producto",
       "variant": "Variante",
       "variant_total": "Total de variantes",
@@ -259,9 +259,9 @@
       "subtotal": "Subtotal",
       "cart_error": "Hubo un error al actualizar tu carrito de compra. Inténtalo de nuevo.",
       "cart_quantity_error_html": "Solo puedes agregar {{ quantity }} de este artículo a tu carrito.",
-      "taxes_and_shipping_policy_at_checkout_html": "Los impuestos y <a href=\"{{ link }}\">gastos de envío</a> se calculan en la pantalla de pago",
+      "taxes_and_shipping_policy_at_checkout_html": "Los impuestos y <a href=\"{{ link }}\">gastos de envío<\/a> se calculan en la pantalla de pago",
       "taxes_included_but_shipping_at_checkout": "Impuestos incluidos y los gastos de envío se calculan en la pantalla de pago",
-      "taxes_included_and_shipping_policy_html": "Impuestos incluidos. Los <a href=\"{{ link }}\">gastos de envío</a> se calculan en la pantalla de pago.",
+      "taxes_included_and_shipping_policy_html": "Impuestos incluidos. Los <a href=\"{{ link }}\">gastos de envío<\/a> se calculan en la pantalla de pago.",
       "taxes_and_shipping_at_checkout": "Los impuestos y gastos de envío se calculan en la pantalla de pago",
       "update": "Actualizar",
       "checkout": "Finalizar pedido",
@@ -318,10 +318,10 @@
     }
   },
   "localization": {
-    "country_label": "País/región",
+    "country_label": "País\/región",
     "language_label": "Idioma",
     "update_language": "Actualizar idioma",
-    "update_country": "Actualizar país/región"
+    "update_country": "Actualizar país\/región"
   },
   "contact": {
     "form": {
@@ -360,7 +360,7 @@
       "address1": "Dirección 1",
       "address2": "Dirección 2",
       "city": "Ciudad",
-      "country": "País/región",
+      "country": "País\/región",
       "province": "Provincia",
       "zip": "Código postal",
       "phone": "Teléfono",
@@ -370,7 +370,7 @@
       "cancel": "Cancelar",
       "edit": "Editar",
       "delete": "Eliminar",
-      "delete_confirm": "¿Estás seguro/a de que deseas eliminar esta dirección?"
+      "delete_confirm": "¿Estás seguro\/a de que deseas eliminar esta dirección?"
     },
     "login": {
       "title": "Iniciar sesión",
@@ -476,7 +476,7 @@
       "shop_the_look": "Compra el Look",
       "vendor": "Proveedor",
       "include_taxes": "Impuestos incluidos.",
-      "shipping_policy_html": "Los <a href='{{ link }}'>gastos de envío</a> se calculan en la pantalla de pagos.",
+      "shipping_policy_html": "Los <a href='{{ link }}'>gastos de envío<\/a> se calculan en la pantalla de pagos.",
       "will_not_ship_until": "Será enviado después {{ date }}",
       "will_be_in_stock_after": "Estará disponible después {{ date }}",
       "waiting_for_stock": "Inventario en el camino",
@@ -490,7 +490,7 @@
       "regular_price": "Precio habitual",
       "sale_price": "Precio de oferta",
       "unit_price": "Precio unitario",
-      "from_price_html": "<small>A partir de</small> {{ price }}"
+      "from_price_html": "<small>A partir de<\/small> {{ price }}"
     },
     "media": {
       "open_media": "Abrir elemento multimedia {{ index }} en una ventana modal",
