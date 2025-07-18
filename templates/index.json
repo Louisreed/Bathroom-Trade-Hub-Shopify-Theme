@@ -234,7 +234,7 @@
         "overlay_style": "solid",
         "gradient_direction": "to top",
         "color_text": "",
-        "color_background": "",
+        "color_background": "#fafafa",
         "gradient_background": "",
         "color_button_text": "",
         "color_button_background": "",
