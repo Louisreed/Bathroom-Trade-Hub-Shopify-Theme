@@ -1,1 +1,497 @@
-{"sections":{"main-page":{"type":"main-page","disabled":true,"settings":{"heading_size":"title-sm","heading_alignment":"text-left","heading_tag":"h1","text_size":"text-base","padding_top":0,"padding_bottom":0,"divider":false,"narrow":true,"rounded":false}},"image_with_text_overlay_RyNcK6":{"type":"image-with-text-overlay","blocks":{"subheading_iVHtUk":{"type":"subheading","disabled":true,"settings":{"subheading":"BECOME A","subheading_size":"subtitle-lg","secondary_color":true}},"image_P4KjKp":{"type":"image","settings":{"image":"shopify:\/\/shop_images\/HUBPROLOGOBANNER.png","image_width":"custom","image_max_width":540,"image_max_width_mobile":360}},"text_THwXaH":{"type":"text","settings":{"text":"<p><a href=\"https:\/\/bathroomtradehub.co.uk\/account\/register\" title=\"https:\/\/bathroomtradehub.co.uk\/account\/register\">Click sign up below and fill out our application form to start the  process!<\/a><\/p>","text_font":"body","text_size":"subtext-xl","text_max_size":12,"secondary_color":false,"highlighted_text":"none","highlighted_scribble":"circle"}}},"block_order":["subheading_iVHtUk","image_P4KjKp","text_THwXaH"],"name":"Image with text overlay","settings":{"transparent_header":false,"image":"shopify:\/\/shop_images\/IMG_8017.heic","image_height":"650px","content_width":"small","content_position":"md:items-end md:justify-start","text_alignment":"left","image_height_mobile":"auto","content_position_mobile":"items-end justify-start","text_alignment_mobile":"left","color_text":"#ffffff","color_highlight":"#e0a580","gradient_highlight":"","color_button_text":"#171717","color_button_background":"#ffffff","color_button_gradient":"","color_overlay":"#171717","overlay_opacity":70,"padding_top":0,"padding_bottom":0,"divider":false,"full_width":true,"rounded":false,"enable_parallax":true,"parallax_direction":"vertical"}},"multicolumn_with_icons_VpViPm":{"type":"multicolumn-with-icons","blocks":{"column_HqANnV":{"type":"column","settings":{"icon":"truck","custom_icon":"","heading":"Fast Local Delivery & Click and Collect","text":"<p>Fast delivery for in-stock products and priority click and collect service. FREE delivery in Dorset on orders over £100+VAT. We also offer FREE UK delivery on order over £500+VAT.<\/p>","highlighted_text":"none","highlighted_scribble":"circle"}},"column_edAWWd":{"type":"column","settings":{"icon":"star","custom_icon":"","heading":"Trade-only Pricing","text":"<p>Once your account is verified, our pricing will be tailored to you or your business. The more you shop with us, the more discount will reflect on our pricing. We love rewarding loyal customers! We also offer bulk deals if you decide you want to save even more money!<\/p>","highlighted_text":"none","highlighted_scribble":"circle"}},"column_hHAkky":{"type":"column","settings":{"icon":"shield","custom_icon":"","heading":"In Stock Products","text":"<p>We stock the essentials for every bathroom installer, from silicones, trims and panels to toilets, basin vanity units, enclosures and everything in-between. <\/p>","highlighted_text":"none","highlighted_scribble":"circle"}}},"block_order":["column_HqANnV","column_edAWWd","column_hHAkky"],"name":"Multicolumn with icons","settings":{"style":"with-background","columns":3,"text_alignment":"left","heading":"Become a <em>HubPRO<\/em> member","heading_size":"title-lg tracking-heading","heading_alignment":"text-center md:items-center","heading_tag":"h2","subheading":"Why you should","description":"<p>The days of paying over the odds for the <em><strong>essentials are over!<\/strong><\/em><\/p>","button_label":"","button_link":"","button_external":false,"button_icon":true,"highlighted_text":"scribble","highlighted_scribble":"circle","color_text":"","color_background":"","gradient_background":"","color_highlight":"","gradient_highlight":"","color_button_text":"","color_button_background":"","color_button_gradient":"","padding_top":32,"padding_bottom":48,"divider":false,"full_width":false,"rounded":false}},"collection_list_kg7KnE":{"type":"collection-list","blocks":{"collection_ibDQUq":{"type":"collection","settings":{"collection":"multipanel-tile-range","title":"The Tile Range","description":"","overlay_content":false,"color_text":"#ffffff","color_overlay":"#000000","overlay_opacity":30}},"collection_UpTM7a":{"type":"collection","settings":{"collection":"multipanel-classic","title":"The Classic Range","description":"","overlay_content":false,"color_text":"#ffffff","color_overlay":"#000000","overlay_opacity":30}},"collection_JTqVjX":{"type":"collection","settings":{"collection":"multipanel-contemporary","title":"The Contemporary Collection","description":"","overlay_content":false,"color_text":"#ffffff","color_overlay":"#000000","overlay_opacity":30}},"collection_JtXJxa":{"type":"collection","settings":{"collection":"multipanel-pure","title":"The Pure Collection","description":"","overlay_content":false,"color_text":"#ffffff","color_overlay":"#000000","overlay_opacity":30}},"collection_URAcUM":{"type":"collection","settings":{"collection":"linda-barker","title":"The Linda Barker Collection","description":"","overlay_content":false,"color_text":"#ffffff","color_overlay":"#000000","overlay_opacity":30}},"collection_ATd6TE":{"type":"collection","settings":{"collection":"multipanel-trims-consumables","title":"Trims & Consumables","description":"","overlay_content":false,"color_text":"#ffffff","color_overlay":"#000000","overlay_opacity":30}}},"block_order":["collection_ibDQUq","collection_UpTM7a","collection_JTqVjX","collection_JtXJxa","collection_URAcUM","collection_ATd6TE"],"disabled":true,"settings":{"columns":5,"carousel_on_desktop":true,"image_type":"collection","image_ratio":"square","show_products_count":true,"show_view_all":false,"columns_mobile":"1","swipe_on_mobile":true,"heading":"","heading_size":"title-md","heading_alignment":"text-left md:items-end md:flex-row","heading_tag":"h2","subheading":"","description":"","highlighted_text":"none","highlighted_scribble":"circle","color_text":"","color_background":"","gradient_background":"","color_highlight":"","gradient_highlight":"","color_button_text":"","color_button_background":"","color_button_gradient":"","padding_top":72,"padding_bottom":72,"divider":false,"full_width":false,"rounded":false}},"rich_text_QHgKfz":{"type":"rich-text","blocks":{"heading_YLtnTA":{"type":"heading","settings":{"heading":"<em>Sign Up<\/em>","heading_size":"title-lg tracking-heading","heading_tag":"h2","highlighted_text":"scribble","highlighted_scribble":"squiggle-underline"}},"text_EzhfNx":{"type":"text","settings":{"text":"<p>To get started, click Sign Up and provide a few basic details about yourself and your business (if applicable). Once the form is submitted, you will receive a confirmation email shortly after.<\/p>","text_font":"heading","text_size":"subtext-xl","text_max_size":60,"secondary_color":true,"highlighted_text":"none","highlighted_scribble":"circle"}},"heading_fNtQTC":{"type":"heading","settings":{"heading":"<em>Account Verification<\/em>","heading_size":"title-lg tracking-heading","heading_tag":"h2","highlighted_text":"scribble","highlighted_scribble":"basic-underline"}},"text_TL6tfV":{"type":"text","settings":{"text":"<p>Bathroom Trade Hub will verify your account within 48 hours. During this process, you will receive an additional email confirming your account setup, along with details on your personalized site-wide pricing.<\/p>","text_font":"heading","text_size":"subtext-xl","text_max_size":60,"secondary_color":true,"highlighted_text":"none","highlighted_scribble":"circle"}},"heading_cqRBPX":{"type":"heading","settings":{"heading":"<em>Start Shopping!<\/em>","heading_size":"title-lg tracking-heading","heading_tag":"h2","highlighted_text":"scribble","highlighted_scribble":"circle"}},"text_FjX496":{"type":"text","settings":{"text":"<p><em>Now that you're ready to begin shopping, you’ll be placed into a tier system designed to accommodate for all our customers. The more you spend with Bathroom Trade Hub, the higher your tier and the greater your savings. It’s that simple!<\/em><\/p>","text_font":"heading","text_size":"subtext-xl","text_max_size":60,"secondary_color":true,"highlighted_text":"none","highlighted_scribble":"circle"}}},"block_order":["heading_YLtnTA","text_EzhfNx","heading_fNtQTC","text_TL6tfV","heading_cqRBPX","text_FjX496"],"name":"Rich text","settings":{"text_alignment":"center","text_alignment_mobile":"center","heading":"","heading_size":"title-md","heading_alignment":"text-left md:items-end md:flex-row","heading_width":"small","heading_tag":"h2","subheading":"","description":"","button_label":"","button_link":"","button_external":false,"button_icon":true,"highlighted_text":"none","highlighted_scribble":"circle","color_text":"","color_background":"","gradient_background":"","color_highlight":"","gradient_highlight":"","color_button_text":"","color_button_background":"","color_button_gradient":"","padding_top":12,"padding_bottom":0,"divider":false,"narrow":true,"rounded":false}},"rich_text_GYCVC4":{"type":"rich-text","name":"Rich text","settings":{"text_alignment":"center","text_alignment_mobile":"left","heading":"","heading_size":"title-md","heading_alignment":"text-left md:items-end md:flex-row","heading_width":"small","heading_tag":"h2","subheading":"","description":"","button_label":"","button_link":"","button_external":false,"button_icon":true,"highlighted_text":"none","highlighted_scribble":"circle","color_text":"","color_background":"","gradient_background":"","color_highlight":"","gradient_highlight":"","color_button_text":"","color_button_background":"","color_button_gradient":"","padding_top":32,"padding_bottom":0,"divider":false,"narrow":true,"rounded":false}},"rich_text_xdywFM":{"type":"rich-text","blocks":{"button_iaFCbH":{"type":"button","settings":{"button_label":"SIGN UP HERE","button_link":"https:\/\/bathroomtradehub.co.uk\/account\/register","button_size":"lg","button_external":false,"button_icon":false}}},"block_order":["button_iaFCbH"],"name":"Rich text","settings":{"text_alignment":"center","text_alignment_mobile":"left","heading":"","heading_size":"title-md","heading_alignment":"text-left md:items-end md:flex-row","heading_width":"small","heading_tag":"h2","subheading":"","description":"","button_label":"","button_link":"","button_external":false,"button_icon":true,"highlighted_text":"none","highlighted_scribble":"circle","color_text":"","color_background":"","gradient_background":"","color_highlight":"","gradient_highlight":"","color_button_text":"","color_button_background":"","color_button_gradient":"","padding_top":0,"padding_bottom":36,"divider":false,"narrow":true,"rounded":false}}},"order":["main-page","image_with_text_overlay_RyNcK6","multicolumn_with_icons_VpViPm","collection_list_kg7KnE","rich_text_QHgKfz","rich_text_GYCVC4","rich_text_xdywFM"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-page": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left",
+        "heading_tag": "h1",
+        "text_size": "text-base",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "image_with_text_overlay_RyNcK6": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_iVHtUk": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "BECOME A",
+            "subheading_size": "subtitle-lg",
+            "secondary_color": true
+          }
+        },
+        "image_P4KjKp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/HUBPROLOGOBANNER.png",
+            "image_width": "custom",
+            "image_max_width": 540,
+            "image_max_width_mobile": 360
+          }
+        },
+        "button_UqMMdQ": {
+          "type": "button",
+          "settings": {
+            "button_label": "Get started now!",
+            "button_link": "https://bathroomtradehub.co.uk/account/register",
+            "button_style": "primary",
+            "button_size": "md",
+            "button_external": false,
+            "button_icon": true
+          }
+        }
+      },
+      "block_order": [
+        "subheading_iVHtUk",
+        "image_P4KjKp",
+        "button_UqMMdQ"
+      ],
+      "name": "Image with text overlay",
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/IMG_8017.heic",
+        "image_height": "650px",
+        "content_width": "small",
+        "content_position": "md:items-center md:justify-start",
+        "text_alignment": "left",
+        "image_height_mobile": "auto",
+        "content_position_mobile": "items-end justify-start",
+        "text_alignment_mobile": "left",
+        "color_text": "#ffffff",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 80,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": true,
+        "parallax_direction": "vertical"
+      }
+    },
+    "multicolumn_with_icons_VpViPm": {
+      "type": "multicolumn-with-icons",
+      "blocks": {
+        "column_HqANnV": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "custom_icon": "",
+            "heading": "Fast Local Delivery & Click and Collect",
+            "text": "<p>Fast delivery for in-stock products and priority click and collect service. FREE delivery in Dorset on orders over £100+VAT. We also offer FREE UK delivery on order over £500+VAT.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_edAWWd": {
+          "type": "column",
+          "settings": {
+            "icon": "star",
+            "custom_icon": "",
+            "heading": "Trade-only Pricing",
+            "text": "<p>Once your account is verified, our pricing will be tailored to you or your business. The more you shop with us, the more discount will reflect on our pricing. We love rewarding loyal customers! We also offer bulk deals if you decide you want to save even more money!</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_hHAkky": {
+          "type": "column",
+          "settings": {
+            "icon": "shield",
+            "custom_icon": "",
+            "heading": "In Stock Products",
+            "text": "<p>We stock the essentials for every bathroom installer, from silicones, trims and panels to toilets, basin vanity units, enclosures and everything in-between. </p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "column_HqANnV",
+        "column_edAWWd",
+        "column_hHAkky"
+      ],
+      "name": "Multicolumn with icons",
+      "settings": {
+        "style": "with-background",
+        "columns": 3,
+        "text_alignment": "left",
+        "heading": "Become a <em>HubPRO</em> member",
+        "heading_size": "title-lg tracking-heading",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "Why you should",
+        "description": "<p>The days of paying over the odds for the <em><strong>essentials are over!</strong></em></p>",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "scribble",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 32,
+        "padding_bottom": 48,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "collection_list_kg7KnE": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_ibDQUq": {
+          "type": "collection",
+          "settings": {
+            "collection": "multipanel-tile-range",
+            "title": "The Tile Range",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_UpTM7a": {
+          "type": "collection",
+          "settings": {
+            "collection": "multipanel-classic",
+            "title": "The Classic Range",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_JTqVjX": {
+          "type": "collection",
+          "settings": {
+            "collection": "multipanel-contemporary",
+            "title": "The Contemporary Collection",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_JtXJxa": {
+          "type": "collection",
+          "settings": {
+            "collection": "multipanel-pure",
+            "title": "The Pure Collection",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_URAcUM": {
+          "type": "collection",
+          "settings": {
+            "collection": "linda-barker",
+            "title": "The Linda Barker Collection",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_ATd6TE": {
+          "type": "collection",
+          "settings": {
+            "collection": "multipanel-trims-consumables",
+            "title": "Trims & Consumables",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_ibDQUq",
+        "collection_UpTM7a",
+        "collection_JTqVjX",
+        "collection_JtXJxa",
+        "collection_URAcUM",
+        "collection_ATd6TE"
+      ],
+      "disabled": true,
+      "settings": {
+        "columns": 5,
+        "carousel_on_desktop": true,
+        "image_type": "collection",
+        "image_ratio": "square",
+        "show_products_count": true,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "rich_text_QHgKfz": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_YLtnTA": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>Sign Up</em>",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "squiggle-underline"
+          }
+        },
+        "text_EzhfNx": {
+          "type": "text",
+          "settings": {
+            "text": "<p>To get started, click Sign Up and provide a few basic details about yourself and your business (if applicable). Once the form is submitted, you will receive a confirmation email shortly after.</p>",
+            "text_font": "heading",
+            "text_size": "subtext-xl",
+            "text_max_size": 60,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "heading_fNtQTC": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>Account Verification</em>",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "basic-underline"
+          }
+        },
+        "text_TL6tfV": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Bathroom Trade Hub will verify your account within 48 hours. During this process, you will receive an additional email confirming your account setup, along with details on your personalized site-wide pricing.</p>",
+            "text_font": "heading",
+            "text_size": "subtext-xl",
+            "text_max_size": 60,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "heading_cqRBPX": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>Start Shopping!</em>",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_FjX496": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em>Now that you're ready to begin shopping, you’ll be placed into a tier system designed to accommodate for all our customers. The more you spend with Bathroom Trade Hub, the higher your tier and the greater your savings. It’s that simple!</em></p>",
+            "text_font": "heading",
+            "text_size": "subtext-xl",
+            "text_max_size": 60,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_YLtnTA",
+        "text_EzhfNx",
+        "heading_fNtQTC",
+        "text_TL6tfV",
+        "heading_cqRBPX",
+        "text_FjX496"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 12,
+        "padding_bottom": 0,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "rich_text_GYCVC4": {
+      "type": "rich-text",
+      "name": "Rich text",
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "left",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 32,
+        "padding_bottom": 0,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "rich_text_xdywFM": {
+      "type": "rich-text",
+      "blocks": {
+        "button_iaFCbH": {
+          "type": "button",
+          "settings": {
+            "button_label": "SIGN UP HERE",
+            "button_link": "https://bathroomtradehub.co.uk/account/register",
+            "button_style": "primary",
+            "button_size": "lg",
+            "button_external": false,
+            "button_icon": false
+          }
+        }
+      },
+      "block_order": [
+        "button_iaFCbH"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "left",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 36,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "main-page",
+    "image_with_text_overlay_RyNcK6",
+    "multicolumn_with_icons_VpViPm",
+    "collection_list_kg7KnE",
+    "rich_text_QHgKfz",
+    "rich_text_GYCVC4",
+    "rich_text_xdywFM"
+  ]
+}
