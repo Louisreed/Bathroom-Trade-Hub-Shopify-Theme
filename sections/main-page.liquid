@@ -2,19 +2,30 @@
   #shopify-section-{{ section.id }} {
     --section-padding-top: {{ section.settings.padding_top }}px;
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --section-margin-top: {{ section.settings.margin_top }}px;
+    --section-margin-bottom: {{ section.settings.margin_bottom }}px;
+    --section-margin-left: {{ section.settings.margin_left }}px;
+    --section-margin-right: {{ section.settings.margin_right }}px;
     {%- render 'section-variables', section: section -%}
+  }
+
+  #shopify-section-{{ section.id }} .section {
+    margin-top: var(--section-margin-top);
+    margin-bottom: var(--section-margin-bottom);
+    margin-left: var(--section-margin-left);
+    margin-right: var(--section-margin-right);
   }
 </style>
 
 <div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}">
   <div class="page-width{% if section.settings.narrow %} page-width--narrow{% endif %} relative">
     <div class="title-wrapper leading-none {{ section.settings.heading_alignment }}">
-      <{{ section.settings.heading_tag }} class="heading {{ section.settings.heading_size }}">
+      <{{ section.settings.heading_tag }} class="heading {{ section.settings.heading_size }}{% if section.settings.text_capitalization != blank %} {{ section.settings.text_capitalization }}{% endif %}">
         <split-words class="split-words js-invisible block" data-animate="fade-up-large">{{ page.title }}</split-words>
       </{{ section.settings.heading_tag }}>
     </div>
 
-    <div class="page rte {{ section.settings.text_size }}">
+    <div class="page rte {{ section.settings.text_size }}{% if section.settings.content_capitalization != blank %} {{ section.settings.content_capitalization }}{% endif %}">
       {{- page.content -}}
     </div>
   </div>
@@ -142,6 +153,54 @@
       "label": "t:sections.global.settings.text_size.label"
     },
     {
+      "type": "select",
+      "id": "text_capitalization",
+      "options": [
+        {
+          "value": "",
+          "label": "Normal"
+        },
+        {
+          "value": "text-uppercase",
+          "label": "UPPERCASE"
+        },
+        {
+          "value": "text-lowercase",
+          "label": "lowercase"
+        },
+        {
+          "value": "text-capitalize",
+          "label": "Capitalize"
+        }
+      ],
+      "default": "",
+      "label": "Heading Capitalization"
+    },
+    {
+      "type": "select",
+      "id": "content_capitalization",
+      "options": [
+        {
+          "value": "",
+          "label": "Normal"
+        },
+        {
+          "value": "text-uppercase",
+          "label": "UPPERCASE"
+        },
+        {
+          "value": "text-lowercase",
+          "label": "lowercase"
+        },
+        {
+          "value": "text-capitalize",
+          "label": "Capitalize"
+        }
+      ],
+      "default": "",
+      "label": "Content Capitalization"
+    },
+    {
       "type": "header",
       "content": "t:sections.global.settings.header__colors.content",
       "info": "t:sections.global.settings.header__colors.info"
@@ -163,7 +222,7 @@
     },
     {
       "type": "header",
-      "content": "t:sections.global.settings.header__section.content"
+      "content": "Spacing"
     },
     {
       "type": "range",
@@ -184,6 +243,54 @@
       "unit": "px",
       "label": "t:sections.global.settings.padding_bottom.label",
       "default": 100
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": -120,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Margin Top",
+      "default": 0,
+      "info": "Use negative values to remove default spacing"
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": -120,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Margin Bottom",
+      "default": 0,
+      "info": "Use negative values to remove default spacing"
+    },
+    {
+      "type": "range",
+      "id": "margin_left",
+      "min": -120,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Margin Left",
+      "default": 0,
+      "info": "Use negative values to remove default spacing"
+    },
+    {
+      "type": "range",
+      "id": "margin_right",
+      "min": -120,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Margin Right",
+      "default": 0,
+      "info": "Use negative values to remove default spacing"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.global.settings.header__section.content"
     },
     {
       "type": "checkbox",

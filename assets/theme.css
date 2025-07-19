@@ -2330,6 +2330,19 @@ video {
   }
 }
 
+/* Text Transform Utility Classes */
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
 @media screen and (min-width: 1280px) {
   .xl\:sticky {
     position: sticky
@@ -12429,7 +12442,7 @@ button.shopify-payment-button__button--hidden {
 
 .product__text+.product__text+.product__more {
   border-block-start: 0;
-  margin-block-start: var(--sp-4);
+  padding-inline: 0;
 }
 
 .product__more+.product__accordion,
@@ -13424,10 +13437,6 @@ button:is([is=media-lightbox-button], [is=media-hover-button]):focus-visible {
 
 .testimonial.with-4-stars blockquote::before {
   content: '★★★★';
-}
-
-.testimonial.with-3-stars blockquote::before {
-  content: '★★★';
 }
 
 .testimonial.with-2-stars blockquote::before {
@@ -15978,4 +15987,17 @@ video-media:not([playing]) .deferred-poster .play-button .icon:last-child:not(:o
   border-radius: var(--divider-border-rounded);
   flex-basis: var(--divider-flex-basis);
   min-height: var(--divider-flex-basis);
+}
+
+/* Text Transform Utility Classes */
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
 }
