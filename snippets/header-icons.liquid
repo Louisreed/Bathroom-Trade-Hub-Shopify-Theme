@@ -38,6 +38,9 @@
 
 <div class="header__icons header__icons--{{ context }} flex justify-{{ context }} z-2">
   <div class="header__buttons flex items-center gap-1d5">
+    {%- comment -%} VAT Switcher for T-selector app embed - positioned first {%- endcomment -%}
+    <div class="vat-switcher-inline hidden lg:block"></div>
+
     {%- if show_toggle -%}
       <button
         class="menu-toggle-button hidden lg:flex items-center justify-center"

@@ -6,13 +6,6 @@
     --color-foreground: {{ section.settings.color_text.rgb }};
     --color-transparent: {{ section.settings.transparent_color_text.rgb }};
   }
-
-  @media screen and (min-width: 749px) {
-    .visible-desktop {
-      margin-right: 150px;
-      z-index: 99;
-    }
-  }
 </style>
 
 {%- liquid
@@ -86,13 +79,6 @@
       </nav>
     </div>
   {%- endif -%}
-
-  {%- comment -%} VAT Switcher for T-selector app embed {%- endcomment -%}
-  <div class="header__icons header__icons--end flex justify-end">
-    <div class="header__buttons flex items-center gap-1d5">
-      <div class="vat-switcher-inline visible-desktop"></div>
-    </div>
-  </div>
 
   {%- liquid
     if header_layout != 'center'
