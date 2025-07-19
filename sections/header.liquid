@@ -34,7 +34,15 @@
   render 'header-drawer', section: section
 -%}
 
-<header data-section-id="{{ section.id }}" class="header header--{{ header_layout }} mobile:header--{{ section.settings.logo_position_mobile }} page-width{% if section.settings.full_width %} page-width--full{% endif %} section{% if section.settings.rounded %} section--rounded{% endif %} section--padding grid items-center z-20 relative w-full"{% if section.settings.sticky_header_type != 'none' %} is="sticky-header" data-sticky-type="{{ section.settings.sticky_header_type }}"{% else %} is="custom-header"{% endif %}>
+<header
+  data-section-id="{{ section.id }}"
+  class="header header--{{ header_layout }} mobile:header--{{ section.settings.logo_position_mobile }} page-width{% if section.settings.full_width %} page-width--full{% endif %} section{% if section.settings.rounded %} section--rounded{% endif %} section--padding grid items-center z-20 relative w-full"
+  {% if section.settings.sticky_header_type != 'none' %}
+    is="sticky-header" data-sticky-type="{{ section.settings.sticky_header_type }}"
+  {% else %}
+    is="custom-header"
+  {% endif %}
+>
   {%- liquid
     render 'header-icons', section: section, show_search: true, show_hamburger: true, show_toggle: show_toggle, context: 'start'
 
@@ -46,8 +54,13 @@
       render 'header-icons', section: section, show_search: true, show_account: true, show_cart: true, show_hamburger: true, context: 'end'
     endif
   -%}
-  
-  <div class="header__navigation hidden lg:flex lg:gap-5 {{ main_menu_class }}"{% if header_layout == 'center' %} id="MenuToggle"{% endif %}>
+
+  <div
+    class="header__navigation hidden lg:flex lg:gap-5 {{ main_menu_class }}"
+    {% if header_layout == 'center' %}
+      id="MenuToggle"
+    {% endif %}
+  >
     <nav class="header__menu hidden lg:flex" role="navigation" aria-label="Primary">
       {%- render 'header-nav-desktop', section: section, main_menu: main_menu, limit: link_count, context: 'start' -%}
     </nav>
@@ -58,7 +71,7 @@
       render 'header-logo', logo_h1: section.settings.logo_h1
     endif
   -%}
-  
+
   {%- if header_layout == 'center-split' -%}
     <div class="header__navigation header__navigation--split hidden lg:flex lg:gap-5 lg:justify-start">
       <nav class="header__menu hidden lg:flex" role="navigation" aria-label="Secondary">
@@ -72,6 +85,18 @@
       render 'header-icons', section: section, show_search: true, show_account: true, show_cart: true, show_hamburger: true, context: 'end'
     endif
   -%}
+
+  {%- comment -%} Render app blocks {%- endcomment -%}
+  {%- if section.blocks.size > 0 -%}
+    <div class="header__app-blocks flex items-center">
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when '@app' -%}
+            {%- render block -%}
+        {%- endcase -%}
+      {%- endfor -%}
+    </div>
+  {%- endif -%}
 
   {%- if section.settings.rounded -%}
     {%- render 'corner', dir: 'bottom', border: true, prefix: 'header' -%}
@@ -88,7 +113,10 @@
 
 <script>
   if (Shopify.designMode) {
-    document.documentElement.style.setProperty('--header-height', Math.round(document.getElementById('shopify-section-{{ section.id }}').clientHeight) + 'px');
+    document.documentElement.style.setProperty(
+      '--header-height',
+      Math.round(document.getElementById('shopify-section-{{ section.id }}').clientHeight) + 'px'
+    );
   }
 </script>
 
@@ -1574,12 +1602,13 @@
           "default": 40
         }
       ]
+    },
+    {
+      "type": "@app"
     }
   ],
   "enabled_on": {
-    "groups": [
-      "header"
-    ]
+    "groups": ["header"]
   }
 }
 {% endschema %}
