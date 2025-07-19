@@ -1,6 +1,10 @@
 {%- capture direction -%}{% render 'direction' %}{%- endcapture -%}
 <!doctype html>
-<html class="no-js{% if request.design_mode %} shopify-design-mode{% endif %}" lang="{{ request.locale.iso_code }}" dir="{{ direction }}">
+<html
+  class="no-js{% if request.design_mode %} shopify-design-mode{% endif %}"
+  lang="{{ request.locale.iso_code }}"
+  dir="{{ direction }}"
+>
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -16,7 +20,7 @@
     {% # theme-check-enable RemoteAsset %}
 
     {%- if settings.favicon != blank -%}
-      <link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 32, height: 32 }}" type="image/png" />
+      <link rel="shortcut icon" href="{{ settings.favicon | image_url: width: 32, height: 32 }}" type="image/png">
     {%- endif -%}
 
     <title>
@@ -38,16 +42,22 @@
 
     {%- liquid
       render 'social-meta-tags'
-      
+
       render 'css-variables'
       echo 'theme.css' | asset_url | stylesheet_tag: preload: true
-      
+
       if direction == 'rtl'
         echo 'rtl.css' | asset_url | stylesheet_tag: preload: true
       endif
     -%}
 
-    <link rel="stylesheet" href="{{ 'apps.css' | asset_url }}" media="print" fetchpriority="low" onload="this.media='all'">
+    <link
+      rel="stylesheet"
+      href="{{ 'apps.css' | asset_url }}"
+      media="print"
+      fetchpriority="low"
+      onload="this.media='all'"
+    >
 
     {{ content_for_header }}
 
@@ -65,14 +75,29 @@
     {%- render 'js-variables' -%}
   </head>
 
-  <body class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if request.path == '/challenge' %} template-challange{% endif %}" data-rounded-button="{{ settings.rounded_button }}" data-rounded-input="{{ settings.rounded_input }}" data-rounded-block="{{ settings.rounded_block }}" data-rounded-card="{{ settings.rounded_card }}" data-button-hover="{{ settings.buttons_hover }}"{% if settings.enable_page_transition %} data-page-transition{% endif %}{% if settings.enable_lazy_image %} data-lazy-image{% endif %} data-title-animation data-page-rendering>
+  <body
+    class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}{% if request.path == '/challenge' %} template-challange{% endif %}"
+    data-rounded-button="{{ settings.rounded_button }}"
+    data-rounded-input="{{ settings.rounded_input }}"
+    data-rounded-block="{{ settings.rounded_block }}"
+    data-rounded-card="{{ settings.rounded_card }}"
+    data-button-hover="{{ settings.buttons_hover }}"
+    {% if settings.enable_page_transition %}
+      data-page-transition
+    {% endif -%}
+    {% if settings.enable_lazy_image %}
+      data-lazy-image
+    {% endif %}
+    data-title-animation
+    data-page-rendering
+  >
     <a class="sr-only skip-link" href="#MainContent">{{ 'general.accessibility.skip_to_content' | t }}</a>
 
     {%- liquid
       if settings.enable_page_transition
         render 'loading-bar'
       endif
-      
+
       render 'mouse-cursor'
 
       sections 'header-group'
