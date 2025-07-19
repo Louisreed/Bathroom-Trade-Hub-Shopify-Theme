@@ -518,10 +518,10 @@
           "settings": {
             "button_label": "SIGN UP HERE",
             "button_link": "https://bathroomtradehub.co.uk/account/register",
-            "button_style": "primary",
+            "button_style": "secondary",
             "button_size": "lg",
             "button_external": false,
-            "button_icon": false
+            "button_icon": true
           }
         }
       },
