@@ -584,7 +584,7 @@
       "settings": {
         "product": "maxi-shower-panel-sparkle-white",
         "enable_sticky_info": true,
-        "media_size": 64,
+        "media_size": 50,
         "gallery_layout": "thumbnail",
         "thumbnail_position": "beside",
         "image_ratio": "adapt_first",
