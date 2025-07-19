@@ -612,15 +612,15 @@
         },
         "mega_menu_h8mAFh": {
           "type": "mega_menu",
-          "name": "ENCLOSURES\/TRAYS",
+          "name": "ENCLOSURES/TRAYS",
           "disabled": true,
           "settings": {
-            "menu_title": "Enclosures\/Trays",
+            "menu_title": "Enclosures/Trays",
             "menu_width": "medium",
             "show_menu_image": false,
             "button_label": "Button label",
             "button_link": "",
-            "promo_image_1": "shopify:\/\/shop_images\/wrsc11-wetroom-screen-co.jpg",
+            "promo_image_1": "shopify://shop_images/wrsc11-wetroom-screen-co.jpg",
             "promo_image_ratio_1": "adapt",
             "promo_heading_1": "Wetroom Glass Panels",
             "promo_subtext_1": "",
