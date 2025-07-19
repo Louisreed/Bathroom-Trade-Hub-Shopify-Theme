@@ -13,13 +13,13 @@
       "type": "main-page",
       "settings": {
         "heading_size": "title-md",
-        "heading_alignment": "text-center",
+        "heading_alignment": "text-left",
         "heading_tag": "h1",
         "text_size": "text-base",
         "padding_top": 52,
-        "padding_bottom": 52,
+        "padding_bottom": 0,
         "divider": false,
-        "narrow": true,
+        "narrow": false,
         "rounded": false
       }
     },
@@ -124,12 +124,12 @@
         "collection_gRK8Ga"
       ],
       "settings": {
-        "columns": 4,
+        "columns": 5,
         "carousel_on_desktop": true,
         "image_type": "collection",
-        "image_ratio": "square",
+        "image_ratio": "landscape",
         "show_products_count": true,
-        "show_view_all": false,
+        "show_view_all": true,
         "columns_mobile": "1",
         "swipe_on_mobile": true,
         "heading": "",
