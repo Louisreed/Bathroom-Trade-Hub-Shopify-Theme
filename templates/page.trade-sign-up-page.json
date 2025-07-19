@@ -308,65 +308,11 @@
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
-        },
-        "heading_fNtQTC": {
-          "type": "heading",
-          "settings": {
-            "heading": "<em>Account Verification</em>",
-            "heading_size": "title-lg tracking-heading",
-            "heading_tag": "h2",
-            "highlighted_text": "scribble",
-            "highlighted_scribble": "basic-underline"
-          }
-        },
-        "text_TL6tfV": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Bathroom Trade Hub will verify your account within 48 hours. During this process, you will receive an additional email confirming your account setup, along with details on your personalized site-wide pricing.</p>",
-            "text_font": "heading",
-            "text_size": "subtext-xl",
-            "text_max_size": 60,
-            "text_line_height": 1.6,
-            "text_letter_spacing": 0,
-            "text_capitalize": false,
-            "secondary_color": true,
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "heading_cqRBPX": {
-          "type": "heading",
-          "settings": {
-            "heading": "<em>Start Shopping!</em>",
-            "heading_size": "title-lg tracking-heading",
-            "heading_tag": "h2",
-            "highlighted_text": "scribble",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "text_FjX496": {
-          "type": "text",
-          "settings": {
-            "text": "<p><em>Now that you're ready to begin shopping, you’ll be placed into a tier system designed to accommodate for all our customers. The more you spend with Bathroom Trade Hub, the higher your tier and the greater your savings. It’s that simple!</em></p>",
-            "text_font": "heading",
-            "text_size": "subtext-xl",
-            "text_max_size": 60,
-            "text_line_height": 1.6,
-            "text_letter_spacing": 0,
-            "text_capitalize": false,
-            "secondary_color": true,
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
         }
       },
       "block_order": [
         "heading_YLtnTA",
-        "text_EzhfNx",
-        "heading_fNtQTC",
-        "text_TL6tfV",
-        "heading_cqRBPX",
-        "text_FjX496"
+        "text_EzhfNx"
       ],
       "name": "Rich text",
       "settings": {
@@ -393,8 +339,138 @@
         "color_button_text": "",
         "color_button_background": "",
         "color_button_gradient": "",
-        "padding_top": 12,
-        "padding_bottom": 0,
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "rich_text_qFQmBj": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_j9FXMi": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>Account Verification</em>",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "basic-underline"
+          }
+        },
+        "text_tMnHf7": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Bathroom Trade Hub will verify your account within 48 hours. During this process, you will receive an additional email confirming your account setup, along with details on your personalized site-wide pricing.</p>",
+            "text_font": "heading",
+            "text_size": "subtext-xl",
+            "text_max_size": 60,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_j9FXMi",
+        "text_tMnHf7"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "rich_text_XCVJJH": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_PTcKKN": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>Start Shopping!</em>",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_HfRc7G": {
+          "type": "text",
+          "settings": {
+            "text": "<p><em>Now that you're ready to begin shopping, you’ll be placed into a tier system designed to accommodate for all our customers. The more you spend with Bathroom Trade Hub, the higher your tier and the greater your savings. It’s that simple!</em></p>",
+            "text_font": "heading",
+            "text_size": "subtext-xl",
+            "text_max_size": 60,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_PTcKKN",
+        "text_HfRc7G"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 24,
+        "padding_bottom": 24,
         "divider": false,
         "narrow": true,
         "rounded": false
@@ -491,6 +567,8 @@
     "multicolumn_with_icons_VpViPm",
     "collection_list_kg7KnE",
     "rich_text_QHgKfz",
+    "rich_text_qFQmBj",
+    "rich_text_XCVJJH",
     "rich_text_GYCVC4",
     "rich_text_xdywFM"
   ]
