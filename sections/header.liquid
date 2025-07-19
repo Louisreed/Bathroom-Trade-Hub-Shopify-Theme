@@ -7,31 +7,10 @@
     --color-transparent: {{ section.settings.transparent_color_text.rgb }};
   }
 
-  /* App blocks positioning for different header layouts */
-  .header__app-blocks {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 50%;
-    right: 1rem;
-    transform: translateY(-50%);
-    z-index: 10;
-  }
-
-  /* Adjust for center-drawer layout */
-  .header--center-drawer .header__app-blocks {
-    position: static;
-    grid-area: icons;
-    justify-self: start;
-    transform: none;
-    margin-left: 1rem;
-  }
-
-  @media (max-width: 1023px) {
-    .header__app-blocks {
-      right: 4rem; /* Account for mobile hamburger button */
-    }
+  /* App blocks styling within header icons */
+  .header-app-block {
+    min-width: 2.75rem;
+    height: 2.75rem;
   }
 </style>
 
@@ -112,18 +91,6 @@
       render 'header-icons', section: section, show_search: true, show_account: true, show_cart: true, show_hamburger: true, context: 'end'
     endif
   -%}
-
-  {%- comment -%} Render app blocks - visible in all layouts {%- endcomment -%}
-  {%- if section.blocks.size > 0 -%}
-    <div class="header__app-blocks">
-      {%- for block in section.blocks -%}
-        {%- case block.type -%}
-          {%- when '@app' -%}
-            {%- render block -%}
-        {%- endcase -%}
-      {%- endfor -%}
-    </div>
-  {%- endif -%}
 
   {%- if section.settings.rounded -%}
     {%- render 'corner', dir: 'bottom', border: true, prefix: 'header' -%}

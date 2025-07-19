@@ -31,7 +31,7 @@
   endif
 
   assign section_rendering_api = false
-  if section.index == nil
+  if section.index == null
     assign section_rendering_api = true
   endif
 -%}
@@ -39,7 +39,13 @@
 <div class="header__icons header__icons--{{ context }} flex justify-{{ context }} z-2">
   <div class="header__buttons flex items-center gap-1d5">
     {%- if show_toggle -%}
-      <button class="menu-toggle-button hidden lg:flex items-center justify-center" type="button" is="menu-toggle" aria-controls="MenuToggle" aria-expanded="false">
+      <button
+        class="menu-toggle-button hidden lg:flex items-center justify-center"
+        type="button"
+        is="menu-toggle"
+        aria-controls="MenuToggle"
+        aria-expanded="false"
+      >
         <span class="sr-only">{{ 'general.drawers.navigation' | t }}</span>
         {%- render 'icon', icon: 'hamburger', size: 'lg' -%}
       </button>
@@ -50,11 +56,22 @@
         <ul class="flex flex-nowrap list-menu with-block">
           {%- if enable_language_selector -%}
             <li class="localization">
-              <details is="details-dropdown" trigger="{% if section.settings.hover_menu %}hover{% else %}click{% endif %}" level="top">
+              <details
+                is="details-dropdown"
+                trigger="{% if section.settings.hover_menu %}hover{% else %}click{% endif %}"
+                level="top"
+              >
                 <summary data-link="">
-                  <magnet-element class="menu__item text-sm-lg flex items-center font-medium z-2 relative cursor-pointer" data-magnet="0">
+                  <magnet-element
+                    class="menu__item text-sm-lg flex items-center font-medium z-2 relative cursor-pointer"
+                    data-magnet="0"
+                  >
                     {%- unless section_rendering_api -%}
-                      <api-button class="api-only" data-id="header_localization_language_form_{{ context }}" data-section-id="{{ section.id }}"></api-button>
+                      <api-button
+                        class="api-only"
+                        data-id="header_localization_language_form_{{ context }}"
+                        data-section-id="{{ section.id }}"
+                      ></api-button>
                     {%- endunless -%}
                     <span class="btn-text" data-text>
                       {%- liquid
@@ -76,16 +93,24 @@
                 </summary>
                 <div class="dropdown opacity-0 invisible absolute top-0 max-w-full pointer-events-none">
                   {%- unless section_rendering_api -%}
-                    <div id="header_localization_language_form_{{ context }}" class="dropdown__container relative"></div>
+                    <div
+                      id="header_localization_language_form_{{ context }}"
+                      class="dropdown__container relative"
+                    ></div>
                   {%- else -%}
                     {%- assign form_id = 'header_localization_language_form_' | append: context -%}
-                    {%- form 'localization', id: form_id, class: 'dropdown__container relative', is: 'localization-listbox' -%}
+                    {%- form 'localization',
+                      id: form_id,
+                      class: 'dropdown__container relative',
+                      is: 'localization-listbox'
+                    -%}
                       {%- render 'corner', dir: 'top', prefix: 'dropdown' -%}
                       <ul class="dropdown__nav flex flex-col gap-1d5 xl:gap-2" role="list">
                         {%- for language in localization.available_languages -%}
                           <li class="opacity-0">
                             <p>
-                              <a class="reversed-link{% if language.iso_code == localization.language.iso_code %} active pointer-events-none{% endif %}"
+                              <a
+                                class="reversed-link{% if language.iso_code == localization.language.iso_code %} active pointer-events-none{% endif %}"
                                 href="#"
                                 hreflang="{{ language.iso_code }}"
                                 lang="{{ language.iso_code }}"
@@ -102,7 +127,7 @@
                           </li>
                         {%- endfor -%}
                       </ul>
-                      <input type="hidden" name="locale_code" value="{{ localization.language.iso_code }}" />
+                      <input type="hidden" name="locale_code" value="{{ localization.language.iso_code }}">
                     {%- endform -%}
                   {%- endunless -%}
                 </div>
@@ -112,11 +137,22 @@
 
           {%- if enable_country_selector -%}
             <li class="localization">
-              <details is="details-dropdown" trigger="{% if section.settings.hover_menu %}hover{% else %}click{% endif %}" level="top">
+              <details
+                is="details-dropdown"
+                trigger="{% if section.settings.hover_menu %}hover{% else %}click{% endif %}"
+                level="top"
+              >
                 <summary data-link="">
-                  <magnet-element class="menu__item text-sm-lg flex items-center font-medium z-2 relative cursor-pointer" data-magnet="0">
+                  <magnet-element
+                    class="menu__item text-sm-lg flex items-center font-medium z-2 relative cursor-pointer"
+                    data-magnet="0"
+                  >
                     {%- unless section_rendering_api -%}
-                      <api-button class="api-only" data-id="header_localization_country_form_{{ context }}" data-section-id="{{ section.id }}"></api-button>
+                      <api-button
+                        class="api-only"
+                        data-id="header_localization_country_form_{{ context }}"
+                        data-section-id="{{ section.id }}"
+                      ></api-button>
                     {%- endunless -%}
                     {%- capture localization_country -%}
                       {%- if show_country_flag -%}
@@ -147,13 +183,18 @@
                     <div id="header_localization_country_form_{{ context }}" class="dropdown__container relative"></div>
                   {%- else -%}
                     {%- assign form_id = 'header_localization_country_form_' | append: context -%}
-                    {%- form 'localization', id: form_id, class: 'dropdown__container relative', is: 'localization-listbox' -%}
+                    {%- form 'localization',
+                      id: form_id,
+                      class: 'dropdown__container relative',
+                      is: 'localization-listbox'
+                    -%}
                       {%- render 'corner', dir: 'top', prefix: 'dropdown' -%}
                       <ul class="dropdown__nav flex flex-col gap-1d5 xl:gap-2" role="list">
                         {%- for country in localization.available_countries -%}
                           <li class="opacity-0">
                             <p>
-                              <a class="reversed-link{% if country.iso_code == localization.country.iso_code %} active pointer-events-none{% endif %}"
+                              <a
+                                class="reversed-link{% if country.iso_code == localization.country.iso_code %} active pointer-events-none{% endif %}"
                                 href="#"
                                 {% if country.iso_code == localization.country.iso_code %}
                                   aria-current="true"
@@ -162,13 +203,14 @@
                                 title="{{ country.name | escape }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})"
                                 data-no-instant
                               >
-                                {{- country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
+                                {{- country.name }} ({{ country.currency.iso_code }}
+                                {{ country.currency.symbol }})
                               </a>
                             </p>
                           </li>
                         {%- endfor -%}
                       </ul>
-                      <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}" />
+                      <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
                     {%- endform -%}
                   {%- endunless -%}
                 </div>
@@ -180,14 +222,25 @@
     {%- endif -%}
 
     {%- if show_search and settings.enable_search -%}
-      <a href="{{ routes.search_url }}" class="search-drawer-button flex items-center justify-center" is="magnet-link" aria-controls="SearchDrawer" aria-expanded="false" >
+      <a
+        href="{{ routes.search_url }}"
+        class="search-drawer-button flex items-center justify-center"
+        is="magnet-link"
+        aria-controls="SearchDrawer"
+        aria-expanded="false"
+      >
         <span class="sr-only">{{ 'general.search.title' | t }}</span>
         {%- render 'icon', icon: 'search', size: 'lg' -%}
       </a>
     {%- endif -%}
 
     {%- if show_account and shop.customer_accounts_enabled -%}
-      <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="hidden lg:flex items-center justify-center" is="magnet-link" rel="nofollow">
+      <a
+        href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+        class="hidden lg:flex items-center justify-center"
+        is="magnet-link"
+        rel="nofollow"
+      >
         <span class="sr-only">
           {%- liquid
             if customer
@@ -202,15 +255,48 @@
     {%- endif -%}
 
     {%- if show_cart -%}
-      <a href="{{ routes.cart_url }}" class="cart-drawer-button flex items-center justify-center relative" is="magnet-link" aria-controls="CartDrawer" aria-expanded="false" data-no-instant>
+      <a
+        href="{{ routes.cart_url }}"
+        class="cart-drawer-button flex items-center justify-center relative"
+        is="magnet-link"
+        aria-controls="CartDrawer"
+        aria-expanded="false"
+        data-no-instant
+      >
         <span class="sr-only">{{ 'general.cart.title' | t }}</span>
         {%- render 'icon', icon: 'cart', size: 'lg' -%}
-        <cart-count class="count absolute top-0 right-0 text-xs" aria-label="{{ 'general.cart.cart_count' | t: count: cart.item_count | escape }}"{% if cart == empty %} hidden{% endif %}>{{ cart.item_count }}</cart-count>
+        <cart-count
+          class="count absolute top-0 right-0 text-xs"
+          aria-label="{{ 'general.cart.cart_count' | t: count: cart.item_count | escape }}"
+          {% if cart == empty %}
+            hidden
+          {% endif %}
+        >
+          {{- cart.item_count -}}
+        </cart-count>
       </a>
     {%- endif -%}
 
+    {%- comment -%} Render app blocks for this header section {%- endcomment -%}
+    {%- if section.blocks.size > 0 -%}
+      {%- for block in section.blocks -%}
+        {%- case block.type -%}
+          {%- when '@app' -%}
+            <div class="header-app-block flex items-center justify-center">
+              {%- render block -%}
+            </div>
+        {%- endcase -%}
+      {%- endfor -%}
+    {%- endif -%}
+
     {%- if show_hamburger -%}
-      <button class="menu-drawer-button flex items-center justify-center" type="button" is="magnet-button" aria-controls="MenuDrawer" aria-expanded="false">
+      <button
+        class="menu-drawer-button flex items-center justify-center"
+        type="button"
+        is="magnet-button"
+        aria-controls="MenuDrawer"
+        aria-expanded="false"
+      >
         <span class="sr-only">{{ 'general.drawers.navigation' | t }}</span>
         {%- render 'icon', icon: 'hamburger', size: 'lg' -%}
       </button>
