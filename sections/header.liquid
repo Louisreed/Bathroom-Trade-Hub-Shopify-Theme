@@ -6,6 +6,33 @@
     --color-foreground: {{ section.settings.color_text.rgb }};
     --color-transparent: {{ section.settings.transparent_color_text.rgb }};
   }
+
+  /* App blocks positioning for different header layouts */
+  .header__app-blocks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    z-index: 10;
+  }
+
+  /* Adjust for center-drawer layout */
+  .header--center-drawer .header__app-blocks {
+    position: static;
+    grid-area: icons;
+    justify-self: start;
+    transform: none;
+    margin-left: 1rem;
+  }
+
+  @media (max-width: 1023px) {
+    .header__app-blocks {
+      right: 4rem; /* Account for mobile hamburger button */
+    }
+  }
 </style>
 
 {%- liquid
@@ -86,18 +113,13 @@
     endif
   -%}
 
-  {%- comment -%} Render app blocks - positioned as part of header grid {%- endcomment -%}
+  {%- comment -%} Render app blocks - visible in all layouts {%- endcomment -%}
   {%- if section.blocks.size > 0 -%}
-    <div
-      class="header__app-blocks flex items-center justify-center"
-      style="grid-area: icons; justify-self: end; margin-left: auto;"
-    >
+    <div class="header__app-blocks">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when '@app' -%}
-            <div class="app-block-wrapper">
-              {%- render block -%}
-            </div>
+            {%- render block -%}
         {%- endcase -%}
       {%- endfor -%}
     </div>
