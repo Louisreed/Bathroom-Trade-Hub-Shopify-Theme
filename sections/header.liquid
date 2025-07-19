@@ -86,13 +86,18 @@
     endif
   -%}
 
-  {%- comment -%} Render app blocks {%- endcomment -%}
+  {%- comment -%} Render app blocks - positioned as part of header grid {%- endcomment -%}
   {%- if section.blocks.size > 0 -%}
-    <div class="header__app-blocks flex items-center">
+    <div
+      class="header__app-blocks flex items-center justify-center"
+      style="grid-area: icons; justify-self: end; margin-left: auto;"
+    >
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when '@app' -%}
-            {%- render block -%}
+            <div class="app-block-wrapper">
+              {%- render block -%}
+            </div>
         {%- endcase -%}
       {%- endfor -%}
     </div>
