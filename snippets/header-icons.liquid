@@ -277,18 +277,6 @@
       </a>
     {%- endif -%}
 
-    {%- comment -%} Render app blocks for this header section {%- endcomment -%}
-    {%- if section.blocks.size > 0 -%}
-      {%- for block in section.blocks -%}
-        {%- case block.type -%}
-          {%- when '@app' -%}
-            <div class="header-app-block flex items-center justify-center">
-              {%- render block -%}
-            </div>
-        {%- endcase -%}
-      {%- endfor -%}
-    {%- endif -%}
-
     {%- if show_hamburger -%}
       <button
         class="menu-drawer-button flex items-center justify-center"
