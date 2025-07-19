@@ -6,6 +6,35 @@
     --color-foreground: {{ section.settings.color_text.rgb }};
     --color-transparent: {{ section.settings.transparent_color_text.rgb }};
   }
+
+    /* Mobile VAT Switcher Row */
+  .header-mobile-vat {
+    background-color: rgb(var(--color-background));
+    border-color: rgb(var(--color-border));
+  }
+
+  /* VAT Switcher strict responsive display control */
+
+  /* Ensure mobile version is completely hidden on desktop */
+  @media screen and (min-width: 1024px) {
+    .vat-switcher-mobile,
+    .header-mobile-vat {
+      display: none !important;
+    }
+    .vat-switcher-desktop {
+      display: block !important;
+    }
+  }
+
+  /* Ensure desktop version is completely hidden on mobile */
+  @media screen and (max-width: 1023px) {
+    .vat-switcher-desktop {
+      display: none !important;
+    }
+    .vat-switcher-mobile {
+      display: block !important;
+    }
+  }
 </style>
 
 {%- liquid
@@ -92,6 +121,13 @@
     <span class="header__cutout cutout opacity-0 absolute left-0 top-100 w-full pointer-events-none"></span>
   {%- endif -%}
 </header>
+
+{%- comment -%} Mobile VAT Switcher Row {%- endcomment -%}
+<div class="header-mobile-vat lg:hidden page-width{% if section.settings.full_width %} page-width--full{% endif %}">
+  <div class="flex justify-center py-2 border-t border-color-border">
+    <div class="vat-switcher-inline vat-switcher-mobile"></div>
+  </div>
+</div>
 
 {%- if section.settings.hover_menu -%}
   <span class="overlay opacity-0 z-1 fixed left-0 w-full pointer-events-none"></span>
