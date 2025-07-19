@@ -68,6 +68,7 @@
         "mega_menu_fHrbe7": {
           "type": "mega_menu",
           "name": "Hub Essentials",
+          "disabled": true,
           "settings": {
             "menu_title": "Hub Essentials",
             "menu_width": "medium",
@@ -129,6 +130,7 @@
         "mega_menu_aRtRLr": {
           "type": "mega_menu",
           "name": "WALL PANELS",
+          "disabled": true,
           "settings": {
             "menu_title": "Wall Panels",
             "menu_width": "medium",
@@ -190,6 +192,7 @@
         "mega_menu_DbjkMm": {
           "type": "mega_menu",
           "name": "Tiling",
+          "disabled": true,
           "settings": {
             "menu_title": "Tiling",
             "menu_width": "medium",
@@ -249,6 +252,7 @@
         "mega_menu_rYnn9T": {
           "type": "mega_menu",
           "name": "FLOORING",
+          "disabled": true,
           "settings": {
             "menu_title": "Flooring",
             "menu_width": "medium",
@@ -309,6 +313,7 @@
         "mega_menu_M6jzaF": {
           "type": "mega_menu",
           "name": "TOILETS",
+          "disabled": true,
           "settings": {
             "menu_title": "Toilets",
             "menu_width": "medium",
@@ -370,6 +375,7 @@
         "mega_menu_VCxiUJ": {
           "type": "mega_menu",
           "name": "FURNITURE",
+          "disabled": true,
           "settings": {
             "menu_title": "Furniture",
             "menu_width": "medium",
@@ -431,6 +437,7 @@
         "mega_menu_hQfQ7k": {
           "type": "mega_menu",
           "name": "BASINS",
+          "disabled": true,
           "settings": {
             "menu_title": "BASINS",
             "menu_width": "medium",
@@ -491,6 +498,7 @@
         "mega_menu_MFhXbj": {
           "type": "mega_menu",
           "name": "SHOWERS",
+          "disabled": true,
           "settings": {
             "menu_title": "Showers",
             "menu_width": "medium",
@@ -552,6 +560,7 @@
         "mega_menu_Uh786z": {
           "type": "mega_menu",
           "name": "BATHS",
+          "disabled": true,
           "settings": {
             "menu_title": "Baths",
             "menu_width": "medium",
@@ -613,6 +622,7 @@
         "mega_menu_h8mAFh": {
           "type": "mega_menu",
           "name": "ENCLOSURES/TRAYS",
+          "disabled": true,
           "settings": {
             "menu_title": "Enclosures/Trays",
             "menu_width": "medium",
@@ -673,6 +683,7 @@
         "mega_menu_GHTxh9": {
           "type": "mega_menu",
           "name": "ACCESSORIES",
+          "disabled": true,
           "settings": {
             "menu_title": "Accessories",
             "menu_width": "medium",
@@ -734,6 +745,7 @@
         "mega_menu_EfQbNp": {
           "type": "mega_menu",
           "name": "HEATING",
+          "disabled": true,
           "settings": {
             "menu_title": "Heating",
             "menu_width": "medium",
@@ -793,6 +805,7 @@
         "mega_menu_HcBxNy": {
           "type": "mega_menu",
           "name": "BRASSWARE",
+          "disabled": true,
           "settings": {
             "menu_title": "Brassware",
             "menu_width": "medium",
@@ -971,6 +984,7 @@
         "mega_menu_cCMYeN": {
           "type": "mega_menu",
           "name": "INFO",
+          "disabled": true,
           "settings": {
             "menu_title": "Info",
             "menu_width": "medium",
@@ -1027,6 +1041,7 @@
         "mega_menu_exnUVm": {
           "type": "mega_menu",
           "name": "OPEN ACCOUNT",
+          "disabled": true,
           "settings": {
             "menu_title": "OPEN TRADE ACCOUNT",
             "menu_width": "medium",
@@ -1110,8 +1125,8 @@
         "sticky_header_type": "none",
         "enable_language_selector_desktop": false,
         "enable_country_selector_desktop": false,
-        "show_country_name_dekstop": false,
-        "show_country_flag_desktop": false,
+        "show_country_name_dekstop": true,
+        "show_country_flag_desktop": true,
         "logo_position_mobile": "left",
         "accordion_menu_mobile": false,
         "show_social": true,
