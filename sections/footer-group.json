@@ -339,7 +339,7 @@
         "logo_social": {
           "type": "logo_social",
           "settings": {
-            "logo": "shopify://shop_images/LOGOFOOTERDARKBG.png",
+            "logo": "shopify://shop_images/Bathroom-Trade-Hub-Logo-White_2x_0022b8a8-95f3-45d5-a005-a4dec94f0fd3.png",
             "logo_height": 120,
             "show_social": true,
             "enable_follow_on_shop": false
@@ -387,7 +387,7 @@
         "show_social": false,
         "enable_follow_on_shop": true,
         "color_text": "#ffffff",
-        "color_background": "#1f1f1f",
+        "color_background": "#424242",
         "gradient_background": "",
         "color_button_text": "#000000",
         "color_button_background": "#ffffff",
