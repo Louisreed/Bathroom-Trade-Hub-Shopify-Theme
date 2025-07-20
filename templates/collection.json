@@ -14,14 +14,12 @@
       "blocks": {
         "breadcrumb": {
           "type": "breadcrumb",
-          "disabled": true,
           "settings": {
             "show_collections_link": true
           }
         },
         "title": {
           "type": "title",
-          "disabled": true,
           "settings": {
             "title_size": "title-md"
           }
