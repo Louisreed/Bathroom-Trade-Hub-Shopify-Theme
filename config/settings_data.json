@@ -9,10 +9,12 @@
  */
 {
   "current": {
-    "logo": "shopify://shop_images/bannerlogowhitebgArtboard_1.png",
-    "white_logo": "",
+    "logo": "shopify://shop_images/Bathroom-Trade-Hub-Logo_2x_80e4365b-808f-47ac-92aa-99d9c3216ef7.png",
+    "white_logo": "shopify://shop_images/Bathroom-Trade-Hub-Logo-White_2x_0022b8a8-95f3-45d5-a005-a4dec94f0fd3.png",
     "logo_width": 200,
-    "logo_width_mobile": 200,
+    "logo_mobile": "shopify://shop_images/Bathroom-Trade-Hub-Logo.png",
+    "white_logo_mobile": "shopify://shop_images/Bathroom-Trade-Hub-Logo-White.png",
+    "logo_width_mobile": 150,
     "favicon": "shopify://shop_images/socialmediaprofileArtboard_1.png",
     "color_keyboard_focus": "#2acaf1",
     "color_shadow": "#2acaf1",
