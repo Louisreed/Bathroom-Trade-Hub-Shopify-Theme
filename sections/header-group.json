@@ -65,13 +65,13 @@
     "header": {
       "type": "header",
       "blocks": {
-        "menu_tag_default": {
+        "menu_tag_wXQhXz": {
           "type": "menu_tag",
           "settings": {
             "menu_handle": "hubpro",
             "tag_text": "NEW",
-            "background_color": "#2ACAF1",
-            "text_color": "#FFFFFF",
+            "background_color": "#2acaf1",
+            "text_color": "#ffffff",
             "tag_style": "pill"
           }
         },
@@ -1107,7 +1107,7 @@
         }
       },
       "block_order": [
-        "menu_tag_default",
+        "menu_tag_wXQhXz",
         "mega_menu_fHrbe7",
         "mega_menu_aRtRLr",
         "mega_menu_DbjkMm",
