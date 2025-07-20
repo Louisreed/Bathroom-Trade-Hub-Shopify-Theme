@@ -75,10 +75,10 @@
       "settings": {
         "transparent_header": false,
         "image": "shopify://shop_images/IMG_8017.heic",
-        "image_height": "650px",
+        "image_height": "500px",
         "content_width": "small",
-        "content_position": "md:items-center md:justify-start",
-        "text_alignment": "left",
+        "content_position": "md:items-center md:justify-center",
+        "text_alignment": "center",
         "image_height_mobile": "auto",
         "content_position_mobile": "items-center justify-center",
         "text_alignment_mobile": "center",
