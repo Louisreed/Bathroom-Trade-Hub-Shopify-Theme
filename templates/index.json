@@ -91,7 +91,7 @@
         "image_NhPc9m"
       ],
       "settings": {
-        "autoplay": false,
+        "autoplay": true,
         "autoplay_speed": 5,
         "show_navigation": true,
         "image_height": "600px",
