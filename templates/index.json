@@ -16,12 +16,12 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Durdle_Door_Overview.jpg",
-            "heading": "<em>Supporting the Local </em>Trade<em> and DIY of Dorset!</em>",
+            "heading": "Supporting the <strong>Local Trade</strong> and DIY of Dorset<em>.</em>",
             "heading_size": "title-md",
             "heading_tag": "h2",
             "button_label": "SHOP OUR ESSENTIALS",
             "button_link": "shopify://collections/hub-essentials",
-            "button_style": "primary",
+            "button_style": "secondary",
             "button_external": false,
             "button_icon": false
           }
@@ -104,7 +104,7 @@
         "color_button_text": "#171717",
         "color_button_background": "#ffffff",
         "color_button_gradient": "",
-        "color_overlay": "#2acaf1",
+        "color_overlay": "#424242",
         "overlay_opacity": 25,
         "padding_top": 0,
         "padding_bottom": 0,
@@ -436,7 +436,7 @@
         "color_text": "#ffffff",
         "color_background": "",
         "gradient_background": "",
-        "color_background_2": "#171717",
+        "color_background_2": "#424242",
         "gradient_background_2": "",
         "color_highlight": "",
         "gradient_highlight": "",
