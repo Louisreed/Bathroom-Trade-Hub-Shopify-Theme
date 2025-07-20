@@ -297,7 +297,7 @@
           "type": "heading",
           "settings": {
             "heading": "<em>1. Sign Up</em>",
-            "heading_size": "title-lg tracking-heading",
+            "heading_size": "title-md",
             "heading_tag": "h2",
             "highlighted_text": "scribble",
             "highlighted_scribble": "squiggle-underline"
@@ -362,7 +362,7 @@
           "type": "heading",
           "settings": {
             "heading": "<em>2. Account Verification</em>",
-            "heading_size": "title-lg tracking-heading",
+            "heading_size": "title-md",
             "heading_tag": "h2",
             "highlighted_text": "scribble",
             "highlighted_scribble": "basic-underline"
@@ -427,7 +427,7 @@
           "type": "heading",
           "settings": {
             "heading": "<em>3. Start Shopping!</em>",
-            "heading_size": "title-lg tracking-heading",
+            "heading_size": "title-md",
             "heading_tag": "h2",
             "highlighted_text": "scribble",
             "highlighted_scribble": "circle"
