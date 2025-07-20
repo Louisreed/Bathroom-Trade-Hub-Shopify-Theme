@@ -431,19 +431,9 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/TRADEPRO.png",
-            "image_width": "custom",
-            "image_max_width": 250,
-            "image_max_width_mobile": 50
-          }
-        },
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Do you work in Trade?",
-            "heading_size": "title-md",
-            "heading_tag": "h2",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
+            "image_width": "full_width",
+            "image_max_width": 150,
+            "image_max_width_mobile": 100
           }
         },
         "text": {
@@ -476,7 +466,6 @@
       "block_order": [
         "image",
         "image_P9DhMQ",
-        "heading",
         "text",
         "button_Xe88nq"
       ],
