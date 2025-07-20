@@ -70,6 +70,16 @@
           "settings": {
             "menu_handle": "hubpro",
             "tag_text": "NEW",
+            "background_color": "#f59e0b",
+            "text_color": "#ffffff",
+            "tag_style": "pill"
+          }
+        },
+        "menu_tag_F6tjLe": {
+          "type": "menu_tag",
+          "settings": {
+            "menu_handle": "hub-essentials",
+            "tag_text": "Featured",
             "background_color": "#2acaf1",
             "text_color": "#ffffff",
             "tag_style": "pill"
@@ -1108,6 +1118,7 @@
       },
       "block_order": [
         "menu_tag_wXQhXz",
+        "menu_tag_F6tjLe",
         "mega_menu_fHrbe7",
         "mega_menu_aRtRLr",
         "mega_menu_DbjkMm",
