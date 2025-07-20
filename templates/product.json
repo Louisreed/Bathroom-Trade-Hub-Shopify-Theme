@@ -416,10 +416,10 @@
         "enable_parallax": true
       }
     },
-    "image-with-text-1": {
+    "image_with_text_NhneBP": {
       "type": "image-with-text",
       "blocks": {
-        "image": {
+        "image_DhezzA": {
           "type": "image",
           "settings": {
             "image_width": "custom",
@@ -427,16 +427,16 @@
             "image_max_width_mobile": 50
           }
         },
-        "image_P9DhMQ": {
+        "image_BRtK86": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/TRADEPRO.png",
-            "image_width": "full_width",
-            "image_max_width": 150,
-            "image_max_width_mobile": 100
+            "image": "shopify://shop_images/HUBPROLOGOBANNER.png",
+            "image_width": "custom",
+            "image_max_width": 400,
+            "image_max_width_mobile": 200
           }
         },
-        "text": {
+        "text_cqepUW": {
           "type": "text",
           "settings": {
             "text": "<p>Save money and time by opening up a  HubPro account. Streamline your orders and save big on special discounts.</p>",
@@ -446,12 +446,12 @@
             "text_line_height": 1.6,
             "text_letter_spacing": 0,
             "text_capitalize": false,
-            "secondary_color": false,
+            "secondary_color": true,
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
         },
-        "button_Xe88nq": {
+        "button_7YjPJ7": {
           "type": "button",
           "settings": {
             "button_label": "Join now",
@@ -464,10 +464,10 @@
         }
       },
       "block_order": [
-        "image",
-        "image_P9DhMQ",
-        "text",
-        "button_Xe88nq"
+        "image_DhezzA",
+        "image_BRtK86",
+        "text_cqepUW",
+        "button_7YjPJ7"
       ],
       "name": "HubPRO Banner",
       "settings": {
@@ -479,15 +479,15 @@
         "content_position": "align-self-center",
         "image_height_mobile": "400px",
         "text_alignment_mobile": "left",
-        "color_text": "#171717",
+        "color_text": "#ffffff",
         "color_background": "",
         "gradient_background": "",
-        "color_background_2": "#fafafa",
+        "color_background_2": "#171717",
         "gradient_background_2": "",
         "color_highlight": "",
         "gradient_highlight": "",
         "color_button_text": "",
-        "color_button_background": "",
+        "color_button_background": "#ffffff",
         "color_button_gradient": "",
         "padding_top": 72,
         "padding_bottom": 72,
@@ -858,7 +858,7 @@
     "help-drawer",
     "video-hero",
     "collage",
-    "image-with-text-1",
+    "image_with_text_NhneBP",
     "scrolling-text",
     "image-with-text-2",
     "product-details",
