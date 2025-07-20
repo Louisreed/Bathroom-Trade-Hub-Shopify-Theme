@@ -65,6 +65,16 @@
     "header": {
       "type": "header",
       "blocks": {
+        "menu_tag_default": {
+          "type": "menu_tag",
+          "settings": {
+            "menu_handle": "hubpro",
+            "tag_text": "NEW",
+            "background_color": "#2ACAF1",
+            "text_color": "#FFFFFF",
+            "tag_style": "pill"
+          }
+        },
         "mega_menu_fHrbe7": {
           "type": "mega_menu",
           "name": "Hub Essentials",
@@ -1097,6 +1107,7 @@
         }
       },
       "block_order": [
+        "menu_tag_default",
         "mega_menu_fHrbe7",
         "mega_menu_aRtRLr",
         "mega_menu_DbjkMm",

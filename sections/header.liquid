@@ -35,6 +35,36 @@
       display: block !important;
     }
   }
+
+  /* Menu Tag Base Styling */
+  .menu-item-tag {
+    display: inline-block;
+    font-size: 0.625rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 0.125rem 0.375rem;
+    margin-left: 0.375rem;
+    vertical-align: middle;
+    line-height: 1;
+    letter-spacing: 0.025em;
+  }
+
+  /* Individual Tag Styling */
+  {% for block in section.blocks %}
+    {% if block.type == 'menu_tag' and block.settings.menu_handle != blank %}
+      .menu-item-tag--{{ block.settings.menu_handle | handleize }} {
+        background-color: {{ block.settings.background_color | default: '#2ACAF1' }};
+        color: {{ block.settings.text_color | default: '#FFFFFF' }};
+        {% if block.settings.tag_style == 'pill' %}
+          border-radius: 9999px;
+        {% elsif block.settings.tag_style == 'square' %}
+          border-radius: 0;
+        {% else %}
+          border-radius: 0.25rem;
+        {% endif %}
+      }
+    {% endif %}
+  {% endfor %}
 </style>
 
 {%- liquid
@@ -61,6 +91,15 @@
   endif
 
   render 'header-drawer', section: section
+
+  # Create dynamic menu items display for NEW tags reference
+  if section.settings.menu != blank
+    assign menu_items_info = ''
+    for link in section.settings.menu.links
+      assign menu_items_info = menu_items_info | append: link.title | append: ' (' | append: link.handle | append: '), '
+    endfor
+    assign menu_items_info = menu_items_info | remove_last: ', '
+  endif
 -%}
 
 <header
@@ -141,6 +180,31 @@
       '--header-height',
       Math.round(document.getElementById('shopify-section-{{ section.id }}').clientHeight) + 'px'
     );
+
+    // Display current menu items for tag configuration
+    const menuItems = [
+      {%- for link in section.settings.menu.links -%}
+        { title: {{ link.title | json }}, handle: {{ link.handle | json }} }{% unless forloop.last %},{% endunless %}
+      {%- endfor -%}
+    ];
+
+    console.log('🏷️  MENU ITEM TAG CONFIGURATION GUIDE');
+    console.log('====================================');
+    console.log('Available menu items from your selected menu:');
+    console.log('');
+    menuItems.forEach((item, index) => {
+      console.log(`${index + 1}. ${item.title}`);
+      console.log(`   Handle: "${item.handle}"`);
+      console.log(`   Use this in "Menu Item X - Handle" field`);
+      console.log('');
+    });
+    console.log('💡 CONFIGURATION TIPS:');
+    console.log('• Copy the exact handle (e.g., "wall-panels") into Handle field');
+    console.log('• Set custom tag text (e.g., "NEW", "HOT", "SALE", "LIMITED")');
+    console.log('• Use custom colors for individual tags if needed');
+    console.log('• Use the + button to add more menu item tags');
+    console.log('• Remove tags you no longer need with the trash icon');
+    console.log('');
   }
 </script>
 
@@ -399,6 +463,63 @@
     }
   ],
   "blocks": [
+    {
+      "type": "menu_tag",
+      "name": "Menu Item Tag",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_handle",
+          "label": "Menu Item Handle",
+          "info": "Enter the menu handle (e.g., wall-panels). Check browser console (F12) for available handles.",
+          "placeholder": "wall-panels"
+        },
+        {
+          "type": "text",
+          "id": "tag_text",
+          "label": "Tag Text",
+          "info": "Custom text for the tag",
+          "placeholder": "NEW",
+          "default": "NEW"
+        },
+        {
+          "type": "header",
+          "content": "Tag Styling"
+        },
+        {
+          "type": "color",
+          "id": "background_color",
+          "label": "Background Color",
+          "default": "#2ACAF1"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "select",
+          "id": "tag_style",
+          "label": "Tag Style",
+          "default": "pill",
+          "options": [
+            {
+              "value": "rounded",
+              "label": "Rounded"
+            },
+            {
+              "value": "pill",
+              "label": "Pill Shape"
+            },
+            {
+              "value": "square",
+              "label": "Square"
+            }
+          ]
+        }
+      ]
+    },
     {
       "type": "mega_menu",
       "name": "t:sections.header.blocks.mega_menu.name",

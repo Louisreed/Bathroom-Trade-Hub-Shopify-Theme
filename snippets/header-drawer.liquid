@@ -14,6 +14,24 @@
   if section.index == null
     assign section_rendering_api = true
   endif
+
+  # Build menu tag configuration from blocks
+  assign menu_tags = ''
+  for block in section.blocks
+    if block.type == 'menu_tag' and block.settings.menu_handle != blank and block.settings.tag_text != blank
+      assign tag_data = block.settings.menu_handle | append: '|' | append: block.settings.tag_text
+      if block.settings.background_color != blank
+        assign tag_data = tag_data | append: '|' | append: block.settings.background_color
+      endif
+      if menu_tags == blank
+        assign menu_tags = tag_data
+      else
+        assign menu_tags = menu_tags | append: ',' | append: tag_data
+      endif
+    endif
+  endfor
+
+  assign menu_tag_list = menu_tags | split: ','
 -%}
 
 <menu-drawer
@@ -75,8 +93,28 @@
                   position: forloop.index
                 -%}
               {%- else -%}
+                {%- liquid
+                  assign show_tag = false
+                  assign tag_text = ''
+                  assign tag_class_suffix = ''
+                  assign link_handle = link.handle | downcase
+
+                  for tag_item in menu_tag_list
+                    assign tag_parts = tag_item | split: '|'
+                    assign tag_handle = tag_parts[0] | strip | downcase
+                    if link_handle == tag_handle and tag_parts[1] != blank
+                      assign show_tag = true
+                      assign tag_text = tag_parts[1] | strip
+                      assign tag_class_suffix = tag_handle | handleize
+                      break
+                    endif
+                  endfor
+                -%}
                 <a class="drawer__menu-item block heading text-2xl leading-none tracking-tight" href="{{ link.url }}">
                   {{- link.title | escape -}}
+                  {%- if show_tag -%}
+                    <span class="menu-item-tag menu-item-tag--{{ tag_class_suffix }}">{{ tag_text }}</span>
+                  {%- endif -%}
                 </a>
               {%- endif -%}
             </li>

@@ -23,9 +23,27 @@
 
 {%- liquid
   assign section_rendering_api = false
-  if section.index == nil
+  if section.index == null
     assign section_rendering_api = true
   endif
+
+  # Build menu tag configuration from blocks
+  assign menu_tags = ''
+  for block in section.blocks
+    if block.type == 'menu_tag' and block.settings.menu_handle != blank and block.settings.tag_text != blank
+      assign tag_data = block.settings.menu_handle | append: '|' | append: block.settings.tag_text
+      if block.settings.background_color != blank
+        assign tag_data = tag_data | append: '|' | append: block.settings.background_color
+      endif
+      if menu_tags == blank
+        assign menu_tags = tag_data
+      else
+        assign menu_tags = menu_tags | append: ',' | append: tag_data
+      endif
+    endif
+  endfor
+
+  assign menu_tag_list = menu_tags | split: ','
 -%}
 {%- liquid
   capture chevron_icon
@@ -36,19 +54,48 @@
     endif
   endcapture
 -%}
+{%- liquid
+  assign show_tag_main = false
+  assign tag_text_main = ''
+  assign tag_class_suffix_main = ''
+  assign main_link_handle = link.handle | downcase
+
+  for tag_item in menu_tag_list
+    assign tag_parts = tag_item | split: '|'
+    assign tag_handle = tag_parts[0] | strip | downcase
+    if main_link_handle == tag_handle and tag_parts[1] != blank
+      assign show_tag_main = true
+      assign tag_text_main = tag_parts[1] | strip
+      assign tag_class_suffix_main = tag_handle | handleize
+      break
+    endif
+  endfor
+-%}
 <details is="{% if enable_accordion_menu %}accordion-details{% else %}menu-details{% endif %}">
   <summary class="drawer__menu-item block cursor-pointer relative" aria-expanded="false">
     <span class="heading text-2xl leading-none tracking-tight">
       {%- unless section_rendering_api -%}
-        <api-button class="api-only" data-id="DrawerSubMenu-{{ section.id }}-{{ position }}" data-section-id="{{ section.id }}"></api-button>
+        <api-button
+          class="api-only"
+          data-id="DrawerSubMenu-{{ section.id }}-{{ position }}"
+          data-section-id="{{ section.id }}"
+        ></api-button>
       {%- endunless -%}
       {{- link.title | escape -}}
+      {%- if show_tag_main -%}
+        <span class="menu-item-tag menu-item-tag--{{ tag_class_suffix_main }}">{{ tag_text_main }}</span>
+      {%- endif -%}
     </span>
     {{- chevron_icon -}}
   </summary>
-  <div class="drawer__submenu{% unless enable_accordion_menu %} z-1 absolute top-0 left-0{% endunless %} flex flex-col w-full h-full" data-parent>
+  <div
+    class="drawer__submenu{% unless enable_accordion_menu %} z-1 absolute top-0 left-0{% endunless %} flex flex-col w-full h-full"
+    data-parent
+  >
     {%- unless enable_accordion_menu -%}
-      <button type="button" class="tracking-tight heading text-base shrink-0 flex items-center gap-3 w-full" data-close>{{ link.title | escape }}</button>
+      <button type="button" class="tracking-tight heading text-base shrink-0 flex items-center gap-3 w-full" data-close>
+        {{ link.title | escape }}
+      </button>
     {%- endunless -%}
     {%- unless section_rendering_api -%}
       <div id="DrawerSubMenu-{{ section.id }}-{{ position }}" class="drawer__scrollable flex flex-col h-full"></div>
@@ -67,7 +114,10 @@
                 -%}
                 {%- if block.settings[tab_target_link].type == 'collection_link' and products.count > 0 -%}
                   <details is="{% if enable_accordion_menu %}accordion-details{% else %}menu-details{% endif %}">
-                    <summary class="drawer__menu-item block heading text-2xl leading-none tracking-tight cursor-pointer relative" aria-expanded="false">
+                    <summary
+                      class="drawer__menu-item block heading text-2xl leading-none tracking-tight cursor-pointer relative"
+                      aria-expanded="false"
+                    >
                       {%- liquid
                         echo tab_target_heading | escape
                         echo chevron_icon
@@ -75,7 +125,13 @@
                     </summary>
                     <div class="drawer__submenu{% unless enable_accordion_menu %} z-1 absolute top-0 left-0{% endunless %} flex flex-col w-full h-full">
                       {%- unless enable_accordion_menu -%}
-                        <button type="button" class="tracking-tight heading text-base flex items-center gap-3 w-full" data-close>{{ block.settings[tab_target] | escape }}</button>
+                        <button
+                          type="button"
+                          class="tracking-tight heading text-base flex items-center gap-3 w-full"
+                          data-close
+                        >
+                          {{ block.settings[tab_target] | escape }}
+                        </button>
                       {%- endunless -%}
                       <div class="drawer__scrollable flex flex-col h-full">
                         <div class="horizontal-products product-grid">
@@ -113,7 +169,11 @@
                         </div>
                       </div>
                       <div class="drawer__sticky w-full">
-                        <a class="button button--primary icon-with-text w-full" href="{{ block.settings[tab_target_link].url }}" is="hover-link">
+                        <a
+                          class="button button--primary icon-with-text w-full"
+                          href="{{ block.settings[tab_target_link].url }}"
+                          is="hover-link"
+                        >
                           <span class="btn-fill" data-fill></span>
                           <span class="btn-text">
                             {{ 'collections.subcollections.all_products' | t: collection: tab_target_heading }}
@@ -125,7 +185,10 @@
                     </div>
                   </details>
                 {%- else -%}
-                  <a class="drawer__menu-item block heading text-2xl leading-none tracking-tight" href="{{ block.settings[tab_target_link] }}">
+                  <a
+                    class="drawer__menu-item block heading text-2xl leading-none tracking-tight"
+                    href="{{ block.settings[tab_target_link] }}"
+                  >
                     {{ block.settings[tab_target] | escape }}
                   </a>
                 {%- endif -%}
@@ -137,7 +200,10 @@
             <li class="drawer__menu-group">
               {%- if childlink.links != blank -%}
                 <details is="{% if enable_accordion_menu %}accordion-details{% else %}menu-details{% endif %}">
-                  <summary class="drawer__menu-item block heading text-2xl leading-none tracking-tight cursor-pointer relative" aria-expanded="false">
+                  <summary
+                    class="drawer__menu-item block heading text-2xl leading-none tracking-tight cursor-pointer relative"
+                    aria-expanded="false"
+                  >
                     {%- liquid
                       echo childlink.title | escape
                       echo chevron_icon
@@ -145,19 +211,77 @@
                   </summary>
                   <div class="drawer__submenu{% unless enable_accordion_menu %} z-1 absolute top-0 left-0{% endunless %} flex flex-col w-full h-full">
                     {%- unless enable_accordion_menu -%}
-                      <button type="button" class="tracking-tight heading text-base flex items-center gap-3 w-full" data-close>{{ childlink.title | escape }}</button>
+                      <button
+                        type="button"
+                        class="tracking-tight heading text-base flex items-center gap-3 w-full"
+                        data-close
+                      >
+                        {{ childlink.title | escape }}
+                      </button>
                     {%- endunless -%}
                     <ul class="drawer__scrollable flex flex-col h-full">
                       {%- for grandchildlink in childlink.links -%}
+                        {%- liquid
+                          assign show_tag_grandchild = false
+                          assign tag_text_grandchild = ''
+                          assign tag_class_suffix_grandchild = ''
+                          assign grandchild_handle = grandchildlink.handle | downcase
+
+                          for tag_item in menu_tag_list
+                            assign tag_parts = tag_item | split: '|'
+                            assign tag_handle = tag_parts[0] | strip | downcase
+                            if grandchild_handle == tag_handle and tag_parts[1] != blank
+                              assign show_tag_grandchild = true
+                              assign tag_text_grandchild = tag_parts[1] | strip
+                              assign tag_class_suffix_grandchild = tag_handle | handleize
+                              break
+                            endif
+                          endfor
+                        -%}
                         <li class="drawer__menu-group">
-                          <a class="drawer__menu-item block heading text-2xl leading-none tracking-tight" href="{{ grandchildlink.url }}">{{ grandchildlink.title | escape }}</a>
+                          <a
+                            class="drawer__menu-item block heading text-2xl leading-none tracking-tight"
+                            href="{{ grandchildlink.url }}"
+                          >
+                            {{- grandchildlink.title | escape -}}
+                            {%- if show_tag_grandchild -%}
+                              <span class="menu-item-tag menu-item-tag--{{ tag_class_suffix_grandchild }}">
+                                {{- tag_text_grandchild -}}
+                              </span>
+                            {%- endif -%}
+                          </a>
                         </li>
                       {%- endfor -%}
                     </ul>
                   </div>
                 </details>
               {%- else -%}
-                <a class="drawer__menu-item block heading text-2xl leading-none tracking-tight" href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+                {%- liquid
+                  assign show_tag_child = false
+                  assign tag_text_child = ''
+                  assign tag_class_suffix_child = ''
+                  assign childlink_handle = childlink.handle | downcase
+
+                  for tag_item in menu_tag_list
+                    assign tag_parts = tag_item | split: '|'
+                    assign tag_handle = tag_parts[0] | strip | downcase
+                    if childlink_handle == tag_handle and tag_parts[1] != blank
+                      assign show_tag_child = true
+                      assign tag_text_child = tag_parts[1] | strip
+                      assign tag_class_suffix_child = tag_handle | handleize
+                      break
+                    endif
+                  endfor
+                -%}
+                <a
+                  class="drawer__menu-item block heading text-2xl leading-none tracking-tight"
+                  href="{{ childlink.url }}"
+                >
+                  {{- childlink.title | escape -}}
+                  {%- if show_tag_child -%}
+                    <span class="menu-item-tag menu-item-tag--{{ tag_class_suffix_child }}">{{ tag_text_child }}</span>
+                  {%- endif -%}
+                </a>
               {%- endif -%}
             </li>
           {%- endfor -%}
@@ -166,7 +290,7 @@
         {%- if enable_mega_menu -%}
           {%- liquid
             assign show_promotions = false
-            
+
             if block.settings.promo_image_1 != blank or block.settings.promo_image_2 != blank or block.settings.promo_image_3 != blank or block.settings.promo_image_4 != blank or block.settings.promo_image_5 != blank
               assign show_promotions = true
             endif
@@ -184,7 +308,7 @@
               {%- for i in (1..5) -%}
                 {%- liquid
                   assign show_promotion = false
-                  
+
                   assign promo_image = 'promo_image_' | append: i
                   if block.settings[promo_image] != blank
                     assign show_promotion = true
@@ -211,31 +335,51 @@
                   -%}
                   <li class="drawer__menu-group mega-menu__item flex opacity-0 w-full">
                     <div class="media-card media-card--{{ settings.card_style }}{% if block.settings[promo_overlay_content] %} media-card--overlap{% endif %}">
-                      <a class="media-card__link flex flex-col w-full h-full relative"{% if block.settings[promo_link] != blank %} href="{{ block.settings[promo_link] }}"{% else %} role="link" aria-disabled="true"{% endif %}
+                      <a
+                        class="media-card__link flex flex-col w-full h-full relative"
+                        {% if block.settings[promo_link] != blank %}
+                          href="{{ block.settings[promo_link] }}"
+                        {% else %}
+                          role="link" aria-disabled="true"
+                        {% endif %}
                         aria-label="{{ block.settings[promo_heading] | default: block.settings[promo_subtext] | escape }}"
                         style="--color-foreground: {{ block.settings[promo_color_text].rgb }};--color-overlay: {{ block.settings[promo_color_overlay].rgb }};--overlay-opacity: {{ block.settings[promo_overlay_opacity] | divided_by: 100.0 }};"
                       >
                         {%- if block.settings[promo_tag] != blank -%}
                           <div class="badges z-2 absolute grid gap-3 pointer-events-none">
-                            <span class="badge badge--onsale flex items-center gap-1d5 font-medium leading-none rounded-full">{{ block.settings[promo_tag] | escape }}</span>
+                            <span class="badge badge--onsale flex items-center gap-1d5 font-medium leading-none rounded-full">
+                              {{- block.settings[promo_tag] | escape -}}
+                            </span>
                           </div>
                         {%- endif -%}
                         <div class="media media--{{ block.settings[promo_image_ratio] }} relative overflow-hidden">
-                          {{- block.settings[promo_image] | image_url: width: block.settings[promo_image].width | image_tag: loading: 'lazy', widths: '180,360,540,720,900,1080', is: 'lazy-image' -}}
+                          {{-
+                            block.settings[promo_image]
+                            | image_url: width: block.settings[promo_image].width
+                            | image_tag: loading: 'lazy', widths: '180,360,540,720,900,1080', is: 'lazy-image'
+                          -}}
                         </div>
                         {%- if block.settings[promo_heading] != blank or block.settings[promo_subtext] != blank -%}
                           <div class="media-card__content flex justify-between items-center gap-4 w-full">
                             <div class="media-card__text opacity-0 shrink-1 grid gap-0d5">
                               {%- if block.settings[promo_heading] != blank -%}
                                 <p>
-                                  <span class="heading reversed-link text-lg tracking-tighter leading-tight">{{ block.settings[promo_heading] | escape }}</span>
+                                  <span class="heading reversed-link text-lg tracking-tighter leading-tight">
+                                    {{- block.settings[promo_heading] | escape -}}
+                                  </span>
                                 </p>
                               {%- endif -%}
                               {%- if block.settings[promo_subtext] != blank -%}
-                                <p class="leading-none text-xs xl:text-sm hidden md:block">{{ block.settings[promo_subtext] }}</p>
+                                <p class="leading-none text-xs xl:text-sm hidden md:block">
+                                  {{ block.settings[promo_subtext] }}
+                                </p>
                               {%- endif -%}
                             </div>
-                            {%- render 'icon', icon: 'arrow-right', size: 'xs', class: 'transform shrink-0 hidden md:block' -%}
+                            {%- render 'icon',
+                              icon: 'arrow-right',
+                              size: 'xs',
+                              class: 'transform shrink-0 hidden md:block'
+                            -%}
                           </div>
                         {%- endif -%}
                       </a>
@@ -248,7 +392,16 @@
         {%- endif -%}
         {%- if block.settings.button_label != blank -%}
           <li class="mega-menu__footer">
-            <a class="button button--primary icon-with-text w-full"{% if block.settings.button_link != blank %} href="{{ block.settings.button_link }}"{% if block.settings.button_external %} target="_blank" rel="noopener"{% endif %}{% else %} role="link" aria-disabled="true"{% endif %} is="hover-link">
+            <a
+              class="button button--primary icon-with-text w-full"
+              {% if block.settings.button_link != blank %}
+                href="{{ block.settings.button_link }}"
+                {%- if block.settings.button_external %} target="_blank" rel="noopener"{% endif -%}
+              {% else %}
+                role="link" aria-disabled="true"
+              {% endif %}
+              is="hover-link"
+            >
               <span class="btn-fill" data-fill></span>
               <span class="btn-text">{{ block.settings.button_label | escape }}</span>
             </a>
