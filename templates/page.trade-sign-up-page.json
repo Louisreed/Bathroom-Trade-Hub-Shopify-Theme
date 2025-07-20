@@ -57,7 +57,7 @@
         "button_UqMMdQ": {
           "type": "button",
           "settings": {
-            "button_label": "Get started now!",
+            "button_label": "Start saving now",
             "button_link": "https://bathroomtradehub.co.uk/account/register",
             "button_style": "secondary",
             "button_size": "md",
@@ -83,10 +83,10 @@
         "content_position_mobile": "items-center justify-center",
         "text_alignment_mobile": "center",
         "color_text": "#ffffff",
-        "color_highlight": "#e0a580",
+        "color_highlight": "#bb9f4d",
         "gradient_highlight": "",
-        "color_button_text": "#171717",
-        "color_button_background": "#ffffff",
+        "color_button_text": "#ffffff",
+        "color_button_background": "#bb9f4d",
         "color_button_gradient": "",
         "color_overlay": "#171717",
         "overlay_opacity": 80,
@@ -491,7 +491,7 @@
         "button_iaFCbH": {
           "type": "button",
           "settings": {
-            "button_label": "GET STARTED",
+            "button_label": "Get Started",
             "button_link": "https://bathroomtradehub.co.uk/account/register",
             "button_style": "primary",
             "button_size": "lg",
