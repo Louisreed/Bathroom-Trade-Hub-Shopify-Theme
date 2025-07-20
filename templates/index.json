@@ -77,7 +77,7 @@
             "heading_tag": "h2",
             "button_label": "SHOP IN-STOCK PRODUCTS",
             "button_link": "shopify://collections/all",
-            "button_style": "primary",
+            "button_style": "secondary",
             "button_external": false,
             "button_icon": false
           }
@@ -101,8 +101,8 @@
         "color_text": "#ffffff",
         "color_background": "#ffffff",
         "gradient_background": "",
-        "color_button_text": "#171717",
-        "color_button_background": "#ffffff",
+        "color_button_text": "#ffffff",
+        "color_button_background": "#2acaf1",
         "color_button_gradient": "",
         "color_overlay": "#424242",
         "overlay_opacity": 25,
