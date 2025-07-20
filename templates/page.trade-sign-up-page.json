@@ -307,8 +307,8 @@
           "type": "text",
           "settings": {
             "text": "<p>To get started, click Sign Up and provide a few basic details about yourself and your business (if applicable). Once the form is submitted, you will receive a confirmation email shortly after.</p>",
-            "text_font": "heading",
-            "text_size": "subtext-xl",
+            "text_font": "body",
+            "text_size": "subtext-lg",
             "text_max_size": 60,
             "text_line_height": 1.6,
             "text_letter_spacing": 0,
@@ -372,8 +372,8 @@
           "type": "text",
           "settings": {
             "text": "<p>Bathroom Trade Hub will verify your account within 48 hours. During this process, you will receive an additional email confirming your account setup, along with details on your personalized site-wide pricing.</p>",
-            "text_font": "heading",
-            "text_size": "subtext-xl",
+            "text_font": "body",
+            "text_size": "subtext-lg",
             "text_max_size": 60,
             "text_line_height": 1.6,
             "text_letter_spacing": 0,
@@ -437,8 +437,8 @@
           "type": "text",
           "settings": {
             "text": "<p><em>Now that you're ready to begin shopping, you’ll be placed into a tier system designed to accommodate for all our customers. The more you spend with Bathroom Trade Hub, the higher your tier and the greater your savings. It’s that simple!</em></p>",
-            "text_font": "heading",
-            "text_size": "subtext-xl",
+            "text_font": "body",
+            "text_size": "subtext-lg",
             "text_max_size": 60,
             "text_line_height": 1.6,
             "text_letter_spacing": 0,
