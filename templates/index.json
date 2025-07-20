@@ -17,7 +17,7 @@
           "settings": {
             "image": "shopify://shop_images/Durdle_Door_Overview.jpg",
             "heading": "Supporting the <strong>Local Trade</strong> and DIY of Dorset<em>.</em>",
-            "heading_size": "title-md",
+            "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "button_label": "SHOP OUR ESSENTIALS",
             "button_link": "shopify://collections/hub-essentials",
@@ -31,7 +31,7 @@
           "settings": {
             "image": "shopify://shop_images/IMG_8017.heic",
             "heading": "<em>Join HubPRO to see prices!</em>",
-            "heading_size": "title-md",
+            "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "button_label": "BECOME A MEMBER",
             "button_link": "shopify://pages/trade-sign-up",
@@ -45,7 +45,7 @@
           "settings": {
             "image": "shopify://shop_images/IMG_7744.heic",
             "heading": "Save BIG on essentials!",
-            "heading_size": "title-md",
+            "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "button_label": "Join HubPRO",
             "button_link": "shopify://pages/trade-sign-up",
