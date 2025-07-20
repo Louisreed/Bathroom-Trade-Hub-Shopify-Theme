@@ -296,7 +296,7 @@
         "heading_YLtnTA": {
           "type": "heading",
           "settings": {
-            "heading": "<em>Sign Up</em>",
+            "heading": "<em>1. Sign Up</em>",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "highlighted_text": "scribble",
@@ -361,7 +361,7 @@
         "heading_j9FXMi": {
           "type": "heading",
           "settings": {
-            "heading": "<em>Account Verification</em>",
+            "heading": "<em>2. Account Verification</em>",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "highlighted_text": "scribble",
@@ -426,7 +426,7 @@
         "heading_PTcKKN": {
           "type": "heading",
           "settings": {
-            "heading": "<em>Start Shopping!</em>",
+            "heading": "<em>3. Start Shopping!</em>",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "highlighted_text": "scribble",
