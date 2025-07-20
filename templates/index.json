@@ -35,7 +35,7 @@
             "heading_tag": "h2",
             "button_label": "BECOME A MEMBER",
             "button_link": "shopify://pages/trade-sign-up",
-            "button_style": "primary",
+            "button_style": "secondary",
             "button_external": false,
             "button_icon": false
           }
@@ -49,7 +49,7 @@
             "heading_tag": "h2",
             "button_label": "Join HubPRO",
             "button_link": "shopify://pages/trade-sign-up",
-            "button_style": "primary",
+            "button_style": "secondary",
             "button_external": false,
             "button_icon": false
           }
@@ -58,12 +58,12 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/MAXIPANELBANNER-01.png",
-            "heading": "",
-            "heading_size": "title-md",
+            "heading": "No Grout, No Mold, No Hassle",
+            "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "button_label": "SHOP MAXI PANELS",
             "button_link": "shopify://metaobjects/Page/page-z3aq3vqc",
-            "button_style": "primary",
+            "button_style": "secondary",
             "button_external": false,
             "button_icon": false
           }
@@ -91,7 +91,7 @@
         "image_NhPc9m"
       ],
       "settings": {
-        "autoplay": true,
+        "autoplay": false,
         "autoplay_speed": 5,
         "show_navigation": true,
         "image_height": "600px",
