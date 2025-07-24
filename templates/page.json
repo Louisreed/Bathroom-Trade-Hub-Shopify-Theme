@@ -88,10 +88,23 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_99UjPB": {
+          "type": "collection",
+          "settings": {
+            "collection": "cartegena",
+            "title": "Cartegena",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
-        "collection_6fdXNc"
+        "collection_6fdXNc",
+        "collection_99UjPB"
       ],
       "settings": {
         "columns": 5,
