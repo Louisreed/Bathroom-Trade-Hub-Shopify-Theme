@@ -329,7 +329,6 @@
         "mega_menu_M6jzaF": {
           "type": "mega_menu",
           "name": "TOILETS",
-          "disabled": true,
           "settings": {
             "menu_title": "Toilets",
             "menu_width": "medium",
@@ -391,7 +390,6 @@
         "mega_menu_VCxiUJ": {
           "type": "mega_menu",
           "name": "FURNITURE",
-          "disabled": true,
           "settings": {
             "menu_title": "Furniture",
             "menu_width": "medium",
@@ -453,7 +451,6 @@
         "mega_menu_hQfQ7k": {
           "type": "mega_menu",
           "name": "BASINS",
-          "disabled": true,
           "settings": {
             "menu_title": "BASINS",
             "menu_width": "medium",
@@ -514,7 +511,6 @@
         "mega_menu_MFhXbj": {
           "type": "mega_menu",
           "name": "SHOWERS",
-          "disabled": true,
           "settings": {
             "menu_title": "Showers",
             "menu_width": "medium",
@@ -576,7 +572,6 @@
         "mega_menu_Uh786z": {
           "type": "mega_menu",
           "name": "BATHS",
-          "disabled": true,
           "settings": {
             "menu_title": "Baths",
             "menu_width": "medium",
@@ -638,7 +633,6 @@
         "mega_menu_h8mAFh": {
           "type": "mega_menu",
           "name": "ENCLOSURES/TRAYS",
-          "disabled": true,
           "settings": {
             "menu_title": "Enclosures/Trays",
             "menu_width": "medium",
@@ -699,7 +693,6 @@
         "mega_menu_GHTxh9": {
           "type": "mega_menu",
           "name": "ACCESSORIES",
-          "disabled": true,
           "settings": {
             "menu_title": "Accessories",
             "menu_width": "medium",
@@ -761,7 +754,6 @@
         "mega_menu_EfQbNp": {
           "type": "mega_menu",
           "name": "HEATING",
-          "disabled": true,
           "settings": {
             "menu_title": "Heating",
             "menu_width": "medium",
@@ -821,7 +813,6 @@
         "mega_menu_HcBxNy": {
           "type": "mega_menu",
           "name": "BRASSWARE",
-          "disabled": true,
           "settings": {
             "menu_title": "Brassware",
             "menu_width": "medium",
@@ -882,7 +873,6 @@
         "mega_menu_Yajy3n": {
           "type": "mega_menu",
           "name": "WETROOMS",
-          "disabled": true,
           "settings": {
             "menu_title": "Wetrooms",
             "menu_width": "medium",
@@ -941,7 +931,6 @@
         "mega_menu_iXKFGN": {
           "type": "mega_menu",
           "name": "SANITARY WARE",
-          "disabled": true,
           "settings": {
             "menu_title": "Sanitaryware",
             "menu_width": "medium",
@@ -1000,7 +989,6 @@
         "mega_menu_cCMYeN": {
           "type": "mega_menu",
           "name": "INFO",
-          "disabled": true,
           "settings": {
             "menu_title": "Info",
             "menu_width": "medium",
