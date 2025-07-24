@@ -539,6 +539,7 @@
         "button_font_size": 16,
         "button_font_weight": "bold",
         "text_color": "#121212",
+        "section_background_color": "#fafafa",
         "background_color": "#fafafa",
         "border_color": "#cccccc",
         "focus_color": "#007cba",
