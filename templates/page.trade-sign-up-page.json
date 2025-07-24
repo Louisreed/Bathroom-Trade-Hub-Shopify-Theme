@@ -527,7 +527,7 @@
         "divider_spacing": 16,
         "form_shadow": false,
         "form_border_radius": 8,
-        "input_padding": 12,
+        "input_padding": 20,
         "input_border_radius": 12,
         "input_font_size": 14,
         "label_font_size": 14,
