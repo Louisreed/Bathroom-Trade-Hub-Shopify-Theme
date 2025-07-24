@@ -534,6 +534,24 @@
         "narrow": true,
         "rounded": false
       }
+    },
+    "custom_liquid_9Kc6Qz": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.name",
+      "settings": {
+        "liquid": "<div class='aaa-membership-button-form' data-form-id='13446'> </div>  <script> function isMyMembershipScriptLoaded() { var url = 'https://shopifycdn.aaawebstore.com/membership/appfiles/aaa_membership_script_min_v3.js?shop=ab97df-6.myshopify.com'; var jsFound = 0; var scripts = document.getElementsByTagName('script');  for (var i = scripts.length; i--;) { if (scripts[i].src == url) { jsFound = 1; } } if(!jsFound) { var headTag = document.getElementsByTagName('head')[0]; var jqTag = document.createElement('script'); jqTag.type = 'text/javascript'; jqTag.src = url; jqTag.onload = ''; headTag.appendChild(jqTag); } } isMyMembershipScriptLoaded(); </script>",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
     }
   },
   "order": [
@@ -544,6 +562,7 @@
     "rich_text_QHgKfz",
     "rich_text_qFQmBj",
     "rich_text_XCVJJH",
-    "rich_text_xdywFM"
+    "rich_text_xdywFM",
+    "custom_liquid_9Kc6Qz"
   ]
 }
