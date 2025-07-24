@@ -144,208 +144,101 @@
         </h3>
       {%- endif -%}
 
-      {%- comment -%} AAA Membership Form - HubPRO+ Version {%- endcomment -%}
-      <form method="post" action="" class="aaamembership_form aaa-form-null" enctype="multipart/form-data">
-        {%- comment -%} Hidden Fields for AAA Processing {%- endcomment -%}
-        <input type="hidden" name="container_id" value="{{ section.settings.container_id }}">
-        <input type="hidden" name="form_id" value="{{ section.settings.membership_form_id }}">
-        <input type="hidden" name="form_domain" value="ab97df-6.myshopify.com">
-        <input
-          type="hidden"
-          name=""
-          value="{{ section.settings.success_message | default: 'Thank You!' }}"
-          class="success_msg"
-        >
-        <input
-          type="hidden"
-          name=""
-          value="{{ section.settings.password_tooltip | default: 'undefined' }}"
-          class="password_tooltip_text_lang"
-        >
-        <input type="hidden" name="" value="{{ section.settings.thankyou_url }}" class="aaa_thankyoupageurl">
+      {%- comment -%} AAA Membership Form Shortcode - HubPRO+ Version {%- endcomment -%}
+      <div class="aaa-membership-form-shortcode" data-form-id="{{ section.settings.membership_form_id }}">
+        <!-- AAA membership script will inject the form here -->
+      </div>
 
-        {%- comment -%} First Name Field {%- endcomment -%}
-        {%- if section.settings.show_first_name -%}
-          <div class="membership-text form-group field-first-name">
-            <label for="first-name" class="membership-text-label">
-              {{ section.settings.first_name_label | default: 'First Name' | escape }}
-              {%- if section.settings.first_name_required -%}
-                <span class="required">*</span>
-              {%- endif -%}
-            </label>
-            <input
-              type="text"
-              {% if section.settings.first_name_required %}
-                required=""
-              {% endif %}
-              class="form-control"
-              name="first-name"
-              id="first-name"
-              {% if section.settings.first_name_required %}
-                aria-required="true"
-              {% endif %}
-            >
-          </div>
-        {%- endif -%}
-
-        {%- comment -%} Last Name Field {%- endcomment -%}
-        {%- if section.settings.show_last_name -%}
-          <div class="membership-text form-group field-last-name">
-            <label for="last-name" class="membership-text-label">
-              {{ section.settings.last_name_label | default: 'Last Name' | escape }}
-              {%- if section.settings.last_name_required -%}
-                <span class="required">*</span>
-              {%- endif -%}
-            </label>
-            <input
-              type="text"
-              {% if section.settings.last_name_required %}
-                required=""
-              {% endif %}
-              class="form-control"
-              name="last-name"
-              id="last-name"
-              {% if section.settings.last_name_required %}
-                aria-required="true"
-              {% endif %}
-            >
-          </div>
-        {%- endif -%}
-
-        {%- comment -%} Email Field {%- endcomment -%}
-        {%- if section.settings.show_email -%}
-          <div class="membership-email form-group field-replyemail">
-            <label for="replyemail" class="membership-email-label">
-              {{ section.settings.email_label | default: 'Email Address' | escape }}
-              {%- if section.settings.email_required -%}
-                <span class="required">*</span>
-              {%- endif -%}
-            </label>
-            <input
-              type="email"
-              {% if section.settings.email_required %}
-                required=""
-              {% endif %}
-              class="form-control"
-              name="replyemail"
-              id="replyemail"
-              {% if section.settings.email_required %}
-                aria-required="true"
-              {% endif %}
-            >
-          </div>
-        {%- endif -%}
-
-        {%- comment -%} Company Field (Optional in Plus version) {%- endcomment -%}
-        {%- if section.settings.show_company -%}
-          <div class="membership-text form-group field-aaa-customer-company">
-            <label for="aaa-customer-company" class="membership-text-label">
-              {{ section.settings.company_label | default: 'Company' | escape }}
-              {%- if section.settings.company_required -%}
-                <span class="required">*</span>
-              {%- endif -%}
-            </label>
-            <input
-              type="text"
-              {% if section.settings.company_required %}
-                required=""
-              {% endif %}
-              class="form-control"
-              name="aaa-customer-company"
-              id="aaa-customer-company"
-              {% if section.settings.company_required %}
-                aria-required="true"
-              {% endif %}
-            >
-          </div>
-        {%- endif -%}
-
-        {%- comment -%} Password Field {%- endcomment -%}
-        {%- if section.settings.show_password -%}
-          <div class="membership-password form-group field-customer-password">
-            <label for="customer-password" class="membership-password-label">
-              {{ section.settings.password_label | default: 'Password' | escape }}
-              {%- if section.settings.password_required -%}
-                <span class="required">*</span>
-              {%- endif -%}
-            </label>
-            <input
-              type="password"
-              {% if section.settings.password_required %}
-                required=""
-              {% endif %}
-              class="form-control"
-              name="customer-password"
-              id="customer-password"
-              {% if section.settings.password_required %}
-                aria-required="true"
-              {% endif %}
-            >
-          </div>
-        {%- endif -%}
-
-        {%- comment -%} Stripe Payment Elements (Plus version specific) {%- endcomment -%}
-        {%- if section.settings.enable_payment -%}
-          <div id="paymentElement">
-            <!-- Stripe payment element will be inserted here -->
-          </div>
-          <div id="paymentResponse">
-            <!-- Payment response messages will appear here -->
-          </div>
-        {%- endif -%}
-
-        {%- comment -%} Submit Button {%- endcomment -%}
-        <div class="membership-submit form-group field-button-1497336985158">
-          <button
-            type="submit"
-            class="button-input btn btn-primary form-submit-button"
-            name="button-1497336985158"
-            id="button-1497336985158"
-          >
-            {{ section.settings.submit_button_text | default: 'Subscribe Now' | escape }}
-          </button>
+      {%- comment -%} Stripe Payment Elements (Plus version specific) {%- endcomment -%}
+      {%- if section.settings.enable_payment -%}
+        <div id="paymentElement" style="margin-top: {{ section.settings.field_spacing }}px;">
+          <!-- Stripe payment element will be inserted here -->
         </div>
+        <div id="paymentResponse">
+          <!-- Payment response messages will appear here -->
+        </div>
+      {%- endif -%}
 
-        {%- comment -%} Privacy Notice {%- endcomment -%}
-        {%- if section.settings.show_privacy_notice and section.settings.privacy_notice_text != blank -%}
-          <div class="form-privacy" style="text-align: {{ section.settings.privacy_alignment }};">
-            <div
-              class="privacy-notice rte"
-              style="font-size: {{ section.settings.privacy_font_size }}px; color: var(--form-text-color); opacity: 0.8;"
-            >
-              {{ section.settings.privacy_notice_text }}
-            </div>
+      {%- comment -%} Privacy Notice {%- endcomment -%}
+      {%- if section.settings.show_privacy_notice and section.settings.privacy_notice_text != blank -%}
+        <div
+          class="form-privacy"
+          style="text-align: {{ section.settings.privacy_alignment }}; margin-top: {{ section.settings.field_spacing }}px;"
+        >
+          <div
+            class="privacy-notice rte"
+            style="font-size: {{ section.settings.privacy_font_size }}px; color: var(--form-text-color); opacity: 0.8;"
+          >
+            {{ section.settings.privacy_notice_text }}
           </div>
-        {%- endif -%}
-      </form>
+        </div>
+      {%- endif -%}
     </div>
   </div>
 </div>
 
 {%- comment -%} Critical JavaScript for AAA Membership Processing {%- endcomment -%}
 <script>
-  function isMyMembershipScriptLoaded() {
-    var url =
-      'https://shopifycdn.aaawebstore.com/membership/appfiles/aaa_membership_script_min_v3.js?shop=ab97df-6.myshopify.com';
-    var jsFound = 0;
-    var scripts = document.getElementsByTagName('script');
-
-    for (var i = scripts.length; i--; ) {
-      if (scripts[i].src == url) {
-        jsFound = 1;
+  function loadAAAmembershipPlus() {
+    // Function to load jQuery if not available (based on theme pattern)
+    function reqJquery(onload) {
+      if (typeof jQuery === 'undefined' || typeof jQuery.ajax === 'undefined') {
+        var head = document.getElementsByTagName('head')[0];
+        var script = document.createElement('script');
+        script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js';
+        script.type = 'text/javascript';
+        script.onload = script.onreadystatechange = function () {
+          if (script.readyState) {
+            if (script.readyState === 'complete' || script.readyState === 'loaded') {
+              script.onreadystatechange = null;
+              onload(jQuery.noConflict(true));
+            }
+          } else {
+            onload(jQuery.noConflict(true));
+          }
+        };
+        head.appendChild(script);
+      } else {
+        onload(jQuery);
       }
     }
 
-    if (!jsFound) {
-      var headTag = document.getElementsByTagName('head')[0];
-      var jqTag = document.createElement('script');
-      jqTag.type = 'text/javascript';
-      jqTag.src = url;
-      jqTag.onload = '';
-      headTag.appendChild(jqTag);
-    }
+    // Load AAA membership script after jQuery is ready
+    reqJquery(function ($) {
+      var url =
+        'https://shopifycdn.aaawebstore.com/membership/appfiles/aaa_membership_script_min_v3.js?shop=ab97df-6.myshopify.com';
+      var jsFound = 0;
+      var scripts = document.getElementsByTagName('script');
+
+      for (var i = scripts.length; i--; ) {
+        if (scripts[i].src == url) {
+          jsFound = 1;
+          break;
+        }
+      }
+
+      if (!jsFound) {
+        var headTag = document.getElementsByTagName('head')[0];
+        var jqTag = document.createElement('script');
+        jqTag.type = 'text/javascript';
+        jqTag.src = url;
+        jqTag.onload = function () {
+          console.log('AAA membership script loaded successfully for HubPRO+');
+        };
+        jqTag.onerror = function () {
+          console.error('Failed to load AAA membership script for HubPRO+');
+        };
+        headTag.appendChild(jqTag);
+      }
+    });
   }
-  isMyMembershipScriptLoaded();
+
+  // Load when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadAAAmembershipPlus);
+  } else {
+    loadAAAmembershipPlus();
+  }
 </script>
 
 {% schema %}
