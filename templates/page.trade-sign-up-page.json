@@ -485,7 +485,6 @@
         "rounded": false
       }
     },
-
     "hubpro_form_kVKUbK": {
       "type": "hubpro-form",
       "name": "HubPRO Form",
@@ -493,7 +492,7 @@
         "membership_form_id": "13446",
         "container_id": "",
         "show_heading": true,
-        "form_heading": "",
+        "form_heading": "1",
         "heading_tag": "h1",
         "heading_alignment": "center",
         "show_divider": true,
@@ -534,14 +533,14 @@
         "input_font_size": 14,
         "label_font_size": 14,
         "label_font_weight": "normal",
-        "button_background_color": "#BB9F4D",
-        "button_text_color": "#FFFFFF",
+        "button_background_color": "#bb9f4d",
+        "button_text_color": "#ffffff",
         "button_padding": 16,
         "button_border_radius": 4,
         "button_font_size": 16,
         "button_font_weight": "bold",
-        "text_color": "rgba(18,18,18,1)",
-        "background_color": "rgba(255,255,255,1)",
+        "text_color": "#121212",
+        "background_color": "#ffffff",
         "border_color": "#cccccc",
         "focus_color": "#007cba",
         "padding_top": 36,
