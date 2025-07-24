@@ -409,7 +409,7 @@
           "type": "button",
           "settings": {
             "button_label": "Join now",
-            "button_link": "",
+            "button_link": "shopify://pages/hubpro",
             "button_style": "secondary",
             "button_size": "md",
             "button_external": false,
