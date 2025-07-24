@@ -500,7 +500,6 @@
         "collection_9TpGwN",
         "collection_PqqpFq"
       ],
-      "disabled": true,
       "settings": {
         "columns": 4,
         "carousel_on_desktop": false,
@@ -510,7 +509,7 @@
         "show_view_all": false,
         "columns_mobile": "1",
         "swipe_on_mobile": true,
-        "heading": "Individual Sample's",
+        "heading": "Ensky Enclosures 6mm",
         "heading_size": "title-md",
         "heading_alignment": "text-left md:items-end md:flex-row",
         "heading_tag": "h2",
