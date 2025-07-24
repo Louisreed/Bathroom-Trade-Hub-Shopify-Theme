@@ -145,6 +145,7 @@
         "collection_b6di6b",
         "collection_jD3feK"
       ],
+      "disabled": true,
       "settings": {
         "columns": 5,
         "carousel_on_desktop": true,
