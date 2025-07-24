@@ -89,7 +89,7 @@
           "type": "mega_menu",
           "name": "Hub-Essentials",
           "settings": {
-            "menu_title": "Hub Essentials",
+            "menu_title": "Hub-Essentials",
             "menu_width": "medium",
             "show_menu_image": true,
             "button_label": "",
