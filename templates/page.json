@@ -112,12 +112,25 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_b6di6b": {
+          "type": "collection",
+          "settings": {
+            "collection": "navala",
+            "title": "Navala",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
         "collection_6fdXNc",
         "collection_99UjPB",
-        "collection_Qw3mC3"
+        "collection_Qw3mC3",
+        "collection_b6di6b"
       ],
       "settings": {
         "columns": 5,
