@@ -191,8 +191,8 @@
           "type": "button",
           "name": "t:blocks.button.name",
           "settings": {
-            "button_label": "CREATE A TRADE ACCOUNT",
-            "button_link": "shopify://pages/trade-sign-up",
+            "button_label": "OPEN A TRADE ACCOUNT",
+            "button_link": "/account/register",
             "button_style": "secondary",
             "button_size": "md",
             "button_external": false,
