@@ -1,6 +1,6 @@
 {%- comment -%}
   HubPRO Membership Form Section
-  Compatible with AAA WebStore Membership System
+  Raw HTML form with customizable styling overrides
 {%- endcomment -%}
 
 {%- liquid
@@ -29,8 +29,8 @@
     {% endif %}
   }
 
-  /* AAA membership form styling will be handled by the script */
-  .hubpro-membership-form .aaa-membership-form-shortcode {
+  /* Override styling for raw HTML form content */
+  .hubpro-membership-form .aaa-membership-form-container {
     margin-bottom: {{ section.settings.field_spacing }}px;
   }
 
@@ -103,6 +103,13 @@
   #shopify-section-{{ section.id }} .aaamembership_form .required {
     color: #e74c3c !important;
   }
+
+  /* Hide AAA-generated hardcoded headings */
+  #shopify-section-{{ section.id }} .aaamembership_form h1.header,
+  #shopify-section-{{ section.id }} .aaamembership_form h3.header,
+  #shopify-section-{{ section.id }} .aaamembership_form .aaadivider {
+    display: none !important;
+  }
 </style>
 
 <div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}">
@@ -127,10 +134,16 @@
         </h3>
       {%- endif -%}
 
-      {%- comment -%} AAA Membership Form Shortcode - Simple Container {%- endcomment -%}
-      <div class="aaa-membership-form-shortcode" data-form-id="{{ section.settings.membership_form_id }}">
-        <!-- AAA membership script will inject the form here -->
-      </div>
+      {%- comment -%} Raw HTML Form Content {%- endcomment -%}
+      {%- if section.settings.raw_form_html != blank -%}
+        <div class="aaa-membership-form-container">
+          {{ section.settings.raw_form_html }}
+        </div>
+      {%- else -%}
+        <div class="form-placeholder" style="padding: 40px; text-align: center; border: 2px dashed #ccc; color: #999;">
+          <p>Please paste your raw form HTML in the "Raw Form HTML" setting above.</p>
+        </div>
+      {%- endif -%}
 
       {%- comment -%} Privacy Notice {%- endcomment -%}
       {%- if section.settings.show_privacy_notice and section.settings.privacy_notice_text != blank -%}
@@ -150,70 +163,6 @@
   </div>
 </div>
 
-{%- comment -%} Critical JavaScript for AAA Membership Processing {%- endcomment -%}
-<script>
-  function loadAAAmembership() {
-    // Function to load jQuery if not available (based on theme pattern)
-    function reqJquery(onload) {
-      if (typeof jQuery === 'undefined' || typeof jQuery.ajax === 'undefined') {
-        var head = document.getElementsByTagName('head')[0];
-        var script = document.createElement('script');
-        script.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js';
-        script.type = 'text/javascript';
-        script.onload = script.onreadystatechange = function () {
-          if (script.readyState) {
-            if (script.readyState === 'complete' || script.readyState === 'loaded') {
-              script.onreadystatechange = null;
-              onload(jQuery.noConflict(true));
-            }
-          } else {
-            onload(jQuery.noConflict(true));
-          }
-        };
-        head.appendChild(script);
-      } else {
-        onload(jQuery);
-      }
-    }
-
-    // Load AAA membership script after jQuery is ready
-    reqJquery(function ($) {
-      var url =
-        'https://shopifycdn.aaawebstore.com/membership/appfiles/aaa_membership_script_min_v3.js?shop=ab97df-6.myshopify.com';
-      var jsFound = 0;
-      var scripts = document.getElementsByTagName('script');
-
-      for (var i = scripts.length; i--; ) {
-        if (scripts[i].src == url) {
-          jsFound = 1;
-          break;
-        }
-      }
-
-      if (!jsFound) {
-        var headTag = document.getElementsByTagName('head')[0];
-        var jqTag = document.createElement('script');
-        jqTag.type = 'text/javascript';
-        jqTag.src = url;
-        jqTag.onload = function () {
-          console.log('AAA membership script loaded successfully');
-        };
-        jqTag.onerror = function () {
-          console.error('Failed to load AAA membership script');
-        };
-        headTag.appendChild(jqTag);
-      }
-    });
-  }
-
-  // Load when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadAAAmembership);
-  } else {
-    loadAAAmembership();
-  }
-</script>
-
 {% schema %}
 {
   "name": "HubPRO Form",
@@ -224,18 +173,14 @@
       "content": "Form Settings"
     },
     {
-      "type": "text",
-      "id": "membership_form_id",
-      "label": "Membership Form ID",
-      "default": "13446",
-      "info": "The form ID from your membership system"
+      "type": "textarea",
+      "id": "raw_form_html",
+      "label": "Raw Form HTML",
+      "info": "Paste your complete form HTML code here. Settings below will override styling but preserve functionality.",
+      "placeholder": "<form method=\"post\" action=\"\" class=\"aaamembership_form\">...your form HTML...</form>",
+      "default": "<form method=\"post\" action=\"\" class=\"aaamembership_form aaa-form-null\" enctype=\"multipart/form-data\"><input type=\"hidden\" name=\"container_id\" value=\"\"><input type=\"hidden\" name=\"form_id\" value=\"13446\"><input type=\"hidden\" name=\"form_domain\" value=\"ab97df-6.myshopify.com\"><input type=\"hidden\" name=\"\" value=\"You are now a HubPro Member!\" class=\"success_msg\"><input type=\"hidden\" name=\"\" value=\"This password is for new user only, old user can use their existing password to login.\" class=\"password_tooltip_text_lang\"><input type=\"hidden\" name=\"\" value=\"https://bathroomtradehub.co.uk/pages/hubpro\" class=\"aaa_thankyoupageurl\"><div class=\"\"><h1 type=\"h1\" class=\"header\" name=\"\" id=\"\" style=\"color: rgb(0, 0, 0);\">HubPRO</h1></div><div class=\"\"><hr type=\"hr\" class=\"aaadivider\" name=\"\" id=\"\"> </div><div class=\"\"><h3 type=\"h3\" class=\"header\" name=\"\" id=\"\" style=\"color: rgb(0, 0, 0);\">Subscribe and get benefits</h3></div><div class=\"membership-text form-group field-first-name\"><label for=\"first-name\" class=\"membership-text-label\" style=\"color: rgb(0, 0, 0);\">First Name <span class=\"required\">*</span> </label> <input type=\"text\" required=\"\" class=\"form-control\" name=\"first-name\" id=\"first-name\" aria-required=\"true\"></div><div class=\"membership-text form-group field-last-name\"><label for=\"last-name\" class=\"membership-text-label\" style=\"color: rgb(0, 0, 0);\">Last Name <span class=\"required\">*</span> </label> <input type=\"text\" required=\"\" class=\"form-control\" name=\"last-name\" id=\"last-name\" aria-required=\"true\"></div><div class=\"membership-email form-group field-replyemail\"><label for=\"replyemail\" class=\"membership-email-label\" style=\"color: rgb(0, 0, 0);\">Email Address <span class=\"required\">*</span> </label> <input type=\"email\" required=\"\" class=\"form-control\" name=\"replyemail\" id=\"replyemail\" aria-required=\"true\"></div><div class=\"membership-text form-group field-aaa-customer-company\"><label for=\"aaa-customer-company\" class=\"membership-text-label\" style=\"color: rgb(0, 0, 0);\">Company <span class=\"required\">*</span> </label> <input type=\"text\" required=\"\" class=\"form-control\" name=\"aaa-customer-company\" id=\"aaa-customer-company\" aria-required=\"true\"></div><div class=\"membership-password form-group field-customer-password\"><label for=\"customer-password\" class=\"membership-password-label\" style=\"color: rgb(0, 0, 0);\">Password <span class=\"required\">*</span> </label> <input type=\"password\" required=\"\" class=\"form-control\" name=\"customer-password\" id=\"customer-password\" aria-required=\"true\"></div><div class=\"membership-password form-group field-aaa-customer-confirm-pass\"><label for=\"aaa-customer-confirm-pass\" class=\"membership-password-label\" style=\"color: rgb(0, 0, 0);\">Confirm Password <span class=\"required\">*</span> </label> <input type=\"password\" required=\"\" class=\"form-control aaa-customer-confirm-password\" name=\"aaa-customer-confirm-pass\" id=\"aaa-customer-confirm-pass\" aria-required=\"true\"></div><div class=\"membership-submit form-group field-button-1497336985158\"><button type=\"submit\" class=\"button-input btn btn-primary\" name=\"button-1497336985158\" style=\"primary\" id=\"button-1497336985158\">Subscribe Now</button></div></form><style type=\"text/css\">.aaamembership_form .membership-submit button { background-color: #BB9F4D  !important; }.aaamembership_form .membership-submit button { color: #FFFFFF  !important; }.aaamembership_form .membership-submit button { font-size: 14px !important; }</style><style>.aaamembership_form input[type=\"text\"], .aaamembership_form input[type=\"search\"], .aaamembership_form input[type=\"password\"], .aaamembership_form input[type=\"email\"], .aaamembership_form input[type=\"file\"], .aaamembership_form input[type=\"number\"], .aaamembership_form input[type=\"tel\"], .aaamembership_form textarea, .aaamembership_form select { width: 100% !important; margin: 0;border: 1px solid #ccc; }</style><script> function isMyMembershipScriptLoaded() { var url = 'https://shopifycdn.aaawebstore.com/membership/appfiles/aaa_membership_script_min_v3.js?shop=ab97df-6.myshopify.com'; var jsFound = 0; var scripts = document.getElementsByTagName('script');  for (var i = scripts.length; i--;) { if (scripts[i].src == url) { jsFound = 1; } } if(!jsFound) { var headTag = document.getElementsByTagName('head')[0]; var jqTag = document.createElement('script'); jqTag.type = 'text/javascript'; jqTag.src = url; jqTag.onload = ''; headTag.appendChild(jqTag); } } isMyMembershipScriptLoaded(); </script>"
     },
-    {
-      "type": "text",
-      "id": "container_id",
-      "label": "Container ID",
-      "info": "Optional container ID for form processing"
-    },
+
     {
       "type": "header",
       "content": "Form Content"
