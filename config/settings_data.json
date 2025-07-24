@@ -150,17 +150,6 @@
         "disabled": false,
         "settings": {}
       },
-      "11989592277864780042": {
-        "type": "shopify://apps/wholesale-pricing-discount/blocks/app-embed/94cbfa01-7191-4bb2-bcd8-b519b9b3bd06",
-        "disabled": false,
-        "settings": {
-          "showCrossOutPrice": true,
-          "showCurrencyCodes": false,
-          "priceColor": "#000000",
-          "crossOutPriceColor": "#E9330C",
-          "appProxy": "/apps/wpdapp"
-        }
-      },
       "15683396631634586217": {
         "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
         "disabled": false,
@@ -182,7 +171,7 @@
       },
       "14601013864428308182": {
         "type": "shopify://apps/t-selector/blocks/app-block/c1a83ca5-acd4-4a9b-a216-2ddf85c44c02",
-        "disabled": false,
+        "disabled": true,
         "settings": {
           "live_preview": false,
           "display_popup": false,
