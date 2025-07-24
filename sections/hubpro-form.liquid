@@ -76,6 +76,27 @@
     max-width: {{ section.settings.form_width }}px;
     margin: 0 auto;
   }
+
+  /* Original membership form styles for compatibility */
+  .aaamembership_form .membership-submit button {
+    background-color: var(--form-button-background) !important;
+    color: var(--form-button-text) !important;
+    font-size: {{ section.settings.button_font_size }}px !important;
+  }
+
+  .aaamembership_form input[type="text"],
+  .aaamembership_form input[type="search"],
+  .aaamembership_form input[type="password"],
+  .aaamembership_form input[type="email"],
+  .aaamembership_form input[type="file"],
+  .aaamembership_form input[type="number"],
+  .aaamembership_form input[type="tel"],
+  .aaamembership_form textarea,
+  .aaamembership_form select {
+    width: 100% !important;
+    margin: 0;
+    border: 1px solid var(--form-border-color);
+  }
 </style>
 
 <div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}">
@@ -84,34 +105,28 @@
       <div class="hubpro-form">
         <form
           method="{{ form_method }}"
-          action="{{ form_action }}"
-          class="hubpro-membership-form"
+          action="{{ form_action | default: '' }}"
+          class="aaamembership_form aaa-form-null hubpro-membership-form"
           id="{{ form_id }}"
           enctype="multipart/form-data"
-          novalidate
         >
           {%- comment -%} Hidden fields for form processing {%- endcomment -%}
           <input type="hidden" name="container_id" value="{{ section.settings.container_id }}">
           <input type="hidden" name="form_id" value="{{ section.settings.membership_form_id }}">
-          <input type="hidden" name="form_domain" value="{{ shop.domain }}">
+          <input type="hidden" name="form_domain" value="{{ shop.myshopify_domain }}">
           <input
             type="hidden"
-            name="success_message"
+            name=""
             value="{{ section.settings.success_message | default: 'Thank You!' | escape }}"
             class="success_msg"
           >
           <input
             type="hidden"
-            name="password_tooltip_text_lang"
+            name=""
             value="{{ section.settings.password_tooltip | default: 'undefined' | escape }}"
             class="password_tooltip_text_lang"
           >
-          <input
-            type="hidden"
-            name="thankyou_page_url"
-            value="{{ section.settings.thankyou_url | escape }}"
-            class="aaa_thankyoupageurl"
-          >
+          <input type="hidden" name="" value="{{ section.settings.thankyou_url | escape }}" class="aaa_thankyoupageurl">
 
           {%- comment -%} Form Header {%- endcomment -%}
           {%- if section.settings.show_heading and section.settings.form_heading != blank -%}
@@ -139,7 +154,7 @@
           >
             {%- comment -%} First Name Field {%- endcomment -%}
             {%- if section.settings.show_first_name -%}
-              <div class="form-field field-first-name">
+              <div class="membership-text form-group field-first-name form-field">
                 <label for="{{ form_id }}-first-name" class="form-label">
                   {{ section.settings.first_name_label | default: 'First Name' | escape }}
                   {%- if section.settings.first_name_required -%}
@@ -162,7 +177,7 @@
 
             {%- comment -%} Last Name Field {%- endcomment -%}
             {%- if section.settings.show_last_name -%}
-              <div class="form-field field-last-name">
+              <div class="membership-text form-group field-last-name form-field">
                 <label for="{{ form_id }}-last-name" class="form-label">
                   {{ section.settings.last_name_label | default: 'Last Name' | escape }}
                   {%- if section.settings.last_name_required -%}
@@ -185,7 +200,7 @@
 
             {%- comment -%} Email Field {%- endcomment -%}
             {%- if section.settings.show_email -%}
-              <div class="form-field field-email">
+              <div class="membership-email form-group field-replyemail form-field">
                 <label for="{{ form_id }}-email" class="form-label">
                   {{ section.settings.email_label | default: 'Email Address' | escape }}
                   {%- if section.settings.email_required -%}
@@ -210,7 +225,7 @@
 
             {%- comment -%} Company Field {%- endcomment -%}
             {%- if section.settings.show_company -%}
-              <div class="form-field field-company">
+              <div class="membership-text form-group field-aaa-customer-company form-field">
                 <label for="{{ form_id }}-company" class="form-label">
                   {{ section.settings.company_label | default: 'Company' | escape }}
                   {%- if section.settings.company_required -%}
@@ -233,7 +248,7 @@
 
             {%- comment -%} Password Field {%- endcomment -%}
             {%- if section.settings.show_password -%}
-              <div class="form-field field-password">
+              <div class="membership-password form-group field-customer-password form-field">
                 <label for="{{ form_id }}-password" class="form-label">
                   {{ section.settings.password_label | default: 'Password' | escape }}
                   {%- if section.settings.password_required -%}
@@ -255,12 +270,13 @@
             {%- endif -%}
 
             {%- comment -%} Submit Button {%- endcomment -%}
-            <div class="form-field form-submit text-{{ section.settings.button_alignment }}">
+            <div class="membership-submit form-group field-button-{{ section.id }} form-field form-submit text-{{ section.settings.button_alignment }}">
               <button
                 type="submit"
-                class="form-submit-button button-input btn btn-primary"
-                name="hubpro-submit"
-                id="{{ form_id }}-submit"
+                class="button-input btn btn-primary form-submit-button"
+                name="button-{{ section.id }}"
+                style="primary"
+                id="button-{{ section.id }}"
               >
                 {{ section.settings.submit_button_text | default: 'Subscribe Now' | escape }}
               </button>
@@ -284,7 +300,33 @@
   </div>
 </div>
 
-{%- comment -%} Custom JavaScript for form functionality {%- endcomment -%}
+{%- comment -%} Critical JavaScript for membership form processing - from original form {%- endcomment -%}
+<script>
+  function isMyMembershipScriptLoaded() {
+    var url =
+      'https://shopifycdn.aaawebstore.com/membership/appfiles/aaa_membership_script_min_v3.js?shop={{ shop.myshopify_domain }}';
+    var jsFound = 0;
+    var scripts = document.getElementsByTagName('script');
+
+    for (var i = scripts.length; i--; ) {
+      if (scripts[i].src == url) {
+        jsFound = 1;
+      }
+    }
+
+    if (!jsFound) {
+      var headTag = document.getElementsByTagName('head')[0];
+      var jqTag = document.createElement('script');
+      jqTag.type = 'text/javascript';
+      jqTag.src = url;
+      jqTag.onload = '';
+      headTag.appendChild(jqTag);
+    }
+  }
+  isMyMembershipScriptLoaded();
+</script>
+
+{%- comment -%} Custom JavaScript for additional form functionality {%- endcomment -%}
 {%- if section.settings.enable_custom_script -%}
   <script>
     document.addEventListener('DOMContentLoaded', function () {
