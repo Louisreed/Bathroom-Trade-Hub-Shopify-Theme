@@ -203,13 +203,31 @@
             "custom_width_mobile": 100
           },
           "blocks": {}
+        },
+        "button_8mwqwb": {
+          "type": "button",
+          "name": "t:blocks.button.name",
+          "settings": {
+            "button_label": "BECOME A HUBPRO MEMBER",
+            "button_link": "shopify://pages/hubpro",
+            "button_style": "primary",
+            "button_size": "md",
+            "button_external": false,
+            "button_icon": true,
+            "width": "fit-content",
+            "custom_width": 100,
+            "width_mobile": "fill",
+            "custom_width_mobile": 100
+          },
+          "blocks": {}
         }
       },
       "block_order": [
         "text_3XqJjG",
         "text_rxTaf6",
         "text_nzrBgE",
-        "button_Rfnxi3"
+        "button_Rfnxi3",
+        "button_8mwqwb"
       ],
       "name": "t:sections.custom-section.name",
       "settings": {
