@@ -77,6 +77,27 @@
     margin: 0 auto;
   }
 
+  #shopify-section-{{ section.id }} .form-name-row {
+    display: flex;
+    gap: {{ section.settings.field_spacing }}px;
+    flex-wrap: wrap;
+  }
+
+  #shopify-section-{{ section.id }} .form-name-row .form-field {
+    flex: 1;
+    min-width: 200px;
+  }
+
+  @media (max-width: 768px) {
+    #shopify-section-{{ section.id }} .form-name-row {
+      flex-direction: column;
+    }
+
+    #shopify-section-{{ section.id }} .form-name-row .form-field {
+      min-width: auto;
+    }
+  }
+
   /* Original membership form styles for compatibility */
   .aaamembership_form .membership-submit button {
     background-color: {{ section.settings.button_background_color | default: '#000000' }} !important;
@@ -166,53 +187,56 @@
             class="form-fields"
             style="display: flex; flex-direction: column; gap: {{ section.settings.field_spacing }}px;"
           >
-            {%- comment -%} First Name Field {%- endcomment -%}
-            {%- if section.settings.show_first_name -%}
-              <div class="membership-text form-group field-first-name form-field">
-                <label for="first-name" class="membership-text-label" style="color: var(--form-text-color);">
-                  {{ section.settings.first_name_label | default: 'First Name' | escape }}
-                  {%- if section.settings.first_name_required -%}
-                    <span class="required">*</span>
-                  {%- endif -%}
-                </label>
-                <input
-                  type="text"
-                  {% if section.settings.first_name_required %}
-                    required=""
-                  {% endif %}
-                  class="form-control"
-                  name="first-name"
-                  id="first-name"
-                  {% if section.settings.first_name_required %}
-                    aria-required="true"
-                  {% endif %}
-                >
-              </div>
-            {%- endif -%}
+            {%- comment -%} Name Fields Row {%- endcomment -%}
+            <div class="form-name-row">
+              {%- comment -%} First Name Field {%- endcomment -%}
+              {%- if section.settings.show_first_name -%}
+                <div class="membership-text form-group field-first-name form-field">
+                  <label for="first-name" class="membership-text-label" style="color: var(--form-text-color);">
+                    {{ section.settings.first_name_label | default: 'First Name' | escape }}
+                    {%- if section.settings.first_name_required -%}
+                      <span class="required">*</span>
+                    {%- endif -%}
+                  </label>
+                  <input
+                    type="text"
+                    {% if section.settings.first_name_required %}
+                      required=""
+                    {% endif %}
+                    class="form-control"
+                    name="first-name"
+                    id="first-name"
+                    {% if section.settings.first_name_required %}
+                      aria-required="true"
+                    {% endif %}
+                  >
+                </div>
+              {%- endif -%}
 
-            {%- comment -%} Last Name Field {%- endcomment -%}
-            {%- if section.settings.show_last_name -%}
-              <div class="membership-text form-group field-last-name form-field">
-                <label for="last-name" class="membership-text-label" style="color: var(--form-text-color);">
-                  {{ section.settings.last_name_label | default: 'Last Name' | escape }}
-                  {%- if section.settings.last_name_required -%}
-                    <span class="required">*</span>
-                  {%- endif -%}
-                </label>
-                <input
-                  type="text"
-                  {% if section.settings.last_name_required %}
-                    required=""
-                  {% endif %}
-                  class="form-control"
-                  name="last-name"
-                  id="last-name"
-                  {% if section.settings.last_name_required %}
-                    aria-required="true"
-                  {% endif %}
-                >
-              </div>
-            {%- endif -%}
+              {%- comment -%} Last Name Field {%- endcomment -%}
+              {%- if section.settings.show_last_name -%}
+                <div class="membership-text form-group field-last-name form-field">
+                  <label for="last-name" class="membership-text-label" style="color: var(--form-text-color);">
+                    {{ section.settings.last_name_label | default: 'Last Name' | escape }}
+                    {%- if section.settings.last_name_required -%}
+                      <span class="required">*</span>
+                    {%- endif -%}
+                  </label>
+                  <input
+                    type="text"
+                    {% if section.settings.last_name_required %}
+                      required=""
+                    {% endif %}
+                    class="form-control"
+                    name="last-name"
+                    id="last-name"
+                    {% if section.settings.last_name_required %}
+                      aria-required="true"
+                    {% endif %}
+                  >
+                </div>
+              {%- endif -%}
+            </div>
 
             {%- comment -%} Email Field {%- endcomment -%}
             {%- if section.settings.show_email -%}
