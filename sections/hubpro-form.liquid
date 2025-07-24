@@ -29,51 +29,9 @@
     {% endif %}
   }
 
-  .hubpro-membership-form .form-group {
+  /* AAA membership form styling will be handled by the script */
+  .hubpro-membership-form .aaa-membership-form-shortcode {
     margin-bottom: {{ section.settings.field_spacing }}px;
-  }
-
-  .hubpro-membership-form .form-control {
-    width: 100%;
-    padding: {{ section.settings.input_padding }}px;
-    border: 1px solid var(--form-border-color);
-    border-radius: {{ section.settings.input_border_radius }}px;
-    font-size: {{ section.settings.input_font_size }}px;
-    background-color: #ffffff;
-  }
-
-  .hubpro-membership-form .form-control:focus {
-    outline: none;
-    border-color: {{ section.settings.focus_color | default: '#007cba' }};
-  }
-
-  .hubpro-membership-form label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: {{ section.settings.label_font_weight }};
-    font-size: {{ section.settings.label_font_size }}px;
-    color: var(--form-text-color);
-  }
-
-  .hubpro-membership-form .required {
-    color: #e74c3c;
-  }
-
-  .hubpro-membership-form .form-submit-button {
-    background-color: {{ section.settings.button_background_color | default: '#BB9F4D' }};
-    color: {{ section.settings.button_text_color | default: '#FFFFFF' }};
-    border: none;
-    padding: {{ section.settings.button_padding }}px;
-    border-radius: {{ section.settings.button_border_radius }}px;
-    font-size: {{ section.settings.button_font_size }}px;
-    font-weight: {{ section.settings.button_font_weight }};
-    cursor: pointer;
-    width: 100%;
-    transition: opacity 0.3s ease;
-  }
-
-  .hubpro-membership-form .form-submit-button:hover {
-    opacity: 0.9;
   }
 
   .hubpro-membership-form .form-heading {
@@ -89,25 +47,61 @@
     margin: {{ section.settings.divider_spacing }}px 0;
   }
 
-  /* Original AAA membership form compatibility styles */
-  .aaamembership_form input[type="text"],
-  .aaamembership_form input[type="search"],
-  .aaamembership_form input[type="password"],
-  .aaamembership_form input[type="email"],
-  .aaamembership_form input[type="file"],
-  .aaamembership_form input[type="number"],
-  .aaamembership_form input[type="tel"],
-  .aaamembership_form textarea,
-  .aaamembership_form select {
+  /* Custom styling for AAA generated forms */
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="text"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="search"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="password"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="email"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="file"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="number"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="tel"],
+  #shopify-section-{{ section.id }} .aaamembership_form textarea,
+  #shopify-section-{{ section.id }} .aaamembership_form select {
     width: 100% !important;
-    margin: 0;
-    border: 1px solid #ccc;
+    margin: 0 !important;
+    padding: {{ section.settings.input_padding }}px !important;
+    border: 1px solid var(--form-border-color) !important;
+    border-radius: {{ section.settings.input_border_radius }}px !important;
+    font-size: {{ section.settings.input_font_size }}px !important;
+    background-color: #ffffff !important;
   }
 
-  .aaamembership_form .membership-submit button {
+  #shopify-section-{{ section.id }} .aaamembership_form input:focus {
+    outline: none !important;
+    border-color: {{ section.settings.focus_color | default: '#007cba' }} !important;
+  }
+
+  #shopify-section-{{ section.id }} .aaamembership_form label {
+    display: block !important;
+    margin-bottom: 8px !important;
+    font-weight: {{ section.settings.label_font_weight }} !important;
+    font-size: {{ section.settings.label_font_size }}px !important;
+    color: var(--form-text-color) !important;
+  }
+
+  #shopify-section-{{ section.id }} .aaamembership_form .form-group {
+    margin-bottom: {{ section.settings.field_spacing }}px !important;
+  }
+
+  #shopify-section-{{ section.id }} .aaamembership_form .membership-submit button {
     background-color: {{ section.settings.button_background_color | default: '#BB9F4D' }} !important;
     color: {{ section.settings.button_text_color | default: '#FFFFFF' }} !important;
-    font-size: {{ section.settings.button_font_size | default: '14' }}px !important;
+    font-size: {{ section.settings.button_font_size | default: '16' }}px !important;
+    font-weight: {{ section.settings.button_font_weight }} !important;
+    padding: {{ section.settings.button_padding }}px !important;
+    border-radius: {{ section.settings.button_border_radius }}px !important;
+    border: none !important;
+    cursor: pointer !important;
+    width: 100% !important;
+    transition: opacity 0.3s ease !important;
+  }
+
+  #shopify-section-{{ section.id }} .aaamembership_form .membership-submit button:hover {
+    opacity: 0.9 !important;
+  }
+
+  #shopify-section-{{ section.id }} .aaamembership_form .required {
+    color: #e74c3c !important;
   }
 </style>
 
