@@ -171,7 +171,7 @@
       },
       "14601013864428308182": {
         "type": "shopify://apps/t-selector/blocks/app-block/c1a83ca5-acd4-4a9b-a216-2ddf85c44c02",
-        "disabled": true,
+        "disabled": false,
         "settings": {
           "live_preview": false,
           "display_popup": false,
