@@ -78,7 +78,7 @@
         "menu_tag_F6tjLe": {
           "type": "menu_tag",
           "settings": {
-            "menu_handle": "collections/hub-essentials",
+            "menu_handle": "hubessentials",
             "tag_text": "Featured",
             "background_color": "#2acaf1",
             "text_color": "#ffffff",
