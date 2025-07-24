@@ -154,7 +154,7 @@
         "show_view_all": false,
         "columns_mobile": "1",
         "swipe_on_mobile": true,
-        "heading": "",
+        "heading": "Choice Brassware Ranges",
         "heading_size": "title-md",
         "heading_alignment": "text-left md:items-end md:flex-row",
         "heading_tag": "h2",
@@ -519,110 +519,6 @@
         "full_width": false,
         "rounded": false
       }
-    },
-    "collection_list_ahrMDX": {
-      "type": "collection-list",
-      "blocks": {
-        "collection_HYzcEd": {
-          "type": "collection",
-          "settings": {
-            "collection": "eon",
-            "title": "Eon",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_Xyr8EK": {
-          "type": "collection",
-          "settings": {
-            "collection": "munro",
-            "title": "",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_XTR4TV": {
-          "type": "collection",
-          "settings": {
-            "collection": "mona",
-            "title": "",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_CHTx8J": {
-          "type": "collection",
-          "settings": {
-            "collection": "moat",
-            "title": "",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_dtxECR": {
-          "type": "collection",
-          "settings": {
-            "collection": "vibe",
-            "title": "",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        }
-      },
-      "block_order": [
-        "collection_HYzcEd",
-        "collection_Xyr8EK",
-        "collection_XTR4TV",
-        "collection_CHTx8J",
-        "collection_dtxECR"
-      ],
-      "name": "t:sections.collection-list.name",
-      "settings": {
-        "columns": 4,
-        "carousel_on_desktop": true,
-        "image_type": "collection",
-        "image_ratio": "square",
-        "show_products_count": true,
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "heading": "The Essential Ranges",
-        "heading_size": "title-md",
-        "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "",
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 72,
-        "padding_bottom": 72,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
-      }
     }
   },
   "order": [
@@ -632,7 +528,6 @@
     "image_with_text_akrF6A",
     "173176303439daeef7",
     "collection_list_rN7xKg",
-    "collection_list_49gCqq",
-    "collection_list_ahrMDX"
+    "collection_list_49gCqq"
   ]
 }
