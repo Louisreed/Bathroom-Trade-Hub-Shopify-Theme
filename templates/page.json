@@ -462,6 +462,7 @@
           "type": "collection",
           "settings": {
             "collection": "ensky-6mm",
+            "image": "shopify://shop_images/Screenshot_2025-07-24_at_10.50.11_AM.png",
             "title": "Ensky Chrome 6mm",
             "description": "",
             "overlay_content": true,
