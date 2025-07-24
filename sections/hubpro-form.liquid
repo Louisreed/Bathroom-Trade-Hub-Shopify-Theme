@@ -77,29 +77,7 @@
     margin: 0 auto;
   }
 
-    #shopify-section-{{ section.id }} .form-name-row {
-    display: flex !important;
-    gap: {{ section.settings.field_spacing }}px;
-    flex-wrap: wrap;
-    width: 100%;
-  }
-
-  #shopify-section-{{ section.id }} .form-name-row .form-field {
-    flex: 1 1 calc(50% - {{ section.settings.field_spacing | divided_by: 2 }}px);
-    min-width: 200px;
-    margin: 0;
-  }
-
-  @media (max-width: 768px) {
-    #shopify-section-{{ section.id }} .form-name-row {
-      flex-direction: column !important;
-    }
-
-    #shopify-section-{{ section.id }} .form-name-row .form-field {
-      flex: 1 1 100%;
-      min-width: auto;
-    }
-  }
+      /* Shopify standard form layout - no custom overrides needed */
 
   /* Original membership form styles for compatibility */
   .aaamembership_form .membership-submit button {
@@ -122,16 +100,7 @@
     border: 1px solid var(--form-border-color);
   }
 
-  /* Additional overrides for name row */
-  #shopify-section-{{ section.id }} .form-name-row .membership-text,
-  #shopify-section-{{ section.id }} .form-name-row .membership-email {
-    display: block !important;
-    margin: 0 !important;
-  }
-
-  #shopify-section-{{ section.id }} .form-name-row .form-group {
-    margin-bottom: 0 !important;
-  }
+  /* Keep membership form classes for backwards compatibility */
 </style>
 
 <div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}">
@@ -196,131 +165,153 @@
             </div>
           {%- endif -%}
 
-          {%- comment -%} Form Fields {%- endcomment -%}
-          <div
-            class="form-fields"
-            style="display: flex; flex-direction: column; gap: {{ section.settings.field_spacing }}px;"
-          >
-            {%- comment -%} Name Fields Row {%- endcomment -%}
-            <div class="form-name-row">
+          {%- comment -%} Form Fields - Shopify Standard Layout {%- endcomment -%}
+          <div class="contact__fields flex flex-wrap gap-4d5 md:gap-6">
+            {%- comment -%} Name Fields Row - Shopify Standard Layout {%- endcomment -%}
+            <div class="flex flex-wrap gap-4d5 md:gap-6">
               {%- comment -%} First Name Field {%- endcomment -%}
               {%- if section.settings.show_first_name -%}
-                <div class="membership-text form-group field-first-name form-field">
-                  <label for="first-name" class="membership-text-label" style="color: var(--form-text-color);">
+                <div class="field membership-text form-group field-first-name">
+                  <input
+                    type="text"
+                    {% if section.settings.first_name_required %}
+                      required=""
+                    {% endif %}
+                    class="input is-floating form-control"
+                    name="first-name"
+                    id="first-name"
+                    placeholder="{{ section.settings.first_name_label | default: 'First Name' | escape }}"
+                    {% if section.settings.first_name_required %}
+                      aria-required="true"
+                    {% endif %}
+                  >
+                  <label
+                    for="first-name"
+                    class="label is-floating membership-text-label"
+                    style="color: var(--form-text-color);"
+                  >
                     {{ section.settings.first_name_label | default: 'First Name' | escape }}
                     {%- if section.settings.first_name_required -%}
                       <span class="required">*</span>
                     {%- endif -%}
                   </label>
-                  <input
-                    type="text"
-                    {% if section.settings.first_name_required %}
-                      required=""
-                    {% endif %}
-                    class="form-control"
-                    name="first-name"
-                    id="first-name"
-                    {% if section.settings.first_name_required %}
-                      aria-required="true"
-                    {% endif %}
-                  >
                 </div>
               {%- endif -%}
 
               {%- comment -%} Last Name Field {%- endcomment -%}
               {%- if section.settings.show_last_name -%}
-                <div class="membership-text form-group field-last-name form-field">
-                  <label for="last-name" class="membership-text-label" style="color: var(--form-text-color);">
-                    {{ section.settings.last_name_label | default: 'Last Name' | escape }}
-                    {%- if section.settings.last_name_required -%}
-                      <span class="required">*</span>
-                    {%- endif -%}
-                  </label>
+                <div class="field membership-text form-group field-last-name">
                   <input
                     type="text"
                     {% if section.settings.last_name_required %}
                       required=""
                     {% endif %}
-                    class="form-control"
+                    class="input is-floating form-control"
                     name="last-name"
                     id="last-name"
+                    placeholder="{{ section.settings.last_name_label | default: 'Last Name' | escape }}"
                     {% if section.settings.last_name_required %}
                       aria-required="true"
                     {% endif %}
                   >
+                  <label
+                    for="last-name"
+                    class="label is-floating membership-text-label"
+                    style="color: var(--form-text-color);"
+                  >
+                    {{ section.settings.last_name_label | default: 'Last Name' | escape }}
+                    {%- if section.settings.last_name_required -%}
+                      <span class="required">*</span>
+                    {%- endif -%}
+                  </label>
                 </div>
               {%- endif -%}
             </div>
 
             {%- comment -%} Email Field {%- endcomment -%}
             {%- if section.settings.show_email -%}
-              <div class="membership-email form-group field-replyemail form-field">
-                <label for="replyemail" class="membership-email-label" style="color: var(--form-text-color);">
-                  {{ section.settings.email_label | default: 'Email Address' | escape }}
-                  {%- if section.settings.email_required -%}
-                    <span class="required">*</span>
-                  {%- endif -%}
-                </label>
+              <div class="field field--full membership-email form-group field-replyemail">
                 <input
                   type="email"
                   {% if section.settings.email_required %}
                     required=""
                   {% endif %}
-                  class="form-control"
+                  class="input is-floating form-control"
                   name="replyemail"
                   id="replyemail"
+                  placeholder="{{ section.settings.email_label | default: 'Email Address' | escape }}"
                   {% if section.settings.email_required %}
                     aria-required="true"
                   {% endif %}
                 >
+                <label
+                  for="replyemail"
+                  class="label is-floating membership-email-label"
+                  style="color: var(--form-text-color);"
+                >
+                  {{ section.settings.email_label | default: 'Email Address' | escape }}
+                  {%- if section.settings.email_required -%}
+                    <span class="required">*</span>
+                  {%- endif -%}
+                </label>
               </div>
             {%- endif -%}
 
             {%- comment -%} Company Field {%- endcomment -%}
             {%- if section.settings.show_company -%}
-              <div class="membership-text form-group field-aaa-customer-company form-field">
-                <label for="aaa-customer-company" class="membership-text-label" style="color: var(--form-text-color);">
-                  {{ section.settings.company_label | default: 'Company' | escape }}
-                  {%- if section.settings.company_required -%}
-                    <span class="required">*</span>
-                  {%- endif -%}
-                </label>
+              <div class="field field--full membership-text form-group field-aaa-customer-company">
                 <input
                   type="text"
                   {% if section.settings.company_required %}
                     required=""
                   {% endif %}
-                  class="form-control"
+                  class="input is-floating form-control"
                   name="aaa-customer-company"
                   id="aaa-customer-company"
+                  placeholder="{{ section.settings.company_label | default: 'Company' | escape }}"
                   {% if section.settings.company_required %}
                     aria-required="true"
                   {% endif %}
                 >
+                <label
+                  for="aaa-customer-company"
+                  class="label is-floating membership-text-label"
+                  style="color: var(--form-text-color);"
+                >
+                  {{ section.settings.company_label | default: 'Company' | escape }}
+                  {%- if section.settings.company_required -%}
+                    <span class="required">*</span>
+                  {%- endif -%}
+                </label>
               </div>
             {%- endif -%}
 
             {%- comment -%} Password Field {%- endcomment -%}
             {%- if section.settings.show_password -%}
-              <div class="membership-password form-group field-customer-password form-field">
-                <label for="customer-password" class="membership-password-label" style="color: var(--form-text-color);">
-                  {{ section.settings.password_label | default: 'Password' | escape }}
-                  {%- if section.settings.password_required -%}
-                    <span class="required">*</span>
-                  {%- endif -%}
-                </label>
+              <div class="field field--full membership-password form-group field-customer-password">
                 <input
                   type="password"
                   {% if section.settings.password_required %}
                     required=""
                   {% endif %}
-                  class="form-control"
+                  class="input is-floating form-control"
                   name="customer-password"
                   id="customer-password"
+                  placeholder="{{ section.settings.password_label | default: 'Password' | escape }}"
                   {% if section.settings.password_required %}
                     aria-required="true"
                   {% endif %}
                 >
+                <label
+                  for="customer-password"
+                  class="label is-floating membership-password-label"
+                  style="color: var(--form-text-color);"
+                >
+                  {{ section.settings.password_label | default: 'Password' | escape }}
+                  {%- if section.settings.password_required -%}
+                    <span class="required">*</span>
+                  {%- endif -%}
+                </label>
               </div>
             {%- endif -%}
 
