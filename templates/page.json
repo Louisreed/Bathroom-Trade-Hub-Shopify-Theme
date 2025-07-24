@@ -461,9 +461,8 @@
         "collection_ezMxaQ": {
           "type": "collection",
           "settings": {
-            "collection": "maxi-panel-samples",
-            "image": "shopify://shop_images/Screenshot_2024-11-16_at_1.47.18_PM.png",
-            "title": "Maxi Panel",
+            "collection": "ensky-6mm",
+            "title": "Ensky Chrome 6mm",
             "description": "",
             "overlay_content": true,
             "color_text": "#ffffff",
