@@ -124,13 +124,26 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_jD3feK": {
+          "type": "collection",
+          "settings": {
+            "collection": "halstatt",
+            "title": "Halstatt",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
         "collection_6fdXNc",
         "collection_99UjPB",
         "collection_Qw3mC3",
-        "collection_b6di6b"
+        "collection_b6di6b",
+        "collection_jD3feK"
       ],
       "settings": {
         "columns": 5,
