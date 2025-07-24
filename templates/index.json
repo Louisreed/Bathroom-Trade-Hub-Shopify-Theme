@@ -191,7 +191,7 @@
           "type": "button",
           "name": "t:blocks.button.name",
           "settings": {
-            "button_label": "SIGN UP FOR A TRADE ACCOUNT",
+            "button_label": "CREATE A TRADE ACCOUNT",
             "button_link": "shopify://pages/hubpro",
             "button_style": "secondary",
             "button_size": "md",
