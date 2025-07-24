@@ -503,7 +503,7 @@
         "rounded": false
       }
     },
-    "hubpro_form_x3K7y3": {
+    "hubpro_form_kVKUbK": {
       "type": "hubpro-form",
       "name": "HubPRO Form",
       "settings": {
@@ -535,7 +535,7 @@
         "success_message": "Thank You!",
         "password_tooltip": "undefined",
         "thankyou_url": "",
-        "show_privacy_notice": true,
+        "show_privacy_notice": false,
         "privacy_notice_text": "",
         "privacy_alignment": "center",
         "privacy_font_size": 12,
@@ -578,6 +578,6 @@
     "rich_text_qFQmBj",
     "rich_text_XCVJJH",
     "custom_liquid_9Kc6Qz",
-    "hubpro_form_x3K7y3"
+    "hubpro_form_kVKUbK"
   ]
 }
