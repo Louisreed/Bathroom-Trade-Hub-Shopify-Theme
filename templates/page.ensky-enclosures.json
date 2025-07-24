@@ -452,7 +452,7 @@
             "image": "shopify://shop_images/Screenshot_2025-07-24_at_10.50.11_AM.png",
             "title": "Ensky Chrome 6mm",
             "description": "",
-            "overlay_content": true,
+            "overlay_content": false,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 30
