@@ -1,6 +1,598 @@
+{% doc %}
+  @prompt
+    2 column container, Allow a button to be added to each column and be uniquely coloured and styled
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-two-column-container-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: {{ block.settings.column_gap }}px;
+    padding: {{ block.settings.padding_top }}px {{ block.settings.padding_horizontal }}px {{ block.settings.padding_bottom }}px;
+    background-color: {{ block.settings.background_color }};
+    border-radius: {{ block.settings.border_radius }}px;
+  }
+
+  .ai-two-column-item-{{ ai_gen_id }} {
+    background-color: {{ block.settings.column_background_color }};
+    padding: {{ block.settings.column_padding }}px;
+    border-radius: {{ block.settings.column_border_radius }}px;
+    border: {{ block.settings.column_border_width }}px solid {{ block.settings.column_border_color }};display: flex;
+    flex-direction: column;
+  }
+
+  .ai-two-column-heading-{{ ai_gen_id }} {
+    color: {{ block.settings.heading_color }};
+    font-size: {{ block.settings.heading_size }}px;
+    margin: 0 0 {{ block.settings.heading_margin }}px;
+    font-weight: 600;
+  }
+
+  .ai-two-column-content-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.text_size }}px;
+    line-height: 1.5;
+    flex-grow: 1;
+  }
+
+  .ai-two-column-content-{{ ai_gen_id }} p {
+    margin: 0;
+  }
+
+  .ai-two-column-content-{{ ai_gen_id }} p + p {
+    margin-top: 1em;
+  }
+
+  .ai-two-column-button-wrapper-{{ ai_gen_id }} {
+    margin-top: {{ block.settings.button_margin_top }}px;
+  }
+
+  .ai-two-column-button-{{ ai_gen_id }} {
+    display: inline-block;
+    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+    text-decoration: none;
+    border-radius: {{ block.settings.button_border_radius }}px;
+    font-size: {{ block.settings.button_font_size }}px;
+    font-weight: 500;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+  }
+
+  .ai-two-column-button-1-{{ ai_gen_id }} {
+    background-color: {{ block.settings.button_1_bg_color }};
+    color: {{ block.settings.button_1_text_color }};
+  }
+
+  .ai-two-column-button-1-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_1_hover_bg_color }};
+    color: {{ block.settings.button_1_hover_text_color }};
+  }
+
+  .ai-two-column-button-2-{{ ai_gen_id }} {
+    background-color: {{ block.settings.button_2_bg_color }};
+    color: {{ block.settings.button_2_text_color }};
+  }
+
+  .ai-two-column-button-2-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.button_2_hover_bg_color }};
+    color: {{ block.settings.button_2_hover_text_color }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-two-column-container-{{ ai_gen_id }} {
+      grid-template-columns: {% if block.settings.columns_mobile == '1' %}1fr{% else %}1fr 1fr{% endif %};
+      gap: {{ block.settings.column_gap_mobile }}px;
+      padding: {{ block.settings.padding_top_mobile }}px {{ block.settings.padding_horizontal_mobile }}px {{ block.settings.padding_bottom_mobile }}px;
+    }
+
+    .ai-two-column-item-{{ ai_gen_id }} {
+      padding: {{ block.settings.column_padding_mobile }}px;
+    }
+
+    .ai-two-column-heading-{{ ai_gen_id }} {
+      font-size: {{ block.settings.heading_size_mobile }}px;
+    }
+
+    .ai-two-column-content-{{ ai_gen_id }} {
+      font-size: {{ block.settings.text_size_mobile }}px;
+    }
+
+    .ai-two-column-button-{{ ai_gen_id }} {
+      font-size: {{ block.settings.button_font_size_mobile }}px;
+      padding: {{ block.settings.button_padding_vertical_mobile }}px {{ block.settings.button_padding_horizontal_mobile }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-two-column-container-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <div class="ai-two-column-item-{{ ai_gen_id }}">
+    {% if block.settings.column_1_heading != blank %}
+      <h3 class="ai-two-column-heading-{{ ai_gen_id }}">{{ block.settings.column_1_heading }}</h3>
+    {% endif %}
+    {% if block.settings.column_1_content != blank %}
+      <div class="ai-two-column-content-{{ ai_gen_id }}">{{ block.settings.column_1_content }}</div>
+    {% endif %}
+    {% if block.settings.column_1_button_text != blank %}
+      <div class="ai-two-column-button-wrapper-{{ ai_gen_id }}">
+        <a href="{{ block.settings.column_1_button_link }}" class="ai-two-column-button-{{ ai_gen_id }} ai-two-column-button-1-{{ ai_gen_id }}">
+          {{ block.settings.column_1_button_text }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="ai-two-column-item-{{ ai_gen_id }}">
+    {% if block.settings.column_2_heading != blank %}
+      <h3 class="ai-two-column-heading-{{ ai_gen_id }}">{{ block.settings.column_2_heading }}</h3>
+    {% endif %}
+    {% if block.settings.column_2_content != blank %}
+      <div class="ai-two-column-content-{{ ai_gen_id }}">{{ block.settings.column_2_content }}</div>
+    {% endif %}
+    {% if block.settings.column_2_button_text != blank %}
+      <div class="ai-two-column-button-wrapper-{{ ai_gen_id }}">
+        <a href="{{ block.settings.column_2_button_link }}" class="ai-two-column-button-{{ ai_gen_id }} ai-two-column-button-2-{{ ai_gen_id }}">
+          {{ block.settings.column_2_button_text }}
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Two Column Container",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Column 1"
+    },
+    {
+      "type": "text",
+      "id": "column_1_heading",
+      "label": "Heading",
+      "default": "Column 1"
+    },
+    {
+      "type": "richtext",
+      "id": "column_1_content",
+      "label": "Content",
+      "default": "<p>Add your content for the first column here. You can include multiple paragraphs and basic formatting.</p>"
+    },
+    {
+      "type": "text",
+      "id": "column_1_button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "column_1_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Column 2"
+    },
+    {
+      "type": "text",
+      "id": "column_2_heading",
+      "label": "Heading",
+      "default": "Column 2"
+    },
+    {
+      "type": "richtext",
+      "id": "column_2_content",
+      "label": "Content",
+      "default": "<p>Add your content for the second column here. You can include multiple paragraphs and basic formatting.</p>"
+    },
+    {
+      "type": "text",
+      "id": "column_2_button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "column_2_button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Column gap",
+      "default": 30
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "Columns on mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ],
+      "default": "1"
+    },
+    {
+      "type": "range",
+      "id": "column_gap_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Column gap (mobile)",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Container Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Horizontal padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Top padding (mobile)",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "px",
+      "label": "Bottom padding (mobile)",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Horizontal padding (mobile)",
+      "default": 15
+    },
+    {
+      "type": "header",
+      "content": "Column Style"
+    },
+    {
+      "type": "range",
+      "id": "column_padding",
+      "min": 0,
+      "max": 60,
+      "step": 5,
+      "unit": "px",
+      "label": "Column padding",
+      "default": 25
+    },
+    {
+      "type": "range",
+      "id": "column_padding_mobile",
+      "min": 0,
+      "max": 40,
+      "step": 5,
+      "unit": "px",
+      "label": "Column padding (mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "column_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Column border radius",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "column_border_width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Column border width",
+      "default": 1
+    },
+    {
+      "type": "header",
+      "content": "Button Style"
+    },
+    {
+      "type": "range",
+      "id": "button_margin_top",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Button top margin",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "min": 5,
+      "max": 25,
+      "step": 1,
+      "unit": "px",
+      "label": "Button vertical padding",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "min": 10,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Button horizontal padding",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical_mobile",
+      "min": 5,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Button vertical padding (mobile)",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal_mobile",
+      "min": 10,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Button horizontal padding (mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Button border radius",
+      "default": 6
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Button font size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "button_font_size_mobile",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Button font size (mobile)",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Column 1 Button Colors"
+    },
+    {
+      "type": "color",
+      "id": "button_1_bg_color",
+      "label": "Background color",
+      "default": "#2acaf1"
+    },
+    {
+      "type": "color",
+      "id": "button_1_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_1_hover_bg_color",
+      "label": "Hover background color",
+      "default": "#1fb8df"
+    },
+    {
+      "type": "color",
+      "id": "button_1_hover_text_color",
+      "label": "Hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Column 2 Button Colors"
+    },
+    {
+      "type": "color",
+      "id": "button_2_bg_color",
+      "label": "Background color",
+      "default": "#424242"
+    },
+    {
+      "type": "color",
+      "id": "button_2_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "button_2_hover_bg_color",
+      "label": "Hover background color",
+      "default": "#303030"
+    },
+    {
+      "type": "color",
+      "id": "button_2_hover_text_color",
+      "label": "Hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Container background",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "column_background_color",
+      "label": "Column background",
+      "default": "#f8f8f8"
+    },
+    {
+      "type": "color",
+      "id": "column_border_color",
+      "label": "Column border color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#666666"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "heading_size",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "heading_size_mobile",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading size (mobile)",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "heading_margin",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Heading bottom margin",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "text_size_mobile",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Text size (mobile)",
+      "default": 14
+    },
+    {
+      "type": "header",
+      "content": "Container Style"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Container border radius",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Two Column Container"
+    }
+  ]
+}
 {% endschema %}
