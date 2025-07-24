@@ -1,96 +1,106 @@
 {%- comment -%}
   HubPRO+ (Plus) Membership Form Section
-  Collects user information for HubPRO+ membership registration with payment
+  Compatible with AAA WebStore Membership System
+  Includes Stripe payment integration
 {%- endcomment -%}
 
 {%- liquid
-  assign form_id = 'HubProForm-' | append: section.id
-  assign form_action = section.settings.form_action | default: '#'
-  assign form_method = section.settings.form_method | default: 'post'
+  assign form_id = 'HubProPlusForm-' | append: section.id
 -%}
 
 <style>
   #shopify-section-{{ section.id }} {
     --section-padding-top: {{ section.settings.padding_top }}px;
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
-    {%- render 'section-variables', section: section -%}
-    --form-text-color: {{ section.settings.text_color }};
-    --form-background-color: {{ section.settings.background_color }};
-    --form-button-background: {{ section.settings.button_background_color }};
-    --form-button-text: {{ section.settings.button_text_color }};
-    --form-border-color: {{ section.settings.border_color }};
+    --form-text-color: {{ section.settings.text_color | default: 'rgba(18,18,18,1)' }};
+    --form-border-color: {{ section.settings.border_color | default: '#cccccc' }};
+    --form-background-color: {{ section.settings.background_color | default: 'rgba(255,255,255,1)' }};
   }
 
-  #shopify-section-{{ section.id }} .hubpro-form {
-    color: var(--form-text-color);
+  .hubpro-plus-membership-form {
+    max-width: {{ section.settings.form_width }}px;
+    margin: 0 auto;
+    padding: {{ section.settings.form_padding }}px;
     background-color: var(--form-background-color);
+    {% if section.settings.form_border_radius > 0 %}
+      border-radius: {{ section.settings.form_border_radius }}px;
+    {% endif %}
+    {% if section.settings.form_shadow %}
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    {% endif %}
   }
 
-  #shopify-section-{{ section.id }} .form-field input,
-  #shopify-section-{{ section.id }} .form-field select,
-  #shopify-section-{{ section.id }} .form-field textarea {
+  .hubpro-plus-membership-form .form-group {
+    margin-bottom: {{ section.settings.field_spacing }}px;
+  }
+
+  .hubpro-plus-membership-form .form-control {
     width: 100%;
+    padding: {{ section.settings.input_padding }}px;
     border: 1px solid var(--form-border-color);
-    border-radius: {{ section.settings.border_radius }}px;
-    padding: {{ section.settings.field_padding }}px;
-    font-size: {{ section.settings.field_font_size }}px;
-    color: var(--form-text-color);
+    border-radius: {{ section.settings.input_border_radius }}px;
+    font-size: {{ section.settings.input_font_size }}px;
+    background-color: #ffffff;
   }
 
-  #shopify-section-{{ section.id }} .form-field label {
-    color: var(--form-text-color);
-    font-size: {{ section.settings.label_font_size }}px;
-    font-weight: {{ section.settings.label_font_weight }};
-    margin-bottom: 8px;
+  .hubpro-plus-membership-form .form-control:focus {
+    outline: none;
+    border-color: {{ section.settings.focus_color | default: '#007cba' }};
+  }
+
+  .hubpro-plus-membership-form label {
     display: block;
+    margin-bottom: 8px;
+    font-weight: {{ section.settings.label_font_weight }};
+    font-size: {{ section.settings.label_font_size }}px;
+    color: var(--form-text-color);
   }
 
-  #shopify-section-{{ section.id }} .form-submit button {
-    background-color: var(--form-button-background) !important;
-    color: var(--form-button-text) !important;
-    font-size: {{ section.settings.button_font_size }}px !important;
-    border-radius: {{ section.settings.button_border_radius }}px;
-    padding: {{ section.settings.button_padding }}px {{ section.settings.button_padding | times: 1.5 }}px;
+  .hubpro-plus-membership-form .required {
+    color: #e74c3c;
+  }
+
+  .hubpro-plus-membership-form .form-submit-button {
+    background-color: {{ section.settings.button_background_color | default: '#000000' }};
+    color: {{ section.settings.button_text_color | default: '#FFFFFF' }};
     border: none;
+    padding: {{ section.settings.button_padding }}px;
+    border-radius: {{ section.settings.button_border_radius }}px;
+    font-size: {{ section.settings.button_font_size }}px;
+    font-weight: {{ section.settings.button_font_weight }};
     cursor: pointer;
+    width: 100%;
     transition: opacity 0.3s ease;
-    width: {{ section.settings.button_width }};
   }
 
-  #shopify-section-{{ section.id }} .form-submit button:hover {
+  .hubpro-plus-membership-form .form-submit-button:hover {
     opacity: 0.9;
   }
 
-  #shopify-section-{{ section.id }} .required {
-    color: #e53e3e;
+  .hubpro-plus-membership-form .form-heading {
+    text-align: {{ section.settings.heading_alignment }};
+    margin-bottom: {{ section.settings.heading_spacing }}px;
+    color: var(--form-text-color);
   }
 
-  #shopify-section-{{ section.id }} .form-divider {
+  .hubpro-plus-membership-form .form-divider {
     border: none;
-    height: {{ section.settings.divider_height }}px;
+    height: 1px;
     background-color: var(--form-border-color);
     margin: {{ section.settings.divider_spacing }}px 0;
   }
 
-  #shopify-section-{{ section.id }} .form-container {
-    max-width: {{ section.settings.form_width }}px;
-    margin: 0 auto;
-  }
-
-      /* HubPRO+ form layout - all fields full width */
-  #shopify-section-{{ section.id }} .hubpro-form-fields > .membership-email,
-  #shopify-section-{{ section.id }} .hubpro-form-fields > .membership-text,
-  #shopify-section-{{ section.id }} .hubpro-form-fields > .membership-password {
+  /* Stripe payment elements styling */
+  .hubpro-plus-membership-form #paymentElement {
     margin-bottom: {{ section.settings.field_spacing }}px;
   }
 
-  /* Original membership form styles for compatibility */
-  .aaamembership_form .membership-submit button {
-    background-color: {{ section.settings.button_background_color | default: '#000000' }} !important;
-    color: {{ section.settings.button_text_color | default: '#FFFFFF' }} !important;
-    font-size: {{ section.settings.button_font_size | default: '14' }}px !important;
+  .hubpro-plus-membership-form #paymentResponse {
+    margin-top: 10px;
+    font-size: 14px;
   }
 
+  /* Original AAA membership form compatibility styles */
   .aaamembership_form input[type="text"],
   .aaamembership_form input[type="search"],
   .aaamembership_form input[type="password"],
@@ -102,237 +112,217 @@
   .aaamembership_form select {
     width: 100% !important;
     margin: 0;
-    border: 1px solid var(--form-border-color);
+    border: 1px solid #ccc;
   }
 
-  /* Keep membership form classes for backwards compatibility */
+  .aaamembership_form .membership-submit button {
+    background-color: {{ section.settings.button_background_color | default: '#000000' }} !important;
+    color: {{ section.settings.button_text_color | default: '#FFFFFF' }} !important;
+    font-size: {{ section.settings.button_font_size | default: '14' }}px !important;
+  }
 </style>
 
 <div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}">
   <div class="page-width{% if section.settings.narrow %} page-width--narrow{% endif %} relative">
-    <div class="form-container">
-      <div class="hubpro-form">
-        <form
-          method="post"
-          action=""
-          class="aaamembership_form aaa-form-null"
-          id="{{ form_id }}"
-          enctype="multipart/form-data"
+    <div class="hubpro-plus-membership-form">
+      {%- comment -%} Form Heading {%- endcomment -%}
+      {%- if section.settings.show_heading and section.settings.form_heading != blank -%}
+        <{{ section.settings.heading_tag }} class="form-heading">
+          {{ section.settings.form_heading | escape }}
+        </{{ section.settings.heading_tag }}>
+      {%- endif -%}
+
+      {%- comment -%} Form Divider {%- endcomment -%}
+      {%- if section.settings.show_divider -%}
+        <hr class="form-divider">
+      {%- endif -%}
+
+      {%- comment -%} Form Subheading {%- endcomment -%}
+      {%- if section.settings.show_subheading and section.settings.form_subheading != blank -%}
+        <h3 class="form-subheading" style="color: var(--form-text-color);">
+          {{ section.settings.form_subheading | escape }}
+        </h3>
+      {%- endif -%}
+
+      {%- comment -%} AAA Membership Form - HubPRO+ Version {%- endcomment -%}
+      <form method="post" action="" class="aaamembership_form aaa-form-null" enctype="multipart/form-data">
+        {%- comment -%} Hidden Fields for AAA Processing {%- endcomment -%}
+        <input type="hidden" name="container_id" value="{{ section.settings.container_id }}">
+        <input type="hidden" name="form_id" value="{{ section.settings.membership_form_id }}">
+        <input type="hidden" name="form_domain" value="ab97df-6.myshopify.com">
+        <input
+          type="hidden"
+          name=""
+          value="{{ section.settings.success_message | default: 'Thank You!' }}"
+          class="success_msg"
         >
-          {%- comment -%} Hidden fields for form processing {%- endcomment -%}
-          <input type="hidden" name="container_id" value="{{ section.settings.container_id }}">
-          <input type="hidden" name="form_id" value="13447">
-          <input type="hidden" name="form_domain" value="ab97df-6.myshopify.com">
-          <input
-            type="hidden"
-            name=""
-            value="{{ section.settings.success_message | default: 'Thank You!' | escape }}"
-            class="success_msg"
-          >
-          <input
-            type="hidden"
-            name=""
-            value="{{ section.settings.password_tooltip | default: 'This password is for new user only, old user can use their existing password to login.' | escape }}"
-            class="password_tooltip_text_lang"
-          >
-          <input
-            type="hidden"
-            name=""
-            value="{{ section.settings.thankyou_url | escape }}"
-            class="aaa_thankyoupageurl"
-          >
+        <input
+          type="hidden"
+          name=""
+          value="{{ section.settings.password_tooltip | default: 'undefined' }}"
+          class="password_tooltip_text_lang"
+        >
+        <input type="hidden" name="" value="{{ section.settings.thankyou_url }}" class="aaa_thankyoupageurl">
 
-          {%- comment -%} Form Header {%- endcomment -%}
-          {%- if section.settings.show_heading and section.settings.form_heading != blank -%}
-            <div class="form-header text-{{ section.settings.heading_alignment }}">
-              <{{ section.settings.heading_tag }}
-                class="form-heading heading {{ section.settings.heading_size }}"
-                style="color: var(--form-text-color); margin-bottom: {{ section.settings.heading_spacing }}px;"
-              >
-                {{ section.settings.form_heading | escape }}
-              </{{ section.settings.heading_tag }}>
-            </div>
-          {%- endif -%}
-
-          {%- comment -%} Form Divider {%- endcomment -%}
-          {%- if section.settings.show_divider -%}
-            <div class="form-divider-container">
-              <hr class="form-divider">
-            </div>
-          {%- endif -%}
-
-          {%- comment -%} Form Subheading {%- endcomment -%}
-          {%- if section.settings.show_subheading and section.settings.form_subheading != blank -%}
-            <div class="">
-              <h3 type="h3" class="header" name="" id="" style="color: var(--form-text-color);">
-                {{ section.settings.form_subheading | escape }}
-              </h3>
-            </div>
-          {%- endif -%}
-
-          {%- comment -%} Form Fields {%- endcomment -%}
-          <div class="hubpro-form-fields">
-            {%- comment -%} First Name Field {%- endcomment -%}
-            {%- if section.settings.show_first_name -%}
-              <div class="membership-text form-group field-first-name">
-                <label for="first-name" class="membership-text-label" style="color: var(--form-text-color);">
-                  {{ section.settings.first_name_label | default: 'First Name' | escape }}
-                  {%- if section.settings.first_name_required -%}
-                    <span class="required">*</span>
-                  {%- endif -%}
-                </label>
-                <input
-                  type="text"
-                  {% if section.settings.first_name_required %}
-                    required=""
-                  {% endif %}
-                  class="form-control"
-                  name="first-name"
-                  id="first-name"
-                  {% if section.settings.first_name_required %}
-                    aria-required="true"
-                  {% endif %}
-                >
-              </div>
-            {%- endif -%}
-
-            {%- comment -%} Last Name Field {%- endcomment -%}
-            {%- if section.settings.show_last_name -%}
-              <div class="membership-text form-group field-last-name">
-                <label for="last-name" class="membership-text-label" style="color: var(--form-text-color);">
-                  {{ section.settings.last_name_label | default: 'Last Name' | escape }}
-                  {%- if section.settings.last_name_required -%}
-                    <span class="required">*</span>
-                  {%- endif -%}
-                </label>
-                <input
-                  type="text"
-                  {% if section.settings.last_name_required %}
-                    required=""
-                  {% endif %}
-                  class="form-control"
-                  name="last-name"
-                  id="last-name"
-                  {% if section.settings.last_name_required %}
-                    aria-required="true"
-                  {% endif %}
-                >
-              </div>
-            {%- endif -%}
-
-            {%- comment -%} Email Field {%- endcomment -%}
-            {%- if section.settings.show_email -%}
-              <div class="membership-email form-group field-replyemail">
-                <label for="replyemail" class="membership-email-label" style="color: var(--form-text-color);">
-                  {{ section.settings.email_label | default: 'Email Address' | escape }}
-                  {%- if section.settings.email_required -%}
-                    <span class="required">*</span>
-                  {%- endif -%}
-                </label>
-                <input
-                  type="email"
-                  {% if section.settings.email_required %}
-                    required=""
-                  {% endif %}
-                  class="form-control"
-                  name="replyemail"
-                  id="replyemail"
-                  {% if section.settings.email_required %}
-                    aria-required="true"
-                  {% endif %}
-                >
-              </div>
-            {%- endif -%}
-
-            {%- comment -%} Company Field {%- endcomment -%}
-            {%- if section.settings.show_company -%}
-              <div class="membership-text form-group field-aaa-customer-company">
-                <label for="aaa-customer-company" class="membership-text-label" style="color: var(--form-text-color);">
-                  {{ section.settings.company_label | default: 'Company' | escape }}
-                  {%- if section.settings.company_required -%}
-                    <span class="required">*</span>
-                  {%- endif -%}
-                </label>
-                <input
-                  type="text"
-                  {% if section.settings.company_required %}
-                    required=""
-                  {% endif %}
-                  class="form-control"
-                  name="aaa-customer-company"
-                  id="aaa-customer-company"
-                  {% if section.settings.company_required %}
-                    aria-required="true"
-                  {% endif %}
-                >
-              </div>
-            {%- endif -%}
-
-            {%- comment -%} Password Field {%- endcomment -%}
-            {%- if section.settings.show_password -%}
-              <div class="membership-password form-group field-customer-password">
-                <label for="customer-password" class="membership-password-label" style="color: var(--form-text-color);">
-                  {{ section.settings.password_label | default: 'Password' | escape }}
-                  {%- if section.settings.password_required -%}
-                    <span class="required">*</span>
-                  {%- endif -%}
-                </label>
-                <input
-                  type="password"
-                  {% if section.settings.password_required %}
-                    required=""
-                  {% endif %}
-                  class="form-control"
-                  name="customer-password"
-                  id="customer-password"
-                  {% if section.settings.password_required %}
-                    aria-required="true"
-                  {% endif %}
-                >
-              </div>
-            {%- endif -%}
-
-            {%- comment -%} Stripe Payment Elements {%- endcomment -%}
-            {%- if section.settings.enable_payment -%}
-              <div id="paymentElement">
-                <!-- Stripe.js injects the Payment Element -->
-              </div>
-              <br>
-              <div id="paymentResponse" class="hidden"></div>
-            {%- endif -%}
-
-            {%- comment -%} Submit Button {%- endcomment -%}
-            <div class="membership-submit form-group field-button-1497336985158 form-field form-submit text-{{ section.settings.button_alignment }}">
-              <button
-                type="submit"
-                class="button-input btn btn-primary form-submit-button"
-                name="button-1497336985158"
-                style="primary"
-                id="button-1497336985158"
-              >
-                {{ section.settings.submit_button_text | default: 'Subscribe Now' | escape }}
-              </button>
-            </div>
-
-            {%- comment -%} Privacy Notice {%- endcomment -%}
-            {%- if section.settings.show_privacy_notice and section.settings.privacy_notice_text != blank -%}
-              <div class="form-field form-privacy text-{{ section.settings.privacy_alignment }}">
-                <div
-                  class="privacy-notice rte"
-                  style="font-size: {{ section.settings.privacy_font_size }}px; color: var(--form-text-color); opacity: 0.8;"
-                >
-                  {{ section.settings.privacy_notice_text }}
-                </div>
-              </div>
-            {%- endif -%}
+        {%- comment -%} First Name Field {%- endcomment -%}
+        {%- if section.settings.show_first_name -%}
+          <div class="membership-text form-group field-first-name">
+            <label for="first-name" class="membership-text-label">
+              {{ section.settings.first_name_label | default: 'First Name' | escape }}
+              {%- if section.settings.first_name_required -%}
+                <span class="required">*</span>
+              {%- endif -%}
+            </label>
+            <input
+              type="text"
+              {% if section.settings.first_name_required %}
+                required=""
+              {% endif %}
+              class="form-control"
+              name="first-name"
+              id="first-name"
+              {% if section.settings.first_name_required %}
+                aria-required="true"
+              {% endif %}
+            >
           </div>
-        </form>
-      </div>
+        {%- endif -%}
+
+        {%- comment -%} Last Name Field {%- endcomment -%}
+        {%- if section.settings.show_last_name -%}
+          <div class="membership-text form-group field-last-name">
+            <label for="last-name" class="membership-text-label">
+              {{ section.settings.last_name_label | default: 'Last Name' | escape }}
+              {%- if section.settings.last_name_required -%}
+                <span class="required">*</span>
+              {%- endif -%}
+            </label>
+            <input
+              type="text"
+              {% if section.settings.last_name_required %}
+                required=""
+              {% endif %}
+              class="form-control"
+              name="last-name"
+              id="last-name"
+              {% if section.settings.last_name_required %}
+                aria-required="true"
+              {% endif %}
+            >
+          </div>
+        {%- endif -%}
+
+        {%- comment -%} Email Field {%- endcomment -%}
+        {%- if section.settings.show_email -%}
+          <div class="membership-email form-group field-replyemail">
+            <label for="replyemail" class="membership-email-label">
+              {{ section.settings.email_label | default: 'Email Address' | escape }}
+              {%- if section.settings.email_required -%}
+                <span class="required">*</span>
+              {%- endif -%}
+            </label>
+            <input
+              type="email"
+              {% if section.settings.email_required %}
+                required=""
+              {% endif %}
+              class="form-control"
+              name="replyemail"
+              id="replyemail"
+              {% if section.settings.email_required %}
+                aria-required="true"
+              {% endif %}
+            >
+          </div>
+        {%- endif -%}
+
+        {%- comment -%} Company Field (Optional in Plus version) {%- endcomment -%}
+        {%- if section.settings.show_company -%}
+          <div class="membership-text form-group field-aaa-customer-company">
+            <label for="aaa-customer-company" class="membership-text-label">
+              {{ section.settings.company_label | default: 'Company' | escape }}
+              {%- if section.settings.company_required -%}
+                <span class="required">*</span>
+              {%- endif -%}
+            </label>
+            <input
+              type="text"
+              {% if section.settings.company_required %}
+                required=""
+              {% endif %}
+              class="form-control"
+              name="aaa-customer-company"
+              id="aaa-customer-company"
+              {% if section.settings.company_required %}
+                aria-required="true"
+              {% endif %}
+            >
+          </div>
+        {%- endif -%}
+
+        {%- comment -%} Password Field {%- endcomment -%}
+        {%- if section.settings.show_password -%}
+          <div class="membership-password form-group field-customer-password">
+            <label for="customer-password" class="membership-password-label">
+              {{ section.settings.password_label | default: 'Password' | escape }}
+              {%- if section.settings.password_required -%}
+                <span class="required">*</span>
+              {%- endif -%}
+            </label>
+            <input
+              type="password"
+              {% if section.settings.password_required %}
+                required=""
+              {% endif %}
+              class="form-control"
+              name="customer-password"
+              id="customer-password"
+              {% if section.settings.password_required %}
+                aria-required="true"
+              {% endif %}
+            >
+          </div>
+        {%- endif -%}
+
+        {%- comment -%} Stripe Payment Elements (Plus version specific) {%- endcomment -%}
+        {%- if section.settings.enable_payment -%}
+          <div id="paymentElement">
+            <!-- Stripe payment element will be inserted here -->
+          </div>
+          <div id="paymentResponse">
+            <!-- Payment response messages will appear here -->
+          </div>
+        {%- endif -%}
+
+        {%- comment -%} Submit Button {%- endcomment -%}
+        <div class="membership-submit form-group field-button-1497336985158">
+          <button
+            type="submit"
+            class="button-input btn btn-primary form-submit-button"
+            name="button-1497336985158"
+            id="button-1497336985158"
+          >
+            {{ section.settings.submit_button_text | default: 'Subscribe Now' | escape }}
+          </button>
+        </div>
+
+        {%- comment -%} Privacy Notice {%- endcomment -%}
+        {%- if section.settings.show_privacy_notice and section.settings.privacy_notice_text != blank -%}
+          <div class="form-privacy" style="text-align: {{ section.settings.privacy_alignment }};">
+            <div
+              class="privacy-notice rte"
+              style="font-size: {{ section.settings.privacy_font_size }}px; color: var(--form-text-color); opacity: 0.8;"
+            >
+              {{ section.settings.privacy_notice_text }}
+            </div>
+          </div>
+        {%- endif -%}
+      </form>
     </div>
   </div>
 </div>
 
-{%- comment -%} Critical JavaScript for membership form processing - from original form {%- endcomment -%}
+{%- comment -%} Critical JavaScript for AAA Membership Processing {%- endcomment -%}
 <script>
   function isMyMembershipScriptLoaded() {
     var url =
@@ -358,20 +348,6 @@
   isMyMembershipScriptLoaded();
 </script>
 
-{%- comment -%} Custom JavaScript for additional form functionality {%- endcomment -%}
-{%- if section.settings.enable_custom_script -%}
-  <script>
-    document.addEventListener('DOMContentLoaded', function () {
-      const form = document.getElementById('{{ form_id }}');
-      if (form) {
-        // Additional custom functionality can be added here
-        // Do not interfere with form submission - let AAA membership script handle it
-        console.log('HubPRO form initialized');
-      }
-    });
-  </script>
-{%- endif -%}
-
 {% schema %}
 {
   "name": "HubPRO+ Form",
@@ -380,28 +356,6 @@
     {
       "type": "header",
       "content": "Form Settings"
-    },
-    {
-      "type": "text",
-      "id": "form_action",
-      "label": "Form Action URL",
-      "info": "The URL where form data will be submitted. Leave empty for default."
-    },
-    {
-      "type": "select",
-      "id": "form_method",
-      "label": "Form Method",
-      "options": [
-        {
-          "value": "post",
-          "label": "POST"
-        },
-        {
-          "value": "get",
-          "label": "GET"
-        }
-      ],
-      "default": "post"
     },
     {
       "type": "text",
@@ -418,138 +372,48 @@
     },
     {
       "type": "header",
-      "content": "Form Layout"
-    },
-    {
-      "type": "range",
-      "id": "form_width",
-      "label": "Form Width",
-      "min": 400,
-      "max": 800,
-      "step": 50,
-      "unit": "px",
-      "default": 600
-    },
-    {
-      "type": "header",
-      "content": "Form Header"
+      "content": "Form Content"
     },
     {
       "type": "checkbox",
       "id": "show_heading",
-      "label": "Show heading",
+      "label": "Show form heading",
       "default": true
     },
     {
       "type": "text",
       "id": "form_heading",
-      "label": "Form Heading",
-      "default": "HubPRO Plus - £30",
-      "info": "The main heading for the form"
+      "label": "Form heading",
+      "default": "HubPRO Plus - £30"
     },
     {
       "type": "select",
       "id": "heading_tag",
-      "label": "Heading Tag",
+      "label": "Heading tag",
       "options": [
-        {
-          "value": "h1",
-          "label": "H1"
-        },
-        {
-          "value": "h2",
-          "label": "H2"
-        },
-        {
-          "value": "h3",
-          "label": "H3"
-        },
-        {
-          "value": "h4",
-          "label": "H4"
-        }
+        { "value": "h1", "label": "H1" },
+        { "value": "h2", "label": "H2" },
+        { "value": "h3", "label": "H3" },
+        { "value": "h4", "label": "H4" }
       ],
-      "default": "h2"
-    },
-    {
-      "type": "select",
-      "id": "heading_size",
-      "label": "Heading Size",
-      "options": [
-        {
-          "value": "title-sm",
-          "label": "Small"
-        },
-        {
-          "value": "title-md",
-          "label": "Medium"
-        },
-        {
-          "value": "title-lg",
-          "label": "Large"
-        },
-        {
-          "value": "title-xl",
-          "label": "Extra Large"
-        }
-      ],
-      "default": "title-lg"
+      "default": "h1"
     },
     {
       "type": "select",
       "id": "heading_alignment",
-      "label": "Heading Alignment",
+      "label": "Heading alignment",
       "options": [
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        },
-        {
-          "value": "right",
-          "label": "Right"
-        }
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
       ],
       "default": "center"
-    },
-    {
-      "type": "range",
-      "id": "heading_spacing",
-      "label": "Heading Bottom Spacing",
-      "min": 0,
-      "max": 50,
-      "step": 2,
-      "unit": "px",
-      "default": 20
     },
     {
       "type": "checkbox",
       "id": "show_divider",
       "label": "Show divider",
       "default": true
-    },
-    {
-      "type": "range",
-      "id": "divider_height",
-      "label": "Divider Height",
-      "min": 1,
-      "max": 10,
-      "step": 1,
-      "unit": "px",
-      "default": 1
-    },
-    {
-      "type": "range",
-      "id": "divider_spacing",
-      "label": "Divider Spacing",
-      "min": 10,
-      "max": 50,
-      "step": 2,
-      "unit": "px",
-      "default": 20
     },
     {
       "type": "checkbox",
@@ -560,9 +424,8 @@
     {
       "type": "text",
       "id": "form_subheading",
-      "label": "Form Subheading",
-      "default": "Subscribe and get benefits",
-      "info": "Subheading text below the divider"
+      "label": "Form subheading",
+      "default": "Subscribe and get benefits"
     },
     {
       "type": "header",
@@ -577,13 +440,8 @@
     {
       "type": "text",
       "id": "first_name_label",
-      "label": "First Name Label",
+      "label": "First name label",
       "default": "First Name"
-    },
-    {
-      "type": "text",
-      "id": "first_name_placeholder",
-      "label": "First Name Placeholder"
     },
     {
       "type": "checkbox",
@@ -600,13 +458,8 @@
     {
       "type": "text",
       "id": "last_name_label",
-      "label": "Last Name Label",
+      "label": "Last name label",
       "default": "Last Name"
-    },
-    {
-      "type": "text",
-      "id": "last_name_placeholder",
-      "label": "Last Name Placeholder"
     },
     {
       "type": "checkbox",
@@ -623,13 +476,8 @@
     {
       "type": "text",
       "id": "email_label",
-      "label": "Email Label",
+      "label": "Email label",
       "default": "Email Address"
-    },
-    {
-      "type": "text",
-      "id": "email_placeholder",
-      "label": "Email Placeholder"
     },
     {
       "type": "checkbox",
@@ -646,19 +494,15 @@
     {
       "type": "text",
       "id": "company_label",
-      "label": "Company Label",
+      "label": "Company label",
       "default": "Company"
-    },
-    {
-      "type": "text",
-      "id": "company_placeholder",
-      "label": "Company Placeholder"
     },
     {
       "type": "checkbox",
       "id": "company_required",
       "label": "Company required",
-      "default": false
+      "default": false,
+      "info": "Company is optional in HubPRO+ version"
     },
     {
       "type": "checkbox",
@@ -669,13 +513,8 @@
     {
       "type": "text",
       "id": "password_label",
-      "label": "Password Label",
+      "label": "Password label",
       "default": "Password"
-    },
-    {
-      "type": "text",
-      "id": "password_placeholder",
-      "label": "Password Placeholder"
     },
     {
       "type": "checkbox",
@@ -684,188 +523,47 @@
       "default": true
     },
     {
-      "type": "range",
-      "id": "field_spacing",
-      "label": "Field Spacing",
-      "min": 10,
-      "max": 40,
-      "step": 2,
-      "unit": "px",
-      "default": 20
-    },
-    {
-      "type": "header",
-      "content": "Submit Button"
-    },
-    {
       "type": "text",
       "id": "submit_button_text",
-      "label": "Submit Button Text",
+      "label": "Submit button text",
       "default": "Subscribe Now"
     },
     {
-      "type": "select",
-      "id": "button_alignment",
-      "label": "Button Alignment",
-      "options": [
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        },
-        {
-          "value": "right",
-          "label": "Right"
-        }
-      ],
-      "default": "center"
+      "type": "header",
+      "content": "Payment Integration"
     },
     {
-      "type": "select",
-      "id": "button_width",
-      "label": "Button Width",
-      "options": [
-        {
-          "value": "auto",
-          "label": "Auto"
-        },
-        {
-          "value": "100%",
-          "label": "Full Width"
-        }
-      ],
-      "default": "auto"
-    },
-    {
-      "type": "range",
-      "id": "button_font_size",
-      "label": "Button Font Size",
-      "min": 12,
-      "max": 24,
-      "step": 1,
-      "unit": "px",
-      "default": 16
-    },
-    {
-      "type": "range",
-      "id": "button_padding",
-      "label": "Button Padding",
-      "min": 8,
-      "max": 24,
-      "step": 2,
-      "unit": "px",
-      "default": 12
-    },
-    {
-      "type": "range",
-      "id": "button_border_radius",
-      "label": "Button Border Radius",
-      "min": 0,
-      "max": 20,
-      "step": 1,
-      "unit": "px",
-      "default": 4
+      "type": "checkbox",
+      "id": "enable_payment",
+      "label": "Enable Stripe payment elements",
+      "default": false,
+      "info": "Shows Stripe payment form for HubPRO+ subscription"
     },
     {
       "type": "header",
-      "content": "Styling"
+      "content": "Form Processing"
     },
     {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text Color",
-      "default": "#000000"
+      "type": "text",
+      "id": "success_message",
+      "label": "Success message",
+      "default": "Thank You!"
     },
     {
-      "type": "color",
-      "id": "background_color",
-      "label": "Background Color",
-      "default": "rgba(0,0,0,0)"
+      "type": "text",
+      "id": "password_tooltip",
+      "label": "Password tooltip text",
+      "default": "undefined"
     },
     {
-      "type": "color",
-      "id": "border_color",
-      "label": "Border Color",
-      "default": "#cccccc"
-    },
-    {
-      "type": "color",
-      "id": "button_background_color",
-      "label": "Button Background Color",
-      "default": "#000000"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button Text Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "range",
-      "id": "border_radius",
-      "label": "Field Border Radius",
-      "min": 0,
-      "max": 15,
-      "step": 1,
-      "unit": "px",
-      "default": 4
-    },
-    {
-      "type": "range",
-      "id": "field_padding",
-      "label": "Field Padding",
-      "min": 8,
-      "max": 20,
-      "step": 2,
-      "unit": "px",
-      "default": 12
-    },
-    {
-      "type": "range",
-      "id": "field_font_size",
-      "label": "Field Font Size",
-      "min": 12,
-      "max": 20,
-      "step": 1,
-      "unit": "px",
-      "default": 16
-    },
-    {
-      "type": "range",
-      "id": "label_font_size",
-      "label": "Label Font Size",
-      "min": 12,
-      "max": 18,
-      "step": 1,
-      "unit": "px",
-      "default": 14
-    },
-    {
-      "type": "select",
-      "id": "label_font_weight",
-      "label": "Label Font Weight",
-      "options": [
-        {
-          "value": "normal",
-          "label": "Normal"
-        },
-        {
-          "value": "bold",
-          "label": "Bold"
-        },
-        {
-          "value": "600",
-          "label": "Semi Bold"
-        }
-      ],
-      "default": "600"
+      "type": "url",
+      "id": "thankyou_url",
+      "label": "Thank you page URL",
+      "info": "Optional redirect URL after form submission"
     },
     {
       "type": "header",
-      "content": "Privacy & Messages"
+      "content": "Privacy Notice"
     },
     {
       "type": "checkbox",
@@ -874,137 +572,289 @@
       "default": false
     },
     {
-      "type": "richtext",
+      "type": "textarea",
       "id": "privacy_notice_text",
-      "label": "Privacy Notice Text",
-      "default": "<p>By submitting this form, you agree to our privacy policy and terms of service.</p>"
+      "label": "Privacy notice text",
+      "info": "Legal text displayed below the form"
     },
     {
       "type": "select",
       "id": "privacy_alignment",
-      "label": "Privacy Notice Alignment",
+      "label": "Privacy notice alignment",
       "options": [
-        {
-          "value": "left",
-          "label": "Left"
-        },
-        {
-          "value": "center",
-          "label": "Center"
-        },
-        {
-          "value": "right",
-          "label": "Right"
-        }
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
       ],
       "default": "center"
     },
     {
       "type": "range",
       "id": "privacy_font_size",
-      "label": "Privacy Notice Font Size",
+      "label": "Privacy notice font size",
       "min": 10,
-      "max": 16,
+      "max": 18,
       "step": 1,
-      "unit": "px",
-      "default": 12
-    },
-    {
-      "type": "text",
-      "id": "success_message",
-      "label": "Success Message",
-      "default": "Thank You!"
-    },
-    {
-      "type": "text",
-      "id": "password_tooltip",
-      "label": "Password Tooltip Text",
-      "default": "This password is for new user only, old user can use their existing password to login."
-    },
-    {
-      "type": "url",
-      "id": "thankyou_url",
-      "label": "Thank You Page URL",
-      "info": "Optional redirect URL after successful submission"
+      "default": 12,
+      "unit": "px"
     },
     {
       "type": "header",
-      "content": "Payment Settings"
+      "content": "Form Layout"
+    },
+    {
+      "type": "range",
+      "id": "form_width",
+      "label": "Form width",
+      "min": 300,
+      "max": 800,
+      "step": 10,
+      "default": 600,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "form_padding",
+      "label": "Form padding",
+      "min": 0,
+      "max": 60,
+      "step": 4,
+      "default": 32,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "field_spacing",
+      "label": "Field spacing",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "heading_spacing",
+      "label": "Heading spacing",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "default": 24,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "divider_spacing",
+      "label": "Divider spacing",
+      "min": 8,
+      "max": 40,
+      "step": 2,
+      "default": 16,
+      "unit": "px"
     },
     {
       "type": "checkbox",
-      "id": "enable_payment",
-      "label": "Enable Stripe Payment",
-      "default": true,
-      "info": "Shows Stripe payment elements for paid membership"
+      "id": "form_shadow",
+      "label": "Form shadow",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "form_border_radius",
+      "label": "Form border radius",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 8,
+      "unit": "px"
     },
     {
       "type": "header",
-      "content": "Advanced"
+      "content": "Input Styling"
     },
     {
-      "type": "checkbox",
-      "id": "enable_custom_script",
-      "label": "Enable custom JavaScript",
-      "default": false,
-      "info": "Enables additional form validation and custom functionality"
+      "type": "range",
+      "id": "input_padding",
+      "label": "Input padding",
+      "min": 8,
+      "max": 20,
+      "step": 1,
+      "default": 12,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "input_border_radius",
+      "label": "Input border radius",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "default": 4,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "input_font_size",
+      "label": "Input font size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
     },
     {
       "type": "header",
-      "content": "Section Settings"
+      "content": "Label Styling"
+    },
+    {
+      "type": "range",
+      "id": "label_font_size",
+      "label": "Label font size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "default": 14,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "label_font_weight",
+      "label": "Label font weight",
+      "options": [
+        { "value": "normal", "label": "Normal" },
+        { "value": "bold", "label": "Bold" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi-bold" }
+      ],
+      "default": "normal"
+    },
+    {
+      "type": "header",
+      "content": "Button Styling"
     },
     {
       "type": "color",
-      "id": "color_text",
-      "label": "Section Text Color"
+      "id": "button_background_color",
+      "label": "Button background color",
+      "default": "#000000"
     },
     {
       "type": "color",
-      "id": "color_background",
-      "label": "Section Background Color"
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#FFFFFF"
     },
     {
-      "type": "color_background",
-      "id": "gradient_background",
-      "label": "Section Background Gradient"
+      "type": "range",
+      "id": "button_padding",
+      "label": "Button padding",
+      "min": 8,
+      "max": 24,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "label": "Button border radius",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "default": 4,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "label": "Button font size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "select",
+      "id": "button_font_weight",
+      "label": "Button font weight",
+      "options": [
+        { "value": "normal", "label": "Normal" },
+        { "value": "bold", "label": "Bold" },
+        { "value": "500", "label": "Medium" },
+        { "value": "600", "label": "Semi-bold" }
+      ],
+      "default": "bold"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "rgba(18,18,18,1)"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Form background color",
+      "default": "rgba(255,255,255,1)"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#cccccc"
+    },
+    {
+      "type": "color",
+      "id": "focus_color",
+      "label": "Focus color",
+      "default": "#007cba"
+    },
+    {
+      "type": "header",
+      "content": "Section"
     },
     {
       "type": "range",
       "id": "padding_top",
       "min": 0,
-      "max": 120,
+      "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "Top Padding",
-      "default": 72
+      "label": "Top padding",
+      "default": 36
     },
     {
       "type": "range",
       "id": "padding_bottom",
       "min": 0,
-      "max": 120,
+      "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "Bottom Padding",
-      "default": 72
+      "label": "Bottom padding",
+      "default": 36
     },
     {
       "type": "checkbox",
       "id": "divider",
-      "label": "Show section divider",
+      "label": "Divider",
       "default": false
     },
     {
       "type": "checkbox",
       "id": "narrow",
-      "label": "Narrow section width",
+      "label": "Narrow container",
       "default": false
     },
     {
       "type": "checkbox",
       "id": "rounded",
-      "default": false,
-      "label": "Rounded corners"
+      "label": "Rounded",
+      "default": false
     }
   ],
   "presets": [
