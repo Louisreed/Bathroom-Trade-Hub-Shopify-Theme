@@ -520,7 +520,7 @@
         "privacy_notice_text": "",
         "privacy_alignment": "center",
         "privacy_font_size": 12,
-        "form_width": 600,
+        "form_width": 800,
         "form_padding": 32,
         "field_spacing": 20,
         "heading_spacing": 24,
