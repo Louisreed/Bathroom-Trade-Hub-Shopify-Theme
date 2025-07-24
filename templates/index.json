@@ -190,6 +190,7 @@
         "button_Rfnxi3": {
           "type": "button",
           "name": "t:blocks.button.name",
+          "disabled": true,
           "settings": {
             "button_label": "OPEN A TRADE ACCOUNT",
             "button_link": "/account/register",
@@ -207,6 +208,7 @@
         "button_8mwqwb": {
           "type": "button",
           "name": "t:blocks.button.name",
+          "disabled": true,
           "settings": {
             "button_label": "BECOME A HUBPRO MEMBER",
             "button_link": "shopify://pages/hubpro",
@@ -223,14 +225,13 @@
         },
         "ai_gen_block_20b878a_mbENCh": {
           "type": "ai_gen_block_20b878a",
-          "disabled": true,
           "settings": {
-            "column_1_heading": "Column 1",
-            "column_1_content": "<p>Add your content for the first column here. You can include multiple paragraphs and basic formatting.</p>",
+            "column_1_heading": "Trade Account",
+            "column_1_content": "<p>Working on a new job? Receive up to 25% DISCOUNT on RRP across a vast ranges of products. </p>",
             "column_1_button_text": "OPEN A TRADE ACCOUNT",
             "column_1_button_link": "/account/register",
-            "column_2_heading": "Column 2",
-            "column_2_content": "<p>Add your content for the second column here. You can include multiple paragraphs and basic formatting.</p>",
+            "column_2_heading": "HubPRO",
+            "column_2_content": "<p>Spending on a regular basis? Save money by becoming a HubPRO member. Get access to exclusive offers and deals you will not find anywhere else. </p>",
             "column_2_button_text": "BECOME A HUBPRO MEMBER",
             "column_2_button_link": "shopify://pages/hubpro",
             "column_gap": 30,
