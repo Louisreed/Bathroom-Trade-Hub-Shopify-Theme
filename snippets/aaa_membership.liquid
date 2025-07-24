@@ -1,0 +1,27 @@
+{% if template == 'blog' %}
+{% include 'aaa_mem_helper' with 'blog' %}
+{% endif %}
+{% if template == 'article' %}
+{% include 'aaa_mem_helper' with 'blog' %}
+{% endif %}
+{% if template == 'collection' %}
+{% include 'aaa_mem_helper' with 'collection' %}
+{% endif %}
+{% if template contains "page" %}
+{% include 'aaa_mem_helper' with 'page' %}
+{% endif %}
+{% if template == "product" %}
+{% include 'aaa-product-page-filter' %}
+{% endif %}
+
+
+—-----------------------aaaa-setup—-----------
+{% if template contains 'page' %}
+    {% include 'aaa_mem_helper' with 'page' %}
+{% endif %}
+ {% if template contains 'blog' or template contains 'article'  %}
+        {% include 'aaa_mem_helper' with 'blog' %}
+  {% endif %}
+   {% if template contains 'collection' %}
+        {% include 'aaa_mem_helper' with 'collection' %}
+   {% endif %}
