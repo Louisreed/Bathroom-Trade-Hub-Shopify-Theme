@@ -515,7 +515,7 @@
         "heading_alignment": "center",
         "show_divider": true,
         "show_subheading": true,
-        "form_subheading": "Subscribe and get benefits",
+        "form_subheading": "",
         "show_first_name": true,
         "first_name_label": "First Name",
         "first_name_required": true,
