@@ -1,7 +1,7 @@
 {%- doc -%}
   Renders product pricing with sale detection, unit prices, and dynamic price ranges.
 
-  Displays comprehensive pricing information including regular prices, sale prices, price ranges for products with variants, and unit pricing. Automatically detects sales, formats currencies, and handles various pricing scenarios with proper accessibility support.
+  Displays comprehensive pricing information including regular prices, sale prices, price ranges for products with variants, and unit pricing. Automatically detects sales, formats currencies, and handles various pricing scenarios with proper accessibility support. Now includes WCP wholesale pricing integration for membership users.
 
   @param {object} [product] - Shopify product object for pricing
   @param {object} [variant] - Specific variant for single price display
@@ -29,8 +29,42 @@
     assign target = product
   endif
 
+  # Initialize default Shopify prices
   assign compare_at_price = target.compare_at_price
   assign price = target.price | default: 1999
+  assign price_min = product.price_min
+  assign price_max = product.price_max
+
+  # Check for WCP wholesale pricing integration
+  assign use_wcp_pricing = false
+  if shop.metafields.wcp_status.wcp_status != 'disabled' and customer and product
+    capture wcp_check
+      include 'wcp_discount' with product
+    endcapture
+
+    unless wcp_check contains 'Liquid error'
+      assign use_wcp_pricing = true
+
+      # Use WCP variant pricing for selected variant
+      if use_variant and target
+        capture wcp_variant_check
+          include 'wcp_variant' with target
+        endcapture
+
+        unless wcp_variant_check contains 'Liquid error'
+          # Use WCP variant prices
+          assign price = wcp_v_price
+          assign compare_at_price = wcp_v_compare_at_price
+        endunless
+      else
+        # Use WCP product prices for price ranges
+        assign price = wcp_price
+        assign compare_at_price = wcp_compare_at_price
+        assign price_min = wcp_price_min
+        assign price_max = wcp_price_max
+      endif
+    endunless
+  endif
 
   assign on_sale = false
   if compare_at_price > price
@@ -38,9 +72,12 @@
   endif
 -%}
 
-<div class="price
-  {%- if on_sale %} price--on-sale{% endif -%}
-  {%- if class != blank %} {{ class }}{% endif -%}"
+<div
+  class="
+    price
+    {%- if on_sale %} price--on-sale{% endif -%}
+    {%- if class != blank %} {{ class }}{% endif -%}
+  "
 >
   {%- if on_sale -%}
     <span class="sr-only">{{ 'products.price.sale_price' | t }}</span>
@@ -49,13 +86,20 @@
   <span class="price__regular whitespace-nowrap">
     {%- liquid
       if product.quantity_price_breaks_configured? != true or skip_to_price
-        if target == product and product.price_varies
+        if target == product and product.price_varies and use_wcp_pricing == false
           if settings.currency_code_enabled
-            assign price_min = product.price_min | money_with_currency
+            assign price_min_display = price_min | money_with_currency
           else
-            assign price_min = product.price_min | money
+            assign price_min_display = price_min | money
           endif
-          echo 'products.price.from_price_html' | t: price: price_min
+          echo 'products.price.from_price_html' | t: price: price_min_display
+        elsif target == product and use_wcp_pricing and price_min != price_max
+          if settings.currency_code_enabled
+            assign price_min_display = price_min | money_with_currency
+          else
+            assign price_min_display = price_min | money
+          endif
+          echo 'products.price.from_price_html' | t: price: price_min_display
         else
           if settings.currency_code_enabled
             echo price | money_with_currency
@@ -65,11 +109,11 @@
         endif
       else
         if settings.currency_code_enabled
-          assign price_min = product.price_min | money_with_currency
+          assign price_min_display = price_min | money_with_currency
         else
-          assign price_min = product.price_min | money
+          assign price_min_display = price_min | money
         endif
-        echo 'products.price.from_price_html' | t: price: price_min
+        echo 'products.price.from_price_html' | t: price: price_min_display
       endif
     -%}
   </span>
@@ -106,7 +150,7 @@
         <span aria-hidden="true">/</span>
         <span class="sr-only">&nbsp;{{ 'general.accessibility.unit_price_separator' | t }}&nbsp;</span>
         {{ unit_price_base_unit }})
-        </span>
+      </span>
     {%- endif -%}
   {%- endunless -%}
 </div>
