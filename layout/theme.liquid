@@ -74,8 +74,7 @@
 
     {%- render 'js-variables' -%}
     
-{% if customer %}<div class="aaa_customer_id" hidden> {{ customer.id }}</div>{% endif %}<input type="hidden" id="656565115116111114101" data-customer-id="{{ customer.id }}" data-customer-email="{{ customer.email }}" data-customer-name="{{ customer.first_name }} {{ customer.last_name }}"/><input type="hidden" name="aaamembership_customer_logged_id" value="{{customer.id}}" id="aaamembership_customer_logged_id">
-
+<script> if (typeof jQuery == "undefined") { var headTag = document.getElementsByTagName("head")[0]; var jqTag = document.createElement("script"); jqTag.type = "text/javascript"; jqTag.src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"; jqTag.onload = ""; headTag.prepend(jqTag) }</script><script src="//staticxx.s3.amazonaws.com/aio_stats_lib_v1.min.js?v=1.0"></script>
   </head>
 
   <body
@@ -125,5 +124,8 @@
     {%- if request.design_mode == false and settings.preload_links -%}
       <script src="{{ 'instant-page.js' | asset_url }}" type="module" fetchpriority="low" defer="defer"></script>
     {%- endif -%}
+    
+{% if customer %}<div class="aaa_customer_id" hidden> {{ customer.id }}</div>{% endif %}<input type="hidden" id="656565115116111114101" data-customer-id="{{ customer.id }}" data-customer-email="{{ customer.email }}" data-customer-name="{{ customer.first_name }} {{ customer.last_name }}"/><input type="hidden" name="aaamembership_customer_logged_id" value="{{customer.id}}" id="aaamembership_customer_logged_id">
+
   </body>
 </html>
