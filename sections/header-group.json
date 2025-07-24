@@ -87,8 +87,7 @@
         },
         "mega_menu_fHrbe7": {
           "type": "mega_menu",
-          "name": "Hub Essentials",
-          "disabled": true,
+          "name": "Hub-Essentials",
           "settings": {
             "menu_title": "Hub Essentials",
             "menu_width": "medium",
@@ -150,7 +149,6 @@
         "mega_menu_aRtRLr": {
           "type": "mega_menu",
           "name": "WALL PANELS",
-          "disabled": true,
           "settings": {
             "menu_title": "Wall Panels",
             "menu_width": "medium",
@@ -212,7 +210,6 @@
         "mega_menu_DbjkMm": {
           "type": "mega_menu",
           "name": "Tiling",
-          "disabled": true,
           "settings": {
             "menu_title": "Tiling",
             "menu_width": "medium",
@@ -272,7 +269,6 @@
         "mega_menu_rYnn9T": {
           "type": "mega_menu",
           "name": "FLOORING",
-          "disabled": true,
           "settings": {
             "menu_title": "Flooring",
             "menu_width": "medium",
