@@ -104,9 +104,9 @@
     <div class="form-container">
       <div class="hubpro-form">
         <form
-          method="{{ form_method }}"
-          action="{{ form_action | default: '' }}"
-          class="aaamembership_form aaa-form-null hubpro-membership-form"
+          method="post"
+          action=""
+          class="aaamembership_form aaa-form-null"
           id="{{ form_id }}"
           enctype="multipart/form-data"
         >
@@ -155,22 +155,23 @@
             {%- comment -%} First Name Field {%- endcomment -%}
             {%- if section.settings.show_first_name -%}
               <div class="membership-text form-group field-first-name form-field">
-                <label for="{{ form_id }}-first-name" class="form-label">
+                <label for="first-name" class="membership-text-label" style="color: var(--form-text-color);">
                   {{ section.settings.first_name_label | default: 'First Name' | escape }}
                   {%- if section.settings.first_name_required -%}
-                    <span class="required" aria-label="required">*</span>
+                    <span class="required">*</span>
                   {%- endif -%}
                 </label>
                 <input
                   type="text"
+                  {% if section.settings.first_name_required %}
+                    required=""
+                  {% endif %}
                   class="form-control"
                   name="first-name"
-                  id="{{ form_id }}-first-name"
-                  placeholder="{{ section.settings.first_name_placeholder | escape }}"
+                  id="first-name"
                   {% if section.settings.first_name_required %}
-                    required aria-required="true"
+                    aria-required="true"
                   {% endif %}
-                  autocomplete="given-name"
                 >
               </div>
             {%- endif -%}
@@ -178,22 +179,23 @@
             {%- comment -%} Last Name Field {%- endcomment -%}
             {%- if section.settings.show_last_name -%}
               <div class="membership-text form-group field-last-name form-field">
-                <label for="{{ form_id }}-last-name" class="form-label">
+                <label for="last-name" class="membership-text-label" style="color: var(--form-text-color);">
                   {{ section.settings.last_name_label | default: 'Last Name' | escape }}
                   {%- if section.settings.last_name_required -%}
-                    <span class="required" aria-label="required">*</span>
+                    <span class="required">*</span>
                   {%- endif -%}
                 </label>
                 <input
                   type="text"
+                  {% if section.settings.last_name_required %}
+                    required=""
+                  {% endif %}
                   class="form-control"
                   name="last-name"
-                  id="{{ form_id }}-last-name"
-                  placeholder="{{ section.settings.last_name_placeholder | escape }}"
+                  id="last-name"
                   {% if section.settings.last_name_required %}
-                    required aria-required="true"
+                    aria-required="true"
                   {% endif %}
-                  autocomplete="family-name"
                 >
               </div>
             {%- endif -%}
@@ -201,24 +203,23 @@
             {%- comment -%} Email Field {%- endcomment -%}
             {%- if section.settings.show_email -%}
               <div class="membership-email form-group field-replyemail form-field">
-                <label for="{{ form_id }}-email" class="form-label">
+                <label for="replyemail" class="membership-email-label" style="color: var(--form-text-color);">
                   {{ section.settings.email_label | default: 'Email Address' | escape }}
                   {%- if section.settings.email_required -%}
-                    <span class="required" aria-label="required">*</span>
+                    <span class="required">*</span>
                   {%- endif -%}
                 </label>
                 <input
                   type="email"
+                  {% if section.settings.email_required %}
+                    required=""
+                  {% endif %}
                   class="form-control"
                   name="replyemail"
-                  id="{{ form_id }}-email"
-                  placeholder="{{ section.settings.email_placeholder | escape }}"
+                  id="replyemail"
                   {% if section.settings.email_required %}
-                    required aria-required="true"
+                    aria-required="true"
                   {% endif %}
-                  autocomplete="email"
-                  spellcheck="false"
-                  autocapitalize="off"
                 >
               </div>
             {%- endif -%}
@@ -226,22 +227,23 @@
             {%- comment -%} Company Field {%- endcomment -%}
             {%- if section.settings.show_company -%}
               <div class="membership-text form-group field-aaa-customer-company form-field">
-                <label for="{{ form_id }}-company" class="form-label">
+                <label for="aaa-customer-company" class="membership-text-label" style="color: var(--form-text-color);">
                   {{ section.settings.company_label | default: 'Company' | escape }}
                   {%- if section.settings.company_required -%}
-                    <span class="required" aria-label="required">*</span>
+                    <span class="required">*</span>
                   {%- endif -%}
                 </label>
                 <input
                   type="text"
+                  {% if section.settings.company_required %}
+                    required=""
+                  {% endif %}
                   class="form-control"
                   name="aaa-customer-company"
-                  id="{{ form_id }}-company"
-                  placeholder="{{ section.settings.company_placeholder | escape }}"
+                  id="aaa-customer-company"
                   {% if section.settings.company_required %}
-                    required aria-required="true"
+                    aria-required="true"
                   {% endif %}
-                  autocomplete="organization"
                 >
               </div>
             {%- endif -%}
@@ -249,22 +251,23 @@
             {%- comment -%} Password Field {%- endcomment -%}
             {%- if section.settings.show_password -%}
               <div class="membership-password form-group field-customer-password form-field">
-                <label for="{{ form_id }}-password" class="form-label">
+                <label for="customer-password" class="membership-password-label" style="color: var(--form-text-color);">
                   {{ section.settings.password_label | default: 'Password' | escape }}
                   {%- if section.settings.password_required -%}
-                    <span class="required" aria-label="required">*</span>
+                    <span class="required">*</span>
                   {%- endif -%}
                 </label>
                 <input
                   type="password"
+                  {% if section.settings.password_required %}
+                    required=""
+                  {% endif %}
                   class="form-control"
                   name="customer-password"
-                  id="{{ form_id }}-password"
-                  placeholder="{{ section.settings.password_placeholder | escape }}"
+                  id="customer-password"
                   {% if section.settings.password_required %}
-                    required aria-required="true"
+                    aria-required="true"
                   {% endif %}
-                  autocomplete="new-password"
                 >
               </div>
             {%- endif -%}
@@ -332,10 +335,9 @@
     document.addEventListener('DOMContentLoaded', function () {
       const form = document.getElementById('{{ form_id }}');
       if (form) {
-        form.addEventListener('submit', function (e) {
-          // Add any custom form submission logic here
-          console.log('HubPRO form submitted');
-        });
+        // Additional custom functionality can be added here
+        // Do not interfere with form submission - let AAA membership script handle it
+        console.log('HubPRO form initialized');
       }
     });
   </script>
