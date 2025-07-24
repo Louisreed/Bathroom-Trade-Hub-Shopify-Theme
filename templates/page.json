@@ -100,11 +100,24 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_Qw3mC3": {
+          "type": "collection",
+          "settings": {
+            "collection": "kolk",
+            "title": "Kalk",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
         "collection_6fdXNc",
-        "collection_99UjPB"
+        "collection_99UjPB",
+        "collection_Qw3mC3"
       ],
       "settings": {
         "columns": 5,
