@@ -11,6 +11,7 @@
   "sections": {
     "main-page": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "heading_size": "title-xl tracking-heading",
         "heading_alignment": "text-left",
@@ -76,71 +77,11 @@
     "collection_list_kg7KnE": {
       "type": "collection-list",
       "blocks": {
-        "collection_ibDQUq": {
+        "collection_6fdXNc": {
           "type": "collection",
           "settings": {
-            "collection": "multipanel-tile-range",
-            "title": "The Tile Range",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_UpTM7a": {
-          "type": "collection",
-          "settings": {
-            "collection": "multipanel-classic",
-            "title": "The Classic Range",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_JTqVjX": {
-          "type": "collection",
-          "settings": {
-            "collection": "multipanel-contemporary",
-            "title": "The Contemporary Collection",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_JtXJxa": {
-          "type": "collection",
-          "settings": {
-            "collection": "multipanel-pure",
-            "title": "The Pure Collection",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_URAcUM": {
-          "type": "collection",
-          "settings": {
-            "collection": "linda-barker",
-            "title": "The Linda Barker Collection",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_ATd6TE": {
-          "type": "collection",
-          "settings": {
-            "collection": "multipanel-trims-consumables",
-            "title": "Trims & Consumables",
+            "collection": "canada",
+            "title": "Canada",
             "description": "",
             "overlay_content": false,
             "color_text": "#ffffff",
@@ -150,14 +91,8 @@
         }
       },
       "block_order": [
-        "collection_ibDQUq",
-        "collection_UpTM7a",
-        "collection_JTqVjX",
-        "collection_JtXJxa",
-        "collection_URAcUM",
-        "collection_ATd6TE"
+        "collection_6fdXNc"
       ],
-      "disabled": true,
       "settings": {
         "columns": 5,
         "carousel_on_desktop": true,
@@ -500,6 +435,7 @@
         "collection_9TpGwN",
         "collection_PqqpFq"
       ],
+      "disabled": true,
       "settings": {
         "columns": 4,
         "carousel_on_desktop": false,
