@@ -526,8 +526,8 @@
         "collection_HYzcEd": {
           "type": "collection",
           "settings": {
-            "collection": "",
-            "title": "",
+            "collection": "eon",
+            "title": "Eon",
             "description": "",
             "overlay_content": false,
             "color_text": "#ffffff",
@@ -538,7 +538,7 @@
         "collection_Xyr8EK": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "munro",
             "title": "",
             "description": "",
             "overlay_content": false,
@@ -550,7 +550,31 @@
         "collection_XTR4TV": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "mona",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_CHTx8J": {
+          "type": "collection",
+          "settings": {
+            "collection": "moat",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_dtxECR": {
+          "type": "collection",
+          "settings": {
+            "collection": "vibe",
             "title": "",
             "description": "",
             "overlay_content": false,
@@ -563,7 +587,9 @@
       "block_order": [
         "collection_HYzcEd",
         "collection_Xyr8EK",
-        "collection_XTR4TV"
+        "collection_XTR4TV",
+        "collection_CHTx8J",
+        "collection_dtxECR"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
