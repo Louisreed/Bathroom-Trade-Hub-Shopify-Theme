@@ -11,9 +11,11 @@
   #shopify-section-{{ section.id }} {
     --section-padding-top: {{ section.settings.padding_top }}px;
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
+    --section-background-color: {{ section.settings.section_background_color | default: 'transparent' }};
     --form-text-color: {{ section.settings.text_color | default: 'rgba(18,18,18,1)' }};
     --form-border-color: {{ section.settings.border_color | default: '#cccccc' }};
     --form-background-color: {{ section.settings.background_color | default: 'rgba(255,255,255,1)' }};
+    background-color: var(--section-background-color);
   }
 
   .hubpro-membership-form {
@@ -592,6 +594,12 @@
       "id": "text_color",
       "label": "Text color",
       "default": "rgba(18,18,18,1)"
+    },
+    {
+      "type": "color",
+      "id": "section_background_color",
+      "label": "Section background color",
+      "info": "Background color for the entire section area"
     },
     {
       "type": "color",
