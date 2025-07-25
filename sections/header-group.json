@@ -100,7 +100,7 @@
           "settings": {
             "menu_handle": "hubPROMO",
             "tag_text": "EXCLUSIVE",
-            "background_color": "#434343",
+            "background_color": "#bba14f",
             "text_color": "#ffffff",
             "tag_style": "pill"
           }
