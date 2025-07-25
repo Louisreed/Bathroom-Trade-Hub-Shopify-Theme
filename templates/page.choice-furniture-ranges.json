@@ -615,7 +615,7 @@
         "collection_MRMQ6D": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "turin",
             "title": "",
             "description": "",
             "overlay_content": false,
