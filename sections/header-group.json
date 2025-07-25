@@ -79,7 +79,7 @@
           "type": "menu_tag",
           "settings": {
             "menu_handle": "hubessentials",
-            "tag_text": "Featured",
+            "tag_text": "save £££",
             "background_color": "#2acaf1",
             "text_color": "#ffffff",
             "tag_style": "pill"
@@ -90,6 +90,16 @@
           "settings": {
             "menu_handle": "hubchoice",
             "tag_text": "featured",
+            "background_color": "#434343",
+            "text_color": "#ffffff",
+            "tag_style": "pill"
+          }
+        },
+        "menu_tag_gJEr7d": {
+          "type": "menu_tag",
+          "settings": {
+            "menu_handle": "hubPROMO",
+            "tag_text": "EXCLUSIVE",
             "background_color": "#434343",
             "text_color": "#ffffff",
             "tag_style": "pill"
@@ -1114,6 +1124,7 @@
         "menu_tag_wXQhXz",
         "menu_tag_F6tjLe",
         "menu_tag_A69H4n",
+        "menu_tag_gJEr7d",
         "mega_menu_fHrbe7",
         "mega_menu_aRtRLr",
         "mega_menu_DbjkMm",
