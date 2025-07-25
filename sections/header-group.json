@@ -89,8 +89,8 @@
           "type": "menu_tag",
           "settings": {
             "menu_handle": "hubchoice",
-            "tag_text": "Simple!",
-            "background_color": "#2acaf1",
+            "tag_text": "featured",
+            "background_color": "#434343",
             "text_color": "#ffffff",
             "tag_style": "pill"
           }
