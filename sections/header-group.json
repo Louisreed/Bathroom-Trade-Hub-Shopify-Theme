@@ -85,6 +85,16 @@
             "tag_style": "pill"
           }
         },
+        "menu_tag_A69H4n": {
+          "type": "menu_tag",
+          "settings": {
+            "menu_handle": "hub choice",
+            "tag_text": "Simple!",
+            "background_color": "#2acaf1",
+            "text_color": "#ffffff",
+            "tag_style": "pill"
+          }
+        },
         "mega_menu_fHrbe7": {
           "type": "mega_menu",
           "name": "Hub Essentials",
@@ -1103,6 +1113,7 @@
       "block_order": [
         "menu_tag_wXQhXz",
         "menu_tag_F6tjLe",
+        "menu_tag_A69H4n",
         "mega_menu_fHrbe7",
         "mega_menu_aRtRLr",
         "mega_menu_DbjkMm",
