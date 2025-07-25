@@ -15,7 +15,7 @@
         "free_shipping": {
           "type": "free_shipping",
           "settings": {
-            "minimum_amount": "500"
+            "minimum_amount": "416.66"
           }
         },
         "subtotal": {
