@@ -221,6 +221,7 @@
         "collection_b6di6b",
         "collection_jD3feK"
       ],
+      "disabled": true,
       "settings": {
         "columns": 5,
         "carousel_on_desktop": true,
@@ -483,6 +484,7 @@
         "collection_JgDzt9",
         "collection_HW7FxE"
       ],
+      "disabled": true,
       "name": "Collection list",
       "settings": {
         "columns": 4,
@@ -562,6 +564,7 @@
         "collection_9TpGwN",
         "collection_PqqpFq"
       ],
+      "disabled": true,
       "settings": {
         "columns": 4,
         "carousel_on_desktop": false,
