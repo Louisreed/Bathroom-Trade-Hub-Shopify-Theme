@@ -69,7 +69,7 @@
           "type": "menu_tag",
           "settings": {
             "menu_handle": "hubpro",
-            "tag_text": "NEW!",
+            "tag_text": "SIGN UP!",
             "background_color": "#f59e0b",
             "text_color": "#ffffff",
             "tag_style": "pill"
