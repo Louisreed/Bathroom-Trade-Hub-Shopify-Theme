@@ -20,7 +20,7 @@
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "button_label": "CREATE AN ACCOUNT",
-            "button_link": "shopify://collections/hub-essentials",
+            "button_link": "/account/register",
             "button_style": "secondary",
             "button_external": false,
             "button_icon": false
