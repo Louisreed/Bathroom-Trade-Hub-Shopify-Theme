@@ -29,49 +29,89 @@
     {% endif %}
   }
 
-  /* Form container overrides */
-  #shopify-section-{{ section.id }} .aaamembership_form {
-    margin: 0;
-    padding: 0;
+  /* Preserve original form functionality - only override when settings differ from defaults */
+  #shopify-section-{{ section.id }} .raw-form-wrapper {
+    /* Let the original form styles take precedence, only override selectively */
   }
 
-  /* Header styling overrides */
+  /* Header styling overrides - only apply if different from black */
+  {% if section.settings.header_color != '#000000' %}
   #shopify-section-{{ section.id }} .aaamembership_form .header {
     color: {{ section.settings.header_color }} !important;
+  }
+  {% endif %}
+
+  {% if section.settings.header_spacing != 16 %}
+  #shopify-section-{{ section.id }} .aaamembership_form .header {
     margin-bottom: {{ section.settings.header_spacing }}px !important;
   }
+  {% endif %}
 
+  {% if section.settings.h1_font_size != 24 %}
   #shopify-section-{{ section.id }} .aaamembership_form h1.header {
     font-size: {{ section.settings.h1_font_size }}px !important;
+  }
+  {% endif %}
+
+  {% if section.settings.h1_font_weight != '700' %}
+  #shopify-section-{{ section.id }} .aaamembership_form h1.header {
     font-weight: {{ section.settings.h1_font_weight }} !important;
   }
+  {% endif %}
 
+  {% if section.settings.h3_font_size != 18 %}
   #shopify-section-{{ section.id }} .aaamembership_form h3.header {
     font-size: {{ section.settings.h3_font_size }}px !important;
+  }
+  {% endif %}
+
+  {% if section.settings.h3_font_weight != '600' %}
+  #shopify-section-{{ section.id }} .aaamembership_form h3.header {
     font-weight: {{ section.settings.h3_font_weight }} !important;
   }
+  {% endif %}
 
-  /* Divider styling */
+  /* Divider styling - only override if different from defaults */
+  {% if section.settings.divider_color != '#cccccc' %}
   #shopify-section-{{ section.id }} .aaamembership_form .aaadivider {
     border-color: {{ section.settings.divider_color }} !important;
+  }
+  {% endif %}
+
+  {% if section.settings.divider_spacing != 16 %}
+  #shopify-section-{{ section.id }} .aaamembership_form .aaadivider {
     margin: {{ section.settings.divider_spacing }}px 0 !important;
   }
+  {% endif %}
 
-  /* Label styling overrides */
+  /* Label styling overrides - only if different from black/14px/500 */
+  {% if section.settings.label_color != '#000000' %}
   #shopify-section-{{ section.id }} .aaamembership_form label {
     color: {{ section.settings.label_color }} !important;
-    font-size: {{ section.settings.label_font_size }}px !important;
-    font-weight: {{ section.settings.label_font_weight }} !important;
-    margin-bottom: 8px !important;
-    display: block !important;
   }
+  {% endif %}
+
+  {% if section.settings.label_font_size != 14 %}
+  #shopify-section-{{ section.id }} .aaamembership_form label {
+    font-size: {{ section.settings.label_font_size }}px !important;
+  }
+  {% endif %}
+
+  {% if section.settings.label_font_weight != '500' %}
+  #shopify-section-{{ section.id }} .aaamembership_form label {
+    font-weight: {{ section.settings.label_font_weight }} !important;
+  }
+  {% endif %}
 
   /* Required asterisk styling */
+  {% if section.settings.required_color != '#ff0000' %}
   #shopify-section-{{ section.id }} .aaamembership_form .required {
     color: {{ section.settings.required_color }} !important;
   }
+  {% endif %}
 
-  /* Form field styling overrides */
+  /* Form field styling - only override if different from defaults */
+  {% if section.settings.field_border_color != '#cccccc' or section.settings.field_border_width != 1 %}
   #shopify-section-{{ section.id }} .aaamembership_form input[type="text"],
   #shopify-section-{{ section.id }} .aaamembership_form input[type="search"],
   #shopify-section-{{ section.id }} .aaamembership_form input[type="password"],
@@ -81,17 +121,68 @@
   #shopify-section-{{ section.id }} .aaamembership_form input[type="tel"],
   #shopify-section-{{ section.id }} .aaamembership_form textarea,
   #shopify-section-{{ section.id }} .aaamembership_form select {
-    width: 100% !important;
-    margin: 0 !important;
     border: {{ section.settings.field_border_width }}px solid {{ section.settings.field_border_color }} !important;
-    border-radius: {{ section.settings.field_border_radius }}px !important;
-    padding: {{ section.settings.field_padding }}px !important;
-    font-size: {{ section.settings.field_font_size }}px !important;
-    background-color: {{ section.settings.field_background }} !important;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
   }
+  {% endif %}
+
+  {% if section.settings.field_border_radius != 4 %}
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="text"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="search"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="password"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="email"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="file"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="number"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="tel"],
+  #shopify-section-{{ section.id }} .aaamembership_form textarea,
+  #shopify-section-{{ section.id }} .aaamembership_form select {
+    border-radius: {{ section.settings.field_border_radius }}px !important;
+  }
+  {% endif %}
+
+  {% if section.settings.field_padding != 12 %}
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="text"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="search"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="password"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="email"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="file"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="number"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="tel"],
+  #shopify-section-{{ section.id }} .aaamembership_form textarea,
+  #shopify-section-{{ section.id }} .aaamembership_form select {
+    padding: {{ section.settings.field_padding }}px !important;
+  }
+  {% endif %}
+
+  {% if section.settings.field_font_size != 14 %}
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="text"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="search"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="password"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="email"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="file"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="number"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="tel"],
+  #shopify-section-{{ section.id }} .aaamembership_form textarea,
+  #shopify-section-{{ section.id }} .aaamembership_form select {
+    font-size: {{ section.settings.field_font_size }}px !important;
+  }
+  {% endif %}
+
+  {% if section.settings.field_background != '#ffffff' %}
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="text"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="search"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="password"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="email"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="file"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="number"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="tel"],
+  #shopify-section-{{ section.id }} .aaamembership_form textarea,
+  #shopify-section-{{ section.id }} .aaamembership_form select {
+    background-color: {{ section.settings.field_background }} !important;
+  }
+  {% endif %}
 
   /* Field focus states */
+  {% if section.settings.field_focus_color != '#0066cc' %}
   #shopify-section-{{ section.id }} .aaamembership_form input:focus,
   #shopify-section-{{ section.id }} .aaamembership_form textarea:focus,
   #shopify-section-{{ section.id }} .aaamembership_form select:focus {
@@ -101,54 +192,105 @@
     {% endif %}
     outline: none !important;
   }
+  {% endif %}
 
   /* Form group spacing */
+  {% if section.settings.field_spacing != 20 %}
   #shopify-section-{{ section.id }} .aaamembership_form .form-group {
     margin-bottom: {{ section.settings.field_spacing }}px !important;
   }
+  {% endif %}
 
-  /* Button styling overrides */
+  /* Button styling overrides - only override if different from defaults */
+  {% if section.settings.button_background != '#BB9F4D' %}
   #shopify-section-{{ section.id }} .aaamembership_form .membership-submit button,
-  #shopify-section-{{ section.id }} .aaamembership_form .button-input {
+  #shopify-section-{{ section.id }} .aaamembership_form button[type="submit"] {
     background-color: {{ section.settings.button_background }} !important;
-    color: {{ section.settings.button_color }} !important;
-    font-size: {{ section.settings.button_font_size }}px !important;
-    font-weight: {{ section.settings.button_font_weight }} !important;
-    padding: {{ section.settings.button_padding_vertical }}px {{ section.settings.button_padding_horizontal }}px !important;
-    border-radius: {{ section.settings.button_border_radius }}px !important;
-    border: {{ section.settings.button_border_width }}px solid {{ section.settings.button_border_color }} !important;
-    cursor: pointer !important;
-    transition: all 0.2s ease !important;
-    {% if section.settings.button_full_width %}
-      width: 100% !important;
-    {% endif %}
-    {% if section.settings.button_text_transform != 'none' %}
-      text-transform: {{ section.settings.button_text_transform }} !important;
-    {% endif %}
   }
+  {% endif %}
+
+  {% if section.settings.button_color != '#ffffff' %}
+  #shopify-section-{{ section.id }} .aaamembership_form .membership-submit button,
+  #shopify-section-{{ section.id }} .aaamembership_form button[type="submit"] {
+    color: {{ section.settings.button_color }} !important;
+  }
+  {% endif %}
+
+  {% if section.settings.button_font_size != 14 %}
+  #shopify-section-{{ section.id }} .aaamembership_form .membership-submit button,
+  #shopify-section-{{ section.id }} .aaamembership_form button[type="submit"] {
+    font-size: {{ section.settings.button_font_size }}px !important;
+  }
+  {% endif %}
+
+  {% if section.settings.button_font_weight != '600' %}
+  #shopify-section-{{ section.id }} .aaamembership_form .membership-submit button,
+  #shopify-section-{{ section.id }} .aaamembership_form button[type="submit"] {
+    font-weight: {{ section.settings.button_font_weight }} !important;
+  }
+  {% endif %}
+
+  {% if section.settings.button_padding_vertical != 12 or section.settings.button_padding_horizontal != 24 %}
+  #shopify-section-{{ section.id }} .aaamembership_form .membership-submit button,
+  #shopify-section-{{ section.id }} .aaamembership_form button[type="submit"] {
+    padding: {{ section.settings.button_padding_vertical }}px {{ section.settings.button_padding_horizontal }}px !important;
+  }
+  {% endif %}
+
+  {% if section.settings.button_border_radius != 4 %}
+  #shopify-section-{{ section.id }} .aaamembership_form .membership-submit button,
+  #shopify-section-{{ section.id }} .aaamembership_form button[type="submit"] {
+    border-radius: {{ section.settings.button_border_radius }}px !important;
+  }
+  {% endif %}
+
+  {% if section.settings.button_border_width > 0 %}
+  #shopify-section-{{ section.id }} .aaamembership_form .membership-submit button,
+  #shopify-section-{{ section.id }} .aaamembership_form button[type="submit"] {
+    border: {{ section.settings.button_border_width }}px solid {{ section.settings.button_border_color }} !important;
+  }
+  {% endif %}
+
+  {% if section.settings.button_text_transform != 'none' %}
+  #shopify-section-{{ section.id }} .aaamembership_form .membership-submit button,
+  #shopify-section-{{ section.id }} .aaamembership_form button[type="submit"] {
+    text-transform: {{ section.settings.button_text_transform }} !important;
+  }
+  {% endif %}
+
+  {% if section.settings.button_full_width %}
+  #shopify-section-{{ section.id }} .aaamembership_form .membership-submit button,
+  #shopify-section-{{ section.id }} .aaamembership_form button[type="submit"] {
+    width: 100% !important;
+  }
+  {% endif %}
 
   /* Button hover states */
+  {% if section.settings.button_hover_background != '#a08a42' %}
   #shopify-section-{{ section.id }} .aaamembership_form .membership-submit button:hover,
-  #shopify-section-{{ section.id }} .aaamembership_form .button-input:hover {
+  #shopify-section-{{ section.id }} .aaamembership_form button[type="submit"]:hover {
     background-color: {{ section.settings.button_hover_background }} !important;
+  }
+  {% endif %}
+
+  {% if section.settings.button_hover_color != '#ffffff' %}
+  #shopify-section-{{ section.id }} .aaamembership_form .membership-submit button:hover,
+  #shopify-section-{{ section.id }} .aaamembership_form button[type="submit"]:hover {
     color: {{ section.settings.button_hover_color }} !important;
-    {% if section.settings.button_hover_transform %}
-      transform: translateY(-1px);
-    {% endif %}
   }
+  {% endif %}
 
-  /* Checkbox styling */
-  #shopify-section-{{ section.id }} .aaamembership_form .checkbox {
-    width: auto !important;
-    margin-right: 8px !important;
+  {% if section.settings.button_hover_transform %}
+  #shopify-section-{{ section.id }} .aaamembership_form .membership-submit button:hover,
+  #shopify-section-{{ section.id }} .aaamembership_form button[type="submit"]:hover {
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
   }
+  {% endif %}
 
-  /* Phone number country code field */
+  /* Preserve original phone number field styling */
   #shopify-section-{{ section.id }} .aaamembership_form .aaa-customer-phone-number-country {
-    width: 49% !important;
-    float: left !important;
-    margin-left: 1% !important;
-    margin-right: 1% !important;
+    /* Keep original inline styles, don't override */
   }
 
   /* Responsive adjustments */
@@ -179,7 +321,11 @@
 
     <div class="hubpro-form-container">
       {% if section.settings.raw_form_html != blank %}
-        {{ section.settings.raw_form_html }}
+        {% comment %}Render raw HTML exactly as provided without any escaping{% endcomment %}
+        <div class="raw-form-wrapper">
+          {% assign raw_html = section.settings.raw_form_html %}
+          {{ raw_html }}
+        </div>
       {% else %}
         <div style="padding: 40px; text-align: center; border: 2px dashed #ccc; color: #999; border-radius: 8px;">
           <h3>HubPRO Form</h3>
