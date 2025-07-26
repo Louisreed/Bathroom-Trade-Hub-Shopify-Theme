@@ -32,83 +32,6 @@
         "rounded": false
       }
     },
-    "rich_text_KBAVRK": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_HXYVaC": {
-          "type": "heading",
-          "settings": {
-            "heading": "We're just running a few checks...",
-            "heading_size": "title-lg tracking-heading",
-            "heading_tag": "h2",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "text_VUnV6W": {
-          "type": "text",
-          "settings": {
-            "text": "<p>After we've verified your account you will be able to login to your trade account and start saving. </p>",
-            "text_font": "body",
-            "text_size": "subtext-md",
-            "text_max_size": 32,
-            "text_line_height": 1.6,
-            "text_letter_spacing": 0,
-            "text_capitalize": false,
-            "secondary_color": false,
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "button_RGRpbz": {
-          "type": "button",
-          "settings": {
-            "button_label": "Browse products",
-            "button_link": "shopify://collections/all",
-            "button_style": "secondary",
-            "button_size": "md",
-            "button_external": false,
-            "button_icon": true
-          }
-        }
-      },
-      "block_order": [
-        "heading_HXYVaC",
-        "text_VUnV6W",
-        "button_RGRpbz"
-      ],
-      "name": "t:sections.rich-text.name",
-      "settings": {
-        "text_alignment": "left",
-        "text_alignment_mobile": "left",
-        "heading": "",
-        "heading_size": "title-md",
-        "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_width": "small",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "",
-        "button_label": "",
-        "button_link": "",
-        "button_external": false,
-        "button_icon": true,
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "#fafafa",
-        "color_background": "#424242",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 72,
-        "padding_bottom": 100,
-        "divider": false,
-        "narrow": true,
-        "rounded": false
-      }
-    },
     "17157682575ad8f603": {
       "type": "apps",
       "blocks": {
@@ -627,7 +550,19 @@
         "collection_n4Y4hp": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "turin-compact",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_Ew4tyj": {
+          "type": "collection",
+          "settings": {
+            "collection": "waterproof",
             "title": "",
             "description": "",
             "overlay_content": false,
@@ -640,11 +575,12 @@
       "block_order": [
         "collection_YeVCgQ",
         "collection_MRMQ6D",
-        "collection_n4Y4hp"
+        "collection_n4Y4hp",
+        "collection_Ew4tyj"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
-        "columns": 4,
+        "columns": 5,
         "carousel_on_desktop": false,
         "image_type": "collection",
         "image_ratio": "square",
@@ -672,6 +608,83 @@
         "padding_bottom": 72,
         "divider": false,
         "full_width": false,
+        "rounded": false
+      }
+    },
+    "rich_text_KBAVRK": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_HXYVaC": {
+          "type": "heading",
+          "settings": {
+            "heading": "We're just running a few checks...",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_VUnV6W": {
+          "type": "text",
+          "settings": {
+            "text": "<p>After we've verified your account you will be able to login to your trade account and start saving. </p>",
+            "text_font": "body",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_RGRpbz": {
+          "type": "button",
+          "settings": {
+            "button_label": "Browse products",
+            "button_link": "shopify://collections/all",
+            "button_style": "secondary",
+            "button_size": "md",
+            "button_external": false,
+            "button_icon": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_HXYVaC",
+        "text_VUnV6W",
+        "button_RGRpbz"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "text_alignment": "left",
+        "text_alignment_mobile": "left",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "#fafafa",
+        "color_background": "#424242",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 100,
+        "divider": false,
+        "narrow": true,
         "rounded": false
       }
     }
