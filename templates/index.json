@@ -33,7 +33,7 @@
             "heading": "<em>Join HubPRO to see prices!</em>",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
-            "button_label": "BECOME A MEMBER",
+            "button_label": "HubPRO",
             "button_link": "shopify://pages/trade-sign-up",
             "button_style": "secondary",
             "button_external": false,
