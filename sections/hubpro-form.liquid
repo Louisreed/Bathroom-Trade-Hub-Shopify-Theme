@@ -223,7 +223,7 @@
         {% if section.settings.show_first_name %}
           <div class="membership-text form-group field-first-name">
             <label for="first-name" class="membership-text-label">
-              {{ 'forms.first_name' | t }}
+              First Name
               {% if section.settings.first_name_required -%}
                 <span class="required">*</span>
               {%- endif %}
@@ -247,7 +247,7 @@
         {% if section.settings.show_last_name %}
           <div class="membership-text form-group field-last-name">
             <label for="last-name" class="membership-text-label">
-              {{ 'forms.last_name' | t }}
+              Last Name
               {% if section.settings.last_name_required -%}
                 <span class="required">*</span>
               {%- endif %}
@@ -271,7 +271,7 @@
         {% if section.settings.show_company %}
           <div class="membership-text form-group field-aaa-customer-company">
             <label for="aaa-customer-company" class="membership-text-label">
-              {{ 'forms.company' | t }}
+              Company
               {% if section.settings.company_required -%}
                 <span class="required">*</span>
               {%- endif %}
@@ -294,7 +294,7 @@
         <!-- Email Address -->
         <div class="membership-email form-group field-replyemail">
           <label for="replyemail" class="membership-email-label">
-            {{ 'forms.email' | t }}
+            Email Address
             <span class="required">*</span>
           </label>
           <input
@@ -310,7 +310,7 @@
         <!-- Password -->
         <div class="membership-password form-group field-customer-password">
           <label for="customer-password" class="membership-password-label">
-            {{ 'forms.password' | t }}
+            Password
             <span class="required">*</span>
           </label>
           <input
@@ -326,7 +326,7 @@
         <!-- Confirm Password -->
         <div class="membership-password form-group field-aaa-customer-confirm-pass">
           <label for="aaa-customer-confirm-pass" class="membership-password-label">
-            {{ 'forms.confirm_password' | t }}
+            Confirm Password
             <span class="required">*</span>
           </label>
           <input
@@ -343,7 +343,7 @@
         {% if section.settings.show_address %}
           <div class="membership-undefined form-group field-aaa-customer-address">
             <label for="aaa-customer-address" class="membership-textarea-label">
-              {{ 'forms.address1' | t }}
+              Address Line 1
               {% if section.settings.address_required -%}
                 <span class="required">*</span>
               {%- endif %}
@@ -368,7 +368,7 @@
         {% if section.settings.show_city %}
           <div class="membership-text form-group field-aaa-customer-city">
             <label for="aaa-customer-city" class="membership-text-label">
-              {{ 'forms.city' | t }}
+              City
               {% if section.settings.city_required -%}
                 <span class="required">*</span>
               {%- endif %}
@@ -392,7 +392,7 @@
         {% if section.settings.show_country %}
           <div class="membership-select form-group field-aaa-form-builder-country">
             <label for="aaa-form-builder-country" class="membership-select-label">
-              {{ 'forms.country' | t }}
+              Country
               {% if section.settings.country_required -%}
                 <span class="required">*</span>
               {%- endif %}
@@ -659,7 +659,7 @@
         {% if section.settings.show_postcode %}
           <div class="membership-text form-group field-aaa-customer-zip-code">
             <label for="aaa-customer-zip-code" class="membership-text-label">
-              {{ 'forms.zip' | t }}
+              Postcode
               {% if section.settings.postcode_required -%}
                 <span class="required">*</span>
               {%- endif %}
@@ -683,7 +683,7 @@
         {% if section.settings.show_phone %}
           <div class="membership-number form-group field-aaa-customer-phone-number">
             <label for="aaa-customer-phone-number" class="membership-number-label">
-              {{ 'forms.phone' | t }}
+              Phone Number
               {% if section.settings.phone_required -%}
                 <span class="required">*</span>
               {%- endif %}
@@ -763,24 +763,24 @@
 
 {% schema %}
 {
-  "name": "t:sections.hubpro_form.name",
+  "name": "HubPRO Form",
   "tag": "section",
   "class": "section",
   "settings": [
     {
       "type": "header",
-      "content": "t:sections.all.general"
+      "content": "General Settings"
     },
     {
       "type": "text",
       "id": "heading",
-      "label": "t:sections.all.heading.label",
+      "label": "Section Heading",
       "default": "Join HubPRO"
     },
     {
       "type": "text",
       "id": "subheading",
-      "label": "t:sections.all.subheading.label"
+      "label": "Section Subheading"
     },
     {
       "type": "select",
@@ -788,19 +788,19 @@
       "options": [
         {
           "value": "page-width",
-          "label": "t:sections.all.container_width.page_width"
+          "label": "Page Width"
         },
         {
           "value": "page-width page-width--narrow",
-          "label": "t:sections.all.container_width.narrow"
+          "label": "Narrow"
         },
         {
           "value": "page-width--fluid",
-          "label": "t:sections.all.container_width.full_width"
+          "label": "Full Width"
         }
       ],
       "default": "page-width",
-      "label": "t:sections.all.container_width.label"
+      "label": "Container Width"
     },
     {
       "type": "select",
@@ -808,206 +808,206 @@
       "options": [
         {
           "value": "accent-1",
-          "label": "t:sections.all.colors.accent_1.label"
+          "label": "Accent 1"
         },
         {
           "value": "accent-2",
-          "label": "t:sections.all.colors.accent_2.label"
+          "label": "Accent 2"
         },
         {
           "value": "background-1",
-          "label": "t:sections.all.colors.background_1.label"
+          "label": "Background 1"
         },
         {
           "value": "background-2",
-          "label": "t:sections.all.colors.background_2.label"
+          "label": "Background 2"
         },
         {
           "value": "inverse",
-          "label": "t:sections.all.colors.inverse.label"
+          "label": "Inverse"
         }
       ],
       "default": "background-1",
-      "label": "t:sections.all.colors.label"
+      "label": "Color Scheme"
     },
     {
       "type": "header",
-      "content": "t:sections.hubpro_form.settings.form_configuration.content"
+      "content": "Form Configuration"
     },
     {
       "type": "text",
       "id": "form_id",
-      "label": "t:sections.hubpro_form.settings.form_id.label",
+      "label": "Form ID",
       "default": "13451",
-      "info": "t:sections.hubpro_form.settings.form_id.info"
+      "info": "The ID of the third-party form"
     },
     {
       "type": "text",
       "id": "form_domain",
-      "label": "t:sections.hubpro_form.settings.form_domain.label",
+      "label": "Form Domain",
       "default": "ab97df-6.myshopify.com",
-      "info": "t:sections.hubpro_form.settings.form_domain.info"
+      "info": "The domain for the third-party form service"
     },
     {
       "type": "text",
       "id": "success_message",
-      "label": "t:sections.hubpro_form.settings.success_message.label",
+      "label": "Success Message",
       "default": "Thank you, we will be in touch soon."
     },
     {
       "type": "url",
       "id": "thank_you_url",
-      "label": "t:sections.hubpro_form.settings.thank_you_url.label",
+      "label": "Thank You Page URL",
       "default": "/pages/hubpro-thank-you-for-signing-up"
     },
     {
       "type": "header",
-      "content": "t:sections.hubpro_form.settings.form_header.content"
+      "content": "Form Header"
     },
     {
       "type": "checkbox",
       "id": "show_form_header",
-      "label": "t:sections.hubpro_form.settings.show_form_header.label",
+      "label": "Show form header",
       "default": true
     },
     {
       "type": "text",
       "id": "form_title",
-      "label": "t:sections.hubpro_form.settings.form_title.label",
+      "label": "Form Title",
       "default": "HubPRO"
     },
     {
       "type": "text",
       "id": "form_subtitle",
-      "label": "t:sections.hubpro_form.settings.form_subtitle.label",
+      "label": "Form Subtitle",
       "default": "Subscribe and get benefits"
     },
     {
       "type": "checkbox",
       "id": "show_divider",
-      "label": "t:sections.hubpro_form.settings.show_divider.label",
+      "label": "Show divider",
       "default": true
     },
     {
       "type": "header",
-      "content": "t:sections.hubpro_form.settings.form_fields.content"
+      "content": "Form Fields"
     },
     {
       "type": "checkbox",
       "id": "show_first_name",
-      "label": "t:sections.hubpro_form.settings.show_first_name.label",
+      "label": "Show first name field",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "first_name_required",
-      "label": "t:sections.hubpro_form.settings.first_name_required.label",
+      "label": "First name required",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "show_last_name",
-      "label": "t:sections.hubpro_form.settings.show_last_name.label",
+      "label": "Show last name field",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "last_name_required",
-      "label": "t:sections.hubpro_form.settings.last_name_required.label",
+      "label": "Last name required",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "show_company",
-      "label": "t:sections.hubpro_form.settings.show_company.label",
+      "label": "Show company field",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "company_required",
-      "label": "t:sections.hubpro_form.settings.company_required.label",
+      "label": "Company required",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "show_address",
-      "label": "t:sections.hubpro_form.settings.show_address.label",
+      "label": "Show address field",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "address_required",
-      "label": "t:sections.hubpro_form.settings.address_required.label",
+      "label": "Address required",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "show_city",
-      "label": "t:sections.hubpro_form.settings.show_city.label",
+      "label": "Show city field",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "city_required",
-      "label": "t:sections.hubpro_form.settings.city_required.label",
+      "label": "City required",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "show_country",
-      "label": "t:sections.hubpro_form.settings.show_country.label",
+      "label": "Show country field",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "country_required",
-      "label": "t:sections.hubpro_form.settings.country_required.label",
+      "label": "Country required",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "show_postcode",
-      "label": "t:sections.hubpro_form.settings.show_postcode.label",
+      "label": "Show postcode field",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "postcode_required",
-      "label": "t:sections.hubpro_form.settings.postcode_required.label",
+      "label": "Postcode required",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "show_phone",
-      "label": "t:sections.hubpro_form.settings.show_phone.label",
+      "label": "Show phone field",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "phone_required",
-      "label": "t:sections.hubpro_form.settings.phone_required.label",
+      "label": "Phone required",
       "default": false
     },
     {
       "type": "checkbox",
       "id": "show_newsletter",
-      "label": "t:sections.hubpro_form.settings.show_newsletter.label",
+      "label": "Show newsletter checkbox",
       "default": true
     },
     {
       "type": "text",
       "id": "newsletter_text",
-      "label": "t:sections.hubpro_form.settings.newsletter_text.label",
+      "label": "Newsletter Text",
       "default": "Subscribe to our newsletter"
     },
     {
       "type": "header",
-      "content": "t:sections.hubpro_form.settings.form_styling.content"
+      "content": "Form Styling"
     },
     {
       "type": "color",
       "id": "form_background",
-      "label": "t:sections.hubpro_form.settings.form_background.label",
+      "label": "Form Background Color",
       "default": "#ffffff"
     },
     {
@@ -1017,7 +1017,7 @@
       "max": 20,
       "step": 1,
       "unit": "px",
-      "label": "t:sections.hubpro_form.settings.form_border_radius.label",
+      "label": "Form Border Radius",
       "default": 8
     },
     {
@@ -1027,7 +1027,7 @@
       "max": 800,
       "step": 50,
       "unit": "px",
-      "label": "t:sections.hubpro_form.settings.form_max_width.label",
+      "label": "Form Max Width",
       "default": 600
     },
     {
@@ -1037,36 +1037,36 @@
       "max": 64,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.hubpro_form.settings.form_padding.label",
+      "label": "Form Padding",
       "default": 32
     },
     {
       "type": "checkbox",
       "id": "form_shadow",
-      "label": "t:sections.hubpro_form.settings.form_shadow.label",
+      "label": "Form Shadow",
       "default": true
     },
     {
       "type": "header",
-      "content": "t:sections.hubpro_form.settings.field_styling.content"
+      "content": "Field Styling"
     },
     {
       "type": "text",
       "id": "field_classes",
-      "label": "t:sections.hubpro_form.settings.field_classes.label",
+      "label": "Field CSS Classes",
       "default": "form-control",
-      "info": "t:sections.hubpro_form.settings.field_classes.info"
+      "info": "Add custom CSS classes to form fields (e.g., 'input--large field--rounded')"
     },
     {
       "type": "color",
       "id": "field_border_color",
-      "label": "t:sections.hubpro_form.settings.field_border_color.label",
+      "label": "Field Border Color",
       "default": "#cccccc"
     },
     {
       "type": "color",
       "id": "field_focus_color",
-      "label": "t:sections.hubpro_form.settings.field_focus_color.label",
+      "label": "Field Focus Color",
       "default": "#0066cc"
     },
     {
@@ -1076,7 +1076,7 @@
       "max": 12,
       "step": 1,
       "unit": "px",
-      "label": "t:sections.hubpro_form.settings.field_border_radius.label",
+      "label": "Field Border Radius",
       "default": 4
     },
     {
@@ -1086,7 +1086,7 @@
       "max": 20,
       "step": 2,
       "unit": "px",
-      "label": "t:sections.hubpro_form.settings.field_padding.label",
+      "label": "Field Padding",
       "default": 12
     },
     {
@@ -1096,7 +1096,7 @@
       "max": 18,
       "step": 1,
       "unit": "px",
-      "label": "t:sections.hubpro_form.settings.field_font_size.label",
+      "label": "Field Font Size",
       "default": 14
     },
     {
@@ -1106,17 +1106,17 @@
       "max": 32,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.hubpro_form.settings.field_spacing.label",
+      "label": "Field Spacing",
       "default": 20
     },
     {
       "type": "header",
-      "content": "t:sections.hubpro_form.settings.label_styling.content"
+      "content": "Label Styling"
     },
     {
       "type": "color",
       "id": "label_color",
-      "label": "t:sections.hubpro_form.settings.label_color.label",
+      "label": "Label Color",
       "default": "#000000"
     },
     {
@@ -1126,7 +1126,7 @@
       "max": 18,
       "step": 1,
       "unit": "px",
-      "label": "t:sections.hubpro_form.settings.label_font_size.label",
+      "label": "Label Font Size",
       "default": 14
     },
     {
@@ -1135,63 +1135,63 @@
       "options": [
         {
           "value": "400",
-          "label": "t:sections.all.typography.font_weight.normal"
+          "label": "Normal"
         },
         {
           "value": "500",
-          "label": "t:sections.all.typography.font_weight.medium"
+          "label": "Medium"
         },
         {
           "value": "600",
-          "label": "t:sections.all.typography.font_weight.semi_bold"
+          "label": "Semi Bold"
         },
         {
           "value": "700",
-          "label": "t:sections.all.typography.font_weight.bold"
+          "label": "Bold"
         }
       ],
       "default": "500",
-      "label": "t:sections.hubpro_form.settings.label_font_weight.label"
+      "label": "Label Font Weight"
     },
     {
       "type": "color",
       "id": "required_color",
-      "label": "t:sections.hubpro_form.settings.required_color.label",
+      "label": "Required Asterisk Color",
       "default": "#ff0000"
     },
     {
       "type": "header",
-      "content": "t:sections.hubpro_form.settings.button_styling.content"
+      "content": "Button Styling"
     },
     {
       "type": "text",
       "id": "button_text",
-      "label": "t:sections.hubpro_form.settings.button_text.label",
+      "label": "Button Text",
       "default": "Subscribe Now"
     },
     {
       "type": "text",
       "id": "button_classes",
-      "label": "t:sections.hubpro_form.settings.button_classes.label",
+      "label": "Button CSS Classes",
       "default": "btn btn-primary",
-      "info": "t:sections.hubpro_form.settings.button_classes.info"
+      "info": "Add custom CSS classes to the submit button (e.g., 'btn--large btn--rounded')"
     },
     {
       "type": "color",
       "id": "button_background",
-      "label": "t:sections.hubpro_form.settings.button_background.label",
+      "label": "Button Background Color",
       "default": "#BB9F4D"
     },
     {
       "type": "color",
       "id": "button_hover_background",
-      "label": "t:sections.hubpro_form.settings.button_hover_background.label",
+      "label": "Button Hover Background Color",
       "default": "#a08a42"
     },
     {
       "type": "color",
       "id": "button_color",
-      "label": "t:sections.hubpro_form.settings.button_color.label",
+      "label": "Button Text Color",
       "default": "#ffffff"
     },
     {
@@ -1201,7 +1201,7 @@
       "max": 20,
       "step": 1,
       "unit": "px",
-      "label": "t:sections.hubpro_form.settings.button_font_size.label",
+      "label": "Button Font Size",
       "default": 14
     },
     {
@@ -1211,7 +1211,7 @@
       "max": 20,
       "step": 2,
       "unit": "px",
-      "label": "t:sections.hubpro_form.settings.button_padding_vertical.label",
+      "label": "Button Vertical Padding",
       "default": 12
     },
     {
@@ -1221,7 +1221,7 @@
       "max": 40,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.hubpro_form.settings.button_padding_horizontal.label",
+      "label": "Button Horizontal Padding",
       "default": 24
     },
     {
@@ -1231,38 +1231,38 @@
       "max": 12,
       "step": 1,
       "unit": "px",
-      "label": "t:sections.hubpro_form.settings.button_border_radius.label",
+      "label": "Button Border Radius",
       "default": 4
     },
     {
       "type": "checkbox",
       "id": "button_full_width",
-      "label": "t:sections.hubpro_form.settings.button_full_width.label",
+      "label": "Full Width Button",
       "default": false
     },
     {
       "type": "header",
-      "content": "t:sections.hubpro_form.settings.header_styling.content"
+      "content": "Header Styling"
     },
     {
       "type": "color",
       "id": "header_color",
-      "label": "t:sections.hubpro_form.settings.header_color.label",
+      "label": "Header Text Color",
       "default": "#000000"
     },
     {
       "type": "header",
-      "content": "t:sections.hubpro_form.settings.additional_classes.content"
+      "content": "Advanced"
     },
     {
       "type": "text",
       "id": "form_classes",
-      "label": "t:sections.hubpro_form.settings.form_classes.label",
-      "info": "t:sections.hubpro_form.settings.form_classes.info"
+      "label": "Form CSS Classes",
+      "info": "Add custom CSS classes to the form element (e.g., 'form--styled custom-form')"
     },
     {
       "type": "header",
-      "content": "t:sections.all.spacing"
+      "content": "Section Spacing"
     },
     {
       "type": "range",
@@ -1271,7 +1271,7 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_top",
+      "label": "Top Padding",
       "default": 36
     },
     {
@@ -1281,13 +1281,13 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "t:sections.all.padding.padding_bottom",
+      "label": "Bottom Padding",
       "default": 36
     }
   ],
   "presets": [
     {
-      "name": "t:sections.hubpro_form.presets.name"
+      "name": "HubPRO Form"
     }
   ]
 }

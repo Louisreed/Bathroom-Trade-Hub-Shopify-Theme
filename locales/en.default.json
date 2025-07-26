@@ -598,19 +598,6 @@
       "send_on_label": "Send on (optional)"
     }
   },
-  "forms": {
-    "first_name": "First Name",
-    "last_name": "Last Name", 
-    "company": "Company",
-    "email": "Email Address",
-    "password": "Password",
-    "confirm_password": "Confirm Password",
-    "address1": "Address Line 1",
-    "city": "City",
-    "country": "Country",
-    "zip": "Postcode",
-    "phone": "Phone Number"
-  },
   "date_formats": {
     "month_day_year": "%b %d, %Y"
   }
