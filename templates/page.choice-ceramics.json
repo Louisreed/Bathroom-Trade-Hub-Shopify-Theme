@@ -32,6 +32,84 @@
         "rounded": false
       }
     },
+    "collection_list_AaGA7N": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_FgkH3E": {
+          "type": "collection",
+          "settings": {
+            "collection": "ramsay",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_yPfFKc": {
+          "type": "collection",
+          "settings": {
+            "collection": "milo",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_fA68PQ": {
+          "type": "collection",
+          "settings": {
+            "collection": "baron",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_FgkH3E",
+        "collection_yPfFKc",
+        "collection_fA68PQ"
+      ],
+      "name": "t:sections.collection-list.name",
+      "settings": {
+        "columns": 5,
+        "carousel_on_desktop": false,
+        "image_type": "collection",
+        "image_ratio": "square",
+        "show_products_count": true,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
     "rich_text_KBAVRK": {
       "type": "rich-text",
       "blocks": {
@@ -596,95 +674,17 @@
         "full_width": false,
         "rounded": false
       }
-    },
-    "collection_list_AaGA7N": {
-      "type": "collection-list",
-      "blocks": {
-        "collection_FgkH3E": {
-          "type": "collection",
-          "settings": {
-            "collection": "ramsay",
-            "title": "",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_yPfFKc": {
-          "type": "collection",
-          "settings": {
-            "collection": "milo",
-            "title": "",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_fA68PQ": {
-          "type": "collection",
-          "settings": {
-            "collection": "baron",
-            "title": "",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        }
-      },
-      "block_order": [
-        "collection_FgkH3E",
-        "collection_yPfFKc",
-        "collection_fA68PQ"
-      ],
-      "name": "t:sections.collection-list.name",
-      "settings": {
-        "columns": 5,
-        "carousel_on_desktop": false,
-        "image_type": "collection",
-        "image_ratio": "square",
-        "show_products_count": true,
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "heading": "",
-        "heading_size": "title-md",
-        "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "",
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 72,
-        "padding_bottom": 72,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
-      }
     }
   },
   "order": [
     "main-page",
+    "collection_list_AaGA7N",
     "rich_text_KBAVRK",
     "17157682575ad8f603",
     "collection_list_kg7KnE",
     "image_with_text_akrF6A",
     "173176303439daeef7",
     "collection_list_rN7xKg",
-    "collection_list_49gCqq",
-    "collection_list_AaGA7N"
+    "collection_list_49gCqq"
   ]
 }
