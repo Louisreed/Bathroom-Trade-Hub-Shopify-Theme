@@ -1,58 +1,61 @@
 {%- comment -%}
   HubPRO Membership Form Section
-  Raw HTML form with customizable styling overrides
+  Renders a third-party membership form with comprehensive styling controls
+
+  @param {string} form_classes - Additional CSS classes for the form
+  @param {string} field_classes - CSS classes for form fields
+  @param {string} button_classes - CSS classes for the submit button
 {%- endcomment -%}
 
 {%- liquid
-  assign form_id = 'HubProForm-' | append: section.id
+  assign form_classes = section.settings.form_classes | default: ''
+  assign field_classes = section.settings.field_classes | default: 'form-control'
+  assign button_classes = section.settings.button_classes | default: 'btn btn-primary'
+  assign container_width = section.settings.container_width | default: 'page-width'
 -%}
 
 <style>
   #shopify-section-{{ section.id }} {
     --section-padding-top: {{ section.settings.padding_top }}px;
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
-    --section-background-color: {{ section.settings.section_background_color | default: 'transparent' }};
-    --form-text-color: {{ section.settings.text_color | default: 'rgba(18,18,18,1)' }};
-    --form-border-color: {{ section.settings.border_color | default: '#cccccc' }};
-    --form-background-color: {{ section.settings.background_color | default: 'rgba(255,255,255,1)' }};
+    --form-background: {{ section.settings.form_background }};
+    --form-border-radius: {{ section.settings.form_border_radius }}px;
+    --form-max-width: {{ section.settings.form_max_width }}px;
+    --form-padding: {{ section.settings.form_padding }}px;
+    --field-border-color: {{ section.settings.field_border_color }};
+    --field-border-radius: {{ section.settings.field_border_radius }}px;
+    --field-padding: {{ section.settings.field_padding }}px;
+    --field-font-size: {{ section.settings.field_font_size }}px;
+    --label-color: {{ section.settings.label_color }};
+    --label-font-size: {{ section.settings.label_font_size }}px;
+    --label-font-weight: {{ section.settings.label_font_weight }};
+    --button-background: {{ section.settings.button_background }};
+    --button-color: {{ section.settings.button_color }};
+    --button-font-size: {{ section.settings.button_font_size }}px;
+    --button-padding: {{ section.settings.button_padding_vertical }}px {{ section.settings.button_padding_horizontal }}px;
+    --button-border-radius: {{ section.settings.button_border_radius }}px;
+    --button-hover-background: {{ section.settings.button_hover_background }};
+    --required-color: {{ section.settings.required_color }};
+    --header-color: {{ section.settings.header_color }};
   }
 
-  #shopify-section-{{ section.id }} .section {
-    background-color: var(--section-background-color) !important;
+  .hubpro-form-section {
+    padding-top: var(--section-padding-top);
+    padding-bottom: var(--section-padding-bottom);
   }
 
-  .hubpro-membership-form {
-    max-width: {{ section.settings.form_width }}px;
+  .hubpro-form-container {
+    background: var(--form-background);
+    border-radius: var(--form-border-radius);
+    max-width: var(--form-max-width);
     margin: 0 auto;
-    padding: {{ section.settings.form_padding }}px;
-    background-color: var(--form-background-color);
-    {% if section.settings.form_border_radius > 0 %}
-      border-radius: {{ section.settings.form_border_radius }}px;
-    {% endif %}
+    padding: var(--form-padding);
     {% if section.settings.form_shadow %}
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     {% endif %}
   }
 
-  /* Override styling for raw HTML form content */
-  .hubpro-membership-form .aaa-membership-form-container {
-    margin-bottom: {{ section.settings.field_spacing }}px;
-  }
-
-  .hubpro-membership-form .form-heading {
-    text-align: {{ section.settings.heading_alignment }};
-    margin-bottom: {{ section.settings.heading_spacing }}px;
-    color: var(--form-text-color);
-  }
-
-  .hubpro-membership-form .form-divider {
-    border: none;
-    height: 1px;
-    background-color: var(--form-border-color);
-    margin: {{ section.settings.divider_spacing }}px 0;
-  }
-
-  /* Custom styling for AAA generated forms */
+  /* Form field overrides */
   #shopify-section-{{ section.id }} .aaamembership_form input[type="text"],
   #shopify-section-{{ section.id }} .aaamembership_form input[type="search"],
   #shopify-section-{{ section.id }} .aaamembership_form input[type="password"],
@@ -64,567 +67,1202 @@
   #shopify-section-{{ section.id }} .aaamembership_form select {
     width: 100% !important;
     margin: 0 !important;
-    padding: {{ section.settings.input_padding }}px !important;
-    border: 1px solid var(--form-border-color) !important;
-    border-radius: {{ section.settings.input_border_radius }}px !important;
-    font-size: {{ section.settings.input_font_size }}px !important;
-    background-color: #ffffff !important;
+    border: 1px solid var(--field-border-color) !important;
+    border-radius: var(--field-border-radius) !important;
+    padding: var(--field-padding) !important;
+    font-size: var(--field-font-size) !important;
+    {% if section.settings.field_focus_color %}
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    {% endif %}
   }
 
-  #shopify-section-{{ section.id }} .aaamembership_form input:focus {
+  {% if section.settings.field_focus_color %}
+  #shopify-section-{{ section.id }} .aaamembership_form input:focus,
+  #shopify-section-{{ section.id }} .aaamembership_form textarea:focus,
+  #shopify-section-{{ section.id }} .aaamembership_form select:focus {
+    border-color: {{ section.settings.field_focus_color }} !important;
+    box-shadow: 0 0 0 2px rgba({{ section.settings.field_focus_color | color_extract: 'red' }}, {{ section.settings.field_focus_color | color_extract: 'green' }}, {{ section.settings.field_focus_color | color_extract: 'blue' }}, 0.2) !important;
     outline: none !important;
-    border-color: {{ section.settings.focus_color | default: '#007cba' }} !important;
   }
+  {% endif %}
 
+  /* Label styling */
   #shopify-section-{{ section.id }} .aaamembership_form label {
-    display: block !important;
+    color: var(--label-color) !important;
+    font-size: var(--label-font-size) !important;
+    font-weight: var(--label-font-weight) !important;
     margin-bottom: 8px !important;
-    font-weight: {{ section.settings.label_font_weight }} !important;
-    font-size: {{ section.settings.label_font_size }}px !important;
-    color: var(--form-text-color) !important;
+    display: block !important;
   }
 
+  /* Required asterisk styling */
+  #shopify-section-{{ section.id }} .aaamembership_form .required {
+    color: var(--required-color) !important;
+  }
+
+  /* Button styling */
+  #shopify-section-{{ section.id }} .aaamembership_form .membership-submit button {
+    background-color: var(--button-background) !important;
+    color: var(--button-color) !important;
+    font-size: var(--button-font-size) !important;
+    padding: var(--button-padding) !important;
+    border-radius: var(--button-border-radius) !important;
+    border: none !important;
+    cursor: pointer !important;
+    transition: background-color 0.2s ease !important;
+    {% if section.settings.button_full_width %}
+      width: 100% !important;
+    {% endif %}
+  }
+
+  #shopify-section-{{ section.id }} .aaamembership_form .membership-submit button:hover {
+    background-color: var(--button-hover-background) !important;
+  }
+
+  /* Header styling */
+  #shopify-section-{{ section.id }} .aaamembership_form .header {
+    color: var(--header-color) !important;
+  }
+
+  /* Form group spacing */
   #shopify-section-{{ section.id }} .aaamembership_form .form-group {
     margin-bottom: {{ section.settings.field_spacing }}px !important;
   }
 
-  #shopify-section-{{ section.id }} .aaamembership_form .membership-submit button {
-    background-color: {{ section.settings.button_background_color | default: '#BB9F4D' }} !important;
-    color: {{ section.settings.button_text_color | default: '#FFFFFF' }} !important;
-    font-size: {{ section.settings.button_font_size | default: '16' }}px !important;
-    font-weight: {{ section.settings.button_font_weight }} !important;
-    padding: {{ section.settings.button_padding }}px !important;
-    border-radius: {{ section.settings.button_border_radius }}px !important;
-    border: none !important;
-    cursor: pointer !important;
-    width: 100% !important;
-    transition: opacity 0.3s ease !important;
+  /* Phone number special styling */
+  #shopify-section-{{ section.id }} .aaamembership_form .aaa-customer-phone-number-country {
+    width: 49% !important;
+    float: left !important;
+    margin-left: 1% !important;
+    margin-right: 1% !important;
   }
 
-  #shopify-section-{{ section.id }} .aaamembership_form .membership-submit button:hover {
-    opacity: 0.9 !important;
+  /* Checkbox styling */
+  #shopify-section-{{ section.id }} .aaamembership_form .checkbox {
+    width: auto !important;
+    margin-right: 8px !important;
   }
 
-  #shopify-section-{{ section.id }} .aaamembership_form .required {
-    color: #e74c3c !important;
-  }
+  /* Responsive adjustments */
+  @media screen and (max-width: 749px) {
+    .hubpro-form-container {
+      padding: calc(var(--form-padding) * 0.75);
+    }
 
-  /* Hide AAA-generated hardcoded headings */
-  #shopify-section-{{ section.id }} .aaamembership_form h1.header,
-  #shopify-section-{{ section.id }} .aaamembership_form h3.header,
-  #shopify-section-{{ section.id }} .aaamembership_form .aaadivider {
-    display: none !important;
+    #shopify-section-{{ section.id }} .aaamembership_form input,
+    #shopify-section-{{ section.id }} .aaamembership_form textarea,
+    #shopify-section-{{ section.id }} .aaamembership_form select {
+      font-size: calc(var(--field-font-size) * 0.9) !important;
+    }
   }
 </style>
 
-<div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}">
-  <div class="page-width{% if section.settings.narrow %} page-width--narrow{% endif %} relative">
-    <div class="hubpro-membership-form">
-      {%- comment -%} Form Heading {%- endcomment -%}
-      {%- if section.settings.show_heading and section.settings.form_heading != blank -%}
-        <{{ section.settings.heading_tag }} class="form-heading">
-          {{ section.settings.form_heading | escape }}
-        </{{ section.settings.heading_tag }}>
-      {%- endif -%}
+<div class="hubpro-form-section color-{{ section.settings.color_scheme }}">
+  <div class="{{ container_width }}">
+    {% if section.settings.heading != blank %}
+      <div class="section-header text-center">
+        <h2 class="section-heading">{{ section.settings.heading }}</h2>
+        {% if section.settings.subheading != blank %}
+          <p class="section-subheading">{{ section.settings.subheading }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
 
-      {%- comment -%} Form Divider {%- endcomment -%}
-      {%- if section.settings.show_divider -%}
-        <hr class="form-divider">
-      {%- endif -%}
-
-      {%- comment -%} Form Subheading {%- endcomment -%}
-      {%- if section.settings.show_subheading and section.settings.form_subheading != blank -%}
-        <h3 class="form-subheading" style="color: var(--form-text-color);">
-          {{ section.settings.form_subheading | escape }}
-        </h3>
-      {%- endif -%}
-
-      {%- comment -%} Raw HTML Form Content {%- endcomment -%}
-      {%- if section.settings.raw_form_html != blank -%}
-        <div class="aaa-membership-form-container">
-          {{ section.settings.raw_form_html }}
-        </div>
-      {%- else -%}
-        <div class="form-placeholder" style="padding: 40px; text-align: center; border: 2px dashed #ccc; color: #999;">
-          <p>Please paste your raw form HTML in the "Raw Form HTML" setting above.</p>
-        </div>
-      {%- endif -%}
-
-      {%- comment -%} Privacy Notice {%- endcomment -%}
-      {%- if section.settings.show_privacy_notice and section.settings.privacy_notice_text != blank -%}
-        <div
-          class="form-privacy"
-          style="text-align: {{ section.settings.privacy_alignment }}; margin-top: {{ section.settings.field_spacing }}px;"
+    <div class="hubpro-form-container">
+      <form
+        method="post"
+        action=""
+        class="aaamembership_form aaa-form-null {{ form_classes }}"
+        enctype="multipart/form-data"
+      >
+        <!-- Hidden form configuration fields -->
+        <input type="hidden" name="container_id" value="">
+        <input type="hidden" name="form_id" value="{{ section.settings.form_id | default: '13451' }}">
+        <input
+          type="hidden"
+          name="form_domain"
+          value="{{ section.settings.form_domain | default: 'ab97df-6.myshopify.com' }}"
         >
-          <div
-            class="privacy-notice rte"
-            style="font-size: {{ section.settings.privacy_font_size }}px; color: var(--form-text-color); opacity: 0.8;"
-          >
-            {{ section.settings.privacy_notice_text }}
+        <input
+          type="hidden"
+          name=""
+          value="{{ section.settings.success_message | default: 'Thank you, we will be in touch soon.' }}"
+          class="success_msg"
+        >
+        <input
+          type="hidden"
+          name=""
+          value="{{ section.settings.password_tooltip | default: 'This password is for new user only, old user can use their existing password to login.' }}"
+          class="password_tooltip_text_lang"
+        >
+        <input
+          type="hidden"
+          name=""
+          value="{{ section.settings.thank_you_url | default: 'https://bathroomtradehub.co.uk/pages/hubpro-thank-you-for-signing-up' }}"
+          class="aaa_thankyoupageurl"
+        >
+
+        <!-- Form header -->
+        {% if section.settings.show_form_header %}
+          <div class="">
+            <h1 type="h1" class="header" name="" id="">{{ section.settings.form_title | default: 'HubPRO' }}</h1>
           </div>
+          {% if section.settings.show_divider %}
+            <div class="">
+              <hr type="hr" class="aaadivider" name="" id="">
+            </div>
+          {% endif %}
+          {% if section.settings.form_subtitle != blank %}
+            <div class="">
+              <h3 type="h3" class="header" name="" id="">{{ section.settings.form_subtitle }}</h3>
+            </div>
+          {% endif %}
+        {% endif %}
+
+        <!-- First Name -->
+        {% if section.settings.show_first_name %}
+          <div class="membership-text form-group field-first-name">
+            <label for="first-name" class="membership-text-label">
+              {{ 'forms.first_name' | t }}
+              {% if section.settings.first_name_required -%}
+                <span class="required">*</span>
+              {%- endif %}
+            </label>
+            <input
+              type="text"
+              {% if section.settings.first_name_required %}
+                required=""
+              {% endif %}
+              class="{{ field_classes }}"
+              name="first-name"
+              id="first-name"
+              {% if section.settings.first_name_required %}
+                aria-required="true"
+              {% endif %}
+            >
+          </div>
+        {% endif %}
+
+        <!-- Last Name -->
+        {% if section.settings.show_last_name %}
+          <div class="membership-text form-group field-last-name">
+            <label for="last-name" class="membership-text-label">
+              {{ 'forms.last_name' | t }}
+              {% if section.settings.last_name_required -%}
+                <span class="required">*</span>
+              {%- endif %}
+            </label>
+            <input
+              type="text"
+              {% if section.settings.last_name_required %}
+                required=""
+              {% endif %}
+              class="{{ field_classes }}"
+              name="last-name"
+              id="last-name"
+              {% if section.settings.last_name_required %}
+                aria-required="true"
+              {% endif %}
+            >
+          </div>
+        {% endif %}
+
+        <!-- Company -->
+        {% if section.settings.show_company %}
+          <div class="membership-text form-group field-aaa-customer-company">
+            <label for="aaa-customer-company" class="membership-text-label">
+              {{ 'forms.company' | t }}
+              {% if section.settings.company_required -%}
+                <span class="required">*</span>
+              {%- endif %}
+            </label>
+            <input
+              type="text"
+              {% if section.settings.company_required %}
+                required=""
+              {% endif %}
+              class="{{ field_classes }}"
+              name="aaa-customer-company"
+              id="aaa-customer-company"
+              {% if section.settings.company_required %}
+                aria-required="true"
+              {% endif %}
+            >
+          </div>
+        {% endif %}
+
+        <!-- Email Address -->
+        <div class="membership-email form-group field-replyemail">
+          <label for="replyemail" class="membership-email-label">
+            {{ 'forms.email' | t }}
+            <span class="required">*</span>
+          </label>
+          <input
+            type="email"
+            required=""
+            class="{{ field_classes }}"
+            name="replyemail"
+            id="replyemail"
+            aria-required="true"
+          >
         </div>
-      {%- endif -%}
+
+        <!-- Password -->
+        <div class="membership-password form-group field-customer-password">
+          <label for="customer-password" class="membership-password-label">
+            {{ 'forms.password' | t }}
+            <span class="required">*</span>
+          </label>
+          <input
+            type="password"
+            required=""
+            class="{{ field_classes }}"
+            name="customer-password"
+            id="customer-password"
+            aria-required="true"
+          >
+        </div>
+
+        <!-- Confirm Password -->
+        <div class="membership-password form-group field-aaa-customer-confirm-pass">
+          <label for="aaa-customer-confirm-pass" class="membership-password-label">
+            {{ 'forms.confirm_password' | t }}
+            <span class="required">*</span>
+          </label>
+          <input
+            type="password"
+            required=""
+            class="{{ field_classes }} aaa-customer-confirm-password"
+            name="aaa-customer-confirm-pass"
+            id="aaa-customer-confirm-pass"
+            aria-required="true"
+          >
+        </div>
+
+        <!-- Address -->
+        {% if section.settings.show_address %}
+          <div class="membership-undefined form-group field-aaa-customer-address">
+            <label for="aaa-customer-address" class="membership-textarea-label">
+              {{ 'forms.address1' | t }}
+              {% if section.settings.address_required -%}
+                <span class="required">*</span>
+              {%- endif %}
+            </label>
+            <textarea
+              type="textarea"
+              {% if section.settings.address_required %}
+                required=""
+              {% endif %}
+              rows="1"
+              class="{{ field_classes }}"
+              name="aaa-customer-address"
+              id="aaa-customer-address"
+              {% if section.settings.address_required %}
+                aria-required="true"
+              {% endif -%}
+            ></textarea>
+          </div>
+        {% endif %}
+
+        <!-- City -->
+        {% if section.settings.show_city %}
+          <div class="membership-text form-group field-aaa-customer-city">
+            <label for="aaa-customer-city" class="membership-text-label">
+              {{ 'forms.city' | t }}
+              {% if section.settings.city_required -%}
+                <span class="required">*</span>
+              {%- endif %}
+            </label>
+            <input
+              type="text"
+              {% if section.settings.city_required %}
+                required=""
+              {% endif %}
+              class="{{ field_classes }}"
+              name="aaa-customer-city"
+              id="aaa-customer-city"
+              {% if section.settings.city_required %}
+                aria-required="true"
+              {% endif %}
+            >
+          </div>
+        {% endif %}
+
+        <!-- Country -->
+        {% if section.settings.show_country %}
+          <div class="membership-select form-group field-aaa-form-builder-country">
+            <label for="aaa-form-builder-country" class="membership-select-label">
+              {{ 'forms.country' | t }}
+              {% if section.settings.country_required -%}
+                <span class="required">*</span>
+              {%- endif %}
+            </label>
+            <select
+              type="select"
+              {% if section.settings.country_required %}
+                required=""
+              {% endif %}
+              class="{{ field_classes }}"
+              name="aaa-form-builder-country"
+              id="aaa-form-builder-country"
+              {% if section.settings.country_required %}
+                aria-required="true"
+              {% endif %}
+            >
+              <option value="Canada">Canada</option>
+              <option value="United States">United States</option>
+              <option value="United Kingdom" selected="true">United Kingdom</option>
+              <option value="Afghanistan">Afghanistan</option>
+              <option value="Albania">Albania</option>
+              <option value="Algeria">Algeria</option>
+              <option value="Andorra">Andorra</option>
+              <option value="Angola">Angola</option>
+              <option value="Antigua And Barbuda">Antigua And Barbuda</option>
+              <option value="Argentina">Argentina</option>
+              <option value="Armenia">Armenia</option>
+              <option value="Aruba">Aruba</option>
+              <option value="Australia">Australia</option>
+              <option value="Austria">Austria</option>
+              <option value="Azerbaijan">Azerbaijan</option>
+              <option value="Bahamas">Bahamas</option>
+              <option value="Bahrain">Bahrain</option>
+              <option value="Bangladesh">Bangladesh</option>
+              <option value="Barbados">Barbados</option>
+              <option value="Belarus">Belarus</option>
+              <option value="Belgium">Belgium</option>
+              <option value="Belize">Belize</option>
+              <option value="Benin">Benin</option>
+              <option value="Bermuda">Bermuda</option>
+              <option value="Bhutan">Bhutan</option>
+              <option value="Bolivia">Bolivia</option>
+              <option value="Bosnia And Herzegovina">Bosnia And Herzegovina</option>
+              <option value="Botswana">Botswana</option>
+              <option value="Brazil">Brazil</option>
+              <option value="Brunei">Brunei</option>
+              <option value="Bulgaria">Bulgaria</option>
+              <option value="New Caledonia">New Caledonia</option>
+              <option value="Cambodia">Cambodia</option>
+              <option value="Republic of Cameroon">Republic of Cameroon</option>
+              <option value="Cayman Islands">Cayman Islands</option>
+              <option value="Chile">Chile</option>
+              <option value="china">China</option>
+              <option value="Colombia">Colombia</option>
+              <option value="Comoros">Comoros</option>
+              <option value="Congo">Congo</option>
+              <option value="Congo  The Democratic Republic Of The">Congo, The Democratic Republic Of The</option>
+              <option value="Costa Rica">Costa Rica</option>
+              <option value="Côte d'Ivoire">Côte d'Ivoire</option>
+              <option value="Croatia">Croatia</option>
+              <option value="Curaçao">Curaçao</option>
+              <option value="Cyprus">Cyprus</option>
+              <option value="Czech Republic">Czech Republic</option>
+              <option value="Denmark">Denmark</option>
+              <option value="Dominica">Dominica</option>
+              <option value="Dominican Republic">Dominican Republic</option>
+              <option value="Ecuador">Ecuador</option>
+              <option value="Egypt">Egypt</option>
+              <option value="El Salvador">El Salvador</option>
+              <option value="Estonia">Estonia</option>
+              <option value="Ethiopia">Ethiopia</option>
+              <option value="Equatorial Guinea">Equatorial Guinea</option>
+              <option value="Faroe Islands">Faroe Islands</option>
+              <option value="Fiji">Fiji</option>
+              <option value="Finland">Finland</option>
+              <option value="France">France</option>
+              <option value="Gabon">Gabon</option>
+              <option value="Gambia">Gambia</option>
+              <option value="Georgia">Georgia</option>
+              <option value="Germany">Germany</option>
+              <option value="Ghana">Ghana</option>
+              <option value="French Polynesia">French Polynesia</option>
+              <option value="Gibraltar">Gibraltar</option>
+              <option value="Greece">Greece</option>
+              <option value="Greenland">Greenland</option>
+              <option value="Grenada">Grenada</option>
+              <option value="Guadeloupe">Guadeloupe</option>
+              <option value="Guatemala">Guatemala</option>
+              <option value="Guernsey">Guernsey</option>
+              <option value="Guyana">Guyana</option>
+              <option value="Haiti">Haiti</option>
+              <option value="Honduras">Honduras</option>
+              <option value="Hong Kong">Hong Kong</option>
+              <option value="Hungary">Hungary</option>
+              <option value="Iceland">Iceland</option>
+              <option value="India">India</option>
+              <option value="Indonesia">Indonesia</option>
+              <option value="Ireland">Ireland</option>
+              <option value="Isle Of Man">Isle Of Man</option>
+              <option value="Israel">Israel</option>
+              <option value="Italy">Italy</option>
+              <option value="Jamaica">Jamaica</option>
+              <option value="Japan">Japan</option>
+              <option value="Jersey">Jersey</option>
+              <option value="Jordan">Jordan</option>
+              <option value="Kazakhstan">Kazakhstan</option>
+              <option value="Kenya">Kenya</option>
+              <option value="Kosovo">Kosovo</option>
+              <option value="Kuwait">Kuwait</option>
+              <option value="Kyrgyzstan">Kyrgyzstan</option>
+              <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+              <option value="Latvia">Latvia</option>
+              <option value="Lebanon">Lebanon</option>
+              <option value="Lesotho">Lesotho</option>
+              <option value="Liberia">Liberia</option>
+              <option value="Liechtenstein">Liechtenstein</option>
+              <option value="Lithuania">Lithuania</option>
+              <option value="Luxembourg">Luxembourg</option>
+              <option value="Macao">Macao</option>
+              <option value="Macedonia  Republic Of">Macedonia, Republic Of</option>
+              <option value="Madagascar">Madagascar</option>
+              <option value="Malawi">Malawi</option>
+              <option value="Malaysia">Malaysia</option>
+              <option value="Maldives">Maldives</option>
+              <option value="Malta">Malta</option>
+              <option value="Martinique">Martinique</option>
+              <option value="Mauritius">Mauritius</option>
+              <option value="Mexico">Mexico</option>
+              <option value="Moldova  Republic of">Moldova, Republic of</option>
+              <option value="Monaco">Monaco</option>
+              <option value="Mongolia">Mongolia</option>
+              <option value="Montenegro">Montenegro</option>
+              <option value="Morocco">Morocco</option>
+              <option value="Mozambique">Mozambique</option>
+              <option value="Myanmar">Myanmar</option>
+              <option value="Namibia">Namibia</option>
+              <option value="Nepal">Nepal</option>
+              <option value="Netherlands Antilles">Netherlands Antilles</option>
+              <option value="Netherlands">Netherlands</option>
+              <option value="New Zealand">New Zealand</option>
+              <option value="Nicaragua">Nicaragua</option>
+              <option value="Niger">Niger</option>
+              <option value="Nigeria">Nigeria</option>
+              <option value="Norway">Norway</option>
+              <option value="Oman">Oman</option>
+              <option value="Pakistan">Pakistan</option>
+              <option value="Palestinian Territory  Occupied">Palestinian Territory, Occupied</option>
+              <option value="Panama">Panama</option>
+              <option value="Papua New Guinea">Papua New Guinea</option>
+              <option value="Paraguay">Paraguay</option>
+              <option value="Peru">Peru</option>
+              <option value="Philippines">Philippines</option>
+              <option value="Poland">Poland</option>
+              <option value="Portugal">Portugal</option>
+              <option value="Qatar">Qatar</option>
+              <option value="Reunion">Reunion</option>
+              <option value="Romania">Romania</option>
+              <option value="Russia">Russia</option>
+              <option value="Rwanda">Rwanda</option>
+              <option value="Saint Kitts And Nevis">Saint Kitts And Nevis</option>
+              <option value="Saint Lucia">Saint Lucia</option>
+              <option value="Saint Martin">Saint Martin</option>
+              <option value="Sao Tome And Principe">Sao Tome And Principe</option>
+              <option value="Samoa">Samoa</option>
+              <option value="Saudi Arabia">Saudi Arabia</option>
+              <option value="Senegal">Senegal</option>
+              <option value="Serbia">Serbia</option>
+              <option value="Seychelles">Seychelles</option>
+              <option value="Singapore">Singapore</option>
+              <option value="Sint Maarten">Sint Maarten</option>
+              <option value="Slovakia">Slovakia</option>
+              <option value="Slovenia">Slovenia</option>
+              <option value="Solomon Islands">Solomon Islands</option>
+              <option value="South Africa">South Africa</option>
+              <option value="South Korea">South Korea</option>
+              <option value="Spain">Spain</option>
+              <option value="Sri Lanka">Sri Lanka</option>
+              <option value="St. Vincent">St. Vincent</option>
+              <option value="Sudan">Sudan</option>
+              <option value="Suriname">Suriname</option>
+              <option value="Sweden">Sweden</option>
+              <option value="Switzerland">Switzerland</option>
+              <option value="Syria">Syria</option>
+              <option value="Taiwan">Taiwan</option>
+              <option value="Tanzania  United Republic Of">Tanzania, United Republic Of</option>
+              <option value="Thailand">Thailand</option>
+              <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+              <option value="Tunisia">Tunisia</option>
+              <option value="Turkey">Turkey</option>
+              <option value="Turkmenistan">Turkmenistan</option>
+              <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+              <option value="Uganda">Uganda</option>
+              <option value="Ukraine">Ukraine</option>
+              <option value="United Arab Emirates">United Arab Emirates</option>
+              <option value="Uruguay">Uruguay</option>
+              <option value="Uzbekistan">Uzbekistan</option>
+              <option value="Vanuatu">Vanuatu</option>
+              <option value="Venezuela">Venezuela</option>
+              <option value="Vietnam">Vietnam</option>
+              <option value="Virgin Islands  British">Virgin Islands, British</option>
+              <option value="Yemen">Yemen</option>
+              <option value="Zambia">Zambia</option>
+              <option value="Zimbabwe">Zimbabwe</option>
+              <option value="Aland Islands">Aland Islands</option>
+              <option value="Anguilla">Anguilla</option>
+              <option value="Bouvet Island">Bouvet Island</option>
+              <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+              <option value="Burkina Faso">Burkina Faso</option>
+              <option value="Burundi">Burundi</option>
+              <option value="Cape Verde">Cape Verde</option>
+              <option value="Central African Republic">Central African Republic</option>
+              <option value="Chad">Chad</option>
+              <option value="Christmas Island">Christmas Island</option>
+              <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+              <option value="Cook Islands">Cook Islands</option>
+              <option value="Cuba">Cuba</option>
+              <option value="Djibouti">Djibouti</option>
+              <option value="Eritrea">Eritrea</option>
+              <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+              <option value="French Guiana">French Guiana</option>
+              <option value="French Southern Territories">French Southern Territories</option>
+              <option value="Guinea">Guinea</option>
+              <option value="Guinea Bissau">Guinea Bissau</option>
+              <option value="Heard Island And Mcdonald Islands">Heard Island And Mcdonald Islands</option>
+              <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+              <option value="Iran  Islamic Republic Of">Iran, Islamic Republic Of</option>
+              <option value="Iraq">Iraq</option>
+              <option value="Kiribati">Kiribati</option>
+              <option value="Korea  Democratic People's Republic Of">Korea, Democratic People's Republic Of</option>
+              <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+              <option value="Mali">Mali</option>
+              <option value="Mauritania">Mauritania</option>
+              <option value="Mayotte">Mayotte</option>
+              <option value="Montserrat">Montserrat</option>
+              <option value="Nauru">Nauru</option>
+              <option value="Niue">Niue</option>
+              <option value="Norfolk Island">Norfolk Island</option>
+              <option value="Pitcairn">Pitcairn</option>
+              <option value="Saint Barthélemy">Saint Barthélemy</option>
+              <option value="Saint Helena">Saint Helena</option>
+              <option value="Saint Pierre And Miquelon">Saint Pierre And Miquelon</option>
+              <option value="San Marino">San Marino</option>
+              <option value="Sierra Leone">Sierra Leone</option>
+              <option value="Somalia">Somalia</option>
+              <option value="South Georgia And The South Sandwich Islands">
+                South Georgia And The South Sandwich Islands
+              </option>
+              <option value="Svalbard And Jan Mayen">Svalbard And Jan Mayen</option>
+              <option value="Swaziland">Swaziland</option>
+              <option value="Tajikistan">Tajikistan</option>
+              <option value="Timor Leste">Timor Leste</option>
+              <option value="Togo">Togo</option>
+              <option value="Tokelau">Tokelau</option>
+              <option value="Tonga">Tonga</option>
+              <option value="Tuvalu">Tuvalu</option>
+              <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+              <option value="Wallis And Futuna">Wallis And Futuna</option>
+              <option value="Western Sahara">Western Sahara</option>
+            </select>
+          </div>
+        {% endif %}
+
+        <!-- Postcode -->
+        {% if section.settings.show_postcode %}
+          <div class="membership-text form-group field-aaa-customer-zip-code">
+            <label for="aaa-customer-zip-code" class="membership-text-label">
+              {{ 'forms.zip' | t }}
+              {% if section.settings.postcode_required -%}
+                <span class="required">*</span>
+              {%- endif %}
+            </label>
+            <input
+              type="text"
+              {% if section.settings.postcode_required %}
+                required=""
+              {% endif %}
+              class="{{ field_classes }}"
+              name="aaa-customer-zip-code"
+              id="aaa-customer-zip-code"
+              {% if section.settings.postcode_required %}
+                aria-required="true"
+              {% endif %}
+            >
+          </div>
+        {% endif %}
+
+        <!-- Phone Number -->
+        {% if section.settings.show_phone %}
+          <div class="membership-number form-group field-aaa-customer-phone-number">
+            <label for="aaa-customer-phone-number" class="membership-number-label">
+              {{ 'forms.phone' | t }}
+              {% if section.settings.phone_required -%}
+                <span class="required">*</span>
+              {%- endif %}
+            </label>
+            <input
+              type="number"
+              {% if section.settings.phone_required %}
+                required=""
+              {% endif %}
+              class="{{ field_classes }} aaa-customer-phone-number-class"
+              name="aaa-customer-phone-number"
+              id="aaa-customer-phone-number"
+              {% if section.settings.phone_required %}
+                aria-required="true"
+              {% endif %}
+            >
+            <input
+              type="text"
+              name="aaa-customer-phone-number-country"
+              class="aaa-customer-phone-number-country {{ field_classes }}"
+              placeholder="country code(+1)"
+              value=""
+            >
+          </div>
+        {% endif %}
+
+        <!-- Newsletter Subscription -->
+        {% if section.settings.show_newsletter %}
+          <div class="membership-checkbox form-group field-aaasubscribenewsletter">
+            <input type="checkbox" class="checkbox" name="aaasubscribenewsletter" value="1" id="aaasubscribenewsletter">
+            <label for="aaasubscribenewsletter" class="membership-checkbox-label">
+              {{ section.settings.newsletter_text | default: 'Subscribe to our newsletter' }}
+            </label>
+          </div>
+        {% endif %}
+
+        <!-- Submit Button -->
+        <div class="membership-submit form-group field-button-1497336985158">
+          <button
+            type="submit"
+            class="button-input {{ button_classes }}"
+            name="button-1497336985158"
+            id="button-1497336985158"
+          >
+            {{ section.settings.button_text | default: 'Subscribe Now' }}
+          </button>
+        </div>
+      </form>
     </div>
   </div>
 </div>
 
+<!-- Load the membership script -->
+<script>
+  function isMyMembershipScriptLoaded() {
+    var url = 'https://shopifycdn.aaawebstore.com/membership/appfiles/aaa_membership_script_min_v3.js?shop={{ section.settings.form_domain | default: 'ab97df-6.myshopify.com' }}';
+    var jsFound = 0;
+    var scripts = document.getElementsByTagName('script');
+
+    for (var i = scripts.length; i--;) {
+      if (scripts[i].src == url) {
+        jsFound = 1;
+      }
+    }
+
+    if (!jsFound) {
+      var headTag = document.getElementsByTagName('head')[0];
+      var jqTag = document.createElement('script');
+      jqTag.type = 'text/javascript';
+      jqTag.src = url;
+      jqTag.onload = '';
+      headTag.appendChild(jqTag);
+    }
+  }
+  isMyMembershipScriptLoaded();
+</script>
+
 {% schema %}
 {
-  "name": "HubPRO Form",
-  "class": "hubpro-form-section",
+  "name": "t:sections.hubpro_form.name",
+  "tag": "section",
+  "class": "section",
   "settings": [
     {
       "type": "header",
-      "content": "Form Settings"
+      "content": "t:sections.all.general"
     },
     {
-      "type": "textarea",
-      "id": "raw_form_html",
-      "label": "Raw Form HTML",
-      "info": "Paste your complete form HTML code here. Settings below will override styling but preserve functionality.",
-      "placeholder": "<form method=\"post\" action=\"\" class=\"aaamembership_form\">...your form HTML...</form>",
-      "default": "<form method=\"post\" action=\"\" class=\"aaamembership_form aaa-form-null\" enctype=\"multipart/form-data\"><input type=\"hidden\" name=\"container_id\" value=\"\"><input type=\"hidden\" name=\"form_id\" value=\"13446\"><input type=\"hidden\" name=\"form_domain\" value=\"ab97df-6.myshopify.com\"><input type=\"hidden\" name=\"\" value=\"You are now a HubPro Member!\" class=\"success_msg\"><input type=\"hidden\" name=\"\" value=\"This password is for new user only, old user can use their existing password to login.\" class=\"password_tooltip_text_lang\"><input type=\"hidden\" name=\"\" value=\"https://bathroomtradehub.co.uk/pages/hubpro\" class=\"aaa_thankyoupageurl\"><div class=\"\"><h1 type=\"h1\" class=\"header\" name=\"\" id=\"\" style=\"color: rgb(0, 0, 0);\">HubPRO</h1></div><div class=\"\"><hr type=\"hr\" class=\"aaadivider\" name=\"\" id=\"\"> </div><div class=\"\"><h3 type=\"h3\" class=\"header\" name=\"\" id=\"\" style=\"color: rgb(0, 0, 0);\">Subscribe and get benefits</h3></div><div class=\"membership-text form-group field-first-name\"><label for=\"first-name\" class=\"membership-text-label\" style=\"color: rgb(0, 0, 0);\">First Name <span class=\"required\">*</span> </label> <input type=\"text\" required=\"\" class=\"form-control\" name=\"first-name\" id=\"first-name\" aria-required=\"true\"></div><div class=\"membership-text form-group field-last-name\"><label for=\"last-name\" class=\"membership-text-label\" style=\"color: rgb(0, 0, 0);\">Last Name <span class=\"required\">*</span> </label> <input type=\"text\" required=\"\" class=\"form-control\" name=\"last-name\" id=\"last-name\" aria-required=\"true\"></div><div class=\"membership-email form-group field-replyemail\"><label for=\"replyemail\" class=\"membership-email-label\" style=\"color: rgb(0, 0, 0);\">Email Address <span class=\"required\">*</span> </label> <input type=\"email\" required=\"\" class=\"form-control\" name=\"replyemail\" id=\"replyemail\" aria-required=\"true\"></div><div class=\"membership-text form-group field-aaa-customer-company\"><label for=\"aaa-customer-company\" class=\"membership-text-label\" style=\"color: rgb(0, 0, 0);\">Company <span class=\"required\">*</span> </label> <input type=\"text\" required=\"\" class=\"form-control\" name=\"aaa-customer-company\" id=\"aaa-customer-company\" aria-required=\"true\"></div><div class=\"membership-password form-group field-customer-password\"><label for=\"customer-password\" class=\"membership-password-label\" style=\"color: rgb(0, 0, 0);\">Password <span class=\"required\">*</span> </label> <input type=\"password\" required=\"\" class=\"form-control\" name=\"customer-password\" id=\"customer-password\" aria-required=\"true\"></div><div class=\"membership-password form-group field-aaa-customer-confirm-pass\"><label for=\"aaa-customer-confirm-pass\" class=\"membership-password-label\" style=\"color: rgb(0, 0, 0);\">Confirm Password <span class=\"required\">*</span> </label> <input type=\"password\" required=\"\" class=\"form-control aaa-customer-confirm-password\" name=\"aaa-customer-confirm-pass\" id=\"aaa-customer-confirm-pass\" aria-required=\"true\"></div><div class=\"membership-submit form-group field-button-1497336985158\"><button type=\"submit\" class=\"button-input btn btn-primary\" name=\"button-1497336985158\" style=\"primary\" id=\"button-1497336985158\">Subscribe Now</button></div></form><style type=\"text/css\">.aaamembership_form .membership-submit button { background-color: #BB9F4D  !important; }.aaamembership_form .membership-submit button { color: #FFFFFF  !important; }.aaamembership_form .membership-submit button { font-size: 14px !important; }</style><style>.aaamembership_form input[type=\"text\"], .aaamembership_form input[type=\"search\"], .aaamembership_form input[type=\"password\"], .aaamembership_form input[type=\"email\"], .aaamembership_form input[type=\"file\"], .aaamembership_form input[type=\"number\"], .aaamembership_form input[type=\"tel\"], .aaamembership_form textarea, .aaamembership_form select { width: 100% !important; margin: 0;border: 1px solid #ccc; }</style><script> function isMyMembershipScriptLoaded() { var url = 'https://shopifycdn.aaawebstore.com/membership/appfiles/aaa_membership_script_min_v3.js?shop=ab97df-6.myshopify.com'; var jsFound = 0; var scripts = document.getElementsByTagName('script');  for (var i = scripts.length; i--;) { if (scripts[i].src == url) { jsFound = 1; } } if(!jsFound) { var headTag = document.getElementsByTagName('head')[0]; var jqTag = document.createElement('script'); jqTag.type = 'text/javascript'; jqTag.src = url; jqTag.onload = ''; headTag.appendChild(jqTag); } } isMyMembershipScriptLoaded(); </script>"
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.all.heading.label",
+      "default": "Join HubPRO"
     },
-
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "t:sections.all.subheading.label"
+    },
+    {
+      "type": "select",
+      "id": "container_width",
+      "options": [
+        {
+          "value": "page-width",
+          "label": "t:sections.all.container_width.page_width"
+        },
+        {
+          "value": "page-width page-width--narrow",
+          "label": "t:sections.all.container_width.narrow"
+        },
+        {
+          "value": "page-width--fluid",
+          "label": "t:sections.all.container_width.full_width"
+        }
+      ],
+      "default": "page-width",
+      "label": "t:sections.all.container_width.label"
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "accent-1",
+          "label": "t:sections.all.colors.accent_1.label"
+        },
+        {
+          "value": "accent-2",
+          "label": "t:sections.all.colors.accent_2.label"
+        },
+        {
+          "value": "background-1",
+          "label": "t:sections.all.colors.background_1.label"
+        },
+        {
+          "value": "background-2",
+          "label": "t:sections.all.colors.background_2.label"
+        },
+        {
+          "value": "inverse",
+          "label": "t:sections.all.colors.inverse.label"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.all.colors.label"
+    },
     {
       "type": "header",
-      "content": "Form Content"
+      "content": "t:sections.hubpro_form.settings.form_configuration.content"
+    },
+    {
+      "type": "text",
+      "id": "form_id",
+      "label": "t:sections.hubpro_form.settings.form_id.label",
+      "default": "13451",
+      "info": "t:sections.hubpro_form.settings.form_id.info"
+    },
+    {
+      "type": "text",
+      "id": "form_domain",
+      "label": "t:sections.hubpro_form.settings.form_domain.label",
+      "default": "ab97df-6.myshopify.com",
+      "info": "t:sections.hubpro_form.settings.form_domain.info"
+    },
+    {
+      "type": "text",
+      "id": "success_message",
+      "label": "t:sections.hubpro_form.settings.success_message.label",
+      "default": "Thank you, we will be in touch soon."
+    },
+    {
+      "type": "url",
+      "id": "thank_you_url",
+      "label": "t:sections.hubpro_form.settings.thank_you_url.label",
+      "default": "/pages/hubpro-thank-you-for-signing-up"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.hubpro_form.settings.form_header.content"
     },
     {
       "type": "checkbox",
-      "id": "show_heading",
-      "label": "Show form heading",
+      "id": "show_form_header",
+      "label": "t:sections.hubpro_form.settings.show_form_header.label",
       "default": true
     },
     {
       "type": "text",
-      "id": "form_heading",
-      "label": "Form heading"
+      "id": "form_title",
+      "label": "t:sections.hubpro_form.settings.form_title.label",
+      "default": "HubPRO"
     },
     {
-      "type": "select",
-      "id": "heading_tag",
-      "label": "Heading tag",
-      "options": [
-        { "value": "h1", "label": "H1" },
-        { "value": "h2", "label": "H2" },
-        { "value": "h3", "label": "H3" },
-        { "value": "h4", "label": "H4" }
-      ],
-      "default": "h1"
-    },
-    {
-      "type": "select",
-      "id": "heading_alignment",
-      "label": "Heading alignment",
-      "options": [
-        { "value": "left", "label": "Left" },
-        { "value": "center", "label": "Center" },
-        { "value": "right", "label": "Right" }
-      ],
-      "default": "center"
+      "type": "text",
+      "id": "form_subtitle",
+      "label": "t:sections.hubpro_form.settings.form_subtitle.label",
+      "default": "Subscribe and get benefits"
     },
     {
       "type": "checkbox",
       "id": "show_divider",
-      "label": "Show divider",
+      "label": "t:sections.hubpro_form.settings.show_divider.label",
       "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_subheading",
-      "label": "Show subheading",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "form_subheading",
-      "label": "Form subheading"
     },
     {
       "type": "header",
-      "content": "Form Fields"
+      "content": "t:sections.hubpro_form.settings.form_fields.content"
     },
     {
       "type": "checkbox",
       "id": "show_first_name",
-      "label": "Show first name field",
+      "label": "t:sections.hubpro_form.settings.show_first_name.label",
       "default": true
-    },
-    {
-      "type": "text",
-      "id": "first_name_label",
-      "label": "First name label",
-      "default": "First Name"
     },
     {
       "type": "checkbox",
       "id": "first_name_required",
-      "label": "First name required",
+      "label": "t:sections.hubpro_form.settings.first_name_required.label",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "show_last_name",
-      "label": "Show last name field",
+      "label": "t:sections.hubpro_form.settings.show_last_name.label",
       "default": true
-    },
-    {
-      "type": "text",
-      "id": "last_name_label",
-      "label": "Last name label",
-      "default": "Last Name"
     },
     {
       "type": "checkbox",
       "id": "last_name_required",
-      "label": "Last name required",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_email",
-      "label": "Show email field",
-      "default": true
-    },
-    {
-      "type": "text",
-      "id": "email_label",
-      "label": "Email label",
-      "default": "Email Address"
-    },
-    {
-      "type": "checkbox",
-      "id": "email_required",
-      "label": "Email required",
+      "label": "t:sections.hubpro_form.settings.last_name_required.label",
       "default": true
     },
     {
       "type": "checkbox",
       "id": "show_company",
-      "label": "Show company field",
+      "label": "t:sections.hubpro_form.settings.show_company.label",
       "default": true
-    },
-    {
-      "type": "text",
-      "id": "company_label",
-      "label": "Company label",
-      "default": "Company"
     },
     {
       "type": "checkbox",
       "id": "company_required",
-      "label": "Company required",
+      "label": "t:sections.hubpro_form.settings.company_required.label",
       "default": true
     },
     {
       "type": "checkbox",
-      "id": "show_password",
-      "label": "Show password field",
+      "id": "show_address",
+      "label": "t:sections.hubpro_form.settings.show_address.label",
       "default": true
     },
     {
-      "type": "text",
-      "id": "password_label",
-      "label": "Password label",
-      "default": "Password"
-    },
-    {
       "type": "checkbox",
-      "id": "password_required",
-      "label": "Password required",
+      "id": "address_required",
+      "label": "t:sections.hubpro_form.settings.address_required.label",
       "default": true
     },
     {
-      "type": "text",
-      "id": "submit_button_text",
-      "label": "Submit button text",
-      "default": "Subscribe Now"
-    },
-    {
-      "type": "header",
-      "content": "Form Processing"
-    },
-    {
-      "type": "text",
-      "id": "success_message",
-      "label": "Success message",
-      "default": "Thank You!"
-    },
-    {
-      "type": "text",
-      "id": "password_tooltip",
-      "label": "Password tooltip text",
-      "default": "undefined"
-    },
-    {
-      "type": "url",
-      "id": "thankyou_url",
-      "label": "Thank you page URL",
-      "info": "Optional redirect URL after form submission"
-    },
-    {
-      "type": "header",
-      "content": "Privacy Notice"
+      "type": "checkbox",
+      "id": "show_city",
+      "label": "t:sections.hubpro_form.settings.show_city.label",
+      "default": true
     },
     {
       "type": "checkbox",
-      "id": "show_privacy_notice",
-      "label": "Show privacy notice",
+      "id": "city_required",
+      "label": "t:sections.hubpro_form.settings.city_required.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_country",
+      "label": "t:sections.hubpro_form.settings.show_country.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "country_required",
+      "label": "t:sections.hubpro_form.settings.country_required.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_postcode",
+      "label": "t:sections.hubpro_form.settings.show_postcode.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "postcode_required",
+      "label": "t:sections.hubpro_form.settings.postcode_required.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_phone",
+      "label": "t:sections.hubpro_form.settings.show_phone.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "phone_required",
+      "label": "t:sections.hubpro_form.settings.phone_required.label",
       "default": false
     },
     {
-      "type": "textarea",
-      "id": "privacy_notice_text",
-      "label": "Privacy notice text",
-      "info": "Legal text displayed below the form"
+      "type": "checkbox",
+      "id": "show_newsletter",
+      "label": "t:sections.hubpro_form.settings.show_newsletter.label",
+      "default": true
     },
     {
-      "type": "select",
-      "id": "privacy_alignment",
-      "label": "Privacy notice alignment",
-      "options": [
-        { "value": "left", "label": "Left" },
-        { "value": "center", "label": "Center" },
-        { "value": "right", "label": "Right" }
-      ],
-      "default": "center"
-    },
-    {
-      "type": "range",
-      "id": "privacy_font_size",
-      "label": "Privacy notice font size",
-      "min": 10,
-      "max": 18,
-      "step": 1,
-      "default": 12,
-      "unit": "px"
+      "type": "text",
+      "id": "newsletter_text",
+      "label": "t:sections.hubpro_form.settings.newsletter_text.label",
+      "default": "Subscribe to our newsletter"
     },
     {
       "type": "header",
-      "content": "Form Layout"
+      "content": "t:sections.hubpro_form.settings.form_styling.content"
     },
     {
-      "type": "range",
-      "id": "form_width",
-      "label": "Form width",
-      "min": 300,
-      "max": 800,
-      "step": 10,
-      "default": 600,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "form_padding",
-      "label": "Form padding",
-      "min": 0,
-      "max": 60,
-      "step": 4,
-      "default": 32,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "field_spacing",
-      "label": "Field spacing",
-      "min": 8,
-      "max": 40,
-      "step": 2,
-      "default": 20,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "heading_spacing",
-      "label": "Heading spacing",
-      "min": 8,
-      "max": 40,
-      "step": 2,
-      "default": 24,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "divider_spacing",
-      "label": "Divider spacing",
-      "min": 8,
-      "max": 40,
-      "step": 2,
-      "default": 16,
-      "unit": "px"
-    },
-    {
-      "type": "checkbox",
-      "id": "form_shadow",
-      "label": "Form shadow",
-      "default": false
+      "type": "color",
+      "id": "form_background",
+      "label": "t:sections.hubpro_form.settings.form_background.label",
+      "default": "#ffffff"
     },
     {
       "type": "range",
       "id": "form_border_radius",
-      "label": "Form border radius",
       "min": 0,
       "max": 20,
       "step": 1,
-      "default": 8,
-      "unit": "px"
+      "unit": "px",
+      "label": "t:sections.hubpro_form.settings.form_border_radius.label",
+      "default": 8
+    },
+    {
+      "type": "range",
+      "id": "form_max_width",
+      "min": 400,
+      "max": 800,
+      "step": 50,
+      "unit": "px",
+      "label": "t:sections.hubpro_form.settings.form_max_width.label",
+      "default": 600
+    },
+    {
+      "type": "range",
+      "id": "form_padding",
+      "min": 16,
+      "max": 64,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.hubpro_form.settings.form_padding.label",
+      "default": 32
+    },
+    {
+      "type": "checkbox",
+      "id": "form_shadow",
+      "label": "t:sections.hubpro_form.settings.form_shadow.label",
+      "default": true
     },
     {
       "type": "header",
-      "content": "Input Styling"
+      "content": "t:sections.hubpro_form.settings.field_styling.content"
     },
     {
-      "type": "range",
-      "id": "input_padding",
-      "label": "Input padding",
-      "min": 8,
-      "max": 20,
-      "step": 1,
-      "default": 12,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "input_border_radius",
-      "label": "Input border radius",
-      "min": 0,
-      "max": 12,
-      "step": 1,
-      "default": 4,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "input_font_size",
-      "label": "Input font size",
-      "min": 12,
-      "max": 18,
-      "step": 1,
-      "default": 14,
-      "unit": "px"
-    },
-    {
-      "type": "header",
-      "content": "Label Styling"
-    },
-    {
-      "type": "range",
-      "id": "label_font_size",
-      "label": "Label font size",
-      "min": 12,
-      "max": 18,
-      "step": 1,
-      "default": 14,
-      "unit": "px"
-    },
-    {
-      "type": "select",
-      "id": "label_font_weight",
-      "label": "Label font weight",
-      "options": [
-        { "value": "normal", "label": "Normal" },
-        { "value": "bold", "label": "Bold" },
-        { "value": "500", "label": "Medium" },
-        { "value": "600", "label": "Semi-bold" }
-      ],
-      "default": "normal"
-    },
-    {
-      "type": "header",
-      "content": "Button Styling"
+      "type": "text",
+      "id": "field_classes",
+      "label": "t:sections.hubpro_form.settings.field_classes.label",
+      "default": "form-control",
+      "info": "t:sections.hubpro_form.settings.field_classes.info"
     },
     {
       "type": "color",
-      "id": "button_background_color",
-      "label": "Button background color",
-      "default": "#BB9F4D"
-    },
-    {
-      "type": "color",
-      "id": "button_text_color",
-      "label": "Button text color",
-      "default": "#FFFFFF"
-    },
-    {
-      "type": "range",
-      "id": "button_padding",
-      "label": "Button padding",
-      "min": 8,
-      "max": 24,
-      "step": 1,
-      "default": 16,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "button_border_radius",
-      "label": "Button border radius",
-      "min": 0,
-      "max": 100,
-      "step": 1,
-      "default": 100,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "button_font_size",
-      "label": "Button font size",
-      "min": 12,
-      "max": 20,
-      "step": 1,
-      "default": 16,
-      "unit": "px"
-    },
-    {
-      "type": "select",
-      "id": "button_font_weight",
-      "label": "Button font weight",
-      "options": [
-        { "value": "normal", "label": "Normal" },
-        { "value": "bold", "label": "Bold" },
-        { "value": "500", "label": "Medium" },
-        { "value": "600", "label": "Semi-bold" }
-      ],
-      "default": "bold"
-    },
-    {
-      "type": "header",
-      "content": "Colors"
-    },
-    {
-      "type": "color",
-      "id": "text_color",
-      "label": "Text color",
-      "default": "rgba(18,18,18,1)"
-    },
-    {
-      "type": "color",
-      "id": "section_background_color",
-      "label": "Section background color",
-      "info": "Background color for the entire section area"
-    },
-    {
-      "type": "color",
-      "id": "background_color",
-      "label": "Form background color",
-      "default": "rgba(255,255,255,1)"
-    },
-    {
-      "type": "color",
-      "id": "border_color",
-      "label": "Border color",
+      "id": "field_border_color",
+      "label": "t:sections.hubpro_form.settings.field_border_color.label",
       "default": "#cccccc"
     },
     {
       "type": "color",
-      "id": "focus_color",
-      "label": "Focus color",
-      "default": "#007cba"
+      "id": "field_focus_color",
+      "label": "t:sections.hubpro_form.settings.field_focus_color.label",
+      "default": "#0066cc"
+    },
+    {
+      "type": "range",
+      "id": "field_border_radius",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.hubpro_form.settings.field_border_radius.label",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "field_padding",
+      "min": 8,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.hubpro_form.settings.field_padding.label",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "field_font_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.hubpro_form.settings.field_font_size.label",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "field_spacing",
+      "min": 16,
+      "max": 32,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.hubpro_form.settings.field_spacing.label",
+      "default": 20
     },
     {
       "type": "header",
-      "content": "Section"
+      "content": "t:sections.hubpro_form.settings.label_styling.content"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "t:sections.hubpro_form.settings.label_color.label",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "label_font_size",
+      "min": 12,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.hubpro_form.settings.label_font_size.label",
+      "default": 14
+    },
+    {
+      "type": "select",
+      "id": "label_font_weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "t:sections.all.typography.font_weight.normal"
+        },
+        {
+          "value": "500",
+          "label": "t:sections.all.typography.font_weight.medium"
+        },
+        {
+          "value": "600",
+          "label": "t:sections.all.typography.font_weight.semi_bold"
+        },
+        {
+          "value": "700",
+          "label": "t:sections.all.typography.font_weight.bold"
+        }
+      ],
+      "default": "500",
+      "label": "t:sections.hubpro_form.settings.label_font_weight.label"
+    },
+    {
+      "type": "color",
+      "id": "required_color",
+      "label": "t:sections.hubpro_form.settings.required_color.label",
+      "default": "#ff0000"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.hubpro_form.settings.button_styling.content"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "t:sections.hubpro_form.settings.button_text.label",
+      "default": "Subscribe Now"
+    },
+    {
+      "type": "text",
+      "id": "button_classes",
+      "label": "t:sections.hubpro_form.settings.button_classes.label",
+      "default": "btn btn-primary",
+      "info": "t:sections.hubpro_form.settings.button_classes.info"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "t:sections.hubpro_form.settings.button_background.label",
+      "default": "#BB9F4D"
+    },
+    {
+      "type": "color",
+      "id": "button_hover_background",
+      "label": "t:sections.hubpro_form.settings.button_hover_background.label",
+      "default": "#a08a42"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "t:sections.hubpro_form.settings.button_color.label",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "button_font_size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.hubpro_form.settings.button_font_size.label",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "button_padding_vertical",
+      "min": 8,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.hubpro_form.settings.button_padding_vertical.label",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "button_padding_horizontal",
+      "min": 16,
+      "max": 40,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.hubpro_form.settings.button_padding_horizontal.label",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "button_border_radius",
+      "min": 0,
+      "max": 12,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.hubpro_form.settings.button_border_radius.label",
+      "default": 4
+    },
+    {
+      "type": "checkbox",
+      "id": "button_full_width",
+      "label": "t:sections.hubpro_form.settings.button_full_width.label",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:sections.hubpro_form.settings.header_styling.content"
+    },
+    {
+      "type": "color",
+      "id": "header_color",
+      "label": "t:sections.hubpro_form.settings.header_color.label",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.hubpro_form.settings.additional_classes.content"
+    },
+    {
+      "type": "text",
+      "id": "form_classes",
+      "label": "t:sections.hubpro_form.settings.form_classes.label",
+      "info": "t:sections.hubpro_form.settings.form_classes.info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.spacing"
     },
     {
       "type": "range",
@@ -633,7 +1271,7 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "Top padding",
+      "label": "t:sections.all.padding.padding_top",
       "default": 36
     },
     {
@@ -643,31 +1281,13 @@
       "max": 100,
       "step": 4,
       "unit": "px",
-      "label": "Bottom padding",
+      "label": "t:sections.all.padding.padding_bottom",
       "default": 36
-    },
-    {
-      "type": "checkbox",
-      "id": "divider",
-      "label": "Divider",
-      "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "narrow",
-      "label": "Narrow container",
-      "default": false
-    },
-    {
-      "type": "checkbox",
-      "id": "rounded",
-      "label": "Rounded",
-      "default": false
     }
   ],
   "presets": [
     {
-      "name": "HubPRO Form"
+      "name": "t:sections.hubpro_form.presets.name"
     }
   ]
 }
