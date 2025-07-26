@@ -29,9 +29,115 @@
     {% endif %}
   }
 
-  /* Preserve original form functionality - only override when settings differ from defaults */
+  /* Ensure form displays properly - base styling */
   #shopify-section-{{ section.id }} .raw-form-wrapper {
     /* Let the original form styles take precedence, only override selectively */
+  }
+
+  /* Ensure all form fields are visible and properly formatted */
+  #shopify-section-{{ section.id }} .aaamembership_form .form-group {
+    margin-bottom: 15px;
+    clear: both;
+  }
+
+  #shopify-section-{{ section.id }} .aaamembership_form .form-control {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  #shopify-section-{{ section.id }} .aaamembership_form label {
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  #shopify-section-{{ section.id }} .aaamembership_form .checkbox {
+    width: auto !important;
+    display: inline-block;
+    margin-right: 8px;
+  }
+
+  /* Fix phone number field layout */
+  #shopify-section-{{ section.id }} .aaamembership_form .aaa-customer-phone-number-class {
+    width: 49% !important;
+    float: right;
+    margin-right: 1%;
+  }
+
+  #shopify-section-{{ section.id }} .aaamembership_form .aaa-customer-phone-number-country {
+    width: 49% !important;
+    float: left;
+    margin-left: 1%;
+  }
+
+  /* Additional fixes to ensure all elements are visible */
+  #shopify-section-{{ section.id }} .aaamembership_form input,
+  #shopify-section-{{ section.id }} .aaamembership_form textarea,
+  #shopify-section-{{ section.id }} .aaamembership_form select {
+    min-height: 40px;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  #shopify-section-{{ section.id }} .aaamembership_form button {
+    min-height: 44px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+
+  /* Fix for checkbox and its label */
+  #shopify-section-{{ section.id }} .aaamembership_form .membership-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  #shopify-section-{{ section.id }} .aaamembership_form .membership-checkbox label {
+    display: inline-block;
+    margin-bottom: 0;
+  }
+
+  /* Ensure textarea is properly sized */
+  #shopify-section-{{ section.id }} .aaamembership_form textarea {
+    resize: vertical;
+    min-height: 40px;
+  }
+
+  /* Tooltip styling to ensure it works */
+  #shopify-section-{{ section.id }} .aaamembership_form .tooltip {
+    position: relative;
+    display: inline-block;
+    margin-left: 5px;
+  }
+
+  #shopify-section-{{ section.id }} .aaamembership_form .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 200px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 8px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  #shopify-section-{{ section.id }} .aaamembership_form .tooltip:hover .tooltiptext {
+    visibility: visible;
   }
 
   /* Header styling overrides - only apply if different from black */
@@ -323,6 +429,8 @@
       {% if section.settings.raw_form_html != blank %}
         {% comment %}Render raw HTML exactly as provided without any escaping{% endcomment %}
         <div class="raw-form-wrapper">
+          {% comment %}Add required element that script looks for{% endcomment %}
+          <div class="aaa-no-access" style="display: none;"></div>
           {% assign raw_html = section.settings.raw_form_html %}
           {{ raw_html }}
         </div>
@@ -369,10 +477,31 @@
       }
     }
 
+    // Ensure required elements exist for the script
+    function ensureRequiredElements() {
+      // Add missing element that script looks for
+      if (!document.querySelector('.aaa-no-access')) {
+        var noAccessDiv = document.createElement('div');
+        noAccessDiv.className = 'aaa-no-access';
+        noAccessDiv.style.display = 'none';
+        document.body.appendChild(noAccessDiv);
+      }
+
+      // Ensure form has proper structure
+      var form = document.querySelector('.aaamembership_form');
+      if (form && !form.id) {
+        form.id = 'aaa-membership-form-{{ section.id }}';
+      }
+    }
+
     // Load script when DOM is ready
     if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', loadHubProMembershipScript);
+      document.addEventListener('DOMContentLoaded', function () {
+        ensureRequiredElements();
+        loadHubProMembershipScript();
+      });
     } else {
+      ensureRequiredElements();
       loadHubProMembershipScript();
     }
   </script>
