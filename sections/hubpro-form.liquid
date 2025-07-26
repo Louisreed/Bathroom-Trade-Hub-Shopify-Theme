@@ -38,18 +38,34 @@
   #shopify-section-{{ section.id }} .aaamembership_form .form-group {
     margin-bottom: 15px;
     clear: both;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    min-height: 20px;
+  }
+
+  /* Debug: Add subtle border to form groups to verify they're rendering */
+  #shopify-section-{{ section.id }} .aaamembership_form .form-group {
+    border: 1px solid rgba(0,0,0,0.1);
+    padding: 10px;
+    margin-bottom: 10px;
   }
 
   #shopify-section-{{ section.id }} .aaamembership_form .form-control {
-    display: block;
-    width: 100%;
-    max-width: 100%;
-    box-sizing: border-box;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    height: auto !important;
   }
 
   #shopify-section-{{ section.id }} .aaamembership_form label {
-    display: block;
-    margin-bottom: 5px;
+    display: block !important;
+    margin-bottom: 5px !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   #shopify-section-{{ section.id }} .aaamembership_form .checkbox {
@@ -431,8 +447,8 @@
         <div class="raw-form-wrapper">
           {% comment %}Add required element that script looks for{% endcomment %}
           <div class="aaa-no-access" style="display: none;"></div>
-          {% assign raw_html = section.settings.raw_form_html %}
-          {{ raw_html }}
+          {% comment %}Output raw HTML directly - html type setting prevents auto-escaping{% endcomment %}
+          {{ section.settings.raw_form_html }}
         </div>
       {% else %}
         <div style="padding: 40px; text-align: center; border: 2px dashed #ccc; color: #999; border-radius: 8px;">
@@ -518,7 +534,7 @@
       "content": "Form Content"
     },
     {
-      "type": "textarea",
+      "type": "html",
       "id": "raw_form_html",
       "label": "Raw Form HTML",
       "info": "Paste the complete HTML code from your third-party form here. All styling options below will override the form's appearance.",
