@@ -198,7 +198,7 @@
         <input
           type="hidden"
           name=""
-          value="{% if section.settings.thank_you_url != blank %}{{ section.settings.thank_you_url }}{% else %}https://bathroomtradehub.co.uk/pages/hubpro-thank-you-for-signing-up{% endif %}"
+          value="{{ section.settings.thank_you_url }}"
           class="aaa_thankyoupageurl"
         >
 
@@ -855,10 +855,11 @@
       "default": "Thank you, we will be in touch soon."
     },
     {
-      "type": "url",
+      "type": "text",
       "id": "thank_you_url",
       "label": "Thank You Page URL",
-      "default": ""
+      "default": "/pages/hubpro-thank-you-for-signing-up",
+      "info": "Enter the URL path for the thank you page (e.g., /pages/thank-you)"
     },
     {
       "type": "header",
