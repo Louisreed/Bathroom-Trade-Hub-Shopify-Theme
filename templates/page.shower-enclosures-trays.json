@@ -243,59 +243,23 @@
     "collection_list_qTBPix": {
       "type": "collection-list",
       "blocks": {
-        "collection_6r6Tk4": {
-          "type": "collection",
-          "settings": {
-            "collection": "s6-double-quadrant",
-            "title": "Double Door Quadrant",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_qnymnV": {
-          "type": "collection",
-          "settings": {
-            "collection": "s6-single-quadrant",
-            "title": "Single Door Quadrant",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_iKBtDD": {
-          "type": "collection",
-          "settings": {
-            "collection": "s6-pivot-door",
-            "title": "Pivot Door",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_36WybT": {
-          "type": "collection",
-          "settings": {
-            "collection": "s6-bi-fold",
-            "title": "Bi-Fold Door",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
         "collection_ND8apk": {
           "type": "collection",
           "settings": {
-            "collection": "s6-sliding-door",
-            "title": "Sliding Door",
+            "collection": "s6-collection",
+            "title": "S6",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_4R4cKA": {
+          "type": "collection",
+          "settings": {
+            "collection": "s8-collection",
+            "title": "S8",
             "description": "",
             "overlay_content": true,
             "color_text": "#ffffff",
@@ -305,11 +269,8 @@
         }
       },
       "block_order": [
-        "collection_6r6Tk4",
-        "collection_qnymnV",
-        "collection_iKBtDD",
-        "collection_36WybT",
-        "collection_ND8apk"
+        "collection_ND8apk",
+        "collection_4R4cKA"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
@@ -321,111 +282,7 @@
         "show_view_all": false,
         "columns_mobile": "1",
         "swipe_on_mobile": true,
-        "heading": "S6 Enclosure Range",
-        "heading_size": "title-md",
-        "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "",
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 72,
-        "padding_bottom": 72,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
-      }
-    },
-    "collection_list_eHLbMi": {
-      "type": "collection-list",
-      "blocks": {
-        "collection_GEUR6e": {
-          "type": "collection",
-          "settings": {
-            "collection": "s8-double-door",
-            "title": "Double Door Quadrant",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_dpm4aL": {
-          "type": "collection",
-          "settings": {
-            "collection": "s8-single-door",
-            "title": "Single Door Quadrant",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_GD4Bhq": {
-          "type": "collection",
-          "settings": {
-            "collection": "s8-hinge-door",
-            "title": "Hinge Door",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_XjJkCm": {
-          "type": "collection",
-          "settings": {
-            "collection": "s8-infold-door",
-            "title": "In-Fold Door",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_HbmtyE": {
-          "type": "collection",
-          "settings": {
-            "collection": "s8-sliding-door",
-            "title": "Sliding Door",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        }
-      },
-      "block_order": [
-        "collection_GEUR6e",
-        "collection_dpm4aL",
-        "collection_GD4Bhq",
-        "collection_XjJkCm",
-        "collection_HbmtyE"
-      ],
-      "name": "t:sections.collection-list.name",
-      "settings": {
-        "columns": 5,
-        "carousel_on_desktop": false,
-        "image_type": "collection",
-        "image_ratio": "square",
-        "show_products_count": true,
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "heading": "The S8 Enclosure Range",
+        "heading": "Enclosure Ranges",
         "heading_size": "title-md",
         "heading_alignment": "text-left md:items-end md:flex-row",
         "heading_tag": "h2",
@@ -817,7 +674,6 @@
     "collection_list_nqMCH9",
     "collection_list_rN7xKg",
     "collection_list_qTBPix",
-    "collection_list_eHLbMi",
     "collection_list_Gi89GB",
     "collection_list_49gCqq",
     "collection_list_rDFK9U",
