@@ -775,6 +775,97 @@
         "narrow": true,
         "rounded": false
       }
+    },
+    "collection_list_rDFK9U": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_9TMKPW": {
+          "type": "collection",
+          "settings": {
+            "collection": "kudos-shower-trays",
+            "title": "Kudos Trays",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_xCrwxc": {
+          "type": "collection",
+          "settings": {
+            "collection": "shire-shower-trays",
+            "title": "Shire Trays",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_zpRJtw": {
+          "type": "collection",
+          "settings": {
+            "collection": "walk-in-trays",
+            "title": "Walk-In Trays",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_7V4PQ6": {
+          "type": "collection",
+          "settings": {
+            "collection": "quadrant-trays",
+            "title": "Quadrant Trays",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_9TMKPW",
+        "collection_xCrwxc",
+        "collection_zpRJtw",
+        "collection_7V4PQ6"
+      ],
+      "name": "t:sections.collection-list.name",
+      "settings": {
+        "columns": 5,
+        "carousel_on_desktop": false,
+        "image_type": "collection",
+        "image_ratio": "square",
+        "show_products_count": true,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Collections",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "Shower Trays",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
     }
   },
   "order": [
@@ -787,6 +878,7 @@
     "collection_list_eHLbMi",
     "collection_list_Gi89GB",
     "collection_list_49gCqq",
-    "rich_text_KBAVRK"
+    "rich_text_KBAVRK",
+    "collection_list_rDFK9U"
   ]
 }
