@@ -42,20 +42,3 @@
     endfor
   endunless
 -%}
-
-<!-- DEBUG: Membership Pricing Internal Logic -->
-<div style="background: lightgreen; padding: 10px; margin: 10px 0; font-size: 12px;">
-  <strong>MEMBERSHIP PRICING DEBUG:</strong><br>
-  Final membership_discount_percent: {{ membership_discount_percent -}}
-  <br>
-  has_membership_pricing: {{ has_membership_pricing -}}
-  <br>
-  aaa_price_hide_item after plan rule: {{ aaa_price_hide_item -}}
-  <br>
-  Number of price rules: {{ shop.metafields.aaa_mem_price.size -}}
-  <br>
-  {% for aaa_rule in shop.metafields.aaa_mem_price limit: 3 %}
-    Rule {{ forloop.index }}: {{ aaa_rule.first }} = {{ aaa_rule.last -}}
-    <br>
-  {% endfor %}
-</div>

@@ -52,40 +52,6 @@
   endif
 -%}
 
-<!-- DEBUG: Customer & Membership Status -->
-<div style="background: red; color: white; padding: 15px; margin: 10px 0; font-size: 14px; border: 3px solid black;">
-  <strong>🚨 MEMBERSHIP DEBUG 🚨</strong><br>
-  Customer ID: {{ customer.id | default: 'NOT LOGGED IN' -}}
-  <br>
-  Email: {{ customer.email | default: 'NO EMAIL' -}}
-  <br>
-  Tags: {{ customer.tags | join: ', ' | default: 'NO TAGS' -}}
-  <br>
-  Has hubpro-free: {% if customer.tags contains 'hubpro-free' %}YES{% else %}NO{% endif -%}
-  <br>
-  Pricing rules: {{ shop.metafields.aaa_mem_price.size | default: 0 -}}
-  <br>
-  All AAA metafields: {{ shop.metafields.aaa_mem | json -}}
-  <br>
-  AAA price metafields: {{ shop.metafields.aaa_mem_price | json -}}
-  <br>
-  ALL SHOP METAFIELDS: {{ shop.metafields | json }}
-</div>
-
-<!-- DEBUG: Product Price Logic -->
-<div style="background: lightblue; padding: 10px; margin: 10px 0; font-size: 12px;">
-  <strong>PRODUCT PRICE DEBUG:</strong><br>
-  membership_discount received: {{ membership_discount -}}
-  <br>
-  Original price: {{ target.price | money -}}
-  <br>
-  Final price: {{ price | money -}}
-  <br>
-  Compare at price: {{ compare_at_price | money -}}
-  <br>
-  On sale: {{ on_sale }}
-</div>
-
 <div
   class="
     price
