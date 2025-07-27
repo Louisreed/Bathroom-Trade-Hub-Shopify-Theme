@@ -1,12 +1,12 @@
 {%- comment -%}
-  Custom HTML & CSS Section - Allows merchants to paste raw HTML code
-  Paste any HTML form or content and customize styling via theme customizer
+  HubPRO Form - Custom HTML & CSS Section
+  Allows merchants to paste raw HTML code and customize styling via theme customizer
 {%- endcomment -%}
 
-{% assign ai_gen_id = section.id | replace: '_', '' | downcase %}
+{% assign hubpro_id = section.id | replace: '_', '' | downcase %}
 
 {% style %}
-  .ai-custom-html-section-{{ ai_gen_id }} {
+  .hubpro-form-section-{{ hubpro_id }} {
     width: 100%;
     padding: {{ section.settings.padding_top }}px {{ section.settings.padding_horizontal }}px {{ section.settings.padding_bottom }}px {{ section.settings.padding_horizontal }}px;
     background-color: {{ section.settings.background_color }};
@@ -17,40 +17,40 @@
     {% endif %}
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} {
+  .hubpro-form-content-{{ hubpro_id }} {
     color: {{ section.settings.text_color }};
     font-size: {{ section.settings.font_size }}px;
     line-height: {{ section.settings.line_height }};
     text-align: {{ section.settings.text_alignment }};
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} * {
+  .hubpro-form-content-{{ hubpro_id }} * {
     max-width: 100%;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} img {
+  .hubpro-form-content-{{ hubpro_id }} img {
     height: auto;
     display: block;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} table {
+  .hubpro-form-content-{{ hubpro_id }} table {
     width: 100%;
     border-collapse: collapse;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} iframe,
-  .ai-custom-html-content-{{ ai_gen_id }} video {
+  .hubpro-form-content-{{ hubpro_id }} iframe,
+  .hubpro-form-content-{{ hubpro_id }} video {
     max-width: 100%;
     height: auto;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} input[type="text"],
-  .ai-custom-html-content-{{ ai_gen_id }} input[type="email"],
-  .ai-custom-html-content-{{ ai_gen_id }} input[type="password"],
-  .ai-custom-html-content-{{ ai_gen_id }} input[type="number"],
-  .ai-custom-html-content-{{ ai_gen_id }} input[type="tel"],
-  .ai-custom-html-content-{{ ai_gen_id }} input[type="url"],
-  .ai-custom-html-content-{{ ai_gen_id }} input[type="search"] {
+  .hubpro-form-content-{{ hubpro_id }} input[type="text"],
+  .hubpro-form-content-{{ hubpro_id }} input[type="email"],
+  .hubpro-form-content-{{ hubpro_id }} input[type="password"],
+  .hubpro-form-content-{{ hubpro_id }} input[type="number"],
+  .hubpro-form-content-{{ hubpro_id }} input[type="tel"],
+  .hubpro-form-content-{{ hubpro_id }} input[type="url"],
+  .hubpro-form-content-{{ hubpro_id }} input[type="search"] {
     width: 100%;
     padding: 12px 16px;
     border: 1px solid #ddd;
@@ -59,7 +59,7 @@
     box-sizing: border-box;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} textarea {
+  .hubpro-form-content-{{ hubpro_id }} textarea {
     width: 100%;
     padding: 12px 16px;
     border: 1px solid #ddd;
@@ -70,7 +70,7 @@
     box-sizing: border-box;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} select {
+  .hubpro-form-content-{{ hubpro_id }} select {
     width: 100%;
     padding: 12px 16px;
     border: 1px solid #ddd;
@@ -80,9 +80,9 @@
     box-sizing: border-box;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} button,
-  .ai-custom-html-content-{{ ai_gen_id }} input[type="submit"],
-  .ai-custom-html-content-{{ ai_gen_id }} input[type="button"] {
+  .hubpro-form-content-{{ hubpro_id }} button,
+  .hubpro-form-content-{{ hubpro_id }} input[type="submit"],
+  .hubpro-form-content-{{ hubpro_id }} input[type="button"] {
     padding: 12px 24px;
     background-color: #000;
     color: #fff;
@@ -93,156 +93,156 @@
     transition: background-color 0.3s ease;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} button:hover,
-  .ai-custom-html-content-{{ ai_gen_id }} input[type="submit"]:hover,
-  .ai-custom-html-content-{{ ai_gen_id }} input[type="button"]:hover {
+  .hubpro-form-content-{{ hubpro_id }} button:hover,
+  .hubpro-form-content-{{ hubpro_id }} input[type="submit"]:hover,
+  .hubpro-form-content-{{ hubpro_id }} input[type="button"]:hover {
     background-color: #333;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} input[type="checkbox"],
-  .ai-custom-html-content-{{ ai_gen_id }} input[type="radio"] {
+  .hubpro-form-content-{{ hubpro_id }} input[type="checkbox"],
+  .hubpro-form-content-{{ hubpro_id }} input[type="radio"] {
     margin-right: 8px;
     width: auto;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} label {
+  .hubpro-form-content-{{ hubpro_id }} label {
     display: block;
     margin-bottom: 8px;
     font-weight: 500;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} fieldset {
+  .hubpro-form-content-{{ hubpro_id }} fieldset {
     border: 1px solid #ddd;
     border-radius: 4px;
     padding: 16px;
     margin-bottom: 16px;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} legend {
+  .hubpro-form-content-{{ hubpro_id }} legend {
     padding: 0 8px;
     font-weight: 600;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} .form-group {
+  .hubpro-form-content-{{ hubpro_id }} .form-group {
     margin-bottom: 20px;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} .form-row {
+  .hubpro-form-content-{{ hubpro_id }} .form-row {
     display: flex;
     gap: 16px;
     margin-bottom: 20px;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} .form-col {
+  .hubpro-form-content-{{ hubpro_id }} .form-col {
     flex: 1;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} .form-inline {
+  .hubpro-form-content-{{ hubpro_id }} .form-inline {
     display: flex;
     align-items: center;
     gap: 12px;
     margin-bottom: 16px;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} .form-inline label {
+  .hubpro-form-content-{{ hubpro_id }} .form-inline label {
     margin-bottom: 0;
     white-space: nowrap;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} .form-inline input,
-  .ai-custom-html-content-{{ ai_gen_id }} .form-inline select {
+  .hubpro-form-content-{{ hubpro_id }} .form-inline input,
+  .hubpro-form-content-{{ hubpro_id }} .form-inline select {
     width: auto;
     flex: 1;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} .btn-primary {
+  .hubpro-form-content-{{ hubpro_id }} .btn-primary {
     background-color: #007bff;
     border-color: #007bff;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} .btn-primary:hover {
+  .hubpro-form-content-{{ hubpro_id }} .btn-primary:hover {
     background-color: #0056b3;
     border-color: #0056b3;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} .btn-secondary {
+  .hubpro-form-content-{{ hubpro_id }} .btn-secondary {
     background-color: #6c757d;
     border-color: #6c757d;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} .btn-secondary:hover {
+  .hubpro-form-content-{{ hubpro_id }} .btn-secondary:hover {
     background-color: #545b62;
     border-color: #545b62;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} .btn-success {
+  .hubpro-form-content-{{ hubpro_id }} .btn-success {
     background-color: #28a745;
     border-color: #28a745;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} .btn-success:hover {
+  .hubpro-form-content-{{ hubpro_id }} .btn-success:hover {
     background-color: #1e7e34;
     border-color: #1e7e34;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} .btn-danger {
+  .hubpro-form-content-{{ hubpro_id }} .btn-danger {
     background-color: #dc3545;
     border-color: #dc3545;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} .btn-danger:hover {
+  .hubpro-form-content-{{ hubpro_id }} .btn-danger:hover {
     background-color: #bd2130;
     border-color: #bd2130;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} .btn-outline {
+  .hubpro-form-content-{{ hubpro_id }} .btn-outline {
     background-color: transparent;
     color: #000;
     border: 1px solid #000;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} .btn-outline:hover {
+  .hubpro-form-content-{{ hubpro_id }} .btn-outline:hover {
     background-color: #000;
     color: #fff;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} .btn-large {
+  .hubpro-form-content-{{ hubpro_id }} .btn-large {
     padding: 16px 32px;
     font-size: 16px;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} .btn-small {
+  .hubpro-form-content-{{ hubpro_id }} .btn-small {
     padding: 8px 16px;
     font-size: 12px;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} .input-large {
+  .hubpro-form-content-{{ hubpro_id }} .input-large {
     padding: 16px 20px;
     font-size: 16px;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} .input-small {
+  .hubpro-form-content-{{ hubpro_id }} .input-small {
     padding: 8px 12px;
     font-size: 12px;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} .required {
+  .hubpro-form-content-{{ hubpro_id }} .required {
     border-color: #dc3545;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} .error {
+  .hubpro-form-content-{{ hubpro_id }} .error {
     border-color: #dc3545;
     background-color: #f8d7da;
   }
 
-  .ai-custom-html-content-{{ ai_gen_id }} .success {
+  .hubpro-form-content-{{ hubpro_id }} .success {
     border-color: #28a745;
     background-color: #d4edda;
   }
 
   {% if section.settings.hide_on_mobile %}
     @media screen and (max-width: 749px) {
-      .ai-custom-html-section-{{ ai_gen_id }} {
+      .hubpro-form-section-{{ hubpro_id }} {
         display: none;
       }
     }
@@ -250,7 +250,7 @@
 
   {% if section.settings.hide_on_desktop %}
     @media screen and (min-width: 750px) {
-      .ai-custom-html-section-{{ ai_gen_id }} {
+      .hubpro-form-section-{{ hubpro_id }} {
         display: none;
       }
     }
@@ -261,14 +261,14 @@
   {% endif %}
 {% endstyle %}
 
-<div class="ai-custom-html-section-{{ ai_gen_id }}" {{ section.shopify_attributes }}>
+<div class="hubpro-form-section-{{ hubpro_id }}" {{ section.shopify_attributes }}>
   <div class="page-width">
     {% if section.settings.custom_html != blank %}
-      <div class="ai-custom-html-content-{{ ai_gen_id }}">
+      <div class="hubpro-form-content-{{ hubpro_id }}">
         {{ section.settings.custom_html }}
       </div>
     {% else %}
-      <div class="ai-custom-html-content-{{ ai_gen_id }}">
+      <div class="hubpro-form-content-{{ hubpro_id }}">
         <p style="color: #999; font-style: italic; text-align: center; padding: 40px 20px;">
           Add your custom HTML code in the section settings to see it displayed here.
         </p>
@@ -293,7 +293,7 @@
 
 {% schema %}
 {
-  "name": "Custom HTML & CSS",
+  "name": "HubPRO Form",
   "tag": "section",
   "class": "section",
   "settings": [
@@ -315,8 +315,8 @@
       "type": "textarea",
       "id": "custom_css",
       "label": "Custom CSS code",
-      "info": "Override default styles using class selectors. Target this section with .ai-custom-html-content-{{ section.id | replace: '_', '' | downcase }}",
-      "placeholder": "/* Example: Style all buttons */\n.ai-custom-html-content-{{ section.id | replace: '_', '' | downcase }} button {\n  background-color: #ff6b6b;\n  border-radius: 8px;\n}\n\n/* Example: Style form groups */\n.ai-custom-html-content-{{ section.id | replace: '_', '' | downcase }} .form-group {\n  margin-bottom: 30px;\n}\n\n/* Example: Style specific button class */\n.ai-custom-html-content-{{ section.id | replace: '_', '' | downcase }} .btn-primary {\n  background: linear-gradient(45deg, #667eea, #764ba2);\n}"
+      "info": "Override default styles using class selectors. Target this section with .hubpro-form-content-{{ section.id | replace: '_', '' | downcase }}",
+      "placeholder": "/* Example: Style all buttons */\n.hubpro-form-content-{{ section.id | replace: '_', '' | downcase }} button {\n  background-color: #ff6b6b;\n  border-radius: 8px;\n}\n\n/* Example: Style form groups */\n.hubpro-form-content-{{ section.id | replace: '_', '' | downcase }} .form-group {\n  margin-bottom: 30px;\n}\n\n/* Example: Style specific button class */\n.hubpro-form-content-{{ section.id | replace: '_', '' | downcase }} .btn-primary {\n  background: linear-gradient(45deg, #667eea, #764ba2);\n}"
     },
     {
       "type": "header",
@@ -445,7 +445,7 @@
   ],
   "presets": [
     {
-      "name": "Custom HTML & CSS"
+      "name": "HubPRO Form"
     }
   ]
 }
