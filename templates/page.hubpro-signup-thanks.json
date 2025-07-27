@@ -16,10 +16,17 @@
         "heading_alignment": "text-center",
         "heading_tag": "h1",
         "text_size": "text-lg",
+        "text_capitalization": "",
+        "content_capitalization": "",
         "color_text": "#424242",
         "color_background": "#ffffff",
+        "gradient_background": "",
         "padding_top": 72,
         "padding_bottom": 40,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_left": 0,
+        "margin_right": 0,
         "divider": false,
         "narrow": true,
         "rounded": false
@@ -31,7 +38,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Welcome to HubPRO!",
+            "heading": "We're just running a few checks...",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "highlighted_text": "none",
@@ -44,23 +51,60 @@
             "text": "<p>Thank you for signing up to our exclusive trade membership program. Your application has been received and is being processed.</p><p>You'll receive a confirmation email shortly with your membership details and exclusive trade pricing access.</p>",
             "text_font": "body",
             "text_size": "text-base",
+            "text_max_size": 32,
             "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
             "secondary_color": false,
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
+          }
+        },
+        "button_gAHicJ": {
+          "type": "button",
+          "settings": {
+            "button_label": "Browse Products",
+            "button_link": "shopify://collections/all",
+            "button_style": "primary",
+            "button_size": "md",
+            "button_external": false,
+            "button_icon": true
           }
         }
       },
       "block_order": [
         "heading",
-        "text"
+        "text",
+        "button_gAHicJ"
       ],
       "settings": {
-        "color_text": "#424242",
-        "color_background": "#f8f9fa",
+        "text_alignment": "left",
+        "text_alignment_mobile": "left",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "#ffffff",
+        "color_background": "#424242",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
         "padding_top": 60,
         "padding_bottom": 60,
         "divider": false,
+        "narrow": true,
         "rounded": true
       }
     }
