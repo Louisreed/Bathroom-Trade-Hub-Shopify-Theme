@@ -136,110 +136,6 @@
         "rounded": false
       }
     },
-    "collection_list_rN7xKg": {
-      "type": "collection-list",
-      "blocks": {
-        "collection_UWUk8b": {
-          "type": "collection",
-          "settings": {
-            "collection": "momentum-chrome",
-            "title": "Chrome",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_iRQBGG": {
-          "type": "collection",
-          "settings": {
-            "collection": "momentum-black",
-            "title": "Matte Black",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_6yaiLr": {
-          "type": "collection",
-          "settings": {
-            "collection": "momentum-brass",
-            "title": "Brushed Brass",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_m7DXn3": {
-          "type": "collection",
-          "settings": {
-            "collection": "momentum-bronze",
-            "title": "Brushed Bronze",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_xKi8ey": {
-          "type": "collection",
-          "settings": {
-            "collection": "momentum-gunmetal",
-            "title": "Gunmetal",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        }
-      },
-      "block_order": [
-        "collection_UWUk8b",
-        "collection_iRQBGG",
-        "collection_6yaiLr",
-        "collection_m7DXn3",
-        "collection_xKi8ey"
-      ],
-      "name": "Collection list",
-      "settings": {
-        "columns": 5,
-        "carousel_on_desktop": false,
-        "image_type": "collection",
-        "image_ratio": "square",
-        "show_products_count": true,
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "heading": "<strong>The Momentum Range</strong>",
-        "heading_size": "title-md",
-        "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "",
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 72,
-        "padding_bottom": 72,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
-      }
-    },
     "collection_list_qTBPix": {
       "type": "collection-list",
       "blocks": {
@@ -322,84 +218,6 @@
         "columns_mobile": "1",
         "swipe_on_mobile": true,
         "heading": "Enclosure Ranges",
-        "heading_size": "title-md",
-        "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "",
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 72,
-        "padding_bottom": 72,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
-      }
-    },
-    "collection_list_49gCqq": {
-      "type": "collection-list",
-      "blocks": {
-        "collection_ezMxaQ": {
-          "type": "collection",
-          "settings": {
-            "collection": "ensky-6mm",
-            "image": "shopify://shop_images/Screenshot_2025-07-24_at_10.50.11_AM.png",
-            "title": "Ensky Chrome 6mm",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_9TpGwN": {
-          "type": "collection",
-          "settings": {
-            "collection": "ensky-brushed-brass-1",
-            "title": "Enemy Brushed Brass 6mm",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_PqqpFq": {
-          "type": "collection",
-          "settings": {
-            "collection": "ensky-black",
-            "title": "Ensky Black 6mm",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        }
-      },
-      "block_order": [
-        "collection_ezMxaQ",
-        "collection_9TpGwN",
-        "collection_PqqpFq"
-      ],
-      "settings": {
-        "columns": 5,
-        "carousel_on_desktop": false,
-        "image_type": "collection",
-        "image_ratio": "square",
-        "show_products_count": true,
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "heading": "Ensky Enclosures 6mm",
         "heading_size": "title-md",
         "heading_alignment": "text-left md:items-end md:flex-row",
         "heading_tag": "h2",
@@ -620,9 +438,7 @@
   "order": [
     "main-page",
     "collection_list_nqMCH9",
-    "collection_list_rN7xKg",
     "collection_list_qTBPix",
-    "collection_list_49gCqq",
     "collection_list_rDFK9U",
     "rich_text_KBAVRK"
   ]
