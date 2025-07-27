@@ -627,10 +627,10 @@
         "collection_CLf8JY": {
           "type": "collection",
           "settings": {
-            "collection": "",
-            "title": "",
+            "collection": "shower-rail-kits",
+            "title": "Shower Rail Kits",
             "description": "",
-            "overlay_content": false,
+            "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 30
