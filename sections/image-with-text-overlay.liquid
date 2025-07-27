@@ -1159,7 +1159,7 @@
           "id": "modal_custom_css",
           "label": "Custom CSS for Modal",
           "info": "Override modal and form styles. Target this modal with .button-modal-{{ block.id | replace: '_', '' | downcase }}",
-          "placeholder": "/* Example: Style form inputs */\n.button-modal-{{ block.id | replace: '_', '' | downcase }} input[type=\"text\"],\n.button-modal-{{ block.id | replace: '_', '' | downcase }} input[type=\"email\"] {\n  border: 2px solid #007bff;\n  border-radius: 8px;\n  padding: 15px;\n}\n\n/* Example: Style form buttons */\n.button-modal-{{ block.id | replace: '_', '' | downcase }} button {\n  background: linear-gradient(45deg, #667eea, #764ba2);\n  border-radius: 25px;\n  font-weight: bold;\n}\n\n/* Example: Custom modal background */\n.button-modal-{{ block.id | replace: '_', '' | downcase }} .drawer__content {\n  background-color: #f8f9fa;\n}",
+          "placeholder": "/* Style form inputs */\n.button-modal-{{ block.id }} input {\n  border: 2px solid #007bff;\n  border-radius: 8px;\n  padding: 15px;\n}\n\n/* Style buttons */\n.button-modal-{{ block.id }} button {\n  background: #667eea;\n  border-radius: 25px;\n}",
           "visible_if": "{{ block.settings.enable_modal }}"
         }
       ]

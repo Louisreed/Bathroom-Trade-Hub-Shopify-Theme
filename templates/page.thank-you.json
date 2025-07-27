@@ -1,0 +1,80 @@
+{
+  "sections": {
+    "main-page": {
+      "type": "main-page",
+      "settings": {
+        "heading_size": "title-xl tracking-heading",
+        "heading_alignment": "text-center",
+        "heading_tag": "h1",
+        "text_size": "text-lg",
+        "text_capitalization": "",
+        "content_capitalization": "",
+        "color_text": "#424242",
+        "color_background": "#ffffff",
+        "gradient_background": "",
+        "padding_top": 72,
+        "padding_bottom": 40,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_left": 0,
+        "margin_right": 0,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "rich_text_thank_you": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_welcome": {
+          "type": "heading",
+          "settings": {
+            "heading": "Welcome to HubPRO!",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_confirmation": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Thank you for signing up to our exclusive trade membership program. Your application has been received and is being processed.</p><p>You'll receive a confirmation email shortly with your membership details and exclusive trade pricing access.</p>",
+            "text_font": "body",
+            "text_size": "text-base",
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "text_max_size": 20,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "secondary_color": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_welcome", 
+        "text_confirmation"
+      ],
+      "settings": {
+        "full_width": false,
+        "content_alignment": "text-center",
+        "color_text": "#424242",
+        "color_background": "#f8f9fa",
+        "gradient_background": "",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_left": 0,
+        "margin_right": 0,
+        "divider": false,
+        "rounded": true
+      }
+    }
+  },
+  "order": [
+    "main-page",
+    "rich_text_thank_you"
+  ]
+} 
