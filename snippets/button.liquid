@@ -2,40 +2,58 @@
   Renders a button or link component with customizable styling and behavior.
 
   Creates either a button-styled link or plain text link based on style parameter.
+  Can also create modal triggers when enable_modal is true.
 
   @param {string} label - Button text content (HTML-escaped)
   @param {string} [link] - Target URL (omit for disabled state)
   @param {string} [size] - Button size variant
-    - 'sm' - Small button
-    - 'md' - Medium button (default)
-    - 'lg' - Large button
+
+  - 'sm' - Small button - 'md' - Medium button (default) - 'lg' - Large button
+
   @param {string} [style] - Visual style variant
-    - 'primary' - Primary button with fill animation
-    - 'secondary' - Secondary button with fill animation
-    - 'link' - Plain text link without button styling
+
+  - 'primary' - Primary button with fill animation - 'secondary' - Secondary button with fill animation - 'link' - Plain
+  text link without button styling
+
   @param {boolean} [external] - Open link in new tab with security
   @param {boolean} [show_icon] - Display arrow-right icon after label
+  @param {boolean} [enable_modal] - Enable modal functionality instead of link
+  @param {string} [modal_content] - HTML content to display in modal
+  @param {string} [modal_title] - Custom title for modal header
+  @param {boolean} [show_modal_title] - Show/hide modal title
+  @param {string} [modal_custom_css] - Custom CSS for styling the modal and its content
+  @param {string} [block_id] - Unique ID for modal (required when enable_modal is true)
   @param {string} [size_style] - Custom styles
   @param {string} [classes] - Additional CSS classes
   @param {string} [shopify_attributes] - Shopify-specific attributes
 
-  @example Primary button with icon
+  @example
+  Modal button with HTML content
+  {% render 'button',
+     label: 'Open Form',
+     enable_modal: true,
+     modal_content: '<form>...</form>',
+     block_id: 'unique-id',
+     style: 'primary'
+  %}
+  @example
+  Primary button with icon
   {% render 'button',
      label: 'Shop Now',
      link: '/collections/all',
      style: 'primary',
      show_icon: true
   %}
-
-  @example Secondary small button
+  @example
+  Secondary small button
   {% render 'button',
      label: 'Learn More',
      link: '/pages/about',
      style: 'secondary',
      size: 'sm'
   %}
-
-  @example External link button
+  @example
+  External link button
   {% render 'button',
      label: 'Visit Instagram',
      link: 'https://instagram.com/brand',
@@ -44,25 +62,172 @@
   %}
 {%- enddoc -%}
 
-{%- if style == 'link' -%}
-  <a class="link inline-block{% if classes != blank %} {{ classes }}{% endif %}{% if show_icon %} icon-with-text{% endif %}"{% if link != blank %} href="{{ link }}"{% if external %} target="_blank" rel="noopener"{% endif %}{% else %} role="link" aria-disabled="true"{% endif %}{% if size_style != blank %} style="{{ size_style }}"{% endif %} is="hover-link" {{ shopify_attributes }}>
-    <span class="link-text">{{ label | escape }}</span>
-    {%- liquid
-      if show_icon
-        render 'icon', icon: 'arrow-right', size: 'sm', class: 'transform'
-      endif
-    -%}
-  </a>
-{%- else -%}
-  <a class="button button--{{ style | default: 'primary' }} button--{{ size | default: 'md' }}{% if classes != blank %} {{ classes }}{% endif %}{% if show_icon %} icon-with-text{% endif %}"{% if link != blank %} href="{{ link }}"{% if external %} target="_blank" rel="noopener"{% endif %}{% else %} role="link" aria-disabled="true"{% endif %}{% if size_style != blank %} style="{{ size_style }}"{% endif %} is="hover-link" {{ shopify_attributes }}>
-    <span class="btn-fill" data-fill></span>
-    <span class="btn-text">
+{%- liquid
+  assign modal_id = 'ButtonModal-' | append: block_id
+  assign modal_css_class = 'button-modal-' | append: block_id | replace: '_', '' | downcase
+-%}
+
+{%- if enable_modal and modal_content != blank -%}
+  {%- comment -%} Modal Button {%- endcomment -%}
+  {%- if style == 'link' -%}
+    <button
+      type="button"
+      class="link inline-block{% if classes != blank %} {{ classes }}{% endif %}{% if show_icon %} icon-with-text{% endif %}"
+      {% if size_style != blank %}
+        style="{{ size_style }}"
+      {% endif %}
+      aria-controls="{{ modal_id }}"
+      aria-expanded="false"
+      {{ shopify_attributes }}
+    >
+      <span class="link-text">{{ label | escape }}</span>
       {%- liquid
-        echo label | escape
         if show_icon
           render 'icon', icon: 'arrow-right', size: 'sm', class: 'transform'
         endif
       -%}
-    </span>
-  </a>
+    </button>
+  {%- else -%}
+    <button
+      type="button"
+      class="button button--{{ style | default: 'primary' }} button--{{ size | default: 'md' }}{% if classes != blank %} {{ classes }}{% endif %}{% if show_icon %} icon-with-text{% endif %}"
+      {% if size_style != blank %}
+        style="{{ size_style }}"
+      {% endif %}
+      aria-controls="{{ modal_id }}"
+      aria-expanded="false"
+      {{ shopify_attributes }}
+    >
+      <span class="btn-fill" data-fill></span>
+      <span class="btn-text">
+        {%- liquid
+          echo label | escape
+          if show_icon
+            render 'icon', icon: 'arrow-right', size: 'sm', class: 'transform'
+          endif
+        -%}
+      </span>
+    </button>
+  {%- endif -%}
+
+  {%- comment -%} Modal Structure {%- endcomment -%}
+  {%- if modal_custom_css != blank -%}
+    <style>
+      {{ modal_custom_css }}
+    </style>
+  {%- endif -%}
+  <x-modal
+    id="{{ modal_id }}"
+    class="button-modal {{ modal_css_class }} x-modal drawer z-30 fixed bottom-0 left-0 h-full w-full pointer-events-none"
+    role="dialog"
+    aria-modal="true"
+    aria-label="{% if modal_title != blank %}{{ modal_title | escape }}{% else %}{{ label | escape }}{% endif %}"
+    hidden
+  >
+    <overlay-element
+      class="overlay fixed-modal invisible opacity-0 fixed bottom-0 left-0 w-full h-screen pointer-events-none"
+      aria-controls="{{ modal_id }}"
+      aria-expanded="false"
+    ></overlay-element>
+    <div class="drawer__inner z-10 absolute top-0 flex flex-col w-full h-full overflow-hidden">
+      {%- if show_modal_title != false -%}
+        <gesture-element class="drawer__header flex justify-between opacity-0 invisible relative">
+          <span class="drawer__title heading title-md">
+            {%- if modal_title != blank -%}
+              {{ modal_title | escape }}
+            {%- else -%}
+              {{ label | escape }}
+            {%- endif -%}
+          </span>
+          <button
+            class="button button--secondary button--close drawer__close hidden sm:flex items-center justify-center"
+            type="button"
+            is="hover-button"
+            aria-controls="{{ modal_id }}"
+            aria-expanded="false"
+            aria-label="{{ 'general.accessibility.close' | t | escape }}"
+          >
+            <span class="btn-fill" data-fill></span>
+            <span class="btn-text">
+              {%- render 'icon', icon: 'close', size: 'sm' -%}
+            </span>
+          </button>
+        </gesture-element>
+      {%- else -%}
+        <gesture-element class="drawer__header flex justify-end opacity-0 invisible relative">
+          <button
+            class="button button--secondary button--close drawer__close hidden sm:flex items-center justify-center"
+            type="button"
+            is="hover-button"
+            aria-controls="{{ modal_id }}"
+            aria-expanded="false"
+            aria-label="{{ 'general.accessibility.close' | t | escape }}"
+          >
+            <span class="btn-fill" data-fill></span>
+            <span class="btn-text">
+              {%- render 'icon', icon: 'close', size: 'sm' -%}
+            </span>
+          </button>
+        </gesture-element>
+      {%- endif -%}
+      <div class="drawer__content opacity-0 invisible flex flex-col h-full grow shrink">
+        <div class="drawer__scrollable relative flex flex-col gap-5 md:gap-7 grow shrink">
+          <div class="button-modal__content">
+            {{ modal_content }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </x-modal>
+
+{%- else -%}
+  {%- comment -%} Regular Link Button {%- endcomment -%}
+  {%- if style == 'link' -%}
+    <a
+      class="link inline-block{% if classes != blank %} {{ classes }}{% endif %}{% if show_icon %} icon-with-text{% endif %}"
+      {% if link != blank %}
+        href="{{ link }}"
+        {%- if external %} target="_blank" rel="noopener"{% endif -%}
+      {% else %}
+        role="link" aria-disabled="true"
+      {% endif -%}
+      {% if size_style != blank %}
+        style="{{ size_style }}"
+      {% endif %}
+      is="hover-link"
+      {{ shopify_attributes }}
+    >
+      <span class="link-text">{{ label | escape }}</span>
+      {%- liquid
+        if show_icon
+          render 'icon', icon: 'arrow-right', size: 'sm', class: 'transform'
+        endif
+      -%}
+    </a>
+  {%- else -%}
+    <a
+      class="button button--{{ style | default: 'primary' }} button--{{ size | default: 'md' }}{% if classes != blank %} {{ classes }}{% endif %}{% if show_icon %} icon-with-text{% endif %}"
+      {% if link != blank %}
+        href="{{ link }}"
+        {%- if external %} target="_blank" rel="noopener"{% endif -%}
+      {% else %}
+        role="link" aria-disabled="true"
+      {% endif -%}
+      {% if size_style != blank %}
+        style="{{ size_style }}"
+      {% endif %}
+      is="hover-link"
+      {{ shopify_attributes }}
+    >
+      <span class="btn-fill" data-fill></span>
+      <span class="btn-text">
+        {%- liquid
+          echo label | escape
+          if show_icon
+            render 'icon', icon: 'arrow-right', size: 'sm', class: 'transform'
+          endif
+        -%}
+      </span>
+    </a>
+  {%- endif -%}
 {%- endif -%}

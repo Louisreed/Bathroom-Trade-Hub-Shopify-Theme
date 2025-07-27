@@ -9,6 +9,9 @@
     style: block.settings.button_style,
     external: block.settings.button_external,
     show_icon: block.settings.button_icon,
+    enable_modal: block.settings.enable_modal,
+    modal_content: block.settings.modal_content,
+    block_id: block.id,
     shopify_attributes: block.shopify_attributes,
     size_style: size_style,
     classes: 'size-style'
@@ -83,6 +86,25 @@
       "id": "button_icon",
       "label": "t:sections.global.settings.button_icon.label",
       "default": false
+    },
+    {
+      "type": "header",
+      "content": "Modal Settings"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_modal",
+      "label": "Open as modal",
+      "info": "When enabled, button will open content in a modal instead of navigating to a URL",
+      "default": false
+    },
+    {
+      "type": "textarea",
+      "id": "modal_content",
+      "label": "Modal HTML Content",
+      "info": "Enter HTML content to display in the modal (forms, custom content, etc.)",
+      "placeholder": "<div>\n  <h2>Modal Title</h2>\n  <p>Your content here...</p>\n</div>",
+      "visible_if": "{{ block.settings.enable_modal }}"
     },
     {
       "type": "header",

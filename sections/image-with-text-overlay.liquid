@@ -30,11 +30,25 @@
   {% endif -%}
 </style>
 
-<div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}"{% if section.settings.transparent_header %} allow-transparent-header{% endif %}>
+<div
+  class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}"
+  {% if section.settings.transparent_header %}
+    allow-transparent-header
+  {% endif %}
+>
   <div class="{% unless section.settings.full_width %}page-width {% endunless %}relative">
     <div class="banner media--{{ section.settings.image_height }} mobile:media--{{ section.settings.image_height_mobile }} relative">
-      <media-element class="banner__media block w-full h-full overflow-hidden"{% if section.settings.enable_parallax %} data-parallax="0.3" data-parallax-dir="{{ section.settings.parallax_direction }}"{% endif %}>
-        <picture class="media media--height block w-full h-full relative overflow-hidden" is="animate-picture" data-animate="zoom-out">
+      <media-element
+        class="banner__media block w-full h-full overflow-hidden"
+        {% if section.settings.enable_parallax %}
+          data-parallax="0.3" data-parallax-dir="{{ section.settings.parallax_direction }}"
+        {% endif %}
+      >
+        <picture
+          class="media media--height block w-full h-full relative overflow-hidden"
+          is="animate-picture"
+          data-animate="zoom-out"
+        >
           {%- if section.settings.image != blank -%}
             {%- capture sizes -%}{% if section.settings.full_width %}100vw{% else %}min({{ settings.page_width }}px, 100vw){% endif %}{%- endcapture -%}
             {%- if section.settings.image_mobile -%}
@@ -46,13 +60,23 @@
               >
             {%- endif -%}
 
-            {{- section.settings.image | image_url: width: section.settings.image.width | image_tag: loading: loading, fetchpriority: fetchpriority, sizes: sizes, widths: '300,400,500,600,700,800,900,1000,1200,1400,1600,1800,2000,2200,2400,2600,2800,3000,3200', is: lazyimage, class: 'banner__image' -}}
+            {{-
+              section.settings.image
+              | image_url: width: section.settings.image.width
+              | image_tag:
+                loading: loading,
+                fetchpriority: fetchpriority,
+                sizes: sizes,
+                widths: '300,400,500,600,700,800,900,1000,1200,1400,1600,1800,2000,2200,2400,2600,2800,3000,3200',
+                is: lazyimage,
+                class: 'banner__image'
+            -}}
           {%- else -%}
             {{- 'lifestyle-1' | placeholder_svg_tag: 'banner__image banner__overlay placeholder' -}}
           {%- endif -%}
         </picture>
       </media-element>
-      
+
       {%- if section.blocks.size > 0 -%}
         <span class="banner__overlay absolute top-0 left-0 w-full h-full pointer-events-none"></span>
         <div class="banner__content overflow-hidden absolute z-1 top-0 left-0 w-full h-full">
@@ -72,11 +96,21 @@
                     {%- render block -%}
 
                   {%- when 'breadcrumb' -%}
-                    <animate-element data-animate="fade-up" data-animate-delay="{{ delay | times: 250 }}" class="block" {{ block.shopify_attributes }}>
+                    <animate-element
+                      data-animate="fade-up"
+                      data-animate-delay="{{ delay | times: 250 }}"
+                      class="block"
+                      {{ block.shopify_attributes }}
+                    >
                       <nav class="breadcrumb" role="navigation" aria-label="breadcrumbs">
                         <ul class="inline-flex gap-4 md:gap-6">
                           <li class="flex items-center gap-4 md:gap-6">
-                            <a class="block" href="{{ routes.root_url }}" title="{{ 'general.breadcrumbs.home_link_title' | t | escape }}" is="magnet-link">
+                            <a
+                              class="block"
+                              href="{{ routes.root_url }}"
+                              title="{{ 'general.breadcrumbs.home_link_title' | t | escape }}"
+                              is="magnet-link"
+                            >
                               {%- render 'icon', icon: 'home', size: 'sm' -%}
                             </a>
                           </li>
@@ -86,11 +120,18 @@
                     </animate-element>
 
                   {%- when 'spacing' -%}
-                    <empty-element class="block spacing-section{% if block.settings.height_mobile == 0 %} hidden lg:block{% endif %}{% if block.settings.height == 0 %} lg:hidden{% endif %}" style="--spacing-height-desktop: {{ block.settings.height }}px;--spacing-height-mobile: {{ block.settings.height_mobile }}px;" {{ block.shopify_attributes }}></empty-element>
+                    <empty-element
+                      class="block spacing-section{% if block.settings.height_mobile == 0 %} hidden lg:block{% endif %}{% if block.settings.height == 0 %} lg:hidden{% endif %}"
+                      style="--spacing-height-desktop: {{ block.settings.height }}px;--spacing-height-mobile: {{ block.settings.height_mobile }}px;"
+                      {{ block.shopify_attributes }}
+                    ></empty-element>
 
                   {%- when 'subheading' -%}
                     {%- if block.settings.subheading != blank -%}
-                      <p class="banner__subheading heading uppercase leading-none tracking-widest {{ block.settings.subheading_size }}{% if block.settings.secondary_color %} banner__text--colored{% endif %}" {{ block.shopify_attributes }}>
+                      <p
+                        class="banner__subheading heading uppercase leading-none tracking-widest {{ block.settings.subheading_size }}{% if block.settings.secondary_color %} banner__text--colored{% endif %}"
+                        {{ block.shopify_attributes }}
+                      >
                         {{- block.settings.subheading -}}
                       </p>
                     {%- endif -%}
@@ -98,19 +139,44 @@
                   {%- when 'heading' -%}
                     {%- if block.settings.heading != blank -%}
                       {%- assign delay = delay | plus: 1 -%}
-                      <{{ block.settings.heading_tag }} class="banner__title heading leading-none {{ block.settings.heading_size }}" {{ block.shopify_attributes }}>
+                      <{{ block.settings.heading_tag }}
+                        class="banner__title heading leading-none {{ block.settings.heading_size }}"
+                        {{ block.shopify_attributes }}
+                      >
                         {%- if block.settings.highlighted_text == 'none' -%}
-                          <split-words class="split-words js-invisible block" data-animate="fade-up-large" data-animate-delay="{{ delay | times: 250 }}">{{ block.settings.heading }}</split-words>
+                          <split-words
+                            class="split-words js-invisible block"
+                            data-animate="fade-up-large"
+                            data-animate-delay="{{ delay | times: 250 }}"
+                          >
+                            {{- block.settings.heading -}}
+                          </split-words>
                         {%- else -%}
-                          {%- render 'highlighted-text', content: block.settings.heading, style: block.settings.highlighted_text, scribble: block.settings.highlighted_scribble, gradient: with_gradient -%}
+                          {%- render 'highlighted-text',
+                            content: block.settings.heading,
+                            style: block.settings.highlighted_text,
+                            scribble: block.settings.highlighted_scribble,
+                            gradient: with_gradient
+                          -%}
                         {%- endif -%}
                       </{{ block.settings.heading_tag }}>
                     {%- endif -%}
 
                   {%- when 'text' -%}
                     {%- if block.settings.text != blank -%}
-                      <div class="rte {{ block.settings.text_font }} {{ block.settings.text_size }}{% if block.settings.text_font == 'subtitle' %} uppercase leading-tight tracking-widest{% else %} leading-normal{% endif %}{% if block.settings.secondary_color %} text-opacity{% endif %}"{% if block.settings.text_size == 'subtext-custom' %} style="--subtext-size: {{ block.settings.text_max_size }}px;--subtext-line-height: {{ block.settings.text_line_height }};--subtext-letter-spacing: {{ block.settings.text_letter_spacing | divided_by: 1000.00 }}em;{% if block.settings.text_capitalize %}--subtext-text-transform: uppercase;{% endif %}"{% endif %} {{ block.shopify_attributes }}>
-                        {%- render 'highlighted-text', content: block.settings.text, style: block.settings.highlighted_text, scribble: block.settings.highlighted_scribble, gradient: with_gradient -%}
+                      <div
+                        class="rte {{ block.settings.text_font }} {{ block.settings.text_size }}{% if block.settings.text_font == 'subtitle' %} uppercase leading-tight tracking-widest{% else %} leading-normal{% endif %}{% if block.settings.secondary_color %} text-opacity{% endif %}"
+                        {% if block.settings.text_size == 'subtext-custom' %}
+                          style="--subtext-size: {{ block.settings.text_max_size }}px;--subtext-line-height: {{ block.settings.text_line_height }};--subtext-letter-spacing: {{ block.settings.text_letter_spacing | divided_by: 1000.00 }}em;{% if block.settings.text_capitalize %}--subtext-text-transform: uppercase;{% endif %}"
+                        {% endif %}
+                        {{ block.shopify_attributes }}
+                      >
+                        {%- render 'highlighted-text',
+                          content: block.settings.text,
+                          style: block.settings.highlighted_text,
+                          scribble: block.settings.highlighted_scribble,
+                          gradient: with_gradient
+                        -%}
                       </div>
                     {%- endif -%}
 
@@ -144,7 +210,14 @@
 
                       <div class="leading-none">
                         {%- if block.settings.link != blank -%}
-                          <a class="inline-block" href="{{ block.settings.link }}"{% if block.settings.external %} target="_blank" rel="noopener"{% endif %} aria-label="{{ block.settings.accessibility_info | escape }}">
+                          <a
+                            class="inline-block"
+                            href="{{ block.settings.link }}"
+                            {% if block.settings.external %}
+                              target="_blank" rel="noopener"
+                            {% endif %}
+                            aria-label="{{ block.settings.accessibility_info | escape }}"
+                          >
                             {{- icon_content -}}
                           </a>
                         {%- else -%}
@@ -165,11 +238,21 @@
                             {%- assign sizes = 'min(100vw, var(--page-width))' -%}
                             {%- assign widths = '50,75,100,150,200,300,400,500,750,1000,1250,1500,1750,2000,2250,2500,2750,3000,3200' -%}
                           {%- endif -%}
-                          {{- block.settings.image | image_url: width: block.settings.image.width | image_tag: loading: 'lazy', sizes: sizes, widths: widths, style: style, is: 'lazy-image', class: 'image-fit' -}}
+                          {{-
+                            block.settings.image
+                            | image_url: width: block.settings.image.width
+                            | image_tag:
+                              loading: 'lazy',
+                              sizes: sizes,
+                              widths: widths,
+                              style: style,
+                              is: 'lazy-image',
+                              class: 'image-fit'
+                          -}}
                         </figure>
                       </div>
                     {%- endif -%}
-                    
+
                   {%- when 'button' -%}
                     {%- if block.settings.button_label != blank -%}
                       {%- render 'button',
@@ -179,6 +262,12 @@
                         style: block.settings.button_style,
                         external: block.settings.button_external,
                         show_icon: block.settings.button_icon,
+                        enable_modal: block.settings.enable_modal,
+                        modal_content: block.settings.modal_content,
+                        modal_title: block.settings.modal_title,
+                        show_modal_title: block.settings.show_modal_title,
+                        modal_custom_css: block.settings.modal_custom_css,
+                        block_id: block.id,
                         classes: 'button--fixed',
                         shopify_attributes: block.shopify_attributes
                       -%}
@@ -186,7 +275,16 @@
 
                   {%- when 'link' -%}
                     {%- if block.settings.label != blank -%}
-                      <a class="link inline-block"{% if block.settings.link != blank %} href="{{ block.settings.link }}"{% if block.settings.external %} target="_blank" rel="noopener"{% endif %}{% else %} role="link" aria-disabled="true"{% endif %} {{ block.shopify_attributes }}>
+                      <a
+                        class="link inline-block"
+                        {% if block.settings.link != blank %}
+                          href="{{ block.settings.link }}"
+                          {%- if block.settings.external %} target="_blank" rel="noopener"{% endif -%}
+                        {% else %}
+                          role="link" aria-disabled="true"
+                        {% endif %}
+                        {{ block.shopify_attributes }}
+                      >
                         {{- block.settings.label -}}
                       </a>
                     {%- endif -%}
@@ -1021,6 +1119,48 @@
           "id": "button_icon",
           "label": "t:sections.global.settings.button_icon.label",
           "default": true
+        },
+        {
+          "type": "header",
+          "content": "Modal Settings"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_modal",
+          "label": "Open as modal",
+          "info": "When enabled, button will open content in a modal instead of navigating to a URL",
+          "default": false
+        },
+        {
+          "type": "textarea",
+          "id": "modal_content",
+          "label": "Modal HTML Content",
+          "info": "Enter HTML content to display in the modal (forms, custom content, etc.)",
+          "placeholder": "<div>\n  <h2>Modal Title</h2>\n  <p>Your content here...</p>\n</div>",
+          "visible_if": "{{ block.settings.enable_modal }}"
+        },
+        {
+          "type": "text",
+          "id": "modal_title",
+          "label": "Modal Title",
+          "info": "Optional title shown at the top of the modal",
+          "placeholder": "Form Title",
+          "visible_if": "{{ block.settings.enable_modal }}"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_modal_title",
+          "label": "Show modal title",
+          "default": true,
+          "visible_if": "{{ block.settings.enable_modal }}"
+        },
+        {
+          "type": "textarea",
+          "id": "modal_custom_css",
+          "label": "Custom CSS for Modal",
+          "info": "Override modal and form styles. Target this modal with .button-modal-{{ block.id | replace: '_', '' | downcase }}",
+          "placeholder": "/* Example: Style form inputs */\n.button-modal-{{ block.id | replace: '_', '' | downcase }} input[type=\"text\"],\n.button-modal-{{ block.id | replace: '_', '' | downcase }} input[type=\"email\"] {\n  border: 2px solid #007bff;\n  border-radius: 8px;\n  padding: 15px;\n}\n\n/* Example: Style form buttons */\n.button-modal-{{ block.id | replace: '_', '' | downcase }} button {\n  background: linear-gradient(45deg, #667eea, #764ba2);\n  border-radius: 25px;\n  font-weight: bold;\n}\n\n/* Example: Custom modal background */\n.button-modal-{{ block.id | replace: '_', '' | downcase }} .drawer__content {\n  background-color: #f8f9fa;\n}",
+          "visible_if": "{{ block.settings.enable_modal }}"
         }
       ]
     },
@@ -1444,11 +1584,7 @@
     }
   ],
   "disabled_on": {
-    "groups": [
-      "footer",
-      "header",
-      "custom.overlay"
-    ]
+    "groups": ["footer", "header", "custom.overlay"]
   }
 }
 {% endschema %}
