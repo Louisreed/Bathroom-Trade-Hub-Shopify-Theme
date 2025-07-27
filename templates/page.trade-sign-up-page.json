@@ -71,6 +71,9 @@
         "image_P4KjKp",
         "button_UqMMdQ"
       ],
+      "custom_css": [
+        ".banner {/* Remove header margin-bottom */ margin-top: -28px;}"
+      ],
       "name": "Image with text overlay",
       "settings": {
         "transparent_header": false,
