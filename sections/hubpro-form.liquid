@@ -1,6 +1,6 @@
 {%- comment -%}
-  HubPRO Membership Form Section
-  Recreates the exact form structure with customizable styling
+  HubPRO Form - Raw HTML with CSS Override Controls
+  Paste the original form HTML and customize styling via theme customizer
 {%- endcomment -%}
 
 <style>
@@ -20,121 +20,132 @@
 
   /* Header Styling */
   #shopify-section-{{ section.id }} .header {
-    color: {{ section.settings.header_color }};
-    margin-bottom: {{ section.settings.header_spacing }}px;
-    text-align: {{ section.settings.header_alignment }};
+    color: {{ section.settings.header_color }} !important;
+    margin-bottom: {{ section.settings.header_spacing }}px !important;
+    text-align: {{ section.settings.header_alignment }} !important;
   }
 
   #shopify-section-{{ section.id }} h1.header {
-    font-size: {{ section.settings.h1_font_size }}px;
-    font-weight: {{ section.settings.h1_font_weight }};
-    margin: 0;
+    font-size: {{ section.settings.h1_font_size }}px !important;
+    font-weight: {{ section.settings.h1_font_weight }} !important;
+    margin: 0 !important;
   }
 
   #shopify-section-{{ section.id }} h3.header {
-    font-size: {{ section.settings.h3_font_size }}px;
-    font-weight: {{ section.settings.h3_font_weight }};
-    margin: 0;
+    font-size: {{ section.settings.h3_font_size }}px !important;
+    font-weight: {{ section.settings.h3_font_weight }} !important;
+    margin: 0 !important;
   }
 
   /* Divider */
   #shopify-section-{{ section.id }} .aaadivider {
-    border: none;
-    border-top: 1px solid {{ section.settings.divider_color }};
-    margin: {{ section.settings.divider_spacing }}px 0;
-  }
-
-  /* Form Groups */
-  #shopify-section-{{ section.id }} .form-group {
-    margin-bottom: {{ section.settings.field_spacing }}px;
+    border-color: {{ section.settings.divider_color }} !important;
+    margin: {{ section.settings.divider_spacing }}px 0 !important;
   }
 
   /* Labels */
-  #shopify-section-{{ section.id }} label {
-    display: block;
-    color: {{ section.settings.label_color }};
-    font-size: {{ section.settings.label_font_size }}px;
-    font-weight: {{ section.settings.label_font_weight }};
-    margin-bottom: 8px;
+  #shopify-section-{{ section.id }} .aaamembership_form label {
+    color: {{ section.settings.label_color }} !important;
+    font-size: {{ section.settings.label_font_size }}px !important;
+    font-weight: {{ section.settings.label_font_weight }} !important;
+    display: block !important;
+    margin-bottom: 8px !important;
   }
 
   #shopify-section-{{ section.id }} .required {
-    color: {{ section.settings.required_color }};
+    color: {{ section.settings.required_color }} !important;
   }
 
-  /* Form Controls */
-  #shopify-section-{{ section.id }} .form-control {
-    width: 100%;
-    padding: {{ section.settings.field_padding }}px;
-    font-size: {{ section.settings.field_font_size }}px;
-    border: {{ section.settings.field_border_width }}px solid {{ section.settings.field_border_color }};
-    border-radius: {{ section.settings.field_border_radius }}px;
-    background-color: {{ section.settings.field_background }};
-    box-sizing: border-box;
-    transition: border-color 0.2s ease;
+  /* Form Fields */
+  #shopify-section-{{ section.id }} .aaamembership_form .form-control,
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="text"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="email"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="password"],
+  #shopify-section-{{ section.id }} .aaamembership_form input[type="number"],
+  #shopify-section-{{ section.id }} .aaamembership_form textarea,
+  #shopify-section-{{ section.id }} .aaamembership_form select {
+    width: 100% !important;
+    padding: {{ section.settings.field_padding }}px !important;
+    font-size: {{ section.settings.field_font_size }}px !important;
+    border: {{ section.settings.field_border_width }}px solid {{ section.settings.field_border_color }} !important;
+    border-radius: {{ section.settings.field_border_radius }}px !important;
+    background-color: {{ section.settings.field_background }} !important;
+    box-sizing: border-box !important;
+    transition: border-color 0.2s ease !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
-  #shopify-section-{{ section.id }} .form-control:focus {
-    border-color: {{ section.settings.field_focus_color }};
-    outline: none;
+  #shopify-section-{{ section.id }} .aaamembership_form .form-control:focus,
+  #shopify-section-{{ section.id }} .aaamembership_form input:focus,
+  #shopify-section-{{ section.id }} .aaamembership_form textarea:focus,
+  #shopify-section-{{ section.id }} .aaamembership_form select:focus {
+    border-color: {{ section.settings.field_focus_color }} !important;
+    outline: none !important;
     {% if section.settings.field_focus_glow %}
-      box-shadow: 0 0 0 2px rgba({{ section.settings.field_focus_color | color_extract: 'red' }}, {{ section.settings.field_focus_color | color_extract: 'green' }}, {{ section.settings.field_focus_color | color_extract: 'blue' }}, 0.2);
+      box-shadow: 0 0 0 2px rgba({{ section.settings.field_focus_color | color_extract: 'red' }}, {{ section.settings.field_focus_color | color_extract: 'green' }}, {{ section.settings.field_focus_color | color_extract: 'blue' }}, 0.2) !important;
     {% endif %}
   }
 
-  /* Phone number fields layout */
-  #shopify-section-{{ section.id }} .phone-number-wrapper {
-    display: flex;
-    gap: 2%;
+  /* Form Groups */
+  #shopify-section-{{ section.id }} .aaamembership_form .form-group {
+    margin-bottom: {{ section.settings.field_spacing }}px !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    clear: both !important;
   }
 
-  #shopify-section-{{ section.id }} .aaa-customer-phone-number-country {
-    width: 49%;
+  /* Phone Number Fields */
+  #shopify-section-{{ section.id }} .aaamembership_form .aaa-customer-phone-number-country {
+    width: 49% !important;
+    float: left !important;
+    margin-left: 1% !important;
   }
 
-  #shopify-section-{{ section.id }} .aaa-customer-phone-number-class {
-    width: 49%;
+  #shopify-section-{{ section.id }} .aaamembership_form .aaa-customer-phone-number-class {
+    width: 49% !important;
+    float: right !important;
+    margin-right: 1% !important;
   }
 
-  /* Checkbox styling */
-  #shopify-section-{{ section.id }} .membership-checkbox {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  /* Checkbox */
+  #shopify-section-{{ section.id }} .aaamembership_form .checkbox {
+    width: auto !important;
+    display: inline-block !important;
+    margin-right: 8px !important;
   }
 
-  #shopify-section-{{ section.id }} .checkbox {
-    width: auto;
-    margin: 0;
+  #shopify-section-{{ section.id }} .aaamembership_form .membership-checkbox label {
+    display: inline !important;
+    margin-bottom: 0 !important;
   }
 
-  #shopify-section-{{ section.id }} .membership-checkbox label {
-    margin-bottom: 0;
-    display: inline;
+  /* Button */
+  #shopify-section-{{ section.id }} .aaamembership_form .button-input,
+  #shopify-section-{{ section.id }} .aaamembership_form button[type="submit"] {
+    background-color: {{ section.settings.button_background }} !important;
+    color: {{ section.settings.button_color }} !important;
+    font-size: {{ section.settings.button_font_size }}px !important;
+    font-weight: {{ section.settings.button_font_weight }} !important;
+    padding: {{ section.settings.button_padding_vertical }}px {{ section.settings.button_padding_horizontal }}px !important;
+    border-radius: {{ section.settings.button_border_radius }}px !important;
+    border: {{ section.settings.button_border_width }}px solid {{ section.settings.button_border_color }} !important;
+    cursor: pointer !important;
+    transition: all 0.2s ease !important;
+    {% if section.settings.button_full_width %}width: 100% !important;{% endif %}
+    {% if section.settings.button_text_transform != 'none' %}text-transform: {{ section.settings.button_text_transform }} !important;{% endif %}
   }
 
-  /* Button styling */
-  #shopify-section-{{ section.id }} .button-input {
-    background-color: {{ section.settings.button_background }};
-    color: {{ section.settings.button_color }};
-    font-size: {{ section.settings.button_font_size }}px;
-    font-weight: {{ section.settings.button_font_weight }};
-    padding: {{ section.settings.button_padding_vertical }}px {{ section.settings.button_padding_horizontal }}px;
-    border-radius: {{ section.settings.button_border_radius }}px;
-    border: {{ section.settings.button_border_width }}px solid {{ section.settings.button_border_color }};
-    cursor: pointer;
-    transition: all 0.2s ease;
-    {% if section.settings.button_full_width %}width: 100%;{% endif %}
-    {% if section.settings.button_text_transform != 'none' %}text-transform: {{ section.settings.button_text_transform }};{% endif %}
+  #shopify-section-{{ section.id }} .aaamembership_form .button-input:hover,
+  #shopify-section-{{ section.id }} .aaamembership_form button[type="submit"]:hover {
+    background-color: {{ section.settings.button_hover_background }} !important;
+    color: {{ section.settings.button_hover_color }} !important;
+    {% if section.settings.button_hover_transform %}transform: translateY(-1px) !important;{% endif %}
   }
 
-  #shopify-section-{{ section.id }} .button-input:hover {
-    background-color: {{ section.settings.button_hover_background }};
-    color: {{ section.settings.button_hover_color }};
-    {% if section.settings.button_hover_transform %}transform: translateY(-1px);{% endif %}
-  }
-
-  /* Tooltip styling */
+  /* Tooltip */
   #shopify-section-{{ section.id }} .tooltip {
     position: relative;
     display: inline-block;
@@ -166,9 +177,8 @@
 <div class="hubpro-section">
   <div class="page-width">
     <div class="hubpro-form-container">
-      <!-- HubPRO Membership Form - Exact replica of the original structure -->
+      <!-- ORIGINAL HUBPRO FORM HTML - EXACTLY AS PROVIDED -->
       <form method="post" action="" class="aaamembership_form aaa-form-null" enctype="multipart/form-data">
-        <!-- Hidden Fields (exactly as in original) -->
         <input type="hidden" name="container_id" value="">
         <input type="hidden" name="form_id" value="13451">
         <input
@@ -186,294 +196,483 @@
         <input
           type="hidden"
           name=""
-          value="{{ section.settings.thank_you_url | default: 'https://bathroomtradehub.co.uk/pages/hubpro-thank-you-for-signing-up' }}"
+          value="https://bathroomtradehub.co.uk/pages/hubpro-thank-you-for-signing-up"
           class="aaa_thankyoupageurl"
         >
-        <input type="hidden" name="affiliate_id" value="">
 
-        <!-- Header -->
-        {% if section.settings.show_h1_header %}
-          <div class="">
-            <h1 type="h1" class="header" name="" id="">HubPRO</h1>
-          </div>
-        {% endif %}
+        <div class="">
+          <h1 type="h1" class="header" name="" id="" style="color: rgb(0, 0, 0);">HubPRO</h1>
+        </div>
 
-        <!-- Divider -->
-        {% if section.settings.show_divider %}
-          <div class="">
-            <hr type="hr" class="aaadivider" name="" id="">
-          </div>
-        {% endif %}
+        <div class="">
+          <hr type="hr" class="aaadivider" name="" id="">
+        </div>
 
-        <!-- Subheader -->
-        {% if section.settings.show_h3_header %}
-          <div class="">
-            <h3 type="h3" class="header" name="" id="">Subscribe and get benefits</h3>
-          </div>
-        {% endif %}
+        <div class="">
+          <h3 type="h3" class="header" name="" id="" style="color: rgb(0, 0, 0);">Subscribe and get benefits</h3>
+        </div>
 
-        <!-- First Name -->
-        {% if section.settings.show_first_name %}
-          <div class="membership-text form-group field-first-name">
-            <label for="first-name" class="membership-text-label"> First Name <span class="required">*</span> </label>
-            <input type="text" required="" class="form-control" name="first-name" id="first-name" aria-required="true">
-          </div>
-        {% endif %}
+        <div class="membership-text form-group field-first-name">
+          <label for="first-name" class="membership-text-label" style="color: rgb(0, 0, 0);"
+            >First Name <span class="required">*</span></label
+          >
+          <input type="text" required="" class="form-control" name="first-name" id="first-name" aria-required="true">
+        </div>
 
-        <!-- Last Name -->
-        {% if section.settings.show_last_name %}
-          <div class="membership-text form-group field-last-name">
-            <label for="last-name" class="membership-text-label"> Last Name <span class="required">*</span> </label>
-            <input type="text" required="" class="form-control" name="last-name" id="last-name" aria-required="true">
-          </div>
-        {% endif %}
+        <div class="membership-text form-group field-last-name">
+          <label for="last-name" class="membership-text-label" style="color: rgb(0, 0, 0);"
+            >Last Name <span class="required">*</span></label
+          >
+          <input type="text" required="" class="form-control" name="last-name" id="last-name" aria-required="true">
+        </div>
 
-        <!-- Company -->
-        {% if section.settings.show_company %}
-          <div class="membership-text form-group field-aaa-customer-company">
-            <label for="aaa-customer-company" class="membership-text-label">
-              Company <span class="required">*</span>
-            </label>
-            <input
-              type="text"
-              required=""
-              class="form-control"
-              name="aaa-customer-company"
-              id="aaa-customer-company"
-              aria-required="true"
-            >
-          </div>
-        {% endif %}
+        <div class="membership-text form-group field-aaa-customer-company">
+          <label for="aaa-customer-company" class="membership-text-label" style="color: rgb(0, 0, 0);"
+            >Company <span class="required">*</span></label
+          >
+          <input
+            type="text"
+            required=""
+            class="form-control"
+            name="aaa-customer-company"
+            id="aaa-customer-company"
+            aria-required="true"
+          >
+        </div>
 
-        <!-- Email -->
-        {% if section.settings.show_email %}
-          <div class="membership-email form-group field-replyemail">
-            <label for="replyemail" class="membership-email-label">
-              Email Address <span class="required">*</span>
-            </label>
-            <input type="email" required="" class="form-control" name="replyemail" id="replyemail" aria-required="true">
-          </div>
-        {% endif %}
+        <div class="membership-email form-group field-replyemail">
+          <label for="replyemail" class="membership-email-label" style="color: rgb(0, 0, 0);"
+            >Email Address <span class="required">*</span></label
+          >
+          <input type="email" required="" class="form-control" name="replyemail" id="replyemail" aria-required="true">
+        </div>
 
-        <!-- Password -->
-        {% if section.settings.show_password %}
-          <div class="membership-password form-group field-customer-password">
-            <label for="customer-password" class="membership-password-label" style="position: relative; display: flex;">
-              Password <span class="required">*</span>
-              <div class="tooltip">
-                <span class="tooltip-main"><i class="fa fa-question-circle" aria-hidden="true"></i></span>
-                <span class="tooltiptext"
-                  >This password is for new user only, old user can use their existing password to login.</span
-                >
-              </div>
-            </label>
-            <input
-              type="password"
-              required=""
-              class="form-control"
-              name="customer-password"
-              id="customer-password"
-              aria-required="true"
-            >
-          </div>
-        {% endif %}
-
-        <!-- Confirm Password -->
-        {% if section.settings.show_confirm_password %}
-          <div class="membership-password form-group field-aaa-customer-confirm-pass">
-            <label
-              for="aaa-customer-confirm-pass"
-              class="membership-password-label"
-              style="position: relative; display: flex;"
-            >
-              Confirm Password <span class="required">*</span>
-              <div class="tooltip">
-                <span class="tooltip-main"><i class="fa fa-question-circle" aria-hidden="true"></i></span>
-                <span class="tooltiptext"
-                  >This password is for new user only, old user can use their existing password to login.</span
-                >
-              </div>
-            </label>
-            <input
-              type="password"
-              required=""
-              class="form-control aaa-customer-confirm-password"
-              name="aaa-customer-confirm-pass"
-              id="aaa-customer-confirm-pass"
-              aria-required="true"
-            >
-          </div>
-        {% endif %}
-
-        <!-- Address -->
-        {% if section.settings.show_address %}
-          <div class="membership-undefined form-group field-aaa-customer-address">
-            <label for="aaa-customer-address" class="membership-textarea-label">
-              Address Line 1 <span class="required">*</span>
-            </label>
-            <textarea
-              type="textarea"
-              required=""
-              rows="1"
-              class="form-control"
-              name="aaa-customer-address"
-              id="aaa-customer-address"
-              aria-required="true"
-            ></textarea>
-          </div>
-        {% endif %}
-
-        <!-- City -->
-        {% if section.settings.show_city %}
-          <div class="membership-text form-group field-aaa-customer-city">
-            <label for="aaa-customer-city" class="membership-text-label"> City <span class="required">*</span> </label>
-            <input
-              type="text"
-              required=""
-              class="form-control"
-              name="aaa-customer-city"
-              id="aaa-customer-city"
-              aria-required="true"
-            >
-          </div>
-        {% endif %}
-
-        <!-- Country -->
-        {% if section.settings.show_country %}
-          <div class="membership-select form-group field-aaa-form-builder-country field-country-1">
-            <label for="aaa-form-builder-country" class="membership-select-label">
-              Country <span class="required">*</span>
-            </label>
-            <select
-              type="select"
-              required=""
-              class="form-control"
-              name="aaa-form-builder-country"
-              id="aaa-form-builder-country"
-              aria-required="true"
-            >
-              <option value="Canada">Canada</option>
-              <option value="United States">United States</option>
-              <option value="United Kingdom" selected="">United Kingdom</option>
-              <option value="Afghanistan">Afghanistan</option>
-              <option value="Albania">Albania</option>
-              <option value="Algeria">Algeria</option>
-              <!-- Full country list truncated for brevity - includes all countries from original -->
-              <option value="Zimbabwe">Zimbabwe</option>
-            </select>
-          </div>
-        {% endif %}
-
-        <!-- Postcode -->
-        {% if section.settings.show_postcode %}
-          <div class="membership-text form-group field-aaa-customer-zip-code">
-            <label for="aaa-customer-zip-code" class="membership-text-label">
-              Postcode <span class="required">*</span>
-            </label>
-            <input
-              type="text"
-              required=""
-              class="form-control"
-              name="aaa-customer-zip-code"
-              id="aaa-customer-zip-code"
-              aria-required="true"
-            >
-          </div>
-        {% endif %}
-
-        <!-- Phone Number -->
-        {% if section.settings.show_phone %}
-          <div class="membership-number form-group field-aaa-customer-phone-number">
-            <label for="aaa-customer-phone-number" class="membership-number-label"> Phone Number </label>
-            <div class="phone-number-wrapper">
-              <input
-                type="text"
-                name="aaa-customer-phone-number-country"
-                class="form-control aaa-customer-phone-number-country"
-                placeholder="country code(+1)"
-                value=""
-              >
-              <input
-                type="number"
-                class="form-control aaa-customer-phone-number-class"
-                name="aaa-customer-phone-number"
-                id="aaa-customer-phone-number"
+        <div class="membership-password form-group field-customer-password">
+          <label
+            for="customer-password"
+            class="membership-password-label"
+            style="color: rgb(0, 0, 0); position: relative; display: flex;"
+            >Password <span class="required">*</span>
+            <div class="tooltip" style="">
+              <span class="tooltip-main"><i class="fa fa-question-circle" aria-hidden="true"></i></span>
+              <span class="tooltiptext"
+                >This password is for new user only, old user can use their existing password to login.</span
               >
             </div>
-          </div>
-        {% endif %}
+          </label>
+          <input
+            type="password"
+            required=""
+            class="form-control"
+            name="customer-password"
+            id="customer-password"
+            aria-required="true"
+          >
+        </div>
 
-        <!-- Newsletter Subscription -->
-        {% if section.settings.show_newsletter %}
-          <div class="membership-checkbox form-group field-aaasubscribenewsletter">
-            <div class="membership-checkbox">
-              <input
-                type="checkbox"
-                class="checkbox"
-                name="aaasubscribenewsletter"
-                value="1"
-                id="aaasubscribenewsletter"
+        <div class="membership-password form-group field-aaa-customer-confirm-pass">
+          <label
+            for="aaa-customer-confirm-pass"
+            class="membership-password-label"
+            style="color: rgb(0, 0, 0); position: relative; display: flex;"
+            >Confirm Password <span class="required">*</span>
+            <div class="tooltip" style="">
+              <span class="tooltip-main"><i class="fa fa-question-circle" aria-hidden="true"></i></span>
+              <span class="tooltiptext"
+                >This password is for new user only, old user can use their existing password to login.</span
               >
-              <label for="aaasubscribenewsletter" class="membership-checkbox-label">
-                Subscribe to our newsletter
-              </label>
             </div>
-          </div>
-        {% endif %}
+          </label>
+          <input
+            type="password"
+            required=""
+            class="form-control aaa-customer-confirm-password"
+            name="aaa-customer-confirm-pass"
+            id="aaa-customer-confirm-pass"
+            aria-required="true"
+          >
+        </div>
 
-        <!-- Submit Button -->
+        <div class="membership-undefined form-group field-aaa-customer-address">
+          <label for="aaa-customer-address" class="membership-textarea-label" style="color: rgb(0, 0, 0);"
+            >Address Line 1 <span class="required">*</span></label
+          >
+          <textarea
+            type="textarea"
+            required=""
+            rows="1"
+            class="form-control"
+            name="aaa-customer-address"
+            id="aaa-customer-address"
+            aria-required="true"
+          ></textarea>
+        </div>
+
+        <div class="membership-text form-group field-aaa-customer-city">
+          <label for="aaa-customer-city" class="membership-text-label" style="color: rgb(0, 0, 0);"
+            >City <span class="required">*</span></label
+          >
+          <input
+            type="text"
+            required=""
+            class="form-control"
+            name="aaa-customer-city"
+            id="aaa-customer-city"
+            aria-required="true"
+          >
+        </div>
+
+        <div class="membership-select form-group field-aaa-form-builder-country field-country-1">
+          <label for="aaa-form-builder-country" class="membership-select-label" style="color: rgb(0, 0, 0);"
+            >Country <span class="required">*</span></label
+          >
+          <select
+            type="select"
+            required=""
+            class="form-control"
+            name="aaa-form-builder-country"
+            id="aaa-form-builder-country"
+            aria-required="true"
+          >
+            <option value="Canada">Canada</option>
+            <option value="United States">United States</option>
+            <option value="United Kingdom" selected="">United Kingdom</option>
+            <option value="Afghanistan">Afghanistan</option>
+            <option value="Albania">Albania</option>
+            <option value="Algeria">Algeria</option>
+            <option value="Andorra">Andorra</option>
+            <option value="Angola">Angola</option>
+            <option value="Antigua And Barbuda">Antigua And Barbuda</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Armenia">Armenia</option>
+            <option value="Aruba">Aruba</option>
+            <option value="Australia">Australia</option>
+            <option value="Austria">Austria</option>
+            <option value="Azerbaijan">Azerbaijan</option>
+            <option value="Bahamas">Bahamas</option>
+            <option value="Bahrain">Bahrain</option>
+            <option value="Bangladesh">Bangladesh</option>
+            <option value="Barbados">Barbados</option>
+            <option value="Belarus">Belarus</option>
+            <option value="Belgium">Belgium</option>
+            <option value="Belize">Belize</option>
+            <option value="Benin">Benin</option>
+            <option value="Bermuda">Bermuda</option>
+            <option value="Bhutan">Bhutan</option>
+            <option value="Bolivia">Bolivia</option>
+            <option value="Bosnia And Herzegovina">Bosnia And Herzegovina</option>
+            <option value="Botswana">Botswana</option>
+            <option value="Brazil">Brazil</option>
+            <option value="Brunei">Brunei</option>
+            <option value="Bulgaria">Bulgaria</option>
+            <option value="New Caledonia">New Caledonia</option>
+            <option value="Cambodia">Cambodia</option>
+            <option value="Republic of Cameroon">Republic of Cameroon</option>
+            <option value="Cayman Islands">Cayman Islands</option>
+            <option value="Chile">Chile</option>
+            <option value="china">China</option>
+            <option value="Colombia">Colombia</option>
+            <option value="Comoros">Comoros</option>
+            <option value="Congo">Congo</option>
+            <option value="Congo  The Democratic Republic Of The">Congo, The Democratic Republic Of The</option>
+            <option value="Costa Rica">Costa Rica</option>
+            <option value="Côte d'Ivoire">Côte d'Ivoire</option>
+            <option value="Croatia">Croatia</option>
+            <option value="Curaçao">Curaçao</option>
+            <option value="Cyprus">Cyprus</option>
+            <option value="Czech Republic">Czech Republic</option>
+            <option value="Denmark">Denmark</option>
+            <option value="Dominica">Dominica</option>
+            <option value="Dominican Republic">Dominican Republic</option>
+            <option value="Ecuador">Ecuador</option>
+            <option value="Egypt">Egypt</option>
+            <option value="El Salvador">El Salvador</option>
+            <option value="Estonia">Estonia</option>
+            <option value="Ethiopia">Ethiopia</option>
+            <option value="Equatorial Guinea">Equatorial Guinea</option>
+            <option value="Faroe Islands">Faroe Islands</option>
+            <option value="Fiji">Fiji</option>
+            <option value="Finland">Finland</option>
+            <option value="France">France</option>
+            <option value="Gabon">Gabon</option>
+            <option value="Gambia">Gambia</option>
+            <option value="Georgia">Georgia</option>
+            <option value="Germany">Germany</option>
+            <option value="Ghana">Ghana</option>
+            <option value="French Polynesia">French Polynesia</option>
+            <option value="Gibraltar">Gibraltar</option>
+            <option value="Greece">Greece</option>
+            <option value="Greenland">Greenland</option>
+            <option value="Grenada">Grenada</option>
+            <option value="Guadeloupe">Guadeloupe</option>
+            <option value="Guatemala">Guatemala</option>
+            <option value="Guernsey">Guernsey</option>
+            <option value="Guyana">Guyana</option>
+            <option value="Haiti">Haiti</option>
+            <option value="Honduras">Honduras</option>
+            <option value="Hong Kong">Hong Kong</option>
+            <option value="Hungary">Hungary</option>
+            <option value="Iceland">Iceland</option>
+            <option value="India">India</option>
+            <option value="Indonesia">Indonesia</option>
+            <option value="Ireland">Ireland</option>
+            <option value="Isle Of Man">Isle Of Man</option>
+            <option value="Israel">Israel</option>
+            <option value="Italy">Italy</option>
+            <option value="Jamaica">Jamaica</option>
+            <option value="Japan">Japan</option>
+            <option value="Jersey">Jersey</option>
+            <option value="Jordan">Jordan</option>
+            <option value="Kazakhstan">Kazakhstan</option>
+            <option value="Kenya">Kenya</option>
+            <option value="Kosovo">Kosovo</option>
+            <option value="Kuwait">Kuwait</option>
+            <option value="Kyrgyzstan">Kyrgyzstan</option>
+            <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
+            <option value="Latvia">Latvia</option>
+            <option value="Lebanon">Lebanon</option>
+            <option value="Lesotho">Lesotho</option>
+            <option value="Liberia">Liberia</option>
+            <option value="Liechtenstein">Liechtenstein</option>
+            <option value="Lithuania">Lithuania</option>
+            <option value="Luxembourg">Luxembourg</option>
+            <option value="Macao">Macao</option>
+            <option value="Macedonia  Republic Of">Macedonia, Republic Of</option>
+            <option value="Madagascar">Madagascar</option>
+            <option value="Malawi">Malawi</option>
+            <option value="Malaysia">Malaysia</option>
+            <option value="Maldives">Maldives</option>
+            <option value="Malta">Malta</option>
+            <option value="Martinique">Martinique</option>
+            <option value="Mauritius">Mauritius</option>
+            <option value="Mexico">Mexico</option>
+            <option value="Moldova  Republic of">Moldova, Republic of</option>
+            <option value="Monaco">Monaco</option>
+            <option value="Mongolia">Mongolia</option>
+            <option value="Montenegro">Montenegro</option>
+            <option value="Morocco">Morocco</option>
+            <option value="Mozambique">Mozambique</option>
+            <option value="Myanmar">Myanmar</option>
+            <option value="Namibia">Namibia</option>
+            <option value="Nepal">Nepal</option>
+            <option value="Netherlands Antilles">Netherlands Antilles</option>
+            <option value="Netherlands">Netherlands</option>
+            <option value="New Zealand">New Zealand</option>
+            <option value="Nicaragua">Nicaragua</option>
+            <option value="Niger">Niger</option>
+            <option value="Nigeria">Nigeria</option>
+            <option value="Norway">Norway</option>
+            <option value="Oman">Oman</option>
+            <option value="Pakistan">Pakistan</option>
+            <option value="Palestinian Territory  Occupied">Palestinian Territory, Occupied</option>
+            <option value="Panama">Panama</option>
+            <option value="Papua New Guinea">Papua New Guinea</option>
+            <option value="Paraguay">Paraguay</option>
+            <option value="Peru">Peru</option>
+            <option value="Philippines">Philippines</option>
+            <option value="Poland">Poland</option>
+            <option value="Portugal">Portugal</option>
+            <option value="Qatar">Qatar</option>
+            <option value="Reunion">Reunion</option>
+            <option value="Romania">Romania</option>
+            <option value="Russia">Russia</option>
+            <option value="Rwanda">Rwanda</option>
+            <option value="Saint Kitts And Nevis">Saint Kitts And Nevis</option>
+            <option value="Saint Lucia">Saint Lucia</option>
+            <option value="Saint Martin">Saint Martin</option>
+            <option value="Sao Tome And Principe">Sao Tome And Principe</option>
+            <option value="Samoa">Samoa</option>
+            <option value="Saudi Arabia">Saudi Arabia</option>
+            <option value="Senegal">Senegal</option>
+            <option value="Serbia">Serbia</option>
+            <option value="Seychelles">Seychelles</option>
+            <option value="Singapore">Singapore</option>
+            <option value="Sint Maarten">Sint Maarten</option>
+            <option value="Slovakia">Slovakia</option>
+            <option value="Slovenia">Slovenia</option>
+            <option value="Solomon Islands">Solomon Islands</option>
+            <option value="South Africa">South Africa</option>
+            <option value="South Korea">South Korea</option>
+            <option value="Spain">Spain</option>
+            <option value="Sri Lanka">Sri Lanka</option>
+            <option value="St. Vincent">St. Vincent</option>
+            <option value="Sudan">Sudan</option>
+            <option value="Suriname">Suriname</option>
+            <option value="Sweden">Sweden</option>
+            <option value="Switzerland">Switzerland</option>
+            <option value="Syria">Syria</option>
+            <option value="Taiwan">Taiwan</option>
+            <option value="Tanzania  United Republic Of">Tanzania, United Republic Of</option>
+            <option value="Thailand">Thailand</option>
+            <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+            <option value="Tunisia">Tunisia</option>
+            <option value="Turkey">Turkey</option>
+            <option value="Turkmenistan">Turkmenistan</option>
+            <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+            <option value="Uganda">Uganda</option>
+            <option value="Ukraine">Ukraine</option>
+            <option value="United Arab Emirates">United Arab Emirates</option>
+            <option value="Uruguay">Uruguay</option>
+            <option value="Uzbekistan">Uzbekistan</option>
+            <option value="Vanuatu">Vanuatu</option>
+            <option value="Venezuela">Venezuela</option>
+            <option value="Vietnam">Vietnam</option>
+            <option value="Virgin Islands  British">Virgin Islands, British</option>
+            <option value="Yemen">Yemen</option>
+            <option value="Zambia">Zambia</option>
+            <option value="Zimbabwe">Zimbabwe</option>
+            <option value="Aland Islands">Aland Islands</option>
+            <option value="Anguilla">Anguilla</option>
+            <option value="Bouvet Island">Bouvet Island</option>
+            <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+            <option value="Burkina Faso">Burkina Faso</option>
+            <option value="Burundi">Burundi</option>
+            <option value="Cape Verde">Cape Verde</option>
+            <option value="Central African Republic">Central African Republic</option>
+            <option value="Chad">Chad</option>
+            <option value="Christmas Island">Christmas Island</option>
+            <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+            <option value="Cook Islands">Cook Islands</option>
+            <option value="Cuba">Cuba</option>
+            <option value="Djibouti">Djibouti</option>
+            <option value="Eritrea">Eritrea</option>
+            <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
+            <option value="French Guiana">French Guiana</option>
+            <option value="French Southern Territories">French Southern Territories</option>
+            <option value="Guinea">Guinea</option>
+            <option value="Guinea Bissau">Guinea Bissau</option>
+            <option value="Heard Island And Mcdonald Islands">Heard Island And Mcdonald Islands</option>
+            <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+            <option value="Iran  Islamic Republic Of">Iran, Islamic Republic Of</option>
+            <option value="Iraq">Iraq</option>
+            <option value="Kiribati">Kiribati</option>
+            <option value="Korea  Democratic People's Republic Of">Korea, Democratic People's Republic Of</option>
+            <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
+            <option value="Mali">Mali</option>
+            <option value="Mauritania">Mauritania</option>
+            <option value="Mayotte">Mayotte</option>
+            <option value="Montserrat">Montserrat</option>
+            <option value="Nauru">Nauru</option>
+            <option value="Niue">Niue</option>
+            <option value="Norfolk Island">Norfolk Island</option>
+            <option value="Pitcairn">Pitcairn</option>
+            <option value="Saint Barthélemy">Saint Barthélemy</option>
+            <option value="Saint Helena">Saint Helena</option>
+            <option value="Saint Pierre And Miquelon">Saint Pierre And Miquelon</option>
+            <option value="San Marino">San Marino</option>
+            <option value="Sierra Leone">Sierra Leone</option>
+            <option value="Somalia">Somalia</option>
+            <option value="South Georgia And The South Sandwich Islands">
+              South Georgia And The South Sandwich Islands
+            </option>
+            <option value="Svalbard And Jan Mayen">Svalbard And Jan Mayen</option>
+            <option value="Swaziland">Swaziland</option>
+            <option value="Tajikistan">Tajikistan</option>
+            <option value="Timor Leste">Timor Leste</option>
+            <option value="Togo">Togo</option>
+            <option value="Tokelau">Tokelau</option>
+            <option value="Tonga">Tonga</option>
+            <option value="Tuvalu">Tuvalu</option>
+            <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
+            <option value="Wallis And Futuna">Wallis And Futuna</option>
+            <option value="Western Sahara">Western Sahara</option>
+          </select>
+        </div>
+
+        <div class="membership-text form-group field-aaa-customer-zip-code">
+          <label for="aaa-customer-zip-code" class="membership-text-label" style="color: rgb(0, 0, 0);"
+            >Postcode <span class="required">*</span></label
+          >
+          <input
+            type="text"
+            required=""
+            class="form-control"
+            name="aaa-customer-zip-code"
+            id="aaa-customer-zip-code"
+            aria-required="true"
+          >
+        </div>
+
+        <div class="membership-number form-group field-aaa-customer-phone-number">
+          <label for="aaa-customer-phone-number" class="membership-number-label" style="color: rgb(0, 0, 0);"
+            >Phone Number</label
+          >
+          <input
+            type="number"
+            class="form-control aaa-customer-phone-number-class"
+            name="aaa-customer-phone-number"
+            id="aaa-customer-phone-number"
+          >
+          <input
+            type="text"
+            name="aaa-customer-phone-number-country"
+            class="aaa-customer-phone-number-country"
+            placeholder="country code(+1)"
+            value=""
+            style="width: 49% !important;float: left;margin-left: 1%;"
+          >
+        </div>
+
+        <div class="membership-checkbox form-group field-aaasubscribenewsletter">
+          <input type="checkbox" class="checkbox" name="aaasubscribenewsletter" value="1" id="aaasubscribenewsletter">
+          <label for="aaasubscribenewsletter" class="membership-checkbox-label" style="color: rgb(0, 0, 0);"
+            >Subscribe to our newsletter</label
+          >
+        </div>
+
         <div class="membership-submit form-group field-button-1497336985158">
           <button
             type="submit"
             class="button-input btn btn-primary"
             name="button-1497336985158"
+            style="primary"
             id="button-1497336985158"
           >
-            {{ section.settings.button_text | default: 'Subscribe Now' }}
+            Subscribe Now
           </button>
         </div>
+
+        <input type="hidden" name="affiliate_id" value="">
       </form>
     </div>
   </div>
 </div>
 
 <!-- Load HubPRO Script -->
-{% if section.settings.script_shop_domain != blank %}
-  <script>
-    function loadHubProMembershipScript() {
-      var shopDomain = '{{ section.settings.script_shop_domain | default: "ab97df-6.myshopify.com" }}';
-      var url =
-        'https://shopifycdn.aaawebstore.com/membership/appfiles/aaa_membership_script_min_v3.js?shop=' + shopDomain;
+<script>
+  function loadHubProMembershipScript() {
+    var shopDomain = '{{ section.settings.script_shop_domain | default: "ab97df-6.myshopify.com" }}';
+    var url =
+      'https://shopifycdn.aaawebstore.com/membership/appfiles/aaa_membership_script_min_v3.js?shop=' + shopDomain;
 
-      // Check if script already exists
-      var scripts = document.getElementsByTagName('script');
-      for (var i = 0; i < scripts.length; i++) {
-        if (scripts[i].src === url) {
-          return; // Script already loaded
-        }
+    // Check if script already exists
+    var scripts = document.getElementsByTagName('script');
+    for (var i = 0; i < scripts.length; i++) {
+      if (scripts[i].src === url) {
+        return; // Script already loaded
       }
-
-      // Create and load script
-      var script = document.createElement('script');
-      script.type = 'text/javascript';
-      script.src = url;
-      script.onload = function () {
-        console.log('HubPRO membership script loaded successfully');
-      };
-      script.onerror = function () {
-        console.error('Failed to load HubPRO membership script');
-      };
-      document.head.appendChild(script);
     }
 
-    // Load script when DOM is ready
-    if (document.readyState === 'loading') {
-      document.addEventListener('DOMContentLoaded', loadHubProMembershipScript);
-    } else {
-      loadHubProMembershipScript();
-    }
-  </script>
-{% endif %}
+    // Create and load script
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = url;
+    script.onload = function () {
+      console.log('HubPRO membership script loaded successfully');
+    };
+    script.onerror = function () {
+      console.error('Failed to load HubPRO membership script');
+    };
+    document.head.appendChild(script);
+  }
+
+  // Load script when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadHubProMembershipScript);
+  } else {
+    loadHubProMembershipScript();
+  }
+</script>
 
 {% schema %}
 {
@@ -491,13 +690,6 @@
       "label": "Script Shop Domain",
       "default": "ab97df-6.myshopify.com",
       "info": "The shop domain for loading the membership script (e.g. your-shop.myshopify.com)"
-    },
-    {
-      "type": "text",
-      "id": "thank_you_url",
-      "label": "Thank You Page URL",
-      "placeholder": "https://bathroomtradehub.co.uk/pages/hubpro-thank-you-for-signing-up",
-      "info": "Full URL for the thank you page after form submission. Leave blank to use default."
     },
     {
       "type": "header",
@@ -558,100 +750,6 @@
       "step": 1,
       "default": 8,
       "unit": "px"
-    },
-    {
-      "type": "header",
-      "content": "Field Visibility"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_h1_header",
-      "label": "Show HubPRO Header",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_divider",
-      "label": "Show Divider",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_h3_header",
-      "label": "Show Subheader",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_first_name",
-      "label": "Show First Name",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_last_name",
-      "label": "Show Last Name",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_company",
-      "label": "Show Company",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_email",
-      "label": "Show Email",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_password",
-      "label": "Show Password",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_confirm_password",
-      "label": "Show Confirm Password",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_address",
-      "label": "Show Address",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_city",
-      "label": "Show City",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_country",
-      "label": "Show Country",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_postcode",
-      "label": "Show Postcode",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_phone",
-      "label": "Show Phone Number",
-      "default": true
-    },
-    {
-      "type": "checkbox",
-      "id": "show_newsletter",
-      "label": "Show Newsletter Subscription",
-      "default": true
     },
     {
       "type": "header",
@@ -871,12 +969,6 @@
     {
       "type": "header",
       "content": "Submit Button Styling"
-    },
-    {
-      "type": "text",
-      "id": "button_text",
-      "label": "Button Text",
-      "default": "Subscribe Now"
     },
     {
       "type": "color",
