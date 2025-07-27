@@ -361,110 +361,11 @@
     "collection_list_rN7xKg": {
       "type": "collection-list",
       "blocks": {
-        "collection_BXAJPM": {
+        "collection_UWUk8b": {
           "type": "collection",
           "settings": {
-            "collection": "viva-essentials",
-            "image": "shopify://shop_images/unnamed.jpg",
-            "title": "",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_tNywGk": {
-          "type": "collection",
-          "settings": {
-            "collection": "consumables-in-stock",
-            "title": "Consumables & Tools",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_XTfYFh": {
-          "type": "collection",
-          "settings": {
-            "collection": "trims-in-stock",
-            "image": "shopify://shop_images/QMBTR31-M-Brushed-Silver_jpg.webp",
-            "title": "Panels & Trims",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_A9nxMN": {
-          "type": "collection",
-          "settings": {
-            "collection": "toilets-toilet-seats-cisterns",
-            "title": "Toilets, Seats & Cisterns",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_n4Vwcy": {
-          "type": "collection",
-          "settings": {
-            "collection": "rads-rad-valves",
-            "title": "",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_UBGMXg": {
-          "type": "collection",
-          "settings": {
-            "collection": "shower-glass-sets-accessories",
-            "title": "",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_w9mN6J": {
-          "type": "collection",
-          "settings": {
-            "collection": "furniture-mirrors",
-            "title": "",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_JgDzt9": {
-          "type": "collection",
-          "settings": {
-            "collection": "basins-brassware",
-            "title": "",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_HW7FxE": {
-          "type": "collection",
-          "settings": {
-            "collection": "hub-essentials",
-            "image": "shopify://shop_images/ChatGPT_Image_Jul_2_2025_at_12_35_50_PM.png",
-            "title": "SHOP ALL",
+            "collection": "momentum-chrome",
+            "title": "Chrome",
             "description": "",
             "overlay_content": false,
             "color_text": "#ffffff",
@@ -474,20 +375,12 @@
         }
       },
       "block_order": [
-        "collection_BXAJPM",
-        "collection_tNywGk",
-        "collection_XTfYFh",
-        "collection_A9nxMN",
-        "collection_n4Vwcy",
-        "collection_UBGMXg",
-        "collection_w9mN6J",
-        "collection_JgDzt9",
-        "collection_HW7FxE"
+        "collection_UWUk8b"
       ],
       "disabled": true,
       "name": "Collection list",
       "settings": {
-        "columns": 4,
+        "columns": 5,
         "carousel_on_desktop": false,
         "image_type": "collection",
         "image_ratio": "square",
@@ -495,7 +388,7 @@
         "show_view_all": false,
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "heading": "",
+        "heading": "<strong>The Momentum Range</strong>",
         "heading_size": "title-md",
         "heading_alignment": "text-left md:items-end md:flex-row",
         "heading_tag": "h2",
