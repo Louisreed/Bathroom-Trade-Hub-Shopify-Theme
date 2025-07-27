@@ -69,6 +69,74 @@
     ]
   },
   {
+    "name": "HubPro Settings",
+    "settings": [
+      {
+        "type": "header",
+        "content": "HubPro Member Customization"
+      },
+      {
+        "type": "paragraph",
+        "content": "Customize the appearance for customers with 'hubpro-free' or 'hubpro-plus' tags. These settings only apply when a logged-in customer has one of these tags."
+      },
+      {
+        "type": "header",
+        "content": "Navigation"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_nav_color",
+        "label": "HubPro Navigation Color",
+        "default": "#424242",
+        "info": "Background color for the header navigation when HubPro members are logged in"
+      },
+      {
+        "type": "header",
+        "content": "Logos"
+      },
+      {
+        "type": "image_picker",
+        "id": "hubpro_logo",
+        "label": "HubPro Logo (General)",
+        "info": "Logo to display for all HubPro members (both Free and Plus)"
+      },
+      {
+        "type": "image_picker",
+        "id": "hubpro_free_logo",
+        "label": "HubPro Free Logo",
+        "info": "Specific logo for HubPro Free members (overrides general HubPro logo)"
+      },
+      {
+        "type": "image_picker",
+        "id": "hubpro_plus_logo",
+        "label": "HubPro Plus Logo", 
+        "info": "Specific logo for HubPro Plus members (overrides general HubPro logo)"
+      },
+      {
+        "type": "header",
+        "content": "Mobile Logos"
+      },
+      {
+        "type": "image_picker",
+        "id": "hubpro_logo_mobile",
+        "label": "HubPro Mobile Logo (General)",
+        "info": "Mobile logo for all HubPro members"
+      },
+      {
+        "type": "image_picker",
+        "id": "hubpro_free_logo_mobile",
+        "label": "HubPro Free Mobile Logo",
+        "info": "Mobile logo for HubPro Free members"
+      },
+      {
+        "type": "image_picker",
+        "id": "hubpro_plus_logo_mobile",
+        "label": "HubPro Plus Mobile Logo",
+        "info": "Mobile logo for HubPro Plus members"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.colors.name",
     "settings": [
       {

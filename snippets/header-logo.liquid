@@ -1,7 +1,13 @@
 {%- doc -%}
-  Renders responsive header logo with white variants and SEO optimization.
+  Renders responsive header logo with white variants, HubPro support, and SEO optimization.
 
   Displays site logo with mobile/desktop versions, overlay support, and text fallback.
+  Automatically switches to HubPro-specific logos when customer has 'hubpro-free' or 'hubpro-plus' tags.
+
+  Requires: HubPro variables set by 'hubpro-check' snippet (usually called in header section)
+  - is_hubpro_user: boolean
+  - hubpro_logo: HubPro desktop logo
+  - hubpro_logo_mobile: HubPro mobile logo
 
   @param {boolean} [logo_h1] - Wrap logo in H1 tag for homepage SEO
 
@@ -10,8 +16,19 @@
 {%- enddoc -%}
 
 {%- liquid
-  assign logo = settings.logo
-  assign logo_mobile = settings.logo_mobile | default: logo
+  # Check HubPro status (variables set by header section)
+  # Use HubPro logos if available, otherwise fall back to regular logos
+  if is_hubpro_user and hubpro_logo != blank
+    assign logo = hubpro_logo
+  else
+    assign logo = settings.logo
+  endif
+
+  if is_hubpro_user and hubpro_logo_mobile != blank
+    assign logo_mobile = hubpro_logo_mobile
+  else
+    assign logo_mobile = settings.logo_mobile | default: logo
+  endif
 
   assign white_logo = settings.white_logo
   assign white_logo_mobile = settings.white_logo_mobile | default: white_logo

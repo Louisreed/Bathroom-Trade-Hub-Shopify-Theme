@@ -2,10 +2,22 @@
   #shopify-section-{{ section.id }} {
     --section-padding-top: {{ section.settings.padding_top }}px;
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
-    --color-background: {{ section.settings.color_background.rgb }};
+    --color-background: {% if is_hubpro_user %}{{ hubpro_nav_color }}{% else %}{{ section.settings.color_background.rgb }}{% endif %};
     --color-foreground: {{ section.settings.color_text.rgb }};
     --color-transparent: {{ section.settings.transparent_color_text.rgb }};
   }
+
+  {%- if is_hubpro_user -%}
+    /* HubPro Header Styling */
+    #shopify-section-{{ section.id }} .header {
+      background-color: {{ hubpro_nav_color }};
+    }
+
+    /* Ensure text is readable on the HubPro background */
+    #shopify-section-{{ section.id }} .header * {
+      color: {% if hubpro_nav_color == '#424242' %}#ffffff{% else %}inherit{% endif %};
+    }
+  {%- endif -%}
 
     /* Mobile VAT Switcher Row */
   .header-mobile-vat {
@@ -68,6 +80,9 @@
 </style>
 
 {%- liquid
+  # Check HubPro user status and get customization variables
+  render 'hubpro-check'
+
   assign header_layout = section.settings.header_layout
   assign main_menu = section.settings.menu
   assign link_count = main_menu.links.size
