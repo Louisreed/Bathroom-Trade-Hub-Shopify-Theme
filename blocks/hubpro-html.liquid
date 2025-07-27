@@ -1,32 +1,447 @@
 {%- comment -%}
-  HubPRO HTML Content Block
-  Allows users to paste HTML code that gets styled by the parent section
+  HubPRO Form Block - Complete self-contained HTML & CSS block
+  Allows merchants to paste HTML code and customize styling
 {%- endcomment -%}
 
-<div class="hubpro-html-block" {{ block.shopify_attributes }}>
+{% assign hubpro_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .hubpro-form-block-{{ hubpro_id }} {
+    width: 100%;
+    padding: {{ block.settings.padding_top }}px {{ block.settings.padding_horizontal }}px {{ block.settings.padding_bottom }}px {{ block.settings.padding_horizontal }}px;
+    background-color: {{ block.settings.background_color }};
+    {% if block.settings.max_width > 0 %}
+      max-width: {{ block.settings.max_width }}px;
+      margin-left: auto;
+      margin-right: auto;
+    {% endif %}
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.font_size }}px;
+    line-height: {{ block.settings.line_height }};
+    text-align: {{ block.settings.text_alignment }};
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} * {
+    max-width: 100%;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} img {
+    height: auto;
+    display: block;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} iframe,
+  .hubpro-form-content-{{ hubpro_id }} video {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} input[type="text"],
+  .hubpro-form-content-{{ hubpro_id }} input[type="email"],
+  .hubpro-form-content-{{ hubpro_id }} input[type="password"],
+  .hubpro-form-content-{{ hubpro_id }} input[type="number"],
+  .hubpro-form-content-{{ hubpro_id }} input[type="tel"],
+  .hubpro-form-content-{{ hubpro_id }} input[type="url"],
+  .hubpro-form-content-{{ hubpro_id }} input[type="search"] {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    min-height: 100px;
+    resize: vertical;
+    box-sizing: border-box;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #fff;
+    box-sizing: border-box;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} button,
+  .hubpro-form-content-{{ hubpro_id }} input[type="submit"],
+  .hubpro-form-content-{{ hubpro_id }} input[type="button"] {
+    padding: 12px 24px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} button:hover,
+  .hubpro-form-content-{{ hubpro_id }} input[type="submit"]:hover,
+  .hubpro-form-content-{{ hubpro_id }} input[type="button"]:hover {
+    background-color: #333;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} input[type="checkbox"],
+  .hubpro-form-content-{{ hubpro_id }} input[type="radio"] {
+    margin-right: 8px;
+    width: auto;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} fieldset {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} legend {
+    padding: 0 8px;
+    font-weight: 600;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} .form-group {
+    margin-bottom: 20px;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} .form-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} .form-col {
+    flex: 1;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} .form-inline {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} .form-inline label {
+    margin-bottom: 0;
+    white-space: nowrap;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} .form-inline input,
+  .hubpro-form-content-{{ hubpro_id }} .form-inline select {
+    width: auto;
+    flex: 1;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} .btn-secondary:hover {
+    background-color: #545b62;
+    border-color: #545b62;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} .btn-success:hover {
+    background-color: #1e7e34;
+    border-color: #1e7e34;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} .btn-danger:hover {
+    background-color: #bd2130;
+    border-color: #bd2130;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} .btn-outline {
+    background-color: transparent;
+    color: #000;
+    border: 1px solid #000;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} .btn-outline:hover {
+    background-color: #000;
+    color: #fff;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} .btn-large {
+    padding: 16px 32px;
+    font-size: 16px;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} .btn-small {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} .input-large {
+    padding: 16px 20px;
+    font-size: 16px;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} .input-small {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} .required {
+    border-color: #dc3545;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} .error {
+    border-color: #dc3545;
+    background-color: #f8d7da;
+  }
+
+  .hubpro-form-content-{{ hubpro_id }} .success {
+    border-color: #28a745;
+    background-color: #d4edda;
+  }
+
+  {% if block.settings.hide_on_mobile %}
+    @media screen and (max-width: 749px) {
+      .hubpro-form-block-{{ hubpro_id }} {
+        display: none;
+      }
+    }
+  {% endif %}
+
+  {% if block.settings.hide_on_desktop %}
+    @media screen and (min-width: 750px) {
+      .hubpro-form-block-{{ hubpro_id }} {
+        display: none;
+      }
+    }
+  {% endif %}
+
+  {% if block.settings.custom_css != blank %}
+    {{ block.settings.custom_css }}
+  {% endif %}
+{% endstyle %}
+
+<div class="hubpro-form-block-{{ hubpro_id }}" {{ block.shopify_attributes }}>
   {% if block.settings.custom_html != blank %}
-    {{ block.settings.custom_html }}
+    <div class="hubpro-form-content-{{ hubpro_id }}">
+      {{ block.settings.custom_html }}
+    </div>
   {% else %}
-    <p style="color: #999; font-style: italic; text-align: center; padding: 40px 20px;">
-      Add your custom HTML code in the block settings to see it displayed here.
-    </p>
+    <div class="hubpro-form-content-{{ hubpro_id }}">
+      <p style="color: #999; font-style: italic; text-align: center; padding: 40px 20px;">
+        Add your custom HTML code in the block settings to see it displayed here.
+      </p>
+      <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 20px; font-size: 14px; line-height: 1.6;">
+        <h4 style="margin-top: 0; color: #333;">Available CSS Classes for Form Elements:</h4>
+        <ul style="margin: 10px 0; padding-left: 20px; color: #666;">
+          <li><strong>.form-group</strong> - Container for form fields</li>
+          <li><strong>.form-row</strong> - Horizontal layout for multiple fields</li>
+          <li><strong>.form-col</strong> - Column within form-row</li>
+          <li><strong>.form-inline</strong> - Inline form layout</li>
+          <li><strong>.btn-primary, .btn-secondary, .btn-success, .btn-danger</strong> - Button colors</li>
+          <li><strong>.btn-outline</strong> - Outlined button style</li>
+          <li><strong>.btn-large, .btn-small</strong> - Button sizes</li>
+          <li><strong>.input-large, .input-small</strong> - Input sizes</li>
+          <li><strong>.required, .error, .success</strong> - Input states</li>
+        </ul>
+      </div>
+    </div>
   {% endif %}
 </div>
 
 {% schema %}
 {
-  "name": "HubPRO HTML Content",
+  "name": "HubPRO Form",
   "settings": [
     {
-      "type": "html",
+      "type": "header",
+      "content": "HTML Content"
+    },
+    {
+      "type": "textarea",
       "id": "custom_html",
       "label": "Custom HTML code",
-      "info": "Paste your HTML form or content here. It will be styled by the section's CSS settings."
+      "info": "Paste your HTML code here. Use the provided CSS classes for consistent form styling."
+    },
+    {
+      "type": "header",
+      "content": "CSS Override"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_css",
+      "label": "Custom CSS code",
+      "info": "Override default styles using class selectors. Target this block with .hubpro-form-content-{{ block.id | replace: '_', '' | downcase }}",
+      "placeholder": "/* Example: Style all buttons */\n.hubpro-form-content-{{ block.id | replace: '_', '' | downcase }} button {\n  background-color: #ff6b6b;\n  border-radius: 8px;\n}\n\n/* Example: Style form groups */\n.hubpro-form-content-{{ block.id | replace: '_', '' | downcase }} .form-group {\n  margin-bottom: 30px;\n}\n\n/* Example: Style specific button class */\n.hubpro-form-content-{{ block.id | replace: '_', '' | downcase }} .btn-primary {\n  background: linear-gradient(45deg, #667eea, #764ba2);\n}"
+    },
+    {
+      "type": "header",
+      "content": "Layout Settings"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "min": 0,
+      "max": 2000,
+      "step": 50,
+      "unit": "px",
+      "label": "Maximum width",
+      "default": 0,
+      "info": "Set to 0 for full width"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Top padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Bottom padding",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Left and right padding",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Base font size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "line_height",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "label": "Line height",
+      "default": 1.5
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Visibility"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_on_mobile",
+      "label": "Hide on mobile",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_on_desktop",
+      "label": "Hide on desktop",
+      "default": false
     }
   ],
   "presets": [
     {
-      "name": "HubPRO HTML Content"
+      "name": "HubPRO Form"
     }
   ]
 }
