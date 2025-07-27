@@ -32,83 +32,6 @@
         "rounded": false
       }
     },
-    "rich_text_KBAVRK": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_HXYVaC": {
-          "type": "heading",
-          "settings": {
-            "heading": "We're just running a few checks...",
-            "heading_size": "title-lg tracking-heading",
-            "heading_tag": "h2",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "text_VUnV6W": {
-          "type": "text",
-          "settings": {
-            "text": "<p>After we've verified your account you will be able to login to your trade account and start saving. </p>",
-            "text_font": "body",
-            "text_size": "subtext-md",
-            "text_max_size": 32,
-            "text_line_height": 1.6,
-            "text_letter_spacing": 0,
-            "text_capitalize": false,
-            "secondary_color": false,
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "button_RGRpbz": {
-          "type": "button",
-          "settings": {
-            "button_label": "Browse products",
-            "button_link": "shopify://collections/all",
-            "button_style": "secondary",
-            "button_size": "md",
-            "button_external": false,
-            "button_icon": true
-          }
-        }
-      },
-      "block_order": [
-        "heading_HXYVaC",
-        "text_VUnV6W",
-        "button_RGRpbz"
-      ],
-      "name": "t:sections.rich-text.name",
-      "settings": {
-        "text_alignment": "left",
-        "text_alignment_mobile": "left",
-        "heading": "",
-        "heading_size": "title-md",
-        "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_width": "small",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "",
-        "button_label": "",
-        "button_link": "",
-        "button_external": false,
-        "button_icon": true,
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "#fafafa",
-        "color_background": "#424242",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 72,
-        "padding_bottom": 100,
-        "divider": false,
-        "narrow": true,
-        "rounded": false
-      }
-    },
     "17157682575ad8f603": {
       "type": "apps",
       "blocks": {
@@ -150,173 +73,6 @@
         "rounded": false
       }
     },
-    "collection_list_kg7KnE": {
-      "type": "collection-list",
-      "blocks": {
-        "collection_6fdXNc": {
-          "type": "collection",
-          "settings": {
-            "collection": "canada",
-            "title": "Canada",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_99UjPB": {
-          "type": "collection",
-          "settings": {
-            "collection": "cartegena",
-            "title": "Cartegena",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_Qw3mC3": {
-          "type": "collection",
-          "settings": {
-            "collection": "kolk",
-            "title": "Kalk",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_b6di6b": {
-          "type": "collection",
-          "settings": {
-            "collection": "navala",
-            "title": "Navala",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_jD3feK": {
-          "type": "collection",
-          "settings": {
-            "collection": "halstatt",
-            "title": "Halstatt",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        }
-      },
-      "block_order": [
-        "collection_6fdXNc",
-        "collection_99UjPB",
-        "collection_Qw3mC3",
-        "collection_b6di6b",
-        "collection_jD3feK"
-      ],
-      "disabled": true,
-      "settings": {
-        "columns": 5,
-        "carousel_on_desktop": true,
-        "image_type": "collection",
-        "image_ratio": "square",
-        "show_products_count": true,
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "heading": "",
-        "heading_size": "title-md",
-        "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "",
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 72,
-        "padding_bottom": 72,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
-      }
-    },
-    "image_with_text_akrF6A": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_Vamick": {
-          "type": "heading",
-          "settings": {
-            "heading": "Hub Essentials",
-            "heading_size": "title-md",
-            "heading_tag": "h2",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "text_DpA9eg": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Shop our range of essential products for every bathroom installer! We have great products at amazing prices!</p><p>The best bit? It's all in stock ready for delivery/collection!</p>",
-            "text_font": "body",
-            "text_size": "subtext-md",
-            "text_max_size": 32,
-            "text_line_height": 1.6,
-            "text_letter_spacing": 0,
-            "text_capitalize": false,
-            "secondary_color": false,
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        }
-      },
-      "block_order": [
-        "heading_Vamick",
-        "text_DpA9eg"
-      ],
-      "disabled": true,
-      "name": "Image with text",
-      "settings": {
-        "image": "shopify://shop_images/Screenshot_2025-06-23_at_13.09.34.jpg",
-        "image_height": "adapt",
-        "image_width": "medium",
-        "layout": "image_first",
-        "text_alignment": "center",
-        "content_position": "align-self-center",
-        "image_height_mobile": "auto",
-        "text_alignment_mobile": "center",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_background_2": "",
-        "gradient_background_2": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 40,
-        "padding_bottom": 40,
-        "divider": false,
-        "full_width": false,
-        "rounded": false,
-        "enable_parallax": true,
-        "parallax_direction": "vertical"
-      }
-    },
     "173176303439daeef7": {
       "type": "apps",
       "blocks": {
@@ -343,6 +99,110 @@
       ],
       "disabled": true,
       "settings": {
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "collection_list_nqMCH9": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_6GGHEM": {
+          "type": "collection",
+          "settings": {
+            "collection": "shower-valves",
+            "title": "Shower Valves",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_EXxXiG": {
+          "type": "collection",
+          "settings": {
+            "collection": "dual-outlet-showers",
+            "title": "Dual Outlet Showers",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_CLf8JY": {
+          "type": "collection",
+          "settings": {
+            "collection": "shower-rail-kits",
+            "title": "Shower Rail Kits",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_39UNBR": {
+          "type": "collection",
+          "settings": {
+            "collection": "shower-heads-1",
+            "title": "",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_nMzW3r": {
+          "type": "collection",
+          "settings": {
+            "collection": "custom-collection",
+            "title": "Shower Hose & Head Sets",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_6GGHEM",
+        "collection_EXxXiG",
+        "collection_CLf8JY",
+        "collection_39UNBR",
+        "collection_nMzW3r"
+      ],
+      "name": "t:sections.collection-list.name",
+      "settings": {
+        "columns": 5,
+        "carousel_on_desktop": false,
+        "image_type": "collection",
+        "image_ratio": "square",
+        "show_products_count": true,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Showers",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
         "color_text": "",
         "color_background": "",
         "gradient_background": "",
@@ -510,7 +370,7 @@
       ],
       "disabled": true,
       "settings": {
-        "columns": 4,
+        "columns": 5,
         "carousel_on_desktop": false,
         "image_type": "collection",
         "image_ratio": "square",
@@ -541,97 +401,70 @@
         "rounded": false
       }
     },
-    "collection_list_nqMCH9": {
-      "type": "collection-list",
+    "rich_text_KBAVRK": {
+      "type": "rich-text",
       "blocks": {
-        "collection_6GGHEM": {
-          "type": "collection",
+        "heading_HXYVaC": {
+          "type": "heading",
           "settings": {
-            "collection": "shower-valves",
-            "title": "Shower Valves",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
+            "heading": "We're just running a few checks...",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
           }
         },
-        "collection_EXxXiG": {
-          "type": "collection",
+        "text_VUnV6W": {
+          "type": "text",
           "settings": {
-            "collection": "dual-outlet-showers",
-            "title": "Dual Outlet Showers",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
+            "text": "<p>After we've verified your account you will be able to login to your trade account and start saving. </p>",
+            "text_font": "body",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
           }
         },
-        "collection_CLf8JY": {
-          "type": "collection",
+        "button_RGRpbz": {
+          "type": "button",
           "settings": {
-            "collection": "shower-rail-kits",
-            "title": "Shower Rail Kits",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_39UNBR": {
-          "type": "collection",
-          "settings": {
-            "collection": "shower-heads-1",
-            "title": "",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_nMzW3r": {
-          "type": "collection",
-          "settings": {
-            "collection": "custom-collection",
-            "title": "Shower Hose & Head Sets",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
+            "button_label": "Browse products",
+            "button_link": "shopify://collections/all",
+            "button_style": "secondary",
+            "button_size": "md",
+            "button_external": false,
+            "button_icon": true
           }
         }
       },
       "block_order": [
-        "collection_6GGHEM",
-        "collection_EXxXiG",
-        "collection_CLf8JY",
-        "collection_39UNBR",
-        "collection_nMzW3r"
+        "heading_HXYVaC",
+        "text_VUnV6W",
+        "button_RGRpbz"
       ],
-      "name": "t:sections.collection-list.name",
+      "name": "t:sections.rich-text.name",
       "settings": {
-        "columns": 5,
-        "carousel_on_desktop": false,
-        "image_type": "collection",
-        "image_ratio": "square",
-        "show_products_count": true,
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "heading": "Showers",
+        "text_alignment": "left",
+        "text_alignment_mobile": "left",
+        "heading": "",
         "heading_size": "title-md",
         "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
         "heading_tag": "h2",
         "subheading": "",
         "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
         "highlighted_text": "none",
         "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
+        "color_text": "#fafafa",
+        "color_background": "#424242",
         "gradient_background": "",
         "color_highlight": "",
         "gradient_highlight": "",
@@ -639,22 +472,20 @@
         "color_button_background": "",
         "color_button_gradient": "",
         "padding_top": 72,
-        "padding_bottom": 72,
+        "padding_bottom": 100,
         "divider": false,
-        "full_width": false,
+        "narrow": true,
         "rounded": false
       }
     }
   },
   "order": [
     "main-page",
-    "rich_text_KBAVRK",
     "17157682575ad8f603",
-    "collection_list_kg7KnE",
-    "image_with_text_akrF6A",
     "173176303439daeef7",
+    "collection_list_nqMCH9",
     "collection_list_rN7xKg",
     "collection_list_49gCqq",
-    "collection_list_nqMCH9"
+    "rich_text_KBAVRK"
   ]
 }
