@@ -647,13 +647,26 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_nMzW3r": {
+          "type": "collection",
+          "settings": {
+            "collection": "custom-collection",
+            "title": "Shower Hose & Head Sets",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
         "collection_6GGHEM",
         "collection_EXxXiG",
         "collection_CLf8JY",
-        "collection_39UNBR"
+        "collection_39UNBR",
+        "collection_nMzW3r"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
