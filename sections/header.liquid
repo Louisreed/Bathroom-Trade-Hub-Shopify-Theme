@@ -224,23 +224,26 @@
       {%- endfor -%}
     ];
 
-    console.log('🏷️  MENU ITEM TAG CONFIGURATION GUIDE');
-    console.log('====================================');
-    console.log('Available menu items from your selected menu:');
-    console.log('');
-    menuItems.forEach((item, index) => {
-      console.log(`${index + 1}. ${item.title}`);
-      console.log(`   Handle: "${item.handle}"`);
-      console.log(`   Use this in "Menu Item X - Handle" field`);
+    // Menu configuration guide - only show in Shopify admin/theme editor
+    if (Shopify.designMode) {
+      console.log('🏷️  MENU ITEM TAG CONFIGURATION GUIDE');
+      console.log('====================================');
+      console.log('Available menu items from your selected menu:');
       console.log('');
-    });
-    console.log('💡 CONFIGURATION TIPS:');
-    console.log('• Copy the exact handle (e.g., "wall-panels") into Handle field');
-    console.log('• Set custom tag text (e.g., "NEW", "HOT", "SALE", "LIMITED")');
-    console.log('• Use custom colors for individual tags if needed');
-    console.log('• Use the + button to add more menu item tags');
-    console.log('• Remove tags you no longer need with the trash icon');
-    console.log('');
+      menuItems.forEach((item, index) => {
+        console.log(`${index + 1}. ${item.title}`);
+        console.log(`   Handle: "${item.handle}"`);
+        console.log(`   Use this in "Menu Item X - Handle" field`);
+        console.log('');
+      });
+      console.log('💡 CONFIGURATION TIPS:');
+      console.log('• Copy the exact handle (e.g., "wall-panels") into Handle field');
+      console.log('• Set custom tag text (e.g., "NEW", "HOT", "SALE", "LIMITED")');
+      console.log('• Use custom colors for individual tags if needed');
+      console.log('• Use the + button to add more menu item tags');
+      console.log('• Remove tags you no longer need with the trash icon');
+      console.log('');
+    }
   }
 </script>
 
