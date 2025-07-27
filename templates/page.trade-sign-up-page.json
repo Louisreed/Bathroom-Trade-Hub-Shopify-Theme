@@ -62,7 +62,12 @@
             "button_style": "secondary",
             "button_size": "md",
             "button_external": false,
-            "button_icon": true
+            "button_icon": true,
+            "enable_modal": false,
+            "modal_content": "",
+            "modal_title": "",
+            "show_modal_title": true,
+            "modal_custom_css": ""
           }
         },
         "button_AA9Wqt": {
@@ -73,13 +78,12 @@
             "button_style": "primary",
             "button_size": "md",
             "button_external": false,
-            "button_icon": true
-          }
-        },
-        "liquid_aqDYjJ": {
-          "type": "liquid",
-          "settings": {
-            "liquid": "<div class='aaa-membership-button-form' data-form-id='13447'> </div>  <script> function isMyMembershipScriptLoaded() { var url = 'https://shopifycdn.aaawebstore.com/membership/appfiles/aaa_membership_script_min_v3.js?shop=ab97df-6.myshopify.com'; var jsFound = 0; var scripts = document.getElementsByTagName('script');  for (var i = scripts.length; i--;) { if (scripts[i].src == url) { jsFound = 1; } } if(!jsFound) { var headTag = document.getElementsByTagName('head')[0]; var jqTag = document.createElement('script'); jqTag.type = 'text/javascript'; jqTag.src = url; jqTag.onload = ''; headTag.appendChild(jqTag); } } isMyMembershipScriptLoaded(); </script>"
+            "button_icon": true,
+            "enable_modal": false,
+            "modal_content": "",
+            "modal_title": "",
+            "show_modal_title": true,
+            "modal_custom_css": ""
           }
         }
       },
@@ -87,8 +91,7 @@
         "subheading_iVHtUk",
         "image_P4KjKp",
         "button_UqMMdQ",
-        "button_AA9Wqt",
-        "liquid_aqDYjJ"
+        "button_AA9Wqt"
       ],
       "custom_css": [
         ".banner {/* Remove header margin-bottom */ margin-top: -28px;}"

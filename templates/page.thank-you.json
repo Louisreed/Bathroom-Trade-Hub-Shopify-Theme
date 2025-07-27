@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main-page": {
@@ -42,32 +51,26 @@
             "text": "<p>Thank you for signing up to our exclusive trade membership program. Your application has been received and is being processed.</p><p>You'll receive a confirmation email shortly with your membership details and exclusive trade pricing access.</p>",
             "text_font": "body",
             "text_size": "text-base",
+            "text_max_size": 20,
             "text_line_height": 1.6,
             "text_letter_spacing": 0,
             "text_capitalize": false,
-            "text_max_size": 20,
+            "secondary_color": false,
             "highlighted_text": "none",
-            "highlighted_scribble": "circle",
-            "secondary_color": false
+            "highlighted_scribble": "circle"
           }
         }
       },
       "block_order": [
-        "heading_welcome", 
+        "heading_welcome",
         "text_confirmation"
       ],
       "settings": {
-        "full_width": false,
-        "content_alignment": "text-center",
         "color_text": "#424242",
         "color_background": "#f8f9fa",
         "gradient_background": "",
         "padding_top": 60,
         "padding_bottom": 60,
-        "margin_top": 0,
-        "margin_bottom": 0,
-        "margin_left": 0,
-        "margin_right": 0,
         "divider": false,
         "rounded": true
       }
@@ -77,4 +80,4 @@
     "main-page",
     "rich_text_thank_you"
   ]
-} 
+}
