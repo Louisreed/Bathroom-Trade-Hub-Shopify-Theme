@@ -1,10 +1,46 @@
+{%- liquid
+  # Default color assignment
+  assign header_color_background = section.settings.color_background
+  assign header_color_text = section.settings.color_text
+  assign header_transparent_color_text = section.settings.transparent_color_text
+
+  # Check customer tags and override colors accordingly
+  if customer and customer.tags contains 'hubpro-plus'
+    # HubPro Plus customer - use plus colors if available, otherwise fallback to default
+    if section.settings.hubpro_plus_color_background != blank
+      assign header_color_background = section.settings.hubpro_plus_color_background
+    endif
+    if section.settings.hubpro_plus_color_text != blank
+      assign header_color_text = section.settings.hubpro_plus_color_text
+    endif
+    if section.settings.hubpro_plus_transparent_color_text != blank
+      assign header_transparent_color_text = section.settings.hubpro_plus_transparent_color_text
+    endif
+  elsif customer and customer.tags contains 'hubpro-free'
+    # HubPro Free customer - use free colors if available, otherwise fallback to default
+    if section.settings.hubpro_free_color_background != blank
+      assign header_color_background = section.settings.hubpro_free_color_background
+    endif
+    if section.settings.hubpro_free_color_text != blank
+      assign header_color_text = section.settings.hubpro_free_color_text
+    endif
+    if section.settings.hubpro_free_transparent_color_text != blank
+      assign header_transparent_color_text = section.settings.hubpro_free_transparent_color_text
+    endif
+  endif
+-%}
+
 <style>
   #shopify-section-{{ section.id }} {
     --section-padding-top: {{ section.settings.padding_top }}px;
     --section-padding-bottom: {{ section.settings.padding_bottom }}px;
-    --color-background: {{ section.settings.color_background.rgb }};
-    --color-foreground: {{ section.settings.color_text.rgb }};
-    --color-transparent: {{ section.settings.transparent_color_text.rgb }};
+    --section-margin-top: {{ section.settings.margin_top }}px;
+    --section-margin-bottom: {{ section.settings.margin_bottom }}px;
+    --color-background: {{ header_color_background.rgb }};
+    --color-foreground: {{ header_color_text.rgb }};
+    --color-transparent: {{ header_transparent_color_text.rgb }};
+    margin-top: var(--section-margin-top);
+    margin-bottom: var(--section-margin-bottom);
   }
 
     /* Mobile VAT Switcher Row */
@@ -188,23 +224,26 @@
       {%- endfor -%}
     ];
 
-    console.log('🏷️  MENU ITEM TAG CONFIGURATION GUIDE');
-    console.log('====================================');
-    console.log('Available menu items from your selected menu:');
-    console.log('');
-    menuItems.forEach((item, index) => {
-      console.log(`${index + 1}. ${item.title}`);
-      console.log(`   Handle: "${item.handle}"`);
-      console.log(`   Use this in "Menu Item X - Handle" field`);
+    // Menu configuration guide - only show in Shopify admin/theme editor
+    if (Shopify.designMode) {
+      console.log('🏷️  MENU ITEM TAG CONFIGURATION GUIDE');
+      console.log('====================================');
+      console.log('Available menu items from your selected menu:');
       console.log('');
-    });
-    console.log('💡 CONFIGURATION TIPS:');
-    console.log('• Copy the exact handle (e.g., "wall-panels") into Handle field');
-    console.log('• Set custom tag text (e.g., "NEW", "HOT", "SALE", "LIMITED")');
-    console.log('• Use custom colors for individual tags if needed');
-    console.log('• Use the + button to add more menu item tags');
-    console.log('• Remove tags you no longer need with the trash icon');
-    console.log('');
+      menuItems.forEach((item, index) => {
+        console.log(`${index + 1}. ${item.title}`);
+        console.log(`   Handle: "${item.handle}"`);
+        console.log(`   Use this in "Menu Item X - Handle" field`);
+        console.log('');
+      });
+      console.log('💡 CONFIGURATION TIPS:');
+      console.log('• Copy the exact handle (e.g., "wall-panels") into Handle field');
+      console.log('• Set custom tag text (e.g., "NEW", "HOT", "SALE", "LIMITED")');
+      console.log('• Use custom colors for individual tags if needed');
+      console.log('• Use the + button to add more menu item tags');
+      console.log('• Remove tags you no longer need with the trash icon');
+      console.log('');
+    }
   }
 </script>
 
@@ -427,6 +466,56 @@
     },
     {
       "type": "header",
+      "content": "HubPro Free Colors"
+    },
+    {
+      "type": "color",
+      "id": "hubpro_free_color_text",
+      "label": "HubPro Free Text Color",
+      "info": "Text color for customers with 'hubpro-free' tag",
+      "default": "#171717"
+    },
+    {
+      "type": "color",
+      "id": "hubpro_free_color_background",
+      "label": "HubPro Free Background Color",
+      "info": "Background color for customers with 'hubpro-free' tag",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "hubpro_free_transparent_color_text",
+      "label": "HubPro Free Transparent Text Color",
+      "info": "Transparent header text color for hubpro-free customers",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "HubPro Plus Colors"
+    },
+    {
+      "type": "color",
+      "id": "hubpro_plus_color_text",
+      "label": "HubPro Plus Text Color",
+      "info": "Text color for customers with 'hubpro-plus' tag",
+      "default": "#171717"
+    },
+    {
+      "type": "color",
+      "id": "hubpro_plus_color_background",
+      "label": "HubPro Plus Background Color",
+      "info": "Background color for customers with 'hubpro-plus' tag",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "hubpro_plus_transparent_color_text",
+      "label": "HubPro Plus Transparent Text Color",
+      "info": "Transparent header text color for hubpro-plus customers",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
       "content": "t:sections.global.settings.header__section.content"
     },
     {
@@ -448,6 +537,28 @@
       "unit": "px",
       "label": "t:sections.global.settings.padding_bottom.label",
       "default": 32
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": -120,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Margin Top",
+      "default": 0,
+      "info": "Use negative values to remove default spacing"
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": -120,
+      "max": 120,
+      "step": 4,
+      "unit": "px",
+      "label": "Margin Bottom",
+      "default": 0,
+      "info": "Use negative values to remove default spacing"
     },
     {
       "type": "checkbox",
