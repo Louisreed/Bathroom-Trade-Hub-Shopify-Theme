@@ -635,12 +635,25 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_39UNBR": {
+          "type": "collection",
+          "settings": {
+            "collection": "shower-heads-1",
+            "title": "",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
         "collection_6GGHEM",
         "collection_EXxXiG",
-        "collection_CLf8JY"
+        "collection_CLf8JY",
+        "collection_39UNBR"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
