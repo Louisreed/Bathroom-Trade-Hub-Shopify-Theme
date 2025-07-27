@@ -1,0 +1,258 @@
+{
+  "sections": {
+    "main-page": {
+      "type": "main-page",
+      "settings": {
+        "heading_size": "title-xl tracking-heading",
+        "heading_alignment": "text-center",
+        "heading_tag": "h1",
+        "text_size": "text-lg",
+        "text_capitalization": "",
+        "content_capitalization": "",
+        "color_text": "#424242",
+        "color_background": "#ffffff",
+        "gradient_background": "",
+        "padding_top": 80,
+        "padding_bottom": 40,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_left": 0,
+        "margin_right": 0,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "rich_text_thank_you": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_welcome": {
+          "type": "heading",
+          "settings": {
+            "heading": "Welcome to HubPRO!",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_confirmation": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Thank you for signing up to our exclusive trade membership program. Your application has been received and is being processed.</p><p>You'll receive a confirmation email shortly with your membership details and exclusive trade pricing access.</p>",
+            "text_font": "body",
+            "text_size": "text-base",
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "text_max_size": 20,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "secondary_color": false
+          }
+        },
+        "spacer_1": {
+          "type": "spacing",
+          "settings": {
+            "height": 40,
+            "height_mobile": 20
+          }
+        },
+        "heading_next_steps": {
+          "type": "heading",
+          "settings": {
+            "heading": "What Happens Next?",
+            "heading_size": "title-md",
+            "heading_tag": "h3",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_next_steps": {
+          "type": "text",
+          "settings": {
+            "text": "<ol><li><strong>Email Confirmation:</strong> Check your inbox for a welcome email with your membership details</li><li><strong>Account Verification:</strong> Our team will verify your trade credentials (this usually takes 24-48 hours)</li><li><strong>Access Granted:</strong> Once approved, you'll have full access to trade pricing and exclusive products</li><li><strong>Start Shopping:</strong> Browse our extensive range of bathroom supplies at trade prices</li></ol>",
+            "text_font": "body",
+            "text_size": "text-base",
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "text_max_size": 20,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "secondary_color": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_welcome",
+        "text_confirmation",
+        "spacer_1",
+        "heading_next_steps",
+        "text_next_steps"
+      ],
+      "settings": {
+        "full_width": false,
+        "content_alignment": "text-center",
+        "color_text": "#424242",
+        "color_background": "#f8f9fa",
+        "gradient_background": "",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_left": 0,
+        "margin_right": 0,
+        "divider": false,
+        "rounded": true
+      }
+    },
+    "image_with_text_benefits": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_benefits": {
+          "type": "heading",
+          "settings": {
+            "heading": "Your HubPRO Membership Benefits",
+            "heading_size": "title-lg",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_benefits": {
+          "type": "text",
+          "settings": {
+            "text": "<ul><li><strong>Exclusive Trade Pricing:</strong> Access to wholesale prices across our entire range</li><li><strong>Priority Delivery:</strong> Fast tracked orders and priority stock allocation</li><li><strong>Dedicated Support:</strong> Direct access to our trade specialist team</li><li><strong>Extended Credit Terms:</strong> Flexible payment options for larger projects</li><li><strong>Project Management:</strong> Tools and support for managing multiple bathroom projects</li><li><strong>Early Access:</strong> First access to new products and seasonal offers</li></ul>",
+            "text_font": "body",
+            "text_size": "text-base",
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "text_max_size": 20,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "secondary_color": false
+          }
+        },
+        "button_continue": {
+          "type": "button",
+          "settings": {
+            "button_label": "Continue Shopping",
+            "button_link": "/collections/all",
+            "button_style": "primary",
+            "button_size": "lg",
+            "button_external": false,
+            "button_icon": true,
+            "enable_modal": false,
+            "modal_content": "",
+            "modal_title": "",
+            "show_modal_title": true,
+            "modal_custom_css": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_benefits",
+        "text_benefits",
+        "button_continue"
+      ],
+      "settings": {
+        "layout": "image_second",
+        "image_ratio": "portrait",
+        "image_ratio_mobile": "square",
+        "image_fit": "cover",
+        "full_width": false,
+        "content_layout": "left",
+        "content_size": "medium",
+        "alignment": "top-left",
+        "image_behavior": "none",
+        "enable_parallax": false,
+        "parallax_direction": "vertical",
+        "color_text": "#424242",
+        "color_background": "#ffffff",
+        "gradient_background": "",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_left": 0,
+        "margin_right": 0,
+        "divider": false,
+        "rounded": false
+      }
+    },
+    "contact_info": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_contact": {
+          "type": "heading",
+          "settings": {
+            "heading": "Need Help? We're Here for You",
+            "heading_size": "title-md",
+            "heading_tag": "h3",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_contact": {
+          "type": "text",
+          "settings": {
+            "text": "<p>If you have any questions about your membership or need assistance with your first order, our trade specialists are ready to help.</p><p><strong>Phone:</strong> 01305 808098<br><strong>Email:</strong> trade@bathroomtradehub.co.uk<br><strong>Hours:</strong> Monday - Friday, 8:00 AM - 5:30 PM</p>",
+            "text_font": "body",
+            "text_size": "text-base",
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "text_max_size": 20,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "secondary_color": false
+          }
+        },
+        "button_contact": {
+          "type": "button",
+          "settings": {
+            "button_label": "Contact Our Trade Team",
+            "button_link": "/pages/contact-us",
+            "button_style": "secondary",
+            "button_size": "md",
+            "button_external": false,
+            "button_icon": true,
+            "enable_modal": false,
+            "modal_content": "",
+            "modal_title": "",
+            "show_modal_title": true,
+            "modal_custom_css": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_contact",
+        "text_contact",
+        "button_contact"
+      ],
+      "settings": {
+        "full_width": false,
+        "content_alignment": "text-center",
+        "color_text": "#424242",
+        "color_background": "#f1f3f4",
+        "gradient_background": "",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_left": 0,
+        "margin_right": 0,
+        "divider": false,
+        "rounded": true
+      }
+    }
+  },
+  "order": [
+    "main-page",
+    "rich_text_thank_you",
+    "image_with_text_benefits",
+    "contact_info"
+  ]
+} 
