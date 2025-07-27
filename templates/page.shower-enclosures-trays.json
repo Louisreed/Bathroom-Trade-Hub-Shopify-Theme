@@ -266,11 +266,37 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_gzUBYE": {
+          "type": "collection",
+          "settings": {
+            "collection": "momentum-collection",
+            "title": "Momentum",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_f6weNC": {
+          "type": "collection",
+          "settings": {
+            "collection": "athena-collection",
+            "title": "Athena",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
         "collection_ND8apk",
-        "collection_4R4cKA"
+        "collection_4R4cKA",
+        "collection_gzUBYE",
+        "collection_f6weNC"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
