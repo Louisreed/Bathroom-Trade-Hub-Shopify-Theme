@@ -615,10 +615,10 @@
         "collection_EXxXiG": {
           "type": "collection",
           "settings": {
-            "collection": "",
-            "title": "",
+            "collection": "dual-outlet-showers",
+            "title": "Dual Outlet Showers",
             "description": "",
-            "overlay_content": false,
+            "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 30
