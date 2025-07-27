@@ -58,6 +58,62 @@
       },
       {
         "type": "header",
+        "content": "HubPro Free Logos"
+      },
+      {
+        "type": "image_picker",
+        "id": "hubpro_free_logo",
+        "label": "HubPro Free Logo (Desktop)",
+        "info": "Logo displayed for customers with 'hubpro-free' tag on desktop"
+      },
+      {
+        "type": "image_picker",
+        "id": "hubpro_free_logo_mobile",
+        "label": "HubPro Free Logo (Mobile)",
+        "info": "Logo displayed for customers with 'hubpro-free' tag on mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "hubpro_free_white_logo",
+        "label": "HubPro Free White Logo (Desktop)",
+        "info": "White logo for transparent headers on desktop for hubpro-free customers"
+      },
+      {
+        "type": "image_picker",
+        "id": "hubpro_free_white_logo_mobile",
+        "label": "HubPro Free White Logo (Mobile)",
+        "info": "White logo for transparent headers on mobile for hubpro-free customers"
+      },
+      {
+        "type": "header",
+        "content": "HubPro Plus Logos"
+      },
+      {
+        "type": "image_picker",
+        "id": "hubpro_plus_logo",
+        "label": "HubPro Plus Logo (Desktop)",
+        "info": "Logo displayed for customers with 'hubpro-plus' tag on desktop"
+      },
+      {
+        "type": "image_picker",
+        "id": "hubpro_plus_logo_mobile",
+        "label": "HubPro Plus Logo (Mobile)",
+        "info": "Logo displayed for customers with 'hubpro-plus' tag on mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "hubpro_plus_white_logo",
+        "label": "HubPro Plus White Logo (Desktop)",
+        "info": "White logo for transparent headers on desktop for hubpro-plus customers"
+      },
+      {
+        "type": "image_picker",
+        "id": "hubpro_plus_white_logo_mobile",
+        "label": "HubPro Plus White Logo (Mobile)",
+        "info": "White logo for transparent headers on mobile for hubpro-plus customers"
+      },
+      {
+        "type": "header",
         "content": "t:settings_schema.logo.settings.header__favicon.content"
       },
       {
