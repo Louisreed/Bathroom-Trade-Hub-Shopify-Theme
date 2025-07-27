@@ -1221,8 +1221,16 @@
         "transparent_color_text": "#ffffff",
         "color_text": "#171717",
         "color_background": "#ffffff",
+        "hubpro_free_color_text": "#ffffff",
+        "hubpro_free_color_background": "#424242",
+        "hubpro_free_transparent_color_text": "#ffffff",
+        "hubpro_plus_color_text": "#ffffff",
+        "hubpro_plus_color_background": "#424242",
+        "hubpro_plus_transparent_color_text": "#ffffff",
         "padding_top": 32,
         "padding_bottom": 32,
+        "margin_top": 0,
+        "margin_bottom": 0,
         "full_width": true,
         "rounded": true
       }
