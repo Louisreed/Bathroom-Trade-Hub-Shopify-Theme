@@ -581,6 +581,110 @@
         "full_width": false,
         "rounded": false
       }
+    },
+    "collection_list_qTBPix": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_6r6Tk4": {
+          "type": "collection",
+          "settings": {
+            "collection": "s6-double-quadrant",
+            "title": "Double Door Quadrant",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_qnymnV": {
+          "type": "collection",
+          "settings": {
+            "collection": "s6-single-quadrant",
+            "title": "Single Door Quadrant",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_iKBtDD": {
+          "type": "collection",
+          "settings": {
+            "collection": "s6-pivot-door",
+            "title": "Pivot Door",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_36WybT": {
+          "type": "collection",
+          "settings": {
+            "collection": "s6-bi-fold",
+            "title": "Bi-Fold Door",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_ND8apk": {
+          "type": "collection",
+          "settings": {
+            "collection": "s6-sliding-door",
+            "title": "Sliding Door",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_6r6Tk4",
+        "collection_qnymnV",
+        "collection_iKBtDD",
+        "collection_36WybT",
+        "collection_ND8apk"
+      ],
+      "name": "t:sections.collection-list.name",
+      "settings": {
+        "columns": 5,
+        "carousel_on_desktop": true,
+        "image_type": "collection",
+        "image_ratio": "square",
+        "show_products_count": true,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "S6 Enclosure Range",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
     }
   },
   "order": [
@@ -591,6 +695,7 @@
     "collection_list_rN7xKg",
     "collection_list_49gCqq",
     "rich_text_KBAVRK",
-    "collection_list_eHLbMi"
+    "collection_list_eHLbMi",
+    "collection_list_qTBPix"
   ]
 }
