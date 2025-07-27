@@ -1,6 +1,6 @@
 {%- comment -%}
   HubPRO Form - Custom HTML & CSS Section
-  Allows merchants to paste raw HTML code and customize styling via theme customizer
+  Allows merchants to add HTML content blocks and customize styling via theme customizer
 {%- endcomment -%}
 
 {% assign hubpro_id = section.id | replace: '_', '' | downcase %}
@@ -263,31 +263,32 @@
 
 <div class="hubpro-form-section-{{ hubpro_id }}" {{ section.shopify_attributes }}>
   <div class="page-width">
-    {% if section.settings.custom_html != blank %}
-      <div class="hubpro-form-content-{{ hubpro_id }}">
-        {{ section.settings.custom_html }}
-      </div>
-    {% else %}
-      <div class="hubpro-form-content-{{ hubpro_id }}">
-        <p style="color: #999; font-style: italic; text-align: center; padding: 40px 20px;">
-          Add your custom HTML code in the section settings to see it displayed here.
-        </p>
-        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 20px; font-size: 14px; line-height: 1.6;">
-          <h4 style="margin-top: 0; color: #333;">Available CSS Classes for Form Elements:</h4>
-          <ul style="margin: 10px 0; padding-left: 20px; color: #666;">
-            <li><strong>.form-group</strong> - Container for form fields</li>
-            <li><strong>.form-row</strong> - Horizontal layout for multiple fields</li>
-            <li><strong>.form-col</strong> - Column within form-row</li>
-            <li><strong>.form-inline</strong> - Inline form layout</li>
-            <li><strong>.btn-primary, .btn-secondary, .btn-success, .btn-danger</strong> - Button colors</li>
-            <li><strong>.btn-outline</strong> - Outlined button style</li>
-            <li><strong>.btn-large, .btn-small</strong> - Button sizes</li>
-            <li><strong>.input-large, .input-small</strong> - Input sizes</li>
-            <li><strong>.required, .error, .success</strong> - Input states</li>
-          </ul>
+    <div class="hubpro-form-content-{{ hubpro_id }}">
+      {% for block in section.blocks %}
+        {% render block %}
+      {% endfor %}
+
+      {% if section.blocks.size == 0 %}
+        <div style="background: #f8f9fa; padding: 30px; border-radius: 8px; text-align: center; color: #666;">
+          <h4 style="margin-top: 0; color: #333;">Add HTML Content Blocks</h4>
+          <p style="margin-bottom: 20px;">Click "Add block" to add HubPRO HTML content blocks to this section.</p>
+          <div style="font-size: 14px; line-height: 1.6; text-align: left; max-width: 600px; margin: 0 auto;">
+            <h5 style="color: #333; margin-bottom: 10px;">Available CSS Classes for Form Elements:</h5>
+            <ul style="margin: 10px 0; padding-left: 20px;">
+              <li><strong>.form-group</strong> - Container for form fields</li>
+              <li><strong>.form-row</strong> - Horizontal layout for multiple fields</li>
+              <li><strong>.form-col</strong> - Column within form-row</li>
+              <li><strong>.form-inline</strong> - Inline form layout</li>
+              <li><strong>.btn-primary, .btn-secondary, .btn-success, .btn-danger</strong> - Button colors</li>
+              <li><strong>.btn-outline</strong> - Outlined button style</li>
+              <li><strong>.btn-large, .btn-small</strong> - Button sizes</li>
+              <li><strong>.input-large, .input-small</strong> - Input sizes</li>
+              <li><strong>.required, .error, .success</strong> - Input states</li>
+            </ul>
+          </div>
         </div>
-      </div>
-    {% endif %}
+      {% endif %}
+    </div>
   </div>
 </div>
 
@@ -297,16 +298,6 @@
   "tag": "section",
   "class": "section",
   "settings": [
-    {
-      "type": "header",
-      "content": "HTML Content"
-    },
-    {
-      "type": "html",
-      "id": "custom_html",
-      "label": "Custom HTML code",
-      "info": "Paste your HTML code here. Use the provided CSS classes for consistent form styling."
-    },
     {
       "type": "header",
       "content": "CSS Override"
@@ -443,9 +434,20 @@
       "default": false
     }
   ],
+  "blocks": [
+    {
+      "type": "hubpro-html",
+      "name": "HubPRO HTML Content"
+    }
+  ],
   "presets": [
     {
-      "name": "HubPRO Form"
+      "name": "HubPRO Form",
+      "blocks": [
+        {
+          "type": "hubpro-html"
+        }
+      ]
     }
   ]
 }

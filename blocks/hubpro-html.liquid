@@ -1,0 +1,29 @@
+<div class="hubpro-html-block" {{ block.shopify_attributes }}>
+  {% if block.settings.custom_html != blank %}
+    {{ block.settings.custom_html }}
+  {% else %}
+    <p style="color: #999; font-style: italic; text-align: center; padding: 40px 20px;">
+      Add your custom HTML code in the block settings to see it displayed here.
+    </p>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "HubPRO HTML Content",
+  "tag": null,
+  "settings": [
+    {
+      "type": "html",
+      "id": "custom_html",
+      "label": "Custom HTML code",
+      "info": "Paste your HTML form or content here. It will be styled by the section's CSS settings."
+    }
+  ],
+  "presets": [
+    {
+      "name": "HubPRO HTML Content"
+    }
+  ]
+}
+{% endschema %}
