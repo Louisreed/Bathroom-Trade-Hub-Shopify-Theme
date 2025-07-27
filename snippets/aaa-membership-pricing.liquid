@@ -1,0 +1,61 @@
+{%- comment -%}
+  AAA Membership Pricing Helper
+
+  Calculates membership discount percentage for the current customer based on shop metafields.
+  Sets membership_discount_percent variable that can be used by product-price snippet.
+
+  Usage: {% render 'aaa-membership-pricing' %}
+{%- endcomment -%}
+
+{%- liquid
+  assign membership_discount_percent = 0
+  assign has_membership_pricing = false
+
+  # Include price rules to check for membership pricing
+  render 'aaa-plan_rule'
+
+  # Check if customer has membership pricing access
+  unless aaa_price_hide_item == true
+    # Process membership pricing rules for this customer
+    for aaa_rule in shop.metafields.aaa_mem_price
+      assign key_wrd = aaa_rule.last | split: ','
+
+      # Check if this customer's tags match the membership rule
+      for customer_tag in customer.tags
+        assign clean_customer_tag = customer_tag | downcase | strip
+        assign clean_rule_tag = key_wrd.first | downcase | strip
+
+        if clean_customer_tag == clean_rule_tag
+          # Extract discount percentage (e.g., "50%" -> 50)
+          if key_wrd.size > 2
+            assign discount_string = key_wrd[2] | remove: '%' | strip
+            assign membership_discount_percent = discount_string | plus: 0
+            assign has_membership_pricing = true
+            break
+          endif
+        endif
+      endfor
+
+      if has_membership_pricing
+        break
+      endif
+    endfor
+  endunless
+-%}
+
+<!-- DEBUG: Membership Pricing Internal Logic -->
+<div style="background: lightgreen; padding: 10px; margin: 10px 0; font-size: 12px;">
+  <strong>MEMBERSHIP PRICING DEBUG:</strong><br>
+  Final membership_discount_percent: {{ membership_discount_percent -}}
+  <br>
+  has_membership_pricing: {{ has_membership_pricing -}}
+  <br>
+  aaa_price_hide_item after plan rule: {{ aaa_price_hide_item -}}
+  <br>
+  Number of price rules: {{ shop.metafields.aaa_mem_price.size -}}
+  <br>
+  {% for aaa_rule in shop.metafields.aaa_mem_price limit: 3 %}
+    Rule {{ forloop.index }}: {{ aaa_rule.first }} = {{ aaa_rule.last -}}
+    <br>
+  {% endfor %}
+</div>

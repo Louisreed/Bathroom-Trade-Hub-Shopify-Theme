@@ -36,7 +36,55 @@
   if compare_at_price > price
     assign on_sale = true
   endif
+
+  # Apply membership discount if applicable
+  if membership_discount and membership_discount > 0
+    assign original_price = price
+    assign discount_multiplier = membership_discount | divided_by: 100.0
+    assign discount_amount = price | times: discount_multiplier
+    assign price = price | minus: discount_amount | round
+
+    # Set compare_at_price to original price to show savings
+    unless on_sale
+      assign compare_at_price = original_price
+      assign on_sale = true
+    endunless
+  endif
 -%}
+
+<!-- DEBUG: Customer & Membership Status -->
+<div style="background: red; color: white; padding: 15px; margin: 10px 0; font-size: 14px; border: 3px solid black;">
+  <strong>🚨 MEMBERSHIP DEBUG 🚨</strong><br>
+  Customer ID: {{ customer.id | default: 'NOT LOGGED IN' -}}
+  <br>
+  Email: {{ customer.email | default: 'NO EMAIL' -}}
+  <br>
+  Tags: {{ customer.tags | join: ', ' | default: 'NO TAGS' -}}
+  <br>
+  Has hubpro-free: {% if customer.tags contains 'hubpro-free' %}YES{% else %}NO{% endif -%}
+  <br>
+  Pricing rules: {{ shop.metafields.aaa_mem_price.size | default: 0 -}}
+  <br>
+  All AAA metafields: {{ shop.metafields.aaa_mem | json -}}
+  <br>
+  AAA price metafields: {{ shop.metafields.aaa_mem_price | json -}}
+  <br>
+  ALL SHOP METAFIELDS: {{ shop.metafields | json }}
+</div>
+
+<!-- DEBUG: Product Price Logic -->
+<div style="background: lightblue; padding: 10px; margin: 10px 0; font-size: 12px;">
+  <strong>PRODUCT PRICE DEBUG:</strong><br>
+  membership_discount received: {{ membership_discount -}}
+  <br>
+  Original price: {{ target.price | money -}}
+  <br>
+  Final price: {{ price | money -}}
+  <br>
+  Compare at price: {{ compare_at_price | money -}}
+  <br>
+  On sale: {{ on_sale }}
+</div>
 
 <div
   class="

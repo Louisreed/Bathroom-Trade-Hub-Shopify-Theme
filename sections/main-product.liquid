@@ -40,14 +40,14 @@
     href="https://cdn.shopify.com/shopifycloud/model-viewer-ui/assets/v1.0/model-viewer-ui.css"
     media="print"
     onload="this.media='all'"
-  />
+  >
   <link
     id="ModelViewerOverride"
     rel="stylesheet"
     href="{{ 'model-viewer-ui.css' | asset_url }}"
     media="print"
     onload="this.media='all'"
-  />
+  >
 {%- endif -%}
 
 {%- if product.quantity_price_breaks_configured? -%}
@@ -109,9 +109,24 @@
       {%- endif -%}
     {%- endif -%}
   {%- endcapture -%}
-{%- endif  -%}
+{%- endif -%}
 
 <div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}">
+  <!-- 🚨 MEMBERSHIP DEBUG - GUARANTEED TO SHOW 🚨 -->
+  <div style="background: red; color: white; padding: 30px; margin: 20px; font-size: 18px; border: 10px solid black; text-align: center; position: relative; z-index: 999999;">
+    <h1>🚨 MEMBERSHIP DEBUG STATUS 🚨</h1>
+    <p><strong>CUSTOMER ID:</strong> {{ customer.id | default: 'NOT LOGGED IN' }}</p>
+    <p><strong>EMAIL:</strong> {{ customer.email | default: 'NO EMAIL' }}</p>
+    <p><strong>TAGS:</strong> {{ customer.tags | join: ', ' | default: 'NO TAGS' }}</p>
+    <p><strong>HAS hubpro-free TAG:</strong> {{ customer.tags contains 'hubpro-free' }}</p>
+    <p><strong>PRICING RULES COUNT:</strong> {{ shop.metafields.aaa_mem_price.size | default: 0 }}</p>
+    {% if shop.metafields.aaa_mem_price.size > 0 %}
+      <p><strong>FIRST RULE:</strong> {{ shop.metafields.aaa_mem_price.first | json }}</p>
+    {% else %}
+      <p><strong>❌ NO PRICING RULES FOUND IN METAFIELDS! ❌</strong></p>
+    {% endif %}
+  </div>
+
   <div class="page-width{% if media_count > 0 %}{% if section.settings.full_width %} page-width--full{% endif %}{% else %} page-width--narrow{% endif %} relative">
     <div class="featured-product product product--{{ section.settings.gallery_layout }}{% if media_count == 0 %} no-media{% endif %} flex flex-col items-start lg:grid gap-5 w-full relative">
       {%- if media_count > 0 -%}
@@ -170,26 +185,29 @@
                     assign prev_block = section.blocks[prev_index]
                     assign next_index = forloop.index0 | plus: 1
                     assign next_block = section.blocks[next_index]
-  
+
                     if prev_block.type == 'sticky_buy_button'
                       assign prev_index = prev_index | minus: 1
                       assign prev_block = section.blocks[prev_index]
                     endif
-  
+
                     if next_block.type == 'sticky_buy_button'
                       assign next_index = next_index | plus: 1
                       assign next_block = section.blocks[next_index]
                     endif
-  
+
                     if prev_block.type != 'text'
                       assign block_index = 1
                     else
                       assign block_index = block_index | plus: 1
                     endif
-  
+
                     assign modulo = block_index | modulo: 2
                   -%}
-                  <div class="product__text{% if modulo == 0 %} even{% endif %}{% if prev_block.type != 'text' %} first{% endif %}{% if next_block.type != 'text' %} last{% endif %}" {{ block.shopify_attributes }}>
+                  <div
+                    class="product__text{% if modulo == 0 %} even{% endif %}{% if prev_block.type != 'text' %} first{% endif %}{% if next_block.type != 'text' %} last{% endif %}"
+                    {{ block.shopify_attributes }}
+                  >
                     <div class="product__text-inner flex items-center gap-2d5">
                       {%- if block.settings.icon_image != blank -%}
                         {%- liquid
@@ -202,9 +220,21 @@
                         <figure class="media media--transparent relative inline-block">
                           {%- capture sizes -%}{{ icon_width }}px{%- endcapture -%}
                           {%- capture widths -%}{{ icon_width }}, {{ icon_width | times: 2 | at_most: block.settings.icon_image.width }}{%- endcapture -%}
-                          {%- assign image_alt = block.settings.icon_image.alt | default: block.settings.accessibility_info | escape -%}
+                          {%- assign image_alt = block.settings.icon_image.alt
+                            | default: block.settings.accessibility_info
+                            | escape
+                          -%}
                           {%- assign image_alt = image_alt | default: block.settings.text | escape -%}
-                          {{- block.settings.icon_image | image_url: width: block.settings.icon_image.width | image_tag: loading: 'lazy', sizes: sizes, widths: widths, alt: image_alt, class: 'image-fit' -}}
+                          {{-
+                            block.settings.icon_image
+                            | image_url: width: block.settings.icon_image.width
+                            | image_tag:
+                              loading: 'lazy',
+                              sizes: sizes,
+                              widths: widths,
+                              alt: image_alt,
+                              class: 'image-fit'
+                          -}}
                         </figure>
                       {%- elsif block.settings.icon != 'none' -%}
                         {%- liquid
@@ -220,7 +250,7 @@
                   </div>
                 {%- else -%}
                   <p class="product__vendor {{ block.settings.text_size }}" {{ block.shopify_attributes }}>
-                    {{- product.vendor | link_to_vendor : class: 'reversed-link' -}}
+                    {{- product.vendor | link_to_vendor: class: 'reversed-link' -}}
                   </p>
                 {%- endif -%}
               {%- endif -%}
@@ -234,23 +264,35 @@
               <div class="product__text rte {{ block.settings.text_size }}" {{ block.shopify_attributes }}>
                 {{- product.description -}}
               </div>
-            
+
             {%- when 'title' -%}
               {%- liquid
-                assign price_block = section.blocks | where: "type", "price" | first
-                assign rating_block = section.blocks | where: "type", "rating" | first
+                assign price_block = section.blocks | where: 'type', 'price' | first
+                assign rating_block = section.blocks | where: 'type', 'rating' | first
               -%}
-              <div class="product__title grid gap-3{% if price_block == blank and block.settings.show_price %} with-price{% endif %}" {{ block.shopify_attributes }}>
+              <div
+                class="product__title grid gap-3{% if price_block == blank and block.settings.show_price %} with-price{% endif %}"
+                {{ block.shopify_attributes }}
+              >
                 <h1 class="heading leading-none {{ block.settings.title_size }} mobile:{{ block.settings.title_size_mobile }} col-span-full">
-                  <split-words class="split-words js-invisible block" data-animate="fade-up">{{ product.title }}</split-words>
+                  <split-words class="split-words js-invisible block" data-animate="fade-up">
+                    {{- product.title -}}
+                  </split-words>
                 </h1>
 
                 {%- if price_block == blank and block.settings.show_price -%}
                   <div id="Price-{{ section.id }}-{{ product.id }}" class="product__price">
-                    {%- render 'product-price', product: product, use_variant: true, class: 'flex flex-wrap items-baseline gap-2 lg:flex-col xl:items-end lg:gap-1d5' -%}
-                    
+                    {%- render 'product-price',
+                      product: product,
+                      use_variant: true,
+                      class: 'flex flex-wrap items-baseline gap-2 lg:flex-col xl:items-end lg:gap-1d5'
+                    -%}
+
                     {%- if product.quantity_price_breaks_configured? -%}
-                      <div class="text-opacity text-sm font-medium leading-tight" id="VolumeNote-{{ section.id }}-{{ product.id }}">
+                      <div
+                        class="text-opacity text-sm font-medium leading-tight"
+                        id="VolumeNote-{{ section.id }}-{{ product.id }}"
+                      >
                         {{- 'products.volume_pricing.note' | t -}}
                       </div>
                     {%- endif -%}
@@ -265,9 +307,17 @@
               </div>
 
               {%- if price_block == blank and block.settings.show_price -%}
-                {%- assign product_form_installment_id = 'ProductFormInstallment-' | append: section.id | append: '-' | append: product.id -%}
-                {%- form 'product', product, id: product_form_installment_id, class: 'installment text-sm leading-tight' -%}
-                  <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" />
+                {%- assign product_form_installment_id = 'ProductFormInstallment-'
+                  | append: section.id
+                  | append: '-'
+                  | append: product.id
+                -%}
+                {%- form 'product',
+                  product,
+                  id: product_form_installment_id,
+                  class: 'installment text-sm leading-tight'
+                -%}
+                  <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                   {{ form | payment_terms }}
                 {%- endform -%}
               {%- endif -%}
@@ -275,18 +325,61 @@
             {%- when 'price' -%}
               <div class="product__price grid gap-3" {{ block.shopify_attributes }}>
                 <div class="no-js-hidden" id="Price-{{ section.id }}-{{ product.id }}">
-                  {%- render 'product-price', product: product, use_variant: true, class: 'flex flex-wrap items-baseline gap-2 lg:gap-1d5' -%}
-                  
+                  {%- comment -%} AAA Membership Pricing Logic {%- endcomment -%}
+                  {%- render 'aaa-membership-pricing' -%}
+
+                  <!-- MAJOR DEBUG: CANNOT MISS THIS -->
+                  <div style="background: red; color: white; padding: 20px; margin: 30px 0; font-size: 16px; border: 5px solid black; position: relative; z-index: 9999;">
+                    <h2 style="margin: 0 0 10px 0;">🚨 MEMBERSHIP DEBUG STATUS 🚨</h2>
+                    <strong>CUSTOMER STATUS:</strong><br>
+                    Customer ID: {{ customer.id | default: 'NOT LOGGED IN' -}}
+                    <br>
+                    Email: {{ customer.email | default: 'NO EMAIL' -}}
+                    <br>
+                    Tags: {{ customer.tags | join: ', ' | default: 'NO TAGS' -}}
+                    <br>
+                    Has hubpro-free: {{ customer.tags contains 'hubpro-free' -}}
+                    <br>
+                    <br>
+                    <strong>PRICING RULES:</strong><br>
+                    Total AAA rules: {{ shop.metafields.aaa_mem_price.size | default: 0 -}}
+                    <br>
+                    {% if shop.metafields.aaa_mem_price.size > 0 %}
+                      Sample rule: {{ shop.metafields.aaa_mem_price.first | json -}}
+                      <br>
+                    {% else %}
+                      ❌ NO PRICING RULES FOUND!<br>
+                    {% endif %}
+                  </div>
+
+                  {%- render 'product-price',
+                    product: product,
+                    use_variant: true,
+                    membership_discount: membership_discount_percent,
+                    class: 'flex flex-wrap items-baseline gap-2 lg:gap-1d5'
+                  -%}
+
                   {%- if product.quantity_price_breaks_configured? -%}
-                    <div class="text-opacity text-sm font-medium leading-tight" id="VolumeNote-{{ section.id }}-{{ product.id }}">
+                    <div
+                      class="text-opacity text-sm font-medium leading-tight"
+                      id="VolumeNote-{{ section.id }}-{{ product.id }}"
+                    >
                       {{- 'products.volume_pricing.note' | t -}}
                     </div>
                   {%- endif -%}
                 </div>
 
-                {%- assign product_form_installment_id = 'ProductFormInstallment-' | append: section.id | append: '-' | append: product.id -%}
-                {%- form 'product', product, id: product_form_installment_id, class: 'installment text-sm leading-tight' -%}
-                  <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}" />
+                {%- assign product_form_installment_id = 'ProductFormInstallment-'
+                  | append: section.id
+                  | append: '-'
+                  | append: product.id
+                -%}
+                {%- form 'product',
+                  product,
+                  id: product_form_installment_id,
+                  class: 'installment text-sm leading-tight'
+                -%}
+                  <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
                   {{ form | payment_terms }}
                 {%- endform -%}
 
@@ -309,16 +402,36 @@
             {%- when 'quantity_selector' -%}
               {%- if product.available -%}
                 <div id="QuantityForm-{{ section.id }}-{{ product.id }}" class="field" {{ block.shopify_attributes }}>
-                  {%- assign cart_qty = cart | item_count_for_variant: product.selected_or_first_available_variant.id -%}
-                  <label for="Quantity-{{ section.id }}-{{ product.id }}" class="quantity__label label" is="quantity-label">
+                  {%- assign cart_qty = cart
+                    | item_count_for_variant: product.selected_or_first_available_variant.id
+                  -%}
+                  <label
+                    for="Quantity-{{ section.id }}-{{ product.id }}"
+                    class="quantity__label label"
+                    is="quantity-label"
+                  >
                     {{ 'products.quantity.label' | t }}
-                    <span id="QuantityRulesCart-{{ section.id }}-{{ product.id }}" class="quantity__rules-cart{% if cart_qty == 0 %} hidden{% endif %} relative">
-                      <span class="quantity-cart font-medium">({{ 'products.quantity.in_cart_html' | t: quantity: cart_qty }})</span>
+                    <span
+                      id="QuantityRulesCart-{{ section.id }}-{{ product.id }}"
+                      class="quantity__rules-cart{% if cart_qty == 0 %} hidden{% endif %} relative"
+                    >
+                      <span class="quantity-cart font-medium"
+                        >({{ 'products.quantity.in_cart_html' | t: quantity: cart_qty }})</span
+                      >
                     </span>
                   </label>
                   <div class="flex items-center gap-4">
-                    <quantity-input class="quantity inline-flex relative" data-section-id="{{ section.id }}" data-product-id="{{ product.id }}">
-                      <button type="button" name="minus" class="quantity__button" aria-label="{{ 'products.quantity.decrease' | t: product: product.title | escape }}">
+                    <quantity-input
+                      class="quantity inline-flex relative"
+                      data-section-id="{{ section.id }}"
+                      data-product-id="{{ product.id }}"
+                    >
+                      <button
+                        type="button"
+                        name="minus"
+                        class="quantity__button"
+                        aria-label="{{ 'products.quantity.decrease' | t: product: product.title | escape }}"
+                      >
                         {%- render 'icon', icon: 'chevron-left', size: 'sm', class: 'stroke-2 transform' -%}
                       </button>
                       <input
@@ -339,8 +452,13 @@
                         step="{{ product.selected_or_first_available_variant.quantity_rule.increment }}"
                         value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
                         form="{{ product_form_id }}"
-                      />
-                      <button type="button" name="plus" class="quantity__button" aria-label="{{ 'products.quantity.increase' | t: product: product.title | escape }}">
+                      >
+                      <button
+                        type="button"
+                        name="plus"
+                        class="quantity__button"
+                        aria-label="{{ 'products.quantity.increase' | t: product: product.title | escape }}"
+                      >
                         {%- render 'icon', icon: 'chevron-right', size: 'sm', class: 'stroke-2 transform' -%}
                       </button>
                     </quantity-input>
@@ -374,7 +492,7 @@
                           </span>
                           <span class="sr-only">{{ 'products.price.sale_price' | t }}</span>
                         {%- endif -%}
-                        
+
                         {%- if product.selected_or_first_available_variant.quantity_price_breaks.size > 0 -%}
                           {%- if current_qty_for_volume_pricing < volume_pricing_array.last.minimum_quantity -%}
                             {%- liquid
@@ -420,21 +538,36 @@
                     {%- endif -%}
                   </div>
 
-                  {%- if product.selected_or_first_available_variant.quantity_rule.increment > 1 or product.selected_or_first_available_variant.quantity_rule.min > 1 or product.selected_or_first_available_variant.quantity_rule.max != null -%}
-                    <div class="quantity__rules text-sm font-medium leading-tight" id="QuantityRules-{{ section.id }}-{{ product.id }}">
+                  {%- if product.selected_or_first_available_variant.quantity_rule.increment > 1
+                    or product.selected_or_first_available_variant.quantity_rule.min > 1
+                    or product.selected_or_first_available_variant.quantity_rule.max != null
+                  -%}
+                    <div
+                      class="quantity__rules text-sm font-medium leading-tight"
+                      id="QuantityRules-{{ section.id }}-{{ product.id }}"
+                    >
                       {%- if product.selected_or_first_available_variant.quantity_rule.increment > 1 -%}
                         <span class="divider">
-                          {{- 'products.quantity.multiples_of' | t: quantity: product.selected_or_first_available_variant.quantity_rule.increment -}}
+                          {{-
+                            'products.quantity.multiples_of'
+                            | t: quantity: product.selected_or_first_available_variant.quantity_rule.increment
+                          -}}
                         </span>
                       {%- endif -%}
                       {%- if product.selected_or_first_available_variant.quantity_rule.min > 1 -%}
                         <span class="divider">
-                          {{- 'products.quantity.minimum_of' | t: quantity: product.selected_or_first_available_variant.quantity_rule.min -}}
+                          {{-
+                            'products.quantity.minimum_of'
+                            | t: quantity: product.selected_or_first_available_variant.quantity_rule.min
+                          -}}
                         </span>
                       {%- endif -%}
                       {%- if product.selected_or_first_available_variant.quantity_rule.max != null -%}
                         <span class="divider">
-                          {{- 'products.quantity.maximum_of' | t: quantity: product.selected_or_first_available_variant.quantity_rule.max -}}
+                          {{-
+                            'products.quantity.maximum_of'
+                            | t: quantity: product.selected_or_first_available_variant.quantity_rule.max
+                          -}}
                         </span>
                       {%- endif -%}
                     </div>
@@ -449,7 +582,9 @@
                     <span class="caption-large font-medium">{{ 'products.volume_pricing.title' | t }}</span>
                     <ul class="list-unstyled">
                       <li class="text-sm flex gap-2d5 justify-between">
-                        <span class="font-medium">{{ product.selected_or_first_available_variant.quantity_rule.min }}+</span>
+                        <span class="font-medium">
+                          {{- product.selected_or_first_available_variant.quantity_rule.min }}+</span
+                        >
                         {%- liquid
                           if settings.currency_code_enabled
                             assign variant_price = product.selected_or_first_available_variant.price | money_with_currency
@@ -506,7 +641,7 @@
                 image_ratio_mobile: section.settings.image_ratio_mobile,
                 image_fill: settings.product_image_fill
               -%}
-              
+
             {%- when 'product_variations' -%}
               {%- render 'product-variants',
                 block: block,
@@ -567,11 +702,23 @@
                   <div class="flex items-center gap-2">
                     {%- render 'icon', icon: 'question' -%}
                     {%- if block.settings.help_type == 'drawer' -%}
-                      <button type="button" class="link text-sm leading-tight cursor-pointer" aria-controls="HelpDrawer">
+                      <button
+                        type="button"
+                        class="link text-sm leading-tight cursor-pointer"
+                        aria-controls="HelpDrawer"
+                      >
                         {{- block.settings.help_label | escape -}}
                       </button>
                     {%- else -%}
-                      <a class="link text-sm leading-tight cursor-pointer"{% if block.settings.help_page != blank %} href="{{ block.settings.help_page.url }}"{% if block.settings.help_page_external %} target="_blank" rel="noopener"{% endif %}{% else %} role="link" aria-disabled="true"{% endif %}>
+                      <a
+                        class="link text-sm leading-tight cursor-pointer"
+                        {% if block.settings.help_page != blank %}
+                          href="{{ block.settings.help_page.url }}"
+                          {%- if block.settings.help_page_external %} target="_blank" rel="noopener"{% endif -%}
+                        {% else %}
+                          role="link" aria-disabled="true"
+                        {% endif %}
+                      >
                         {{- block.settings.help_label | escape -}}
                       </a>
                     {%- endif -%}
@@ -587,7 +734,15 @@
                     {{- block.settings.help_label | escape -}}
                   </button>
                 {%- else -%}
-                  <a class="link text-sm leading-tight cursor-pointer"{% if block.settings.help_page != blank %} href="{{ block.settings.help_page.url }}"{% if block.settings.help_page_external %} target="_blank" rel="noopener"{% endif %}{% else %} role="link" aria-disabled="true"{% endif %}>
+                  <a
+                    class="link text-sm leading-tight cursor-pointer"
+                    {% if block.settings.help_page != blank %}
+                      href="{{ block.settings.help_page.url }}"
+                      {%- if block.settings.help_page_external %} target="_blank" rel="noopener"{% endif -%}
+                    {% else %}
+                      role="link" aria-disabled="true"
+                    {% endif %}
+                  >
                     {{- block.settings.help_label | escape -}}
                   </a>
                 {%- endif -%}
@@ -605,7 +760,7 @@
                 limit: block.settings.product_limit,
                 heading: block.settings.heading,
                 show_vendor: block.settings.show_vendor,
-                show_price: block.settings.show_price,
+                show_price: block.settings.show_price
               -%}
 
             {%- when 'liquid' -%}
@@ -616,11 +771,20 @@
               {%- endif -%}
 
             {%- when 'collapsible_tab' -%}
-              <details class="product__accordion details {{ block.settings.style }}" is="accordion-details"{% if block.settings.opened %} open{% endif %} {{ block.shopify_attributes }}>
+              <details
+                class="product__accordion details {{ block.settings.style }}"
+                is="accordion-details"
+                {% if block.settings.opened %}
+                  open
+                {% endif %}
+                {{ block.shopify_attributes }}
+              >
                 <summary class="details__summary flex items-center justify-between gap-2 cursor-pointer">
                   <div class="flex items-center gap-2d5">
                     {%- render 'icon-accordion', icon: block.settings.icon -%}
-                    <span class="text-sm-base font-medium leading-none">{{ block.settings.heading | default: block.settings.page.title | escape }}</span>
+                    <span class="text-sm-base font-medium leading-none">
+                      {{- block.settings.heading | default: block.settings.page.title | escape -}}
+                    </span>
                   </div>
                   {%- render 'icon', icon: 'plus-2', size: 'xs', class: 'shrink-0' -%}
                 </summary>
@@ -638,15 +802,23 @@
                   assign countdown_time = product.metafields.theme.countdown.value | date: '%s' | times: 1
                 -%}
                 {%- if countdown_time > now_time -%}
-                  <div class="product-countdown grid sm:flex items-center justify-between gap-2d5" id="shopify-block-{{ block.id }}" {{ block.shopify_attributes }}>
+                  <div
+                    class="product-countdown grid sm:flex items-center justify-between gap-2d5"
+                    id="shopify-block-{{ block.id }}"
+                    {{ block.shopify_attributes }}
+                  >
                     <div class="flex items-center gap-3">
                       {%- render 'icon', icon: 'countdown', size: 'xl', class: 'shrink-0 block lg:hidden xl:block' -%}
                       <div class="grid">
                         {%- if block.settings.heading != blank -%}
-                          <p class="heading text-base lg:text-lg xl:text-xl leading-tight">{{ block.settings.heading | escape }}</p>
+                          <p class="heading text-base lg:text-lg xl:text-xl leading-tight">
+                            {{ block.settings.heading | escape }}
+                          </p>
                         {%- endif -%}
                         {%- if block.settings.subheading != blank -%}
-                          <p class="uppercase text-3xs font-medium leading-none tracking-widest">{{ block.settings.subheading | escape }}</p>
+                          <p class="uppercase text-3xs font-medium leading-none tracking-widest">
+                            {{ block.settings.subheading | escape }}
+                          </p>
                         {%- endif -%}
                       </div>
                     </div>
@@ -655,16 +827,20 @@
                       data-expires="{{ product.metafields.theme.countdown.value | date: '%FT%T%:z' | escape }}"
                     >
                       <div class="countdown__item">
-                        <p>--</p><span>{{ 'general.date.days' | t }}</span>
+                        <p>--</p>
+                        <span>{{ 'general.date.days' | t }}</span>
                       </div>
                       <div class="countdown__item">
-                        <p>--</p><span>{{ 'general.date.hours' | t }}</span>
+                        <p>--</p>
+                        <span>{{ 'general.date.hours' | t }}</span>
                       </div>
                       <div class="countdown__item">
-                        <p>--</p><span>{{ 'general.date.minutes' | t }}</span>
+                        <p>--</p>
+                        <span>{{ 'general.date.minutes' | t }}</span>
                       </div>
                       <div class="countdown__item">
-                        <p>--</p><span>{{ 'general.date.seconds' | t }}</span>
+                        <p>--</p>
+                        <span>{{ 'general.date.seconds' | t }}</span>
                       </div>
                     </countdown-timer>
                     <style>
@@ -677,10 +853,14 @@
               {%- endif -%}
 
             {%- when 'back_in_stock' -%}
-              <div id="BackInStock-{{ section.id }}-{{ product.id }}" class="back-in-stock" {{ block.shopify_attributes }}>
+              <div
+                id="BackInStock-{{ section.id }}-{{ product.id }}"
+                class="back-in-stock"
+                {{ block.shopify_attributes }}
+              >
                 {%- liquid
                   assign check_against_inventory = true
-                  if product.selected_or_first_available_variant.inventory_management != 'shopify' or  product.selected_or_first_available_variant.inventory_policy == 'continue'
+                  if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
                     assign check_against_inventory = false
                   endif
                   if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
@@ -696,12 +876,12 @@
             {%- when 'product_bundle' -%}
               {%- liquid
                 assign products = block.settings.products
-                
+
                 if block.settings.metafield != blank
                   assign metafield_parts = block.settings.metafield | split: '.'
                   assign metafield_namespace = metafield_parts | first
                   assign metafield_key = metafield_parts | last
-                  
+
                   assign metafield = product.metafields[metafield_namespace][metafield_key]
                   if metafield.value != blank and metafield.list?
                     assign products = metafield.value
@@ -715,7 +895,14 @@
               -%}
               <div id="ProductBundle-{{ section.id }}-{{ product.id }}" {{ block.shopify_attributes }}>
                 {%- if products.count > 0 -%}
-                  <details class="product__accordion details with-background" is="product-bundle-details"{% if product.selected_or_first_available_variant.available and block.settings.opened %} open{% endif %} form="{{ product_form_id }}">
+                  <details
+                    class="product__accordion details with-background"
+                    is="product-bundle-details"
+                    {% if product.selected_or_first_available_variant.available and block.settings.opened %}
+                      open
+                    {% endif %}
+                    form="{{ product_form_id }}"
+                  >
                     <summary class="details__summary flex items-center justify-between gap-2 cursor-pointer">
                       <div class="flex items-center gap-2d5">
                         {%- if block.settings.icon_image != blank -%}
@@ -729,9 +916,21 @@
                           <figure class="media media--transparent relative inline-block">
                             {%- capture sizes -%}{{ icon_width }}px{%- endcapture -%}
                             {%- capture widths -%}{{ icon_width }}, {{ icon_width | times: 2 | at_most: block.settings.icon_image.width }}{%- endcapture -%}
-                            {%- assign image_alt = block.settings.icon_image.alt | default: block.settings.accessibility_info | escape -%}
+                            {%- assign image_alt = block.settings.icon_image.alt
+                              | default: block.settings.accessibility_info
+                              | escape
+                            -%}
                             {%- assign image_alt = image_alt | default: block.settings.heading | escape -%}
-                            {{- block.settings.icon_image | image_url: width: block.settings.icon_image.width | image_tag: loading: 'lazy', sizes: sizes, widths: widths, alt: image_alt, class: 'image-fit' -}}
+                            {{-
+                              block.settings.icon_image
+                              | image_url: width: block.settings.icon_image.width
+                              | image_tag:
+                                loading: 'lazy',
+                                sizes: sizes,
+                                widths: widths,
+                                alt: image_alt,
+                                class: 'image-fit'
+                            -}}
                           </figure>
                         {%- elsif block.settings.icon != 'none' -%}
                           {%- liquid
@@ -756,17 +955,34 @@
                             assign show_variant_title = false
                           endif
 
-                          if product.first_available_variant == nil
+                          if product.first_available_variant == null
                             assign show_variant_title = false
                           endif
                         -%}
                         {%- if variant.product -%}
                           {%- assign variant_image = variant.image | default: variant.product.featured_image -%}
-                          <label class="product-bundle__info flex items-center gap-4 md:gap-6" for="Recommendations-{{ section.id }}-{{ variant.id }}">
-                            <input name="bundles" value="{{ variant.id }}" data-price="{{ variant.price }}" class="checkbox" id="Recommendations-{{ section.id }}-{{ variant.id }}" type="checkbox"{% unless variant.available %} disabled{% endunless %} />
+                          <label
+                            class="product-bundle__info flex items-center gap-4 md:gap-6"
+                            for="Recommendations-{{ section.id }}-{{ variant.id }}"
+                          >
+                            <input
+                              name="bundles"
+                              value="{{ variant.id }}"
+                              data-price="{{ variant.price }}"
+                              class="checkbox"
+                              id="Recommendations-{{ section.id }}-{{ variant.id }}"
+                              type="checkbox"
+                              {% unless variant.available %}
+                                disabled
+                              {% endunless %}
+                            >
                             {%- if variant_image -%}
                               <picture class="horizontal-product__media media media--{{ settings.product_image_ratio }}{% unless settings.product_image_fill %} media--contain{% endunless %} relative overflow-hidden shrink-0 pointer-events-none">
-                                {{- variant_image | image_url: width: variant_image.width | image_tag: loading: 'lazy', widths: '180,360,540', is: 'lazy-image' -}}
+                                {{-
+                                  variant_image
+                                  | image_url: width: variant_image.width
+                                  | image_tag: loading: 'lazy', widths: '180,360,540', is: 'lazy-image'
+                                -}}
                               </picture>
                             {%- endif -%}
                             <div class="horizontal-product__details flex flex-col justify-start gap-1d5">
@@ -787,7 +1003,12 @@
                             </div>
                             <div class="horizontal-product__quantity shrink-0">
                               {%- if variant.available -%}
-                                {%- render 'product-price', product: variant.product, variant: variant, use_variant: true, class: 'flex flex-wrap items-baseline gap-2 lg:flex-col xl:items-end lg:gap-1d5' -%}
+                                {%- render 'product-price',
+                                  product: variant.product,
+                                  variant: variant,
+                                  use_variant: true,
+                                  class: 'flex flex-wrap items-baseline gap-2 lg:flex-col xl:items-end lg:gap-1d5'
+                                -%}
                               {%- else -%}
                                 <span class="text-sm-base text-opacity">{{ 'products.product.sold_out' | t }}</span>
                               {%- endif -%}
@@ -807,25 +1028,30 @@
               {%- assign custom_name = block.settings.title | escape -%}
               <div class="field" {{ block.shopify_attributes }}>
                 {%- if block.settings.type == 'checkbox' -%}
-                  <label for="LineItemInput-{{ section.id }}-{{ product.id }}-{{ block.id }}" class="flex items-center gap-3">
+                  <label
+                    for="LineItemInput-{{ section.id }}-{{ product.id }}-{{ block.id }}"
+                    class="flex items-center gap-3"
+                  >
                     <input
                       type="hidden"
                       name="properties[{{ custom_name }}]"
                       form="{{ product_form_id }}"
                       value="{{ block.settings.unchecked_value | escape }}"
-                    />
+                    >
                     <input
                       type="checkbox"
                       id="LineItemInput-{{ section.id }}-{{ product.id }}-{{ block.id }}"
                       name="properties[{{ custom_name }}]"
                       form="{{ product_form_id }}"
                       value="{{ block.settings.checked_value | escape }}"
-                      {%- if block.settings.required %} required{% endif -%}
-                    />
+                      {%- if block.settings.required %}
+                        required
+                      {% endif -%}
+                    >
                     {{- block.settings.title | escape -}}
                   </label>
 
-                  {%- elsif block.settings.type == 'radio' -%}
+                {%- elsif block.settings.type == 'radio' -%}
                   <div class="grid gap-4">
                     <p>{{ block.settings.title | escape }}</p>
                     {%- assign options = block.settings.radio_options | split: ',' -%}
@@ -834,15 +1060,20 @@
                         {%- for option in options -%}
                           {%- assign option_2 = option | strip | escape -%}
                           <li>
-                            <label for="LineItemInput-{{ section.id }}-{{ product.id }}-{{ block.id }}-{{ forloop.index0 }}" class="inline-flex items-center gap-3">
+                            <label
+                              for="LineItemInput-{{ section.id }}-{{ product.id }}-{{ block.id }}-{{ forloop.index0 }}"
+                              class="inline-flex items-center gap-3"
+                            >
                               <input
                                 type="radio"
                                 id="LineItemInput-{{ section.id }}-{{ product.id }}-{{ block.id }}-{{ forloop.index0 }}"
                                 name="properties[{{ custom_name }}]"
                                 form="{{ product_form_id }}"
                                 value="{{ option_2 }}"
-                                {%- if block.settings.required %} required{% endif -%}
-                              />
+                                {%- if block.settings.required %}
+                                  required
+                                {% endif -%}
+                              >
                               {{- option_2 -}}
                             </label>
                           </li>
@@ -850,7 +1081,7 @@
                       </ul>
                     {%- endif -%}
                   </div>
-  
+
                 {%- else -%}
                   {%- case block.settings.type -%}
                     {%- when 'text' -%}
@@ -861,10 +1092,17 @@
                         name="properties[{{ custom_name }}]"
                         form="{{ product_form_id }}"
                         placeholder="{{ block.settings.title | escape }}"
-                        {%- if block.settings.required %} required{% endif -%}
-                      />
-                      <label class="label is-floating" for="LineItemInput-{{ section.id }}-{{ product.id }}-{{ block.id }}">{{ block.settings.title | escape }}</label>
-  
+                        {%- if block.settings.required %}
+                          required
+                        {% endif -%}
+                      >
+                      <label
+                        class="label is-floating"
+                        for="LineItemInput-{{ section.id }}-{{ product.id }}-{{ block.id }}"
+                      >
+                        {{- block.settings.title | escape -}}
+                      </label>
+
                     {%- when 'textarea' -%}
                       <textarea
                         class="textarea is-floating"
@@ -873,10 +1111,17 @@
                         name="properties[{{ custom_name }}]"
                         form="{{ product_form_id }}"
                         placeholder=" "
-                        {%- if block.settings.required %} required{% endif -%}
+                        {%- if block.settings.required %}
+                          required
+                        {% endif -%}
                       ></textarea>
-                      <label class="label is-floating" for="LineItemInput-{{ section.id }}-{{ product.id }}-{{ block.id }}">{{ block.settings.title | escape }}</label>
-  
+                      <label
+                        class="label is-floating"
+                        for="LineItemInput-{{ section.id }}-{{ product.id }}-{{ block.id }}"
+                      >
+                        {{- block.settings.title | escape -}}
+                      </label>
+
                     {%- when 'select' -%}
                       {%- assign options = block.settings.select_options | split: ',' -%}
                       {%- if options.size > 0 -%}
@@ -885,7 +1130,11 @@
                           id="LineItemInput-{{ section.id }}-{{ product.id }}-{{ block.id }}"
                           name="properties[{{ custom_name }}]"
                           form="{{ product_form_id }}"
-                          {%- if block.settings.required %} required{% else %} is="custom-select"{% endif -%}
+                          {%- if block.settings.required %}
+                            required
+                          {% else %}
+                            is="custom-select"
+                          {% endif -%}
                         >
                           <option value="" disabled selected></option>
                           {%- for option in options -%}
@@ -895,7 +1144,12 @@
                         </select>
                         {%- render 'icon', icon: 'chevron-up', size: 'sm', class: 'absolute pointer-events-none' -%}
                       {%- endif -%}
-                      <label class="label{% if options.size > 0 %} is-floating{% endif %}" for="LineItemInput-{{ section.id }}-{{ product.id }}-{{ block.id }}">{{ block.settings.title | escape }}</label>
+                      <label
+                        class="label{% if options.size > 0 %} is-floating{% endif %}"
+                        for="LineItemInput-{{ section.id }}-{{ product.id }}-{{ block.id }}"
+                      >
+                        {{- block.settings.title | escape -}}
+                      </label>
                   {%- endcase -%}
                 {%- endif -%}
               </div>
@@ -904,7 +1158,7 @@
       </product-info>
     </div>
 
-    {%- assign sticky_buy_button = section.blocks | where: "type", "sticky_buy_button" | first -%}
+    {%- assign sticky_buy_button = section.blocks | where: 'type', 'sticky_buy_button' | first -%}
     {%- if product.available and sticky_buy_button -%}
       <product-sticky-form
         class="product-sticky-form w-full fixed z-20 bottom-0 right-0 pointer-events-none"
@@ -912,11 +1166,21 @@
         form="{{ product_form_id }}"
       >
         <div class="product-sticky-form__card grid gap-4 opacity-0 invisible pointer-events-auto">
-          {%- assign featured_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media -%}
+          {%- assign featured_media = product.selected_or_first_available_variant.featured_media
+            | default: product.featured_media
+          -%}
           <div class="product-sticky-form__variant{% if featured_media == blank %} no-image{% endif %} grid items-center gap-4">
             {%- if featured_media != blank -%}
-              <div class="hidden md:block media media--adapt relative overflow-hidden" data-widths="80,160" data-sticky-product-media>
-                {{- featured_media | image_url: width: featured_media.width | image_tag: loading: 'lazy', sizes: '80px', widths: '80,160', is: 'lazy-image' -}}
+              <div
+                class="hidden md:block media media--adapt relative overflow-hidden"
+                data-widths="80,160"
+                data-sticky-product-media
+              >
+                {{-
+                  featured_media
+                  | image_url: width: featured_media.width
+                  | image_tag: loading: 'lazy', sizes: '80px', widths: '80,160', is: 'lazy-image'
+                -}}
               </div>
             {%- endif -%}
 
@@ -931,7 +1195,11 @@
               </div>
               <div id="StickyPrice-{{ section.id }}-{{ product.id }}">
                 {%- if product.quantity_price_breaks_configured? != true -%}
-                  {%- render 'product-price', product: product, use_variant: true, class: 'flex flex-wrap items-center gap-2 lg:gap-1d5' -%}
+                  {%- render 'product-price',
+                    product: product,
+                    use_variant: true,
+                    class: 'flex flex-wrap items-center gap-2 lg:gap-1d5'
+                  -%}
                 {%- else -%}
                   {%- liquid
                     assign assign cart_qty = cart | item_count_for_variant: product.selected_or_first_available_variant.id
@@ -962,7 +1230,7 @@
                       </span>
                       <span class="sr-only">{{ 'products.price.sale_price' | t }}</span>
                     {%- endif -%}
-                    
+
                     {%- if product.selected_or_first_available_variant.quantity_price_breaks.size > 0 -%}
                       {%- if current_qty_for_volume_pricing < volume_pricing_array.last.minimum_quantity -%}
                         {%- liquid
@@ -1011,7 +1279,7 @@
 
             {%- liquid
               assign check_against_inventory = true
-              if product.selected_or_first_available_variant.inventory_management != 'shopify' or  product.selected_or_first_available_variant.inventory_policy == 'continue'
+              if product.selected_or_first_available_variant.inventory_management != 'shopify' or product.selected_or_first_available_variant.inventory_policy == 'continue'
                 assign check_against_inventory = false
               endif
               if product.selected_or_first_available_variant.quantity_rule.min > product.selected_or_first_available_variant.inventory_quantity and check_against_inventory
@@ -1024,8 +1292,12 @@
               form="{{ product_form_id }}"
               class="button button--primary"
               is="hover-button"
-              {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %} disabled{% endif -%}
-              {%- if product.template_suffix == 'pre-order' %} data-pre-order{% endif -%}
+              {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout %}
+                disabled
+              {% endif -%}
+              {%- if product.template_suffix == 'pre-order' %}
+                data-pre-order
+              {% endif -%}
             >
               <span class="btn-fill" data-fill></span>
               <span class="btn-text">
@@ -1044,7 +1316,11 @@
               </span>
             </button>
           </div>
-          <div class="product-form__error-message alert alert--error text-sm font-medium leading-tight" role="alert" hidden></div>
+          <div
+            class="product-form__error-message alert alert--error text-sm font-medium leading-tight"
+            role="alert"
+            hidden
+          ></div>
         </div>
       </product-sticky-form>
     {%- endif -%}
@@ -1055,7 +1331,7 @@
       {{ product.media | where: 'media_type', 'model' | json }}
     </script>
   {%- endif -%}
-  
+
   <script type="application/ld+json">
     {{- product | structured_data -}}
   </script>
