@@ -372,12 +372,63 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_iRQBGG": {
+          "type": "collection",
+          "settings": {
+            "collection": "momentum-black",
+            "title": "Matte Black",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_6yaiLr": {
+          "type": "collection",
+          "settings": {
+            "collection": "momentum-brass",
+            "title": "Brushed Brass",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_m7DXn3": {
+          "type": "collection",
+          "settings": {
+            "collection": "momentum-bronze",
+            "title": "Brushed Bronze",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_xKi8ey": {
+          "type": "collection",
+          "settings": {
+            "collection": "momentum-gunmetal",
+            "title": "Gunmetal",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
-        "collection_UWUk8b"
+        "collection_UWUk8b",
+        "collection_iRQBGG",
+        "collection_6yaiLr",
+        "collection_m7DXn3",
+        "collection_xKi8ey"
       ],
-      "disabled": true,
       "name": "Collection list",
       "settings": {
         "columns": 5,
