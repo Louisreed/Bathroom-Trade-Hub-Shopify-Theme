@@ -37,19 +37,19 @@
     assign on_sale = true
   endif
 
-  # Apply membership discount if applicable
-  if membership_discount and membership_discount > 0
-    assign original_price = price
-    assign discount_multiplier = membership_discount | divided_by: 100.0
-    assign discount_amount = price | times: discount_multiplier
-    assign price = price | minus: discount_amount | round
-
-    # Set compare_at_price to original price to show savings
-    unless on_sale
-      assign compare_at_price = original_price
-      assign on_sale = true
-    endunless
-  endif
+  # Apply membership discount if applicable (temporarily disabled)
+  # if membership_discount and membership_discount > 0
+  #   assign original_price = price
+  #   assign discount_multiplier = membership_discount | divided_by: 100.0
+  #   assign discount_amount = price | times: discount_multiplier
+  #   assign price = price | minus: discount_amount | round
+  #
+  #   # Set compare_at_price to original price to show savings
+  #   unless on_sale
+  #     assign compare_at_price = original_price
+  #     assign on_sale = true
+  #   endunless
+  # endif
 -%}
 
 <div
