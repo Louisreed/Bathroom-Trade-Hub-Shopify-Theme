@@ -512,7 +512,7 @@
       "block_order": [
         "hubpro_html_wfK4M3"
       ],
-      "name": "t:sections.custom-section.name",
+      "name": "HubPRO Form Section",
       "settings": {
         "content_direction": "col",
         "vertical_on_mobile": true,
