@@ -826,13 +826,39 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_Mj9L76": {
+          "type": "collection",
+          "settings": {
+            "collection": "rectangular-shower-tray",
+            "title": "Rectangular Trays",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_63HxCc": {
+          "type": "collection",
+          "settings": {
+            "collection": "square-shower-tray",
+            "title": "Square Trays",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
         "collection_9TMKPW",
         "collection_xCrwxc",
         "collection_zpRJtw",
-        "collection_7V4PQ6"
+        "collection_7V4PQ6",
+        "collection_Mj9L76",
+        "collection_63HxCc"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
