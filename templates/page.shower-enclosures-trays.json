@@ -290,13 +290,26 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_pEfGRR": {
+          "type": "collection",
+          "settings": {
+            "collection": "ensky",
+            "title": "Ensky",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
         "collection_ND8apk",
         "collection_4R4cKA",
         "collection_gzUBYE",
-        "collection_f6weNC"
+        "collection_f6weNC",
+        "collection_pEfGRR"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
@@ -309,97 +322,6 @@
         "columns_mobile": "1",
         "swipe_on_mobile": true,
         "heading": "Enclosure Ranges",
-        "heading_size": "title-md",
-        "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "",
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 72,
-        "padding_bottom": 72,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
-      }
-    },
-    "collection_list_Gi89GB": {
-      "type": "collection-list",
-      "blocks": {
-        "collection_Q6pmbW": {
-          "type": "collection",
-          "settings": {
-            "collection": "athena-1",
-            "title": "Hinged Door & In-Line Recess",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_BWqB7C": {
-          "type": "collection",
-          "settings": {
-            "collection": "athena-2",
-            "title": "Hinged Off-Set Quadrant",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_UdCXnD": {
-          "type": "collection",
-          "settings": {
-            "collection": "athena-3",
-            "title": "Hinged Quadrant",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_zbK4FK": {
-          "type": "collection",
-          "settings": {
-            "collection": "athena-4",
-            "title": "Side Panel",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        }
-      },
-      "block_order": [
-        "collection_Q6pmbW",
-        "collection_BWqB7C",
-        "collection_UdCXnD",
-        "collection_zbK4FK"
-      ],
-      "name": "t:sections.collection-list.name",
-      "settings": {
-        "columns": 5,
-        "carousel_on_desktop": false,
-        "image_type": "collection",
-        "image_ratio": "square",
-        "show_products_count": true,
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "heading": "The Dawn Athena Range",
         "heading_size": "title-md",
         "heading_alignment": "text-left md:items-end md:flex-row",
         "heading_tag": "h2",
@@ -700,7 +622,6 @@
     "collection_list_nqMCH9",
     "collection_list_rN7xKg",
     "collection_list_qTBPix",
-    "collection_list_Gi89GB",
     "collection_list_49gCqq",
     "collection_list_rDFK9U",
     "rich_text_KBAVRK"
