@@ -1230,7 +1230,7 @@
         "padding_top": 32,
         "padding_bottom": 32,
         "margin_top": 0,
-        "margin_bottom": 0,
+        "margin_bottom": 28,
         "full_width": true,
         "rounded": true
       }
