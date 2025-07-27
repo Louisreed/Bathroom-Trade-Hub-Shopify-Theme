@@ -1,1191 +1,451 @@
 {%- comment -%}
-  HubPRO Form - Raw HTML with CSS Override Controls
-  Paste the original form HTML and customize styling via theme customizer
+  Custom HTML & CSS Section - Allows merchants to paste raw HTML code
+  Paste any HTML form or content and customize styling via theme customizer
 {%- endcomment -%}
 
-<style>
-  .hubpro-section {
-    padding: {{ section.settings.section_padding_top }}px 0 {{ section.settings.section_padding_bottom }}px;
-  }
+{% assign ai_gen_id = section.id | replace: '_', '' | downcase %}
 
-  .hubpro-form-container {
-    max-width: {{ section.settings.form_max_width }}px;
-    margin: 0 auto;
-    {% if section.settings.form_background != 'rgba(0,0,0,0)' %}
-      background-color: {{ section.settings.form_background }};
-      padding: {{ section.settings.form_padding }}px;
-      border-radius: {{ section.settings.form_border_radius }}px;
+{% style %}
+  .ai-custom-html-section-{{ ai_gen_id }} {
+    width: 100%;
+    padding: {{ section.settings.padding_top }}px {{ section.settings.padding_horizontal }}px {{ section.settings.padding_bottom }}px {{ section.settings.padding_horizontal }}px;
+    background-color: {{ section.settings.background_color }};
+    {% if section.settings.max_width > 0 %}
+      max-width: {{ section.settings.max_width }}px;
+      margin-left: auto;
+      margin-right: auto;
     {% endif %}
   }
 
-  /* Header Styling */
-  #shopify-section-{{ section.id }} .header {
-    color: {{ section.settings.header_color }} !important;
-    margin-bottom: {{ section.settings.header_spacing }}px !important;
-    text-align: {{ section.settings.header_alignment }} !important;
+  .ai-custom-html-content-{{ ai_gen_id }} {
+    color: {{ section.settings.text_color }};
+    font-size: {{ section.settings.font_size }}px;
+    line-height: {{ section.settings.line_height }};
+    text-align: {{ section.settings.text_alignment }};
   }
 
-  #shopify-section-{{ section.id }} h1.header {
-    font-size: {{ section.settings.h1_font_size }}px !important;
-    font-weight: {{ section.settings.h1_font_weight }} !important;
-    margin: 0 !important;
+  .ai-custom-html-content-{{ ai_gen_id }} * {
+    max-width: 100%;
   }
 
-  #shopify-section-{{ section.id }} h3.header {
-    font-size: {{ section.settings.h3_font_size }}px !important;
-    font-weight: {{ section.settings.h3_font_weight }} !important;
-    margin: 0 !important;
+  .ai-custom-html-content-{{ ai_gen_id }} img {
+    height: auto;
+    display: block;
   }
 
-  /* Divider */
-  #shopify-section-{{ section.id }} .aaadivider {
-    border-color: {{ section.settings.divider_color }} !important;
-    margin: {{ section.settings.divider_spacing }}px 0 !important;
+  .ai-custom-html-content-{{ ai_gen_id }} table {
+    width: 100%;
+    border-collapse: collapse;
   }
 
-  /* Labels */
-  #shopify-section-{{ section.id }} .aaamembership_form label {
-    color: {{ section.settings.label_color }} !important;
-    font-size: {{ section.settings.label_font_size }}px !important;
-    font-weight: {{ section.settings.label_font_weight }} !important;
-    display: block !important;
-    margin-bottom: 8px !important;
+  .ai-custom-html-content-{{ ai_gen_id }} iframe,
+  .ai-custom-html-content-{{ ai_gen_id }} video {
+    max-width: 100%;
+    height: auto;
   }
 
-  #shopify-section-{{ section.id }} .required {
-    color: {{ section.settings.required_color }} !important;
+  .ai-custom-html-content-{{ ai_gen_id }} input[type="text"],
+  .ai-custom-html-content-{{ ai_gen_id }} input[type="email"],
+  .ai-custom-html-content-{{ ai_gen_id }} input[type="password"],
+  .ai-custom-html-content-{{ ai_gen_id }} input[type="number"],
+  .ai-custom-html-content-{{ ai_gen_id }} input[type="tel"],
+  .ai-custom-html-content-{{ ai_gen_id }} input[type="url"],
+  .ai-custom-html-content-{{ ai_gen_id }} input[type="search"] {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box;
   }
 
-  /* Form Fields */
-  #shopify-section-{{ section.id }} .aaamembership_form .form-control,
-  #shopify-section-{{ section.id }} .aaamembership_form input[type="text"],
-  #shopify-section-{{ section.id }} .aaamembership_form input[type="email"],
-  #shopify-section-{{ section.id }} .aaamembership_form input[type="password"],
-  #shopify-section-{{ section.id }} .aaamembership_form input[type="number"],
-  #shopify-section-{{ section.id }} .aaamembership_form textarea,
-  #shopify-section-{{ section.id }} .aaamembership_form select {
-    width: 100% !important;
-    padding: {{ section.settings.field_padding }}px !important;
-    font-size: {{ section.settings.field_font_size }}px !important;
-    border: {{ section.settings.field_border_width }}px solid {{ section.settings.field_border_color }} !important;
-    border-radius: {{ section.settings.field_border_radius }}px !important;
-    background-color: {{ section.settings.field_background }} !important;
-    box-sizing: border-box !important;
-    transition: border-color 0.2s ease !important;
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
+  .ai-custom-html-content-{{ ai_gen_id }} textarea {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    min-height: 100px;
+    resize: vertical;
+    box-sizing: border-box;
   }
 
-  #shopify-section-{{ section.id }} .aaamembership_form .form-control:focus,
-  #shopify-section-{{ section.id }} .aaamembership_form input:focus,
-  #shopify-section-{{ section.id }} .aaamembership_form textarea:focus,
-  #shopify-section-{{ section.id }} .aaamembership_form select:focus {
-    border-color: {{ section.settings.field_focus_color }} !important;
-    outline: none !important;
-    {% if section.settings.field_focus_glow %}
-      box-shadow: 0 0 0 2px rgba({{ section.settings.field_focus_color | color_extract: 'red' }}, {{ section.settings.field_focus_color | color_extract: 'green' }}, {{ section.settings.field_focus_color | color_extract: 'blue' }}, 0.2) !important;
-    {% endif %}
+  .ai-custom-html-content-{{ ai_gen_id }} select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #fff;
+    box-sizing: border-box;
   }
 
-  /* Form Groups */
-  #shopify-section-{{ section.id }} .aaamembership_form .form-group {
-    margin-bottom: {{ section.settings.field_spacing }}px !important;
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-    clear: both !important;
+  .ai-custom-html-content-{{ ai_gen_id }} button,
+  .ai-custom-html-content-{{ ai_gen_id }} input[type="submit"],
+  .ai-custom-html-content-{{ ai_gen_id }} input[type="button"] {
+    padding: 12px 24px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
   }
 
-  /* Phone Number Fields */
-  #shopify-section-{{ section.id }} .aaamembership_form .aaa-customer-phone-number-country {
-    width: 49% !important;
-    float: left !important;
-    margin-left: 1% !important;
+  .ai-custom-html-content-{{ ai_gen_id }} button:hover,
+  .ai-custom-html-content-{{ ai_gen_id }} input[type="submit"]:hover,
+  .ai-custom-html-content-{{ ai_gen_id }} input[type="button"]:hover {
+    background-color: #333;
   }
 
-  #shopify-section-{{ section.id }} .aaamembership_form .aaa-customer-phone-number-class {
-    width: 49% !important;
-    float: right !important;
-    margin-right: 1% !important;
+  .ai-custom-html-content-{{ ai_gen_id }} input[type="checkbox"],
+  .ai-custom-html-content-{{ ai_gen_id }} input[type="radio"] {
+    margin-right: 8px;
+    width: auto;
   }
 
-  /* Checkbox */
-  #shopify-section-{{ section.id }} .aaamembership_form .checkbox {
-    {% if section.settings.checkbox_min_width > 0 %}min-width: {{ section.settings.checkbox_min_width }}px !important;{% endif %}
-    display: inline-block !important;
-    margin-right: {{ section.settings.checkbox_margin_right }}px !important;
-    {% if section.settings.checkbox_text_align != 'left' %}text-align: {{ section.settings.checkbox_text_align }} !important;{% endif %}
+  .ai-custom-html-content-{{ ai_gen_id }} label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
   }
 
-  {% if section.settings.checkbox_custom_checkmark %}
-  #shopify-section-{{ section.id }} .aaamembership_form input[type=checkbox]:not(.switch):after {
-    width: {{ section.settings.checkmark_width }}px !important;
-    height: {{ section.settings.checkmark_height }}px !important;
-    inset-inline-start: {{ section.settings.checkmark_position }}px !important;
+  .ai-custom-html-content-{{ ai_gen_id }} fieldset {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 16px;
+    margin-bottom: 16px;
   }
+
+  .ai-custom-html-content-{{ ai_gen_id }} legend {
+    padding: 0 8px;
+    font-weight: 600;
+  }
+
+  .ai-custom-html-content-{{ ai_gen_id }} .form-group {
+    margin-bottom: 20px;
+  }
+
+  .ai-custom-html-content-{{ ai_gen_id }} .form-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+  }
+
+  .ai-custom-html-content-{{ ai_gen_id }} .form-col {
+    flex: 1;
+  }
+
+  .ai-custom-html-content-{{ ai_gen_id }} .form-inline {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .ai-custom-html-content-{{ ai_gen_id }} .form-inline label {
+    margin-bottom: 0;
+    white-space: nowrap;
+  }
+
+  .ai-custom-html-content-{{ ai_gen_id }} .form-inline input,
+  .ai-custom-html-content-{{ ai_gen_id }} .form-inline select {
+    width: auto;
+    flex: 1;
+  }
+
+  .ai-custom-html-content-{{ ai_gen_id }} .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+  }
+
+  .ai-custom-html-content-{{ ai_gen_id }} .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+
+  .ai-custom-html-content-{{ ai_gen_id }} .btn-secondary {
+    background-color: #6c757d;
+    border-color: #6c757d;
+  }
+
+  .ai-custom-html-content-{{ ai_gen_id }} .btn-secondary:hover {
+    background-color: #545b62;
+    border-color: #545b62;
+  }
+
+  .ai-custom-html-content-{{ ai_gen_id }} .btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+
+  .ai-custom-html-content-{{ ai_gen_id }} .btn-success:hover {
+    background-color: #1e7e34;
+    border-color: #1e7e34;
+  }
+
+  .ai-custom-html-content-{{ ai_gen_id }} .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+
+  .ai-custom-html-content-{{ ai_gen_id }} .btn-danger:hover {
+    background-color: #bd2130;
+    border-color: #bd2130;
+  }
+
+  .ai-custom-html-content-{{ ai_gen_id }} .btn-outline {
+    background-color: transparent;
+    color: #000;
+    border: 1px solid #000;
+  }
+
+  .ai-custom-html-content-{{ ai_gen_id }} .btn-outline:hover {
+    background-color: #000;
+    color: #fff;
+  }
+
+  .ai-custom-html-content-{{ ai_gen_id }} .btn-large {
+    padding: 16px 32px;
+    font-size: 16px;
+  }
+
+  .ai-custom-html-content-{{ ai_gen_id }} .btn-small {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  .ai-custom-html-content-{{ ai_gen_id }} .input-large {
+    padding: 16px 20px;
+    font-size: 16px;
+  }
+
+  .ai-custom-html-content-{{ ai_gen_id }} .input-small {
+    padding: 8px 12px;
+    font-size: 12px;
+  }
+
+  .ai-custom-html-content-{{ ai_gen_id }} .required {
+    border-color: #dc3545;
+  }
+
+  .ai-custom-html-content-{{ ai_gen_id }} .error {
+    border-color: #dc3545;
+    background-color: #f8d7da;
+  }
+
+  .ai-custom-html-content-{{ ai_gen_id }} .success {
+    border-color: #28a745;
+    background-color: #d4edda;
+  }
+
+  {% if section.settings.hide_on_mobile %}
+    @media screen and (max-width: 749px) {
+      .ai-custom-html-section-{{ ai_gen_id }} {
+        display: none;
+      }
+    }
   {% endif %}
 
-  #shopify-section-{{ section.id }} .aaamembership_form .membership-checkbox label {
-    display: inline !important;
-    margin-bottom: 0 !important;
-  }
+  {% if section.settings.hide_on_desktop %}
+    @media screen and (min-width: 750px) {
+      .ai-custom-html-section-{{ ai_gen_id }} {
+        display: none;
+      }
+    }
+  {% endif %}
 
-  /* Submit button container */
-  #shopify-section-{{ section.id }} .aaamembership_form .membership-submit {
-    {% if section.settings.submit_container_full_width %}width: 100% !important;{% endif %}
-  }
+  {% if section.settings.custom_css != blank %}
+    {{ section.settings.custom_css }}
+  {% endif %}
+{% endstyle %}
 
-  /* Button */
-  #shopify-section-{{ section.id }} .aaamembership_form .button-input,
-  #shopify-section-{{ section.id }} .aaamembership_form button[type="submit"] {
-    background-color: {{ section.settings.button_background }} !important;
-    color: {{ section.settings.button_color }} !important;
-    font-size: {{ section.settings.button_font_size }}px !important;
-    font-weight: {{ section.settings.button_font_weight }} !important;
-    padding: {{ section.settings.button_padding_vertical }}px {{ section.settings.button_padding_horizontal }}px !important;
-    border-radius: {{ section.settings.button_border_radius }}px !important;
-    border: {{ section.settings.button_border_width }}px solid {{ section.settings.button_border_color }} !important;
-    cursor: pointer !important;
-    transition: all 0.2s ease !important;
-    {% if section.settings.button_full_width %}width: 100% !important;{% endif %}
-    {% if section.settings.button_text_transform != 'none' %}text-transform: {{ section.settings.button_text_transform }} !important;{% endif %}
-  }
-
-  #shopify-section-{{ section.id }} .aaamembership_form .button-input:hover,
-  #shopify-section-{{ section.id }} .aaamembership_form button[type="submit"]:hover {
-    background-color: {{ section.settings.button_hover_background }} !important;
-    color: {{ section.settings.button_hover_color }} !important;
-    {% if section.settings.button_hover_transform %}transform: translateY(-1px) !important;{% endif %}
-  }
-
-  /* Tooltip */
-  #shopify-section-{{ section.id }} .tooltip {
-    position: relative;
-    display: inline-block;
-    margin-left: 5px;
-  }
-
-  #shopify-section-{{ section.id }} .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 200px;
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 8px;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -100px;
-    font-size: 12px;
-    line-height: 1.3;
-  }
-
-  #shopify-section-{{ section.id }} .tooltip:hover .tooltiptext {
-    visibility: visible;
-  }
-</style>
-
-<div class="hubpro-section">
+<div class="ai-custom-html-section-{{ ai_gen_id }}" {{ section.shopify_attributes }}>
   <div class="page-width">
-    <div class="hubpro-form-container">
-      <!-- ORIGINAL HUBPRO FORM HTML - EXACTLY AS PROVIDED -->
-      <form method="post" action="" class="aaamembership_form aaa-form-null" enctype="multipart/form-data">
-        <input type="hidden" name="container_id" value="">
-        <input type="hidden" name="form_id" value="13451">
-        <input
-          type="hidden"
-          name="form_domain"
-          value="{{ section.settings.script_shop_domain | default: 'ab97df-6.myshopify.com' }}"
-        >
-        <input type="hidden" name="" value="Thank you, we will be in touch soon." class="success_msg">
-        <input
-          type="hidden"
-          name=""
-          value="This password is for new user only, old user can use their existing password to login."
-          class="password_tooltip_text_lang"
-        >
-        <input
-          type="hidden"
-          name=""
-          value="https://bathroomtradehub.co.uk/pages/hubpro-thank-you-for-signing-up"
-          class="aaa_thankyoupageurl"
-        >
-
-        <div class="">
-          <h1 type="h1" class="header" name="" id="" style="color: rgb(0, 0, 0);">HubPRO</h1>
+    {% if section.settings.custom_html != blank %}
+      <div class="ai-custom-html-content-{{ ai_gen_id }}">
+        {{ section.settings.custom_html }}
+      </div>
+    {% else %}
+      <div class="ai-custom-html-content-{{ ai_gen_id }}">
+        <p style="color: #999; font-style: italic; text-align: center; padding: 40px 20px;">
+          Add your custom HTML code in the section settings to see it displayed here.
+        </p>
+        <div style="background: #f8f9fa; padding: 20px; border-radius: 8px; margin-top: 20px; font-size: 14px; line-height: 1.6;">
+          <h4 style="margin-top: 0; color: #333;">Available CSS Classes for Form Elements:</h4>
+          <ul style="margin: 10px 0; padding-left: 20px; color: #666;">
+            <li><strong>.form-group</strong> - Container for form fields</li>
+            <li><strong>.form-row</strong> - Horizontal layout for multiple fields</li>
+            <li><strong>.form-col</strong> - Column within form-row</li>
+            <li><strong>.form-inline</strong> - Inline form layout</li>
+            <li><strong>.btn-primary, .btn-secondary, .btn-success, .btn-danger</strong> - Button colors</li>
+            <li><strong>.btn-outline</strong> - Outlined button style</li>
+            <li><strong>.btn-large, .btn-small</strong> - Button sizes</li>
+            <li><strong>.input-large, .input-small</strong> - Input sizes</li>
+            <li><strong>.required, .error, .success</strong> - Input states</li>
+          </ul>
         </div>
-
-        <div class="">
-          <hr type="hr" class="aaadivider" name="" id="">
-        </div>
-
-        <div class="">
-          <h3 type="h3" class="header" name="" id="" style="color: rgb(0, 0, 0);">Subscribe and get benefits</h3>
-        </div>
-
-        <div class="membership-text form-group field-first-name">
-          <label for="first-name" class="membership-text-label" style="color: rgb(0, 0, 0);"
-            >First Name <span class="required">*</span></label
-          >
-          <input type="text" required="" class="form-control" name="first-name" id="first-name" aria-required="true">
-        </div>
-
-        <div class="membership-text form-group field-last-name">
-          <label for="last-name" class="membership-text-label" style="color: rgb(0, 0, 0);"
-            >Last Name <span class="required">*</span></label
-          >
-          <input type="text" required="" class="form-control" name="last-name" id="last-name" aria-required="true">
-        </div>
-
-        <div class="membership-text form-group field-aaa-customer-company">
-          <label for="aaa-customer-company" class="membership-text-label" style="color: rgb(0, 0, 0);"
-            >Company <span class="required">*</span></label
-          >
-          <input
-            type="text"
-            required=""
-            class="form-control"
-            name="aaa-customer-company"
-            id="aaa-customer-company"
-            aria-required="true"
-          >
-        </div>
-
-        <div class="membership-email form-group field-replyemail">
-          <label for="replyemail" class="membership-email-label" style="color: rgb(0, 0, 0);"
-            >Email Address <span class="required">*</span></label
-          >
-          <input type="email" required="" class="form-control" name="replyemail" id="replyemail" aria-required="true">
-        </div>
-
-        <div class="membership-password form-group field-customer-password">
-          <label
-            for="customer-password"
-            class="membership-password-label"
-            style="color: rgb(0, 0, 0); position: relative; display: flex;"
-            >Password <span class="required">*</span>
-            <div class="tooltip" style="">
-              <span class="tooltip-main"><i class="fa fa-question-circle" aria-hidden="true"></i></span>
-              <span class="tooltiptext"
-                >This password is for new user only, old user can use their existing password to login.</span
-              >
-            </div>
-          </label>
-          <input
-            type="password"
-            required=""
-            class="form-control"
-            name="customer-password"
-            id="customer-password"
-            aria-required="true"
-          >
-        </div>
-
-        <div class="membership-password form-group field-aaa-customer-confirm-pass">
-          <label
-            for="aaa-customer-confirm-pass"
-            class="membership-password-label"
-            style="color: rgb(0, 0, 0); position: relative; display: flex;"
-            >Confirm Password <span class="required">*</span>
-            <div class="tooltip" style="">
-              <span class="tooltip-main"><i class="fa fa-question-circle" aria-hidden="true"></i></span>
-              <span class="tooltiptext"
-                >This password is for new user only, old user can use their existing password to login.</span
-              >
-            </div>
-          </label>
-          <input
-            type="password"
-            required=""
-            class="form-control aaa-customer-confirm-password"
-            name="aaa-customer-confirm-pass"
-            id="aaa-customer-confirm-pass"
-            aria-required="true"
-          >
-        </div>
-
-        <div class="membership-undefined form-group field-aaa-customer-address">
-          <label for="aaa-customer-address" class="membership-textarea-label" style="color: rgb(0, 0, 0);"
-            >Address Line 1 <span class="required">*</span></label
-          >
-          <textarea
-            type="textarea"
-            required=""
-            rows="1"
-            class="form-control"
-            name="aaa-customer-address"
-            id="aaa-customer-address"
-            aria-required="true"
-          ></textarea>
-        </div>
-
-        <div class="membership-text form-group field-aaa-customer-city">
-          <label for="aaa-customer-city" class="membership-text-label" style="color: rgb(0, 0, 0);"
-            >City <span class="required">*</span></label
-          >
-          <input
-            type="text"
-            required=""
-            class="form-control"
-            name="aaa-customer-city"
-            id="aaa-customer-city"
-            aria-required="true"
-          >
-        </div>
-
-        <div class="membership-select form-group field-aaa-form-builder-country field-country-1">
-          <label for="aaa-form-builder-country" class="membership-select-label" style="color: rgb(0, 0, 0);"
-            >Country <span class="required">*</span></label
-          >
-          <select
-            type="select"
-            required=""
-            class="form-control"
-            name="aaa-form-builder-country"
-            id="aaa-form-builder-country"
-            aria-required="true"
-          >
-            <option value="Canada">Canada</option>
-            <option value="United States">United States</option>
-            <option value="United Kingdom" selected="">United Kingdom</option>
-            <option value="Afghanistan">Afghanistan</option>
-            <option value="Albania">Albania</option>
-            <option value="Algeria">Algeria</option>
-            <option value="Andorra">Andorra</option>
-            <option value="Angola">Angola</option>
-            <option value="Antigua And Barbuda">Antigua And Barbuda</option>
-            <option value="Argentina">Argentina</option>
-            <option value="Armenia">Armenia</option>
-            <option value="Aruba">Aruba</option>
-            <option value="Australia">Australia</option>
-            <option value="Austria">Austria</option>
-            <option value="Azerbaijan">Azerbaijan</option>
-            <option value="Bahamas">Bahamas</option>
-            <option value="Bahrain">Bahrain</option>
-            <option value="Bangladesh">Bangladesh</option>
-            <option value="Barbados">Barbados</option>
-            <option value="Belarus">Belarus</option>
-            <option value="Belgium">Belgium</option>
-            <option value="Belize">Belize</option>
-            <option value="Benin">Benin</option>
-            <option value="Bermuda">Bermuda</option>
-            <option value="Bhutan">Bhutan</option>
-            <option value="Bolivia">Bolivia</option>
-            <option value="Bosnia And Herzegovina">Bosnia And Herzegovina</option>
-            <option value="Botswana">Botswana</option>
-            <option value="Brazil">Brazil</option>
-            <option value="Brunei">Brunei</option>
-            <option value="Bulgaria">Bulgaria</option>
-            <option value="New Caledonia">New Caledonia</option>
-            <option value="Cambodia">Cambodia</option>
-            <option value="Republic of Cameroon">Republic of Cameroon</option>
-            <option value="Cayman Islands">Cayman Islands</option>
-            <option value="Chile">Chile</option>
-            <option value="china">China</option>
-            <option value="Colombia">Colombia</option>
-            <option value="Comoros">Comoros</option>
-            <option value="Congo">Congo</option>
-            <option value="Congo  The Democratic Republic Of The">Congo, The Democratic Republic Of The</option>
-            <option value="Costa Rica">Costa Rica</option>
-            <option value="Côte d'Ivoire">Côte d'Ivoire</option>
-            <option value="Croatia">Croatia</option>
-            <option value="Curaçao">Curaçao</option>
-            <option value="Cyprus">Cyprus</option>
-            <option value="Czech Republic">Czech Republic</option>
-            <option value="Denmark">Denmark</option>
-            <option value="Dominica">Dominica</option>
-            <option value="Dominican Republic">Dominican Republic</option>
-            <option value="Ecuador">Ecuador</option>
-            <option value="Egypt">Egypt</option>
-            <option value="El Salvador">El Salvador</option>
-            <option value="Estonia">Estonia</option>
-            <option value="Ethiopia">Ethiopia</option>
-            <option value="Equatorial Guinea">Equatorial Guinea</option>
-            <option value="Faroe Islands">Faroe Islands</option>
-            <option value="Fiji">Fiji</option>
-            <option value="Finland">Finland</option>
-            <option value="France">France</option>
-            <option value="Gabon">Gabon</option>
-            <option value="Gambia">Gambia</option>
-            <option value="Georgia">Georgia</option>
-            <option value="Germany">Germany</option>
-            <option value="Ghana">Ghana</option>
-            <option value="French Polynesia">French Polynesia</option>
-            <option value="Gibraltar">Gibraltar</option>
-            <option value="Greece">Greece</option>
-            <option value="Greenland">Greenland</option>
-            <option value="Grenada">Grenada</option>
-            <option value="Guadeloupe">Guadeloupe</option>
-            <option value="Guatemala">Guatemala</option>
-            <option value="Guernsey">Guernsey</option>
-            <option value="Guyana">Guyana</option>
-            <option value="Haiti">Haiti</option>
-            <option value="Honduras">Honduras</option>
-            <option value="Hong Kong">Hong Kong</option>
-            <option value="Hungary">Hungary</option>
-            <option value="Iceland">Iceland</option>
-            <option value="India">India</option>
-            <option value="Indonesia">Indonesia</option>
-            <option value="Ireland">Ireland</option>
-            <option value="Isle Of Man">Isle Of Man</option>
-            <option value="Israel">Israel</option>
-            <option value="Italy">Italy</option>
-            <option value="Jamaica">Jamaica</option>
-            <option value="Japan">Japan</option>
-            <option value="Jersey">Jersey</option>
-            <option value="Jordan">Jordan</option>
-            <option value="Kazakhstan">Kazakhstan</option>
-            <option value="Kenya">Kenya</option>
-            <option value="Kosovo">Kosovo</option>
-            <option value="Kuwait">Kuwait</option>
-            <option value="Kyrgyzstan">Kyrgyzstan</option>
-            <option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
-            <option value="Latvia">Latvia</option>
-            <option value="Lebanon">Lebanon</option>
-            <option value="Lesotho">Lesotho</option>
-            <option value="Liberia">Liberia</option>
-            <option value="Liechtenstein">Liechtenstein</option>
-            <option value="Lithuania">Lithuania</option>
-            <option value="Luxembourg">Luxembourg</option>
-            <option value="Macao">Macao</option>
-            <option value="Macedonia  Republic Of">Macedonia, Republic Of</option>
-            <option value="Madagascar">Madagascar</option>
-            <option value="Malawi">Malawi</option>
-            <option value="Malaysia">Malaysia</option>
-            <option value="Maldives">Maldives</option>
-            <option value="Malta">Malta</option>
-            <option value="Martinique">Martinique</option>
-            <option value="Mauritius">Mauritius</option>
-            <option value="Mexico">Mexico</option>
-            <option value="Moldova  Republic of">Moldova, Republic of</option>
-            <option value="Monaco">Monaco</option>
-            <option value="Mongolia">Mongolia</option>
-            <option value="Montenegro">Montenegro</option>
-            <option value="Morocco">Morocco</option>
-            <option value="Mozambique">Mozambique</option>
-            <option value="Myanmar">Myanmar</option>
-            <option value="Namibia">Namibia</option>
-            <option value="Nepal">Nepal</option>
-            <option value="Netherlands Antilles">Netherlands Antilles</option>
-            <option value="Netherlands">Netherlands</option>
-            <option value="New Zealand">New Zealand</option>
-            <option value="Nicaragua">Nicaragua</option>
-            <option value="Niger">Niger</option>
-            <option value="Nigeria">Nigeria</option>
-            <option value="Norway">Norway</option>
-            <option value="Oman">Oman</option>
-            <option value="Pakistan">Pakistan</option>
-            <option value="Palestinian Territory  Occupied">Palestinian Territory, Occupied</option>
-            <option value="Panama">Panama</option>
-            <option value="Papua New Guinea">Papua New Guinea</option>
-            <option value="Paraguay">Paraguay</option>
-            <option value="Peru">Peru</option>
-            <option value="Philippines">Philippines</option>
-            <option value="Poland">Poland</option>
-            <option value="Portugal">Portugal</option>
-            <option value="Qatar">Qatar</option>
-            <option value="Reunion">Reunion</option>
-            <option value="Romania">Romania</option>
-            <option value="Russia">Russia</option>
-            <option value="Rwanda">Rwanda</option>
-            <option value="Saint Kitts And Nevis">Saint Kitts And Nevis</option>
-            <option value="Saint Lucia">Saint Lucia</option>
-            <option value="Saint Martin">Saint Martin</option>
-            <option value="Sao Tome And Principe">Sao Tome And Principe</option>
-            <option value="Samoa">Samoa</option>
-            <option value="Saudi Arabia">Saudi Arabia</option>
-            <option value="Senegal">Senegal</option>
-            <option value="Serbia">Serbia</option>
-            <option value="Seychelles">Seychelles</option>
-            <option value="Singapore">Singapore</option>
-            <option value="Sint Maarten">Sint Maarten</option>
-            <option value="Slovakia">Slovakia</option>
-            <option value="Slovenia">Slovenia</option>
-            <option value="Solomon Islands">Solomon Islands</option>
-            <option value="South Africa">South Africa</option>
-            <option value="South Korea">South Korea</option>
-            <option value="Spain">Spain</option>
-            <option value="Sri Lanka">Sri Lanka</option>
-            <option value="St. Vincent">St. Vincent</option>
-            <option value="Sudan">Sudan</option>
-            <option value="Suriname">Suriname</option>
-            <option value="Sweden">Sweden</option>
-            <option value="Switzerland">Switzerland</option>
-            <option value="Syria">Syria</option>
-            <option value="Taiwan">Taiwan</option>
-            <option value="Tanzania  United Republic Of">Tanzania, United Republic Of</option>
-            <option value="Thailand">Thailand</option>
-            <option value="Trinidad and Tobago">Trinidad and Tobago</option>
-            <option value="Tunisia">Tunisia</option>
-            <option value="Turkey">Turkey</option>
-            <option value="Turkmenistan">Turkmenistan</option>
-            <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
-            <option value="Uganda">Uganda</option>
-            <option value="Ukraine">Ukraine</option>
-            <option value="United Arab Emirates">United Arab Emirates</option>
-            <option value="Uruguay">Uruguay</option>
-            <option value="Uzbekistan">Uzbekistan</option>
-            <option value="Vanuatu">Vanuatu</option>
-            <option value="Venezuela">Venezuela</option>
-            <option value="Vietnam">Vietnam</option>
-            <option value="Virgin Islands  British">Virgin Islands, British</option>
-            <option value="Yemen">Yemen</option>
-            <option value="Zambia">Zambia</option>
-            <option value="Zimbabwe">Zimbabwe</option>
-            <option value="Aland Islands">Aland Islands</option>
-            <option value="Anguilla">Anguilla</option>
-            <option value="Bouvet Island">Bouvet Island</option>
-            <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
-            <option value="Burkina Faso">Burkina Faso</option>
-            <option value="Burundi">Burundi</option>
-            <option value="Cape Verde">Cape Verde</option>
-            <option value="Central African Republic">Central African Republic</option>
-            <option value="Chad">Chad</option>
-            <option value="Christmas Island">Christmas Island</option>
-            <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
-            <option value="Cook Islands">Cook Islands</option>
-            <option value="Cuba">Cuba</option>
-            <option value="Djibouti">Djibouti</option>
-            <option value="Eritrea">Eritrea</option>
-            <option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
-            <option value="French Guiana">French Guiana</option>
-            <option value="French Southern Territories">French Southern Territories</option>
-            <option value="Guinea">Guinea</option>
-            <option value="Guinea Bissau">Guinea Bissau</option>
-            <option value="Heard Island And Mcdonald Islands">Heard Island And Mcdonald Islands</option>
-            <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
-            <option value="Iran  Islamic Republic Of">Iran, Islamic Republic Of</option>
-            <option value="Iraq">Iraq</option>
-            <option value="Kiribati">Kiribati</option>
-            <option value="Korea  Democratic People's Republic Of">Korea, Democratic People's Republic Of</option>
-            <option value="Libyan Arab Jamahiriya">Libyan Arab Jamahiriya</option>
-            <option value="Mali">Mali</option>
-            <option value="Mauritania">Mauritania</option>
-            <option value="Mayotte">Mayotte</option>
-            <option value="Montserrat">Montserrat</option>
-            <option value="Nauru">Nauru</option>
-            <option value="Niue">Niue</option>
-            <option value="Norfolk Island">Norfolk Island</option>
-            <option value="Pitcairn">Pitcairn</option>
-            <option value="Saint Barthélemy">Saint Barthélemy</option>
-            <option value="Saint Helena">Saint Helena</option>
-            <option value="Saint Pierre And Miquelon">Saint Pierre And Miquelon</option>
-            <option value="San Marino">San Marino</option>
-            <option value="Sierra Leone">Sierra Leone</option>
-            <option value="Somalia">Somalia</option>
-            <option value="South Georgia And The South Sandwich Islands">
-              South Georgia And The South Sandwich Islands
-            </option>
-            <option value="Svalbard And Jan Mayen">Svalbard And Jan Mayen</option>
-            <option value="Swaziland">Swaziland</option>
-            <option value="Tajikistan">Tajikistan</option>
-            <option value="Timor Leste">Timor Leste</option>
-            <option value="Togo">Togo</option>
-            <option value="Tokelau">Tokelau</option>
-            <option value="Tonga">Tonga</option>
-            <option value="Tuvalu">Tuvalu</option>
-            <option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
-            <option value="Wallis And Futuna">Wallis And Futuna</option>
-            <option value="Western Sahara">Western Sahara</option>
-          </select>
-        </div>
-
-        <div class="membership-text form-group field-aaa-customer-zip-code">
-          <label for="aaa-customer-zip-code" class="membership-text-label" style="color: rgb(0, 0, 0);"
-            >Postcode <span class="required">*</span></label
-          >
-          <input
-            type="text"
-            required=""
-            class="form-control"
-            name="aaa-customer-zip-code"
-            id="aaa-customer-zip-code"
-            aria-required="true"
-          >
-        </div>
-
-        <div class="membership-number form-group field-aaa-customer-phone-number">
-          <label for="aaa-customer-phone-number" class="membership-number-label" style="color: rgb(0, 0, 0);"
-            >Phone Number</label
-          >
-          <input
-            type="number"
-            class="form-control aaa-customer-phone-number-class"
-            name="aaa-customer-phone-number"
-            id="aaa-customer-phone-number"
-          >
-          <input
-            type="text"
-            name="aaa-customer-phone-number-country"
-            class="aaa-customer-phone-number-country"
-            placeholder="country code(+1)"
-            value=""
-            style="width: 49% !important;float: left;margin-left: 1%;"
-          >
-        </div>
-
-        <div class="membership-checkbox form-group field-aaasubscribenewsletter">
-          <input type="checkbox" class="checkbox" name="aaasubscribenewsletter" value="1" id="aaasubscribenewsletter">
-          <label for="aaasubscribenewsletter" class="membership-checkbox-label" style="color: rgb(0, 0, 0);"
-            >Subscribe to our newsletter</label
-          >
-        </div>
-
-        <div class="membership-submit form-group field-button-1497336985158">
-          <button
-            type="submit"
-            class="button-input btn btn-primary"
-            name="button-1497336985158"
-            style="primary"
-            id="button-1497336985158"
-          >
-            Subscribe Now
-          </button>
-        </div>
-
-        <input type="hidden" name="affiliate_id" value="">
-      </form>
-    </div>
+      </div>
+    {% endif %}
   </div>
 </div>
 
-<!-- Load HubPRO Script -->
-<script>
-  function loadHubProMembershipScript() {
-    var shopDomain = '{{ section.settings.script_shop_domain | default: "ab97df-6.myshopify.com" }}';
-    var url =
-      'https://shopifycdn.aaawebstore.com/membership/appfiles/aaa_membership_script_min_v3.js?shop=' + shopDomain;
-
-    // Check if script already exists
-    var scripts = document.getElementsByTagName('script');
-    for (var i = 0; i < scripts.length; i++) {
-      if (scripts[i].src === url) {
-        return; // Script already loaded
-      }
-    }
-
-    // Create and load script
-    var script = document.createElement('script');
-    script.type = 'text/javascript';
-    script.src = url;
-    script.onload = function () {
-      console.log('HubPRO membership script loaded successfully');
-    };
-    script.onerror = function () {
-      console.error('Failed to load HubPRO membership script');
-    };
-    document.head.appendChild(script);
-  }
-
-  // Load script when DOM is ready
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', loadHubProMembershipScript);
-  } else {
-    loadHubProMembershipScript();
-  }
-</script>
-
 {% schema %}
 {
-  "name": "HubPRO Form",
+  "name": "Custom HTML & CSS",
   "tag": "section",
   "class": "section",
   "settings": [
     {
       "type": "header",
-      "content": "Form Configuration"
+      "content": "HTML Content"
     },
     {
-      "type": "text",
-      "id": "script_shop_domain",
-      "label": "Script Shop Domain",
-      "default": "ab97df-6.myshopify.com",
-      "info": "The shop domain for loading the membership script (e.g. your-shop.myshopify.com)"
+      "type": "html",
+      "id": "custom_html",
+      "label": "Custom HTML code",
+      "info": "Paste your HTML code here. Use the provided CSS classes for consistent form styling."
     },
     {
       "type": "header",
-      "content": "Form Layout"
+      "content": "CSS Override"
+    },
+    {
+      "type": "textarea",
+      "id": "custom_css",
+      "label": "Custom CSS code",
+      "info": "Override default styles using class selectors. Target this section with .ai-custom-html-content-{{ section.id | replace: '_', '' | downcase }}",
+      "placeholder": "/* Example: Style all buttons */\n.ai-custom-html-content-{{ section.id | replace: '_', '' | downcase }} button {\n  background-color: #ff6b6b;\n  border-radius: 8px;\n}\n\n/* Example: Style form groups */\n.ai-custom-html-content-{{ section.id | replace: '_', '' | downcase }} .form-group {\n  margin-bottom: 30px;\n}\n\n/* Example: Style specific button class */\n.ai-custom-html-content-{{ section.id | replace: '_', '' | downcase }} .btn-primary {\n  background: linear-gradient(45deg, #667eea, #764ba2);\n}"
+    },
+    {
+      "type": "header",
+      "content": "Layout Settings"
     },
     {
       "type": "range",
-      "id": "section_padding_top",
-      "label": "Section Padding Top",
+      "id": "max_width",
       "min": 0,
-      "max": 100,
-      "step": 5,
-      "default": 40,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "section_padding_bottom",
-      "label": "Section Padding Bottom",
-      "min": 0,
-      "max": 100,
-      "step": 5,
-      "default": 40,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "form_max_width",
-      "label": "Form Maximum Width",
-      "min": 400,
-      "max": 800,
+      "max": 2000,
       "step": 50,
-      "default": 600,
-      "unit": "px"
-    },
-    {
-      "type": "color",
-      "id": "form_background",
-      "label": "Form Background Color",
-      "default": "rgba(0,0,0,0)"
-    },
-    {
-      "type": "range",
-      "id": "form_padding",
-      "label": "Form Padding",
-      "min": 0,
-      "max": 50,
-      "step": 5,
-      "default": 30,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "form_border_radius",
-      "label": "Form Border Radius",
-      "min": 0,
-      "max": 20,
-      "step": 1,
-      "default": 8,
-      "unit": "px"
-    },
-    {
-      "type": "header",
-      "content": "Header Styling"
-    },
-    {
-      "type": "color",
-      "id": "header_color",
-      "label": "Header Color",
-      "default": "#000000"
-    },
-    {
-      "type": "select",
-      "id": "header_alignment",
-      "label": "Header Alignment",
-      "options": [
-        { "value": "left", "label": "Left" },
-        { "value": "center", "label": "Center" },
-        { "value": "right", "label": "Right" }
-      ],
-      "default": "center"
-    },
-    {
-      "type": "range",
-      "id": "header_spacing",
-      "label": "Header Bottom Spacing",
-      "min": 0,
-      "max": 50,
-      "step": 2,
-      "default": 16,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "h1_font_size",
-      "label": "H1 Font Size",
-      "min": 18,
-      "max": 48,
-      "step": 2,
-      "default": 24,
-      "unit": "px"
-    },
-    {
-      "type": "select",
-      "id": "h1_font_weight",
-      "label": "H1 Font Weight",
-      "options": [
-        { "value": "300", "label": "Light" },
-        { "value": "400", "label": "Normal" },
-        { "value": "500", "label": "Medium" },
-        { "value": "600", "label": "Semi Bold" },
-        { "value": "700", "label": "Bold" },
-        { "value": "800", "label": "Extra Bold" }
-      ],
-      "default": "700"
-    },
-    {
-      "type": "range",
-      "id": "h3_font_size",
-      "label": "H3 Font Size",
-      "min": 14,
-      "max": 32,
-      "step": 2,
-      "default": 18,
-      "unit": "px"
-    },
-    {
-      "type": "select",
-      "id": "h3_font_weight",
-      "label": "H3 Font Weight",
-      "options": [
-        { "value": "300", "label": "Light" },
-        { "value": "400", "label": "Normal" },
-        { "value": "500", "label": "Medium" },
-        { "value": "600", "label": "Semi Bold" },
-        { "value": "700", "label": "Bold" }
-      ],
-      "default": "600"
-    },
-    {
-      "type": "header",
-      "content": "Divider Styling"
-    },
-    {
-      "type": "color",
-      "id": "divider_color",
-      "label": "Divider Color",
-      "default": "#cccccc"
-    },
-    {
-      "type": "range",
-      "id": "divider_spacing",
-      "label": "Divider Spacing",
-      "min": 0,
-      "max": 40,
-      "step": 2,
-      "default": 16,
-      "unit": "px"
-    },
-    {
-      "type": "header",
-      "content": "Label Styling"
-    },
-    {
-      "type": "color",
-      "id": "label_color",
-      "label": "Label Color",
-      "default": "#000000"
-    },
-    {
-      "type": "range",
-      "id": "label_font_size",
-      "label": "Label Font Size",
-      "min": 12,
-      "max": 18,
-      "step": 1,
-      "default": 14,
-      "unit": "px"
-    },
-    {
-      "type": "select",
-      "id": "label_font_weight",
-      "label": "Label Font Weight",
-      "options": [
-        { "value": "300", "label": "Light" },
-        { "value": "400", "label": "Normal" },
-        { "value": "500", "label": "Medium" },
-        { "value": "600", "label": "Semi Bold" },
-        { "value": "700", "label": "Bold" }
-      ],
-      "default": "500"
-    },
-    {
-      "type": "color",
-      "id": "required_color",
-      "label": "Required Asterisk Color",
-      "default": "#ff0000"
-    },
-    {
-      "type": "header",
-      "content": "Form Field Styling"
-    },
-    {
-      "type": "color",
-      "id": "field_border_color",
-      "label": "Field Border Color",
-      "default": "#cccccc"
-    },
-    {
-      "type": "range",
-      "id": "field_border_width",
-      "label": "Field Border Width",
-      "min": 0,
-      "max": 5,
-      "step": 1,
-      "default": 1,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "field_border_radius",
-      "label": "Field Border Radius",
-      "min": 0,
-      "max": 20,
-      "step": 1,
-      "default": 4,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "field_padding",
-      "label": "Field Padding",
-      "min": 8,
-      "max": 20,
-      "step": 2,
-      "default": 12,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "field_font_size",
-      "label": "Field Font Size",
-      "min": 12,
-      "max": 18,
-      "step": 1,
-      "default": 14,
-      "unit": "px"
-    },
-    {
-      "type": "color",
-      "id": "field_background",
-      "label": "Field Background Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "range",
-      "id": "field_spacing",
-      "label": "Space Between Fields",
-      "min": 10,
-      "max": 40,
-      "step": 2,
-      "default": 20,
-      "unit": "px"
-    },
-    {
-      "type": "color",
-      "id": "field_focus_color",
-      "label": "Field Focus Border Color",
-      "default": "#0066cc"
-    },
-    {
-      "type": "checkbox",
-      "id": "field_focus_glow",
-      "label": "Add Focus Glow Effect",
-      "default": true
-    },
-    {
-      "type": "header",
-      "content": "Submit Button Styling"
-    },
-    {
-      "type": "color",
-      "id": "button_background",
-      "label": "Button Background Color",
-      "default": "#BB9F4D"
-    },
-    {
-      "type": "color",
-      "id": "button_color",
-      "label": "Button Text Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "range",
-      "id": "button_font_size",
-      "label": "Button Font Size",
-      "min": 12,
-      "max": 20,
-      "step": 1,
-      "default": 14,
-      "unit": "px"
-    },
-    {
-      "type": "select",
-      "id": "button_font_weight",
-      "label": "Button Font Weight",
-      "options": [
-        { "value": "400", "label": "Normal" },
-        { "value": "500", "label": "Medium" },
-        { "value": "600", "label": "Semi Bold" },
-        { "value": "700", "label": "Bold" }
-      ],
-      "default": "600"
-    },
-    {
-      "type": "range",
-      "id": "button_padding_vertical",
-      "label": "Button Vertical Padding",
-      "min": 8,
-      "max": 20,
-      "step": 2,
-      "default": 12,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "button_padding_horizontal",
-      "label": "Button Horizontal Padding",
-      "min": 16,
-      "max": 40,
-      "step": 4,
-      "default": 24,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "button_border_radius",
-      "label": "Button Border Radius",
-      "min": 0,
-      "max": 20,
-      "step": 1,
-      "default": 4,
-      "unit": "px"
-    },
-    {
-      "type": "range",
-      "id": "button_border_width",
-      "label": "Button Border Width",
-      "min": 0,
-      "max": 5,
-      "step": 1,
+      "unit": "px",
+      "label": "Maximum width",
       "default": 0,
-      "unit": "px"
-    },
-    {
-      "type": "color",
-      "id": "button_border_color",
-      "label": "Button Border Color",
-      "default": "#BB9F4D"
-    },
-    {
-      "type": "checkbox",
-      "id": "button_full_width",
-      "label": "Full Width Button",
-      "default": false
+      "info": "Set to 0 for full width"
     },
     {
       "type": "select",
-      "id": "button_text_transform",
-      "label": "Button Text Transform",
+      "id": "text_alignment",
+      "label": "Text alignment",
       "options": [
-        { "value": "none", "label": "None" },
-        { "value": "uppercase", "label": "UPPERCASE" },
-        { "value": "lowercase", "label": "lowercase" },
-        { "value": "capitalize", "label": "Capitalize" }
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
       ],
-      "default": "none"
-    },
-    {
-      "type": "color",
-      "id": "button_hover_background",
-      "label": "Button Hover Background",
-      "default": "#a08a42"
-    },
-    {
-      "type": "color",
-      "id": "button_hover_color",
-      "label": "Button Hover Text Color",
-      "default": "#ffffff"
-    },
-    {
-      "type": "checkbox",
-      "id": "button_hover_transform",
-      "label": "Button Hover Lift Effect",
-      "default": false
+      "default": "left"
     },
     {
       "type": "header",
-      "content": "Checkbox Styling"
+      "content": "Spacing"
     },
     {
       "type": "range",
-      "id": "checkbox_min_width",
-      "label": "Checkbox Minimum Width",
+      "id": "padding_top",
       "min": 0,
-      "max": 50,
-      "step": 1,
-      "default": 31,
+      "max": 100,
+      "step": 5,
       "unit": "px",
-      "info": "Set minimum width to ensure consistent checkbox sizing"
+      "label": "Top padding",
+      "default": 40
     },
     {
       "type": "range",
-      "id": "checkbox_margin_right",
-      "label": "Checkbox Right Margin",
+      "id": "padding_bottom",
       "min": 0,
-      "max": 20,
-      "step": 1,
-      "default": 8,
+      "max": 100,
+      "step": 5,
       "unit": "px",
-      "info": "Space between checkbox and label"
-    },
-    {
-      "type": "select",
-      "id": "checkbox_text_align",
-      "label": "Checkbox Text Alignment",
-      "options": [
-        { "value": "left", "label": "Left" },
-        { "value": "center", "label": "Center" },
-        { "value": "right", "label": "Right" }
-      ],
-      "default": "center"
-    },
-    {
-      "type": "checkbox",
-      "id": "submit_container_full_width",
-      "label": "Full Width Submit Container",
-      "default": true,
-      "info": "Makes the submit button container span full width"
-    },
-    {
-      "type": "checkbox",
-      "id": "checkbox_custom_checkmark",
-      "label": "Enable Custom Checkmark Styling",
-      "default": true,
-      "info": "Allows customization of the checkmark appearance"
+      "label": "Bottom padding",
+      "default": 40
     },
     {
       "type": "range",
-      "id": "checkmark_width",
-      "label": "Checkmark Width",
-      "min": 4,
-      "max": 16,
-      "step": 1,
-      "default": 8,
-      "unit": "px"
+      "id": "padding_horizontal",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Left and right padding",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Typography"
     },
     {
       "type": "range",
-      "id": "checkmark_height",
-      "label": "Checkmark Height",
-      "min": 8,
+      "id": "font_size",
+      "min": 12,
       "max": 24,
       "step": 1,
-      "default": 16,
-      "unit": "px"
+      "unit": "px",
+      "label": "Base font size",
+      "default": 16
     },
     {
       "type": "range",
-      "id": "checkmark_position",
-      "label": "Checkmark Position",
-      "min": 0,
-      "max": 20,
-      "step": 1,
-      "default": 10,
-      "unit": "px",
-      "info": "Horizontal position of the checkmark within the checkbox"
+      "id": "line_height",
+      "min": 1,
+      "max": 2,
+      "step": 0.1,
+      "label": "Line height",
+      "default": 1.5
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "Visibility"
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_on_mobile",
+      "label": "Hide on mobile",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_on_desktop",
+      "label": "Hide on desktop",
+      "default": false
     }
   ],
   "presets": [
     {
-      "name": "HubPRO Form"
+      "name": "Custom HTML & CSS"
     }
   ]
 }
