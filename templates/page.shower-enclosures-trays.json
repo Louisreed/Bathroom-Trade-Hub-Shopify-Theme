@@ -195,7 +195,7 @@
         "show_view_all": false,
         "columns_mobile": "1",
         "swipe_on_mobile": true,
-        "heading": "Showers",
+        "heading": "Showers & Accessories",
         "heading_size": "title-md",
         "heading_alignment": "text-left md:items-end md:flex-row",
         "heading_tag": "h2",
@@ -401,70 +401,97 @@
         "rounded": false
       }
     },
-    "rich_text_KBAVRK": {
-      "type": "rich-text",
+    "collection_list_qTBPix": {
+      "type": "collection-list",
       "blocks": {
-        "heading_HXYVaC": {
-          "type": "heading",
+        "collection_6r6Tk4": {
+          "type": "collection",
           "settings": {
-            "heading": "We're just running a few checks...",
-            "heading_size": "title-lg tracking-heading",
-            "heading_tag": "h2",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
+            "collection": "s6-double-quadrant",
+            "title": "Double Door Quadrant",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
           }
         },
-        "text_VUnV6W": {
-          "type": "text",
+        "collection_qnymnV": {
+          "type": "collection",
           "settings": {
-            "text": "<p>After we've verified your account you will be able to login to your trade account and start saving. </p>",
-            "text_font": "body",
-            "text_size": "subtext-md",
-            "text_max_size": 32,
-            "text_line_height": 1.6,
-            "text_letter_spacing": 0,
-            "text_capitalize": false,
-            "secondary_color": false,
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
+            "collection": "s6-single-quadrant",
+            "title": "Single Door Quadrant",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
           }
         },
-        "button_RGRpbz": {
-          "type": "button",
+        "collection_iKBtDD": {
+          "type": "collection",
           "settings": {
-            "button_label": "Browse products",
-            "button_link": "shopify://collections/all",
-            "button_style": "secondary",
-            "button_size": "md",
-            "button_external": false,
-            "button_icon": true
+            "collection": "s6-pivot-door",
+            "title": "Pivot Door",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_36WybT": {
+          "type": "collection",
+          "settings": {
+            "collection": "s6-bi-fold",
+            "title": "Bi-Fold Door",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_ND8apk": {
+          "type": "collection",
+          "settings": {
+            "collection": "s6-sliding-door",
+            "title": "Sliding Door",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
           }
         }
       },
       "block_order": [
-        "heading_HXYVaC",
-        "text_VUnV6W",
-        "button_RGRpbz"
+        "collection_6r6Tk4",
+        "collection_qnymnV",
+        "collection_iKBtDD",
+        "collection_36WybT",
+        "collection_ND8apk"
       ],
-      "name": "t:sections.rich-text.name",
+      "name": "t:sections.collection-list.name",
       "settings": {
-        "text_alignment": "left",
-        "text_alignment_mobile": "left",
-        "heading": "",
+        "columns": 5,
+        "carousel_on_desktop": true,
+        "image_type": "collection",
+        "image_ratio": "square",
+        "show_products_count": true,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "S6 Enclosure Range",
         "heading_size": "title-md",
         "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_width": "small",
         "heading_tag": "h2",
         "subheading": "",
         "description": "",
-        "button_label": "",
-        "button_link": "",
-        "button_external": false,
-        "button_icon": true,
         "highlighted_text": "none",
         "highlighted_scribble": "circle",
-        "color_text": "#fafafa",
-        "color_background": "#424242",
+        "color_text": "",
+        "color_background": "",
         "gradient_background": "",
         "color_highlight": "",
         "gradient_highlight": "",
@@ -472,9 +499,9 @@
         "color_button_background": "",
         "color_button_gradient": "",
         "padding_top": 72,
-        "padding_bottom": 100,
+        "padding_bottom": 72,
         "divider": false,
-        "narrow": true,
+        "full_width": false,
         "rounded": false
       }
     },
@@ -560,110 +587,6 @@
         "columns_mobile": "1",
         "swipe_on_mobile": true,
         "heading": "The S8 Enclosure Range",
-        "heading_size": "title-md",
-        "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "",
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 72,
-        "padding_bottom": 72,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
-      }
-    },
-    "collection_list_qTBPix": {
-      "type": "collection-list",
-      "blocks": {
-        "collection_6r6Tk4": {
-          "type": "collection",
-          "settings": {
-            "collection": "s6-double-quadrant",
-            "title": "Double Door Quadrant",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_qnymnV": {
-          "type": "collection",
-          "settings": {
-            "collection": "s6-single-quadrant",
-            "title": "Single Door Quadrant",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_iKBtDD": {
-          "type": "collection",
-          "settings": {
-            "collection": "s6-pivot-door",
-            "title": "Pivot Door",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_36WybT": {
-          "type": "collection",
-          "settings": {
-            "collection": "s6-bi-fold",
-            "title": "Bi-Fold Door",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_ND8apk": {
-          "type": "collection",
-          "settings": {
-            "collection": "s6-sliding-door",
-            "title": "Sliding Door",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        }
-      },
-      "block_order": [
-        "collection_6r6Tk4",
-        "collection_qnymnV",
-        "collection_iKBtDD",
-        "collection_36WybT",
-        "collection_ND8apk"
-      ],
-      "name": "t:sections.collection-list.name",
-      "settings": {
-        "columns": 5,
-        "carousel_on_desktop": true,
-        "image_type": "collection",
-        "image_ratio": "square",
-        "show_products_count": true,
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "heading": "S6 Enclosure Range",
         "heading_size": "title-md",
         "heading_alignment": "text-left md:items-end md:flex-row",
         "heading_tag": "h2",
@@ -776,6 +699,83 @@
         "full_width": false,
         "rounded": false
       }
+    },
+    "rich_text_KBAVRK": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_HXYVaC": {
+          "type": "heading",
+          "settings": {
+            "heading": "We're just running a few checks...",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_VUnV6W": {
+          "type": "text",
+          "settings": {
+            "text": "<p>After we've verified your account you will be able to login to your trade account and start saving. </p>",
+            "text_font": "body",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_RGRpbz": {
+          "type": "button",
+          "settings": {
+            "button_label": "Browse products",
+            "button_link": "shopify://collections/all",
+            "button_style": "secondary",
+            "button_size": "md",
+            "button_external": false,
+            "button_icon": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_HXYVaC",
+        "text_VUnV6W",
+        "button_RGRpbz"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "text_alignment": "left",
+        "text_alignment_mobile": "left",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "#fafafa",
+        "color_background": "#424242",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 100,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
     }
   },
   "order": [
@@ -785,9 +785,9 @@
     "collection_list_nqMCH9",
     "collection_list_rN7xKg",
     "collection_list_49gCqq",
-    "rich_text_KBAVRK",
-    "collection_list_eHLbMi",
     "collection_list_qTBPix",
-    "collection_list_Gi89GB"
+    "collection_list_eHLbMi",
+    "collection_list_Gi89GB",
+    "rich_text_KBAVRK"
   ]
 }
