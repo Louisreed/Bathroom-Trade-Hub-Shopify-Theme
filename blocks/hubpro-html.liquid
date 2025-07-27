@@ -1,3 +1,8 @@
+{%- comment -%}
+  HubPRO HTML Content Block
+  Allows users to paste HTML code that gets styled by the parent section
+{%- endcomment -%}
+
 <div class="hubpro-html-block" {{ block.shopify_attributes }}>
   {% if block.settings.custom_html != blank %}
     {{ block.settings.custom_html }}
@@ -11,7 +16,6 @@
 {% schema %}
 {
   "name": "HubPRO HTML Content",
-  "tag": null,
   "settings": [
     {
       "type": "html",
