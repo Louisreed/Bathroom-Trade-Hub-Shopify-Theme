@@ -112,14 +112,28 @@
 
   /* Checkbox */
   #shopify-section-{{ section.id }} .aaamembership_form .checkbox {
-    width: auto !important;
+    {% if section.settings.checkbox_min_width > 0 %}min-width: {{ section.settings.checkbox_min_width }}px !important;{% endif %}
     display: inline-block !important;
-    margin-right: 8px !important;
+    margin-right: {{ section.settings.checkbox_margin_right }}px !important;
+    {% if section.settings.checkbox_text_align != 'left' %}text-align: {{ section.settings.checkbox_text_align }} !important;{% endif %}
   }
+
+  {% if section.settings.checkbox_custom_checkmark %}
+  #shopify-section-{{ section.id }} .aaamembership_form input[type=checkbox]:not(.switch):after {
+    width: {{ section.settings.checkmark_width }}px !important;
+    height: {{ section.settings.checkmark_height }}px !important;
+    inset-inline-start: {{ section.settings.checkmark_position }}px !important;
+  }
+  {% endif %}
 
   #shopify-section-{{ section.id }} .aaamembership_form .membership-checkbox label {
     display: inline !important;
     margin-bottom: 0 !important;
+  }
+
+  /* Submit button container */
+  #shopify-section-{{ section.id }} .aaamembership_form .membership-submit {
+    {% if section.settings.submit_container_full_width %}width: 100% !important;{% endif %}
   }
 
   /* Button */
@@ -1085,6 +1099,88 @@
       "id": "button_hover_transform",
       "label": "Button Hover Lift Effect",
       "default": false
+    },
+    {
+      "type": "header",
+      "content": "Checkbox Styling"
+    },
+    {
+      "type": "range",
+      "id": "checkbox_min_width",
+      "label": "Checkbox Minimum Width",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "default": 31,
+      "unit": "px",
+      "info": "Set minimum width to ensure consistent checkbox sizing"
+    },
+    {
+      "type": "range",
+      "id": "checkbox_margin_right",
+      "label": "Checkbox Right Margin",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 8,
+      "unit": "px",
+      "info": "Space between checkbox and label"
+    },
+    {
+      "type": "select",
+      "id": "checkbox_text_align",
+      "label": "Checkbox Text Alignment",
+      "options": [
+        { "value": "left", "label": "Left" },
+        { "value": "center", "label": "Center" },
+        { "value": "right", "label": "Right" }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "checkbox",
+      "id": "submit_container_full_width",
+      "label": "Full Width Submit Container",
+      "default": true,
+      "info": "Makes the submit button container span full width"
+    },
+    {
+      "type": "checkbox",
+      "id": "checkbox_custom_checkmark",
+      "label": "Enable Custom Checkmark Styling",
+      "default": true,
+      "info": "Allows customization of the checkmark appearance"
+    },
+    {
+      "type": "range",
+      "id": "checkmark_width",
+      "label": "Checkmark Width",
+      "min": 4,
+      "max": 16,
+      "step": 1,
+      "default": 8,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "checkmark_height",
+      "label": "Checkmark Height",
+      "min": 8,
+      "max": 24,
+      "step": 1,
+      "default": 16,
+      "unit": "px"
+    },
+    {
+      "type": "range",
+      "id": "checkmark_position",
+      "label": "Checkmark Position",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "default": 10,
+      "unit": "px",
+      "info": "Horizontal position of the checkmark within the checkbox"
     }
   ],
   "presets": [
