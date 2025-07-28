@@ -15,6 +15,7 @@
         "image_iP6dMW": {
           "type": "image",
           "settings": {
+            "image": "shopify://shop_images/image_146c9bf4-0634-4aa7-a5e8-a5b5eebc7f81.jpg",
             "heading": "Save BIG with a DIY Account",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
@@ -27,6 +28,7 @@
         },
         "image_QeYaD3": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "heading": "Image slide",
             "heading_size": "title-lg tracking-heading",
@@ -40,6 +42,7 @@
         },
         "image_Acyxdw": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "heading": "Image slide",
             "heading_size": "title-lg tracking-heading",
