@@ -193,8 +193,8 @@
           "type": "heading",
           "settings": {
             "heading": "Benefits of a <em>DIY</em> Account",
-            "heading_size": "title-md",
-            "heading_tag": "h2",
+            "heading_size": "title-xl tracking-heading",
+            "heading_tag": "h1",
             "highlighted_text": "scribble",
             "highlighted_scribble": "circle"
           }
