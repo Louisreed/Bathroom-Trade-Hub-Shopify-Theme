@@ -152,6 +152,7 @@
         "column_WNXBxY",
         "column_AfLTCg"
       ],
+      "disabled": true,
       "name": "t:sections.multicolumn.name",
       "settings": {
         "gap": "large",
@@ -232,6 +233,8 @@
       ],
       "name": "t:sections.images-with-text.name",
       "settings": {
+        "image": "shopify://shop_images/DIY_EXAMPLE2Artboard_1.png",
+        "image_2": "shopify://shop_images/DIY_EXAMPLEArtboard_1_20d7d6e3-2ffc-4946-ad66-b8ca81864cf8.png",
         "image_ratio": "portrait",
         "image_width": "medium",
         "layout": "image_first",
