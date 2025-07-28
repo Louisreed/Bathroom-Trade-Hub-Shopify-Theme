@@ -402,6 +402,38 @@
         "enable_parallax": false,
         "parallax_direction": "vertical"
       }
+    },
+    "recently_viewed_83qjgT": {
+      "type": "recently-viewed",
+      "name": "t:sections.recently-viewed.name",
+      "settings": {
+        "product_limit": 6,
+        "columns": 4,
+        "carousel_on_desktop": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Recently viewed",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
     }
   },
   "order": [
@@ -409,6 +441,7 @@
     "multicolumn_aGmfPC",
     "images_with_text_4gfzFq",
     "main-register",
-    "slideshow_Ai9Qit"
+    "slideshow_Ai9Qit",
+    "recently_viewed_83qjgT"
   ]
 }
