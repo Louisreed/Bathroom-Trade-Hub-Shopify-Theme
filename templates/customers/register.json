@@ -216,6 +216,7 @@
         },
         "button_k6mcPA": {
           "type": "button",
+          "disabled": true,
           "settings": {
             "button_label": "Button label",
             "button_link": "",
@@ -235,9 +236,9 @@
       "settings": {
         "image": "shopify://shop_images/DIY_EXAMPLE2Artboard_1.png",
         "image_2": "shopify://shop_images/DIY_EXAMPLEArtboard_1_20d7d6e3-2ffc-4946-ad66-b8ca81864cf8.png",
-        "image_ratio": "portrait",
+        "image_ratio": "square",
         "image_width": "medium",
-        "layout": "image_first",
+        "layout": "text_first",
         "text_alignment": "left",
         "text_alignment_mobile": "left",
         "color_text": "",
