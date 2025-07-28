@@ -1,1 +1,195 @@
-{"sections":{"main-page":{"type":"main-page","settings":{"heading_size":"title-xl tracking-heading","heading_alignment":"text-center","heading_tag":"h1","text_size":"text-lg","color_text":"#424242","color_background":"#ffffff","padding_top":72,"padding_bottom":40,"divider":false,"narrow":true,"rounded":false}},"rich-text-welcome":{"type":"rich-text","blocks":{"heading":{"type":"heading","settings":{"heading":"Welcome to HubPRO!","heading_size":"title-lg tracking-heading","heading_tag":"h2","highlighted_text":"none","highlighted_scribble":"circle"}},"text":{"type":"text","settings":{"text":"<p>Thank you for signing up to our exclusive trade membership program. Your application has been received and is being processed.<\/p><p>You'll receive a confirmation email shortly with your membership details and exclusive trade pricing access.<\/p>","text_font":"body","text_size":"text-base","text_line_height":1.6,"highlighted_text":"none","highlighted_scribble":"circle","secondary_color":false}}},"block_order":["heading","text"],"settings":{"full_width":false,"content_alignment":"text-center","color_text":"#424242","color_background":"#f8f9fa","padding_top":60,"padding_bottom":60,"divider":false,"rounded":true}}},"order":["main-page","rich-text-welcome"]} 
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-page": {
+      "type": "main-page",
+      "settings": {
+        "heading_size": "title-md",
+        "heading_alignment": "text-left",
+        "heading_tag": "h1",
+        "text_size": "text-lg",
+        "text_capitalization": "",
+        "content_capitalization": "",
+        "color_text": "#424242",
+        "color_background": "#ffffff",
+        "gradient_background": "",
+        "padding_top": 72,
+        "padding_bottom": 40,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_left": 0,
+        "margin_right": 0,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "rich-text-welcome": {
+      "type": "rich-text",
+      "blocks": {
+        "heading": {
+          "type": "heading",
+          "settings": {
+            "heading": "We're just running a few checks...",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Thank you for signing up to our exclusive trade membership program. Your application has been received and is being processed.</p><p>You'll receive a confirmation email shortly with your membership details and exclusive trade pricing access.</p>",
+            "text_font": "body",
+            "text_size": "text-base",
+            "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_gAHicJ": {
+          "type": "button",
+          "settings": {
+            "button_label": "Browse Products",
+            "button_link": "shopify://collections/all",
+            "button_style": "primary",
+            "button_size": "md",
+            "button_external": false,
+            "button_icon": true
+          }
+        }
+      },
+      "block_order": [
+        "heading",
+        "text",
+        "button_gAHicJ"
+      ],
+      "settings": {
+        "text_alignment": "left",
+        "text_alignment_mobile": "left",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "#ffffff",
+        "color_background": "#424242",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "divider": false,
+        "narrow": true,
+        "rounded": true
+      }
+    },
+    "collection_list_kpPwNM": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_AMUTGj": {
+          "type": "collection",
+          "settings": {
+            "collection": "maxi-panels-1",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_zJiCHW": {
+          "type": "collection",
+          "settings": {
+            "collection": "panel-trims",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_z6mya6": {
+          "type": "collection",
+          "settings": {
+            "collection": "sealants",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_AMUTGj",
+        "collection_zJiCHW",
+        "collection_z6mya6"
+      ],
+      "name": "t:sections.collection-list.name",
+      "settings": {
+        "columns": 4,
+        "carousel_on_desktop": true,
+        "image_type": "collection",
+        "image_ratio": "square",
+        "show_products_count": true,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Featured Products",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "main-page",
+    "rich-text-welcome",
+    "collection_list_kpPwNM"
+  ]
+}
