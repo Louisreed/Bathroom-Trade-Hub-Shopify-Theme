@@ -459,6 +459,34 @@
         "type": "color",
         "id": "hubpro_free_color_info_background",
         "label": "Info Background Color"
+      },
+      {
+        "type": "header",
+        "content": "Essential Upsell App"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_essential_upsell_text_color",
+        "label": "Essential Upsell Text Color",
+        "info": "Text color for Essential Upsell widgets"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_essential_upsell_background_color",
+        "label": "Essential Upsell Background Color",
+        "info": "Background color for Essential Upsell widgets"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_essential_upsell_button_text_color",
+        "label": "Essential Upsell Button Text Color",
+        "info": "Button text color for Essential Upsell widgets"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_essential_upsell_button_background_color",
+        "label": "Essential Upsell Button Background Color",
+        "info": "Button background color for Essential Upsell widgets"
       }
     ]
   },
@@ -618,6 +646,34 @@
         "type": "color",
         "id": "hubpro_plus_color_info_background",
         "label": "Info Background Color"
+      },
+      {
+        "type": "header",
+        "content": "Essential Upsell App"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_essential_upsell_text_color",
+        "label": "Essential Upsell Text Color",
+        "info": "Text color for Essential Upsell widgets"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_essential_upsell_background_color",
+        "label": "Essential Upsell Background Color",
+        "info": "Background color for Essential Upsell widgets"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_essential_upsell_button_text_color",
+        "label": "Essential Upsell Button Text Color",
+        "info": "Button text color for Essential Upsell widgets"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_essential_upsell_button_background_color",
+        "label": "Essential Upsell Button Background Color",
+        "info": "Button background color for Essential Upsell widgets"
       }
     ]
   },
