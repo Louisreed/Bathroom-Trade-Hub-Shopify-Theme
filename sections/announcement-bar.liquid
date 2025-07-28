@@ -5,24 +5,54 @@
   endif
 
   assign section_rendering_api = false
-  if section.index == nil
+  if section.index == null
     assign section_rendering_api = true
+  endif
+
+  # Set default colors
+  assign announcement_color_text = section.settings.color_text
+  assign announcement_color_background = section.settings.color_background
+  assign announcement_color_highlight = section.settings.color_highlight
+
+  # Check for HubPro customer variants and override colors if available
+  if customer and customer.tags contains 'hubpro-plus'
+    # HubPro Plus customer - use plus colors if available, otherwise fallback to default
+    if section.settings.hubpro_plus_color_text != blank
+      assign announcement_color_text = section.settings.hubpro_plus_color_text
+    endif
+    if section.settings.hubpro_plus_color_background != blank
+      assign announcement_color_background = section.settings.hubpro_plus_color_background
+    endif
+    if section.settings.hubpro_plus_color_highlight != blank
+      assign announcement_color_highlight = section.settings.hubpro_plus_color_highlight
+    endif
+  elsif customer and customer.tags contains 'hubpro-free'
+    # HubPro Free customer - use free colors if available, otherwise fallback to default
+    if section.settings.hubpro_free_color_text != blank
+      assign announcement_color_text = section.settings.hubpro_free_color_text
+    endif
+    if section.settings.hubpro_free_color_background != blank
+      assign announcement_color_background = section.settings.hubpro_free_color_background
+    endif
+    if section.settings.hubpro_free_color_highlight != blank
+      assign announcement_color_highlight = section.settings.hubpro_free_color_highlight
+    endif
   endif
 -%}
 
 {%- if show_section -%}
   <style>
     :root {--topbar-height: var(--sp-12);}
-    
+
     @media screen and (min-width: 1536px) {
       :root {--topbar-height: var(--sp-14);}
     }
 
     #shopify-section-{{ section.id }} {
-      --gradient-background: {% if section.settings.gradient_background != blank %}{{ section.settings.gradient_background }}{% else %}{{ section.settings.color_background }}{% endif %};
-      --color-background: {{ section.settings.color_background.rgb }};
-      --color-foreground: {{ section.settings.color_text.rgb }};
-      --color-highlight: {{ section.settings.color_highlight.rgb }};
+      --gradient-background: {% if section.settings.gradient_background != blank %}{{ section.settings.gradient_background }}{% else %}{{ announcement_color_background }}{% endif %};
+      --color-background: {{ announcement_color_background.rgb }};
+      --color-foreground: {{ announcement_color_text.rgb }};
+      --color-highlight: {{ announcement_color_highlight.rgb }};
     }
   </style>
 
@@ -36,7 +66,10 @@
     endif
   -%}
 
-  <nav class="topbar topbar--{{ section.settings.announcement_position }}{% if section.settings.invert_icons_selectors %} topbar--inverted{% endif %}{% unless section.settings.show_social or enable_language_selector or enable_country_selector %} topbar--only{% endunless %} page-width{% if section.settings.full_width %} page-width--full{% endif %} section{% if section.settings.rounded %} section--rounded{% endif %} relative grid py-0 h-full w-full items-center" aria-label="{{ 'sections.announcements.announcement_bar' | t | escape }}">
+  <nav
+    class="topbar topbar--{{ section.settings.announcement_position }}{% if section.settings.invert_icons_selectors %} topbar--inverted{% endif %}{% unless section.settings.show_social or enable_language_selector or enable_country_selector %} topbar--only{% endunless %} page-width{% if section.settings.full_width %} page-width--full{% endif %} section{% if section.settings.rounded %} section--rounded{% endif %} relative grid py-0 h-full w-full items-center"
+    aria-label="{{ 'sections.announcements.announcement_bar' | t | escape }}"
+  >
     {%- if section.settings.show_social -%}
       <div class="social-icons hidden lg:flex items-center">
         {%- render 'social-icons', size: 'sm', gap: '6' -%}
@@ -45,7 +78,13 @@
 
     {%- if announcements_count > 0 -%}
       <div class="announcement-bar h-full flex justify-center lg:justify-{{ section.settings.announcement_position }}{% unless section.settings.show_navigation %} without-nav{% endunless %} relative">
-        <announcement-bar id="Slider-{{ section.id }}" class="announcement__slides{% if announcements_count > 1 %} flex justify-center w-full h-full flickity{% endif %}"{% if section.settings.autoplay %} autoplay autoplay-speed="{{ section.settings.autoplay_speed }}"{% endif %}>
+        <announcement-bar
+          id="Slider-{{ section.id }}"
+          class="announcement__slides{% if announcements_count > 1 %} flex justify-center w-full h-full flickity{% endif %}"
+          {% if section.settings.autoplay %}
+            autoplay autoplay-speed="{{ section.settings.autoplay_speed }}"
+          {% endif %}
+        >
           {%- liquid
             assign with_gradient = false
             if section.settings.gradient_highlight != blank and section.settings.gradient_highlight != 'rgba(0,0,0,0)'
@@ -53,7 +92,13 @@
             endif
           -%}
           {%- for block in section.blocks -%}
-            <div class="announcement__slide flex h-full"{% unless forloop.first %} aria-hidden="true"{% endunless %} {{ block.shopify_attributes }}>
+            <div
+              class="announcement__slide flex h-full"
+              {% unless forloop.first %}
+                aria-hidden="true"
+              {% endunless %}
+              {{ block.shopify_attributes }}
+            >
               {%- capture announcement__content -%}
                 {%- if block.settings.icon != 'none' -%}
                   <span class="announcement-icon{% if block.settings.hide_icon_mobile %} hidden md:block{% endif %}">
@@ -84,7 +129,13 @@
                     endunless
                   endif
                 -%}
-                <a class="announcement__content flex items-center gap-2" href="{{ block.settings.link }}"{% unless accessibility %} tabindex="-1"{% endunless %}>
+                <a
+                  class="announcement__content flex items-center gap-2"
+                  href="{{ block.settings.link }}"
+                  {% unless accessibility %}
+                    tabindex="-1"
+                  {% endunless %}
+                >
                   {{- announcement__content -}}
                 </a>
               {%- else -%}
@@ -96,13 +147,37 @@
           {%- endfor -%}
         </announcement-bar>
         {%- if section.settings.show_navigation and announcements_count > 1 -%}
-          <button type="button" is="previous-button" class="fader left relative flex items-center justify-start h-full" aria-controls="Slider-{{ section.id }}" aria-label="{{ 'general.pagination.previous' | t | escape }}">
-            <svg class="icon icon-arrow-left icon-xs transform" viewBox="0 0 15 14" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <button
+            type="button"
+            is="previous-button"
+            class="fader left relative flex items-center justify-start h-full"
+            aria-controls="Slider-{{ section.id }}"
+            aria-label="{{ 'general.pagination.previous' | t | escape }}"
+          >
+            <svg
+              class="icon icon-arrow-left icon-xs transform"
+              viewBox="0 0 15 14"
+              fill="none"
+              stroke="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path stroke-linecap="round" stroke-linejoin="round" d="M6.33333 2.91675L2.25 7.00004M2.25 7.00004L6.33333 11.0834M2.25 7.00004H12.75"></path>
             </svg>
           </button>
-          <button type="button" is="next-button" class="fader right relative flex items-center justify-end h-full" aria-controls="Slider-{{ section.id }}" aria-label="{{ 'general.pagination.next' | t | escape }}">
-            <svg class="icon icon-arrow-right icon-xs transform" viewBox="0 0 15 14" fill="none" stroke="currentColor" xmlns="http://www.w3.org/2000/svg">
+          <button
+            type="button"
+            is="next-button"
+            class="fader right relative flex items-center justify-end h-full"
+            aria-controls="Slider-{{ section.id }}"
+            aria-label="{{ 'general.pagination.next' | t | escape }}"
+          >
+            <svg
+              class="icon icon-arrow-right icon-xs transform"
+              viewBox="0 0 15 14"
+              fill="none"
+              stroke="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
               <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 7.00004H12.75M12.75 7.00004L8.66667 2.91675M12.75 7.00004L8.66667 11.0834"></path>
             </svg>
           </button>
@@ -131,26 +206,44 @@
     {%- if enable_language_selector or enable_country_selector -%}
       <div class="localization hidden lg:flex items-center h-full">
         {%- if enable_language_selector -%}
-          <div class="localization__item h-full relative" role="combobox" aria-controls="LanguageLocalization-{{ section.id }}" aria-expanded="false" aria-label="{{ 'localization.language_label' | t | escape }}">
+          <div
+            class="localization__item h-full relative"
+            role="combobox"
+            aria-controls="LanguageLocalization-{{ section.id }}"
+            aria-expanded="false"
+            aria-label="{{ 'localization.language_label' | t | escape }}"
+          >
             <button type="button" class="flex items-center gap-3 h-full z-2 relative">
               {%- unless section_rendering_api -%}
-                <api-button class="api-only" data-id="announcement_localization_language_form" data-section-id="{{ section.id }}"></api-button>
+                <api-button
+                  class="api-only"
+                  data-id="announcement_localization_language_form"
+                  data-section-id="{{ section.id }}"
+                ></api-button>
               {%- endunless -%}
               {%- render 'icon', icon: 'language', size: 'xs', class: 'stroke-1 hidden xl:block' -%}
               <span class="leading-tight">{{ localization.language.endonym_name | capitalize }}</span>
               {%- render 'icon', icon: 'chevron-down', size: 'xs' -%}
             </button>
-            <dropdown-localization class="dropdown opacity-0 invisible z-30 absolute top-100{% if enable_country_selector %} left-0{% else %} right-0{% endif %} pointer-events-none" id="LanguageLocalization-{{ section.id }}">
+            <dropdown-localization
+              class="dropdown opacity-0 invisible z-30 absolute top-100{% if enable_country_selector %} left-0{% else %} right-0{% endif %} pointer-events-none"
+              id="LanguageLocalization-{{ section.id }}"
+            >
               {%- unless section_rendering_api -%}
                 <div class="dropdown__container" id="announcement_localization_language_form"></div>
               {%- else -%}
-                {%- form 'localization', id: 'announcement_localization_language_form', class: 'dropdown__container', is: 'localization-listbox' -%}
+                {%- form 'localization',
+                  id: 'announcement_localization_language_form',
+                  class: 'dropdown__container',
+                  is: 'localization-listbox'
+                -%}
                   {%- render 'corner', dir: 'top', prefix: 'dropdown' -%}
                   <ul class="dropdown__nav flex flex-col gap-1d5 xl:gap-2" role="list">
                     {%- for language in localization.available_languages -%}
                       <li class="opacity-0">
                         <p>
-                          <a class="reversed-link{% if language.iso_code == localization.language.iso_code %} active pointer-events-none{% endif %}"
+                          <a
+                            class="reversed-link{% if language.iso_code == localization.language.iso_code %} active pointer-events-none{% endif %}"
                             href="#"
                             hreflang="{{ language.iso_code }}"
                             lang="{{ language.iso_code }}"
@@ -167,33 +260,54 @@
                       </li>
                     {%- endfor -%}
                   </ul>
-                  <input type="hidden" name="locale_code" value="{{ localization.language.iso_code }}" />
+                  <input type="hidden" name="locale_code" value="{{ localization.language.iso_code }}">
                 {%- endform -%}
               {%- endunless -%}
             </dropdown-localization>
           </div>
         {%- endif -%}
         {%- if enable_country_selector -%}
-          <div class="localization__item h-full relative" role="combobox" aria-controls="CountryLocalization-{{ section.id }}" aria-expanded="false" aria-label="{{ 'localization.country_label' | t | escape }}">
+          <div
+            class="localization__item h-full relative"
+            role="combobox"
+            aria-controls="CountryLocalization-{{ section.id }}"
+            aria-expanded="false"
+            aria-label="{{ 'localization.country_label' | t | escape }}"
+          >
             <button type="button" class="flex items-center gap-3 h-full z-2 relative">
               {%- unless section_rendering_api -%}
-                <api-button class="api-only" data-id="announcement_localization_country_form" data-section-id="{{ section.id }}"></api-button>
+                <api-button
+                  class="api-only"
+                  data-id="announcement_localization_country_form"
+                  data-section-id="{{ section.id }}"
+                ></api-button>
               {%- endunless -%}
               {%- render 'icon', icon: 'currency', size: 'xs', class: 'stroke-1 hidden xl:block' -%}
-              <span class="leading-tight">{{ localization.country.name }} ({{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }})</span>
+              <span class="leading-tight">
+                {{- localization.country.name }} ({{ localization.country.currency.iso_code }}
+                {{ localization.country.currency.symbol }})</span
+              >
               {%- render 'icon', icon: 'chevron-down', size: 'xs' -%}
             </button>
-            <dropdown-localization class="dropdown opacity-0 invisible z-30 absolute top-100 right-0 pointer-events-none" id="CountryLocalization-{{ section.id }}">
+            <dropdown-localization
+              class="dropdown opacity-0 invisible z-30 absolute top-100 right-0 pointer-events-none"
+              id="CountryLocalization-{{ section.id }}"
+            >
               {%- unless section_rendering_api -%}
                 <div class="dropdown__container" id="announcement_localization_country_form"></div>
               {%- else -%}
-                {%- form 'localization', id: 'announcement_localization_country_form', class: 'dropdown__container', is: 'localization-listbox' -%}
+                {%- form 'localization',
+                  id: 'announcement_localization_country_form',
+                  class: 'dropdown__container',
+                  is: 'localization-listbox'
+                -%}
                   {%- render 'corner', dir: 'top', prefix: 'dropdown' -%}
                   <ul class="dropdown__nav flex flex-col gap-1d5 xl:gap-2" role="list">
                     {%- for country in localization.available_countries -%}
                       <li class="opacity-0">
                         <p>
-                          <a class="reversed-link{% if country.iso_code == localization.country.iso_code %} active pointer-events-none{% endif %}"
+                          <a
+                            class="reversed-link{% if country.iso_code == localization.country.iso_code %} active pointer-events-none{% endif %}"
                             href="#"
                             {% if country.iso_code == localization.country.iso_code %}
                               aria-current="true"
@@ -202,13 +316,14 @@
                             title="{{ country.name | escape }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})"
                             data-no-instant
                           >
-                            {{- country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
+                            {{- country.name }} ({{ country.currency.iso_code }}
+                            {{ country.currency.symbol }})
                           </a>
                         </p>
                       </li>
                     {%- endfor -%}
                   </ul>
-                  <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}" />
+                  <input type="hidden" name="country_code" value="{{ localization.country.iso_code }}">
                 {%- endform -%}
               {%- endunless -%}
             </dropdown-localization>
@@ -331,6 +446,50 @@
       "type": "color_background",
       "id": "gradient_highlight",
       "label": "t:sections.global.settings.gradient_highlight.label"
+    },
+    {
+      "type": "header",
+      "content": "HubPro Free Colors"
+    },
+    {
+      "type": "color",
+      "id": "hubpro_free_color_text",
+      "label": "HubPro Free Text Color",
+      "info": "Text color for customers with 'hubpro-free' tag"
+    },
+    {
+      "type": "color",
+      "id": "hubpro_free_color_background",
+      "label": "HubPro Free Background Color",
+      "info": "Background color for customers with 'hubpro-free' tag"
+    },
+    {
+      "type": "color",
+      "id": "hubpro_free_color_highlight",
+      "label": "HubPro Free Highlight Color",
+      "info": "Highlight color for customers with 'hubpro-free' tag"
+    },
+    {
+      "type": "header",
+      "content": "HubPro Plus Colors"
+    },
+    {
+      "type": "color",
+      "id": "hubpro_plus_color_text",
+      "label": "HubPro Plus Text Color",
+      "info": "Text color for customers with 'hubpro-plus' tag"
+    },
+    {
+      "type": "color",
+      "id": "hubpro_plus_color_background",
+      "label": "HubPro Plus Background Color",
+      "info": "Background color for customers with 'hubpro-plus' tag"
+    },
+    {
+      "type": "color",
+      "id": "hubpro_plus_color_highlight",
+      "label": "HubPro Plus Highlight Color",
+      "info": "Highlight color for customers with 'hubpro-plus' tag"
     },
     {
       "type": "header",
@@ -698,9 +857,7 @@
     }
   ],
   "enabled_on": {
-    "groups": [
-      "header"
-    ]
+    "groups": ["header"]
   }
 }
 {% endschema %}

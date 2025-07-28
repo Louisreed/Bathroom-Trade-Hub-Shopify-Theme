@@ -4,6 +4,10 @@
   assign header_color_text = section.settings.color_text
   assign header_transparent_color_text = section.settings.transparent_color_text
 
+  # Default VAT toggle colors (empty means use app defaults)
+  assign vat_toggle_text_color = ''
+  assign vat_toggle_color = ''
+
   # Check customer tags and override colors accordingly
   if customer and customer.tags contains 'hubpro-plus'
     # HubPro Plus customer - use plus colors if available, otherwise fallback to default
@@ -16,6 +20,12 @@
     if section.settings.hubpro_plus_transparent_color_text != blank
       assign header_transparent_color_text = section.settings.hubpro_plus_transparent_color_text
     endif
+    if section.settings.hubpro_plus_vat_toggle_text_color != blank
+      assign vat_toggle_text_color = section.settings.hubpro_plus_vat_toggle_text_color
+    endif
+    if section.settings.hubpro_plus_vat_toggle_color != blank
+      assign vat_toggle_color = section.settings.hubpro_plus_vat_toggle_color
+    endif
   elsif customer and customer.tags contains 'hubpro-free'
     # HubPro Free customer - use free colors if available, otherwise fallback to default
     if section.settings.hubpro_free_color_background != blank
@@ -26,6 +36,12 @@
     endif
     if section.settings.hubpro_free_transparent_color_text != blank
       assign header_transparent_color_text = section.settings.hubpro_free_transparent_color_text
+    endif
+    if section.settings.hubpro_free_vat_toggle_text_color != blank
+      assign vat_toggle_text_color = section.settings.hubpro_free_vat_toggle_text_color
+    endif
+    if section.settings.hubpro_free_vat_toggle_color != blank
+      assign vat_toggle_color = section.settings.hubpro_free_vat_toggle_color
     endif
   endif
 -%}
@@ -39,6 +55,8 @@
     --color-background: {{ header_color_background.rgb }};
     --color-foreground: {{ header_color_text.rgb }};
     --color-transparent: {{ header_transparent_color_text.rgb }};
+    {% if vat_toggle_text_color != blank %}--vat-toggle-text-color: {{ vat_toggle_text_color }};{% endif %}
+    {% if vat_toggle_color != blank %}--vat-toggle-color: {{ vat_toggle_color }};{% endif %}
     margin-top: var(--section-margin-top);
     margin-bottom: var(--section-margin-bottom);
   }
@@ -48,6 +66,40 @@
     background-color: rgb(var(--color-background));
     border-color: rgb(var(--color-border));
   }
+
+  /* HubPro VAT Toggle Color Customization */
+
+  /* Apply custom colors to T-selector VAT toggle elements */
+  {% if vat_toggle_text_color != blank %}
+  #shopify-section-{{ section.id }} .vat-switcher-inline * {
+    color: var(--vat-toggle-text-color) !important;
+  }
+
+  #shopify-section-{{ section.id }} .vat-switcher-inline .t-selector-text,
+  #shopify-section-{{ section.id }} .vat-switcher-inline .t-selector-label,
+  #shopify-section-{{ section.id }} .vat-switcher-inline span,
+  #shopify-section-{{ section.id }} .vat-switcher-inline label {
+    color: var(--vat-toggle-text-color) !important;
+  }
+  {% endif %}
+
+    {% if vat_toggle_color != blank %}
+  /* Keep the toggle background white, only change the circle/handle color */
+  #shopify-section-{{ section.id }} .vat-switcher-inline .t-selector-option-switch-label {
+    background: #ffffff !important;
+    border: 1px solid var(--vat-toggle-color) !important;
+  }
+
+  /* Target the circular handle/switch inside the toggle */
+  #shopify-section-{{ section.id }} .vat-switcher-inline .t-selector-option-switch-label::before,
+  #shopify-section-{{ section.id }} .vat-switcher-inline .t-selector-option-switch-label::after,
+  #shopify-section-{{ section.id }} .vat-switcher-inline input[type="checkbox"]:checked + .t-selector-option-switch-label::before,
+  #shopify-section-{{ section.id }} .vat-switcher-inline input[type="checkbox"]:checked + .t-selector-option-switch-label::after,
+  #shopify-section-{{ section.id }} .vat-switcher-inline .switch-handle,
+  #shopify-section-{{ section.id }} .vat-switcher-inline .toggle-circle {
+    background-color: var(--vat-toggle-color) !important;
+  }
+  {% endif %}
 
   /* VAT Switcher strict responsive display control */
 
@@ -490,6 +542,18 @@
       "default": "#ffffff"
     },
     {
+      "type": "color",
+      "id": "hubpro_free_vat_toggle_text_color",
+      "label": "HubPro Free VAT Toggle Text Color",
+      "info": "Text color for VAT toggle for hubpro-free customers"
+    },
+    {
+      "type": "color",
+      "id": "hubpro_free_vat_toggle_color",
+      "label": "HubPro Free VAT Toggle Color",
+      "info": "Toggle color for VAT switcher for hubpro-free customers"
+    },
+    {
       "type": "header",
       "content": "HubPro Plus Colors"
     },
@@ -513,6 +577,18 @@
       "label": "HubPro Plus Transparent Text Color",
       "info": "Transparent header text color for hubpro-plus customers",
       "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "hubpro_plus_vat_toggle_text_color",
+      "label": "HubPro Plus VAT Toggle Text Color",
+      "info": "Text color for VAT toggle for hubpro-plus customers"
+    },
+    {
+      "type": "color",
+      "id": "hubpro_plus_vat_toggle_color",
+      "label": "HubPro Plus VAT Toggle Color",
+      "info": "Toggle color for VAT switcher for hubpro-plus customers"
     },
     {
       "type": "header",

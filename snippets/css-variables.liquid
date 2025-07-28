@@ -35,38 +35,333 @@
     elsif settings.rounded_input == 'square'
       assign rounded_input = 0
     endif
+
+    # HubPro Color Overrides - Check customer tags and override colors if HubPro settings are configured
+    if customer and customer.tags contains 'hubpro-plus'
+      # HubPro Plus customer - use plus colors if available, otherwise fallback to default
+      if settings.hubpro_plus_color_text != blank
+        assign settings_color_text = settings.hubpro_plus_color_text
+      else
+        assign settings_color_text = settings.color_text
+      endif
+      if settings.hubpro_plus_color_background != blank
+        assign settings_color_background = settings.hubpro_plus_color_background
+      else
+        assign settings_color_background = settings.color_background
+      endif
+      if settings.hubpro_plus_color_highlight != blank
+        assign settings_color_highlight = settings.hubpro_plus_color_highlight
+      else
+        assign settings_color_highlight = settings.color_highlight
+      endif
+      if settings.hubpro_plus_color_keyboard_focus != blank
+        assign settings_color_keyboard_focus = settings.hubpro_plus_color_keyboard_focus
+      else
+        assign settings_color_keyboard_focus = settings.color_keyboard_focus
+      endif
+      if settings.hubpro_plus_color_shadow != blank
+        assign settings_color_shadow = settings.hubpro_plus_color_shadow
+      else
+        assign settings_color_shadow = settings.color_shadow
+      endif
+      if settings.hubpro_plus_color_image_background != blank
+        assign settings_color_image_background = settings.hubpro_plus_color_image_background
+      else
+        assign settings_color_image_background = settings.color_image_background
+      endif
+      if settings.hubpro_plus_color_price != blank
+        assign settings_color_price = settings.hubpro_plus_color_price
+      else
+        assign settings_color_price = settings.color_price
+      endif
+      if settings.hubpro_plus_color_sale_price != blank
+        assign settings_color_sale_price = settings.hubpro_plus_color_sale_price
+      else
+        assign settings_color_sale_price = settings.color_sale_price
+      endif
+      if settings.hubpro_plus_color_sale_tag != blank
+        assign settings_color_sale_tag = settings.hubpro_plus_color_sale_tag
+      else
+        assign settings_color_sale_tag = settings.color_sale_tag
+      endif
+      if settings.hubpro_plus_color_sale_tag_text != blank
+        assign settings_color_sale_tag_text = settings.hubpro_plus_color_sale_tag_text
+      else
+        assign settings_color_sale_tag_text = settings.color_sale_tag_text
+      endif
+      if settings.hubpro_plus_color_rating != blank
+        assign settings_color_rating = settings.hubpro_plus_color_rating
+      else
+        assign settings_color_rating = settings.color_rating
+      endif
+      if settings.hubpro_plus_color_button_text != blank
+        assign settings_color_button_text = settings.hubpro_plus_color_button_text
+      else
+        assign settings_color_button_text = settings.color_button_text
+      endif
+      if settings.hubpro_plus_color_button_background != blank
+        assign settings_color_button_background = settings.hubpro_plus_color_button_background
+      else
+        assign settings_color_button_background = settings.color_button_background
+      endif
+      if settings.hubpro_plus_color_button_gradient != blank
+        assign settings_color_button_gradient = settings.hubpro_plus_color_button_gradient
+      else
+        assign settings_color_button_gradient = settings.color_button_gradient
+      endif
+      if settings.hubpro_plus_color_drawer_text != blank
+        assign settings_color_drawer_text = settings.hubpro_plus_color_drawer_text
+      else
+        assign settings_color_drawer_text = settings.color_drawer_text
+      endif
+      if settings.hubpro_plus_color_drawer_background != blank
+        assign settings_color_drawer_background = settings.hubpro_plus_color_drawer_background
+      else
+        assign settings_color_drawer_background = settings.color_drawer_background
+      endif
+      if settings.hubpro_plus_color_drawer_button_text != blank
+        assign settings_color_drawer_button_text = settings.hubpro_plus_color_drawer_button_text
+      else
+        assign settings_color_drawer_button_text = settings.color_drawer_button_text
+      endif
+      if settings.hubpro_plus_color_drawer_button_background != blank
+        assign settings_color_drawer_button_background = settings.hubpro_plus_color_drawer_button_background
+      else
+        assign settings_color_drawer_button_background = settings.color_drawer_button_background
+      endif
+      if settings.hubpro_plus_color_drawer_button_gradient != blank
+        assign settings_color_drawer_button_gradient = settings.hubpro_plus_color_drawer_button_gradient
+      else
+        assign settings_color_drawer_button_gradient = settings.color_drawer_button_gradient
+      endif
+      if settings.hubpro_plus_color_drawer_overlay != blank
+        assign settings_color_drawer_overlay = settings.hubpro_plus_color_drawer_overlay
+      else
+        assign settings_color_drawer_overlay = settings.color_drawer_overlay
+      endif
+      if settings.hubpro_plus_color_success_text != blank
+        assign settings_color_success_text = settings.hubpro_plus_color_success_text
+      else
+        assign settings_color_success_text = settings.color_success_text
+      endif
+      if settings.hubpro_plus_color_success_background != blank
+        assign settings_color_success_background = settings.hubpro_plus_color_success_background
+      else
+        assign settings_color_success_background = settings.color_success_background
+      endif
+      if settings.hubpro_plus_color_error_text != blank
+        assign settings_color_error_text = settings.hubpro_plus_color_error_text
+      else
+        assign settings_color_error_text = settings.color_error_text
+      endif
+      if settings.hubpro_plus_color_error_background != blank
+        assign settings_color_error_background = settings.hubpro_plus_color_error_background
+      else
+        assign settings_color_error_background = settings.color_error_background
+      endif
+      if settings.hubpro_plus_color_info_text != blank
+        assign settings_color_info_text = settings.hubpro_plus_color_info_text
+      else
+        assign settings_color_info_text = settings.color_info_text
+      endif
+      if settings.hubpro_plus_color_info_background != blank
+        assign settings_color_info_background = settings.hubpro_plus_color_info_background
+      else
+        assign settings_color_info_background = settings.color_info_background
+      endif
+    elsif customer and customer.tags contains 'hubpro-free'
+      # HubPro Free customer - use free colors if available, otherwise fallback to default
+      if settings.hubpro_free_color_text != blank
+        assign settings_color_text = settings.hubpro_free_color_text
+      else
+        assign settings_color_text = settings.color_text
+      endif
+      if settings.hubpro_free_color_background != blank
+        assign settings_color_background = settings.hubpro_free_color_background
+      else
+        assign settings_color_background = settings.color_background
+      endif
+      if settings.hubpro_free_color_highlight != blank
+        assign settings_color_highlight = settings.hubpro_free_color_highlight
+      else
+        assign settings_color_highlight = settings.color_highlight
+      endif
+      if settings.hubpro_free_color_keyboard_focus != blank
+        assign settings_color_keyboard_focus = settings.hubpro_free_color_keyboard_focus
+      else
+        assign settings_color_keyboard_focus = settings.color_keyboard_focus
+      endif
+      if settings.hubpro_free_color_shadow != blank
+        assign settings_color_shadow = settings.hubpro_free_color_shadow
+      else
+        assign settings_color_shadow = settings.color_shadow
+      endif
+      if settings.hubpro_free_color_image_background != blank
+        assign settings_color_image_background = settings.hubpro_free_color_image_background
+      else
+        assign settings_color_image_background = settings.color_image_background
+      endif
+      if settings.hubpro_free_color_price != blank
+        assign settings_color_price = settings.hubpro_free_color_price
+      else
+        assign settings_color_price = settings.color_price
+      endif
+      if settings.hubpro_free_color_sale_price != blank
+        assign settings_color_sale_price = settings.hubpro_free_color_sale_price
+      else
+        assign settings_color_sale_price = settings.color_sale_price
+      endif
+      if settings.hubpro_free_color_sale_tag != blank
+        assign settings_color_sale_tag = settings.hubpro_free_color_sale_tag
+      else
+        assign settings_color_sale_tag = settings.color_sale_tag
+      endif
+      if settings.hubpro_free_color_sale_tag_text != blank
+        assign settings_color_sale_tag_text = settings.hubpro_free_color_sale_tag_text
+      else
+        assign settings_color_sale_tag_text = settings.color_sale_tag_text
+      endif
+      if settings.hubpro_free_color_rating != blank
+        assign settings_color_rating = settings.hubpro_free_color_rating
+      else
+        assign settings_color_rating = settings.color_rating
+      endif
+      if settings.hubpro_free_color_button_text != blank
+        assign settings_color_button_text = settings.hubpro_free_color_button_text
+      else
+        assign settings_color_button_text = settings.color_button_text
+      endif
+      if settings.hubpro_free_color_button_background != blank
+        assign settings_color_button_background = settings.hubpro_free_color_button_background
+      else
+        assign settings_color_button_background = settings.color_button_background
+      endif
+      if settings.hubpro_free_color_button_gradient != blank
+        assign settings_color_button_gradient = settings.hubpro_free_color_button_gradient
+      else
+        assign settings_color_button_gradient = settings.color_button_gradient
+      endif
+      if settings.hubpro_free_color_drawer_text != blank
+        assign settings_color_drawer_text = settings.hubpro_free_color_drawer_text
+      else
+        assign settings_color_drawer_text = settings.color_drawer_text
+      endif
+      if settings.hubpro_free_color_drawer_background != blank
+        assign settings_color_drawer_background = settings.hubpro_free_color_drawer_background
+      else
+        assign settings_color_drawer_background = settings.color_drawer_background
+      endif
+      if settings.hubpro_free_color_drawer_button_text != blank
+        assign settings_color_drawer_button_text = settings.hubpro_free_color_drawer_button_text
+      else
+        assign settings_color_drawer_button_text = settings.color_drawer_button_text
+      endif
+      if settings.hubpro_free_color_drawer_button_background != blank
+        assign settings_color_drawer_button_background = settings.hubpro_free_color_drawer_button_background
+      else
+        assign settings_color_drawer_button_background = settings.color_drawer_button_background
+      endif
+      if settings.hubpro_free_color_drawer_button_gradient != blank
+        assign settings_color_drawer_button_gradient = settings.hubpro_free_color_drawer_button_gradient
+      else
+        assign settings_color_drawer_button_gradient = settings.color_drawer_button_gradient
+      endif
+      if settings.hubpro_free_color_drawer_overlay != blank
+        assign settings_color_drawer_overlay = settings.hubpro_free_color_drawer_overlay
+      else
+        assign settings_color_drawer_overlay = settings.color_drawer_overlay
+      endif
+      if settings.hubpro_free_color_success_text != blank
+        assign settings_color_success_text = settings.hubpro_free_color_success_text
+      else
+        assign settings_color_success_text = settings.color_success_text
+      endif
+      if settings.hubpro_free_color_success_background != blank
+        assign settings_color_success_background = settings.hubpro_free_color_success_background
+      else
+        assign settings_color_success_background = settings.color_success_background
+      endif
+      if settings.hubpro_free_color_error_text != blank
+        assign settings_color_error_text = settings.hubpro_free_color_error_text
+      else
+        assign settings_color_error_text = settings.color_error_text
+      endif
+      if settings.hubpro_free_color_error_background != blank
+        assign settings_color_error_background = settings.hubpro_free_color_error_background
+      else
+        assign settings_color_error_background = settings.color_error_background
+      endif
+      if settings.hubpro_free_color_info_text != blank
+        assign settings_color_info_text = settings.hubpro_free_color_info_text
+      else
+        assign settings_color_info_text = settings.color_info_text
+      endif
+      if settings.hubpro_free_color_info_background != blank
+        assign settings_color_info_background = settings.hubpro_free_color_info_background
+      else
+        assign settings_color_info_background = settings.color_info_background
+      endif
+    else
+      # Regular customer - use default theme colors
+      assign settings_color_text = settings.color_text
+      assign settings_color_background = settings.color_background
+      assign settings_color_highlight = settings.color_highlight
+      assign settings_color_keyboard_focus = settings.color_keyboard_focus
+      assign settings_color_shadow = settings.color_shadow
+      assign settings_color_image_background = settings.color_image_background
+      assign settings_color_price = settings.color_price
+      assign settings_color_sale_price = settings.color_sale_price
+      assign settings_color_sale_tag = settings.color_sale_tag
+      assign settings_color_sale_tag_text = settings.color_sale_tag_text
+      assign settings_color_rating = settings.color_rating
+      assign settings_color_button_text = settings.color_button_text
+      assign settings_color_button_background = settings.color_button_background
+      assign settings_color_button_gradient = settings.color_button_gradient
+      assign settings_color_drawer_text = settings.color_drawer_text
+      assign settings_color_drawer_background = settings.color_drawer_background
+      assign settings_color_drawer_button_text = settings.color_drawer_button_text
+      assign settings_color_drawer_button_background = settings.color_drawer_button_background
+      assign settings_color_drawer_button_gradient = settings.color_drawer_button_gradient
+      assign settings_color_drawer_overlay = settings.color_drawer_overlay
+      assign settings_color_success_text = settings.color_success_text
+      assign settings_color_success_background = settings.color_success_background
+      assign settings_color_error_text = settings.color_error_text
+      assign settings_color_error_background = settings.color_error_background
+      assign settings_color_info_text = settings.color_info_text
+      assign settings_color_info_background = settings.color_info_background
+    endif
   -%}
 
   :root {
-    /*! General */
-    --color-base-text: {{ settings.color_text.rgb }};
-    --color-base-highlight: {{ settings.color_highlight.rgb }};
-    --color-base-background: {{ settings.color_background.rgb }};
-    --color-base-button: {{ settings.color_button_background.rgb }};
-    --color-base-button-gradient: {% if settings.color_button_gradient != blank %}{{ settings.color_button_gradient }}{% else %}{{ settings.color_button_background }}{% endif %};
-    --color-base-button-text: {{ settings.color_button_text.rgb }};
-    --color-keyboard-focus: {{ settings.color_keyboard_focus.rgb }};
-    --color-shadow: {{ settings.color_shadow.rgb }};
-    --color-price: {{ settings.color_price.rgb }};
-    --color-sale-price: {{ settings.color_sale_price.rgb }};
-    --color-sale-tag: {{ settings.color_sale_tag.rgb }};
-    --color-sale-tag-text: {{ settings.color_sale_tag_text.rgb }};
-    --color-rating: {{ settings.color_rating.rgb }};
-    --color-placeholder: {{ settings.color_image_background.rgb }};
-    --color-success-text: {{ settings.color_success_text.rgb }};
-    --color-success-background: {{ settings.color_success_background.rgb }};
-    --color-error-text: {{ settings.color_error_text.rgb }};
-    --color-error-background: {{ settings.color_error_background.rgb }};
-    --color-info-text: {{ settings.color_info_text.rgb }};
-    --color-info-background: {{ settings.color_info_background.rgb }};
-    
+        /*! General */
+    --color-base-text: {{ settings_color_text.rgb }};
+    --color-base-highlight: {{ settings_color_highlight.rgb }};
+    --color-base-background: {{ settings_color_background.rgb }};
+    --color-base-button: {{ settings_color_button_background.rgb }};
+    --color-base-button-gradient: {% if settings_color_button_gradient != blank %}{{ settings_color_button_gradient }}{% else %}{{ settings_color_button_background }}{% endif %};
+    --color-base-button-text: {{ settings_color_button_text.rgb }};
+    --color-keyboard-focus: {{ settings_color_keyboard_focus.rgb }};
+    --color-shadow: {{ settings_color_shadow.rgb }};
+    --color-price: {{ settings_color_price.rgb }};
+    --color-sale-price: {{ settings_color_sale_price.rgb }};
+    --color-sale-tag: {{ settings_color_sale_tag.rgb }};
+    --color-sale-tag-text: {{ settings_color_sale_tag_text.rgb }};
+    --color-rating: {{ settings_color_rating.rgb }};
+    --color-placeholder: {{ settings_color_image_background.rgb }};
+    --color-success-text: {{ settings_color_success_text.rgb }};
+    --color-success-background: {{ settings_color_success_background.rgb }};
+    --color-error-text: {{ settings_color_error_text.rgb }};
+    --color-error-background: {{ settings_color_error_background.rgb }};
+    --color-info-text: {{ settings_color_info_text.rgb }};
+    --color-info-background: {{ settings_color_info_background.rgb }};
+
     /*! Menu and drawers */
-    --color-drawer-text: {{ settings.color_drawer_text.rgb }};
-    --color-drawer-background: {{ settings.color_drawer_background.rgb }};
-    --color-drawer-button-background: {{ settings.color_drawer_button_background.rgb }};
-    --color-drawer-button-gradient: {% if settings.color_drawer_button_gradient != blank %}{{ settings.color_drawer_button_gradient }}{% else %}{{ settings.color_drawer_button_background }}{% endif %};
-    --color-drawer-button-text: {{ settings.color_drawer_button_text.rgb }};
-    --color-drawer-overlay: {{ settings.color_drawer_overlay.rgb }};
+    --color-drawer-text: {{ settings_color_drawer_text.rgb }};
+    --color-drawer-background: {{ settings_color_drawer_background.rgb }};
+    --color-drawer-button-background: {{ settings_color_drawer_button_background.rgb }};
+    --color-drawer-button-gradient: {% if settings_color_drawer_button_gradient != blank %}{{ settings_color_drawer_button_gradient }}{% else %}{{ settings_color_drawer_button_background }}{% endif %};
+    --color-drawer-button-text: {{ settings_color_drawer_button_text.rgb }};
+    --color-drawer-overlay: {{ settings_color_drawer_overlay.rgb }};
 
     /*! Product card */
     --card-radius: var(--rounded-card);

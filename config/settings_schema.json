@@ -304,6 +304,324 @@
     ]
   },
   {
+    "name": "HubPro Free Colors",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Override theme colors for customers with 'hubpro-free' customer tag. Leave blank to use default theme colors."
+      },
+      {
+        "type": "header",
+        "content": "General"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_color_text",
+        "label": "Text Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_color_background",
+        "label": "Background Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_color_highlight",
+        "label": "Highlight Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_color_keyboard_focus",
+        "label": "Keyboard Focus Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_color_shadow",
+        "label": "Shadow Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_color_image_background",
+        "label": "Image Background Color"
+      },
+      {
+        "type": "header",
+        "content": "Products"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_color_price",
+        "label": "Price Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_color_sale_price",
+        "label": "Sale Price Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_color_sale_tag",
+        "label": "Sale Tag Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_color_sale_tag_text",
+        "label": "Sale Tag Text Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_color_rating",
+        "label": "Rating Color"
+      },
+      {
+        "type": "header",
+        "content": "Buttons"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_color_button_text",
+        "label": "Button Text Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_color_button_background",
+        "label": "Button Background Color"
+      },
+      {
+        "type": "color_background",
+        "id": "hubpro_free_color_button_gradient",
+        "label": "Button Gradient"
+      },
+      {
+        "type": "header",
+        "content": "Drawers"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_color_drawer_text",
+        "label": "Drawer Text Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_color_drawer_background",
+        "label": "Drawer Background Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_color_drawer_button_text",
+        "label": "Drawer Button Text Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_color_drawer_button_background",
+        "label": "Drawer Button Background Color"
+      },
+      {
+        "type": "color_background",
+        "id": "hubpro_free_color_drawer_button_gradient",
+        "label": "Drawer Button Gradient"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_color_drawer_overlay",
+        "label": "Drawer Overlay Color"
+      },
+      {
+        "type": "header",
+        "content": "Alerts"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_color_success_text",
+        "label": "Success Text Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_color_success_background",
+        "label": "Success Background Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_color_error_text",
+        "label": "Error Text Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_color_error_background",
+        "label": "Error Background Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_color_info_text",
+        "label": "Info Text Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_free_color_info_background",
+        "label": "Info Background Color"
+      }
+    ]
+  },
+  {
+    "name": "HubPro Plus Colors",
+    "settings": [
+      {
+        "type": "paragraph",
+        "content": "Override theme colors for customers with 'hubpro-plus' customer tag. Leave blank to use default theme colors."
+      },
+      {
+        "type": "header",
+        "content": "General"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_color_text",
+        "label": "Text Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_color_background",
+        "label": "Background Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_color_highlight",
+        "label": "Highlight Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_color_keyboard_focus",
+        "label": "Keyboard Focus Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_color_shadow",
+        "label": "Shadow Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_color_image_background",
+        "label": "Image Background Color"
+      },
+      {
+        "type": "header",
+        "content": "Products"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_color_price",
+        "label": "Price Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_color_sale_price",
+        "label": "Sale Price Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_color_sale_tag",
+        "label": "Sale Tag Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_color_sale_tag_text",
+        "label": "Sale Tag Text Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_color_rating",
+        "label": "Rating Color"
+      },
+      {
+        "type": "header",
+        "content": "Buttons"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_color_button_text",
+        "label": "Button Text Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_color_button_background",
+        "label": "Button Background Color"
+      },
+      {
+        "type": "color_background",
+        "id": "hubpro_plus_color_button_gradient",
+        "label": "Button Gradient"
+      },
+      {
+        "type": "header",
+        "content": "Drawers"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_color_drawer_text",
+        "label": "Drawer Text Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_color_drawer_background",
+        "label": "Drawer Background Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_color_drawer_button_text",
+        "label": "Drawer Button Text Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_color_drawer_button_background",
+        "label": "Drawer Button Background Color"
+      },
+      {
+        "type": "color_background",
+        "id": "hubpro_plus_color_drawer_button_gradient",
+        "label": "Drawer Button Gradient"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_color_drawer_overlay",
+        "label": "Drawer Overlay Color"
+      },
+      {
+        "type": "header",
+        "content": "Alerts"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_color_success_text",
+        "label": "Success Text Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_color_success_background",
+        "label": "Success Background Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_color_error_text",
+        "label": "Error Text Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_color_error_background",
+        "label": "Error Background Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_color_info_text",
+        "label": "Info Text Color"
+      },
+      {
+        "type": "color",
+        "id": "hubpro_plus_color_info_background",
+        "label": "Info Background Color"
+      }
+    ]
+  },
+  {
     "name": "t:settings_schema.typography.name",
     "settings": [
       {
