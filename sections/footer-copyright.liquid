@@ -1,12 +1,42 @@
+{%- liquid
+  # Set default colors
+  assign footer_color_text = section.settings.color_text
+  assign footer_color_background = section.settings.color_background
+
+  # Check for HubPro customer variants and override colors if available
+  if customer and customer.tags contains 'hubpro-plus'
+    # HubPro Plus customer - use plus colors if available, otherwise fallback to default
+    if section.settings.hubpro_plus_color_text != blank
+      assign footer_color_text = section.settings.hubpro_plus_color_text
+    endif
+    if section.settings.hubpro_plus_color_background != blank
+      assign footer_color_background = section.settings.hubpro_plus_color_background
+    endif
+  elsif customer and customer.tags contains 'hubpro-free'
+    # HubPro Free customer - use free colors if available, otherwise fallback to default
+    if section.settings.hubpro_free_color_text != blank
+      assign footer_color_text = section.settings.hubpro_free_color_text
+    endif
+    if section.settings.hubpro_free_color_background != blank
+      assign footer_color_background = section.settings.hubpro_free_color_background
+    endif
+  endif
+-%}
+
 <style>
   #shopify-section-{{ section.id }} {
-    --gradient-background: {% if section.settings.gradient_background != blank %}{{ section.settings.gradient_background }}{% else %}{{ section.settings.color_background }}{% endif %};
-    --color-background: {{ section.settings.color_background.rgb }};
-    --color-foreground: {{ section.settings.color_text.rgb }};
+    --gradient-background: {% if section.settings.gradient_background != blank %}{{ section.settings.gradient_background }}{% else %}{{ footer_color_background }}{% endif %};
+    --color-background: {{ footer_color_background.rgb }};
+    --color-foreground: {{ footer_color_text.rgb }};
   }
 </style>
 
-<div class="section{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded{% endif %}"{% if section.settings.enable_parallax %} is="footer-parallax"{% endif %}>
+<div
+  class="section{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded{% endif %}"
+  {% if section.settings.enable_parallax %}
+    is="footer-parallax"
+  {% endif %}
+>
   <div class="footer-copyright page-width{% if section.settings.full_width %} page-width--full{% endif %} w-full flex flex-col items-center justify-between gap-4 lg:gap-0 lg:flex-row relative">
     <div class="rte credits text-center">
       {%- liquid
@@ -47,7 +77,7 @@
       endif
 
       assign section_rendering_api = false
-      if section.index == nil
+      if section.index == null
         assign section_rendering_api = true
       endif
     -%}
@@ -55,27 +85,48 @@
       <div class="localization flex items-center justify-center flex-col md:flex-row">
         {%- if enable_language_selector -%}
           <div class="grid gap-2">
-            {%- form 'localization', id: 'footer_localization_language_form', class: 'localization__form flex items-center relative', is: 'localization-form' -%}
+            {%- form 'localization',
+              id: 'footer_localization_language_form',
+              class: 'localization__form flex items-center relative',
+              is: 'localization-form'
+            -%}
               <label class="sr-only" for="FooterLocalizationLanguageList">
                 {{- 'localization.language_label' | t -}}
               </label>
               {%- render 'icon', icon: 'language', size: 'xs', class: 'stroke-1 absolute pointer-events-none' -%}
               <button type="button" class="localization__item cursor-pointer leading-tight w-full">
                 {%- unless section_rendering_api -%}
-                  <api-button class="api-only" data-id="FooterLocalizationLanguageList" data-section-id="{{ section.id }}"></api-button>
+                  <api-button
+                    class="api-only"
+                    data-id="FooterLocalizationLanguageList"
+                    data-section-id="{{ section.id }}"
+                  ></api-button>
                 {%- endunless -%}
                 {{- localization.language.endonym_name | capitalize -}}
               </button>
               {%- unless section_rendering_api -%}
-                <select class="localization__item cursor-pointer absolute top-0 left-0 w-full h-full opacity-0" name="locale_code" id="FooterLocalizationLanguageList">
+                <select
+                  class="localization__item cursor-pointer absolute top-0 left-0 w-full h-full opacity-0"
+                  name="locale_code"
+                  id="FooterLocalizationLanguageList"
+                >
                   <option value="{{ localization.language.iso_code }}" selected>
                     {{- localization.language.endonym_name | capitalize -}}
                   </option>
                 </select>
               {%- else -%}
-                <select class="localization__item cursor-pointer absolute top-0 left-0 w-full h-full opacity-0" name="locale_code" id="FooterLocalizationLanguageList">
+                <select
+                  class="localization__item cursor-pointer absolute top-0 left-0 w-full h-full opacity-0"
+                  name="locale_code"
+                  id="FooterLocalizationLanguageList"
+                >
                   {%- for language in localization.available_languages -%}
-                    <option value="{{ language.iso_code }}"{% if language.iso_code == localization.language.iso_code %} selected{% endif %}>
+                    <option
+                      value="{{ language.iso_code }}"
+                      {% if language.iso_code == localization.language.iso_code %}
+                        selected
+                      {% endif %}
+                    >
                       {{- language.endonym_name | capitalize -}}
                     </option>
                   {%- endfor -%}
@@ -87,28 +138,52 @@
         {%- endif -%}
         {%- if enable_country_selector -%}
           <div class="grid gap-2">
-            {%- form 'localization', id: 'footer_localization_country_form', class: 'localization__form flex items-center relative', is: 'localization-form' -%}
+            {%- form 'localization',
+              id: 'footer_localization_country_form',
+              class: 'localization__form flex items-center relative',
+              is: 'localization-form'
+            -%}
               <label class="sr-only" for="FooterLocalizationCountryList">
                 {{- 'localization.country_label' | t -}}
               </label>
               {%- render 'icon', icon: 'currency', size: 'xs', class: 'stroke-1 absolute pointer-events-none' -%}
               <button type="button" class="localization__item cursor-pointer leading-tight w-full">
                 {%- unless section_rendering_api -%}
-                  <api-button class="api-only" data-id="FooterLocalizationCountryList" data-section-id="{{ section.id }}"></api-button>
+                  <api-button
+                    class="api-only"
+                    data-id="FooterLocalizationCountryList"
+                    data-section-id="{{ section.id }}"
+                  ></api-button>
                 {%- endunless -%}
-                {{- localization.country.name }} ({{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }})
+                {{- localization.country.name }} ({{ localization.country.currency.iso_code }}
+                {{ localization.country.currency.symbol }})
               </button>
               {%- unless section_rendering_api -%}
-                <select class="localization__item cursor-pointer absolute top-0 left-0 w-full h-full opacity-0" name="locale_code" id="FooterLocalizationCountryList">
+                <select
+                  class="localization__item cursor-pointer absolute top-0 left-0 w-full h-full opacity-0"
+                  name="locale_code"
+                  id="FooterLocalizationCountryList"
+                >
                   <option value="{{ localization.country.iso_code }}" selected>
-                    {{- localization.country.name }} ({{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }})
+                    {{- localization.country.name }} ({{ localization.country.currency.iso_code }}
+                    {{ localization.country.currency.symbol }})
                   </option>
                 </select>
               {%- else -%}
-                <select class="localization__item cursor-pointer absolute top-0 left-0 w-full h-full opacity-0" name="country_code" id="FooterLocalizationCountryList">
+                <select
+                  class="localization__item cursor-pointer absolute top-0 left-0 w-full h-full opacity-0"
+                  name="country_code"
+                  id="FooterLocalizationCountryList"
+                >
                   {%- for country in localization.available_countries -%}
-                    <option value="{{ country.iso_code }}"{% if country.iso_code == localization.country.iso_code %} selected{% endif %}>
-                      {{- country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
+                    <option
+                      value="{{ country.iso_code }}"
+                      {% if country.iso_code == localization.country.iso_code %}
+                        selected
+                      {% endif %}
+                    >
+                      {{- country.name }} ({{ country.currency.iso_code }}
+                      {{ country.currency.symbol }})
                     </option>
                   {%- endfor -%}
                 </select>
@@ -227,6 +302,38 @@
     },
     {
       "type": "header",
+      "content": "HubPro Free Colors"
+    },
+    {
+      "type": "color",
+      "id": "hubpro_free_color_text",
+      "label": "HubPro Free Text Color",
+      "info": "Text color for customers with 'hubpro-free' tag"
+    },
+    {
+      "type": "color",
+      "id": "hubpro_free_color_background",
+      "label": "HubPro Free Background Color",
+      "info": "Background color for customers with 'hubpro-free' tag"
+    },
+    {
+      "type": "header",
+      "content": "HubPro Plus Colors"
+    },
+    {
+      "type": "color",
+      "id": "hubpro_plus_color_text",
+      "label": "HubPro Plus Text Color",
+      "info": "Text color for customers with 'hubpro-plus' tag"
+    },
+    {
+      "type": "color",
+      "id": "hubpro_plus_color_background",
+      "label": "HubPro Plus Background Color",
+      "info": "Background color for customers with 'hubpro-plus' tag"
+    },
+    {
+      "type": "header",
       "content": "t:sections.global.settings.header__section.content"
     },
     {
@@ -255,9 +362,7 @@
     }
   ],
   "enabled_on": {
-    "groups": [
-      "footer"
-    ]
+    "groups": ["footer"]
   }
 }
 {% endschema %}
