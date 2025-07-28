@@ -430,7 +430,7 @@
         "image_BRtK86": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/HUBPROLOGOBANNER.png",
+            "image": "shopify://shop_images/HubPRO-Logo.png",
             "image_width": "custom",
             "image_max_width": 400,
             "image_max_width_mobile": 200
