@@ -84,6 +84,7 @@
         "heading_x7eVRh",
         "text_BFpm6j"
       ],
+      "disabled": true,
       "name": "Image with text",
       "settings": {
         "image_height": "adapt",
