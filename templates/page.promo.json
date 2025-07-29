@@ -317,6 +317,30 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_HDiHD3": {
+          "type": "collection",
+          "settings": {
+            "collection": "promo-shower-glass",
+            "title": "Shower Glass",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_hrRtjM": {
+          "type": "collection",
+          "settings": {
+            "collection": "promo-shower-trays",
+            "title": "Shower Trays",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
@@ -324,7 +348,9 @@
         "collection_KgWYxK",
         "collection_pkwGfP",
         "collection_VyEbng",
-        "collection_99kJTJ"
+        "collection_99kJTJ",
+        "collection_HDiHD3",
+        "collection_hrRtjM"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
