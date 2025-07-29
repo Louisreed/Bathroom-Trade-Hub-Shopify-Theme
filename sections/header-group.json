@@ -173,6 +173,7 @@
         "mega_menu_P7bDBK": {
           "type": "mega_menu",
           "name": "Hub Essentials",
+          "disabled": true,
           "settings": {
             "menu_title": "HubEssentials",
             "menu_width": "medium",
