@@ -365,6 +365,18 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_4adgD3": {
+          "type": "collection",
+          "settings": {
+            "collection": "promo-brassware",
+            "title": "Brassware",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
@@ -376,7 +388,8 @@
         "collection_HDiHD3",
         "collection_hrRtjM",
         "collection_tX3dBD",
-        "collection_VdJWPC"
+        "collection_VdJWPC",
+        "collection_4adgD3"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
