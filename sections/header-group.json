@@ -85,7 +85,7 @@
           "type": "menu_tag",
           "settings": {
             "menu_handle": "hubessentials",
-            "tag_text": "save £££",
+            "tag_text": "in-stock!",
             "background_color": "#2acaf1",
             "text_color": "#ffffff",
             "tag_style": "pill"
