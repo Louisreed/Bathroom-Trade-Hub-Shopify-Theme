@@ -342,6 +342,18 @@
             "overlay_opacity": 30
           }
         },
+        "collection_tX3dBD": {
+          "type": "collection",
+          "settings": {
+            "collection": "promo-shower-sets-valves",
+            "title": "Shower Sets & Valves",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
         "collection_VdJWPC": {
           "type": "collection",
           "settings": {
@@ -363,6 +375,7 @@
         "collection_99kJTJ",
         "collection_HDiHD3",
         "collection_hrRtjM",
+        "collection_tX3dBD",
         "collection_VdJWPC"
       ],
       "name": "t:sections.collection-list.name",
