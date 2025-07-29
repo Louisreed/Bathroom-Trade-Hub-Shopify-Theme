@@ -341,6 +341,18 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_VdJWPC": {
+          "type": "collection",
+          "settings": {
+            "collection": "promo-bath-screens",
+            "title": "Bath Screens",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
@@ -350,7 +362,8 @@
         "collection_VyEbng",
         "collection_99kJTJ",
         "collection_HDiHD3",
-        "collection_hrRtjM"
+        "collection_hrRtjM",
+        "collection_VdJWPC"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
