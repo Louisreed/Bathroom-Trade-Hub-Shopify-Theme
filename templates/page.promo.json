@@ -293,12 +293,38 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_VyEbng": {
+          "type": "collection",
+          "settings": {
+            "collection": "promo-mirrors",
+            "title": "Mirror's",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_99kJTJ": {
+          "type": "collection",
+          "settings": {
+            "collection": "promo-rads-valves",
+            "title": "Rads & Valves",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
         "collection_eN8tBB",
         "collection_KgWYxK",
-        "collection_pkwGfP"
+        "collection_pkwGfP",
+        "collection_VyEbng",
+        "collection_99kJTJ"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
