@@ -84,7 +84,7 @@
         "menu_tag_rAQQTm": {
           "type": "menu_tag",
           "settings": {
-            "menu_handle": "Create an Account",
+            "menu_handle": "Create-an-Account",
             "tag_text": "better pricing!",
             "background_color": "#f12a2a",
             "text_color": "#ffffff",
