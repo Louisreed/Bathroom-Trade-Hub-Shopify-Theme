@@ -1,146 +1,170 @@
 {% doc %}
   @prompt
     2 column container, Allow a button to be added to each column and be uniquely coloured and styled
-
 {% enddoc %}
-{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
-{% style %}
-  .ai-two-column-container-{{ ai_gen_id }} {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: {{ block.settings.column_gap }}px;
-    padding: {{ block.settings.padding_top }}px {{ block.settings.padding_horizontal }}px {{ block.settings.padding_bottom }}px;
-    background-color: {{ block.settings.background_color }};
-    border-radius: {{ block.settings.border_radius }}px;
-  }
+{%- liquid
+  comment
+    Check if block should be hidden for HubPro members
+  endcomment
 
-  .ai-two-column-item-{{ ai_gen_id }} {
-    background-color: {{ block.settings.column_background_color }};
-    padding: {{ block.settings.column_padding }}px;
-    border-radius: {{ block.settings.column_border_radius }}px;
-    border: {{ block.settings.column_border_width }}px solid {{ block.settings.column_border_color }};display: flex;
-    flex-direction: column;
-  }
+  assign hide_for_hubpro = false
+  if block.settings.hide_for_hubpro_members and customer
+    for tag in customer.tags
+      if tag == 'hubpro-free' or tag == 'hubpro-plus'
+        assign hide_for_hubpro = true
+        break
+      endif
+    endfor
+  endif
+-%}
 
-  .ai-two-column-heading-{{ ai_gen_id }} {
-    color: {{ block.settings.heading_color }};
-    font-size: {{ block.settings.heading_size }}px;
-    margin: 0 0 {{ block.settings.heading_margin }}px;
-    font-weight: 600;
-  }
+{%- unless hide_for_hubpro -%}
+  {% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
 
-  .ai-two-column-content-{{ ai_gen_id }} {
-    color: {{ block.settings.text_color }};
-    font-size: {{ block.settings.text_size }}px;
-    line-height: 1.5;
-    flex-grow: 1;
-  }
-
-  .ai-two-column-content-{{ ai_gen_id }} p {
-    margin: 0;
-  }
-
-  .ai-two-column-content-{{ ai_gen_id }} p + p {
-    margin-top: 1em;
-  }
-
-  .ai-two-column-button-wrapper-{{ ai_gen_id }} {
-    margin-top: {{ block.settings.button_margin_top }}px;
-  }
-
-  .ai-two-column-button-{{ ai_gen_id }} {
-    display: inline-block;
-    padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
-    text-decoration: none;
-    border-radius: {{ block.settings.button_border_radius }}px;
-    font-size: {{ block.settings.button_font_size }}px;
-    font-weight: 500;
-    text-align: center;
-    transition: all 0.3s ease;
-    border: none;
-    cursor: pointer;
-  }
-
-  .ai-two-column-button-1-{{ ai_gen_id }} {
-    background-color: {{ block.settings.button_1_bg_color }};
-    color: {{ block.settings.button_1_text_color }};
-  }
-
-  .ai-two-column-button-1-{{ ai_gen_id }}:hover {
-    background-color: {{ block.settings.button_1_hover_bg_color }};
-    color: {{ block.settings.button_1_hover_text_color }};
-  }
-
-  .ai-two-column-button-2-{{ ai_gen_id }} {
-    background-color: {{ block.settings.button_2_bg_color }};
-    color: {{ block.settings.button_2_text_color }};
-  }
-
-  .ai-two-column-button-2-{{ ai_gen_id }}:hover {
-    background-color: {{ block.settings.button_2_hover_bg_color }};
-    color: {{ block.settings.button_2_hover_text_color }};
-  }
-
-  @media screen and (max-width: 749px) {
+  {% style %}
     .ai-two-column-container-{{ ai_gen_id }} {
-      grid-template-columns: {% if block.settings.columns_mobile == '1' %}1fr{% else %}1fr 1fr{% endif %};
-      gap: {{ block.settings.column_gap_mobile }}px;
-      padding: {{ block.settings.padding_top_mobile }}px {{ block.settings.padding_horizontal_mobile }}px {{ block.settings.padding_bottom_mobile }}px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: {{ block.settings.column_gap }}px;
+      padding: {{ block.settings.padding_top }}px {{ block.settings.padding_horizontal }}px {{ block.settings.padding_bottom }}px;
+      background-color: {{ block.settings.background_color }};
+      border-radius: {{ block.settings.border_radius }}px;
     }
 
     .ai-two-column-item-{{ ai_gen_id }} {
-      padding: {{ block.settings.column_padding_mobile }}px;
+      background-color: {{ block.settings.column_background_color }};
+      padding: {{ block.settings.column_padding }}px;
+      border-radius: {{ block.settings.column_border_radius }}px;
+      border: {{ block.settings.column_border_width }}px solid {{ block.settings.column_border_color }};display: flex;
+      flex-direction: column;
     }
 
     .ai-two-column-heading-{{ ai_gen_id }} {
-      font-size: {{ block.settings.heading_size_mobile }}px;
+      color: {{ block.settings.heading_color }};
+      font-size: {{ block.settings.heading_size }}px;
+      margin: 0 0 {{ block.settings.heading_margin }}px;
+      font-weight: 600;
     }
 
     .ai-two-column-content-{{ ai_gen_id }} {
-      font-size: {{ block.settings.text_size_mobile }}px;
+      color: {{ block.settings.text_color }};
+      font-size: {{ block.settings.text_size }}px;
+      line-height: 1.5;
+      flex-grow: 1;
+    }
+
+    .ai-two-column-content-{{ ai_gen_id }} p {
+      margin: 0;
+    }
+
+    .ai-two-column-content-{{ ai_gen_id }} p + p {
+      margin-top: 1em;
+    }
+
+    .ai-two-column-button-wrapper-{{ ai_gen_id }} {
+      margin-top: {{ block.settings.button_margin_top }}px;
     }
 
     .ai-two-column-button-{{ ai_gen_id }} {
-      font-size: {{ block.settings.button_font_size_mobile }}px;
-      padding: {{ block.settings.button_padding_vertical_mobile }}px {{ block.settings.button_padding_horizontal_mobile }}px;
+      display: inline-block;
+      padding: {{ block.settings.button_padding_vertical }}px {{ block.settings.button_padding_horizontal }}px;
+      text-decoration: none;
+      border-radius: {{ block.settings.button_border_radius }}px;
+      font-size: {{ block.settings.button_font_size }}px;
+      font-weight: 500;
+      text-align: center;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
     }
-  }
-{% endstyle %}
 
-<div class="ai-two-column-container-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
-  <div class="ai-two-column-item-{{ ai_gen_id }}">
-    {% if block.settings.column_1_heading != blank %}
-      <h3 class="ai-two-column-heading-{{ ai_gen_id }}">{{ block.settings.column_1_heading }}</h3>
-    {% endif %}
-    {% if block.settings.column_1_content != blank %}
-      <div class="ai-two-column-content-{{ ai_gen_id }}">{{ block.settings.column_1_content }}</div>
-    {% endif %}
-    {% if block.settings.column_1_button_text != blank %}
-      <div class="ai-two-column-button-wrapper-{{ ai_gen_id }}">
-        <a href="{{ block.settings.column_1_button_link }}" class="ai-two-column-button-{{ ai_gen_id }} ai-two-column-button-1-{{ ai_gen_id }}">
-          {{ block.settings.column_1_button_text }}
-        </a>
-      </div>
-    {% endif %}
-  </div>
+    .ai-two-column-button-1-{{ ai_gen_id }} {
+      background-color: {{ block.settings.button_1_bg_color }};
+      color: {{ block.settings.button_1_text_color }};
+    }
 
-  <div class="ai-two-column-item-{{ ai_gen_id }}">
-    {% if block.settings.column_2_heading != blank %}
-      <h3 class="ai-two-column-heading-{{ ai_gen_id }}">{{ block.settings.column_2_heading }}</h3>
-    {% endif %}
-    {% if block.settings.column_2_content != blank %}
-      <div class="ai-two-column-content-{{ ai_gen_id }}">{{ block.settings.column_2_content }}</div>
-    {% endif %}
-    {% if block.settings.column_2_button_text != blank %}
-      <div class="ai-two-column-button-wrapper-{{ ai_gen_id }}">
-        <a href="{{ block.settings.column_2_button_link }}" class="ai-two-column-button-{{ ai_gen_id }} ai-two-column-button-2-{{ ai_gen_id }}">
-          {{ block.settings.column_2_button_text }}
-        </a>
-      </div>
-    {% endif %}
+    .ai-two-column-button-1-{{ ai_gen_id }}:hover {
+      background-color: {{ block.settings.button_1_hover_bg_color }};
+      color: {{ block.settings.button_1_hover_text_color }};
+    }
+
+    .ai-two-column-button-2-{{ ai_gen_id }} {
+      background-color: {{ block.settings.button_2_bg_color }};
+      color: {{ block.settings.button_2_text_color }};
+    }
+
+    .ai-two-column-button-2-{{ ai_gen_id }}:hover {
+      background-color: {{ block.settings.button_2_hover_bg_color }};
+      color: {{ block.settings.button_2_hover_text_color }};
+    }
+
+    @media screen and (max-width: 749px) {
+      .ai-two-column-container-{{ ai_gen_id }} {
+        grid-template-columns: {% if block.settings.columns_mobile == '1' %}1fr{% else %}1fr 1fr{% endif %};
+        gap: {{ block.settings.column_gap_mobile }}px;
+        padding: {{ block.settings.padding_top_mobile }}px {{ block.settings.padding_horizontal_mobile }}px {{ block.settings.padding_bottom_mobile }}px;
+      }
+
+      .ai-two-column-item-{{ ai_gen_id }} {
+        padding: {{ block.settings.column_padding_mobile }}px;
+      }
+
+      .ai-two-column-heading-{{ ai_gen_id }} {
+        font-size: {{ block.settings.heading_size_mobile }}px;
+      }
+
+      .ai-two-column-content-{{ ai_gen_id }} {
+        font-size: {{ block.settings.text_size_mobile }}px;
+      }
+
+      .ai-two-column-button-{{ ai_gen_id }} {
+        font-size: {{ block.settings.button_font_size_mobile }}px;
+        padding: {{ block.settings.button_padding_vertical_mobile }}px {{ block.settings.button_padding_horizontal_mobile }}px;
+      }
+    }
+  {% endstyle %}
+
+  <div class="ai-two-column-container-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+    <div class="ai-two-column-item-{{ ai_gen_id }}">
+      {% if block.settings.column_1_heading != blank %}
+        <h3 class="ai-two-column-heading-{{ ai_gen_id }}">{{ block.settings.column_1_heading }}</h3>
+      {% endif %}
+      {% if block.settings.column_1_content != blank %}
+        <div class="ai-two-column-content-{{ ai_gen_id }}">{{ block.settings.column_1_content }}</div>
+      {% endif %}
+      {% if block.settings.column_1_button_text != blank %}
+        <div class="ai-two-column-button-wrapper-{{ ai_gen_id }}">
+          <a
+            href="{{ block.settings.column_1_button_link }}"
+            class="ai-two-column-button-{{ ai_gen_id }} ai-two-column-button-1-{{ ai_gen_id }}"
+          >
+            {{ block.settings.column_1_button_text }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="ai-two-column-item-{{ ai_gen_id }}">
+      {% if block.settings.column_2_heading != blank %}
+        <h3 class="ai-two-column-heading-{{ ai_gen_id }}">{{ block.settings.column_2_heading }}</h3>
+      {% endif %}
+      {% if block.settings.column_2_content != blank %}
+        <div class="ai-two-column-content-{{ ai_gen_id }}">{{ block.settings.column_2_content }}</div>
+      {% endif %}
+      {% if block.settings.column_2_button_text != blank %}
+        <div class="ai-two-column-button-wrapper-{{ ai_gen_id }}">
+          <a
+            href="{{ block.settings.column_2_button_link }}"
+            class="ai-two-column-button-{{ ai_gen_id }} ai-two-column-button-2-{{ ai_gen_id }}"
+          >
+            {{ block.settings.column_2_button_text }}
+          </a>
+        </div>
+      {% endif %}
+    </div>
   </div>
-</div>
+{%- endunless -%}
 
 {% schema %}
 {
@@ -587,6 +611,13 @@
       "unit": "px",
       "label": "Container border radius",
       "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_for_hubpro_members",
+      "label": "Hide for HubPro members",
+      "info": "When enabled, this block will be hidden for customers with hubpro-free or hubpro-plus tags",
+      "default": false
     }
   ],
   "presets": [
