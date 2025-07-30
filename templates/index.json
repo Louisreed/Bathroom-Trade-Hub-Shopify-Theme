@@ -182,7 +182,7 @@
             "alignment": "center",
             "width_mobile": "fit-content",
             "custom_width_mobile": 100,
-            "effects": "none",
+            "effects": "reveal",
             "highlighted_text": "text",
             "highlighted_scribble": "circle"
           },
