@@ -81,6 +81,16 @@
             "tag_style": "pill"
           }
         },
+        "menu_tag_rAQQTm": {
+          "type": "menu_tag",
+          "settings": {
+            "menu_handle": "Create an Account",
+            "tag_text": "better pricing!",
+            "background_color": "#f12a2a",
+            "text_color": "#ffffff",
+            "tag_style": "pill"
+          }
+        },
         "menu_tag_A69H4n": {
           "type": "menu_tag",
           "settings": {
@@ -1116,6 +1126,7 @@
       },
       "block_order": [
         "menu_tag_F6tjLe",
+        "menu_tag_rAQQTm",
         "menu_tag_A69H4n",
         "menu_tag_gJEr7d",
         "mega_menu_fHrbe7",
