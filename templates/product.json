@@ -432,8 +432,18 @@
           "settings": {
             "image": "shopify://shop_images/HubPRO-Logo.png",
             "image_width": "custom",
-            "image_max_width": 400,
+            "image_max_width": 200,
             "image_max_width_mobile": 200
+          }
+        },
+        "heading_c96JCd": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why pay more?",
+            "heading_size": "h2",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
           }
         },
         "text_cqepUW": {
@@ -446,7 +456,7 @@
             "text_line_height": 1.6,
             "text_letter_spacing": 0,
             "text_capitalize": false,
-            "secondary_color": true,
+            "secondary_color": false,
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
@@ -466,37 +476,35 @@
       "block_order": [
         "image_DhezzA",
         "image_BRtK86",
+        "heading_c96JCd",
         "text_cqepUW",
         "button_7YjPJ7"
       ],
       "name": "HubPRO Banner",
       "settings": {
         "image": "shopify://shop_images/merchant-taking-sale-with-chip-and-swipe-reader.jpg",
-        "image_height": "400px",
+        "image_ratio": "adapt",
         "image_width": "small",
         "layout": "image_first",
         "text_alignment": "left",
-        "content_position": "align-self-center",
-        "image_height_mobile": "400px",
         "text_alignment_mobile": "left",
         "color_text": "#ffffff",
-        "color_background": "",
+        "color_background": "#424242",
         "gradient_background": "",
         "color_background_2": "#424242",
         "gradient_background_2": "",
         "color_highlight": "",
         "gradient_highlight": "",
         "color_button_text": "",
-        "color_button_background": "#ffffff",
+        "color_button_background": "#bb9f4d",
         "color_button_gradient": "",
         "padding_top": 72,
         "padding_bottom": 72,
         "divider": false,
         "full_width": false,
-        "rounded": false,
+        "rounded": true,
         "hide_for_hubpro_members": true,
-        "enable_parallax": false,
-        "parallax_direction": "vertical"
+        "enable_parallax": false
       }
     },
     "scrolling-text": {
@@ -578,12 +586,10 @@
       ],
       "disabled": true,
       "settings": {
-        "image_height": "600px",
+        "image_ratio": "adapt",
         "image_width": "medium",
         "layout": "text_first",
         "text_alignment": "left",
-        "content_position": "align-self-center",
-        "image_height_mobile": "400px",
         "text_alignment_mobile": "left",
         "color_text": "#171717",
         "color_background": "",
@@ -601,8 +607,7 @@
         "full_width": false,
         "rounded": false,
         "hide_for_hubpro_members": false,
-        "enable_parallax": false,
-        "parallax_direction": "vertical"
+        "enable_parallax": false
       }
     },
     "product-details": {
