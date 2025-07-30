@@ -233,7 +233,7 @@
       "name": "t:sections.collection-list.name",
       "settings": {
         "columns": 5,
-        "carousel_on_desktop": true,
+        "carousel_on_desktop": false,
         "image_type": "collection",
         "image_ratio": "square",
         "show_products_count": true,
