@@ -208,6 +208,18 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_fjqNp8": {
+          "type": "collection",
+          "settings": {
+            "collection": "choice-rads-valves",
+            "title": "Rads & Valves",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
@@ -215,7 +227,8 @@
         "collection_fgMame",
         "collection_HYbLaK",
         "collection_b4Jj4p",
-        "collection_q8xmPa"
+        "collection_q8xmPa",
+        "collection_fjqNp8"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
