@@ -38,8 +38,10 @@
 
 <div class="header__icons header__icons--{{ context }} flex justify-{{ context }} z-2">
   <div class="header__buttons flex items-center gap-1d5">
-    {%- comment -%} VAT Switcher for T-selector app embed - desktop only {%- endcomment -%}
-    <div class="vat-switcher-inline vat-switcher-desktop hidden lg:block"></div>
+    {%- comment -%} VAT Switcher for T-selector app embed - desktop only, only in 'end' context {%- endcomment -%}
+    {%- if context == 'end' -%}
+      <div class="vat-switcher-inline vat-switcher-desktop hidden lg:block"></div>
+    {%- endif -%}
 
     {%- if show_toggle -%}
       <button

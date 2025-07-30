@@ -44,14 +44,14 @@
   {% endif %}
 >
   {%- liquid
-    render 'header-icons', show_search: true, show_hamburger: true, show_toggle: show_toggle, dir: 'start'
+    render 'header-icons', section: section, context: 'start', show_search: true, show_hamburger: true, show_toggle: show_toggle
 
     if header_layout != 'center-left' and header_layout != 'center-split'
       render 'header-logo'
     endif
 
     if header_layout == 'center'
-      render 'header-icons', show_search: true, show_account: true, show_cart: true, show_hamburger: true, dir: 'end'
+      render 'header-icons', section: section, context: 'end', show_search: true, show_account: true, show_cart: true, show_hamburger: true
     endif
   -%}
 
@@ -79,14 +79,10 @@
       </nav>
     </div>
   {%- endif -%}
-  <div class="header__icons header__icons--end flex justify-end">
-    <div class="header__buttons flex items-center gap-1d5">
-      <div class="vat-switcher-inline visible-desktop"></div>
-    </div>
-  </div>
+
   {%- liquid
     if header_layout != 'center'
-      render 'header-icons', show_search: true, show_account: true, show_cart: true, show_hamburger: true, dir: 'end'
+      render 'header-icons', section: section, context: 'end', show_search: true, show_account: true, show_cart: true, show_hamburger: true
     endif
   -%}
 
