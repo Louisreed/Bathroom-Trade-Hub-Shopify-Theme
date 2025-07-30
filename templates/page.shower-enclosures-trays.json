@@ -357,6 +357,41 @@
         "rounded": false
       }
     },
+    "featured_collection_eJNXUB": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.name",
+      "settings": {
+        "collection": "all-showering",
+        "products": [],
+        "product_limit": 10,
+        "columns": 4,
+        "carousel_on_desktop": false,
+        "show_view_all": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Shop All",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 4,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
     "rich_text_KBAVRK": {
       "type": "rich-text",
       "blocks": {
@@ -433,41 +468,6 @@
         "narrow": true,
         "rounded": false
       }
-    },
-    "featured_collection_eJNXUB": {
-      "type": "featured-collection",
-      "name": "t:sections.featured-collection.name",
-      "settings": {
-        "collection": "all-showering",
-        "products": [],
-        "product_limit": 10,
-        "columns": 4,
-        "carousel_on_desktop": false,
-        "show_view_all": true,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "heading": "Shop All",
-        "heading_size": "title-md",
-        "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "",
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 72,
-        "padding_bottom": 72,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
-      }
     }
   },
   "order": [
@@ -475,7 +475,7 @@
     "collection_list_nqMCH9",
     "collection_list_qTBPix",
     "collection_list_rDFK9U",
-    "rich_text_KBAVRK",
-    "featured_collection_eJNXUB"
+    "featured_collection_eJNXUB",
+    "rich_text_KBAVRK"
   ]
 }
