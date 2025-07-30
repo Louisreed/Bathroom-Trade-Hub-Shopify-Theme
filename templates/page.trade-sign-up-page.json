@@ -331,7 +331,7 @@
         "text_EzhfNx": {
           "type": "text",
           "settings": {
-            "text": "<p>To get started, click Sign Up and provide a few basic details about yourself and your business. Once the form is submitted, you will receive a confirmation email shortly after.</p>",
+            "text": "<p>To get started, provide us with a few basic details about yourself and your business below. Once the form is complete, click sign up you will receive a confirmation email shortly after.</p>",
             "text_font": "body",
             "text_size": "subtext-lg",
             "text_max_size": 60,
