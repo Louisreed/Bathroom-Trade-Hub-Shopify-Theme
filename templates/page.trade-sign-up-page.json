@@ -57,7 +57,7 @@
         "button_UqMMdQ": {
           "type": "button",
           "settings": {
-            "button_label": "Create a Trade Account Below",
+            "button_label": "Create a Account Below",
             "button_link": "",
             "button_style": "secondary",
             "button_size": "md",
@@ -396,7 +396,7 @@
         "text_tMnHf7": {
           "type": "text",
           "settings": {
-            "text": "<p>Bathroom Trade Hub will verify your account within 48 hours. During this process, you will receive an additional email confirming your account setup, along with details on your personalized site-wide pricing.</p>",
+            "text": "<p>Bathroom Trade Hub will verify your account within 48 hours. During this process, you will receive an additional email confirming your account setup, along with details on your personalised site-wide pricing.</p>",
             "text_font": "body",
             "text_size": "subtext-lg",
             "text_max_size": 60,
@@ -461,7 +461,7 @@
         "text_HfRc7G": {
           "type": "text",
           "settings": {
-            "text": "<p><em>Your account has now been activated! Browse our large range of </em>products at the best prices! </p>",
+            "text": "<p>Your account has now been activated and your trade-only pricing is live both online and in store! </p>",
             "text_font": "body",
             "text_size": "subtext-lg",
             "text_max_size": 60,
