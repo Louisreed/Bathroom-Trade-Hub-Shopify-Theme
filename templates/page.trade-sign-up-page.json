@@ -144,7 +144,7 @@
             "icon": "star",
             "custom_icon": "",
             "heading": "Trade-only Pricing",
-            "text": "<p>Once your account is verified, you'll gain access to our highly competitive trade pricing online and in store. We love rewarding loyal customers! We also offer bulk deals if you decide you want to save even more money!</p>",
+            "text": "<p>Once your account is verified, you'll gain access to our highly competitive trade-only pricing online and in store. We also offer bulk deals if you decide you want to stock up & save even more!</p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
@@ -155,7 +155,7 @@
             "icon": "shield",
             "custom_icon": "",
             "heading": "In Stock Products",
-            "text": "<p>We stock the essentials for every bathroom installer, from silicones, trims and panels to toilets, basin vanity units, enclosures and everything in-between. </p>",
+            "text": "<p>We stock the essentials for every trade professional, from silicones, trims and panels to toilets, basin vanity units, enclosures and everything in-between. </p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
