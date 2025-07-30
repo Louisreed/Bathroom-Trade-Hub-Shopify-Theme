@@ -53,28 +53,11 @@
             "image_max_width": 540,
             "image_max_width_mobile": 360
           }
-        },
-        "button_UqMMdQ": {
-          "type": "button",
-          "settings": {
-            "button_label": "Go back to create DIY account",
-            "button_link": "https://bathroomtradehub.co.uk/account/register",
-            "button_style": "secondary",
-            "button_size": "md",
-            "button_external": false,
-            "button_icon": false,
-            "enable_modal": false,
-            "modal_content": "",
-            "modal_title": "",
-            "show_modal_title": true,
-            "modal_custom_css": ""
-          }
         }
       },
       "block_order": [
         "subheading_iVHtUk",
-        "image_P4KjKp",
-        "button_UqMMdQ"
+        "image_P4KjKp"
       ],
       "custom_css": [
         ".banner {/* Remove header margin-bottom */ margin-top: -28px;}"
