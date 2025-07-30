@@ -64,7 +64,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Sign up and get an extra <em>15% off</em> your first order",
+            "heading": "Sign up and get your trade benefits",
             "heading_size": "text-2xl lg:text-3xl",
             "heading_tag": "h2",
             "highlighted_text": "scribble",
