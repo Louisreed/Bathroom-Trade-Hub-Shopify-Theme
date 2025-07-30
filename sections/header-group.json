@@ -113,9 +113,9 @@
         },
         "mega_menu_fHrbe7": {
           "type": "mega_menu",
-          "name": "Hub PROMO",
+          "name": "Hub PRO",
           "settings": {
-            "menu_title": "HubPROMO",
+            "menu_title": "HubPRO",
             "menu_width": "medium",
             "show_menu_image": false,
             "button_label": "",
