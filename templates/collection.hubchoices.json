@@ -161,11 +161,23 @@
             "overlay_opacity": 30
           }
         },
+        "collection_fgMame": {
+          "type": "collection",
+          "settings": {
+            "collection": "squarec",
+            "title": "Shower Trays",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
         "collection_b4Jj4p": {
           "type": "collection",
           "settings": {
-            "collection": "choices-sanitaryware",
-            "title": "Sanitaryware",
+            "collection": "choice-ceramics",
+            "title": "Ceramics",
             "description": "",
             "overlay_content": false,
             "color_text": "#ffffff",
@@ -188,12 +200,13 @@
       },
       "block_order": [
         "collection_QrrDcR",
+        "collection_fgMame",
         "collection_b4Jj4p",
         "collection_q8xmPa"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
-        "columns": 4,
+        "columns": 5,
         "carousel_on_desktop": true,
         "image_type": "collection",
         "image_ratio": "square",
