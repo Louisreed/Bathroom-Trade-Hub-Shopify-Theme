@@ -1,0 +1,254 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-collection-banner": {
+      "type": "main-collection-banner",
+      "blocks": {
+        "breadcrumb": {
+          "type": "breadcrumb",
+          "settings": {
+            "show_collections_link": true
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "title_size": "title-md"
+          }
+        }
+      },
+      "block_order": [
+        "breadcrumb",
+        "title"
+      ],
+      "disabled": true,
+      "settings": {
+        "transparent_header": true,
+        "show_image": false,
+        "image_height": "750px",
+        "content_position": "md:items-end md:justify-start",
+        "text_alignment": "left",
+        "image_height_mobile": "auto",
+        "content_position_mobile": "items-end justify-start",
+        "text_alignment_mobile": "left",
+        "color_text": "#ffffff",
+        "color_overlay": "#000000",
+        "overlay_opacity": 40,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": true,
+        "parallax_direction": "vertical"
+      }
+    },
+    "image_with_text_fQAHyR": {
+      "type": "image-with-text",
+      "disabled": true,
+      "name": "Image with text",
+      "settings": {}
+    },
+    "images-with-text-overlay": {
+      "type": "images-with-text-overlay",
+      "blocks": {
+        "image": {
+          "type": "image",
+          "settings": {
+            "image_width": "custom",
+            "image_max_width": 50,
+            "image_max_width_mobile": 50
+          }
+        },
+        "spacing": {
+          "type": "spacing",
+          "settings": {
+            "height": 80,
+            "height_mobile": 20
+          }
+        },
+        "subheading": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Hub essentials",
+            "subheading_size": "subtitle-lg",
+            "secondary_color": true
+          }
+        },
+        "heading": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "HubESSENTIALS",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Shop our in stock - ready to go products.</p>",
+            "text_font": "body",
+            "text_size": "subtext-xl",
+            "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "image",
+        "spacing",
+        "subheading",
+        "heading",
+        "text"
+      ],
+      "disabled": true,
+      "settings": {
+        "transparent_header": false,
+        "image_height": "650px",
+        "content_width": "small",
+        "content_position": "md:items-center md:justify-start",
+        "text_alignment": "left",
+        "image_2": "shopify://shop_images/Screenshot2025-07-26at1.13.25PM.png",
+        "image_3": "shopify://shop_images/Screenshot_2025-07-26_at_10.34.17_AM.png",
+        "image_4": "shopify://shop_images/Screenshot_2025-07-24_at_2.04.02_PM.png",
+        "image_5": "shopify://shop_images/Screenshot2025-07-23at13.31.57.jpg",
+        "image_height_mobile": "500px",
+        "content_position_mobile": "items-center justify-start",
+        "text_alignment_mobile": "left",
+        "color_text": "#ffffff",
+        "color_highlight": "#e0a580",
+        "gradient_highlight": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 100,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": true,
+        "enable_parallax": true
+      }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "blocks": {
+        "subcollections": {
+          "type": "subcollections",
+          "disabled": true,
+          "settings": {
+            "menu": "",
+            "show_count": true
+          }
+        },
+        "promotion": {
+          "type": "promotion",
+          "settings": {
+            "position": 5,
+            "column_size": "1",
+            "image": "shopify://shop_images/IMG_8017.heic",
+            "heading": "Signed Up?",
+            "content": "<p>Make sure you sign up to our website to access exclusive prices on all products!</p>",
+            "button_label": "Find out more!",
+            "button_link": "shopify://pages/trade-sign-up",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": false,
+            "content_position": "md:items-center",
+            "text_alignment": "center",
+            "content_position_mobile": "items-center",
+            "text_alignment_mobile": "center",
+            "color_text": "#bba14f",
+            "color_button_text": "#4d5940",
+            "color_button_background": "#47c8f5",
+            "color_button_gradient": "",
+            "color_overlay": "#ffffff",
+            "overlay_opacity": 88
+          }
+        }
+      },
+      "block_order": [
+        "subcollections",
+        "promotion"
+      ],
+      "settings": {
+        "products_per_page": 50,
+        "columns": 5,
+        "columns_mobile": "2",
+        "pagination": "infinite",
+        "enable_filtering": true,
+        "filter_collapsed": false,
+        "filter_type": "sidebar",
+        "filter_color_swatches": true,
+        "enable_sorting": true,
+        "padding_top": 40,
+        "padding_bottom": 100,
+        "divider": false,
+        "full_width": false,
+        "rounded": true
+      }
+    },
+    "recently-viewed": {
+      "type": "recently-viewed",
+      "settings": {
+        "product_limit": 6,
+        "columns": 4,
+        "carousel_on_desktop": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Recently Viewed",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 80,
+        "divider": false,
+        "full_width": false,
+        "rounded": true
+      }
+    },
+    "image_with_text_jhizTc": {
+      "type": "image-with-text",
+      "disabled": true,
+      "name": "HubPRO Banner",
+      "settings": {}
+    }
+  },
+  "order": [
+    "main-collection-banner",
+    "image_with_text_fQAHyR",
+    "images-with-text-overlay",
+    "main-collection",
+    "recently-viewed",
+    "image_with_text_jhizTc"
+  ]
+}
