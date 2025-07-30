@@ -71,16 +71,6 @@
     "header": {
       "type": "header",
       "blocks": {
-        "menu_tag_wXQhXz": {
-          "type": "menu_tag",
-          "settings": {
-            "menu_handle": "hubpro",
-            "tag_text": "SIGN UP!",
-            "background_color": "#e11d48",
-            "text_color": "#ffffff",
-            "tag_style": "pill"
-          }
-        },
         "menu_tag_F6tjLe": {
           "type": "menu_tag",
           "settings": {
@@ -1125,7 +1115,6 @@
         }
       },
       "block_order": [
-        "menu_tag_wXQhXz",
         "menu_tag_F6tjLe",
         "menu_tag_A69H4n",
         "menu_tag_gJEr7d",
