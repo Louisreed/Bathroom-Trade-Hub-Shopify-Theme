@@ -16,16 +16,16 @@
           "type": "subtotal",
           "settings": {}
         },
-        "free_shipping": {
-          "type": "free_shipping",
-          "settings": {
-            "minimum_amount": "416.66"
-          }
-        },
         "cart_note": {
           "type": "cart_note",
           "settings": {
             "heading": "Add a note to your order"
+          }
+        },
+        "free_shipping": {
+          "type": "free_shipping",
+          "settings": {
+            "minimum_amount": "416.66"
           }
         },
         "buttons": {
@@ -37,8 +37,8 @@
       },
       "block_order": [
         "subtotal",
-        "free_shipping",
         "cart_note",
+        "free_shipping",
         "buttons"
       ],
       "settings": {
