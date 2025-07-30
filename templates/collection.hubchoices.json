@@ -173,6 +173,18 @@
             "overlay_opacity": 30
           }
         },
+        "collection_HYbLaK": {
+          "type": "collection",
+          "settings": {
+            "collection": "choice-ensky",
+            "title": "Shower Glass",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
         "collection_b4Jj4p": {
           "type": "collection",
           "settings": {
@@ -201,6 +213,7 @@
       "block_order": [
         "collection_QrrDcR",
         "collection_fgMame",
+        "collection_HYbLaK",
         "collection_b4Jj4p",
         "collection_q8xmPa"
       ],
