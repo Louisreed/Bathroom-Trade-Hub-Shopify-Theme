@@ -197,6 +197,18 @@
             "overlay_opacity": 30
           }
         },
+        "collection_yBPxLq": {
+          "type": "collection",
+          "settings": {
+            "collection": "choice-bundles",
+            "title": "Suite Bundles",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
         "collection_q8xmPa": {
           "type": "collection",
           "settings": {
@@ -227,6 +239,7 @@
         "collection_fgMame",
         "collection_HYbLaK",
         "collection_b4Jj4p",
+        "collection_yBPxLq",
         "collection_q8xmPa",
         "collection_fjqNp8"
       ],
