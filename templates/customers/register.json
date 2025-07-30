@@ -206,7 +206,7 @@
             "column_1_button_text": "See Form Below",
             "column_1_button_link": "/account/register",
             "column_2_heading": "Create a HubPRO Account",
-            "column_2_content": "<p>Are you ready to become a HubPRO? Save time and money by becoming a member and get access to unique offers and deals you will not find anywhere else. <strong>Trade Professionals ONLY.</strong></p>",
+            "column_2_content": "<p><strong>Trade Professionals ONLY. </strong>Are you ready to become a HubPRO? Save time and money by becoming a member and get access to unique offers and deals you will not find anywhere else. </p>",
             "column_2_button_text": "BECOME A HUBPRO MEMBER",
             "column_2_button_link": "shopify://pages/hubpro",
             "column_gap": 30,
