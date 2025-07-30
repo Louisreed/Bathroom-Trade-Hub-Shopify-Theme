@@ -11,7 +11,40 @@
   "sections": {
     "main-account": {
       "type": "main-account",
+      "blocks": {
+        "membership_program": {
+          "type": "membership_program",
+          "settings": {
+            "width": "full",
+            "alignment": "left",
+            "margin_bottom": 32
+          }
+        },
+        "order_history": {
+          "type": "order_history",
+          "settings": {
+            "width": "two-thirds",
+            "alignment": "left",
+            "margin_bottom": 32
+          }
+        },
+        "account_details": {
+          "type": "account_details",
+          "settings": {
+            "width": "third",
+            "alignment": "right",
+            "margin_bottom": 32
+          }
+        }
+      },
+      "block_order": [
+        "membership_program",
+        "order_history",
+        "account_details"
+      ],
       "settings": {
+        "layout_mode": "flexible",
+        "blocks_gap": 32,
         "heading_size": "title-md",
         "heading_alignment": "md:items-end",
         "heading_tag": "h1",
