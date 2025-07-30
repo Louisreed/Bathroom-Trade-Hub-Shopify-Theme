@@ -125,60 +125,24 @@
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
-        },
-        "column_hbmmGG": {
-          "type": "column",
-          "settings": {
-            "icon": "shield",
-            "custom_icon": "",
-            "heading": "Increased Discounts",
-            "text": "<p>We stock the essentials for every trade professional, from silicones, trims and panels to toilets, basin vanity units, enclosures and everything in-between. </p>",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "column_WE8hcW": {
-          "type": "column",
-          "settings": {
-            "icon": "shield",
-            "custom_icon": "",
-            "heading": "Increased Discounts",
-            "text": "<p>We stock the essentials for every trade professional, from silicones, trims and panels to toilets, basin vanity units, enclosures and everything in-between. </p>",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "column_Kaan3j": {
-          "type": "column",
-          "settings": {
-            "icon": "shield",
-            "custom_icon": "",
-            "heading": "Increased Discounts",
-            "text": "<p>We stock the essentials for every trade professional, from silicones, trims and panels to toilets, basin vanity units, enclosures and everything in-between. </p>",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
         }
       },
       "block_order": [
         "column_HqANnV",
         "column_edAWWd",
-        "column_hHAkky",
-        "column_hbmmGG",
-        "column_WE8hcW",
-        "column_Kaan3j"
+        "column_hHAkky"
       ],
       "name": "Multicolumn with icons",
       "settings": {
         "style": "with-background",
         "columns": 3,
         "text_alignment": "left",
-        "heading": "Are you ready for the <em>upgrade?</em>",
+        "heading": "become a <em>HubPRO</em> member?",
         "heading_size": "title-lg tracking-heading",
         "heading_alignment": "text-center md:items-center",
         "heading_tag": "h2",
-        "subheading": "Introducing HubPRO+",
-        "description": "<p>Even <strong>MORE</strong> benefits and discounts. Get all of the HubPRO benefits plus the following... </p>",
+        "subheading": "Why should you",
+        "description": "<p>Save even more with a HubPRO account designed for <strong>trade professionals only.</strong></p>",
         "button_label": "",
         "button_link": "",
         "button_external": false,
