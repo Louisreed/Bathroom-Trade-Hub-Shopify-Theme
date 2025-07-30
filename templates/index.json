@@ -182,7 +182,7 @@
             "alignment": "center",
             "width_mobile": "fit-content",
             "custom_width_mobile": 100,
-            "effects": "none",
+            "effects": "reveal",
             "highlighted_text": "text",
             "highlighted_scribble": "circle"
           },
@@ -279,7 +279,7 @@
             "text_size": 16,
             "text_size_mobile": 14,
             "border_radius": 0,
-            "hide_for_hubpro_members": false
+            "hide_for_hubpro_members": true
           },
           "blocks": {}
         }
