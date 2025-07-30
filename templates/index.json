@@ -463,7 +463,7 @@
         "image_y4XVdt": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/HUBPROLOGOBANNER.png",
+            "image": "shopify://shop_images/HubPRO-Logo.png",
             "image_width": "custom",
             "image_max_width": 400,
             "image_max_width_mobile": 200
@@ -527,6 +527,7 @@
         "divider": false,
         "full_width": false,
         "rounded": false,
+        "hide_for_hubpro_members": true,
         "enable_parallax": false,
         "parallax_direction": "vertical"
       }

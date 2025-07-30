@@ -71,22 +71,22 @@
     "header": {
       "type": "header",
       "blocks": {
-        "menu_tag_wXQhXz": {
-          "type": "menu_tag",
-          "settings": {
-            "menu_handle": "hubpro",
-            "tag_text": "SIGN UP!",
-            "background_color": "#e11d48",
-            "text_color": "#ffffff",
-            "tag_style": "pill"
-          }
-        },
         "menu_tag_F6tjLe": {
           "type": "menu_tag",
           "settings": {
             "menu_handle": "hubessentials",
             "tag_text": "in-stock!",
             "background_color": "#2acaf1",
+            "text_color": "#ffffff",
+            "tag_style": "pill"
+          }
+        },
+        "menu_tag_rAQQTm": {
+          "type": "menu_tag",
+          "settings": {
+            "menu_handle": "Create-an-Account",
+            "tag_text": "better pricing!",
+            "background_color": "#f12a2a",
             "text_color": "#ffffff",
             "tag_style": "pill"
           }
@@ -104,7 +104,7 @@
         "menu_tag_gJEr7d": {
           "type": "menu_tag",
           "settings": {
-            "menu_handle": "hubPROMO",
+            "menu_handle": "hubPRO",
             "tag_text": "EXCLUSIVE",
             "background_color": "#bba14f",
             "text_color": "#ffffff",
@@ -113,26 +113,26 @@
         },
         "mega_menu_fHrbe7": {
           "type": "mega_menu",
-          "name": "Hub PROMO",
+          "name": "HubPRO",
           "settings": {
-            "menu_title": "HubPROMO",
+            "menu_title": "HubPRO",
             "menu_width": "medium",
-            "show_menu_image": false,
+            "show_menu_image": true,
             "button_label": "",
-            "button_link": "shopify://pages/hub-essentials",
-            "promo_image_1": "shopify://shop_images/Screenshot_2025-07-25_at_9.48.26_AM.png",
+            "button_link": "shopify://pages/hubpro",
+            "promo_image_1": "shopify://shop_images/Join_our_Loyalty_Rewards_Program_6.png",
             "promo_image_ratio_1": "square",
-            "promo_heading_1": "Promo Sheets",
+            "promo_heading_1": "REWARDS",
             "promo_subtext_1": "",
             "promo_overlay_content_1": true,
-            "promo_link_1": "",
+            "promo_link_1": "shopify://pages/hubpro",
             "promo_tag_1": "",
             "promo_color_text_1": "#ffffff",
             "promo_color_overlay_1": "#000000",
             "promo_overlay_opacity_1": 40,
             "promo_image_2": "shopify://shop_images/PROPLUSMENUArtboard_1.png",
             "promo_image_ratio_2": "square",
-            "promo_heading_2": "Join HubPRO+",
+            "promo_heading_2": "Upgrade to HubPRO+",
             "promo_subtext_2": "",
             "promo_overlay_content_2": true,
             "promo_link_2": "",
@@ -142,7 +142,7 @@
             "promo_overlay_opacity_2": 40,
             "promo_image_3": "shopify://shop_images/Screenshot_2025-07-26_at_10.34.17_AM.png",
             "promo_image_ratio_3": "square",
-            "promo_heading_3": "Shop Promo",
+            "promo_heading_3": "HubPROMO",
             "promo_subtext_3": "",
             "promo_overlay_content_3": true,
             "promo_link_3": "shopify://pages/promo",
@@ -1125,8 +1125,8 @@
         }
       },
       "block_order": [
-        "menu_tag_wXQhXz",
         "menu_tag_F6tjLe",
+        "menu_tag_rAQQTm",
         "menu_tag_A69H4n",
         "menu_tag_gJEr7d",
         "mega_menu_fHrbe7",
