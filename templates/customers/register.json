@@ -546,7 +546,7 @@
             "heading": "Are you a Trade Professional?",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
-            "button_label": "HubPRO Sign Up",
+            "button_label": "Create a HubPRO Account",
             "button_link": "shopify://pages/hubpro",
             "button_style": "primary",
             "button_external": false,
