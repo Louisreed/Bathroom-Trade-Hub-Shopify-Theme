@@ -200,8 +200,8 @@
         "collection_q8xmPa": {
           "type": "collection",
           "settings": {
-            "collection": "choice-inset-mirror",
-            "title": "Inset Mirrors",
+            "collection": "choice-mirrors",
+            "title": "Mirrors",
             "description": "",
             "overlay_content": false,
             "color_text": "#ffffff",
