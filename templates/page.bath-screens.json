@@ -520,7 +520,7 @@
       "settings": {
         "collection": "bath-screens",
         "products": [],
-        "product_limit": 12,
+        "product_limit": 10,
         "columns": 4,
         "carousel_on_desktop": false,
         "show_view_all": true,
