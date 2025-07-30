@@ -98,7 +98,7 @@
           "settings": {
             "icon": "truck",
             "custom_icon": "",
-            "heading": "Fast Local Delivery & Click and Collect",
+            "heading": "Minimum Delivery Reduced",
             "text": "<p>Fast delivery for in-stock products and priority click and collect service. FREE delivery in Dorset on orders over £100+VAT. We also offer FREE UK delivery on order over £500+VAT.</p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
@@ -109,8 +109,8 @@
           "settings": {
             "icon": "star",
             "custom_icon": "",
-            "heading": "Trade-only Pricing",
-            "text": "<p>Once your account is verified, you'll gain access to our highly competitive trade-only pricing online and in store. We also offer bulk deals if you decide you want to stock up & save even more!</p>",
+            "heading": "HubPROMO",
+            "text": "<p>This is where you will </p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
@@ -120,7 +120,40 @@
           "settings": {
             "icon": "shield",
             "custom_icon": "",
-            "heading": "In Stock Products",
+            "heading": "Increased Discounts",
+            "text": "<p>We stock the essentials for every trade professional, from silicones, trims and panels to toilets, basin vanity units, enclosures and everything in-between. </p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_hbmmGG": {
+          "type": "column",
+          "settings": {
+            "icon": "shield",
+            "custom_icon": "",
+            "heading": "Increased Discounts",
+            "text": "<p>We stock the essentials for every trade professional, from silicones, trims and panels to toilets, basin vanity units, enclosures and everything in-between. </p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_WE8hcW": {
+          "type": "column",
+          "settings": {
+            "icon": "shield",
+            "custom_icon": "",
+            "heading": "Increased Discounts",
+            "text": "<p>We stock the essentials for every trade professional, from silicones, trims and panels to toilets, basin vanity units, enclosures and everything in-between. </p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_Kaan3j": {
+          "type": "column",
+          "settings": {
+            "icon": "shield",
+            "custom_icon": "",
+            "heading": "Increased Discounts",
             "text": "<p>We stock the essentials for every trade professional, from silicones, trims and panels to toilets, basin vanity units, enclosures and everything in-between. </p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
@@ -130,19 +163,22 @@
       "block_order": [
         "column_HqANnV",
         "column_edAWWd",
-        "column_hHAkky"
+        "column_hHAkky",
+        "column_hbmmGG",
+        "column_WE8hcW",
+        "column_Kaan3j"
       ],
       "name": "Multicolumn with icons",
       "settings": {
         "style": "with-background",
         "columns": 3,
         "text_alignment": "left",
-        "heading": "Become a <em>HubPRO</em> Member?",
+        "heading": "Are you ready for the <em>upgrade?</em>",
         "heading_size": "title-lg tracking-heading",
         "heading_alignment": "text-center md:items-center",
         "heading_tag": "h2",
-        "subheading": "Why should you",
-        "description": "<p>Our HubPRO account ensures trade customers get the best pricing on bathroom supplies. Exclusive pricing for <strong>professionals</strong>.</p>",
+        "subheading": "Introducing HubPRO+",
+        "description": "<p>Even <strong>MORE</strong> benefits and discounts. Get all of the HubPRO benefits plus the following... </p>",
         "button_label": "",
         "button_link": "",
         "button_external": false,
