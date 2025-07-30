@@ -513,6 +513,41 @@
         "full_width": false,
         "rounded": false
       }
+    },
+    "featured_collection_e9Qmgp": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.name",
+      "settings": {
+        "collection": "bath-screens",
+        "products": [],
+        "product_limit": 6,
+        "columns": 4,
+        "carousel_on_desktop": false,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Shop All Bath Screens",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
     }
   },
   "order": [
@@ -522,6 +557,7 @@
     "collection_list_CiMcBw",
     "collection_list_DUNTKq",
     "featured_collection_K8mADY",
-    "collection_list_bUNVg4"
+    "collection_list_bUNVg4",
+    "featured_collection_e9Qmgp"
   ]
 }
