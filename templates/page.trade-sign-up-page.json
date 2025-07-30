@@ -98,7 +98,7 @@
           "settings": {
             "icon": "truck",
             "custom_icon": "",
-            "heading": "Minimum Delivery Reduced",
+            "heading": "Delivery in Dorset",
             "text": "<p>Fast delivery for in-stock products and priority click and collect service. FREE delivery in Dorset on orders over £100+VAT. We also offer FREE UK delivery on order over £500+VAT.</p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
@@ -109,7 +109,7 @@
           "settings": {
             "icon": "star",
             "custom_icon": "",
-            "heading": "HubPROMO Access",
+            "heading": "Competitive Pricing",
             "text": "<p>This is where you will </p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
@@ -120,8 +120,8 @@
           "settings": {
             "icon": "shield",
             "custom_icon": "",
-            "heading": "Increased Discounts",
-            "text": "<p>We stock the essentials for every trade professional, from silicones, trims and panels to toilets, basin vanity units, enclosures and everything in-between. </p>",
+            "heading": "In-stock Items",
+            "text": "<p>We stock our range of HubESSENTIALS for every trade professional, from silicones, trims and panels to toilets, basin vanity units, enclosures and everything in-between. </p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
@@ -143,119 +143,6 @@
         "heading_tag": "h2",
         "subheading": "Why should you",
         "description": "<p>Save even more with a HubPRO account designed for <strong>trade professionals only.</strong></p>",
-        "button_label": "",
-        "button_link": "",
-        "button_external": false,
-        "button_icon": true,
-        "highlighted_text": "scribble",
-        "highlighted_scribble": "circle",
-        "color_text": "#ffffff",
-        "color_background": "#424242",
-        "gradient_background": "",
-        "color_highlight": "#bb9f4d",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 48,
-        "padding_bottom": 48,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
-      }
-    },
-    "multicolumn_with_icons_7jX73V": {
-      "type": "multicolumn-with-icons",
-      "blocks": {
-        "column_qcW4Vm": {
-          "type": "column",
-          "settings": {
-            "icon": "tag",
-            "custom_icon": "",
-            "heading": "Cancel Anytime - £60/month",
-            "text": "<p>Fast delivery for in-stock products and priority click and collect service. FREE delivery in Dorset on orders over £100+VAT. We also offer FREE UK delivery on order over £500+VAT.</p>",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "column_6gRHKY": {
-          "type": "column",
-          "settings": {
-            "icon": "star",
-            "custom_icon": "",
-            "heading": "1 Year Subscription (Monthly)",
-            "text": "<p>This is where you will </p>",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "column_En8iMx": {
-          "type": "column",
-          "settings": {
-            "icon": "shield",
-            "custom_icon": "",
-            "heading": "1 Year Subscription (Pay in full)",
-            "text": "<p>We stock the essentials for every trade professional, from silicones, trims and panels to toilets, basin vanity units, enclosures and everything in-between. </p>",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "column_HtBbxW": {
-          "type": "column",
-          "disabled": true,
-          "settings": {
-            "icon": "shield",
-            "custom_icon": "",
-            "heading": "Increased Discounts",
-            "text": "<p>We stock the essentials for every trade professional, from silicones, trims and panels to toilets, basin vanity units, enclosures and everything in-between. </p>",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "column_Tr4EVM": {
-          "type": "column",
-          "disabled": true,
-          "settings": {
-            "icon": "shield",
-            "custom_icon": "",
-            "heading": "Increased Discounts",
-            "text": "<p>We stock the essentials for every trade professional, from silicones, trims and panels to toilets, basin vanity units, enclosures and everything in-between. </p>",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "column_NLcpxL": {
-          "type": "column",
-          "disabled": true,
-          "settings": {
-            "icon": "shield",
-            "custom_icon": "",
-            "heading": "Increased Discounts",
-            "text": "<p>We stock the essentials for every trade professional, from silicones, trims and panels to toilets, basin vanity units, enclosures and everything in-between. </p>",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        }
-      },
-      "block_order": [
-        "column_qcW4Vm",
-        "column_6gRHKY",
-        "column_En8iMx",
-        "column_HtBbxW",
-        "column_Tr4EVM",
-        "column_NLcpxL"
-      ],
-      "name": "Multicolumn with icons",
-      "settings": {
-        "style": "with-background",
-        "columns": 3,
-        "text_alignment": "left",
-        "heading": "We offer 3 membership <em>options</em>",
-        "heading_size": "title-lg tracking-heading",
-        "heading_alignment": "text-center md:items-center",
-        "heading_tag": "h2",
-        "subheading": "Membership Plans",
-        "description": "<p>Whether you want to trial for a month or go for the full year, the decision is yours!</p>",
         "button_label": "",
         "button_link": "",
         "button_external": false,
@@ -732,7 +619,6 @@
     "main-page",
     "image_with_text_overlay_RyNcK6",
     "multicolumn_with_icons_VpViPm",
-    "multicolumn_with_icons_7jX73V",
     "collection_list_kg7KnE",
     "rich_text_QHgKfz",
     "rich_text_qFQmBj",
