@@ -12,15 +12,15 @@
     "main": {
       "type": "main-cart",
       "blocks": {
+        "subtotal": {
+          "type": "subtotal",
+          "settings": {}
+        },
         "free_shipping": {
           "type": "free_shipping",
           "settings": {
             "minimum_amount": "416.66"
           }
-        },
-        "subtotal": {
-          "type": "subtotal",
-          "settings": {}
         },
         "cart_note": {
           "type": "cart_note",
@@ -36,16 +36,16 @@
         }
       },
       "block_order": [
-        "free_shipping",
         "subtotal",
+        "free_shipping",
         "cart_note",
         "buttons"
       ],
       "settings": {
         "heading_size": "title-md",
-        "heading_alignment": "md:items-center md:flex-col",
+        "heading_alignment": "md:items-end",
         "heading_tag": "h1",
-        "show_vendor": false,
+        "show_vendor": true,
         "show_payment_icons": true,
         "show_shipping_calculator": true,
         "add_discount_code": true,
