@@ -71,6 +71,21 @@
     "header": {
       "type": "header",
       "blocks": {
+        "menu_button_kh3Yk7": {
+          "type": "menu_button",
+          "settings": {
+            "menu_handle": "create-an-account",
+            "button_style": "primary",
+            "button_size": "large",
+            "button_text_color": "#ffffff",
+            "button_background_color": "#47c8f5",
+            "button_border_color": "#47c8f5",
+            "button_hover_text_color": "#ffffff",
+            "button_hover_background_color": "#424242",
+            "button_border_radius": 25,
+            "hide_when_logged_in": true
+          }
+        },
         "menu_tag_F6tjLe": {
           "type": "menu_tag",
           "settings": {
@@ -1124,23 +1139,10 @@
             "promo_color_overlay_5": "#000000",
             "promo_overlay_opacity_5": 40
           }
-        },
-        "menu_button_kh3Yk7": {
-          "type": "menu_button",
-          "settings": {
-            "menu_handle": "create-an-account",
-            "button_style": "primary",
-            "button_size": "large",
-            "button_text_color": "#ffffff",
-            "button_background_color": "#47c8f5",
-            "button_border_color": "#47c8f5",
-            "button_hover_text_color": "#ffffff",
-            "button_hover_background_color": "#424242",
-            "button_border_radius": 25
-          }
         }
       },
       "block_order": [
+        "menu_button_kh3Yk7",
         "menu_tag_F6tjLe",
         "menu_tag_rAQQTm",
         "menu_tag_A69H4n",
@@ -1161,8 +1163,7 @@
         "mega_menu_Yajy3n",
         "mega_menu_iXKFGN",
         "mega_menu_cCMYeN",
-        "mega_menu_exnUVm",
-        "menu_button_kh3Yk7"
+        "mega_menu_exnUVm"
       ],
       "settings": {
         "logo_h1": true,
