@@ -85,7 +85,7 @@
           "type": "menu_tag",
           "settings": {
             "menu_handle": "Create-an-Account",
-            "tag_text": "better pricing!",
+            "tag_text": "important!",
             "background_color": "#f12a2a",
             "text_color": "#ffffff",
             "tag_style": "pill"

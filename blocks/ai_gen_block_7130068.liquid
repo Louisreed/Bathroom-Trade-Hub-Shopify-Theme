@@ -1,0 +1,347 @@
+{% doc %}
+  @prompt
+    Create a block with 3 square links arranged in a row. Each square should support a background image and overlay text. The links should be responsive and maintain their square aspect ratio on different screen sizes. Include options to customize the background images, link text, and destination URLs for each square.
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-square-links-container-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: {{ block.settings.gap }}px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .ai-square-link-{{ ai_gen_id }} {
+    position: relative;
+    aspect-ratio: 1;
+    overflow: hidden;
+    border-radius: {{ block.settings.border_radius }}px;
+    text-decoration: none;
+    display: block;
+    transition: transform 0.3s ease;
+  }
+
+  .ai-square-link-{{ ai_gen_id }}:hover {
+    transform: scale(1.02);
+  }
+
+  .ai-square-link-background-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+  }
+
+  .ai-square-link-placeholder-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: {{ block.settings.placeholder_color }};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+
+  .ai-square-link-placeholder-{{ ai_gen_id }} svg {
+    width: 50%;
+    height: 50%;
+    opacity: 0.3;
+  }
+
+  .ai-square-link-overlay-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, {{ block.settings.overlay_opacity | divided_by: 100.0 }});
+    z-index: 2;
+  }
+
+  .ai-square-link-content-{{ ai_gen_id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .ai-square-link-text-{{ ai_gen_id }} {
+    color: {{ block.settings.text_color }};
+    font-size: {{ block.settings.text_size }}px;
+    font-weight: {{ block.settings.text_weight }};
+    line-height: 1.2;
+    word-wrap: break-word;
+    {% if block.settings.text_uppercase %}
+      text-transform: uppercase;
+    {% endif %}
+  }
+
+  @media screen and (max-width: 768px) {
+    .ai-square-links-container-{{ ai_gen_id }} {
+      {% if block.settings.mobile_layout == '1' %}
+        grid-template-columns: 1fr;
+      {% else %}
+        grid-template-columns: repeat(2, 1fr);
+      {% endif %}gap: {{ block.settings.gap | times: 0.75 }}px;
+    }
+
+    .ai-square-link-content-{{ ai_gen_id }} {
+      padding: 15px;
+    }
+
+    .ai-square-link-text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.text_size | times: 0.9 }}px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .ai-square-links-container-{{ ai_gen_id }} {
+      grid-template-columns: 1fr;
+    }
+
+    .ai-square-link-content-{{ ai_gen_id }} {
+      padding: 12px;
+    }
+
+    .ai-square-link-text-{{ ai_gen_id }} {
+      font-size: {{ block.settings.text_size | times: 0.8 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-square-links-container-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% for i in (1..3) %}
+    {% liquid
+      assign image_key = 'image_' | append: i
+      assign text_key = 'text_' | append: i
+      assign url_key = 'url_' | append: i
+      
+      assign image = block.settings[image_key]
+      assign text = block.settings[text_key]
+      assign url = block.settings[url_key]
+    %}
+
+    <a 
+      href="{{ url | default: '#' }}" 
+      class="ai-square-link-{{ ai_gen_id }}"
+      {% unless url %}onclick="return false;"{% endunless %}
+    >
+      {% if image %}
+        <img
+          src="{{ image | image_url: width: 600 }}"
+          alt="{{ image.alt | escape }}"
+          class="ai-square-link-background-{{ ai_gen_id }}"
+          loading="lazy"
+          width="600"
+          height="600"
+        >
+      {% else %}
+        <div class="ai-square-link-placeholder-{{ ai_gen_id }}">
+          {{ 'image' | placeholder_svg_tag }}
+        </div>
+      {% endif %}<div class="ai-square-link-overlay-{{ ai_gen_id }}"></div>
+
+      {% if text != blank %}
+        <div class="ai-square-link-content-{{ ai_gen_id }}">
+          <span class="ai-square-link-text-{{ ai_gen_id }}">{{ text }}</span>
+        </div>
+      {% endif %}
+    </a>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Square Links",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "min": 0,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Gap between squares",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 8
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "label": "Mobile layout",
+      "options": [
+        {
+          "value": "1",
+          "label": "1 column"
+        },
+        {
+          "value": "2",
+          "label": "2 columns"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "header",
+      "content": "Overlay & Text"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 80,
+      "step": 5,
+      "unit": "%",
+      "label": "Overlay opacity",
+      "default": 30
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "range",
+      "id": "text_size",
+      "min": 12,
+      "max": 36,
+      "step": 2,
+      "unit": "px",
+      "label": "Text size",
+      "default": 18
+    },
+    {
+      "type": "select",
+      "id": "text_weight",
+      "label": "Text weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi Bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "checkbox",
+      "id": "text_uppercase",
+      "label": "Uppercase text",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "placeholder_color",
+      "label": "Placeholder background color",
+      "default": "#f4f4f4"
+    },
+    {
+      "type": "header",
+      "content": "Square1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Background image"
+    },
+    {
+      "type": "text",
+      "id": "text_1",
+      "label": "Text",
+      "default": "Link 1"
+    },
+    {
+      "type": "url",
+      "id": "url_1",
+      "label": "Link URL"
+    },
+    {
+      "type": "header",
+      "content": "Square 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Background image"
+    },
+    {
+      "type": "text",
+      "id": "text_2",
+      "label": "Text",
+      "default": "Link 2"
+    },
+    {
+      "type": "url",
+      "id": "url_2",
+      "label": "Link URL"
+    },
+    {
+      "type": "header",
+      "content": "Square 3"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Background image"
+    },
+    {
+      "type": "text",
+      "id": "text_3",
+      "label": "Text",
+      "default": "Link 3"
+    },
+    {
+      "type": "url",
+      "id": "url_3",
+      "label": "Link URL"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Square Links"
+    }
+  ],
+  "tag": null
+}
+{% endschema %}

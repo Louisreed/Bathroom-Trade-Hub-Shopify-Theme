@@ -1,0 +1,201 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-page": {
+      "type": "main-page",
+      "settings": {
+        "heading_size": "title-md",
+        "heading_alignment": "text-center",
+        "heading_tag": "h1",
+        "text_size": "text-base",
+        "text_capitalization": "",
+        "content_capitalization": "",
+        "color_text": "#424242",
+        "color_background": "#fafafa",
+        "gradient_background": "",
+        "padding_top": 32,
+        "padding_bottom": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_left": 0,
+        "margin_right": 0,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "17157682575ad8f603": {
+      "type": "apps",
+      "blocks": {
+        "forms_inline_QznU9a": {
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "settings": {
+            "form_id": "100787",
+            "text_color": "#202020",
+            "button_background_color": "#202020",
+            "button_label_color": "#ffffff",
+            "links_color": "#1878b9",
+            "errors_color": "#e02229",
+            "text_alignment": "center",
+            "form_alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        }
+      },
+      "block_order": [
+        "forms_inline_QznU9a"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "173176303439daeef7": {
+      "type": "apps",
+      "blocks": {
+        "forms_inline_nExMkf": {
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "settings": {
+            "form_id": "",
+            "text_color": "#202020",
+            "button_background_color": "#202020",
+            "button_label_color": "#ffffff",
+            "links_color": "#1878b9",
+            "errors_color": "#e02229",
+            "text_alignment": "center",
+            "form_alignment": "center",
+            "padding_top": 0,
+            "padding_bottom": 0,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        }
+      },
+      "block_order": [
+        "forms_inline_nExMkf"
+      ],
+      "disabled": true,
+      "settings": {
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "17539553774608bd34": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_47eea93_EPKxqD": {
+          "type": "ai_gen_block_47eea93",
+          "settings": {
+            "min_width": 200,
+            "min_height": 200,
+            "gap": 20,
+            "container_padding": 20,
+            "columns_mobile": "2",
+            "gap_mobile": 15,
+            "container_padding_mobile": 15,
+            "min_height_mobile": 150,
+            "border_radius": 12,
+            "link_padding": 20,
+            "link_padding_mobile": 15,
+            "border_width": 0,
+            "border_color": "#e0e0e0",
+            "hover_lift": 3,
+            "shadow_blur": 10,
+            "shadow_spread": 0,
+            "shadow_color": "rgba(0, 0, 0, 0.1)",
+            "title_size": 18,
+            "title_size_mobile": 16,
+            "title_weight": "600",
+            "description_size": 14,
+            "description_size_mobile": 12,
+            "description_spacing": 8,
+            "icon_size": 32,
+            "icon_size_mobile": 24,
+            "icon_spacing": 12,
+            "link_1_enabled": true,
+            "link_1_title": "Shop HubESSENTIALS",
+            "link_1_description": "In-stock items ready to go!",
+            "link_1_url": "shopify://collections/hubessentials",
+            "link_1_icon": "shop",
+            "link_1_bg_color": "#2acaf1",
+            "link_1_text_color": "#ffffff",
+            "link_1_hover_bg_color": "#1fb5d6",
+            "link_1_hover_text_color": "#ffffff",
+            "link_2_enabled": true,
+            "link_2_title": "DIY Account",
+            "link_2_description": "SIGN UP HERE",
+            "link_2_url": "/account/register",
+            "link_2_icon": "user",
+            "link_2_bg_color": "#cccccc",
+            "link_2_text_color": "#ffffff",
+            "link_2_hover_bg_color": "#2d2d2d",
+            "link_2_hover_text_color": "#ffffff",
+            "link_3_enabled": true,
+            "link_3_title": "HubPRO",
+            "link_3_description": "Sign Up Here",
+            "link_3_url": "shopify://pages/hubpro",
+            "link_3_icon": "user",
+            "link_3_bg_color": "#bba14f",
+            "link_3_text_color": "#ffffff",
+            "link_3_hover_bg_color": "#bba14f",
+            "link_3_hover_text_color": "#ffffff",
+            "link_4_enabled": false,
+            "link_4_title": "Support",
+            "link_4_description": "Need help?",
+            "link_4_url": "",
+            "link_4_icon": "phone",
+            "link_4_bg_color": "#10b981",
+            "link_4_text_color": "#ffffff",
+            "link_4_hover_bg_color": "#059669",
+            "link_4_hover_text_color": "#ffffff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_47eea93_EPKxqD"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "main-page",
+    "17157682575ad8f603",
+    "173176303439daeef7",
+    "17539553774608bd34"
+  ]
+}
