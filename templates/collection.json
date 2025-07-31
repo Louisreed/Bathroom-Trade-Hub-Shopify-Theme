@@ -197,12 +197,12 @@
             "text_alignment": "center",
             "content_position_mobile": "items-center",
             "text_alignment_mobile": "center",
-            "color_text": "#424242",
-            "color_button_text": "#ffffff",
-            "color_button_background": "#47c8f5",
+            "color_text": "#ffffff",
+            "color_button_text": "#47c8f5",
+            "color_button_background": "#ffffff",
             "color_button_gradient": "",
-            "color_overlay": "#ffffff",
-            "overlay_opacity": 61
+            "color_overlay": "#47c8f5",
+            "overlay_opacity": 88
           }
         }
       },
