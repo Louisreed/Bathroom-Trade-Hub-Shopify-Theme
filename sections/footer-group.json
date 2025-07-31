@@ -17,9 +17,33 @@
         "collection_n6ycmz": {
           "type": "collection",
           "settings": {
-            "collection": "square-shower-tray",
+            "collection": "maxi-panels-1",
             "products": [],
-            "title": "Square Trays"
+            "title": "Maxi Panels"
+          }
+        },
+        "collection_g9VAMy": {
+          "type": "collection",
+          "settings": {
+            "collection": "modern-radiators",
+            "products": [],
+            "title": "Designer Radiator"
+          }
+        },
+        "collection_NTGEiA": {
+          "type": "collection",
+          "settings": {
+            "collection": "hubessentials",
+            "products": [],
+            "title": "HubESSENTIALS"
+          }
+        },
+        "collection_9icCtL": {
+          "type": "collection",
+          "settings": {
+            "collection": "hubchoice",
+            "products": [],
+            "title": "HubCHOICE"
           }
         },
         "collection_nGdwHy": {
@@ -30,48 +54,23 @@
             "title": "Rectangular Trays"
           }
         },
-        "collection_NTGEiA": {
-          "type": "collection",
-          "settings": {
-            "collection": "quadrant-trays",
-            "products": [],
-            "title": "Quadrant Trays"
-          }
-        },
-        "collection_9icCtL": {
-          "type": "collection",
-          "settings": {
-            "collection": "off-set-quadrant",
-            "products": [],
-            "title": "Offset Quadrant Trays"
-          }
-        },
         "collection_yqxAAw": {
           "type": "collection",
           "settings": {
-            "collection": "walk-in-trays",
+            "collection": "basin-taps",
             "products": [],
-            "title": "Walk-In Trays"
-          }
-        },
-        "collection_g9VAMy": {
-          "type": "collection",
-          "settings": {
-            "collection": "black-shower-trays",
-            "products": [],
-            "title": "Black Trays"
+            "title": "Basin Taps"
           }
         }
       },
       "block_order": [
         "collection_n6ycmz",
-        "collection_nGdwHy",
+        "collection_g9VAMy",
         "collection_NTGEiA",
         "collection_9icCtL",
-        "collection_yqxAAw",
-        "collection_g9VAMy"
+        "collection_nGdwHy",
+        "collection_yqxAAw"
       ],
-      "disabled": true,
       "settings": {
         "product_limit": 12,
         "columns": 5,
