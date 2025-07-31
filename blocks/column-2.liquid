@@ -47,6 +47,14 @@
       font-weight: 600;
     }
 
+    .ai-two-column-heading-1-{{ ai_gen_id }} {
+      color: {{ block.settings.column_1_heading_color | default: block.settings.heading_color }};
+    }
+
+    .ai-two-column-heading-2-{{ ai_gen_id }} {
+      color: {{ block.settings.column_2_heading_color | default: block.settings.heading_color }};
+    }
+
     .ai-two-column-content-{{ ai_gen_id }} {
       color: {{ block.settings.text_color }};
       font-size: {{ block.settings.text_size }}px;
@@ -128,7 +136,9 @@
   <div class="ai-two-column-container-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
     <div class="ai-two-column-item-{{ ai_gen_id }}">
       {% if block.settings.column_1_heading != blank %}
-        <h3 class="ai-two-column-heading-{{ ai_gen_id }}">{{ block.settings.column_1_heading }}</h3>
+        <h3 class="ai-two-column-heading-{{ ai_gen_id }} ai-two-column-heading-1-{{ ai_gen_id }}">
+          {{ block.settings.column_1_heading }}
+        </h3>
       {% endif %}
       {% if block.settings.column_1_content != blank %}
         <div class="ai-two-column-content-{{ ai_gen_id }}">{{ block.settings.column_1_content }}</div>
@@ -147,7 +157,9 @@
 
     <div class="ai-two-column-item-{{ ai_gen_id }}">
       {% if block.settings.column_2_heading != blank %}
-        <h3 class="ai-two-column-heading-{{ ai_gen_id }}">{{ block.settings.column_2_heading }}</h3>
+        <h3 class="ai-two-column-heading-{{ ai_gen_id }} ai-two-column-heading-2-{{ ai_gen_id }}">
+          {{ block.settings.column_2_heading }}
+        </h3>
       {% endif %}
       {% if block.settings.column_2_content != blank %}
         <div class="ai-two-column-content-{{ ai_gen_id }}">{{ block.settings.column_2_content }}</div>
@@ -197,6 +209,12 @@
       "label": "Button link"
     },
     {
+      "type": "color",
+      "id": "column_1_heading_color",
+      "label": "Heading color",
+      "info": "Leave blank to use the default heading color"
+    },
+    {
       "type": "header",
       "content": "Column 2"
     },
@@ -221,6 +239,12 @@
       "type": "url",
       "id": "column_2_button_link",
       "label": "Button link"
+    },
+    {
+      "type": "color",
+      "id": "column_2_heading_color",
+      "label": "Heading color",
+      "info": "Leave blank to use the default heading color"
     },
     {
       "type": "header",
@@ -535,8 +559,9 @@
     {
       "type": "color",
       "id": "heading_color",
-      "label": "Heading color",
-      "default": "#000000"
+      "label": "Default heading color",
+      "default": "#000000",
+      "info": "Default color for both column headings (can be overridden per column)"
     },
     {
       "type": "color",
