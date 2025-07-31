@@ -116,7 +116,7 @@
           "type": "text",
           "name": "t:blocks.text.name",
           "settings": {
-            "text": "<p><em>Exclusively</em> For Trade and DIY</p>",
+            "text": "<p>Exclusively For <em>Trade</em> and <em>DIY</em></p>",
             "text_font": "heading",
             "text_size": "subtext-custom",
             "text_max_size": 42,
@@ -152,9 +152,32 @@
             "alignment": "center",
             "width_mobile": "fit-content",
             "custom_width_mobile": 100,
-            "effects": "highlight",
+            "effects": "none",
             "highlighted_text": "scribble",
             "highlighted_scribble": "sketch-underline"
+          },
+          "blocks": {}
+        },
+        "text_eemUyz": {
+          "type": "text",
+          "name": "t:blocks.text.name",
+          "settings": {
+            "text": "<p><strong>Choose your account below!</strong></p>",
+            "text_font": "body",
+            "text_size": "text-base lg:text-lg",
+            "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": false,
+            "width": "fill",
+            "custom_width": 100,
+            "alignment": "center",
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100,
+            "effects": "none",
+            "highlighted_text": "text",
+            "highlighted_scribble": "circle"
           },
           "blocks": {}
         },
@@ -260,6 +283,7 @@
         "text_MGWGex",
         "text_MEUngL",
         "text_rchzLz",
+        "text_eemUyz",
         "button_3B8yyK",
         "button_Mpf8XK",
         "column_2_kNcfty"
