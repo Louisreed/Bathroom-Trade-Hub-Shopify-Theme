@@ -2219,6 +2219,21 @@
             "header__promo_5": {
               "content": "Khuyến mãi 5"
             },
+            "header__promo_6": {
+              "content": "Khuyến mãi 6"
+            },
+            "header__promo_7": {
+              "content": "Khuyến mãi 7"
+            },
+            "header__promo_8": {
+              "content": "Khuyến mãi 8"
+            },
+            "header__promo_9": {
+              "content": "Khuyến mãi 9"
+            },
+            "header__promo_10": {
+              "content": "Khuyến mãi 10"
+            },
             "promo_image": {
               "label": "Hình ảnh"
             },
@@ -2271,6 +2286,21 @@
             },
             "header__tab_5": {
               "content": "Thẻ 5"
+            },
+            "header__tab_6": {
+              "content": "Thẻ 6"
+            },
+            "header__tab_7": {
+              "content": "Thẻ 7"
+            },
+            "header__tab_8": {
+              "content": "Thẻ 8"
+            },
+            "header__tab_9": {
+              "content": "Thẻ 9"
+            },
+            "header__tab_10": {
+              "content": "Thẻ 10"
             }
           }
         }

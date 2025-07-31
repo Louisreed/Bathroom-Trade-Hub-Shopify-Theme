@@ -102,7 +102,7 @@
     {%- else -%}
       <ul id="DrawerSubMenu-{{ section.id }}-{{ position }}" class="drawer__scrollable flex flex-col h-full">
         {%- if block.type == 'mega_menu_tab' -%}
-          {%- for i in (1..5) -%}
+          {%- for i in (1..10) -%}
             {%- assign tab_target_link = 'tab_target_link_' | append: i -%}
             {%- if block.settings[tab_target_link] != blank -%}
               <li class="drawer__menu-group">
@@ -291,12 +291,12 @@
           {%- liquid
             assign show_promotions = false
 
-            if block.settings.promo_image_1 != blank or block.settings.promo_image_2 != blank or block.settings.promo_image_3 != blank or block.settings.promo_image_4 != blank or block.settings.promo_image_5 != blank
+            if block.settings.promo_image_1 != blank or block.settings.promo_image_2 != blank or block.settings.promo_image_3 != blank or block.settings.promo_image_4 != blank or block.settings.promo_image_5 != blank or block.settings.promo_image_6 != blank or block.settings.promo_image_7 != blank or block.settings.promo_image_8 != blank or block.settings.promo_image_9 != blank or block.settings.promo_image_10 != blank
               assign show_promotions = true
             endif
 
             if block.type == 'mega_menu_tab'
-              if block.settings.tab_target_link_1 == blank and block.settings.tab_target_link_2 == blank and block.settings.tab_target_link_3 == blank and block.settings.tab_target_link_4 == blank and block.settings.tab_target_link_5 == blank
+              if block.settings.tab_target_link_1 == blank and block.settings.tab_target_link_2 == blank and block.settings.tab_target_link_3 == blank and block.settings.tab_target_link_4 == blank and block.settings.tab_target_link_5 == blank and block.settings.tab_target_link_6 == blank and block.settings.tab_target_link_7 == blank and block.settings.tab_target_link_8 == blank and block.settings.tab_target_link_9 == blank and block.settings.tab_target_link_10 == blank
                 assign show_promotions = false
               endif
             endif
@@ -305,7 +305,7 @@
         {%- if show_promotions -%}
           <li class="drawer__menu-group drawer__promotions">
             <ul class="mega-menu__list grid grid-cols-2 w-full h-full" role="list" tabindex="-1">
-              {%- for i in (1..5) -%}
+              {%- for i in (1..10) -%}
                 {%- liquid
                   assign show_promotion = false
 

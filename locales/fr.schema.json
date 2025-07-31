@@ -2219,6 +2219,21 @@
             "header__promo_5": {
               "content": "Promotion 5"
             },
+            "header__promo_6": {
+              "content": "Promotion 6"
+            },
+            "header__promo_7": {
+              "content": "Promotion 7"
+            },
+            "header__promo_8": {
+              "content": "Promotion 8"
+            },
+            "header__promo_9": {
+              "content": "Promotion 9"
+            },
+            "header__promo_10": {
+              "content": "Promotion 10"
+            },
             "promo_image": {
               "label": "Image"
             },
@@ -2271,6 +2286,21 @@
             },
             "header__tab_5": {
               "content": "Languette 5"
+            },
+            "header__tab_6": {
+              "content": "Languette 6"
+            },
+            "header__tab_7": {
+              "content": "Languette 7"
+            },
+            "header__tab_8": {
+              "content": "Languette 8"
+            },
+            "header__tab_9": {
+              "content": "Languette 9"
+            },
+            "header__tab_10": {
+              "content": "Languette 10"
             }
           }
         }

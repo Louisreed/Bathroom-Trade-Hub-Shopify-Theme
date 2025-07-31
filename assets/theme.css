@@ -8133,6 +8133,26 @@ details.active .drawer__promotions .mega-menu__item,
   transition-delay: 0.9s;
 }
 
+.mega-menu[open] .mega-menu__nav--tabs .mega-menu__nav-item:nth-child(6) {
+  transition-delay: 1.0s;
+}
+
+.mega-menu[open] .mega-menu__nav--tabs .mega-menu__nav-item:nth-child(7) {
+  transition-delay: 1.1s;
+}
+
+.mega-menu[open] .mega-menu__nav--tabs .mega-menu__nav-item:nth-child(8) {
+  transition-delay: 1.2s;
+}
+
+.mega-menu[open] .mega-menu__nav--tabs .mega-menu__nav-item:nth-child(9) {
+  transition-delay: 1.3s;
+}
+
+.mega-menu[open] .mega-menu__nav--tabs .mega-menu__nav-item:nth-child(10) {
+  transition-delay: 1.4s;
+}
+
 @media screen and (min-width: 1280px) {
   .mega-menu__panel .product-card {
     flex: calc(33.33% - var(--card-grid-gap) * 2/3);

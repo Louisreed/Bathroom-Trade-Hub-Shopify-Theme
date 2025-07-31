@@ -2219,6 +2219,21 @@
             "header__promo_5": {
               "content": "Promoción 5"
             },
+            "header__promo_6": {
+              "content": "Promoción 6"
+            },
+            "header__promo_7": {
+              "content": "Promoción 7"
+            },
+            "header__promo_8": {
+              "content": "Promoción 8"
+            },
+            "header__promo_9": {
+              "content": "Promoción 9"
+            },
+            "header__promo_10": {
+              "content": "Promoción 10"
+            },
             "promo_image": {
               "label": "Imagen"
             },
@@ -2271,6 +2286,21 @@
             },
             "header__tab_5": {
               "content": "Pestaña 5"
+            },
+            "header__tab_6": {
+              "content": "Pestaña 6"
+            },
+            "header__tab_7": {
+              "content": "Pestaña 7"
+            },
+            "header__tab_8": {
+              "content": "Pestaña 8"
+            },
+            "header__tab_9": {
+              "content": "Pestaña 9"
+            },
+            "header__tab_10": {
+              "content": "Pestaña 10"
             }
           }
         }

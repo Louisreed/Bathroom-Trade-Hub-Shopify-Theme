@@ -2219,6 +2219,21 @@
             "header__promo_5": {
               "content": "Beförderung 5"
             },
+            "header__promo_6": {
+              "content": "Beförderung 6"
+            },
+            "header__promo_7": {
+              "content": "Beförderung 7"
+            },
+            "header__promo_8": {
+              "content": "Beförderung 8"
+            },
+            "header__promo_9": {
+              "content": "Beförderung 9"
+            },
+            "header__promo_10": {
+              "content": "Beförderung 10"
+            },
             "promo_image": {
               "label": "Bild"
             },
@@ -2271,6 +2286,21 @@
             },
             "header__tab_5": {
               "content": "Tab 5"
+            },
+            "header__tab_6": {
+              "content": "Tab 6"
+            },
+            "header__tab_7": {
+              "content": "Tab 7"
+            },
+            "header__tab_8": {
+              "content": "Tab 8"
+            },
+            "header__tab_9": {
+              "content": "Tab 9"
+            },
+            "header__tab_10": {
+              "content": "Tab 10"
             }
           }
         }
