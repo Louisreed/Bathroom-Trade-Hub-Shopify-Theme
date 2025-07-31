@@ -95,10 +95,10 @@
         "parallax_direction": "zoom"
       }
     },
-    "custom_section_tkL6hE": {
+    "custom_section_rLAcwk": {
       "type": "custom-section",
       "blocks": {
-        "text_MGWGex": {
+        "text_GeTaGi": {
           "type": "text",
           "name": "t:blocks.text.name",
           "settings": {
@@ -121,11 +121,11 @@
           },
           "blocks": {}
         },
-        "text_MEUngL": {
+        "text_Ffhddf": {
           "type": "text",
           "name": "t:blocks.text.name",
           "settings": {
-            "text": "<p>Exclusively For <em>Trade</em> and <em>DIY</em></p>",
+            "text": "<p>Exclusively For Trade and DIY</p>",
             "text_font": "heading",
             "text_size": "subtext-custom",
             "text_max_size": 42,
@@ -138,13 +138,13 @@
             "alignment": "center",
             "width_mobile": "fit-content",
             "custom_width_mobile": 100,
-            "effects": "highlight",
+            "effects": "none",
             "highlighted_text": "scribble",
             "highlighted_scribble": "circle"
           },
           "blocks": {}
         },
-        "text_rchzLz": {
+        "text_qhrEFL": {
           "type": "text",
           "name": "t:blocks.text.name",
           "settings": {
@@ -167,13 +167,13 @@
           },
           "blocks": {}
         },
-        "text_eemUyz": {
+        "text_igdUKU": {
           "type": "text",
           "name": "t:blocks.text.name",
           "settings": {
             "text": "<p><em><strong>Choose your account below!</strong></em></p>",
             "text_font": "body",
-            "text_size": "text-base lg:text-lg",
+            "text_size": "subtext-custom",
             "text_max_size": 32,
             "text_line_height": 1.6,
             "text_letter_spacing": 0,
@@ -186,11 +186,11 @@
             "custom_width_mobile": 100,
             "effects": "highlight",
             "highlighted_text": "scribble",
-            "highlighted_scribble": "sketch-underline"
+            "highlighted_scribble": "circle"
           },
           "blocks": {}
         },
-        "button_3B8yyK": {
+        "button_jkMfFU": {
           "type": "button",
           "name": "t:blocks.button.name",
           "disabled": true,
@@ -210,7 +210,7 @@
           },
           "blocks": {}
         },
-        "button_Mpf8XK": {
+        "button_x4RH7i": {
           "type": "button",
           "name": "t:blocks.button.name",
           "disabled": true,
@@ -230,7 +230,7 @@
           },
           "blocks": {}
         },
-        "column_2_kNcfty": {
+        "column_2_WzwhPm": {
           "type": "column-2",
           "settings": {
             "column_1_heading": "Create a Trade Account - Professionals ONLY.",
@@ -241,7 +241,7 @@
             "column_2_heading": "Create a DIY Account",
             "column_2_content": "<p>Working on a new project or just getting that weekend list done? Receive up to <strong>35% DISCOUNT </strong>on RRP across our vast ranges of products. Simply log in and see your prices! </p>",
             "column_2_button_text": "Create an Account",
-            "column_2_button_link": "#shopify-section-template--25586045157708__main-register",
+            "column_2_button_link": "https://bathroomtradehub.co.uk/account/register#shopify-section-template--25586045157708__main-register",
             "column_2_heading_color": "#424242",
             "column_gap": 30,
             "columns_mobile": "1",
@@ -289,13 +289,13 @@
         }
       },
       "block_order": [
-        "text_MGWGex",
-        "text_MEUngL",
-        "text_rchzLz",
-        "text_eemUyz",
-        "button_3B8yyK",
-        "button_Mpf8XK",
-        "column_2_kNcfty"
+        "text_GeTaGi",
+        "text_Ffhddf",
+        "text_qhrEFL",
+        "text_igdUKU",
+        "button_jkMfFU",
+        "button_x4RH7i",
+        "column_2_WzwhPm"
       ],
       "name": "t:sections.custom-section.name",
       "settings": {
@@ -692,7 +692,7 @@
   },
   "order": [
     "slideshow_Bkt7tm",
-    "custom_section_tkL6hE",
+    "custom_section_rLAcwk",
     "multicolumn_aGmfPC",
     "images_with_text_4gfzFq",
     "main-register",
