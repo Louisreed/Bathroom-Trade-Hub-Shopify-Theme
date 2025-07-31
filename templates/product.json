@@ -31,12 +31,6 @@
             "show_rating": false
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {
-            "text_size": "text-base"
-          }
-        },
         "countdown": {
           "type": "countdown",
           "settings": {
@@ -82,6 +76,12 @@
           "type": "pickup_availability",
           "settings": {}
         },
+        "description": {
+          "type": "description",
+          "settings": {
+            "text_size": "text-base"
+          }
+        },
         "share": {
           "type": "share",
           "settings": {
@@ -111,12 +111,12 @@
       "block_order": [
         "vendor",
         "title",
-        "description",
         "countdown",
         "variant_picker",
         "inventory",
         "buy_buttons",
         "pickup_availability",
+        "description",
         "share",
         "complementary",
         "sticky_buy_button"
