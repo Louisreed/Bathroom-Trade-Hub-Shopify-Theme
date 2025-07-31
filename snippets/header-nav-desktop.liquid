@@ -193,20 +193,47 @@
         </details>
       </li>
     {%- else -%}
+      {%- liquid
+        comment
+          Check if this menu item should be rendered as a button
+        endcomment
+        assign render_as_button = false
+        assign button_block = null
+        assign link_handle = link.title | downcase | handle
+
+        for block in section.blocks
+          if block.type == 'menu_button' and block.settings.menu_handle == link_handle
+            assign render_as_button = true
+            assign button_block = block
+            break
+          endif
+        endfor
+      -%}
+
       <li>
-        <a
-          href="{{ link.url }}"
-          class="menu__item text-sm-lg flex items-center font-medium z-2 relative cursor-pointer"
-          is="magnet-link"
-          {% if section.settings.menu_active == 'block' %}
-            data-magnet="0"
-          {% endif %}
-        >
-          <span class="btn-text" data-text>{{ link.title }}</span>
-          {%- if section.settings.menu_active == 'block' -%}
-            <span class="btn-text btn-duplicate">{{ link.title }}</span>
-          {%- endif -%}
-        </a>
+        {%- if render_as_button -%}
+          <a
+            href="{{ link.url }}"
+            class="menu-button menu-button--{{ button_block.settings.menu_handle | handleize }} z-2 relative"
+            {{ button_block.shopify_attributes }}
+          >
+            {{ link.title }}
+          </a>
+        {%- else -%}
+          <a
+            href="{{ link.url }}"
+            class="menu__item text-sm-lg flex items-center font-medium z-2 relative cursor-pointer"
+            is="magnet-link"
+            {% if section.settings.menu_active == 'block' %}
+              data-magnet="0"
+            {% endif %}
+          >
+            <span class="btn-text" data-text>{{ link.title }}</span>
+            {%- if section.settings.menu_active == 'block' -%}
+              <span class="btn-text btn-duplicate">{{ link.title }}</span>
+            {%- endif -%}
+          </a>
+        {%- endif -%}
       </li>
     {%- endif -%}
   {%- endfor -%}
