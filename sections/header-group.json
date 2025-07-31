@@ -84,8 +84,8 @@
         "menu_tag_rAQQTm": {
           "type": "menu_tag",
           "settings": {
-            "menu_handle": "Create-an-Account",
-            "tag_text": "important!",
+            "menu_handle": "clearance",
+            "tag_text": "hurry!",
             "background_color": "#f12a2a",
             "text_color": "#ffffff",
             "tag_style": "pill"
