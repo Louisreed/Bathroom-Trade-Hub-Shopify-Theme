@@ -195,19 +195,20 @@
     {%- else -%}
       {%- liquid
         comment
-          Check if this menu item should be rendered as a button
+          Check if this menu item should be rendered as a button and if it should be hidden
         endcomment
         assign render_as_button = false
         assign button_block = null
+        assign hide_entire_item = false
         assign link_handle = link.title | downcase | handle
 
         for block in section.blocks
           if block.type == 'menu_button' and block.settings.menu_handle == link_handle
             comment
-              Check if button should be hidden when logged in
+              Check if entire menu item should be hidden when logged in
             endcomment
             if customer and block.settings.hide_when_logged_in
-              assign render_as_button = false
+              assign hide_entire_item = true
             else
               assign render_as_button = true
               assign button_block = block
@@ -217,31 +218,33 @@
         endfor
       -%}
 
-      <li>
-        {%- if render_as_button -%}
-          <a
-            href="{{ link.url }}"
-            class="menu-button menu-button--{{ button_block.settings.menu_handle | handleize }} z-2 relative"
-            {{ button_block.shopify_attributes }}
-          >
-            {{ link.title }}
-          </a>
-        {%- else -%}
-          <a
-            href="{{ link.url }}"
-            class="menu__item text-sm-lg flex items-center font-medium z-2 relative cursor-pointer"
-            is="magnet-link"
-            {% if section.settings.menu_active == 'block' %}
-              data-magnet="0"
-            {% endif %}
-          >
-            <span class="btn-text" data-text>{{ link.title }}</span>
-            {%- if section.settings.menu_active == 'block' -%}
-              <span class="btn-text btn-duplicate">{{ link.title }}</span>
-            {%- endif -%}
-          </a>
-        {%- endif -%}
-      </li>
+      {%- unless hide_entire_item -%}
+        <li>
+          {%- if render_as_button -%}
+            <a
+              href="{{ link.url }}"
+              class="menu-button menu-button--{{ button_block.settings.menu_handle | handleize }} z-2 relative"
+              {{ button_block.shopify_attributes }}
+            >
+              {{ link.title }}
+            </a>
+          {%- else -%}
+            <a
+              href="{{ link.url }}"
+              class="menu__item text-sm-lg flex items-center font-medium z-2 relative cursor-pointer"
+              is="magnet-link"
+              {% if section.settings.menu_active == 'block' %}
+                data-magnet="0"
+              {% endif %}
+            >
+              <span class="btn-text" data-text>{{ link.title }}</span>
+              {%- if section.settings.menu_active == 'block' -%}
+                <span class="btn-text btn-duplicate">{{ link.title }}</span>
+              {%- endif -%}
+            </a>
+          {%- endif -%}
+        </li>
+      {%- endunless -%}
     {%- endif -%}
   {%- endfor -%}
 

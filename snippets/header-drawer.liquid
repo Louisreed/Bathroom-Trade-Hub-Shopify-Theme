@@ -114,18 +114,19 @@
                   endfor
 
                   comment
-                    Check if this menu item should be rendered as a button
+                    Check if this menu item should be rendered as a button and if it should be hidden
                   endcomment
                   assign render_as_button = false
                   assign button_block = null
+                  assign hide_entire_item = false
 
                   for block in section.blocks
                     if block.type == 'menu_button' and block.settings.menu_handle == link_handle
                       comment
-                        Check if button should be hidden when logged in
+                        Check if entire menu item should be hidden when logged in
                       endcomment
                       if customer and block.settings.hide_when_logged_in
-                        assign render_as_button = false
+                        assign hide_entire_item = true
                       else
                         assign render_as_button = true
                         assign button_block = block
@@ -135,22 +136,27 @@
                   endfor
                 -%}
 
-                {%- if render_as_button -%}
-                  <a
-                    class="menu-button menu-button--{{ button_block.settings.menu_handle | handleize }} block text-center"
-                    href="{{ link.url }}"
-                    {{ button_block.shopify_attributes }}
-                  >
-                    {{ link.title | escape }}
-                  </a>
-                {%- else -%}
-                  <a class="drawer__menu-item block heading text-2xl leading-none tracking-tight" href="{{ link.url }}">
-                    {{- link.title | escape -}}
-                    {%- if show_tag -%}
-                      <span class="menu-item-tag menu-item-tag--{{ tag_class_suffix }}">{{ tag_text }}</span>
-                    {%- endif -%}
-                  </a>
-                {%- endif -%}
+                {%- unless hide_entire_item -%}
+                  {%- if render_as_button -%}
+                    <a
+                      class="menu-button menu-button--{{ button_block.settings.menu_handle | handleize }} block text-center"
+                      href="{{ link.url }}"
+                      {{ button_block.shopify_attributes }}
+                    >
+                      {{ link.title | escape }}
+                    </a>
+                  {%- else -%}
+                    <a
+                      class="drawer__menu-item block heading text-2xl leading-none tracking-tight"
+                      href="{{ link.url }}"
+                    >
+                      {{- link.title | escape -}}
+                      {%- if show_tag -%}
+                        <span class="menu-item-tag menu-item-tag--{{ tag_class_suffix }}">{{ tag_text }}</span>
+                      {%- endif -%}
+                    </a>
+                  {%- endif -%}
+                {%- endunless -%}
               {%- endif -%}
             </li>
           {%- endfor -%}
