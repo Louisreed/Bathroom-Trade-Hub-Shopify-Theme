@@ -139,7 +139,7 @@
           "type": "text",
           "name": "t:blocks.text.name",
           "settings": {
-            "text": "<p>Bathroom Trade Hub has been created with the local installer in mind, the days of overpaying for what we class as 'the essentials' are over, join our exclusive savers club where you can save money on everything! <em><strong>See account options below.</strong></em></p>",
+            "text": "<p>Bathroom Trade Hub has been created with the local installer in mind, the days of overpaying for what we class as 'the essentials' are over, join our exclusive savers club where you can save money on everything! </p>",
             "text_font": "body",
             "text_size": "text-base lg:text-lg",
             "text_max_size": 42,
@@ -162,7 +162,7 @@
           "type": "text",
           "name": "t:blocks.text.name",
           "settings": {
-            "text": "<p><strong>Choose your account below!</strong></p>",
+            "text": "<p><em><strong>Choose your account below!</strong></em></p>",
             "text_font": "body",
             "text_size": "text-base lg:text-lg",
             "text_max_size": 32,
@@ -175,9 +175,9 @@
             "alignment": "center",
             "width_mobile": "fit-content",
             "custom_width_mobile": 100,
-            "effects": "none",
-            "highlighted_text": "text",
-            "highlighted_scribble": "circle"
+            "effects": "highlight",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "sketch-underline"
           },
           "blocks": {}
         },
