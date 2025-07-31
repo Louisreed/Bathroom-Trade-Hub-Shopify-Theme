@@ -1,6 +1,930 @@
+{% doc %}
+  @prompt
+    Add a background colour customization option for square link elements, allowing merchants to select and apply different background colours to their square-styled links
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-square-links-container-{{ ai_gen_id }} {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax({{ block.settings.min_width }}px, 1fr));
+    gap: {{ block.settings.gap }}px;
+    padding: {{ block.settings.container_padding }}px;}
+
+  .ai-square-link-{{ ai_gen_id }} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1;
+    padding: {{ block.settings.link_padding }}px;
+    text-decoration: none;
+    border-radius: {{ block.settings.border_radius }}px;
+    transition: all 0.3s ease;
+    text-align: center;
+    min-height: {{ block.settings.min_height }}px;
+    border: {{ block.settings.border_width }}px solid {{ block.settings.border_color }};
+  }
+
+  .ai-square-link-{{ ai_gen_id }}:hover {
+    transform: translateY(-{{ block.settings.hover_lift }}px);
+    box-shadow: 0 {{ block.settings.shadow_blur }}px {{ block.settings.shadow_spread }}px {{ block.settings.shadow_color }};
+  }
+
+  .ai-square-link-icon-{{ ai_gen_id }} {
+    width: {{ block.settings.icon_size }}px;
+    height: {{ block.settings.icon_size }}px;
+    margin-bottom: {{ block.settings.icon_spacing }}px;
+    flex-shrink: 0;
+  }
+
+  .ai-square-link-icon-{{ ai_gen_id }} svg {
+    width: 100%;
+    height: 100%;
+    fill: currentColor;
+  }
+
+  .ai-square-link-title-{{ ai_gen_id }} {
+    font-size: {{ block.settings.title_size }}px;
+    font-weight: {{ block.settings.title_weight }};
+    margin:0;
+    line-height: 1.2;}
+
+  .ai-square-link-description-{{ ai_gen_id }} {
+    font-size: {{ block.settings.description_size }}px;
+    margin: {{ block.settings.description_spacing }}px 0 0;
+    line-height: 1.3;
+    opacity: 0.8;
+  }
+
+  .ai-square-link-1-{{ ai_gen_id }} {
+    background-color: {{ block.settings.link_1_bg_color }};
+    color: {{ block.settings.link_1_text_color }};
+  }
+
+  .ai-square-link-1-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.link_1_hover_bg_color }};
+    color: {{ block.settings.link_1_hover_text_color }};
+  }
+
+  .ai-square-link-2-{{ ai_gen_id }} {
+    background-color: {{ block.settings.link_2_bg_color }};
+    color: {{ block.settings.link_2_text_color }};
+  }
+
+  .ai-square-link-2-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.link_2_hover_bg_color }};
+    color: {{ block.settings.link_2_hover_text_color }};
+  }
+
+  .ai-square-link-3-{{ ai_gen_id }} {
+    background-color: {{ block.settings.link_3_bg_color }};
+    color: {{ block.settings.link_3_text_color }};
+  }
+
+  .ai-square-link-3-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.link_3_hover_bg_color }};
+    color: {{ block.settings.link_3_hover_text_color }};
+  }
+
+  .ai-square-link-4-{{ ai_gen_id }} {
+    background-color: {{ block.settings.link_4_bg_color }};
+    color: {{ block.settings.link_4_text_color }};
+  }
+
+  .ai-square-link-4-{{ ai_gen_id }}:hover {
+    background-color: {{ block.settings.link_4_hover_bg_color }};
+    color: {{ block.settings.link_4_hover_text_color }};
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-square-links-container-{{ ai_gen_id }} {
+      grid-template-columns: repeat({{ block.settings.columns_mobile }}, 1fr);gap: {{ block.settings.gap_mobile }}px;padding: {{ block.settings.container_padding_mobile }}px;
+    }
+
+    .ai-square-link-{{ ai_gen_id }} {
+      min-height: {{ block.settings.min_height_mobile }}px;
+      padding: {{ block.settings.link_padding_mobile }}px;
+    }
+
+    .ai-square-link-icon-{{ ai_gen_id }} {
+      width: {{ block.settings.icon_size_mobile }}px;
+      height: {{ block.settings.icon_size_mobile }}px;
+    }
+
+    .ai-square-link-title-{{ ai_gen_id }} {
+      font-size: {{ block.settings.title_size_mobile }}px;
+    }
+
+    .ai-square-link-description-{{ ai_gen_id }} {
+      font-size: {{ block.settings.description_size_mobile }}px;
+    }
+  }
+{% endstyle %}<div class="ai-square-links-container-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  {% for i in (1..4) %}
+    {% liquid
+      assign link_enabled_key = 'link_' | append: i | append: '_enabled'
+      assign link_url_key = 'link_' | append: i | append: '_url'
+      assign link_title_key = 'link_' | append: i | append: '_title'
+      assign link_description_key = 'link_' | append: i | append: '_description'
+      assign link_icon_key = 'link_' | append: i | append: '_icon'
+
+      assign link_enabled = block.settings[link_enabled_key]
+      assign link_url = block.settings[link_url_key]
+      assign link_title = block.settings[link_title_key]
+      assign link_description = block.settings[link_description_key]
+      assign link_icon = block.settings[link_icon_key]
+    %}
+
+    {% if link_enabled and link_title != blank %}
+      <a
+        href="{{ link_url | default: '#' }}"
+        class="ai-square-link-{{ ai_gen_id }} ai-square-link-{{ i }}-{{ ai_gen_id }}"
+        {% if link_url == blank %}aria-disabled="true"{% endif %}
+      >
+        {% if link_icon != blank %}
+          <div class="ai-square-link-icon-{{ ai_gen_id }}">
+            {% case link_icon %}
+              {% when 'home' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+                  <polyline points="9,22 9,12 15,12 15,22"/>
+                </svg>
+              {% when 'shop' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7"/>
+                  <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/>
+                  <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4"/>
+                </svg>
+              {% when 'user' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                  <circle cx="12" cy="7" r="4"/>
+                </svg>
+              {% when 'heart' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/>
+                </svg>
+              {% when 'search' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="11" cy="11" r="8"/>
+                  <path d="m21 21-4.35-4.35"/>
+                </svg>
+              {% when 'cart' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="8" cy="21" r="1"/>
+                  <circle cx="19" cy="21" r="1"/>
+                  <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+                </svg>
+              {% when 'star' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/>
+                </svg>
+              {% when 'mail' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                  <polyline points="22,6 12,132,6"/>
+                </svg>
+              {% when 'phone' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+              {% when 'gift' %}
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="20,12 20,22 4,22 4,12"/>
+                  <rect x="2" y="7" width="20" height="5"/>
+                  <line x1="12" y1="22" x2="12" y2="7"/>
+                  <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"/>
+                  <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"/>
+                </svg>
+            {% endcase %}
+          </div>
+        {% endif %}
+
+        <h3 class="ai-square-link-title-{{ ai_gen_id }}">{{ link_title }}</h3>
+
+        {% if link_description != blank %}
+          <p class="ai-square-link-description-{{ ai_gen_id }}">{{ link_description }}</p>
+        {% endif %}
+      </a>
+    {% endif %}
+  {% endfor %}
+</div>
+
 {% schema %}
- {
-   "name": "AI_Block",
-   "tag": "shopify-ai-generated-block"
- }
+{
+  "name": "Square Links",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "min_width",
+      "min": 150,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "label": "Minimum link width",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "min_height",
+      "min": 150,
+      "max": 400,
+      "step": 10,
+      "unit": "px",
+      "label": "Minimum link height",
+      "default": 200
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Gap between links",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "container_padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "label": "Container padding",
+      "default": 20
+    },
+    {
+      "type": "select",
+      "id": "columns_mobile",
+      "label": "Columns on mobile",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "range",
+      "id": "gap_mobile",
+      "min": 5,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "label": "Gap on mobile",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "container_padding_mobile",
+      "min": 0,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Container padding on mobile",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "min_height_mobile",
+      "min": 120,
+      "max": 300,
+      "step": 10,
+      "unit": "px",
+      "label": "Minimum height on mobile",
+      "default": 150
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "range",
+      "id": "border_radius",
+      "min": 0,
+      "max": 50,
+      "step": 2,
+      "unit": "px",
+      "label": "Border radius",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "link_padding",
+      "min": 10,
+      "max": 50,
+      "step": 5,
+      "unit": "px",
+      "label": "Link padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "link_padding_mobile",
+      "min": 5,
+      "max": 30,
+      "step": 5,
+      "unit": "px",
+      "label": "Link padding on mobile",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "border_width",
+      "min": 0,
+      "max": 5,
+      "step": 1,
+      "unit": "px",
+      "label": "Border width",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#e0e0e0"
+    },
+    {
+      "type": "header",
+      "content": "Hover Effects"
+    },
+    {
+      "type": "range",
+      "id": "hover_lift",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Hover lift distance",
+      "default": 3
+    },
+    {
+      "type": "range",
+      "id": "shadow_blur",
+      "min": 0,
+      "max": 30,
+      "step": 2,
+      "unit": "px",
+      "label": "Shadow blur",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "shadow_spread",
+      "min": 0,
+      "max": 10,
+      "step": 1,
+      "unit": "px",
+      "label": "Shadow spread",
+      "default": 0
+    },
+    {
+      "type": "color",
+      "id": "shadow_color",
+      "label": "Shadow color",
+      "default": "rgba(0, 0, 0, 0.1)"
+    },
+    {
+      "type": "header",
+      "content": "Typography"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 12,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Title size",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Title size on mobile",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "title_weight",
+      "label": "Title weight",
+      "options": [
+        {
+          "value": "400",
+          "label": "Normal"
+        },
+        {
+          "value": "500",
+          "label": "Medium"
+        },
+        {
+          "value": "600",
+          "label": "Semi-bold"
+        },
+        {
+          "value": "700",
+          "label": "Bold"
+        }
+      ],
+      "default": "600"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "description_size_mobile",
+      "min": 10,
+      "max": 16,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size on mobile",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "description_spacing",
+      "min": 5,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Description top spacing",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Icons"
+    },
+    {
+      "type": "range",
+      "id": "icon_size",
+      "min": 20,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Icon size",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "icon_size_mobile",
+      "min": 16,
+      "max": 40,
+      "step": 2,
+      "unit": "px",
+      "label": "Icon size on mobile",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "icon_spacing",
+      "min": 5,
+      "max": 25,
+      "step": 1,
+      "unit": "px",
+      "label": "Icon bottom spacing",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Link 1"
+    },
+    {
+      "type": "checkbox",
+      "id": "link_1_enabled",
+      "label": "Enable link 1",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "link_1_title",
+      "label": "Title",
+      "default": "Shop Now"
+    },
+    {
+      "type": "text",
+      "id": "link_1_description",
+      "label": "Description",
+      "default": "Browse our collection"
+    },
+    {
+      "type": "url",
+      "id": "link_1_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "select",
+      "id": "link_1_icon",
+      "label": "Icon",
+      "options": [
+        {
+          "value": "",
+          "label": "None"
+        },
+        {
+          "value": "home",
+          "label": "Home"
+        },
+        {
+          "value": "shop",
+          "label": "Shop"
+        },
+        {
+          "value": "user",
+          "label": "User"
+        },
+        {
+          "value": "heart",
+          "label": "Heart"
+        },
+        {
+          "value": "search",
+          "label": "Search"
+        },
+        {
+          "value": "cart",
+          "label": "Cart"
+        },
+        {
+          "value": "star",
+          "label": "Star"
+        },
+        {
+          "value": "mail",
+          "label": "Mail"
+        },
+        {
+          "value": "phone",
+          "label": "Phone"
+        },
+        {
+          "value": "gift",
+          "label": "Gift"
+        }
+      ],
+      "default": "shop"
+    },
+    {
+      "type": "color",
+      "id": "link_1_bg_color",
+      "label": "Background color",
+      "default": "#2acaf1"
+    },
+    {
+      "type": "color",
+      "id": "link_1_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "link_1_hover_bg_color",
+      "label": "Hover background color",
+      "default": "#1fb5d6"
+    },
+    {
+      "type": "color",
+      "id": "link_1_hover_text_color",
+      "label": "Hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Link 2"
+    },
+    {
+      "type": "checkbox",
+      "id": "link_2_enabled",
+      "label": "Enable link 2",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "link_2_title",
+      "label": "Title",
+      "default": "About Us"
+    },
+    {
+      "type": "text",
+      "id": "link_2_description",
+      "label": "Description",
+      "default": "Learn our story"
+    },
+    {
+      "type": "url",
+      "id": "link_2_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "select",
+      "id": "link_2_icon",
+      "label": "Icon",
+      "options": [
+        {
+          "value": "",
+          "label": "None"
+        },
+        {
+          "value": "home",
+          "label": "Home"
+        },
+        {
+          "value": "shop",
+          "label": "Shop"
+        },
+        {
+          "value": "user",
+          "label": "User"
+        },
+        {
+          "value": "heart",
+          "label": "Heart"
+        },
+        {
+          "value": "search",
+          "label": "Search"
+        },
+        {
+          "value": "cart",
+          "label": "Cart"
+        },
+        {
+          "value": "star",
+          "label": "Star"
+        },
+        {
+          "value": "mail",
+          "label": "Mail"
+        },
+        {
+          "value": "phone",
+          "label": "Phone"
+        },
+        {
+          "value": "gift",
+          "label": "Gift"
+        }
+      ],
+      "default": "user"
+    },
+    {
+      "type": "color",
+      "id": "link_2_bg_color",
+      "label": "Background color",
+      "default": "#424242"
+    },
+    {
+      "type": "color",
+      "id": "link_2_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "link_2_hover_bg_color",
+      "label": "Hover background color",
+      "default": "#2d2d2d"
+    },
+    {
+      "type": "color",
+      "id": "link_2_hover_text_color",
+      "label": "Hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Link 3"
+    },
+    {
+      "type": "checkbox",
+      "id": "link_3_enabled",
+      "label": "Enable link 3",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "link_3_title",
+      "label": "Title",
+      "default": "Contact"
+    },
+    {
+      "type": "text",
+      "id": "link_3_description",
+      "label": "Description",
+      "default": "Get in touch"
+    },
+    {
+      "type": "url",
+      "id": "link_3_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "select",
+      "id": "link_3_icon",
+      "label": "Icon",
+      "options": [
+        {
+          "value": "",
+          "label": "None"
+        },
+        {
+          "value": "home",
+          "label": "Home"
+        },
+        {
+          "value": "shop",
+          "label": "Shop"
+        },
+        {
+          "value": "user",
+          "label": "User"
+        },
+        {
+          "value": "heart",
+          "label": "Heart"
+        },
+        {
+          "value": "search",
+          "label": "Search"
+        },
+        {
+          "value": "cart",
+          "label": "Cart"
+        },
+        {
+          "value": "star",
+          "label": "Star"
+        },
+        {
+          "value": "mail",
+          "label": "Mail"
+        },
+        {
+          "value": "phone",
+          "label": "Phone"
+        },
+        {
+          "value": "gift",
+          "label": "Gift"
+        }
+      ],
+      "default": "mail"
+    },
+    {
+      "type": "color",
+      "id": "link_3_bg_color",
+      "label": "Background color",
+      "default": "#f59e0b"
+    },
+    {
+      "type": "color",
+      "id": "link_3_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "link_3_hover_bg_color",
+      "label": "Hover background color",
+      "default": "#d97706"
+    },
+    {
+      "type": "color",
+      "id": "link_3_hover_text_color",
+      "label": "Hover text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "Link 4"
+    },
+    {
+      "type": "checkbox",
+      "id": "link_4_enabled",
+      "label": "Enable link 4",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "link_4_title",
+      "label": "Title",
+      "default": "Support"
+    },
+    {
+      "type": "text",
+      "id": "link_4_description",
+      "label": "Description",
+      "default": "Need help?"
+    },
+    {
+      "type": "url",
+      "id": "link_4_url",
+      "label": "Link URL"
+    },
+    {
+      "type": "select",
+      "id": "link_4_icon",
+      "label": "Icon",
+      "options": [
+        {
+          "value": "",
+          "label": "None"
+        },
+        {
+          "value": "home",
+          "label": "Home"
+        },
+        {
+          "value": "shop",
+          "label": "Shop"
+        },
+        {
+          "value": "user",
+          "label": "User"
+        },
+        {
+          "value": "heart",
+          "label": "Heart"
+        },
+        {
+          "value": "search",
+          "label": "Search"
+        },
+        {
+          "value": "cart",
+          "label": "Cart"
+        },
+        {
+          "value": "star",
+          "label": "Star"
+        },
+        {
+          "value": "mail",
+          "label": "Mail"
+        },
+        {
+          "value": "phone",
+          "label": "Phone"
+        },
+        {
+          "value": "gift",
+          "label": "Gift"
+        }
+      ],
+      "default": "phone"
+    },
+    {
+      "type": "color",
+      "id": "link_4_bg_color",
+      "label": "Background color",
+      "default": "#10b981"
+    },
+    {
+      "type": "color",
+      "id": "link_4_text_color",
+      "label": "Text color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "link_4_hover_bg_color",
+      "label": "Hover background color",
+      "default": "#059669"
+    },
+    {
+      "type": "color",
+      "id": "link_4_hover_text_color",
+      "label": "Hover text color",
+      "default": "#ffffff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Square Links"
+    }
+  ]
+}
 {% endschema %}
