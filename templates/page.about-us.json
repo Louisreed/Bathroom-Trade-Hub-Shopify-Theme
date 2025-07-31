@@ -1,1 +1,203 @@
-{"sections":{"main-page":{"type":"main-page","disabled":true,"settings":{"heading_size":"title-xl tracking-heading","heading_alignment":"text-left","heading_tag":"h1","text_size":"text-base","padding_top":72,"padding_bottom":120,"divider":false,"narrow":true,"rounded":false}},"rich_text_9GdJq8":{"type":"rich-text","blocks":{"heading_gqfdhB":{"type":"heading","disabled":true,"settings":{"heading":"Rich text","heading_size":"title-lg tracking-heading","heading_tag":"h2","highlighted_text":"none","highlighted_scribble":"circle"}},"text_hQxYaW":{"type":"text","settings":{"text":"<h2><strong>About us<\/strong><\/h2><p>Welcome to Bathroom Trade Hub - your trusted local partner for everything bathroom-related!<\/p><p>Proudly based in Weymouth, Dorset, we're more than just a supplier - we're part of the local community. From the stunning Jurassic Coast to the historic harbourside, our beautiful seaside town inspires everything we do: reliable service, friendly support, and a genuine commitment to customer satisfaction. <\/p><p>With over 10 years of industry experience, we understand what it takes and we're here to make your job easier. Our mission is simple: helping the local trade by making access to essential products faster, easier, and more affordable.<\/p><p>We support local trade and DIYers across Dorset and the UK, offering a wide range of quality bathroom products at highly competitive prices - and we don't just match prices, we'll beat any genuine quote.<\/p><p>Need it fast? We offer <strong>FREE<\/strong> same-day delivery on in-stock products throughout Dorset on orders placed before 1pm (Monday-Friday, when you spend over £100 excl VAT), and our local warehouse is stocked ready for you to take away the very same day.<\/p><p>Whether you're refurbishing a home or taking on a big project, Bathroom Trade Hub is here to help you get it done. At the heart of Bathroom Trade Hub is our enthusiastic, knowledgeable team - always ready with expert advice, practical support, and a friendly face. We're passionate about keeping up with the times and embracing new technology and tools that make working with us even more seamless. <\/p><p>We value trust and long term relationships with our customers - because when you succeed, so do we.<\/p><p>We invite you to visit Bathroom Trade Hub at our showroom, located at:<\/p><p><strong>Unit A6, 83 Lynch Lane, Weymouth, DT3 5DN.<\/strong><\/p><p>We look forward to welcoming you soon.<\/p><p> <\/p>","text_font":"body","text_size":"subtext-md","text_max_size":32,"secondary_color":false,"highlighted_text":"none","highlighted_scribble":"circle"}}},"block_order":["heading_gqfdhB","text_hQxYaW"],"name":"Rich text","settings":{"text_alignment":"center","text_alignment_mobile":"center","heading":"","heading_size":"title-md","heading_alignment":"text-center md:items-center","heading_width":"small","heading_tag":"h2","subheading":"","description":"","button_label":"","button_link":"","button_external":false,"button_icon":false,"highlighted_text":"none","highlighted_scribble":"circle","color_text":"","color_background":"","gradient_background":"","color_highlight":"","gradient_highlight":"","color_button_text":"","color_button_background":"","color_button_gradient":"","padding_top":0,"padding_bottom":36,"divider":false,"narrow":false,"rounded":false}},"images_with_text_F3LBcA":{"type":"images-with-text","name":"Images with text","settings":{"image":"shopify:\/\/shop_images\/shipping-boxes-on-trolly-close-up.jpg","image_2":"shopify:\/\/shop_images\/Beige_and_Red_Free_Delivery_Instagram_Post.png","image_ratio":"portrait","image_width":"medium","layout":"image_first","text_alignment":"center","text_alignment_mobile":"center","color_text":"","color_background":"","gradient_background":"","color_highlight":"","gradient_highlight":"","color_button_text":"","color_button_background":"","color_button_gradient":"","padding_top":72,"padding_bottom":72,"divider":false,"full_width":false,"rounded":false,"enable_parallax":true}}},"order":["main-page","rich_text_9GdJq8","images_with_text_F3LBcA"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-page": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "title-xl tracking-heading",
+        "heading_alignment": "text-left",
+        "heading_tag": "h1",
+        "text_size": "text-base",
+        "text_capitalization": "",
+        "content_capitalization": "",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "padding_top": 72,
+        "padding_bottom": 120,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_left": 0,
+        "margin_right": 0,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "rich_text_9GdJq8": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_gqfdhB": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Rich text",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_hQxYaW": {
+          "type": "text",
+          "settings": {
+            "text": "<h2><strong>About us</strong></h2><p>Welcome to Bathroom Trade Hub - your trusted local partner for everything bathroom-related!</p><p>Proudly based in Weymouth, Dorset, we're more than just a supplier - we're part of the local community. From the stunning Jurassic Coast to the historic harbourside, our beautiful seaside town inspires everything we do: reliable service, friendly support, and a genuine commitment to customer satisfaction. </p><p>With over 10 years of industry experience, we understand what it takes and we're here to make your job easier. Our mission is simple: helping the local trade by making access to essential products faster, easier, and more affordable.</p><p>We support local trade and DIYers across Dorset and the UK, offering a wide range of quality bathroom products at highly competitive prices - and we don't just match prices, we'll beat any genuine quote.</p><p>Need it fast? We offer <strong>FREE</strong> same-day delivery on in-stock products throughout Dorset on orders placed before 1pm (Monday-Friday, when you spend over £100 excl VAT), and our local warehouse is stocked ready for you to take away the very same day.</p><p>Whether you're refurbishing a home or taking on a big project, Bathroom Trade Hub is here to help you get it done. At the heart of Bathroom Trade Hub is our enthusiastic, knowledgeable team - always ready with expert advice, practical support, and a friendly face. We're passionate about keeping up with the times and embracing new technology and tools that make working with us even more seamless. </p><p>We value trust and long term relationships with our customers - because when you succeed, so do we.</p><p>We invite you to visit Bathroom Trade Hub at our showroom, located at:</p><p><strong>Unit A6, 83 Lynch Lane, Weymouth, DT3 5DN.</strong></p><p>We look forward to welcoming you soon.</p><p> </p>",
+            "text_font": "body",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_gqfdhB",
+        "text_hQxYaW"
+      ],
+      "disabled": true,
+      "name": "Rich text",
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": false,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 36,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
+    "images_with_text_F3LBcA": {
+      "type": "images-with-text",
+      "disabled": true,
+      "name": "Images with text",
+      "settings": {
+        "image": "shopify://shop_images/shipping-boxes-on-trolly-close-up.jpg",
+        "image_2": "shopify://shop_images/Beige_and_Red_Free_Delivery_Instagram_Post.png",
+        "image_ratio": "portrait",
+        "image_width": "medium",
+        "layout": "image_first",
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "enable_parallax": true
+      }
+    },
+    "rich_text_HgbnDe": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_xMdmNm": {
+          "type": "heading",
+          "settings": {
+            "heading": "Who we are",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_fBmwkD": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>We’re Not Just Supplying Bathrooms — We’re Building an Empire.</strong></p><p></p><p><strong>At Bathroom Trade Hub, we’re proud to be launching a dedicated Trade & DIY Merchants Hub — a place built with one clear mission: to support the trade with honesty, unbeatable prices, and service you can count on.</strong></p><p></p><p><strong>Whether you’re a bathroom installer, plumber, tiler, or property developer, we’re here to build real relationships — not just transactions. No gimmicks. No inflated prices. Just straight-talking service and seriously competitive deals on quality bathroom products.</strong></p><p></p><p><strong>We’re growing fast, and we want the trade to grow with us.</strong></p><p></p><p><strong>Let’s build something better — together.</strong></p>",
+            "text_font": "body",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_xMdmNm",
+        "text_fBmwkD"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 32,
+        "padding_bottom": 100,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    }
+  },
+  "order": [
+    "main-page",
+    "rich_text_9GdJq8",
+    "images_with_text_F3LBcA",
+    "rich_text_HgbnDe"
+  ]
+}
