@@ -29,6 +29,23 @@
             "show_for_hubpro_plus": true
           }
         },
+        "image_NhPc9m": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/IMG_7740.heic",
+            "heading": "In-stock Products for Same-day Delivery or Collection",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "button_label": "HubESSENTIALS",
+            "button_link": "shopify://collections/all",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
+          }
+        },
         "image_h8F3QR": {
           "type": "image",
           "settings": {
@@ -80,23 +97,6 @@
             "show_for_hubpro_plus": true
           }
         },
-        "image_NhPc9m": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/IMG_7740.heic",
-            "heading": "In-stock Products for Same-day Delivery",
-            "heading_size": "title-lg tracking-heading",
-            "heading_tag": "h2",
-            "button_label": "SHOP IN-STOCK PRODUCTS",
-            "button_link": "shopify://collections/all",
-            "button_style": "secondary",
-            "button_external": false,
-            "button_icon": false,
-            "show_for_standard": true,
-            "show_for_hubpro_free": true,
-            "show_for_hubpro_plus": true
-          }
-        },
         "image_KkFJd6": {
           "type": "image",
           "settings": {
@@ -134,10 +134,10 @@
       },
       "block_order": [
         "slide-1",
+        "image_NhPc9m",
         "image_h8F3QR",
         "image_WNzL7A",
         "slide-2",
-        "image_NhPc9m",
         "image_KkFJd6",
         "image_JK6ePW"
       ],
