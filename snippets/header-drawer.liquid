@@ -67,98 +67,159 @@
         <ul class="drawer__scrollable drawer__menu relative w-full h-full" role="list" data-parent>
           {%- assign main_menu = section.settings.menu -%}
           {%- for link in main_menu.links -%}
-            <li class="drawer__menu-group">
-              {%- liquid
-                assign enable_mega_menu = false
-                assign mega_menu_block = null
-                assign link_title_handle = link.title | downcase | handle
+            {%- liquid
+              comment
+                Check user type visibility first
+                Standard users = logged out visitors OR logged in customers without HubPro tags
+              endcomment
+              assign show_menu_item = true
+              assign customer_type = 'standard'
+              assign link_handle = link.handle
 
-                for block in section.blocks
-                  assign menu_title_handle = block.settings.menu_title | downcase | handle
-                  if menu_title_handle == link_title_handle
-                    assign enable_mega_menu = true
-                    assign mega_menu_block = block
+              comment
+                Determine customer type:
+                - No customer (logged out) = standard
+                - Customer without hubpro tags = standard
+                - Customer with hubpro-free tag = hubpro-free
+                - Customer with hubpro-plus tag = hubpro-plus
+              endcomment
+              if customer
+                for tag in customer.tags
+                  if tag == 'hubpro-free'
+                    assign customer_type = 'hubpro-free'
+                    break
+                  elsif tag == 'hubpro-plus'
+                    assign customer_type = 'hubpro-plus'
                     break
                   endif
                 endfor
-              -%}
+              endif
 
-              {%- if link.links != blank or enable_mega_menu -%}
-                {%- render 'header-nav-drawer',
-                  section: section,
-                  link: link,
-                  enable_mega_menu: enable_mega_menu,
-                  enable_accordion_menu: section.settings.accordion_menu_mobile,
-                  block: mega_menu_block,
-                  position: forloop.index
-                -%}
-              {%- else -%}
+              comment
+                Check if there's a visibility block for this menu item
+              endcomment
+              for block in section.blocks
+                if block.type == 'menu_visibility'
+                  assign block_handle = block.settings.menu_handle | downcase
+                  assign menu_handle = link_handle | downcase
+                  if block_handle == menu_handle
+                    case customer_type
+                      when 'hubpro-free'
+                        unless block.settings.show_for_hubpro_free
+                          assign show_menu_item = false
+                        endunless
+                      when 'hubpro-plus'
+                        unless block.settings.show_for_hubpro_plus
+                          assign show_menu_item = false
+                        endunless
+                      when 'standard'
+                        unless block.settings.show_for_standard
+                          assign show_menu_item = false
+                        endunless
+                    endcase
+                    break
+                  endif
+                endif
+              endfor
+            -%}
+
+            {%- if show_menu_item -%}
+              <li class="drawer__menu-group">
                 {%- liquid
-                  assign show_tag = false
-                  assign tag_text = ''
-                  assign tag_class_suffix = ''
-                  assign link_handle = link.handle | downcase
-
-                  comment
-                    Check for tags first
-                  endcomment
-                  for tag_item in menu_tag_list
-                    assign tag_parts = tag_item | split: '|'
-                    assign tag_handle = tag_parts[0] | strip | downcase
-                    if link_handle == tag_handle and tag_parts[1] != blank
-                      assign show_tag = true
-                      assign tag_text = tag_parts[1] | strip
-                      assign tag_class_suffix = tag_handle | handleize
-                      break
-                    endif
-                  endfor
-
-                  comment
-                    Check if this menu item should be rendered as a button and if it should be hidden
-                  endcomment
-                  assign render_as_button = false
-                  assign button_block = null
-                  assign hide_entire_item = false
+                  assign enable_mega_menu = false
+                  assign mega_menu_block = null
 
                   for block in section.blocks
-                    if block.type == 'menu_button' and block.settings.menu_handle == link_handle
-                      comment
-                        Check if entire menu item should be hidden when logged in
-                      endcomment
-                      if customer and block.settings.hide_when_logged_in
-                        assign hide_entire_item = true
-                      else
-                        assign render_as_button = true
-                        assign button_block = block
-                      endif
+                    assign menu_title_handle = block.settings.menu_title | downcase | handle
+                    if menu_title_handle == link_handle
+                      assign enable_mega_menu = true
+                      assign mega_menu_block = block
                       break
                     endif
                   endfor
                 -%}
 
-                {%- unless hide_entire_item -%}
-                  {%- if render_as_button -%}
-                    <a
-                      class="menu-button menu-button--{{ button_block.settings.menu_handle | handleize }} block text-center"
-                      href="{{ link.url }}"
-                      {{ button_block.shopify_attributes }}
-                    >
-                      {{ link.title | escape }}
-                    </a>
-                  {%- else -%}
-                    <a
-                      class="drawer__menu-item block heading text-2xl leading-none tracking-tight"
-                      href="{{ link.url }}"
-                    >
-                      {{- link.title | escape -}}
-                      {%- if show_tag -%}
-                        <span class="menu-item-tag menu-item-tag--{{ tag_class_suffix }}">{{ tag_text }}</span>
-                      {%- endif -%}
-                    </a>
-                  {%- endif -%}
-                {%- endunless -%}
-              {%- endif -%}
-            </li>
+                {%- if link.links != blank or enable_mega_menu -%}
+                  {%- render 'header-nav-drawer',
+                    section: section,
+                    link: link,
+                    enable_mega_menu: enable_mega_menu,
+                    enable_accordion_menu: section.settings.accordion_menu_mobile,
+                    block: mega_menu_block,
+                    position: forloop.index
+                  -%}
+                {%- else -%}
+                  {%- liquid
+                    assign show_tag = false
+                    assign tag_text = ''
+                    assign tag_class_suffix = ''
+                    assign link_handle = link.handle | downcase
+
+                    comment
+                      Check for tags first
+                    endcomment
+                    for tag_item in menu_tag_list
+                      assign tag_parts = tag_item | split: '|'
+                      assign tag_handle = tag_parts[0] | strip | downcase
+                      if link_handle == tag_handle and tag_parts[1] != blank
+                        assign show_tag = true
+                        assign tag_text = tag_parts[1] | strip
+                        assign tag_class_suffix = tag_handle | handleize
+                        break
+                      endif
+                    endfor
+
+                    comment
+                      Check if this menu item should be rendered as a button and if it should be hidden
+                    endcomment
+                    assign render_as_button = false
+                    assign button_block = null
+                    assign hide_entire_item = false
+
+                    for block in section.blocks
+                      if block.type == 'menu_button'
+                        assign button_block_handle = block.settings.menu_handle | downcase
+                        assign button_menu_handle = link_handle | downcase
+                        if button_block_handle == button_menu_handle
+                          comment
+                            Check if entire menu item should be hidden when logged in
+                          endcomment
+                          if customer and block.settings.hide_when_logged_in
+                            assign hide_entire_item = true
+                          else
+                            assign render_as_button = true
+                            assign button_block = block
+                          endif
+                          break
+                        endif
+                      endif
+                    endfor
+                  -%}
+
+                  {%- unless hide_entire_item -%}
+                    {%- if render_as_button -%}
+                      <a
+                        class="menu-button menu-button--{{ button_block.settings.menu_handle | handleize }} block text-center"
+                        href="{{ link.url }}"
+                        {{ button_block.shopify_attributes }}
+                      >
+                        {{ link.title | escape }}
+                      </a>
+                    {%- else -%}
+                      <a
+                        class="drawer__menu-item block heading text-2xl leading-none tracking-tight"
+                        href="{{ link.url }}"
+                      >
+                        {{- link.title | escape -}}
+                        {%- if show_tag -%}
+                          <span class="menu-item-tag menu-item-tag--{{ tag_class_suffix }}">{{ tag_text }}</span>
+                        {%- endif -%}
+                      </a>
+                    {%- endif -%}
+                  {%- endunless -%}
+                {%- endif -%}
+              </li>
+            {%- endif -%}
           {%- endfor -%}
         </ul>
       </nav>

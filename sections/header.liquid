@@ -2090,6 +2090,44 @@
           "default": false
         }
       ]
+    },
+    {
+      "type": "menu_visibility",
+      "name": "Menu Visibility",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_handle",
+          "label": "Menu Item Handle",
+          "info": "Enter the menu handle (e.g., hubpro). Check browser console (F12) for available handles.",
+          "placeholder": "hubpro"
+        },
+        {
+          "type": "header",
+          "content": "User Type Visibility"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_for_standard",
+          "label": "Show for Standard Users",
+          "info": "Show this menu item for logged-out visitors and customers without HubPro tags",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_for_hubpro_free",
+          "label": "Show for HubPro Free Users",
+          "info": "Show this menu item for customers with hubpro-free tag",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_for_hubpro_plus",
+          "label": "Show for HubPro Plus Users",
+          "info": "Show this menu item for customers with hubpro-plus tag",
+          "default": true
+        }
+      ]
     }
   ],
   "enabled_on": {
