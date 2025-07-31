@@ -203,8 +203,15 @@
 
         for block in section.blocks
           if block.type == 'menu_button' and block.settings.menu_handle == link_handle
-            assign render_as_button = true
-            assign button_block = block
+            comment
+              Check if button should be hidden when logged in
+            endcomment
+            if customer and block.settings.hide_when_logged_in
+              assign render_as_button = false
+            else
+              assign render_as_button = true
+              assign button_block = block
+            endif
             break
           endif
         endfor
