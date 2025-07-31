@@ -1129,8 +1129,8 @@
           "type": "menu_button",
           "settings": {
             "menu_handle": "create-an-account",
-            "button_style": "secondary",
-            "button_size": "medium",
+            "button_style": "primary",
+            "button_size": "large",
             "button_text_color": "#ffffff",
             "button_background_color": "#2acaf1",
             "button_border_color": "#2acaf1",
