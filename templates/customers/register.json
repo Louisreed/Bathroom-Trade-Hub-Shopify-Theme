@@ -16,7 +16,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/image_146c9bf4-0634-4aa7-a5e8-a5b5eebc7f81.jpg",
-            "heading": "Save BIG with a DIY Account",
+            "heading": "Save BIG with a Bathroom Trade Hub Account",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "button_label": "",
@@ -93,7 +93,7 @@
           "type": "text",
           "name": "t:blocks.text.name",
           "settings": {
-            "text": "<p><strong>We sell quality products</strong></p>",
+            "text": "<p><strong>We sell quality products and essentials</strong></p>",
             "text_font": "body",
             "text_size": "text-base lg:text-lg",
             "text_max_size": 32,
@@ -116,7 +116,7 @@
           "type": "text",
           "name": "t:blocks.text.name",
           "settings": {
-            "text": "<p>Exclusively For Trade and DIY</p>",
+            "text": "<p><em>Exclusively</em> For Trade and DIY</p>",
             "text_font": "heading",
             "text_size": "subtext-custom",
             "text_max_size": 42,
@@ -129,8 +129,8 @@
             "alignment": "center",
             "width_mobile": "fit-content",
             "custom_width_mobile": 100,
-            "effects": "reveal",
-            "highlighted_text": "text",
+            "effects": "highlight",
+            "highlighted_text": "scribble",
             "highlighted_scribble": "circle"
           },
           "blocks": {}
@@ -139,7 +139,7 @@
           "type": "text",
           "name": "t:blocks.text.name",
           "settings": {
-            "text": "<p>Bathroom Trade Hub has been created with the local installer in mind, the days of overpaying for what we class as 'the essentials' are over, join our exclusive and savers club where you can save money on everything! <strong>See account options below.</strong></p>",
+            "text": "<p>Bathroom Trade Hub has been created with the local installer in mind, the days of overpaying for what we class as 'the essentials' are over, join our exclusive savers club where you can save money on everything! <em><strong>See account options below.</strong></em></p>",
             "text_font": "body",
             "text_size": "text-base lg:text-lg",
             "text_max_size": 42,
@@ -152,9 +152,9 @@
             "alignment": "center",
             "width_mobile": "fit-content",
             "custom_width_mobile": 100,
-            "effects": "none",
-            "highlighted_text": "text",
-            "highlighted_scribble": "circle"
+            "effects": "highlight",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "sketch-underline"
           },
           "blocks": {}
         },
