@@ -45,6 +45,8 @@
     "color_error_text": "#be123c",
     "color_error_background": "#fff1f2",
     "color_info_text": "#b45309",
+    "hubpro_free_color_background": "#ffffff",
+    "hubpro_free_color_highlight": "#bba14f",
     "hubpro_free_color_button_background": "#bb9f4d",
     "hubpro_free_essential_upsell_text_color": "#ffffff",
     "hubpro_free_essential_upsell_background_color": "#424242",
