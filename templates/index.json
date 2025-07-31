@@ -116,14 +116,14 @@
         "parallax_direction": "zoom"
       }
     },
-    "custom_section_YD3ti7": {
+    "custom_section_4yjtnX": {
       "type": "custom-section",
       "blocks": {
-        "text_3XqJjG": {
+        "text_4QAwBj": {
           "type": "text",
           "name": "t:blocks.text.name",
           "settings": {
-            "text": "<p><strong>We sell quality products</strong></p>",
+            "text": "<p><strong>We sell quality products and essentials</strong></p>",
             "text_font": "body",
             "text_size": "text-base lg:text-lg",
             "text_max_size": 32,
@@ -142,11 +142,11 @@
           },
           "blocks": {}
         },
-        "text_rxTaf6": {
+        "text_iVTzFA": {
           "type": "text",
           "name": "t:blocks.text.name",
           "settings": {
-            "text": "<p>Exclusively For Trade and DIY</p>",
+            "text": "<p>Exclusively For <em>Trade</em> and <em>DIY</em></p>",
             "text_font": "heading",
             "text_size": "subtext-custom",
             "text_max_size": 42,
@@ -159,17 +159,17 @@
             "alignment": "center",
             "width_mobile": "fit-content",
             "custom_width_mobile": 100,
-            "effects": "reveal",
-            "highlighted_text": "text",
+            "effects": "highlight",
+            "highlighted_text": "scribble",
             "highlighted_scribble": "circle"
           },
           "blocks": {}
         },
-        "text_nzrBgE": {
+        "text_Y9zhqi": {
           "type": "text",
           "name": "t:blocks.text.name",
           "settings": {
-            "text": "<p>Bathroom Trade Hub has been created with the local tradesman in mind, the days of overpaying for what we class as 'the essentials' are over, join our exclusive and trade-only savers club where you can save money on everything!</p>",
+            "text": "<p>Bathroom Trade Hub has been created with the local installer in mind, the days of overpaying for what we class as 'the essentials' are over, join our exclusive savers club where you can save money on everything! </p>",
             "text_font": "body",
             "text_size": "text-base lg:text-lg",
             "text_max_size": 42,
@@ -182,13 +182,36 @@
             "alignment": "center",
             "width_mobile": "fit-content",
             "custom_width_mobile": 100,
-            "effects": "reveal",
-            "highlighted_text": "text",
-            "highlighted_scribble": "circle"
+            "effects": "none",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "sketch-underline"
           },
           "blocks": {}
         },
-        "button_Rfnxi3": {
+        "text_jLzQmW": {
+          "type": "text",
+          "name": "t:blocks.text.name",
+          "settings": {
+            "text": "<p><em><strong>Choose your account below!</strong></em></p>",
+            "text_font": "body",
+            "text_size": "text-base lg:text-lg",
+            "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": false,
+            "width": "fill",
+            "custom_width": 100,
+            "alignment": "center",
+            "width_mobile": "fit-content",
+            "custom_width_mobile": 100,
+            "effects": "highlight",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "sketch-underline"
+          },
+          "blocks": {}
+        },
+        "button_QKqXDH": {
           "type": "button",
           "name": "t:blocks.button.name",
           "disabled": true,
@@ -208,7 +231,7 @@
           },
           "blocks": {}
         },
-        "button_8mwqwb": {
+        "button_mhmPBr": {
           "type": "button",
           "name": "t:blocks.button.name",
           "disabled": true,
@@ -228,17 +251,19 @@
           },
           "blocks": {}
         },
-        "ai_gen_block_20b878a_mbENCh": {
+        "column_2_x6TMYB": {
           "type": "column-2",
           "settings": {
-            "column_1_heading": "Create a DIY Account",
-            "column_1_content": "<p>Working on a new project or just getting that weekend list done? Receive up to <strong>35% DISCOUNT</strong> on RRP across our vast ranges of products. Simply log in and see your prices!</p>",
-            "column_1_button_text": "OPEN AN ACCOUNT",
-            "column_1_button_link": "/account/register",
-            "column_2_heading": "HubPRO",
-            "column_2_content": "<p>Are you ready to become a HubPRO? Save time and money by becoming a member and get access to unique offers and deals you will not find anywhere else. <strong>Trade Professionals ONLY.</strong></p>",
-            "column_2_button_text": "BECOME A HUBPRO MEMBER",
-            "column_2_button_link": "shopify://pages/hubpro",
+            "column_1_heading": "Create a Trade Account - Professionals ONLY.",
+            "column_1_content": "<p>Are you ready to become a HubPRO? Save time and money by becoming a member and get access to unique offers and deals you will not find anywhere else.</p>",
+            "column_1_button_text": "Sign Up Today",
+            "column_1_button_link": "shopify://pages/hubpro",
+            "column_1_heading_color": "",
+            "column_2_heading": "Create a DIY Account",
+            "column_2_content": "<p>Working on a new project or just getting that weekend list done? Receive up to <strong>35% DISCOUNT </strong>on RRP across our vast ranges of products. Simply log in and see your prices! </p>",
+            "column_2_button_text": "Create an Account",
+            "column_2_button_link": "#shopify-section-template--25586045157708__main-register",
+            "column_2_heading_color": "#424242",
             "column_gap": 30,
             "columns_mobile": "1",
             "column_gap_mobile": 20,
@@ -260,13 +285,13 @@
             "button_border_radius": 30,
             "button_font_size": 16,
             "button_font_size_mobile": 14,
-            "button_1_bg_color": "#2acaf1",
+            "button_1_bg_color": "#bba14f",
             "button_1_text_color": "#ffffff",
-            "button_1_hover_bg_color": "#1fb8df",
+            "button_1_hover_bg_color": "#d1be78",
             "button_1_hover_text_color": "#ffffff",
-            "button_2_bg_color": "#bb9f4d",
+            "button_2_bg_color": "#47c8f5",
             "button_2_text_color": "#ffffff",
-            "button_2_hover_bg_color": "#937e3f",
+            "button_2_hover_bg_color": "#47c8f5",
             "button_2_hover_text_color": "#ffffff",
             "background_color": "#ffffff",
             "column_background_color": "#f8f8f8",
@@ -279,18 +304,19 @@
             "text_size": 16,
             "text_size_mobile": 14,
             "border_radius": 0,
-            "hide_for_hubpro_members": true
+            "hide_for_hubpro_members": false
           },
           "blocks": {}
         }
       },
       "block_order": [
-        "text_3XqJjG",
-        "text_rxTaf6",
-        "text_nzrBgE",
-        "button_Rfnxi3",
-        "button_8mwqwb",
-        "ai_gen_block_20b878a_mbENCh"
+        "text_4QAwBj",
+        "text_iVTzFA",
+        "text_Y9zhqi",
+        "text_jLzQmW",
+        "button_QKqXDH",
+        "button_mhmPBr",
+        "column_2_x6TMYB"
       ],
       "name": "t:sections.custom-section.name",
       "settings": {
@@ -1423,7 +1449,7 @@
   },
   "order": [
     "slideshow",
-    "custom_section_YD3ti7",
+    "custom_section_4yjtnX",
     "rich-text",
     "featured_collections_pCKTEh",
     "image_with_text_pJFCwV",
