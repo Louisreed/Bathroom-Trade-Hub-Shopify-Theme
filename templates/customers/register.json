@@ -23,7 +23,10 @@
             "button_link": "",
             "button_style": "primary",
             "button_external": false,
-            "button_icon": false
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
           }
         },
         "image_QeYaD3": {
@@ -37,7 +40,10 @@
             "button_link": "",
             "button_style": "primary",
             "button_external": false,
-            "button_icon": false
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
           }
         },
         "image_Acyxdw": {
@@ -51,7 +57,10 @@
             "button_link": "",
             "button_style": "primary",
             "button_external": false,
-            "button_icon": false
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
           }
         }
       },
@@ -65,25 +74,25 @@
         "autoplay": false,
         "autoplay_speed": 5,
         "show_navigation": true,
-        "image_height": "650px",
+        "image_height": "400px",
         "content_width": "small",
         "image_height_mobile": "auto",
         "accessibility_info": "Slideshow about our brand",
         "color_text": "#ffffff",
-        "color_background": "#ffffff",
+        "color_background": "rgba(0,0,0,0)",
         "gradient_background": "",
         "color_button_text": "#171717",
         "color_button_background": "#ffffff",
         "color_button_gradient": "",
-        "color_overlay": "#171717",
-        "overlay_opacity": 20,
+        "color_overlay": "#47c8f5",
+        "overlay_opacity": 25,
         "padding_top": 0,
         "padding_bottom": 0,
         "divider": false,
         "full_width": true,
         "rounded": false,
-        "enable_parallax": false,
-        "parallax_direction": "vertical"
+        "enable_parallax": true,
+        "parallax_direction": "zoom"
       }
     },
     "custom_section_tkL6hE": {
@@ -576,7 +585,10 @@
             "button_link": "shopify://pages/hubpro",
             "button_style": "primary",
             "button_external": false,
-            "button_icon": false
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
           }
         },
         "image_rpfLFH": {
@@ -590,7 +602,10 @@
             "button_link": "",
             "button_style": "primary",
             "button_external": false,
-            "button_icon": false
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
           }
         },
         "image_JzKwq6": {
@@ -604,7 +619,10 @@
             "button_link": "",
             "button_style": "primary",
             "button_external": false,
-            "button_icon": false
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
           }
         }
       },
