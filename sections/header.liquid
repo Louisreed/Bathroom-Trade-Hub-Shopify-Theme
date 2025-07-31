@@ -154,6 +154,80 @@
     {% endif %}
   {% endfor %}
 
+    /* Mobile Header Layout - Hamburger on Left */
+  @media screen and (max-width: 1023px) {
+    .header {
+      --header-grid-template: "hamburger logo icons" / auto 1fr auto !important;
+      gap: 1rem !important;
+      align-items: center !important;
+    }
+
+    .header__icons--start {
+      display: flex !important;
+      grid-area: hamburger;
+      justify-content: flex-start !important;
+    }
+
+    .header__logo {
+      grid-area: logo;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      text-align: center !important;
+      margin-inline: auto !important;
+      width: 100% !important;
+    }
+
+    .header__icons--end {
+      grid-area: icons;
+      justify-content: flex-end !important;
+    }
+
+    /* Show hamburger only in start context on mobile */
+    .header__icons--start .menu-drawer-button {
+      display: flex !important;
+    }
+
+    .header__icons--end .menu-drawer-button {
+      display: none !important;
+    }
+
+    /* Hide search icon from start context on mobile */
+    .header__icons--start .search-drawer-button {
+      display: none !important;
+    }
+
+    /* Hide navigation row on mobile for center layout */
+    .header--center .header__navigation {
+      display: none !important;
+    }
+  }
+
+  /* Desktop: Ensure hamburger shows in start context and icons show properly */
+  @media screen and (min-width: 1024px) {
+    .header__icons--start {
+      display: flex !important;
+    }
+
+    .header__icons--start .menu-drawer-button {
+      display: flex !important;
+    }
+
+    .header__icons--end .menu-drawer-button {
+      display: none !important;
+    }
+
+    /* Reset mobile-only grid template for desktop */
+    .header {
+      gap: var(--header-items-gap) !important;
+    }
+
+    /* Ensure search shows in end context on desktop */
+    .header__icons--end .search-drawer-button {
+      display: flex !important;
+    }
+  }
+
   /* Menu Button Styling */
   .menu-button {
     display: inline-flex;
@@ -253,14 +327,18 @@
   {% endif %}
 >
   {%- liquid
-    render 'header-icons', section: section, show_search: true, show_hamburger: true, show_toggle: show_toggle, context: 'start'
+    comment
+      Mobile: Always show hamburger on left (start), other icons on right (end)
+      Desktop: Show hamburger based on layout
+    endcomment
+    render 'header-icons', section: section, show_search: false, show_hamburger: true, show_toggle: show_toggle, context: 'start'
 
     if header_layout != 'center-left' and header_layout != 'center-split'
       render 'header-logo', logo_h1: section.settings.logo_h1
     endif
 
     if header_layout == 'center'
-      render 'header-icons', section: section, show_search: true, show_account: true, show_cart: true, show_hamburger: true, context: 'end'
+      render 'header-icons', section: section, show_search: true, show_account: true, show_cart: true, show_hamburger: false, context: 'end'
     endif
   -%}
 
@@ -291,7 +369,7 @@
 
   {%- liquid
     if header_layout != 'center'
-      render 'header-icons', section: section, show_search: true, show_account: true, show_cart: true, show_hamburger: true, context: 'end'
+      render 'header-icons', section: section, show_search: true, show_account: true, show_cart: true, show_hamburger: false, context: 'end'
     endif
   -%}
 
