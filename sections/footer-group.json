@@ -22,12 +22,12 @@
             "title": "Maxi Panels"
           }
         },
-        "collection_nGdwHy": {
+        "collection_g9VAMy": {
           "type": "collection",
           "settings": {
-            "collection": "rectangular-shower-tray",
+            "collection": "modern-radiators",
             "products": [],
-            "title": "Rectangular Trays"
+            "title": "Designer Radiator"
           }
         },
         "collection_NTGEiA": {
@@ -46,6 +46,14 @@
             "title": "HubCHOICE"
           }
         },
+        "collection_nGdwHy": {
+          "type": "collection",
+          "settings": {
+            "collection": "rectangular-shower-tray",
+            "products": [],
+            "title": "Rectangular Trays"
+          }
+        },
         "collection_yqxAAw": {
           "type": "collection",
           "settings": {
@@ -53,23 +61,15 @@
             "products": [],
             "title": "Basin Taps"
           }
-        },
-        "collection_g9VAMy": {
-          "type": "collection",
-          "settings": {
-            "collection": "modern-radiators",
-            "products": [],
-            "title": "Designer Radiator"
-          }
         }
       },
       "block_order": [
         "collection_n6ycmz",
-        "collection_nGdwHy",
+        "collection_g9VAMy",
         "collection_NTGEiA",
         "collection_9icCtL",
-        "collection_yqxAAw",
-        "collection_g9VAMy"
+        "collection_nGdwHy",
+        "collection_yqxAAw"
       ],
       "settings": {
         "product_limit": 12,
