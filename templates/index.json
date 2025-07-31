@@ -23,12 +23,14 @@
             "button_link": "/account/register",
             "button_style": "secondary",
             "button_external": false,
-            "button_icon": false
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
           }
         },
         "image_h8F3QR": {
           "type": "image",
-          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/IMG_8017.heic",
             "heading": "<em>Join HubPRO to see prices!</em>",
@@ -38,7 +40,10 @@
             "button_link": "shopify://pages/trade-sign-up",
             "button_style": "secondary",
             "button_external": false,
-            "button_icon": false
+            "button_icon": false,
+            "show_for_standard": false,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
           }
         },
         "image_WNzL7A": {
@@ -52,7 +57,10 @@
             "button_link": "shopify://collections/hub-essentials",
             "button_style": "secondary",
             "button_external": false,
-            "button_icon": false
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
           }
         },
         "slide-2": {
@@ -66,7 +74,10 @@
             "button_link": "shopify://collections/maxi-panels-1",
             "button_style": "secondary",
             "button_external": false,
-            "button_icon": false
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
           }
         },
         "image_NhPc9m": {
@@ -80,7 +91,10 @@
             "button_link": "shopify://collections/all",
             "button_style": "secondary",
             "button_external": false,
-            "button_icon": false
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
           }
         }
       },
