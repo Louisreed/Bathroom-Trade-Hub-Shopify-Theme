@@ -37,11 +37,24 @@
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
+        },
+        "announcement_JK3HPV": {
+          "type": "announcement",
+          "settings": {
+            "icon": "creadit_card",
+            "text": "WANT BETTER PRICING? SIGN UP HERE",
+            "link": "/account/register",
+            "hide_icon_mobile": true,
+            "text_mobile": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
         }
       },
       "block_order": [
         "announcement-1",
-        "announcement-2"
+        "announcement-2",
+        "announcement_JK3HPV"
       ],
       "settings": {
         "show_social": true,
