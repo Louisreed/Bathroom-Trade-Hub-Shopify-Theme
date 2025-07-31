@@ -25,6 +25,7 @@
     "hubpro_plus_white_logo_mobile": "shopify://shop_images/HubPRO-Logo.png",
     "favicon": "shopify://shop_images/socialmediaprofileArtboard_1.png",
     "color_text": "#424242",
+    "color_highlight": "#bba14f",
     "color_keyboard_focus": "#47c8f5",
     "color_shadow": "#47c8f5",
     "color_image_background": "#fafafa",
