@@ -17,9 +17,9 @@
         "collection_n6ycmz": {
           "type": "collection",
           "settings": {
-            "collection": "square-shower-tray",
+            "collection": "maxi-panels-1",
             "products": [],
-            "title": "Square Trays"
+            "title": "Maxi Panels"
           }
         },
         "collection_nGdwHy": {
@@ -33,33 +33,33 @@
         "collection_NTGEiA": {
           "type": "collection",
           "settings": {
-            "collection": "quadrant-trays",
+            "collection": "hubessentials",
             "products": [],
-            "title": "Quadrant Trays"
+            "title": "HubESSENTIALS"
           }
         },
         "collection_9icCtL": {
           "type": "collection",
           "settings": {
-            "collection": "off-set-quadrant",
+            "collection": "hubchoice",
             "products": [],
-            "title": "Offset Quadrant Trays"
+            "title": "HubCHOICE"
           }
         },
         "collection_yqxAAw": {
           "type": "collection",
           "settings": {
-            "collection": "walk-in-trays",
+            "collection": "basin-taps",
             "products": [],
-            "title": "Walk-In Trays"
+            "title": "Basin Taps"
           }
         },
         "collection_g9VAMy": {
           "type": "collection",
           "settings": {
-            "collection": "black-shower-trays",
+            "collection": "modern-radiators",
             "products": [],
-            "title": "Black Trays"
+            "title": "Designer Radiator"
           }
         }
       },
@@ -71,7 +71,6 @@
         "collection_yqxAAw",
         "collection_g9VAMy"
       ],
-      "disabled": true,
       "settings": {
         "product_limit": 12,
         "columns": 5,
