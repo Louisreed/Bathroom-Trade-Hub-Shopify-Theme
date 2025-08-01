@@ -135,6 +135,25 @@
             "show_for_hubpro_plus": false
           }
         },
+        "image_wcjf8M": {
+          "type": "image",
+          "name": "KARTELLHUBPRO",
+          "settings": {
+            "image": "shopify://shop_images/Carousel-Banner-scaled.jpg",
+            "image_mobile": "shopify://shop_images/Carousel-Banner-scaled.jpg",
+            "heading": "Get <strong>50%</strong> off the Kartell Range",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "button_label": "SHOP KARTELL",
+            "button_link": "shopify://collections/all",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": false,
+            "show_for_standard": false,
+            "show_for_hubpro_free": false,
+            "show_for_hubpro_plus": true
+          }
+        },
         "image_JK6ePW": {
           "type": "image",
           "settings": {
@@ -161,6 +180,7 @@
         "slide-2",
         "image_KkFJd6",
         "image_fWDXqc",
+        "image_wcjf8M",
         "image_JK6ePW"
       ],
       "settings": {
