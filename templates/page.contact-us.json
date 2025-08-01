@@ -51,7 +51,7 @@
           "settings": {
             "text": "<p>📞 01305 608599<br/>📧 Enquiries@bathroomtradehub.co.uk<br/>ⓕ Bathroom Trade Hub</p><p></p>",
             "text_font": "body",
-            "text_size": "subtext-lg",
+            "text_size": "subtext-xl",
             "text_max_size": 32,
             "text_line_height": 1.6,
             "text_letter_spacing": 0,
