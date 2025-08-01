@@ -50,6 +50,7 @@
         },
         "image_h8F3QR": {
           "type": "image",
+          "name": "CREATEANACCOUNT",
           "settings": {
             "image": "shopify://shop_images/IMG_8017.heic",
             "heading": "<em>Create an Account to view your amazing discounts!</em>",
@@ -69,7 +70,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/IMG_7744.heic",
-            "heading": "Save BIG on essentials!",
+            "heading": "Consumables for Days!",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "button_label": "HubESSENTIALS",
