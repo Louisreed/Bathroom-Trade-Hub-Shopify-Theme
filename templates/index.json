@@ -14,6 +14,7 @@
       "blocks": {
         "slide-1": {
           "type": "image",
+          "name": "SUPPORTINGBANNER",
           "settings": {
             "image": "shopify://shop_images/Durdle_Door_Overview.jpg",
             "heading": "Supporting the <strong>Local Trade</strong> and DIY of Dorset<em>.</em>",
@@ -31,9 +32,10 @@
         },
         "image_NhPc9m": {
           "type": "image",
+          "name": "HubESSENTIALS",
           "settings": {
             "image": "shopify://shop_images/IMG_7740.heic",
-            "heading": "In-stock Products for Same-day Delivery or Collection",
+            "heading": "Introducing Hub Essentials, in-stock ready to go!",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "button_label": "HubESSENTIALS",
@@ -50,11 +52,11 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/IMG_8017.heic",
-            "heading": "<em>Join HubPRO to see prices!</em>",
+            "heading": "<em>Create an Account to view your amazing discounts!</em>",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
-            "button_label": "HubPRO",
-            "button_link": "shopify://pages/trade-sign-up",
+            "button_label": "Create a Free Account",
+            "button_link": "/pages/register",
             "button_style": "secondary",
             "button_external": false,
             "button_icon": false,
