@@ -590,7 +590,7 @@
             "promo_overlay_opacity_1": 40,
             "promo_image_2": "shopify://shop_images/Screenshot2024-05-02at13.23.08.jpg",
             "promo_image_ratio_2": "square",
-            "promo_heading_2": "Back to Wall",
+            "promo_heading_2": "",
             "promo_subtext_2": "",
             "promo_overlay_content_2": true,
             "promo_link_2": "shopify://collections/back-to-wall",
