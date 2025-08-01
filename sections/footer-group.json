@@ -27,7 +27,7 @@
           "settings": {
             "collection": "modern-radiators",
             "products": [],
-            "title": "Designer Radiator"
+            "title": "Designer Radiators"
           }
         },
         "collection_NTGEiA": {
@@ -338,7 +338,7 @@
         "logo_social": {
           "type": "logo_social",
           "settings": {
-            "logo": "shopify://shop_images/Bathroom-Trade-Hub-Logo-White_2x_7b759e46-bdb1-44d6-ae5f-245540f80eb3.png",
+            "logo": "shopify://shop_images/LOGOFOOTERDARKBG.png",
             "logo_height": 120,
             "show_social": true,
             "enable_follow_on_shop": false
