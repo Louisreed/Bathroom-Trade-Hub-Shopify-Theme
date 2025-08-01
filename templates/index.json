@@ -99,12 +99,14 @@
         },
         "image_KkFJd6": {
           "type": "image",
+          "name": "KARTELLDIY",
           "settings": {
             "image": "shopify://shop_images/freyabanneropeningArtboard_1.png",
-            "heading": "In-stock Products for Same-day Delivery",
+            "image_mobile": "shopify://shop_images/Carousel-Banner-scaled.jpg",
+            "heading": "Get 35% off the Kartell Range",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
-            "button_label": "SHOP IN-STOCK PRODUCTS",
+            "button_label": "SHOP KARTELL",
             "button_link": "shopify://collections/all",
             "button_style": "secondary",
             "button_external": false,
