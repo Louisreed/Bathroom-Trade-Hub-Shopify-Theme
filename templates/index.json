@@ -68,13 +68,14 @@
         },
         "image_WNzL7A": {
           "type": "image",
+          "name": "Consumables",
           "settings": {
             "image": "shopify://shop_images/IMG_7744.heic",
             "heading": "Consumables for Days!",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
-            "button_label": "HubESSENTIALS",
-            "button_link": "shopify://collections/hub-essentials",
+            "button_label": "Shop Consumables",
+            "button_link": "shopify://collections/consumables",
             "button_style": "secondary",
             "button_external": false,
             "button_icon": false,
