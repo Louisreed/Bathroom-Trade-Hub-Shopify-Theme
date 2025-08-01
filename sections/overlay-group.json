@@ -20,7 +20,7 @@
         "add_discount_code": true,
         "show_view_cart_button": true,
         "show_checkout_button": true,
-        "show_free_shipping_bar": true,
+        "show_free_shipping_bar": false,
         "free_shipping_minimum_amount": "416.66",
         "cart_recommendations_enabled": true,
         "cart_recommendations_heading": "You may also like",
