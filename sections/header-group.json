@@ -573,7 +573,7 @@
           "type": "mega_menu",
           "name": "TOILETS/BASINS",
           "settings": {
-            "menu_title": "Toilets/Basins",
+            "menu_title": "Toilets",
             "menu_width": "medium",
             "show_menu_image": true,
             "button_label": "SHOP ALL TOILETS",
