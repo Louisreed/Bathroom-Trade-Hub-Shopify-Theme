@@ -785,7 +785,6 @@
         "mega_menu_hQfQ7k": {
           "type": "mega_menu",
           "name": "BASINS",
-          "disabled": true,
           "settings": {
             "menu_title": "BASINS",
             "menu_width": "medium",
