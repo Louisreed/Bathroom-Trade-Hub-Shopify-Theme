@@ -24,6 +24,7 @@
         },
         "free_shipping": {
           "type": "free_shipping",
+          "disabled": true,
           "settings": {
             "minimum_amount": "416.66"
           }
