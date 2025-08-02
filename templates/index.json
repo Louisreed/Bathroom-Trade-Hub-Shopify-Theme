@@ -312,6 +312,108 @@
         "parallax_direction": "zoom"
       }
     },
+    "multicolumn_zT87yk": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_XDxCDy": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/Durdle_Door_Overview.jpg",
+            "image_ratio": "landscape",
+            "heading": "Dorset Based Business",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>We specifically cater for customers in Dorset. We offer <strong>FREE</strong> delivery on orders over £100+VAT within Dorset Postcodes. We also ship anywhere free in the UK over £500 inc VAT.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_JGfhgY": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/IMG_7740.heic",
+            "image_ratio": "landscape",
+            "heading": "Trade & DIY Counter",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>Our Weymouth Branch is the perfect place to shop bathroom supplies <strong>in-store</strong>. We are open 8am - 5pm Monday to Friday and 8am-12pm Saturdays. Feel free to pop down!</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_qTJKEz": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/merchant-taking-sale-with-chip-and-swipe-reader.jpg",
+            "image_ratio": "landscape",
+            "heading": "Trade Accounts",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>Create a Bathroom Trade Hub Account to access our products at the <strong>BEST</strong> prices and see stock levels in real time quickly and efficiently giving you more time to focus on the project at hand!</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "column_XDxCDy",
+        "column_JGfhgY",
+        "column_qTJKEz"
+      ],
+      "name": "Multicolumn",
+      "settings": {
+        "gap": "large",
+        "columns": 3,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Supporting the Local Trade and DIY of Dorset!",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "<p>Your local bathroom specialists with nationwide reach</p>",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
     "custom_section_4yjtnX": {
       "type": "custom-section",
       "blocks": {
@@ -342,7 +444,7 @@
           "type": "text",
           "name": "t:blocks.text.name",
           "settings": {
-            "text": "<p>Supporting the Local Trade and DIY of Dorset!</p>",
+            "text": "<p>Exclusively for Trade and DIY</p>",
             "text_font": "heading",
             "text_size": "subtext-custom",
             "text_max_size": 42,
@@ -762,108 +864,6 @@
         "rounded": true,
         "hide_for_hubpro_members": true,
         "enable_parallax": true
-      }
-    },
-    "multicolumn_zT87yk": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_XDxCDy": {
-          "type": "column",
-          "settings": {
-            "show_border": false,
-            "text_alignment": "left",
-            "text_alignment_mobile": "left",
-            "image": "shopify://shop_images/Durdle_Door_Overview.jpg",
-            "image_ratio": "landscape",
-            "heading": "Dorset Based Business",
-            "heading_size": "text-lg-2xl",
-            "text": "<p>We specifically cater for customers in Dorset. We offer <strong>FREE</strong> delivery on orders over £100+VAT within Dorset Postcodes. We also ship anywhere free in the UK over £500 inc VAT.</p>",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "secondary",
-            "button_external": false,
-            "button_icon": true,
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "column_JGfhgY": {
-          "type": "column",
-          "settings": {
-            "show_border": false,
-            "text_alignment": "left",
-            "text_alignment_mobile": "left",
-            "image": "shopify://shop_images/IMG_7740.heic",
-            "image_ratio": "landscape",
-            "heading": "Trade & DIY Counter",
-            "heading_size": "text-lg-2xl",
-            "text": "<p>Our Weymouth Branch is the perfect place to shop bathroom supplies <strong>in-store</strong>. We are open 8am - 5pm Monday to Friday and 8am-12pm Saturdays. Feel free to pop down!</p>",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "secondary",
-            "button_external": false,
-            "button_icon": true,
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "column_qTJKEz": {
-          "type": "column",
-          "settings": {
-            "show_border": false,
-            "text_alignment": "left",
-            "text_alignment_mobile": "left",
-            "image": "shopify://shop_images/merchant-taking-sale-with-chip-and-swipe-reader.jpg",
-            "image_ratio": "landscape",
-            "heading": "Trade Portal",
-            "heading_size": "text-lg-2xl",
-            "text": "<p>Create a Bathroom Trade Hub Account to access our products at the <strong>BEST</strong> prices and see stock levels in real time quickly and efficiently giving you more time to focus on the project at hand!</p>",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "secondary",
-            "button_external": false,
-            "button_icon": true,
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        }
-      },
-      "block_order": [
-        "column_XDxCDy",
-        "column_JGfhgY",
-        "column_qTJKEz"
-      ],
-      "name": "Multicolumn",
-      "settings": {
-        "gap": "large",
-        "columns": 3,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "heading": "Supporting Local Trade and DIY",
-        "heading_size": "title-md",
-        "heading_alignment": "text-center md:items-center",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "<p>Your local bathroom specialists with nationwide reach</p>",
-        "button_label": "",
-        "button_link": "",
-        "button_external": false,
-        "button_icon": true,
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 48,
-        "padding_bottom": 48,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
       }
     },
     "featured-product": {
@@ -1676,11 +1676,11 @@
   },
   "order": [
     "slideshow",
+    "multicolumn_zT87yk",
     "custom_section_4yjtnX",
     "rich-text",
     "featured_collections_pCKTEh",
     "image_with_text_pJFCwV",
-    "multicolumn_zT87yk",
     "featured-product",
     "collection-list",
     "image-comparison",
