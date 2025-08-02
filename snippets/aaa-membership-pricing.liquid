@@ -48,7 +48,7 @@
   if (window.console && window.console.log) {
     console.log('🚀 === AAA MEMBERSHIP PRICING DEBUG START ===');
     console.log('👤 CUSTOMER STATUS:', {
-      loggedIn: {{ customer != null }},
+      loggedIn: {% if customer %}true{% else %}false{% endif %},
       customerId: {{ customer.id | json }},
       customerEmail: {{ customer.email | json }},
       customerName: '{{ customer.first_name }} {{ customer.last_name }}',
@@ -93,7 +93,7 @@
       priceHideItem: {{ aaa_price_hide_item }},
       membershipDiscountPercent: {{ membership_discount_percent }},
       hasMembershipPricing: {{ has_membership_pricing }},
-      discountWillApply: {{ membership_discount_percent }} > 0
+      discountWillApply: {% if membership_discount_percent > 0 %}true{% else %}false{% endif %}
     });
 
     {% if membership_discount_percent > 0 %}
