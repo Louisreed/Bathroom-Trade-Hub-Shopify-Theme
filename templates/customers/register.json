@@ -631,6 +631,7 @@
         "image_rpfLFH",
         "image_JzKwq6"
       ],
+      "disabled": true,
       "name": "t:sections.slideshow.name",
       "settings": {
         "autoplay": false,
@@ -689,6 +690,54 @@
         "full_width": false,
         "rounded": false
       }
+    },
+    "175415405802d3f547": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_842a03a_L9aNzV": {
+          "type": "ai_gen_block_842a03a",
+          "settings": {
+            "badge_text": "new!",
+            "headline": "Introducing HubPRO",
+            "description": "<p>Save time and money by opening up a HubPro account. Enjoy locked-in pricing and full support for your projects. <strong>PROFESSIONALS ONLY.</strong></p>",
+            "show_button": true,
+            "button_text": "Create a HubPRO Account",
+            "button_link": "shopify://pages/hubpro",
+            "background_color": "#424242",
+            "overlay_opacity": 80,
+            "text_alignment": "center",
+            "content_max_width": 800,
+            "padding_vertical": 60,
+            "padding_horizontal": 40,
+            "border_radius": 12,
+            "spacing_between_elements": 20,
+            "badge_background_color": "#ffffff",
+            "badge_text_color": "#424242",
+            "headline_size": 36,
+            "headline_weight": "700",
+            "headline_color": "#ffffff",
+            "description_size": 16,
+            "description_color": "#ffffff",
+            "button_background_color": "#bba14f",
+            "button_text_color": "#ffffff",
+            "button_hover_background_color": "#424242",
+            "button_hover_text_color": "#ffffff",
+            "button_text_size": 16,
+            "button_text_weight": "600",
+            "button_padding_vertical": 14,
+            "button_padding_horizontal": 32,
+            "button_border_radius": 8,
+            "button_border_width": 0,
+            "button_border_color": "#ffffff",
+            "button_hover_border_color": "#f0f0f0"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_842a03a_L9aNzV"
+      ],
+      "settings": {}
     }
   },
   "order": [
@@ -698,6 +747,7 @@
     "images_with_text_4gfzFq",
     "main-register",
     "slideshow_Ai9Qit",
-    "recently_viewed_83qjgT"
+    "recently_viewed_83qjgT",
+    "175415405802d3f547"
   ]
 }
