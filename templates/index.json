@@ -145,6 +145,7 @@
         "image_h8F3QR": {
           "type": "image",
           "name": "CREATEANACCOUNT",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/IMG_8017.heic",
             "heading": "<em>Create an Account to view your amazing discounts!</em>",
