@@ -160,12 +160,35 @@
     {% endif %}
 
     console.log('🔍 DETAILED METAFIELD INSPECTION:');
-    {% for namespace in shop.metafields %}
-      console.log('  Namespace: {{ namespace.first }}');
-      {% for field in namespace.last %}
-        console.log('    Field: "{{ field.first }}" = "{{ field.last }}"');
+    console.log('Raw shop.metafields object:', {{ shop.metafields | json }});
+
+    console.log('🔍 DIRECT NAMESPACE ACCESS:');
+    {% if shop.metafields['membership'] %}
+      console.log('shop.metafields["membership"]:', {{ shop.metafields['membership'] | json }});
+    {% endif %}
+    {% if shop.metafields['atrillion'] %}
+      console.log('shop.metafields["atrillion"]:', {{ shop.metafields['atrillion'] | json }});
+    {% endif %}
+    {% if shop.metafields['aaa_mem_price'] %}
+      console.log('shop.metafields["aaa_mem_price"]:', {{ shop.metafields['aaa_mem_price'] | json }});
+    {% endif %}
+
+    console.log('🔍 TRYING DOT NOTATION:');
+    console.log('shop.metafields.membership:', {{ shop.metafields.membership | json }});
+    console.log('shop.metafields.atrillion:', {{ shop.metafields.atrillion | json }});
+    console.log('shop.metafields.aaa_mem_price:', {{ shop.metafields.aaa_mem_price | json }});
+
+    console.log('🛍️ CURRENT PRODUCT COLLECTION INFO:');
+    {% if product %}
+      console.log('Product title:', {{ product.title | json }});
+      console.log('Product collections:', {{ product.collections | map: 'handle' | json }});
+      console.log('Product collections (titles):', {{ product.collections | map: 'title' | json }});
+      {% for collection in product.collections %}
+        console.log('  Collection: "{{ collection.handle }}" ({{ collection.title }})');
       {% endfor %}
-    {% endfor %}
+    {% else %}
+      console.log('❌ No product context available');
+    {% endif %}
 
     console.log('🔄 PROCESSING ATRILLION TAG MATCHING:');
     {% for customer_tag in customer.tags %}
