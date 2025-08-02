@@ -43,20 +43,65 @@
   endunless
 -%}
 
-{%- comment -%} Debug AAA membership pricing calculation {%- endcomment -%}
+{%- comment -%} COMPREHENSIVE DEBUG for AAA membership pricing {%- endcomment -%}
 <script>
   if (window.console && window.console.log) {
-    console.log('🔧 AAA MEMBERSHIP PRICING DEBUG:', {
-      customerLoggedIn: {{ customer | json }},
+    console.log('🚀 === AAA MEMBERSHIP PRICING DEBUG START ===');
+    console.log('👤 CUSTOMER STATUS:', {
+      loggedIn: {{ customer != null }},
+      customerId: {{ customer.id | json }},
+      customerEmail: {{ customer.email | json }},
+      customerName: '{{ customer.first_name }} {{ customer.last_name }}',
       customerTags: {{ customer.tags | json }},
-      discountPercent: {{ membership_discount_percent }},
-      hasMembershipPricing: {{ has_membership_pricing }},
-      priceHideItem: {{ aaa_price_hide_item }},
-      shopMetafields: {
-        {% for aaa_rule in shop.metafields.aaa_mem_price %}
-          '{{ aaa_rule.first }}': '{{ aaa_rule.last }}'{% unless forloop.last %},{% endunless %}
-        {% endfor %}
-      }
+      totalTags: {{ customer.tags.size }}
     });
+
+    console.log('🏪 SHOP METAFIELDS (aaa_mem_price):');
+    {% if shop.metafields.aaa_mem_price.size > 0 %}
+      {% for aaa_rule in shop.metafields.aaa_mem_price %}
+        console.log('  Rule {{ forloop.index }}: "{{ aaa_rule.first }}" = "{{ aaa_rule.last }}"');
+        console.log('    Split parts:', '{{ aaa_rule.last }}'.split(','));
+      {% endfor %}
+    {% else %}
+      console.log('  ❌ NO AAA PRICING METAFIELDS FOUND!');
+    {% endif %}
+
+    console.log('🔍 TAG MATCHING PROCESS:');
+    {% if customer.tags.size > 0 %}
+      {% for customer_tag in customer.tags %}
+        console.log('  🏷️ Customer Tag {{ forloop.index }}: "{{ customer_tag }}"');
+        {% for aaa_rule in shop.metafields.aaa_mem_price %}
+          {% assign key_wrd = aaa_rule.last | split: ',' %}
+          {% assign clean_customer_tag = customer_tag | downcase | strip %}
+          {% assign clean_rule_tag = key_wrd.first | downcase | strip %}
+          console.log('    Comparing "{{ clean_customer_tag }}" vs "{{ clean_rule_tag }}"');
+          {% if clean_customer_tag == clean_rule_tag %}
+            console.log('    ✅ MATCH FOUND! Rule: {{ aaa_rule.last }}');
+            {% if key_wrd.size > 2 %}
+              console.log('    💰 Discount: {{ key_wrd[2] }}');
+            {% else %}
+              console.log('    ❌ No discount percentage found in rule');
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      {% endfor %}
+    {% else %}
+      console.log('  ❌ Customer has NO TAGS!');
+    {% endif %}
+
+    console.log('📊 FINAL CALCULATION RESULT:', {
+      priceHideItem: {{ aaa_price_hide_item }},
+      membershipDiscountPercent: {{ membership_discount_percent }},
+      hasMembershipPricing: {{ has_membership_pricing }},
+      discountWillApply: {{ membership_discount_percent }} > 0
+    });
+
+    {% if membership_discount_percent > 0 %}
+      console.log('🎯 ✅ DISCOUNT SHOULD BE APPLIED!');
+    {% else %}
+      console.log('❌ NO DISCOUNT - Check customer login, tags, or shop configuration');
+    {% endif %}
+
+    console.log('🚀 === AAA MEMBERSHIP PRICING DEBUG END ===');
   }
 </script>
