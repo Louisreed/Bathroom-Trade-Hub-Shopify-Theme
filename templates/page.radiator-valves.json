@@ -323,6 +323,29 @@
             "overlay_opacity": 10
           }
         },
+        "image_ErG69F": {
+          "type": "image",
+          "settings": {
+            "subheading": "",
+            "heading": "",
+            "link": "",
+            "invert_subheading_heading": false,
+            "image": "shopify://shop_images/valves-instruction-e1656942330214_a822dbe1-4ea3-42f8-9fc1-7ed5ea09d65c_jpg.webp",
+            "image_ratio": "adapt",
+            "content_position": "md:items-end md:justify-start",
+            "text_alignment": "left",
+            "image_ratio_mobile": "portrait",
+            "content_position_mobile": "items-end justify-start",
+            "text_alignment_mobile": "left",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#ffffff",
+            "color_highlight": "",
+            "gradient_highlight": "",
+            "color_overlay": "#171717",
+            "overlay_opacity": 10
+          }
+        },
         "image_ph6a4A": {
           "type": "image",
           "settings": {
@@ -368,35 +391,13 @@
             "color_overlay": "#171717",
             "overlay_opacity": 10
           }
-        },
-        "image_ErG69F": {
-          "type": "image",
-          "settings": {
-            "subheading": "",
-            "heading": "",
-            "link": "",
-            "invert_subheading_heading": false,
-            "image_ratio": "portrait",
-            "content_position": "md:items-end md:justify-start",
-            "text_alignment": "left",
-            "image_ratio_mobile": "portrait",
-            "content_position_mobile": "items-end justify-start",
-            "text_alignment_mobile": "left",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle",
-            "color_text": "#ffffff",
-            "color_highlight": "",
-            "gradient_highlight": "",
-            "color_overlay": "#171717",
-            "overlay_opacity": 10
-          }
         }
       },
       "block_order": [
         "image_8Am7FV",
+        "image_ErG69F",
         "image_ph6a4A",
-        "image_gwMm8Q",
-        "image_ErG69F"
+        "image_gwMm8Q"
       ],
       "name": "t:sections.collage.name",
       "settings": {
