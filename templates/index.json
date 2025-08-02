@@ -39,7 +39,7 @@
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "button_label": "HubESSENTIALS",
-            "button_link": "shopify://collections/all",
+            "button_link": "shopify://collections/hubessentials",
             "button_style": "primary",
             "button_external": false,
             "button_icon": true,
