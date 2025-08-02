@@ -163,8 +163,23 @@
     {% endif %}
 
     console.log('🔍 DEBUGGING ALL SHOP METAFIELDS:');
-    {% for metafield in shop.metafields %}
-      console.log('  Found metafield: {{ metafield.namespace }}.{{ metafield.key }} = {{ metafield.value }}');
+    console.log('🔍 COMPLETE METAFIELD DUMP:');
+    {% for namespace in shop.metafields %}
+      console.log('📁 NAMESPACE: "{{ namespace[0] }}"');
+      {% for metafield in namespace[1] %}
+        console.log('  📄 {{ namespace[0] }}.{{ metafield[0] }} = "{{ metafield[1] }}"');
+      {% endfor %}
+    {% endfor %}
+
+    console.log('🔍 SEARCHING FOR AAA-RELATED METAFIELDS:');
+    {% for namespace in shop.metafields %}
+      {% assign ns_name = namespace[0] | downcase %}
+      {% if ns_name contains 'aaa' or ns_name contains 'membership' or ns_name contains 'discount' or ns_name contains 'atrillion' %}
+        console.log('🎯 FOUND AAA-RELATED: {{ namespace[0] }}');
+        {% for metafield in namespace[1] %}
+          console.log('    {{ metafield[0] }} = "{{ metafield[1] }}"');
+        {% endfor %}
+      {% endif %}
     {% endfor %}
 
     console.log('🎯 CHECKING ATRILLION/MEMBERSHIP NAMESPACES:');
