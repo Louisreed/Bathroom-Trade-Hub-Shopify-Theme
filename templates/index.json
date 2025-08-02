@@ -151,7 +151,7 @@
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "button_label": "Create a FREE Account",
-            "button_link": "/pages/register",
+            "button_link": "https://bathroomtradehub.co.uk/account/register",
             "button_style": "secondary",
             "button_external": false,
             "button_icon": false,
