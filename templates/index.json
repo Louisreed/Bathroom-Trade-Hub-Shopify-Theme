@@ -17,7 +17,7 @@
           "name": "SUPPORTINGBANNER",
           "settings": {
             "image": "shopify://shop_images/Durdle_Door_Overview.jpg",
-            "heading": "Supporting the <strong>Local Trade</strong> and DIY of Dorset<em>.</em>",
+            "heading": "Supporting the <strong>Local Trade</strong> and DIY of <em>Dorset.</em>",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "button_label": "",
@@ -72,7 +72,7 @@
           "name": "Consumables",
           "settings": {
             "image": "shopify://shop_images/IMG_7744.heic",
-            "heading": "Browse our Range of Consumables",
+            "heading": "Browse our Range of Bathroom Consumables",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "button_label": "Shop Consumables",
@@ -95,7 +95,7 @@
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "button_label": "SHOP KARTELL",
-            "button_link": "shopify://collections/all",
+            "button_link": "shopify://collections/kartell",
             "button_style": "secondary",
             "button_external": false,
             "button_icon": false,
@@ -114,7 +114,7 @@
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "button_label": "SHOP KARTELL",
-            "button_link": "shopify://collections/all",
+            "button_link": "shopify://collections/kartell",
             "button_style": "secondary",
             "button_external": false,
             "button_icon": false,
@@ -125,7 +125,7 @@
         },
         "image_wcjf8M": {
           "type": "image",
-          "name": "KARTELLHUBPRO",
+          "name": "KARTELLPRO+++",
           "settings": {
             "image": "shopify://shop_images/Carousel-Banner-scaled.jpg",
             "image_mobile": "shopify://shop_images/Carousel-Banner-scaled.jpg",
