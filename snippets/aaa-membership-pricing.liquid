@@ -49,11 +49,11 @@
     console.log('🚀 === AAA MEMBERSHIP PRICING DEBUG START ===');
     console.log('👤 CUSTOMER STATUS:', {
       loggedIn: {% if customer %}true{% else %}false{% endif %},
-      customerId: {{ customer.id | json }},
-      customerEmail: {{ customer.email | json }},
-      customerName: '{{ customer.first_name }} {{ customer.last_name }}',
-      customerTags: {{ customer.tags | json }},
-      totalTags: {{ customer.tags.size }}
+      customerId: {% if customer.id %}{{ customer.id | json }}{% else %}null{% endif %},
+      customerEmail: {% if customer.email %}{{ customer.email | json }}{% else %}null{% endif %},
+      customerName: '{% if customer %}{{ customer.first_name }} {{ customer.last_name }}{% else %}Not logged in{% endif %}',
+      customerTags: {% if customer.tags %}{{ customer.tags | json }}{% else %}[]{% endif %},
+      totalTags: {% if customer.tags %}{{ customer.tags.size }}{% else %}0{% endif %}
     });
 
     console.log('🏪 SHOP METAFIELDS (aaa_mem_price):');
@@ -90,9 +90,9 @@
     {% endif %}
 
     console.log('📊 FINAL CALCULATION RESULT:', {
-      priceHideItem: {{ aaa_price_hide_item }},
-      membershipDiscountPercent: {{ membership_discount_percent }},
-      hasMembershipPricing: {{ has_membership_pricing }},
+      priceHideItem: {% if aaa_price_hide_item %}{{ aaa_price_hide_item }}{% else %}false{% endif %},
+      membershipDiscountPercent: {% if membership_discount_percent %}{{ membership_discount_percent }}{% else %}0{% endif %},
+      hasMembershipPricing: {% if has_membership_pricing %}{{ has_membership_pricing }}{% else %}false{% endif %},
       discountWillApply: {% if membership_discount_percent > 0 %}true{% else %}false{% endif %}
     });
 

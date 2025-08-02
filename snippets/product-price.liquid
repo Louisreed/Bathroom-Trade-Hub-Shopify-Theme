@@ -56,11 +56,11 @@
   <script>
     if (window.console && window.console.log) {
       console.log('🎯 AAA MEMBERSHIP DISCOUNT DETECTED:', {
-        product: '{{ target.title | escape }}',
-        originalPrice: {{ original_price }},
-        discountPercent: {{ membership_discount_percent }},
-        discountedPrice: {{ price }},
-        savings: {{ original_price | minus: price }}
+        product: '{% if target.title %}{{ target.title | escape }}{% else %}Unknown Product{% endif %}',
+        originalPrice: {% if original_price %}{{ original_price }}{% else %}0{% endif %},
+        discountPercent: {% if membership_discount_percent %}{{ membership_discount_percent }}{% else %}0{% endif %},
+        discountedPrice: {% if price %}{{ price }}{% else %}0{% endif %},
+        savings: {% if original_price and price %}{{ original_price | minus: price }}{% else %}0{% endif %}
       });
     }
   </script>
