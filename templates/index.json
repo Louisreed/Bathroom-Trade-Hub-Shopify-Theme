@@ -14,10 +14,10 @@
       "blocks": {
         "slide-1": {
           "type": "image",
-          "name": "SUPPORTINGBANNER",
+          "name": "FREEDELIVERY",
           "settings": {
             "image": "shopify://shop_images/Durdle_Door_Overview.jpg",
-            "heading": "Supporting the <strong>Local Trade</strong> and DIY of <em>Dorset.</em>",
+            "heading": "FREE Dorset Delivery over £100+vat",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "button_label": "",
@@ -51,6 +51,7 @@
         "image_WPGiiB": {
           "type": "image",
           "name": "FREEDELIVERY",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/FREEDELIVERYBANNERArtboard_1_6632b539-82ec-471d-a771-7f7fe4199a75.png",
             "image_mobile": "shopify://shop_images/FREEDELIVERYBANNERMOBILEArtboard_1.png",
@@ -65,24 +66,6 @@
             "show_for_standard": true,
             "show_for_hubpro_free": true,
             "show_for_hubpro_plus": false
-          }
-        },
-        "image_WNzL7A": {
-          "type": "image",
-          "name": "Consumables",
-          "settings": {
-            "image": "shopify://shop_images/IMG_7744.heic",
-            "heading": "Browse our Range of Bathroom Consumables",
-            "heading_size": "title-lg tracking-heading",
-            "heading_tag": "h2",
-            "button_label": "Shop Consumables",
-            "button_link": "shopify://collections/consumables",
-            "button_style": "secondary",
-            "button_external": false,
-            "button_icon": false,
-            "show_for_standard": true,
-            "show_for_hubpro_free": true,
-            "show_for_hubpro_plus": true
           }
         },
         "image_KkFJd6": {
@@ -268,13 +251,30 @@
             "show_for_hubpro_free": false,
             "show_for_hubpro_plus": true
           }
+        },
+        "image_WNzL7A": {
+          "type": "image",
+          "name": "Consumables",
+          "settings": {
+            "image": "shopify://shop_images/IMG_7744.heic",
+            "heading": "Browse our Range of Bathroom Consumables",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "button_label": "Shop Consumables",
+            "button_link": "shopify://collections/consumables",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
+          }
         }
       },
       "block_order": [
         "slide-1",
         "image_NhPc9m",
         "image_WPGiiB",
-        "image_WNzL7A",
         "image_KkFJd6",
         "image_fWDXqc",
         "image_wcjf8M",
@@ -284,7 +284,8 @@
         "image_y3BqjL",
         "image_JK6ePW",
         "image_QCYpgM",
-        "image_4MbLbY"
+        "image_4MbLbY",
+        "image_WNzL7A"
       ],
       "settings": {
         "autoplay": true,
@@ -341,7 +342,7 @@
           "type": "text",
           "name": "t:blocks.text.name",
           "settings": {
-            "text": "<p>Exclusively For Trade and DIY</p>",
+            "text": "<p>Supporting the Local Trade and DIY of Dorset!</p>",
             "text_font": "heading",
             "text_size": "subtext-custom",
             "text_max_size": 42,
