@@ -184,7 +184,7 @@
           "type": "promotion",
           "settings": {
             "position": 5,
-            "column_size": "2",
+            "column_size": "1",
             "image": "shopify://shop_images/Screenshot2025-07-26at11.17.21AM.png",
             "heading": "GAIN ACCESS TO BETTER PRICES",
             "content": "<p>Make sure you sign up to our website to access exclusive prices on all products!</p>",
@@ -213,7 +213,7 @@
       "settings": {
         "products_per_page": 50,
         "columns": 5,
-        "columns_mobile": "2",
+        "columns_mobile": "1",
         "pagination": "infinite",
         "enable_filtering": true,
         "filter_collapsed": false,
