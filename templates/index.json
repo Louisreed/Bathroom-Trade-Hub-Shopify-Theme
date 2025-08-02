@@ -1447,6 +1447,7 @@
         "image_LTCM7w",
         "image_UVLarq"
       ],
+      "disabled": true,
       "settings": {
         "direction": "right",
         "speed": 5,
@@ -1503,14 +1504,6 @@
     "logo_list_HAj8VP": {
       "type": "logo-list",
       "blocks": {
-        "logo_6YCLjM": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/scudo_logo_fc32d616-c756-426d-9f85-1c7687bd73e2.jpg",
-            "height": 80,
-            "link": ""
-          }
-        },
         "logo_e9TGjE": {
           "type": "logo",
           "settings": {
@@ -1519,9 +1512,18 @@
             "link": ""
           }
         },
+        "logo_6YCLjM": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/scudo_logo_fc32d616-c756-426d-9f85-1c7687bd73e2.jpg",
+            "height": 80,
+            "link": ""
+          }
+        },
         "logo_iNKeRN": {
           "type": "logo",
           "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-06-30_at_13.20.56.jpg",
             "height": 80,
             "link": ""
           }
@@ -1549,8 +1551,8 @@
         }
       },
       "block_order": [
-        "logo_6YCLjM",
         "logo_e9TGjE",
+        "logo_6YCLjM",
         "logo_iNKeRN",
         "logo_cQJj9J",
         "logo_fGVbmj",
