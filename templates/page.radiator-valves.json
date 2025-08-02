@@ -297,17 +297,17 @@
         "rounded": false
       }
     },
-    "collage_rng8pd": {
+    "collage_bJQVHY": {
       "type": "collage",
       "blocks": {
-        "image_tFQA4X": {
+        "image_8Am7FV": {
           "type": "image",
           "settings": {
             "subheading": "",
             "heading": "",
             "link": "",
             "invert_subheading_heading": false,
-            "image": "shopify://shop_images/image_49daaf74-d362-4aef-9fe4-37693a9f80a3.png",
+            "image": "shopify://shop_images/Screenshot_2025-08-02_at_12.01.36_PM.png",
             "image_ratio": "adapt",
             "content_position": "md:items-end md:justify-start",
             "text_alignment": "left",
@@ -323,7 +323,53 @@
             "overlay_opacity": 10
           }
         },
-        "image_Pckhyi": {
+        "image_ph6a4A": {
+          "type": "image",
+          "settings": {
+            "subheading": "",
+            "heading": "",
+            "link": "",
+            "invert_subheading_heading": false,
+            "image": "shopify://shop_images/Screenshot_2024-09-20_at_12_03_40_jpg.webp",
+            "image_ratio": "adapt",
+            "content_position": "md:items-end md:justify-start",
+            "text_alignment": "left",
+            "image_ratio_mobile": "portrait",
+            "content_position_mobile": "items-end justify-start",
+            "text_alignment_mobile": "left",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#ffffff",
+            "color_highlight": "",
+            "gradient_highlight": "",
+            "color_overlay": "#171717",
+            "overlay_opacity": 10
+          }
+        },
+        "image_gwMm8Q": {
+          "type": "image",
+          "settings": {
+            "subheading": "",
+            "heading": "",
+            "link": "",
+            "invert_subheading_heading": false,
+            "image": "shopify://shop_images/Screenshot_2025-08-02_at_12.02.14_PM.png",
+            "image_ratio": "adapt",
+            "content_position": "md:items-end md:justify-start",
+            "text_alignment": "left",
+            "image_ratio_mobile": "portrait",
+            "content_position_mobile": "items-end justify-start",
+            "text_alignment_mobile": "left",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#ffffff",
+            "color_highlight": "",
+            "gradient_highlight": "",
+            "color_overlay": "#171717",
+            "overlay_opacity": 10
+          }
+        },
+        "image_ErG69F": {
           "type": "image",
           "settings": {
             "subheading": "",
@@ -347,8 +393,10 @@
         }
       },
       "block_order": [
-        "image_tFQA4X",
-        "image_Pckhyi"
+        "image_8Am7FV",
+        "image_ph6a4A",
+        "image_gwMm8Q",
+        "image_ErG69F"
       ],
       "name": "t:sections.collage.name",
       "settings": {
@@ -387,6 +435,6 @@
     "17157682575ad8f603",
     "collection_list_kg7KnE",
     "featured_collection_LLAPCV",
-    "collage_rng8pd"
+    "collage_bJQVHY"
   ]
 }
