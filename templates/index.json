@@ -48,51 +48,16 @@
             "show_for_hubpro_plus": true
           }
         },
-        "image_h8F3QR": {
-          "type": "image",
-          "name": "CREATEANACCOUNT",
-          "settings": {
-            "image": "shopify://shop_images/IMG_8017.heic",
-            "heading": "<em>Create an Account to view your amazing discounts!</em>",
-            "heading_size": "title-lg tracking-heading",
-            "heading_tag": "h2",
-            "button_label": "Create a FREE Account",
-            "button_link": "/pages/register",
-            "button_style": "secondary",
-            "button_external": false,
-            "button_icon": false,
-            "show_for_standard": true,
-            "show_for_hubpro_free": false,
-            "show_for_hubpro_plus": false
-          }
-        },
         "image_WNzL7A": {
           "type": "image",
           "name": "Consumables",
           "settings": {
             "image": "shopify://shop_images/IMG_7744.heic",
-            "heading": "Consumables for Days!",
+            "heading": "Browse our Range of Consumables",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "button_label": "Shop Consumables",
             "button_link": "shopify://collections/consumables",
-            "button_style": "secondary",
-            "button_external": false,
-            "button_icon": false,
-            "show_for_standard": true,
-            "show_for_hubpro_free": true,
-            "show_for_hubpro_plus": true
-          }
-        },
-        "slide-2": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/MAXIPANELBANNER-01.png",
-            "heading": "No Grout, No Mould, No Hassle",
-            "heading_size": "title-lg tracking-heading",
-            "heading_tag": "h2",
-            "button_label": "SHOP MAXI PANELS",
-            "button_link": "shopify://collections/maxi-panels-1",
             "button_style": "secondary",
             "button_external": false,
             "button_icon": false,
@@ -158,6 +123,42 @@
             "show_for_hubpro_plus": true
           }
         },
+        "image_h8F3QR": {
+          "type": "image",
+          "name": "CREATEANACCOUNT",
+          "settings": {
+            "image": "shopify://shop_images/IMG_8017.heic",
+            "heading": "<em>Create an Account to view your amazing discounts!</em>",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "button_label": "Create a FREE Account",
+            "button_link": "/pages/register",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": false,
+            "show_for_hubpro_plus": false
+          }
+        },
+        "slide-2": {
+          "type": "image",
+          "name": "Maxi Panels",
+          "settings": {
+            "image": "shopify://shop_images/MAXIPANELBANNER-01.png",
+            "heading": "No Grout, No Mould, No Hassle, <strong>NOW 35% OFF!</strong>",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "button_label": "SHOP MAXI PANELS",
+            "button_link": "shopify://collections/maxi-panels-1",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
+          }
+        },
         "image_JK6ePW": {
           "type": "image",
           "settings": {
@@ -179,17 +180,17 @@
       "block_order": [
         "slide-1",
         "image_NhPc9m",
-        "image_h8F3QR",
         "image_WNzL7A",
-        "slide-2",
         "image_KkFJd6",
         "image_fWDXqc",
         "image_wcjf8M",
+        "image_h8F3QR",
+        "slide-2",
         "image_JK6ePW"
       ],
       "settings": {
         "autoplay": true,
-        "autoplay_speed": 5,
+        "autoplay_speed": 4,
         "show_navigation": true,
         "image_height": "600px",
         "content_width": "small",
