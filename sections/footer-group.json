@@ -373,7 +373,7 @@
         "text_3ayK6Q": {
           "type": "text",
           "settings": {
-            "heading": "Find Us",
+            "heading": "Trade Counter",
             "text": "<p>Bathroom Trade Hub</p><p>Unit A6, 83 Lynch Lane</p><p>Weymouth</p><p>Dorset</p><p>DT4 9DN</p>",
             "container_width": 50,
             "opened": true
@@ -382,8 +382,8 @@
         "text_ABc6rB": {
           "type": "text",
           "settings": {
-            "heading": "Contact Us",
-            "text": "<p>Call us on 01305 608599</p><p>Or email at</p><p>enquiries@bathroomtradehub.co.uk</p><p></p>",
+            "heading": "Opening Times",
+            "text": "<p>MON-FRI - 8AM - 5PM</p><p>SAT - 8AM - 12PM</p><p>SUN - CLOSED</p><p></p>",
             "container_width": 50,
             "opened": true
           }
