@@ -584,7 +584,7 @@
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "button_label": "Create a DIY Account",
-            "button_link": "shopify://pages/hubpro",
+            "button_link": "/account/register",
             "button_style": "primary",
             "button_external": false,
             "button_icon": false,
