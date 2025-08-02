@@ -66,6 +66,25 @@
       console.log('  ❌ NO AAA PRICING METAFIELDS FOUND!');
     {% endif %}
 
+    console.log('🔍 DEBUGGING ALL SHOP METAFIELDS:');
+    {% for metafield in shop.metafields %}
+      console.log('  Found metafield: {{ metafield.namespace }}.{{ metafield.key }} = {{ metafield.value }}');
+    {% endfor %}
+
+    console.log('🎯 CHECKING ATRILLION/MEMBERSHIP NAMESPACES:');
+    {% if shop.metafields.membership %}
+      console.log('  ✅ shop.metafields.membership exists');
+      {% for rule in shop.metafields.membership %}
+        console.log('    Membership rule: {{ rule.first }} = {{ rule.last }}');
+      {% endfor %}
+    {% endif %}
+    {% if shop.metafields.atrillion %}
+      console.log('  ✅ shop.metafields.atrillion exists');
+      {% for rule in shop.metafields.atrillion %}
+        console.log('    AtTrillion rule: {{ rule.first }} = {{ rule.last }}');
+      {% endfor %}
+    {% endif %}
+
     console.log('🔍 TAG MATCHING PROCESS:');
     {% if customer.tags.size > 0 %}
       {% for customer_tag in customer.tags %}
