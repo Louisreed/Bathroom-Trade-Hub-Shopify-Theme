@@ -383,7 +383,7 @@
           "type": "text",
           "settings": {
             "heading": "Contact Us",
-            "text": "<p>Call us on 01305 608599</p><p>or email us on </p><p>enquiries@bathroomtradehub.co.uk</p>",
+            "text": "<p>Call us on 01305 608599</p><p>Or email at</p><p>enquiries@bathroomtradehub.co.uk</p><p></p>",
             "container_width": 95,
             "opened": true
           }
