@@ -1147,6 +1147,7 @@
         "image-1",
         "image-2"
       ],
+      "disabled": true,
       "settings": {
         "layout": "horizontal",
         "image_height": "750px",
