@@ -98,8 +98,8 @@
           "settings": {
             "icon": "truck",
             "custom_icon": "",
-            "heading": "Delivery in Dorset",
-            "text": "<p>Fast delivery for in-stock products and priority click and collect service. FREE delivery in Dorset on orders over £100+VAT. We also offer FREE UK delivery on order over £500+VAT.</p>",
+            "heading": "Fast Delivery in Dorset",
+            "text": "<p>Let us do the leg work. We offer fast delivery for in-stock products and click and collect service. FREE delivery in Dorset on orders over £100+VAT. </p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
@@ -109,8 +109,8 @@
           "settings": {
             "icon": "star",
             "custom_icon": "",
-            "heading": "Competitive Pricing",
-            "text": "<p>This is where you will </p>",
+            "heading": "Locked-in Pricing",
+            "text": "<p>No more inconsistent costs with the usual merchants. Maximise profit margins and enjoy a simple service to supplying your customers with our locked pricing.</p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
@@ -118,10 +118,43 @@
         "column_hHAkky": {
           "type": "column",
           "settings": {
+            "icon": "award",
+            "custom_icon": "",
+            "heading": "Products Ready to Go!",
+            "text": "<p>We stock our range of HubESSENTIALS for every trade professional, save the wait and get products for your project now! All at the best price!</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_B9rGJr": {
+          "type": "column",
+          "settings": {
             "icon": "shield",
             "custom_icon": "",
-            "heading": "In-stock Items",
-            "text": "<p>We stock our range of HubESSENTIALS for every trade professional, from silicones, trims and panels to toilets, basin vanity units, enclosures and everything in-between. </p>",
+            "heading": "Brochure/Sample Support",
+            "text": "<p>We've got you! We have a range of brochures to suit your customers. We can also offer full sample support on all of our panels/flooring.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_hVFqCG": {
+          "type": "column",
+          "settings": {
+            "icon": "clipboard",
+            "custom_icon": "",
+            "heading": "Free QuotePAD",
+            "text": "<p>Utilise our quick quoting service. Created for installers on the move, simply create a list of what you need and send it over via our QR code!</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_jQrBn6": {
+          "type": "column",
+          "settings": {
+            "icon": "support",
+            "custom_icon": "",
+            "heading": "Built from Experience",
+            "text": "<p>We know what the modern day bathroom installer needs. We are here to support you every step of the way. Full product and technical support included.</p>",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
@@ -130,18 +163,21 @@
       "block_order": [
         "column_HqANnV",
         "column_edAWWd",
-        "column_hHAkky"
+        "column_hHAkky",
+        "column_B9rGJr",
+        "column_hVFqCG",
+        "column_jQrBn6"
       ],
       "name": "Multicolumn with icons",
       "settings": {
         "style": "with-background",
         "columns": 3,
         "text_alignment": "left",
-        "heading": "become a <em>HubPRO</em> member?",
+        "heading": "Built for the <em>Professional</em>",
         "heading_size": "title-lg tracking-heading",
         "heading_alignment": "text-center md:items-center",
         "heading_tag": "h2",
-        "subheading": "Why should you",
+        "subheading": "Introducing HubPRO",
         "description": "<p>Save even more with a HubPRO account designed for <strong>trade professionals only.</strong></p>",
         "button_label": "",
         "button_link": "",
@@ -551,7 +587,10 @@
             "button_link": "shopify://pages/hubpro",
             "button_style": "primary",
             "button_external": false,
-            "button_icon": false
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
           }
         },
         "image_wWkGaD": {
@@ -565,7 +604,10 @@
             "button_link": "",
             "button_style": "primary",
             "button_external": false,
-            "button_icon": false
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
           }
         },
         "image_eh696V": {
@@ -579,7 +621,10 @@
             "button_link": "",
             "button_style": "primary",
             "button_external": false,
-            "button_icon": false
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
           }
         }
       },
