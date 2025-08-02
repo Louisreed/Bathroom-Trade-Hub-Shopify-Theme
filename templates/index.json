@@ -162,10 +162,10 @@
         },
         "slide-2": {
           "type": "image",
-          "name": "Maxi Panels",
+          "name": "Maxi PanelsDIY",
           "settings": {
             "image": "shopify://shop_images/MAXIPANELBANNER-01.png",
-            "heading": "No Grout, No Mould, No Hassle, <strong>NOW 35% OFF!</strong>",
+            "heading": "<strong>NOW 35% OFF!</strong>",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "button_label": "SHOP MAXI PANELS",
@@ -183,7 +183,7 @@
           "name": "Maxi PanelsHUBPRO",
           "settings": {
             "image": "shopify://shop_images/MAXIPANELBANNER-01.png",
-            "heading": "No Grout, No Mould, No Hassle, <strong>NOW 50% OFF!</strong>",
+            "heading": "<strong>NOW 50% OFF!</strong>",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "button_label": "SHOP MAXI PANELS",
@@ -201,7 +201,7 @@
           "name": "Maxi PanelsPROPLUS",
           "settings": {
             "image": "shopify://shop_images/MAXIPANELBANNER-01.png",
-            "heading": "No Grout, No Mould, No Hassle, <strong>NOW 60% OFF!</strong>",
+            "heading": "<strong>NOW 60% OFF!</strong>",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "button_label": "SHOP MAXI PANELS",
