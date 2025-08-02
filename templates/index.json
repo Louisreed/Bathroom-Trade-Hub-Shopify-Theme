@@ -155,6 +155,42 @@
             "button_external": false,
             "button_icon": false,
             "show_for_standard": true,
+            "show_for_hubpro_free": false,
+            "show_for_hubpro_plus": false
+          }
+        },
+        "image_4FLVKU": {
+          "type": "image",
+          "name": "Maxi Panels",
+          "settings": {
+            "image": "shopify://shop_images/MAXIPANELBANNER-01.png",
+            "heading": "No Grout, No Mould, No Hassle, <strong>NOW 35% OFF!</strong>",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "button_label": "SHOP MAXI PANELS",
+            "button_link": "shopify://collections/maxi-panels-1",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
+          }
+        },
+        "image_y3BqjL": {
+          "type": "image",
+          "name": "Maxi Panels",
+          "settings": {
+            "image": "shopify://shop_images/MAXIPANELBANNER-01.png",
+            "heading": "No Grout, No Mould, No Hassle, <strong>NOW 35% OFF!</strong>",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "button_label": "SHOP MAXI PANELS",
+            "button_link": "shopify://collections/maxi-panels-1",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": false,
+            "show_for_standard": true,
             "show_for_hubpro_free": true,
             "show_for_hubpro_plus": true
           }
@@ -186,6 +222,8 @@
         "image_wcjf8M",
         "image_h8F3QR",
         "slide-2",
+        "image_4FLVKU",
+        "image_y3BqjL",
         "image_JK6ePW"
       ],
       "settings": {
