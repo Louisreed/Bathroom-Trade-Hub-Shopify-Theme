@@ -186,10 +186,10 @@
             "position": 5,
             "column_size": "1",
             "image": "shopify://shop_images/Screenshot2025-07-26at11.17.21AM.png",
-            "heading": "GAIN ACCESS TO BETTER PRICES",
-            "content": "<p>Make sure you sign up to our website to access exclusive prices on all products!</p>",
-            "button_label": "Create a FREE Account",
-            "button_link": "/account/register",
+            "heading": "Can't see what you are looking for?",
+            "content": "<p>We have access to 1000's of products that may not be on our website! Please call us on 01305 608599 or use our contact form below</p>",
+            "button_label": "Contact Us",
+            "button_link": "shopify://pages/contact-us",
             "button_style": "primary",
             "button_external": false,
             "button_icon": true,
@@ -198,11 +198,11 @@
             "content_position_mobile": "items-center",
             "text_alignment_mobile": "center",
             "color_text": "#ffffff",
-            "color_button_text": "#47c8f5",
-            "color_button_background": "#ffffff",
+            "color_button_text": "#ffffff",
+            "color_button_background": "#47c8f5",
             "color_button_gradient": "",
-            "color_overlay": "#47c8f5",
-            "overlay_opacity": 88
+            "color_overlay": "#424242",
+            "overlay_opacity": 100
           }
         }
       },
