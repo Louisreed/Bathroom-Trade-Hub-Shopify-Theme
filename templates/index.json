@@ -744,6 +744,7 @@
         "collection_AJb6iN",
         "collection_MiHDUY"
       ],
+      "disabled": true,
       "name": "t:sections.featured-collections.name",
       "settings": {
         "product_limit": 6,
@@ -1683,8 +1684,8 @@
     "custom_section_4yjtnX",
     "rich-text",
     "featured_collections_pCKTEh",
-    "image_with_text_pJFCwV",
     "featured-product",
+    "image_with_text_pJFCwV",
     "collection-list",
     "image-comparison",
     "shop-the-look",
