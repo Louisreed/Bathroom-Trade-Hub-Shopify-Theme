@@ -111,7 +111,7 @@
         "text_DQ8ywC": {
           "type": "text",
           "settings": {
-            "text": "<p>Browse our range of In-stock items at our warehouse for same-day delivery or collection, <em><strong>#SHOPLOCAL</strong></em></p>",
+            "text": "<p>Browse our range of In-stock items at our warehouse for same-day delivery or collection.  <em><strong>#SHOPLOCAL</strong></em></p>",
             "text_font": "body",
             "text_size": "subtext-md",
             "text_max_size": 32,
