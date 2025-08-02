@@ -110,6 +110,7 @@
         },
         "subheading_KmBdMY": {
           "type": "subheading",
+          "disabled": true,
           "settings": {
             "subheading": "From full suites to individual items, our choice range has made it easier than ever to choose your new bathroom.. all in one place!",
             "subheading_size": "subtitle-lg",
