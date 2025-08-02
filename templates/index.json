@@ -48,6 +48,24 @@
             "show_for_hubpro_plus": true
           }
         },
+        "image_WPGiiB": {
+          "type": "image",
+          "name": "Consumables",
+          "settings": {
+            "image": "shopify://shop_images/FREEDELIVERYBANNERArtboard_1.png",
+            "heading": "FREE Dorset Delivery over £100+vat",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "button_label": "Shop Consumables",
+            "button_link": "shopify://collections/consumables",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": false
+          }
+        },
         "image_WNzL7A": {
           "type": "image",
           "name": "Consumables",
@@ -253,6 +271,7 @@
       "block_order": [
         "slide-1",
         "image_NhPc9m",
+        "image_WPGiiB",
         "image_WNzL7A",
         "image_KkFJd6",
         "image_fWDXqc",
