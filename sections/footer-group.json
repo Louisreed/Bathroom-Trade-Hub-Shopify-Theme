@@ -72,11 +72,11 @@
         "collection_yqxAAw"
       ],
       "settings": {
-        "product_limit": 12,
+        "product_limit": 5,
         "columns": 5,
         "carousel_on_desktop": false,
-        "show_view_all": false,
-        "columns_mobile": "2",
+        "show_view_all": true,
+        "columns_mobile": "1",
         "swipe_on_mobile": true,
         "heading": "Shop <em>Popular</em> Products",
         "heading_size": "title-xl tracking-heading",
