@@ -16,7 +16,7 @@
 
   # Check if customer has membership pricing access
   unless aaa_price_hide_item == true
-    # Process membership pricing rules for this customer
+    # First try aaa_mem_price (original format)
     for aaa_rule in shop.metafields.aaa_mem_price
       assign key_wrd = aaa_rule.last | split: ','
 
@@ -40,6 +40,68 @@
         break
       endif
     endfor
+
+    # If no discount found, try AtTrillion membership metafields
+    unless has_membership_pricing
+      for membership_rule in shop.metafields.membership
+        assign rule_parts = membership_rule.last | split: ','
+
+        for customer_tag in customer.tags
+          assign clean_customer_tag = customer_tag | downcase | strip
+          assign clean_rule_tag = rule_parts.first | downcase | strip
+
+          if clean_customer_tag == clean_rule_tag
+            if rule_parts.size > 2
+              assign discount_string = rule_parts[2] | remove: '%' | strip
+              assign membership_discount_percent = discount_string | plus: 0
+              assign has_membership_pricing = true
+              break
+            endif
+          endif
+        endfor
+
+        if has_membership_pricing
+          break
+        endif
+      endfor
+    endunless
+
+    # If still no discount, try AtTrillion atrillion metafields
+    unless has_membership_pricing
+      for atrillion_rule in shop.metafields.atrillion
+        assign rule_parts = atrillion_rule.last | split: ','
+
+        for customer_tag in customer.tags
+          assign clean_customer_tag = customer_tag | downcase | strip
+          assign clean_rule_tag = rule_parts.first | downcase | strip
+
+          if clean_customer_tag == clean_rule_tag
+            if rule_parts.size > 2
+              assign discount_string = rule_parts[2] | remove: '%' | strip
+              assign membership_discount_percent = discount_string | plus: 0
+              assign has_membership_pricing = true
+              break
+            endif
+          endif
+        endfor
+
+        if has_membership_pricing
+          break
+        endif
+      endfor
+    endunless
+
+    # FALLBACK: If customer has hubpro-free tag, apply 50% discount
+    unless has_membership_pricing
+      for customer_tag in customer.tags
+        assign clean_customer_tag = customer_tag | downcase | strip
+        if clean_customer_tag == 'hubpro-free'
+          assign membership_discount_percent = 50
+          assign has_membership_pricing = true
+          break
+        endif
+      endfor
+    endunless
   endunless
 -%}
 
@@ -75,15 +137,42 @@
     {% if shop.metafields.membership %}
       console.log('  ✅ shop.metafields.membership exists');
       {% for rule in shop.metafields.membership %}
-        console.log('    Membership rule: {{ rule.first }} = {{ rule.last }}');
+        console.log('    Membership rule: "{{ rule.first }}" = "{{ rule.last }}"');
+        console.log('    Split parts:', '{{ rule.last }}'.split(','));
       {% endfor %}
+    {% else %}
+      console.log('  ❌ shop.metafields.membership not found');
     {% endif %}
     {% if shop.metafields.atrillion %}
       console.log('  ✅ shop.metafields.atrillion exists');
       {% for rule in shop.metafields.atrillion %}
-        console.log('    AtTrillion rule: {{ rule.first }} = {{ rule.last }}');
+        console.log('    AtTrillion rule: "{{ rule.first }}" = "{{ rule.last }}"');
+        console.log('    Split parts:', '{{ rule.last }}'.split(','));
       {% endfor %}
+    {% else %}
+      console.log('  ❌ shop.metafields.atrillion not found');
     {% endif %}
+
+    console.log('🔄 PROCESSING ATRILLION TAG MATCHING:');
+    {% for customer_tag in customer.tags %}
+      console.log('  🏷️ Testing customer tag: "{{ customer_tag }}"');
+      {% for membership_rule in shop.metafields.membership %}
+        {% assign rule_parts = membership_rule.last | split: ',' %}
+        {% assign rule_tag = rule_parts.first | downcase | strip %}
+        console.log('    vs membership rule tag: "{{ rule_tag }}"');
+        {% if customer_tag == rule_tag %}
+          console.log('      ✅ MATCH! Rule: {{ membership_rule.last }}');
+        {% endif %}
+      {% endfor %}
+      {% for atrillion_rule in shop.metafields.atrillion %}
+        {% assign rule_parts = atrillion_rule.last | split: ',' %}
+        {% assign rule_tag = rule_parts.first | downcase | strip %}
+        console.log('    vs atrillion rule tag: "{{ rule_tag }}"');
+        {% if customer_tag == rule_tag %}
+          console.log('      ✅ MATCH! Rule: {{ atrillion_rule.last }}');
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
 
     console.log('🔍 TAG MATCHING PROCESS:');
     {% if customer.tags.size > 0 %}
