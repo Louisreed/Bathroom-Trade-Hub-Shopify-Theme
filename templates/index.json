@@ -218,7 +218,7 @@
           "name": "NUIEDIY",
           "settings": {
             "image": "shopify://shop_images/IMG_7740.heic",
-            "heading": "Get 35% off the Nuie Range!",
+            "heading": "Get 45% off the Nuie Range!",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "button_label": "SHOP NUIE",
@@ -226,9 +226,9 @@
             "button_style": "secondary",
             "button_external": false,
             "button_icon": false,
-            "show_for_standard": true,
+            "show_for_standard": false,
             "show_for_hubpro_free": true,
-            "show_for_hubpro_plus": true
+            "show_for_hubpro_plus": false
           }
         },
         "image_4MbLbY": {
