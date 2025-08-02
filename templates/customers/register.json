@@ -659,6 +659,7 @@
     },
     "recently_viewed_83qjgT": {
       "type": "recently-viewed",
+      "disabled": true,
       "name": "t:sections.recently-viewed.name",
       "settings": {
         "product_limit": 6,
