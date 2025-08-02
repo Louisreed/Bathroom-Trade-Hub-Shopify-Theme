@@ -357,9 +357,9 @@
           "type": "brand_information",
           "settings": {
             "heading": "Supporting the Local Trade and DIY of Dorset.",
-            "button_label_1": "01305 608599",
+            "button_label_1": "",
             "button_link_1": "",
-            "button_label_2": "enquiries@bathroomtradehub.co.uk",
+            "button_label_2": "",
             "button_link_2": "",
             "button_label_3": "",
             "button_link_3": "",
@@ -378,13 +378,23 @@
             "container_width": 50,
             "opened": true
           }
+        },
+        "text_ABc6rB": {
+          "type": "text",
+          "settings": {
+            "heading": "Contact Us!",
+            "text": "<p>Call us on 01305 608599</p><p>or email us on </p><p>enquiries@bathroomtradehub.co.uk</p>",
+            "container_width": 50,
+            "opened": true
+          }
         }
       },
       "block_order": [
         "logo_social",
         "link_list-1",
         "brand_information",
-        "text_3ayK6Q"
+        "text_3ayK6Q",
+        "text_ABc6rB"
       ],
       "settings": {
         "invert_newsletter_others": true,
