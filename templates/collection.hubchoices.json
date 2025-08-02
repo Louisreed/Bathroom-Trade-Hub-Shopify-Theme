@@ -55,19 +55,34 @@
       "type": "image-with-text",
       "disabled": true,
       "name": "Image with text",
-      "settings": {}
+      "settings": {
+        "image_ratio": "adapt",
+        "image_width": "medium",
+        "layout": "image_first",
+        "text_alignment": "left",
+        "text_alignment_mobile": "left",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_background_2": "",
+        "gradient_background_2": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "hide_for_hubpro_members": false,
+        "enable_parallax": false
+      }
     },
     "images-with-text-overlay": {
       "type": "images-with-text-overlay",
       "blocks": {
-        "image": {
-          "type": "image",
-          "settings": {
-            "image_width": "custom",
-            "image_max_width": 50,
-            "image_max_width_mobile": 50
-          }
-        },
         "spacing": {
           "type": "spacing",
           "settings": {
@@ -78,44 +93,35 @@
         "subheading": {
           "type": "subheading",
           "settings": {
-            "subheading": "Hub choice",
+            "subheading": "EASY SHOPPING WITH",
             "subheading_size": "subtitle-lg",
             "secondary_color": true
           }
         },
         "heading": {
           "type": "heading",
-          "disabled": true,
           "settings": {
-            "heading": "HubESSENTIALS",
-            "heading_size": "title-md",
+            "heading": "HubCHOICE",
+            "heading_size": "title-xl tracking-heading",
             "heading_tag": "h2",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
         },
-        "text": {
-          "type": "text",
+        "subheading_KmBdMY": {
+          "type": "subheading",
           "settings": {
-            "text": "<p>Great bathroom products at amazing prices, made simple!</p>",
-            "text_font": "body",
-            "text_size": "subtext-xl",
-            "text_max_size": 32,
-            "text_line_height": 1.6,
-            "text_letter_spacing": 0,
-            "text_capitalize": false,
-            "secondary_color": false,
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
+            "subheading": "From full suites to individual items, our choice range has made it easier than ever to choose your new bathroom.. all in one place!",
+            "subheading_size": "subtitle-lg",
+            "secondary_color": true
           }
         }
       },
       "block_order": [
-        "image",
         "spacing",
         "subheading",
         "heading",
-        "text"
+        "subheading_KmBdMY"
       ],
       "settings": {
         "transparent_header": false,
@@ -131,12 +137,12 @@
         "content_position_mobile": "items-center justify-start",
         "text_alignment_mobile": "left",
         "color_text": "#ffffff",
-        "color_highlight": "#e0a580",
+        "color_highlight": "#47c8f5",
         "gradient_highlight": "",
         "color_button_text": "#171717",
         "color_button_background": "#ffffff",
         "color_button_gradient": "",
-        "color_overlay": "#171717",
+        "color_overlay": "#424242",
         "overlay_opacity": 100,
         "padding_top": 0,
         "padding_bottom": 0,
@@ -369,7 +375,30 @@
       "type": "image-with-text",
       "disabled": true,
       "name": "HubPRO Banner",
-      "settings": {}
+      "settings": {
+        "image_ratio": "adapt",
+        "image_width": "medium",
+        "layout": "image_first",
+        "text_alignment": "left",
+        "text_alignment_mobile": "left",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_background_2": "",
+        "gradient_background_2": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "hide_for_hubpro_members": false,
+        "enable_parallax": false
+      }
     }
   },
   "order": [
