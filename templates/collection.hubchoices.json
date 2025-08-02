@@ -318,7 +318,7 @@
             "image": "shopify://shop_images/IMG_8017.heic",
             "heading": "Need it fast?",
             "content": "<p>Browse our range of In-stock items at our warehouse for same-day delivery or collection.  </p>",
-            "button_label": "HubESSENTIALS!",
+            "button_label": "HubESSENTIALS",
             "button_link": "shopify://collections/hubessentials",
             "button_style": "secondary",
             "button_external": false,
