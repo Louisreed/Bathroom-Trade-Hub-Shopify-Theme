@@ -42,3 +42,21 @@
     endfor
   endunless
 -%}
+
+{%- comment -%} Debug AAA membership pricing calculation {%- endcomment -%}
+<script>
+  if (window.console && window.console.log) {
+    console.log('🔧 AAA MEMBERSHIP PRICING DEBUG:', {
+      customerLoggedIn: {{ customer | json }},
+      customerTags: {{ customer.tags | json }},
+      discountPercent: {{ membership_discount_percent }},
+      hasMembershipPricing: {{ has_membership_pricing }},
+      priceHideItem: {{ aaa_price_hide_item }},
+      shopMetafields: {
+        {% for aaa_rule in shop.metafields.aaa_mem_price %}
+          '{{ aaa_rule.first }}': '{{ aaa_rule.last }}'{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      }
+    });
+  }
+</script>

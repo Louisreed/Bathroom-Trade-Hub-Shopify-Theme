@@ -1,7 +1,7 @@
 {%- doc -%}
   Renders product pricing with sale detection, unit prices, and dynamic price ranges.
 
-  Displays comprehensive pricing information including regular prices, sale prices, price ranges for products with variants, and unit pricing. Automatically detects sales, formats currencies, and handles various pricing scenarios with proper accessibility support.
+  Displays comprehensive pricing information including regular prices, sale prices, price ranges for products with variants, and unit pricing. Automatically detects sales, formats currencies, and handles various pricing scenarios with proper accessibility support. Supports AAA membership discounts.
 
   @param {object} [product] - Shopify product object for pricing
   @param {object} [variant] - Specific variant for single price display
@@ -10,13 +10,15 @@
   @param {boolean} [hide_unit_price] - Hide unit price information
   @param {boolean} [skip_to_price] - Skip quantity break considerations
   @param {boolean} [show_badges] - Show sale/sold out badges (reserved)
+  @param {number} [membership_discount] - AAA membership discount percentage (e.g., 50 for 50%)
   @param {string} [class] - Additional CSS classes
 
   @example
   {% render 'product-price',
      product: product,
      variant: product.selected_variant,
-     use_variant: true
+     use_variant: true,
+     membership_discount: membership_discount_percent
   %}
 {%- enddoc -%}
 
@@ -30,15 +32,39 @@
   endif
 
   assign compare_at_price = target.compare_at_price
-  assign price = target.price | default: 1999
+  assign original_price = target.price | default: 1999
+  assign price = original_price
 
   assign on_sale = false
   if compare_at_price > price
     assign on_sale = true
   endif
 
-  # Membership discount logic handled by separate pricing system
+  # AAA Membership discount logic
+  assign membership_discount_percent = membership_discount | default: 0 | plus: 0
+  assign has_membership_discount = false
+  if membership_discount_percent > 0
+    assign has_membership_discount = true
+    assign discount_multiplier = 100 | minus: membership_discount_percent
+    assign price = original_price | times: discount_multiplier | divided_by: 100
+    assign on_sale = true
+  endif
 -%}
+
+{%- comment -%} Debug membership discount for troubleshooting {%- endcomment -%}
+{%- if membership_discount_percent > 0 -%}
+  <script>
+    if (window.console && window.console.log) {
+      console.log('🎯 AAA MEMBERSHIP DISCOUNT DETECTED:', {
+        product: '{{ target.title | escape }}',
+        originalPrice: {{ original_price }},
+        discountPercent: {{ membership_discount_percent }},
+        discountedPrice: {{ price }},
+        savings: {{ original_price | minus: price }}
+      });
+    }
+  </script>
+{%- endif -%}
 
 <div
   class="
@@ -53,28 +79,58 @@
 
   <span class="price__regular whitespace-nowrap">
     {%- liquid
-      if product.quantity_price_breaks_configured? != true or skip_to_price
-        if target == product and product.price_varies
+      # Handle membership discount price display
+      if has_membership_discount
+        if product.quantity_price_breaks_configured? != true or skip_to_price
+          if target == product and product.price_varies
+            assign discounted_price_min = product.price_min | times: discount_multiplier | divided_by: 100
+            if settings.currency_code_enabled
+              assign discounted_price_formatted = discounted_price_min | money_with_currency
+            else
+              assign discounted_price_formatted = discounted_price_min | money
+            endif
+            echo 'products.price.from_price_html' | t: price: discounted_price_formatted
+          else
+            if settings.currency_code_enabled
+              echo price | money_with_currency
+            else
+              echo price | money
+            endif
+          endif
+        else
+          assign discounted_price_min = product.price_min | times: discount_multiplier | divided_by: 100
+          if settings.currency_code_enabled
+            assign discounted_price_formatted = discounted_price_min | money_with_currency
+          else
+            assign discounted_price_formatted = discounted_price_min | money
+          endif
+          echo 'products.price.from_price_html' | t: price: discounted_price_formatted
+        endif
+      else
+        # Original price display logic for non-membership customers
+        if product.quantity_price_breaks_configured? != true or skip_to_price
+          if target == product and product.price_varies
+            if settings.currency_code_enabled
+              assign price_min = product.price_min | money_with_currency
+            else
+              assign price_min = product.price_min | money
+            endif
+            echo 'products.price.from_price_html' | t: price: price_min
+          else
+            if settings.currency_code_enabled
+              echo price | money_with_currency
+            else
+              echo price | money
+            endif
+          endif
+        else
           if settings.currency_code_enabled
             assign price_min = product.price_min | money_with_currency
           else
             assign price_min = product.price_min | money
           endif
           echo 'products.price.from_price_html' | t: price: price_min
-        else
-          if settings.currency_code_enabled
-            echo price | money_with_currency
-          else
-            echo price | money
-          endif
         endif
-      else
-        if settings.currency_code_enabled
-          assign price_min = product.price_min | money_with_currency
-        else
-          assign price_min = product.price_min | money
-        endif
-        echo 'products.price.from_price_html' | t: price: price_min
       endif
     -%}
   </span>
@@ -83,10 +139,29 @@
     <span class="sr-only">{{ 'products.price.regular_price' | t }}</span>
     <span class="price__sale inline-flex items-center h-auto relative">
       {%- liquid
-        if settings.currency_code_enabled
-          echo compare_at_price | money_with_currency
+        if has_membership_discount
+          # Show original price crossed out for membership discount
+          if target == product and product.price_varies
+            if settings.currency_code_enabled
+              assign original_price_min = product.price_min | money_with_currency
+            else
+              assign original_price_min = product.price_min | money
+            endif
+            echo 'products.price.from_price_html' | t: price: original_price_min
+          else
+            if settings.currency_code_enabled
+              echo original_price | money_with_currency
+            else
+              echo original_price | money
+            endif
+          endif
         else
-          echo compare_at_price | money
+          # Show compare_at_price for regular sales
+          if settings.currency_code_enabled
+            echo compare_at_price | money_with_currency
+          else
+            echo compare_at_price | money
+          endif
         endif
       -%}
     </span>
