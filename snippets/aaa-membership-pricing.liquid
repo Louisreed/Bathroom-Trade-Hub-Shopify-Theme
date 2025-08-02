@@ -96,13 +96,14 @@
       endfor
     endunless
 
-    # FALLBACK: If customer has hubpro-free tag, apply 50% discount
+    # FALLBACK: If customer has hubpro-free tag but no specific rules found, apply 0% (let AtTrillion handle it)
     unless has_membership_pricing
       for customer_tag in customer.tags
         assign clean_customer_tag = customer_tag | downcase | strip
         if clean_customer_tag == 'hubpro-free'
-          assign membership_discount_percent = 50
-          assign has_membership_pricing = true
+          # Don't apply fallback - let the metafields determine the discount
+          assign membership_discount_percent = 0
+          assign has_membership_pricing = false
           break
         endif
       endfor
@@ -157,6 +158,14 @@
     {% else %}
       console.log('  ❌ shop.metafields.atrillion not found');
     {% endif %}
+
+    console.log('🔍 DETAILED METAFIELD INSPECTION:');
+    {% for namespace in shop.metafields %}
+      console.log('  Namespace: {{ namespace.first }}');
+      {% for field in namespace.last %}
+        console.log('    Field: "{{ field.first }}" = "{{ field.last }}"');
+      {% endfor %}
+    {% endfor %}
 
     console.log('🔄 PROCESSING ATRILLION TAG MATCHING:');
     {% for customer_tag in customer.tags %}
