@@ -363,7 +363,7 @@
           "type": "text",
           "name": "t:blocks.text.name",
           "settings": {
-            "text": "<p>Bathroom Trade Hub has been created with the local installer in mind, the days of overpaying for what we class as 'the essentials' are over, join our exclusive savers club where you can save money on everything! </p>",
+            "text": "<p>Bathroom Trade Hub was designed with the local installer in mind, say farewell to overpaying for 'the essentials', join our exclusive savers club to save on everything!</p>",
             "text_font": "body",
             "text_size": "text-base lg:text-lg",
             "text_max_size": 42,
