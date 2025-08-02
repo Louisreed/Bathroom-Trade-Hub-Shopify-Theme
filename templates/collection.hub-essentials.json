@@ -176,10 +176,10 @@
             "position": 5,
             "column_size": "1",
             "image": "shopify://shop_images/IMG_8017.heic",
-            "heading": "Signed Up?",
-            "content": "<p>Make sure you sign up to our website to access exclusive prices on all products!</p>",
-            "button_label": "Find out more!",
-            "button_link": "shopify://pages/trade-sign-up",
+            "heading": "Need it fast?",
+            "content": "<p>Browse our range of In-stock items at our warehouse for same-day delivery or collection.  </p>",
+            "button_label": "HubESSENTIALS!",
+            "button_link": "shopify://collections/hubessentials",
             "button_style": "secondary",
             "button_external": false,
             "button_icon": false,
@@ -187,12 +187,12 @@
             "text_alignment": "center",
             "content_position_mobile": "items-center",
             "text_alignment_mobile": "center",
-            "color_text": "#bba14f",
+            "color_text": "#ffffff",
             "color_button_text": "#4d5940",
             "color_button_background": "#47c8f5",
             "color_button_gradient": "",
-            "color_overlay": "#ffffff",
-            "overlay_opacity": 88
+            "color_overlay": "#424242",
+            "overlay_opacity": 100
           }
         }
       },
