@@ -96,14 +96,46 @@
       endfor
     endunless
 
-    # FALLBACK: If customer has hubpro-free tag but no specific rules found, apply 0% (let AtTrillion handle it)
+    # COLLECTION-BASED DISCOUNT LOGIC: Match product collections to discount percentages
     unless has_membership_pricing
       for customer_tag in customer.tags
         assign clean_customer_tag = customer_tag | downcase | strip
         if clean_customer_tag == 'hubpro-free'
-          # Don't apply fallback - let the metafields determine the discount
-          assign membership_discount_percent = 0
-          assign has_membership_pricing = false
+          # Customer is eligible for membership pricing - check product collections
+          if product
+            for collection in product.collections
+              assign collection_handle = collection.handle | downcase | strip
+              assign collection_title = collection.title | downcase | strip
+
+              # Match collection handles/titles to discount percentages
+              if collection_handle == 'maxi-panels-1' or collection_title contains 'maxi panels'
+                assign membership_discount_percent = 45
+                assign has_membership_pricing = true
+                assign matched_collection = collection.title
+                break
+              elsif collection_handle == 'hubessentials' or collection_title contains 'hubessentials'
+                assign membership_discount_percent = 15
+                assign has_membership_pricing = true
+                assign matched_collection = collection.title
+                break
+              elsif collection_handle contains 'trim' or collection_title contains 'trim'
+                assign membership_discount_percent = 10
+                assign has_membership_pricing = true
+                assign matched_collection = collection.title
+                break
+              elsif collection_handle contains 'wall' or collection_title contains 'wall'
+                assign membership_discount_percent = 30
+                assign has_membership_pricing = true
+                assign matched_collection = collection.title
+                break
+              elsif collection_handle contains 'chevron' or collection_title contains 'chevron'
+                assign membership_discount_percent = 25
+                assign has_membership_pricing = true
+                assign matched_collection = collection.title
+                break
+              endif
+            endfor
+          endif
           break
         endif
       endfor
@@ -234,11 +266,31 @@
       console.log('  ❌ Customer has NO TAGS!');
     {% endif %}
 
+    console.log('🎯 COLLECTION-BASED DISCOUNT MATCHING:');
+    {% if product %}
+      {% for collection in product.collections %}
+        {% assign collection_handle = collection.handle | downcase | strip %}
+        {% assign collection_title = collection.title | downcase | strip %}
+        console.log('  Testing collection: "{{ collection.handle }}" ({{ collection.title }})');
+
+        {% if collection_handle == 'maxi-panels-1' or collection_title contains 'maxi panels' %}
+          console.log('    ✅ MATCH: Maxi Panels → 45% discount');
+        {% elsif collection_handle == 'hubessentials' or collection_title contains 'hubessentials' %}
+          console.log('    ✅ MATCH: HubEssentials → 15% discount');
+        {% elsif collection_handle contains 'trim' or collection_title contains 'trim' %}
+          console.log('    ✅ MATCH: Trims → 10% discount');
+        {% else %}
+          console.log('    ❌ No discount rule for this collection');
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+
     console.log('📊 FINAL CALCULATION RESULT:', {
       priceHideItem: {% if aaa_price_hide_item %}{{ aaa_price_hide_item }}{% else %}false{% endif %},
       membershipDiscountPercent: {% if membership_discount_percent %}{{ membership_discount_percent }}{% else %}0{% endif %},
       hasMembershipPricing: {% if has_membership_pricing %}{{ has_membership_pricing }}{% else %}false{% endif %},
-      discountWillApply: {% if membership_discount_percent > 0 %}true{% else %}false{% endif %}
+      discountWillApply: {% if membership_discount_percent > 0 %}true{% else %}false{% endif %},
+      matchedCollection: '{% if matched_collection %}{{ matched_collection }}{% else %}None{% endif %}'
     });
 
     {% if membership_discount_percent > 0 %}
