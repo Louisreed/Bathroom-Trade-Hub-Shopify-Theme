@@ -50,9 +50,9 @@
         },
         "image_WPGiiB": {
           "type": "image",
-          "name": "Consumables",
+          "name": "FREEDELIVERY",
           "settings": {
-            "image": "shopify://shop_images/FREEDELIVERYBANNERArtboard_1.png",
+            "image": "shopify://shop_images/FREEDELIVERYBANNERArtboard_1_6632b539-82ec-471d-a771-7f7fe4199a75.png",
             "heading": "FREE Dorset Delivery over £100+vat",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
