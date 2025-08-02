@@ -383,7 +383,7 @@
           "type": "text",
           "settings": {
             "heading": "Opening Times",
-            "text": "<p>MON-FRI - 8AM - 5PM</p><p>SAT - 8AM - 12PM</p><p>SUN - CLOSED</p><p></p>",
+            "text": "<p><strong>Open to Trade and Public!</strong></p><ul><li>MON-FRI - 8AM - 5PM</li><li>SAT - 8AM - 12PM</li><li>SUN - CLOSED</li></ul><p></p>",
             "container_width": 50,
             "opened": true
           }
