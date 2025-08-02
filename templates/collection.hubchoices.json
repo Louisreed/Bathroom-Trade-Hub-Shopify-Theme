@@ -266,6 +266,7 @@
         "collection_q8xmPa",
         "collection_fjqNp8"
       ],
+      "disabled": true,
       "name": "t:sections.collection-list.name",
       "settings": {
         "columns": 4,
