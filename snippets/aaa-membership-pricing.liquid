@@ -2,9 +2,14 @@
   AAA Membership Pricing Helper
 
   Calculates membership discount percentage for the current customer based on shop metafields.
-  Sets membership_discount_percent variable that can be used by product-price snippet.
+  IMPORTANT: Use {% assign %} in parent scope to capture the result, not {% render %}
 
-  Usage: {% render 'aaa-membership-pricing' %}
+  Usage:
+  {% liquid
+    assign membership_discount_percent = 0
+    assign has_membership_pricing = false
+  %}
+  {% include 'aaa-membership-pricing' %}
 {%- endcomment -%}
 
 {%- liquid
