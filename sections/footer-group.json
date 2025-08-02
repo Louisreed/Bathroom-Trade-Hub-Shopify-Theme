@@ -369,12 +369,22 @@
             "font_size": 16,
             "opened": true
           }
+        },
+        "text_3ayK6Q": {
+          "type": "text",
+          "settings": {
+            "heading": "Find Us!",
+            "text": "<p>Bathroom Trade Hub</p><p>Unit A6, 83 Lynch Lane</p><p>Weymouth</p><p>Dorset</p><p>DT4 9DN</p>",
+            "container_width": 50,
+            "opened": true
+          }
         }
       },
       "block_order": [
         "logo_social",
         "link_list-1",
-        "brand_information"
+        "brand_information",
+        "text_3ayK6Q"
       ],
       "settings": {
         "invert_newsletter_others": true,
