@@ -96,52 +96,8 @@
       endfor
     endunless
 
-    # COLLECTION-BASED DISCOUNT LOGIC: Customer eligibility + highest discount
-    unless has_membership_pricing
-      for customer_tag in customer.tags
-        assign clean_customer_tag = customer_tag | downcase | strip
-        if clean_customer_tag == 'hubpro-free'
-          # Customer is eligible - find highest discount from collections
-          if product
-            assign temp_discount = 0
-            assign temp_collection = ''
-
-            for collection in product.collections
-              assign collection_handle = collection.handle | downcase | strip
-              assign collection_title = collection.title | downcase | strip
-              assign current_discount = 0
-
-              # Determine discount percentage for this collection
-              if collection_handle == 'maxi-panels-1' or collection_title contains 'maxi panels'
-                assign current_discount = 45
-              elsif collection_handle contains 'wall' or collection_title contains 'wall'
-                assign current_discount = 30
-              elsif collection_handle contains 'chevron' or collection_title contains 'chevron'
-                assign current_discount = 25
-              elsif collection_handle == 'hubessentials' or collection_title contains 'hubessentials'
-                assign current_discount = 15
-              elsif collection_handle contains 'trim' or collection_title contains 'trim'
-                assign current_discount = 10
-              endif
-
-              # Keep the highest discount found
-              if current_discount > temp_discount
-                assign temp_discount = current_discount
-                assign temp_collection = collection.title
-              endif
-            endfor
-
-            # Apply the highest discount found
-            if temp_discount > 0
-              assign membership_discount_percent = temp_discount
-              assign has_membership_pricing = true
-              assign matched_collection = temp_collection
-            endif
-          endif
-          break
-        endif
-      endfor
-    endunless
+    # NO HARDCODED DISCOUNTS - Only use AAA metafield data
+    # membership_discount_percent remains 0 unless found in AAA metafields
   endunless
 -%}
 
@@ -185,12 +141,12 @@
       console.log('shop.metafields.custom: Empty or missing');
     {% endif %}
 
-    console.log('🔍 AAA APP INVESTIGATION - The Real Problem:');
+        console.log('🔍 AAA APP INVESTIGATION - The Real Problem:');
     console.log('❌ AAA app has NOT saved discount rules to Shopify metafields');
     console.log('❌ Your discount config exists in AAA dashboard but not in Shopify');
     console.log('❌ AAA may use its own database instead of Shopify metafields');
 
-    console.log('✅ SOLUTION: Using working hardcoded logic as bridge solution');
+    console.log('⚠️ NO DISCOUNTS WILL APPLY until AAA support fixes metafield sync');
 
     console.log('🎯 CHECKING ATRILLION/MEMBERSHIP NAMESPACES:');
     {% if shop.metafields.membership %}
@@ -287,38 +243,15 @@
       console.log('  ❌ Customer has NO TAGS!');
     {% endif %}
 
-        console.log('🎯 COLLECTION-BASED DISCOUNT MATCHING (finding HIGHEST discount):');
+            console.log('🎯 WAITING FOR AAA DISCOUNT DATA:');
+    console.log('❌ No hardcoded discounts - relies entirely on AAA metafields');
+    console.log('❌ Until AAA syncs data to Shopify, no discounts will apply');
+
     {% if product %}
-      {% assign temp_discount = 0 %}
-      {% assign temp_collection = '' %}
-
+      console.log('🛍️ Available collections for discount mapping:');
       {% for collection in product.collections %}
-        {% assign collection_handle = collection.handle | downcase | strip %}
-        {% assign collection_title = collection.title | downcase | strip %}
-        {% assign current_discount = 0 %}
-
-        {% if collection_handle == 'maxi-panels-1' or collection_title contains 'maxi panels' %}
-          {% assign current_discount = 45 %}
-        {% elsif collection_handle contains 'wall' or collection_title contains 'wall' %}
-          {% assign current_discount = 30 %}
-        {% elsif collection_handle contains 'chevron' or collection_title contains 'chevron' %}
-          {% assign current_discount = 25 %}
-        {% elsif collection_handle == 'hubessentials' or collection_title contains 'hubessentials' %}
-          {% assign current_discount = 15 %}
-        {% elsif collection_handle contains 'trim' or collection_title contains 'trim' %}
-          {% assign current_discount = 10 %}
-        {% endif %}
-
-        console.log('  Testing collection: "{{ collection.handle }}" ({{ collection.title }}) → {{ current_discount }}% discount');
-
-        {% if current_discount > temp_discount %}
-          {% assign temp_discount = current_discount %}
-          {% assign temp_collection = collection.title %}
-          console.log('    🎯 NEW HIGHEST: {{ current_discount }}% from {{ collection.title }}');
-        {% endif %}
+        console.log('  - "{{ collection.handle }}" ({{ collection.title }})');
       {% endfor %}
-
-      console.log('🏆 WINNING COLLECTION: "{{ temp_collection }}" with {{ temp_discount }}% discount');
     {% endif %}
 
     console.log('📊 FINAL CALCULATION RESULT:', {
@@ -330,9 +263,10 @@
     });
 
     {% if membership_discount_percent > 0 %}
-      console.log('🎯 ✅ DISCOUNT SHOULD BE APPLIED!');
+      console.log('🎯 ✅ DISCOUNT FOUND IN AAA METAFIELDS!');
     {% else %}
-      console.log('❌ NO DISCOUNT - Check customer login, tags, or shop configuration');
+      console.log('❌ NO DISCOUNT - AAA metafields are empty, waiting for sync from AAA dashboard');
+      console.log('💡 Contact AAA support about metafield sync issue');
     {% endif %}
 
     console.log('🚀 === AAA MEMBERSHIP PRICING DEBUG END ===');
