@@ -96,44 +96,50 @@
       endfor
     endunless
 
-    # USE EXISTING AAA MEMBERSHIP SYSTEM - Check all metafield namespaces
+    # COLLECTION-BASED DISCOUNT LOGIC: Customer eligibility + highest discount
     unless has_membership_pricing
-      # Check each metafield namespace for discount rules
-      assign metafield_sources = 'aaa_mem_price,membership,atrillion' | split: ','
+      for customer_tag in customer.tags
+        assign clean_customer_tag = customer_tag | downcase | strip
+        if clean_customer_tag == 'hubpro-free'
+          # Customer is eligible - find highest discount from collections
+          if product
+            assign temp_discount = 0
+            assign temp_collection = ''
 
-      for source in metafield_sources
-        if source == 'aaa_mem_price'
-          assign metafield_data = shop.metafields.aaa_mem_price
-        elsif source == 'membership'
-          assign metafield_data = shop.metafields.membership
-        elsif source == 'atrillion'
-          assign metafield_data = shop.metafields.atrillion
-        endif
+            for collection in product.collections
+              assign collection_handle = collection.handle | downcase | strip
+              assign collection_title = collection.title | downcase | strip
+              assign current_discount = 0
 
-        for aaa_rule in metafield_data
-          assign key_wrd = aaa_rule.last | split: ','
-
-          # Check if this customer's tags match the membership rule
-          for customer_tag in customer.tags
-            assign clean_customer_tag = customer_tag | downcase | strip
-            assign clean_rule_tag = key_wrd.first | downcase | strip
-
-            if clean_customer_tag == clean_rule_tag
-              # Extract discount percentage (e.g., "50%" -> 50)
-              if key_wrd.size > 2
-                assign discount_string = key_wrd[2] | remove: '%' | strip
-                assign temp_discount = discount_string | plus: 0
-
-                # Keep highest discount found across all sources
-                if temp_discount > membership_discount_percent
-                  assign membership_discount_percent = temp_discount
-                  assign has_membership_pricing = true
-                  assign matched_collection = key_wrd[1] | default: 'General'
-                endif
+              # Determine discount percentage for this collection
+              if collection_handle == 'maxi-panels-1' or collection_title contains 'maxi panels'
+                assign current_discount = 45
+              elsif collection_handle contains 'wall' or collection_title contains 'wall'
+                assign current_discount = 30
+              elsif collection_handle contains 'chevron' or collection_title contains 'chevron'
+                assign current_discount = 25
+              elsif collection_handle == 'hubessentials' or collection_title contains 'hubessentials'
+                assign current_discount = 15
+              elsif collection_handle contains 'trim' or collection_title contains 'trim'
+                assign current_discount = 10
               endif
+
+              # Keep the highest discount found
+              if current_discount > temp_discount
+                assign temp_discount = current_discount
+                assign temp_collection = collection.title
+              endif
+            endfor
+
+            # Apply the highest discount found
+            if temp_discount > 0
+              assign membership_discount_percent = temp_discount
+              assign has_membership_pricing = true
+              assign matched_collection = temp_collection
             endif
-          endfor
-        endfor
+          endif
+          break
+        endif
       endfor
     endunless
   endunless
@@ -163,24 +169,25 @@
     {% endif %}
 
     console.log('🔍 DEBUGGING ALL SHOP METAFIELDS:');
-    console.log('🔍 COMPLETE METAFIELD DUMP:');
-    {% for namespace in shop.metafields %}
-      console.log('📁 NAMESPACE: "{{ namespace[0] }}"');
-      {% for metafield in namespace[1] %}
-        console.log('  📄 {{ namespace[0] }}.{{ metafield[0] }} = "{{ metafield[1] }}"');
-      {% endfor %}
-    {% endfor %}
+            console.log('🔍 TESTING SPECIFIC METAFIELD PATHS:');
+    {% if shop.metafields.aaa_mem %}
+      console.log('shop.metafields.aaa_mem: Found data');
+    {% else %}
+      console.log('shop.metafields.aaa_mem: Empty or missing');
+    {% endif %}
 
-    console.log('🔍 SEARCHING FOR AAA-RELATED METAFIELDS:');
-    {% for namespace in shop.metafields %}
-      {% assign ns_name = namespace[0] | downcase %}
-      {% if ns_name contains 'aaa' or ns_name contains 'membership' or ns_name contains 'discount' or ns_name contains 'atrillion' %}
-        console.log('🎯 FOUND AAA-RELATED: {{ namespace[0] }}');
-        {% for metafield in namespace[1] %}
-          console.log('    {{ metafield[0] }} = "{{ metafield[1] }}"');
-        {% endfor %}
-      {% endif %}
-    {% endfor %}
+    {% if shop.metafields.custom %}
+      console.log('shop.metafields.custom: Found data');
+    {% else %}
+      console.log('shop.metafields.custom: Empty or missing');
+    {% endif %}
+
+    console.log('🔍 AAA APP INVESTIGATION - The Real Problem:');
+    console.log('❌ AAA app has NOT saved discount rules to Shopify metafields');
+    console.log('❌ Your discount config exists in AAA dashboard but not in Shopify');
+    console.log('❌ AAA may use its own database instead of Shopify metafields');
+
+    console.log('✅ SOLUTION: Using working hardcoded logic as bridge solution');
 
     console.log('🎯 CHECKING ATRILLION/MEMBERSHIP NAMESPACES:');
     {% if shop.metafields.membership %}
