@@ -172,6 +172,9 @@
             console.log('🔍 TESTING SPECIFIC METAFIELD PATHS:');
     {% if shop.metafields.aaa_mem %}
       console.log('shop.metafields.aaa_mem: Found data');
+      {% for rule in shop.metafields.aaa_mem %}
+        console.log('  AAA_MEM RULE: "{{ rule.first }}" = "{{ rule.last }}"');
+      {% endfor %}
     {% else %}
       console.log('shop.metafields.aaa_mem: Empty or missing');
     {% endif %}
