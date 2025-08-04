@@ -12,6 +12,24 @@
     "slideshow": {
       "type": "slideshow",
       "blocks": {
+        "image_WPGiiB": {
+          "type": "image",
+          "name": "FREEDELIVERY",
+          "settings": {
+            "image": "shopify://shop_images/OPENINGSOONBANNERArtboard_1.png",
+            "heading": "",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": false
+          }
+        },
         "image_NhPc9m": {
           "type": "image",
           "name": "HubESSENTIALS",
@@ -28,26 +46,6 @@
             "show_for_standard": true,
             "show_for_hubpro_free": true,
             "show_for_hubpro_plus": true
-          }
-        },
-        "image_WPGiiB": {
-          "type": "image",
-          "name": "FREEDELIVERY",
-          "disabled": true,
-          "settings": {
-            "image": "shopify://shop_images/FREEDELIVERYBANNERArtboard_1_6632b539-82ec-471d-a771-7f7fe4199a75.png",
-            "image_mobile": "shopify://shop_images/FREEDELIVERYBANNERMOBILEArtboard_1.png",
-            "heading": "FREE Dorset Delivery over £100+vat",
-            "heading_size": "title-lg tracking-heading",
-            "heading_tag": "h2",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "secondary",
-            "button_external": false,
-            "button_icon": false,
-            "show_for_standard": true,
-            "show_for_hubpro_free": true,
-            "show_for_hubpro_plus": false
           }
         },
         "image_KkFJd6": {
@@ -272,8 +270,8 @@
         }
       },
       "block_order": [
-        "image_NhPc9m",
         "image_WPGiiB",
+        "image_NhPc9m",
         "image_KkFJd6",
         "image_fWDXqc",
         "image_wcjf8M",
