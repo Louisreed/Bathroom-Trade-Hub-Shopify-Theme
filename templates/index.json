@@ -12,24 +12,6 @@
     "slideshow": {
       "type": "slideshow",
       "blocks": {
-        "slide-1": {
-          "type": "image",
-          "name": "FREEDELIVERY",
-          "settings": {
-            "image": "shopify://shop_images/Durdle_Door_Overview.jpg",
-            "heading": "FREE Dorset Delivery over £100+vat",
-            "heading_size": "title-lg tracking-heading",
-            "heading_tag": "h2",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "secondary",
-            "button_external": false,
-            "button_icon": false,
-            "show_for_standard": true,
-            "show_for_hubpro_free": true,
-            "show_for_hubpro_plus": true
-          }
-        },
         "image_NhPc9m": {
           "type": "image",
           "name": "HubESSENTIALS",
@@ -269,10 +251,27 @@
             "show_for_hubpro_free": true,
             "show_for_hubpro_plus": true
           }
+        },
+        "slide-1": {
+          "type": "image",
+          "name": "FREEDELIVERY",
+          "settings": {
+            "image": "shopify://shop_images/Durdle_Door_Overview.jpg",
+            "heading": "FREE Dorset Delivery over £100+vat",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
+          }
         }
       },
       "block_order": [
-        "slide-1",
         "image_NhPc9m",
         "image_WPGiiB",
         "image_KkFJd6",
@@ -285,7 +284,8 @@
         "image_JK6ePW",
         "image_QCYpgM",
         "image_4MbLbY",
-        "image_WNzL7A"
+        "image_WNzL7A",
+        "slide-1"
       ],
       "settings": {
         "autoplay": true,
