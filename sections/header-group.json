@@ -112,7 +112,7 @@
         "menu_tag_gTBEJx": {
           "type": "menu_tag",
           "settings": {
-            "menu_handle": "Tiling",
+            "menu_handle": "Tiling Consumables",
             "tag_text": "COMING SOON!",
             "background_color": "#f59e0b",
             "text_color": "#ffffff",
@@ -589,10 +589,10 @@
           "type": "mega_menu",
           "name": "Tiling",
           "settings": {
-            "menu_title": "Tiling",
+            "menu_title": "Tiling Consumables",
             "menu_width": "medium",
-            "show_menu_image": true,
-            "button_label": "COMING SOON!",
+            "show_menu_image": false,
+            "button_label": "",
             "button_link": "",
             "promo_image_1": "shopify://shop_images/Red_White_Simple_Coming_Soon_Instagram_Post-3.png",
             "promo_image_ratio_1": "square",
