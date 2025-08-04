@@ -109,6 +109,16 @@
             "tag_style": "pill"
           }
         },
+        "menu_tag_gTBEJx": {
+          "type": "menu_tag",
+          "settings": {
+            "menu_handle": "Tiling",
+            "tag_text": "COMING SOON!",
+            "background_color": "#f59e0b",
+            "text_color": "#ffffff",
+            "tag_style": "pill"
+          }
+        },
         "menu_visibility_Ffftfn": {
           "type": "menu_visibility",
           "settings": {
@@ -2050,6 +2060,7 @@
       "block_order": [
         "menu_button_kh3Yk7",
         "menu_tag_gJEr7d",
+        "menu_tag_gTBEJx",
         "menu_visibility_Ffftfn",
         "menu_tag_A69H4n",
         "menu_tag_F6tjLe",
