@@ -1760,12 +1760,10 @@
           "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.label"
         },
         {
-          "visible_if": "{{ block.settings.picker_type == 'button' }}",
           "type": "header",
           "content": "t:sections.main-product.blocks.variant_picker.settings.header__color.content"
         },
         {
-          "visible_if": "{{ block.settings.picker_type == 'button' }}",
           "type": "checkbox",
           "id": "enable_color_swatches",
           "default": true,
@@ -1773,7 +1771,6 @@
           "info": "t:sections.main-product.blocks.variant_picker.settings.enable_color_swatches.info"
         },
         {
-          "visible_if": "{{ block.settings.picker_type == 'button' and block.settings.enable_color_swatches == true }}",
           "type": "select",
           "id": "color_swatch_type",
           "options": [
@@ -1843,7 +1840,6 @@
           "label": "t:sections.main-product.blocks.variant_picker.settings.enable_color_swatches.label"
         },
         {
-          "visible_if": "{{ block.settings.enable_color_swatches == true }}",
           "type": "select",
           "id": "color_swatch_type",
           "options": [
@@ -1922,14 +1918,12 @@
           "label": "t:sections.main-product.blocks.back_in_stock.settings.enabled.label"
         },
         {
-          "visible_if": "{{ block.settings.enable_back_in_stock == true }}",
           "type": "checkbox",
           "id": "show_back_in_stock_name",
           "default": false,
           "label": "t:sections.main-product.blocks.back_in_stock.settings.show_name.label"
         },
         {
-          "visible_if": "{{ block.settings.enable_back_in_stock == true }}",
           "type": "checkbox",
           "id": "show_back_in_stock_phone",
           "default": false,
@@ -2009,20 +2003,17 @@
           "default": true
         },
         {
-          "visible_if": "{{ block.settings.show_help_desk == true }}",
           "type": "text",
           "id": "help_label",
           "label": "t:sections.main-product.blocks.help_desk.settings.help_label.label",
           "default": "Need help?"
         },
         {
-          "visible_if": "{{ block.settings.show_help_desk == true }}",
           "type": "page",
           "id": "help_page",
           "label": "t:sections.main-product.blocks.help_desk.settings.help_page.label"
         },
         {
-          "visible_if": "{{ block.settings.show_help_desk == true }}",
           "type": "checkbox",
           "id": "help_page_external",
           "label": "t:sections.global.settings.button_external.label",
@@ -2854,46 +2845,39 @@
           "default": false
         },
         {
-          "visible_if": "{{ block.settings.type == 'checkbox' }}",
           "type": "header",
           "content": "t:sections.main-product.blocks.line_item_property.settings.header__checkbox.content",
           "info": "t:sections.main-product.blocks.line_item_property.settings.header__checkbox.info"
         },
         {
-          "visible_if": "{{ block.settings.type == 'checkbox' }}",
           "type": "text",
           "id": "checked_value",
           "label": "t:sections.main-product.blocks.line_item_property.settings.checked_value.label",
           "default": "Yes"
         },
         {
-          "visible_if": "{{ block.settings.type == 'checkbox' }}",
           "type": "text",
           "id": "unchecked_value",
           "label": "t:sections.main-product.blocks.line_item_property.settings.unchecked_value.label",
           "default": "No"
         },
         {
-          "visible_if": "{{ block.settings.type == 'radio' }}",
           "type": "header",
           "content": "t:sections.main-product.blocks.line_item_property.settings.header__radio.content",
           "info": "t:sections.main-product.blocks.line_item_property.settings.header__radio.info"
         },
         {
-          "visible_if": "{{ block.settings.type == 'radio' }}",
           "type": "text",
           "id": "radio_options",
           "label": "t:sections.main-product.blocks.line_item_property.settings.options.label",
           "info": "t:sections.main-product.blocks.line_item_property.settings.options.info"
         },
         {
-          "visible_if": "{{ block.settings.type == 'select' }}",
           "type": "header",
           "content": "t:sections.main-product.blocks.line_item_property.settings.header__dropdown.content",
           "info": "t:sections.main-product.blocks.line_item_property.settings.header__dropdown.info"
         },
         {
-          "visible_if": "{{ block.settings.type == 'select' }}",
           "type": "text",
           "id": "select_options",
           "label": "t:sections.main-product.blocks.line_item_property.settings.options.label",
