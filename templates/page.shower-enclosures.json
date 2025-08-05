@@ -131,10 +131,36 @@
         "collection_D6MTyH": {
           "type": "collection",
           "settings": {
-            "collection": "ensky-black",
+            "collection": "the-ensky-range",
             "title": "",
             "description": "",
-            "overlay_content": false,
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_ttbgGh": {
+          "type": "collection",
+          "settings": {
+            "collection": "pacific",
+            "image": "shopify://shop_images/Screenshot_2025-08-05_at_2.21.24_PM.png",
+            "title": "",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_DNzjeB": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-ella-range",
+            "image": "shopify://shop_images/Screenshot_2025-08-05_at_2.20.28_PM.png",
+            "title": "",
+            "description": "",
+            "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 30
@@ -146,7 +172,9 @@
         "collection_pFDrgG",
         "collection_Xe7b3f",
         "collection_JfaRcz",
-        "collection_D6MTyH"
+        "collection_D6MTyH",
+        "collection_ttbgGh",
+        "collection_DNzjeB"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
