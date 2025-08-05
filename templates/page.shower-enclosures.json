@@ -93,10 +93,11 @@
         "collection_pFDrgG": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "the-dawn-athena-range",
+            "image": "shopify://shop_images/Screenshot_2025-08-05_at_12.52.01.jpg",
             "title": "",
             "description": "",
-            "overlay_content": false,
+            "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 30
