@@ -127,13 +127,26 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_D6MTyH": {
+          "type": "collection",
+          "settings": {
+            "collection": "ensky-black",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
         "collection_hpQ7UW",
         "collection_pFDrgG",
         "collection_Xe7b3f",
-        "collection_JfaRcz"
+        "collection_JfaRcz",
+        "collection_D6MTyH"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
