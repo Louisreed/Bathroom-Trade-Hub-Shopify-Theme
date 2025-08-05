@@ -1,0 +1,52 @@
+{
+  "wrapper": "div.page-width.page-width--narrow",
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_title": true,
+        "page_width": "large"
+      }
+    },
+    "custom_section_gCE33B": {
+      "type": "custom-section",
+      "blocks": {
+        "hubpro_html_wfK4M3": {
+          "type": "hubpro-html",
+          "name": "Trade Account Notice",
+          "settings": {
+            "custom_html": "<div class=\"membership-notice\" style=\"padding: 40px; background-color: #f8f9fa; border-radius: 8px; text-align: center;\"><h3 style=\"color: #333; margin-bottom: 20px;\">Trade Account Registration</h3><p style=\"color: #666; margin-bottom: 20px;\">Our membership system has been updated. Please contact us directly for trade account setup and membership information.</p><a href=\"/pages/contact\" class=\"btn btn-primary\" style=\"background-color: #BB9F4D; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px;\">Contact Us</a></div>",
+            "custom_css": ".membership-notice { margin: 20px auto; max-width: 600px; }",
+            "max_width": 0,
+            "text_alignment": "left",
+            "padding_top": 40,
+            "padding_bottom": 40,
+            "padding_horizontal": 20,
+            "font_size": 16,
+            "line_height": 1.5,
+            "background_color": "rgba(0,0,0,0)",
+            "text_color": "#000000",
+            "hide_on_mobile": false,
+            "hide_on_desktop": false
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "hubpro_html_wfK4M3"
+      ],
+      "settings": {
+        "full_width": false,
+        "content_width": "large",
+        "text_alignment": "left",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 40
+      }
+    }
+  },
+  "order": [
+    "main",
+    "custom_section_gCE33B"
+  ]
+}

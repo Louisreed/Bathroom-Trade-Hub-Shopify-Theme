@@ -10,7 +10,6 @@
   @param {boolean} [hide_unit_price] - Hide unit price information
   @param {boolean} [skip_to_price] - Skip quantity break considerations
   @param {boolean} [show_badges] - Show sale/sold out badges (reserved)
-
   @param {string} [class] - Additional CSS classes
 
   @example
@@ -39,11 +38,7 @@
   if compare_at_price > price
     assign on_sale = true
   endif
-
-
 -%}
-
-
 
 <div
   class="
@@ -88,21 +83,20 @@
     <span class="sr-only">{{ 'products.price.regular_price' | t }}</span>
     <span class="price__sale inline-flex items-center h-auto relative">
       {%- liquid
-        
-          if target == product and product.price_varies
-            if settings.currency_code_enabled
-              assign original_price_min = product.price_min | money_with_currency
-            else
-              assign original_price_min = product.price_min | money
-            endif
-            echo 'products.price.from_price_html' | t: price: original_price_min
+        if target == product and product.price_varies
+          if settings.currency_code_enabled
+            assign original_price_min = product.price_min | money_with_currency
           else
-            if settings.currency_code_enabled
-              echo original_price | money_with_currency
-            else
-              echo original_price | money
-            endif
+            assign original_price_min = product.price_min | money
           endif
+          echo 'products.price.from_price_html' | t: price: original_price_min
+        else
+          if settings.currency_code_enabled
+            echo original_price | money_with_currency
+          else
+            echo original_price | money
+          endif
+        endif
       -%}
     </span>
   {%- endif -%}
