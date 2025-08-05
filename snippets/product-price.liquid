@@ -58,57 +58,28 @@
 
   <span class="price__regular whitespace-nowrap">
     {%- liquid
-      
-        if product.quantity_price_breaks_configured? != true or skip_to_price
-          if target == product and product.price_varies
-            assign discounted_price_min = product.price_min
-            if settings.currency_code_enabled
-              assign discounted_price_formatted = discounted_price_min | money_with_currency
-            else
-              assign discounted_price_formatted = discounted_price_min | money
-            endif
-            echo 'products.price.from_price_html' | t: price: discounted_price_formatted
-          else
-            if settings.currency_code_enabled
-              echo price | money_with_currency
-            else
-              echo price | money
-            endif
-          endif
-        else
-          assign discounted_price_min = product.price_min | times: discount_multiplier | divided_by: 100
-          if settings.currency_code_enabled
-            assign discounted_price_formatted = discounted_price_min | money_with_currency
-          else
-            assign discounted_price_formatted = discounted_price_min | money
-          endif
-          echo 'products.price.from_price_html' | t: price: discounted_price_formatted
-        endif
-      else
-        # Original price display logic
-        if product.quantity_price_breaks_configured? != true or skip_to_price
-          if target == product and product.price_varies
-            if settings.currency_code_enabled
-              assign price_min = product.price_min | money_with_currency
-            else
-              assign price_min = product.price_min | money
-            endif
-            echo 'products.price.from_price_html' | t: price: price_min
-          else
-            if settings.currency_code_enabled
-              echo price | money_with_currency
-            else
-              echo price | money
-            endif
-          endif
-        else
+      if product.quantity_price_breaks_configured? != true or skip_to_price
+        if target == product and product.price_varies
           if settings.currency_code_enabled
             assign price_min = product.price_min | money_with_currency
           else
             assign price_min = product.price_min | money
           endif
           echo 'products.price.from_price_html' | t: price: price_min
+        else
+          if settings.currency_code_enabled
+            echo price | money_with_currency
+          else
+            echo price | money
+          endif
         endif
+      else
+        if settings.currency_code_enabled
+          assign price_min = product.price_min | money_with_currency
+        else
+          assign price_min = product.price_min | money
+        endif
+        echo 'products.price.from_price_html' | t: price: price_min
       endif
     -%}
   </span>
@@ -132,14 +103,6 @@
               echo original_price | money
             endif
           endif
-        else
-          # Show compare_at_price for regular sales
-          if settings.currency_code_enabled
-            echo compare_at_price | money_with_currency
-          else
-            echo compare_at_price | money
-          endif
-        endif
       -%}
     </span>
   {%- endif -%}
