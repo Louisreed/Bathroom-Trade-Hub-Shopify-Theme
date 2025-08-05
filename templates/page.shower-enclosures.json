@@ -114,12 +114,26 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_JfaRcz": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-s6-enclosure-range",
+            "image": "shopify://shop_images/Screenshot_2025-08-05_at_1.14.52_PM.png",
+            "title": "",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
         "collection_hpQ7UW",
         "collection_pFDrgG",
-        "collection_Xe7b3f"
+        "collection_Xe7b3f",
+        "collection_JfaRcz"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
@@ -127,7 +141,7 @@
         "carousel_on_desktop": false,
         "image_type": "collection",
         "image_ratio": "square",
-        "show_products_count": true,
+        "show_products_count": false,
         "show_view_all": false,
         "columns_mobile": "1",
         "swipe_on_mobile": true,
