@@ -109,7 +109,7 @@
             "collection": "the-s8-enclosure-range",
             "title": "",
             "description": "",
-            "overlay_content": false,
+            "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 30
