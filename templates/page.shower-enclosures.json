@@ -132,6 +132,7 @@
           "type": "collection",
           "settings": {
             "collection": "the-ensky-range",
+            "image": "shopify://shop_images/Screenshot_2025-08-05_at_2.25.36_PM.png",
             "title": "",
             "description": "",
             "overlay_content": true,
