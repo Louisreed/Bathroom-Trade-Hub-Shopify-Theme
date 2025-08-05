@@ -123,39 +123,7 @@
         >
           {%- case block.type -%}
             {%- when 'membership_program' -%}
-              <div class="membership-program-section">
-                <div class="aaa-success-msg-account"></div>
-                <div class="aaa-error-msg-account"></div>
-                <div
-                  class="aaa_customer_all_plan_listing"
-                  data-customer-email="{{ customer.email }}"
-                  data-customer-id="{{ customer.id }}"
-                ></div>
-                <script>
-                  function isMyMembershipScriptLoaded() {
-                    var url =
-                      'https://shopifycdn.aaawebstore.com/membership/appfiles/aaa_membership_script_min_v3.js?shop=bathroomtradehub.co.uk';
-                    var jsFound = 0;
-                    var scripts = document.getElementsByTagName('script');
-
-                    for (var i = scripts.length; i--; ) {
-                      if (scripts[i].src == url) {
-                        jsFound = 1;
-                      }
-                    }
-
-                    if (!jsFound) {
-                      var headTag = document.getElementsByTagName('head')[0];
-                      var jqTag = document.createElement('script');
-                      jqTag.type = 'text/javascript';
-                      jqTag.src = url;
-                      jqTag.onload = '';
-                      headTag.appendChild(jqTag);
-                    }
-                  }
-                  isMyMembershipScriptLoaded();
-                </script>
-              </div>
+              <div class="membership-program-section"></div>
 
             {%- when 'order_history' -%}
               <div class="order-history-section">

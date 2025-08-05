@@ -267,12 +267,6 @@
 
                 {%- if price_block == blank and block.settings.show_price -%}
                   <div id="Price-{{ section.id }}-{{ product.id }}" class="product__price">
-                    {%- comment -%} AAA Membership Pricing Logic - Initialize variables first {%- endcomment -%}
-                    {%- liquid
-                      assign membership_discount_percent = 0
-                      assign has_membership_pricing = false
-                    -%}
-                    {%- include 'aaa-membership-pricing' -%}
                     {%- render 'product-price',
                       product: product,
                       use_variant: true,
@@ -317,12 +311,6 @@
             {%- when 'price' -%}
               <div class="product__price grid gap-3" {{ block.shopify_attributes }}>
                 <div class="no-js-hidden" id="Price-{{ section.id }}-{{ product.id }}">
-                  {%- comment -%} AAA Membership Pricing Logic - Initialize variables first {%- endcomment -%}
-                  {%- liquid
-                    assign membership_discount_percent = 0
-                    assign has_membership_pricing = false
-                  -%}
-                  {%- include 'aaa-membership-pricing' -%}
                   {%- comment -%} DEBUG: Check if membership_discount_percent is available {%- endcomment -%}
                   <script>
                     console.log(
@@ -981,12 +969,6 @@
                             </div>
                             <div class="horizontal-product__quantity shrink-0">
                               {%- if variant.available -%}
-                                {%- comment -%} AAA Membership Pricing Logic - Initialize variables first {%- endcomment -%}
-                                {%- liquid
-                                  assign membership_discount_percent = 0
-                                  assign has_membership_pricing = false
-                                -%}
-                                {%- include 'aaa-membership-pricing' -%}
                                 {%- render 'product-price',
                                   product: variant.product,
                                   variant: variant,
@@ -1180,12 +1162,6 @@
               </div>
               <div id="StickyPrice-{{ section.id }}-{{ product.id }}">
                 {%- if product.quantity_price_breaks_configured? != true -%}
-                  {%- comment -%} AAA Membership Pricing Logic - Initialize variables first {%- endcomment -%}
-                  {%- liquid
-                    assign membership_discount_percent = 0
-                    assign has_membership_pricing = false
-                  -%}
-                  {%- include 'aaa-membership-pricing' -%}
                   {%- render 'product-price',
                     product: product,
                     use_variant: true,

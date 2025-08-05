@@ -210,8 +210,6 @@
 
                     {%- if price_block == blank and block.settings.show_price -%}
                       <div id="Price-{{ section.id }}-{{ product.id }}" class="product__price">
-                        {%- comment -%} AAA Membership Pricing Logic {%- endcomment -%}
-                        {%- render 'aaa-membership-pricing' -%}
                         {%- render 'product-price',
                           product: product,
                           use_variant: true,
@@ -256,8 +254,6 @@
                 {%- when 'price' -%}
                   <div class="product__price grid gap-3" {{ block.shopify_attributes }}>
                     <div class="no-js-hidden" id="Price-{{ section.id }}-{{ product.id }}">
-                      {%- comment -%} AAA Membership Pricing Logic {%- endcomment -%}
-                      {%- render 'aaa-membership-pricing' -%}
                       {%- render 'product-price',
                         product: product,
                         use_variant: true,

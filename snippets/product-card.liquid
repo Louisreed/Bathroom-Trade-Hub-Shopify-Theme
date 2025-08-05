@@ -311,11 +311,8 @@
             {{- product.title | escape -}}
           </a>
         </p>
-        {%- comment -%} AAA Membership Pricing Logic {%- endcomment -%}
-        {%- render 'aaa-membership-pricing' -%}
         {%- render 'product-price',
           product: product,
-          membership_discount: membership_discount_percent,
           class: 'flex flex-wrap lg:flex-col lg:items-end gap-2 md:gap-1d5'
         -%}
         {%- if product.quantity_price_breaks_configured? -%}
