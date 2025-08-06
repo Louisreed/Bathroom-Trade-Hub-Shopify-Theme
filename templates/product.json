@@ -13,7 +13,7 @@
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.name",
       "settings": {
-        "liquid": "<div class=\"ab-discounted-pricing-container\" id=\"discountedPricingContainer\"></div>",
+        "liquid": "<div class=\"ab-discounted-pricing-container\" id=\"discountedPricingContainer\"></div>\n\n<div class=\"ab-bogo-discount-product-page\" id=\"ab-bogo-discount-product-page\"></div>",
         "color_text": "",
         "color_background": "",
         "gradient_background": "",
