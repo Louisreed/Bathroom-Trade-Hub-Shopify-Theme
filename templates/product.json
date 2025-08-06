@@ -9,6 +9,24 @@
  */
 {
   "sections": {
+    "custom_liquid_myTczR": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.name",
+      "settings": {
+        "liquid": "<div class=\"ab-discounted-pricing-container\" id=\"discountedPricingContainer\"></div>",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "narrow": false,
+        "rounded": false
+      }
+    },
     "1754473167d0792be2": {
       "type": "apps",
       "settings": {
@@ -884,6 +902,7 @@
     }
   },
   "order": [
+    "custom_liquid_myTczR",
     "1754473167d0792be2",
     "main-product",
     "help-drawer",
