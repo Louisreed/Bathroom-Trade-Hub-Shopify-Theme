@@ -9,42 +9,6 @@
  */
 {
   "sections": {
-    "custom_liquid_myTczR": {
-      "type": "custom-liquid",
-      "name": "t:sections.custom-liquid.name",
-      "settings": {
-        "liquid": "<div class=\"ab-bogo-discount-product-page\" id=\"ab-bogo-discount-product-page\"></div>",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 72,
-        "padding_bottom": 72,
-        "divider": false,
-        "narrow": false,
-        "rounded": false
-      }
-    },
-    "1754473167d0792be2": {
-      "type": "apps",
-      "settings": {
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
-      }
-    },
     "main-product": {
       "type": "main-product",
       "blocks": {
@@ -66,10 +30,6 @@
             "show_price": true,
             "show_rating": false
           }
-        },
-        "appstle_bundles_appstle_discounted_pricing_bundle_AKJmjY": {
-          "type": "shopify://apps/appstle-bundles/blocks/appstle-discounted-pricing-bundle/8909921b-2d24-4d68-9b12-9d045d3dcb0a",
-          "settings": {}
         },
         "countdown": {
           "type": "countdown",
@@ -99,6 +59,10 @@
             "show_inventory_quantity": "low",
             "color_scheme": "accent-1"
           }
+        },
+        "appstle_bundles_appstle_discounted_pricing_bundle_AKJmjY": {
+          "type": "shopify://apps/appstle-bundles/blocks/appstle-discounted-pricing-bundle/8909921b-2d24-4d68-9b12-9d045d3dcb0a",
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -151,10 +115,10 @@
       "block_order": [
         "vendor",
         "title",
-        "appstle_bundles_appstle_discounted_pricing_bundle_AKJmjY",
         "countdown",
         "variant_picker",
         "inventory",
+        "appstle_bundles_appstle_discounted_pricing_bundle_AKJmjY",
         "buy_buttons",
         "pickup_availability",
         "description",
@@ -902,8 +866,6 @@
     }
   },
   "order": [
-    "custom_liquid_myTczR",
-    "1754473167d0792be2",
     "main-product",
     "help-drawer",
     "video-hero",
