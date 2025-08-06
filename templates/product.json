@@ -9,6 +9,33 @@
  */
 {
   "sections": {
+    "1754473167d0792be2": {
+      "type": "apps",
+      "blocks": {
+        "appstle_bundles_appstle_discounted_pricing_bundle_Dajt4y": {
+          "type": "shopify://apps/appstle-bundles/blocks/appstle-discounted-pricing-bundle/8909921b-2d24-4d68-9b12-9d045d3dcb0a",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "appstle_bundles_appstle_discounted_pricing_bundle_Dajt4y"
+      ],
+      "settings": {
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
     "main-product": {
       "type": "main-product",
       "blocks": {
@@ -858,36 +885,10 @@
         "full_width": false,
         "rounded": true
       }
-    },
-    "1754473167d0792be2": {
-      "type": "apps",
-      "blocks": {
-        "appstle_bundles_appstle_discounted_pricing_bundle_Dajt4y": {
-          "type": "shopify://apps/appstle-bundles/blocks/appstle-discounted-pricing-bundle/8909921b-2d24-4d68-9b12-9d045d3dcb0a",
-          "settings": {}
-        }
-      },
-      "block_order": [
-        "appstle_bundles_appstle_discounted_pricing_bundle_Dajt4y"
-      ],
-      "settings": {
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
-      }
     }
   },
   "order": [
+    "1754473167d0792be2",
     "main-product",
     "help-drawer",
     "video-hero",
@@ -898,7 +899,6 @@
     "product-details",
     "faq",
     "recently-viewed",
-    "product-recommendations",
-    "1754473167d0792be2"
+    "product-recommendations"
   ]
 }
