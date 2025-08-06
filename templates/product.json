@@ -69,7 +69,6 @@
         },
         "appstle_bundles_appstle_discounted_pricing_bundle_AKJmjY": {
           "type": "shopify://apps/appstle-bundles/blocks/appstle-discounted-pricing-bundle/8909921b-2d24-4d68-9b12-9d045d3dcb0a",
-          "disabled": true,
           "settings": {}
         },
         "countdown": {
