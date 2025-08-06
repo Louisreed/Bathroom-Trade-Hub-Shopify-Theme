@@ -13,7 +13,7 @@
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.name",
       "settings": {
-        "liquid": "<div class=\"buy-x-get-y-bundle-custom-page\" id=\"buy-x-get-y-bundle-custom-page\"></div>",
+        "liquid": "<div class=\"ab-product-discount-custom-placement-selector\" data-product-id=\"{{card_product.id}}\" data-product-handle=\"{{card_product.handle}}\" data-variant-id=\"{{card_product.variants[0].id}}\" data-product-data=\"{{card_product | json | escape}}\"></div>",
         "color_text": "",
         "color_background": "",
         "gradient_background": "",
