@@ -50,6 +50,7 @@
   {%- if on_sale -%}
     <span class="sr-only">{{ 'products.price.sale_price' | t }}</span>
   {%- endif -%}
+<span class='appstle_member_price appstle_membership_stand_alone_selector' data-product-data='{{ product| json| escape }}' data-product-collection-data='{{ product.collections | json | escape }}' style="display:none;"></span>
 
   <span class="price__regular whitespace-nowrap">
     {%- liquid
