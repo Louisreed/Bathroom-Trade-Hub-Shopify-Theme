@@ -858,6 +858,33 @@
         "full_width": false,
         "rounded": true
       }
+    },
+    "1754473167d0792be2": {
+      "type": "apps",
+      "blocks": {
+        "appstle_bundles_appstle_discounted_pricing_bundle_Dajt4y": {
+          "type": "shopify://apps/appstle-bundles/blocks/appstle-discounted-pricing-bundle/8909921b-2d24-4d68-9b12-9d045d3dcb0a",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "appstle_bundles_appstle_discounted_pricing_bundle_Dajt4y"
+      ],
+      "settings": {
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
     }
   },
   "order": [
@@ -871,6 +898,7 @@
     "product-details",
     "faq",
     "recently-viewed",
-    "product-recommendations"
+    "product-recommendations",
+    "1754473167d0792be2"
   ]
 }
