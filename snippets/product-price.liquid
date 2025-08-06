@@ -57,21 +57,7 @@
     style="display:none;"
   ></span>
 
-  {%- liquid
-    assign is_hubpro_member = false
-    if customer and customer.tags
-      if customer.tags contains 'hubpro-free' or customer.tags contains 'hubpro-plus'
-        assign is_hubpro_member = true
-      endif
-    endif
-  -%}
-
-  <span
-    class="price__regular whitespace-nowrap"
-    {% if is_hubpro_member %}
-      style="text-decoration: line-through; opacity: 0.7;"
-    {% endif %}
-  >
+  <span class="price__regular whitespace-nowrap">
     {%- liquid
       if product.quantity_price_breaks_configured? != true or skip_to_price
         if target == product and product.price_varies
