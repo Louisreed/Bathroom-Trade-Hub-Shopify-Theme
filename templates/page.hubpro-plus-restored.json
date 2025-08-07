@@ -48,7 +48,7 @@
         "image_P4KjKp": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/HubPRO-Logo_2x_e6dcba64-cc06-42a4-9c2f-e5ad1d22ea95.png",
+            "image": "shopify://shop_images/PROPLUSMENUArtboard_1.png",
             "image_width": "custom",
             "image_max_width": 540,
             "image_max_width_mobile": 360
@@ -691,6 +691,7 @@
       "blocks": {
         "image_DWGCea": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Screenshot_2025-06-26_at_13.09.45.jpg",
             "heading": "DIY just got <strong>Trade Prices as well. </strong>",
@@ -737,6 +738,7 @@
         "image_wWkGaD",
         "image_eh696V"
       ],
+      "disabled": true,
       "name": "t:sections.slideshow.name",
       "settings": {
         "autoplay": false,
