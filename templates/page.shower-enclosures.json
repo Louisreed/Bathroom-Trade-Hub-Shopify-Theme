@@ -154,18 +154,6 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
-        },
-        "collection_QtFEic": {
-          "type": "collection",
-          "settings": {
-            "collection": "",
-            "title": "",
-            "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
         }
       },
       "block_order": [
@@ -174,8 +162,7 @@
         "collection_D6MTyH",
         "collection_ttbgGh",
         "collection_DNzjeB",
-        "collection_6KWGXF",
-        "collection_QtFEic"
+        "collection_6KWGXF"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
