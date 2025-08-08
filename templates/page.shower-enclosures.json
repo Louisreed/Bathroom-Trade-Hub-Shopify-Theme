@@ -103,31 +103,6 @@
             "overlay_opacity": 30
           }
         },
-        "collection_Xe7b3f": {
-          "type": "collection",
-          "settings": {
-            "collection": "the-s8-enclosure-range",
-            "title": "",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_JfaRcz": {
-          "type": "collection",
-          "settings": {
-            "collection": "the-s6-enclosure-range",
-            "image": "shopify://shop_images/Screenshot_2025-08-05_at_1.14.52_PM.png",
-            "title": "",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
         "collection_D6MTyH": {
           "type": "collection",
           "settings": {
@@ -171,8 +146,6 @@
       "block_order": [
         "collection_hpQ7UW",
         "collection_pFDrgG",
-        "collection_Xe7b3f",
-        "collection_JfaRcz",
         "collection_D6MTyH",
         "collection_ttbgGh",
         "collection_DNzjeB"
