@@ -141,6 +141,31 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_6KWGXF": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-korra-range",
+            "image": "shopify://shop_images/Screenshot2025-08-08at2.19.36PM.png",
+            "title": "",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_QtFEic": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
@@ -148,7 +173,9 @@
         "collection_pFDrgG",
         "collection_D6MTyH",
         "collection_ttbgGh",
-        "collection_DNzjeB"
+        "collection_DNzjeB",
+        "collection_6KWGXF",
+        "collection_QtFEic"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
