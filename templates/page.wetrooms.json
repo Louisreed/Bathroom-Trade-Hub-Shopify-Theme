@@ -89,10 +89,24 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_fTm8BT": {
+          "type": "collection",
+          "settings": {
+            "collection": "minos",
+            "image": "shopify://shop_images/Screenshot2025-08-10at8.46.51AM.png",
+            "title": "Minos Wetrooms",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
-        "collection_zQPaqa"
+        "collection_zQPaqa",
+        "collection_fTm8BT"
       ],
       "settings": {
         "columns": 5,
