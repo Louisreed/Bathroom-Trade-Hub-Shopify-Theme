@@ -345,14 +345,117 @@ When running promotions or changing discount structures:
 - **Automatic application**: No discount codes exposed to customers
 - **Admin control**: Full control over discount activation/deactivation
 
+## CLI Management
+
+### List All Discounts via GraphQL
+
+You can list Shopify discounts through the CLI using GraphQL queries:
+
+#### Setup API Access
+
+1. **Create Private App** in Shopify Admin → Apps → App and sales channel settings
+2. **Enable Admin API access** with `read_discounts` scope
+3. **Copy the Admin API access token**
+
+#### List HubPRO Discounts
+
+```bash
+# List all discount codes (replace YOUR_STORE and YOUR_TOKEN)
+curl -X POST https://YOUR_STORE.myshopify.com/admin/api/2024-10/graphql.json \
+  -H "Content-Type: application/json" \
+  -H "X-Shopify-Access-Token: YOUR_TOKEN" \
+  -d '{
+    "query": "{
+      discountNodes(first: 20, query: \"title:HUBPRO*\") {
+        edges {
+          node {
+            id
+            discount {
+              __typename
+              ... on DiscountCodeBasic {
+                title
+                status
+                codes(first: 1) { edges { node { code } } }
+                customerGets { value { ... on DiscountPercentage { percentage } } }
+                customerSelection { ... on DiscountCustomerTags { tags } }
+              }
+            }
+          }
+        }
+      }
+    }"
+  }'
+```
+
+#### Expected Output for HubPRO Discounts
+
+```json
+{
+  "data": {
+    "discountNodes": {
+      "edges": [
+        {
+          "node": {
+            "id": "gid://shopify/DiscountNode/...",
+            "discount": {
+              "title": "HUBPRO-KARTELL-FREE",
+              "status": "ACTIVE",
+              "codes": [{ "code": "HUBPRO-KARTELL-FREE" }],
+              "customerGets": { "value": { "percentage": 0.25 } },
+              "customerSelection": { "tags": ["hubpro-free"] }
+            }
+          }
+        },
+        {
+          "node": {
+            "discount": {
+              "title": "HUBPRO-KARTELL-PLUS",
+              "status": "ACTIVE",
+              "codes": [{ "code": "HUBPRO-KARTELL-PLUS" }],
+              "customerGets": { "value": { "percentage": 0.35 } },
+              "customerSelection": { "tags": ["hubpro-plus"] }
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
+### Verify All 6 HubPRO Codes
+
+Use this query to check all your HubPRO discount codes are properly configured:
+
+```bash
+# Quick check - should return 6 discount codes
+curl -X POST https://YOUR_STORE.myshopify.com/admin/api/2024-10/graphql.json \
+  -H "Content-Type: application/json" \
+  -H "X-Shopify-Access-Token: YOUR_TOKEN" \
+  -d '{"query": "{ discountNodes(first: 10, query: \"title:HUBPRO*\") { edges { node { discount { ... on DiscountCodeBasic { title status } } } } } }"}' \
+  | jq '.data.discountNodes.edges[].node.discount.title'
+```
+
+Expected output:
+
+```
+"HUBPRO-KARTELL-FREE"
+"HUBPRO-KARTELL-PLUS"
+"HUBPRO-MAXI-FREE"
+"HUBPRO-MAXI-PLUS"
+"HUBPRO-CLADWORKS-FREE"
+"HUBPRO-CLADWORKS-PLUS"
+```
+
 ## Support
 
 For technical issues or questions about the HubPRO discount system:
 
-1. **Check discount codes**: Verify all codes are active in Shopify Admin
+1. **Check discount codes**: Use CLI commands above to verify all codes are active
 2. **Review customer tags**: Ensure customers have correct membership tags
 3. **Test cart functionality**: Confirm automatic discount application
 4. **Verify template sync**: Check that visual percentages match actual discounts
+5. **Use GraphQL**: Query discount details for troubleshooting
 
 ---
 
