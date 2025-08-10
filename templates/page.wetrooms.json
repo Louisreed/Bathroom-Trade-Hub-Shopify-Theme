@@ -102,11 +102,24 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_7LTBQH": {
+          "type": "collection",
+          "settings": {
+            "collection": "forte",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
         "collection_9R6ccJ",
-        "collection_fTm8BT"
+        "collection_fTm8BT",
+        "collection_7LTBQH"
       ],
       "settings": {
         "columns": 5,
