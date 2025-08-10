@@ -77,19 +77,6 @@
     "collection_list_Fj7bB6": {
       "type": "collection-list",
       "blocks": {
-        "collection_zQPaqa": {
-          "type": "collection",
-          "settings": {
-            "collection": "forte-wetrooms",
-            "image": "shopify://shop_images/Screenshot2025-08-06at11.33.07.jpg",
-            "title": "",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
         "collection_fTm8BT": {
           "type": "collection",
           "settings": {
@@ -105,7 +92,6 @@
         }
       },
       "block_order": [
-        "collection_zQPaqa",
         "collection_fTm8BT"
       ],
       "settings": {
