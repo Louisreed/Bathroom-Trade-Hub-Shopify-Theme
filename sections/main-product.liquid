@@ -270,7 +270,6 @@
                     {%- render 'product-price',
                       product: product,
                       use_variant: true,
-                      membership_discount: membership_discount_percent,
                       class: 'flex flex-wrap items-baseline gap-2 lg:flex-col xl:items-end lg:gap-1d5'
                     -%}
 
@@ -311,17 +310,9 @@
             {%- when 'price' -%}
               <div class="product__price grid gap-3" {{ block.shopify_attributes }}>
                 <div class="no-js-hidden" id="Price-{{ section.id }}-{{ product.id }}">
-                  {%- comment -%} DEBUG: Check if membership_discount_percent is available {%- endcomment -%}
-                  <script>
-                    console.log(
-                      '🔍 SECTION DEBUG - membership_discount_percent value:',
-                      '{% if membership_discount_percent %}{{ membership_discount_percent }}{% else %}UNDEFINED{% endif %}'
-                    );
-                  </script>
                   {%- render 'product-price',
                     product: product,
                     use_variant: true,
-                    membership_discount: membership_discount_percent,
                     class: 'flex flex-wrap items-baseline gap-2 lg:gap-1d5'
                   -%}
 
@@ -973,7 +964,6 @@
                                   product: variant.product,
                                   variant: variant,
                                   use_variant: true,
-                                  membership_discount: membership_discount_percent,
                                   class: 'flex flex-wrap items-baseline gap-2 lg:flex-col xl:items-end lg:gap-1d5'
                                 -%}
                               {%- else -%}
@@ -1165,7 +1155,6 @@
                   {%- render 'product-price',
                     product: product,
                     use_variant: true,
-                    membership_discount: membership_discount_percent,
                     class: 'flex flex-wrap items-center gap-2 lg:gap-1d5'
                   -%}
                 {%- else -%}

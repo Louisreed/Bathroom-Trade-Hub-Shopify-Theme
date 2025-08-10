@@ -34,6 +34,12 @@
   assign original_price = target.price | default: 1999
   assign price = original_price
 
+  # Detect if this is a cart line item and use unit prices
+  if target.original_price
+    assign original_price = target.original_price
+    assign price = target.final_price
+  endif
+
   assign on_sale = false
   if compare_at_price > price
     assign on_sale = true
@@ -57,19 +63,91 @@
     style="display:none;"
   ></span>
 
+  {%- comment -%} HubPRO discount configuration {%- endcomment -%}
+  {%- assign current_discount_percent = 0 -%}
+  {%- assign current_display_name = '' -%}
+  {%- assign is_hubpro_member = false -%}
+  {%- assign membership_tier = '' -%}
+
+  {%- comment -%} Check if customer is HubPRO member {%- endcomment -%}
+  {%- if customer and customer.tags -%}
+    {%- if customer.tags contains 'hubpro-plus' -%}
+      {%- assign is_hubpro_member = true -%}
+      {%- assign membership_tier = 'plus' -%}
+    {%- elsif customer.tags contains 'hubpro-free' -%}
+      {%- assign is_hubpro_member = true -%}
+      {%- assign membership_tier = 'free' -%}
+    {%- endif -%}
+  {%- endif -%}
+
+  {%- comment -%} Apply discounts if member {%- endcomment -%}
+  {%- if is_hubpro_member -%}
+    {%- for c in product.collections -%}
+      {%- comment -%} KARTELL COLLECTION DISCOUNTS {%- endcomment -%}
+      {%- if c.handle == 'kartell' or c.handle contains 'kartell' -%}
+        {%- assign current_display_name = 'Kartell' -%}
+        {%- if membership_tier == 'plus' -%}
+          {%- assign current_discount_percent = 35 -%}
+        {%- else -%}
+          {%- assign current_discount_percent = 25 -%}
+        {%- endif -%}
+        {%- break -%}
+
+        {%- comment -%} MAXI PANELS COLLECTION DISCOUNTS {%- endcomment -%}
+      {%- elsif c.handle contains 'maxi' -%}
+        {%- assign current_display_name = 'Maxi Panels' -%}
+        {%- if membership_tier == 'plus' -%}
+          {%- assign current_discount_percent = 25 -%}
+        {%- else -%}
+          {%- assign current_discount_percent = 10 -%}
+        {%- endif -%}
+        {%- break -%}
+
+        {%- comment -%} CLADWORKS COLLECTION DISCOUNTS {%- endcomment -%}
+      {%- elsif c.handle contains 'cladworks' -%}
+        {%- assign current_display_name = 'Cladworks' -%}
+        {%- if membership_tier == 'plus' -%}
+          {%- assign current_discount_percent = 25 -%}
+        {%- else -%}
+          {%- assign current_discount_percent = 10 -%}
+        {%- endif -%}
+        {%- break -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
+
   {%- liquid
-    assign is_hubpro_member = false
-    if customer and customer.tags
-      if customer.tags contains 'hubpro-free' or customer.tags contains 'hubpro-plus'
-        assign is_hubpro_member = true
+    # Set up discount variables from configuration
+    assign should_strikethrough = false
+    assign show_discounted_price = false
+    assign discounted_price = 0
+    assign show_badges = false
+    assign badge_label = ''
+    assign badge_discount_percent = 0
+
+    if current_discount_percent > 0
+      assign should_strikethrough = true
+      assign show_discounted_price = true
+      assign show_badges = true
+      assign badge_discount_percent = current_discount_percent
+
+      # Calculate discounted price
+      assign discount_amount = original_price | times: current_discount_percent | divided_by: 100
+      assign discounted_price = original_price | minus: discount_amount
+
+      # Set badge label based on page type
+      if request.page_type == 'product'
+        assign badge_label = 'HubPRO ' | append: current_display_name
+      else
+        assign badge_label = 'HubPRO'
       endif
     endif
   -%}
 
   <span
     class="price__regular whitespace-nowrap"
-    {% if is_hubpro_member %}
-      style="text-decoration: line-through; opacity: 0.7;"
+    {% if should_strikethrough %}
+      style="text-decoration: line-through; opacity: 0.6; font-size: 0.875em;"
     {% endif %}
   >
     {%- liquid
@@ -99,6 +177,21 @@
     -%}
   </span>
 
+  {%- if show_discounted_price -%}
+    <span class="price__regular whitespace-nowrap">
+      {%- if settings.currency_code_enabled -%}
+        {{ discounted_price | money_with_currency }}
+      {%- else -%}
+        {{ discounted_price | money }}
+      {%- endif -%}
+      <span
+        class="tax-indicator"
+        data-product-tax-label
+        style="margin-left: 2px; font-size: 0.75em; opacity: 0.8;"
+      ></span>
+    </span>
+  {%- endif -%}
+
   {%- if on_sale -%}
     <span class="sr-only">{{ 'products.price.regular_price' | t }}</span>
     <span class="price__sale inline-flex items-center h-auto relative">
@@ -118,7 +211,25 @@
           endif
         endif
       -%}
+      <span
+        class="tax-indicator"
+        data-product-tax-label
+        style="margin-left: 2px; font-size: 0.75em; opacity: 0.8;"
+      ></span>
     </span>
+  {%- endif -%}
+
+  {%- if show_badges -%}
+    <ul class="discounts grid gap-2" role="list" aria-label="{{ 'customer.order.discounts' | t | escape }}">
+      <li class="discounts__discount text-xs flex flex-wrap items-center gap-1">
+        <span class="badge badge--highlight flex items-center gap-1d5 font-medium leading-none rounded-full">
+          {{- badge_label -}}
+        </span>
+        <span class="badge badge--onsale flex items-center gap-1d5 font-medium leading-none rounded-full">
+          -{{ badge_discount_percent }}%
+        </span>
+      </li>
+    </ul>
   {%- endif -%}
 
   {%- unless hide_unit_price -%}
