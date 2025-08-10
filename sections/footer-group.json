@@ -357,8 +357,8 @@
         "brand_information": {
           "type": "brand_information",
           "settings": {
-            "heading": "Supporting the Local Trade and DIY of Dorset.",
-            "button_label_1": "",
+            "heading": "Trade Counter",
+            "button_label_1": "Bathroom Trade HubUnit A6, 83 Lynch LaneWeymouthDorsetDT4 9DN",
             "button_link_1": "",
             "button_label_2": "",
             "button_link_2": "",
@@ -371,12 +371,21 @@
             "opened": true
           }
         },
-        "text_3ayK6Q": {
-          "type": "text",
+        "brand_information_VRRPmR": {
+          "type": "brand_information",
+          "disabled": true,
           "settings": {
-            "heading": "Trade Counter",
-            "text": "<p>Bathroom Trade Hub</p><p>Unit A6, 83 Lynch Lane</p><p>Weymouth</p><p>Dorset</p><p>DT4 9DN</p>",
-            "container_width": 50,
+            "heading": "Quick Links",
+            "button_label_1": "Bathroom Trade HubUnit A6, 83 Lynch LaneWeymouthDorsetDT4 9DN",
+            "button_link_1": "",
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_label_3": "",
+            "button_link_3": "",
+            "button_label_4": "",
+            "button_link_4": "",
+            "container_width": 95,
+            "font_size": 16,
             "opened": true
           }
         },
@@ -394,7 +403,7 @@
         "logo_social",
         "link_list-1",
         "brand_information",
-        "text_3ayK6Q",
+        "brand_information_VRRPmR",
         "text_ABc6rB"
       ],
       "settings": {
