@@ -77,19 +77,6 @@
     "collection_list_Fj7bB6": {
       "type": "collection-list",
       "blocks": {
-        "collection_9R6ccJ": {
-          "type": "collection",
-          "settings": {
-            "collection": "forte-wetrooms",
-            "image": "shopify://shop_images/Screenshot_2025-08-10_at_9.41.40_AM.png",
-            "title": "Forte Wetrooms",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
         "collection_fTm8BT": {
           "type": "collection",
           "settings": {
@@ -107,9 +94,10 @@
           "type": "collection",
           "settings": {
             "collection": "forte",
-            "title": "",
+            "image": "shopify://shop_images/Screenshot_2025-08-10_at_9.41.40_AM.png",
+            "title": "Forte Wetrooms",
             "description": "",
-            "overlay_content": false,
+            "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 30
@@ -117,7 +105,6 @@
         }
       },
       "block_order": [
-        "collection_9R6ccJ",
         "collection_fTm8BT",
         "collection_7LTBQH"
       ],
