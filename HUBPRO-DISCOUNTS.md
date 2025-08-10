@@ -57,20 +57,18 @@ In Shopify Admin → Customers, create and assign these tags:
 
 ### 2. Shopify Discount Codes Setup
 
-#### Create Discount Codes for Each Collection + Tier
+#### Create the 2 HubPRO Discount Codes
 
-⚠️ **IMPORTANT**: You need **2 discount codes per collection** (one for each membership tier)
+⚠️ **SIMPLIFIED STRUCTURE**: Only **2 total discount codes** needed
 
-**Step-by-step for each collection:**
+**Step-by-step:**
 
 1. Go to **Shopify Admin** → **Discounts**
 2. Click **Create discount** → **Percentage**
 
-#### Kartell Collection Discounts
+#### HubPRO Kartell (25% off)
 
-**HUBPRO-KARTELL-FREE**
-
-- **Discount code**: `HUBPRO-KARTELL-FREE`
+- **Discount code**: `HubPRO Kartell`
 - **Type**: Percentage
 - **Value**: 25%
 - **Applies to**: Specific collections → Select "Kartell" collection
@@ -78,47 +76,15 @@ In Shopify Admin → Customers, create and assign these tags:
 - **Usage limits**: Leave unlimited (for automatic application)
 - **Active dates**: Set as needed
 
-**HUBPRO-KARTELL-PLUS**
+#### HubPRO Maxi Panels (45% off)
 
-- **Discount code**: `HUBPRO-KARTELL-PLUS`
+- **Discount code**: `HubPRO Maxi Panels`
 - **Type**: Percentage
-- **Value**: 35%
-- **Applies to**: Specific collections → Select "Kartell" collection
-- **Customer eligibility**: Specific customer tags → `hubpro-plus`
-- **Usage limits**: Leave unlimited
+- **Value**: 45%
+- **Applies to**: Specific collections → Select "Maxi Panels" AND "Cladworks" collections
+- **Customer eligibility**: Specific customer tags → `hubpro-free`
+- **Usage limits**: Leave unlimited (for automatic application)
 - **Active dates**: Set as needed
-
-#### Maxi Panels Collection Discounts
-
-**HUBPRO-MAXI-FREE**
-
-- **Discount code**: `HUBPRO-MAXI-FREE`
-- **Value**: 10%
-- **Collections**: Maxi Panels
-- **Customer tags**: `hubpro-free`
-
-**HUBPRO-MAXI-PLUS**
-
-- **Discount code**: `HUBPRO-MAXI-PLUS`
-- **Value**: 25%
-- **Collections**: Maxi Panels
-- **Customer tags**: `hubpro-plus`
-
-#### Cladworks Collection Discounts
-
-**HUBPRO-CLADWORKS-FREE**
-
-- **Discount code**: `HUBPRO-CLADWORKS-FREE`
-- **Value**: 10%
-- **Collections**: Cladworks
-- **Customer tags**: `hubpro-free`
-
-**HUBPRO-CLADWORKS-PLUS**
-
-- **Discount code**: `HUBPRO-CLADWORKS-PLUS`
-- **Value**: 25%
-- **Collections**: Cladworks
-- **Customer tags**: `hubpro-plus`
 
 ### 3. Collection Setup
 

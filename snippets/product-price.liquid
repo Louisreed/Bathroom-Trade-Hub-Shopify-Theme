@@ -71,7 +71,6 @@
 
   {%- comment -%} Check if customer is HubPRO member {%- endcomment -%}
   {%- if customer and customer.tags -%}
-    {%- comment -%} DEBUG: Customer logged in with tags: {{ customer.tags | join: ', ' }} {%- endcomment -%}
     {%- if customer.tags contains 'hubpro-plus' -%}
       {%- assign is_hubpro_member = true -%}
       {%- assign membership_tier = 'plus' -%}
@@ -79,42 +78,21 @@
       {%- assign is_hubpro_member = true -%}
       {%- assign membership_tier = 'free' -%}
     {%- endif -%}
-  {%- else -%}
-    {%- comment -%} DEBUG: Customer not logged in or no tags {%- endcomment -%}
   {%- endif -%}
 
   {%- comment -%} Show discount preview if member {%- endcomment -%}
   {%- if is_hubpro_member -%}
-    {%- comment -%} DEBUG: Customer is HubPRO member with tier {{ membership_tier }} {%- endcomment -%}
     {%- for c in product.collections -%}
-      {%- comment -%} DEBUG: Checking collection {{ c.handle }} {%- endcomment -%}
       {%- comment -%} Build discount code name for this collection + tier {%- endcomment -%}
       {%- assign discount_code_name = '' -%}
 
       {%- if c.handle == 'kartell' or c.handle contains 'kartell' -%}
         {%- assign current_display_name = 'Kartell' -%}
-        {%- if membership_tier == 'plus' -%}
-          {%- assign discount_code_name = 'HUBPRO-KARTELL-PLUS' -%}
-        {%- else -%}
-          {%- assign discount_code_name = 'HUBPRO-KARTELL-FREE' -%}
-        {%- endif -%}
+        {%- assign discount_code_name = 'HubPRO Kartell' -%}
         {%- break -%}
       {%- elsif c.handle contains 'maxi' or c.handle contains 'panel' or c.handle contains 'cladworks' -%}
-        {%- if c.handle contains 'maxi' -%}
-          {%- assign current_display_name = 'Maxi Panels' -%}
-          {%- if membership_tier == 'plus' -%}
-            {%- assign discount_code_name = 'HUBPRO-MAXI-PLUS' -%}
-          {%- else -%}
-            {%- assign discount_code_name = 'HUBPRO-MAXI-FREE' -%}
-          {%- endif -%}
-        {%- else -%}
-          {%- assign current_display_name = 'Cladworks' -%}
-          {%- if membership_tier == 'plus' -%}
-            {%- assign discount_code_name = 'HUBPRO-CLADWORKS-PLUS' -%}
-          {%- else -%}
-            {%- assign discount_code_name = 'HUBPRO-CLADWORKS-FREE' -%}
-          {%- endif -%}
-        {%- endif -%}
+        {%- assign current_display_name = 'Maxi Panels' -%}
+        {%- assign discount_code_name = 'HubPRO Maxi Panels' -%}
         {%- break -%}
       {%- endif -%}
     {%- endfor -%}
@@ -123,7 +101,6 @@
     {%- if discount_code_name != blank -%}
       {%- capture discount_percent_string -%}{%- render 'hubpro-discount-simple', title: discount_code_name -%}{%- endcapture -%}
       {%- assign current_discount_percent = discount_percent_string | plus: 0 -%}
-      {%- comment -%} DEBUG: Discount code {{ discount_code_name }} gives {{ current_discount_percent }}% {%- endcomment -%}
     {%- endif -%}
   {%- endif -%}
 

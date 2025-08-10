@@ -2,21 +2,21 @@
   Simple HubPRO discount percentage lookup for display purposes.
   Maps discount code titles to their exact percentages.
 
-  Usage: {% render 'hubpro-discount-simple', title: 'HUBPRO-KARTELL-PLUS' %}
-  Returns: 35 (just the number)
+  Current Structure (Only 2 discount codes):
+  - HubPRO Kartell: 25% off Kartell
+  - HubPRO Maxi Panels: 45% off Maxi Panels & Cladworks
+
+  Usage: {% render 'hubpro-discount-simple', title: 'HubPRO Kartell' %}
+  Returns: 25 (just the number)
 {%- endcomment -%}
 
 {%- liquid
   assign percentage = 0
 
-  if title contains 'KARTELL-FREE'
+  if title contains 'Kartell'
     assign percentage = 25
-  elsif title contains 'KARTELL-PLUS'
-    assign percentage = 35
-  elsif title contains 'MAXI-FREE' or title contains 'CLADWORKS-FREE'
-    assign percentage = 10
-  elsif title contains 'MAXI-PLUS' or title contains 'CLADWORKS-PLUS'
-    assign percentage = 25
+  elsif title contains 'Maxi Panels'
+    assign percentage = 45
   endif
 
   echo percentage
