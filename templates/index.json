@@ -412,6 +412,55 @@
         "rounded": false
       }
     },
+    "17548300328275163b": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_e760d6b_9WKEEq": {
+          "type": "ai_gen_block_e760d6b",
+          "settings": {
+            "show_badge": true,
+            "badge_text": "Price Match Guarantee",
+            "heading": "We'll Beat Any Local Quote",
+            "description": "Found a better price from a local supplier? We'll match it and beat it by 5%. Our price match guarantee ensures you always get the best deal on quality bathroom products.",
+            "feature_1_title": "Local Price Match",
+            "feature_1_text": "We'll match any written quote from local bathroom suppliers",
+            "feature_2_title": "Quick Response",
+            "feature_2_text": "Get your price match confirmation within 24 hours",
+            "feature_3_title": "Quality Guaranteed",
+            "feature_3_text": "Same high-quality products with better pricing",
+            "button_text": "Submit Price Match Request",
+            "button_link": "shopify://pages/contact-us",
+            "contact_text": "<p>Send us a message via WhatsApp on 07538 867 530 or call us on 01305 608599 to discuss your quote!</p>",
+            "max_width": 800,
+            "padding": 40,
+            "border_radius": 8,
+            "border_width": 1,
+            "heading_size": 32,
+            "text_size": 16,
+            "button_text_size": 16,
+            "button_border_radius": 6,
+            "background_color": "#f8f9fa",
+            "border_color": "#e9ecef",
+            "badge_color": "#28a745",
+            "badge_text_color": "#ffffff",
+            "heading_color": "#212529",
+            "text_color": "#6c757d",
+            "feature_title_color": "#495057",
+            "feature_icon_bg": "#e3f2fd",
+            "feature_icon_color": "#1976d2",
+            "button_color": "#007bff",
+            "button_hover_color": "#0056b3",
+            "button_text_color": "#ffffff",
+            "link_color": "#007bff"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_e760d6b_9WKEEq"
+      ],
+      "settings": {}
+    },
     "custom_section_4yjtnX": {
       "type": "custom-section",
       "blocks": {
@@ -1679,6 +1728,7 @@
   "order": [
     "slideshow",
     "multicolumn_zT87yk",
+    "17548300328275163b",
     "custom_section_4yjtnX",
     "rich-text",
     "featured_collections_pCKTEh",

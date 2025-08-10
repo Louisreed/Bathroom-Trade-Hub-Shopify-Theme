@@ -185,9 +185,8 @@
           "settings": {
             "position": 5,
             "column_size": "1",
-            "image": "shopify://shop_images/Screenshot2025-07-26at11.17.21AM.png",
             "heading": "Can't see what you are looking for?",
-            "content": "<p>We have access to 1000's of products that may not be on our website! <br/><br/>Please call us on 01305 608599 or use our contact form below</p>",
+            "content": "<p>We have access to 1000's of products that may not be on our website! <br/><br/>Please call us on 01305 608599 or use our contact form below</p><p>We also offer a price match guarantee if you have had a price from a local supplier.</p>",
             "button_label": "Contact Us",
             "button_link": "shopify://pages/contact-us",
             "button_style": "primary",

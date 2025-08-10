@@ -77,11 +77,76 @@
     "collection_list_Fj7bB6": {
       "type": "collection-list",
       "blocks": {
-        "collection_zQPaqa": {
+        "collection_fTm8BT": {
           "type": "collection",
           "settings": {
-            "collection": "forte-wetrooms",
-            "image": "shopify://shop_images/Screenshot2025-08-06at11.33.07.jpg",
+            "collection": "minos",
+            "image": "shopify://shop_images/Screenshot2025-08-10at8.46.51AM.png",
+            "title": "Minos Wetrooms",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_7LTBQH": {
+          "type": "collection",
+          "settings": {
+            "collection": "forte",
+            "image": "shopify://shop_images/Screenshot_2025-08-10_at_9.41.40_AM.png",
+            "title": "Forte Wetrooms",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_wG4Hz3": {
+          "type": "collection",
+          "settings": {
+            "collection": "kv8-wetrooms",
+            "image": "shopify://shop_images/Screenshot2025-08-10at10.30.38AM.png",
+            "title": "",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_UY7tRy": {
+          "type": "collection",
+          "settings": {
+            "collection": "ottone-wetrooms",
+            "image": "shopify://shop_images/Screenshot2025-08-10at10.55.57AM.png",
+            "title": "",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_AgzJqz": {
+          "type": "collection",
+          "settings": {
+            "collection": "nero-wetrooms",
+            "image": "shopify://shop_images/Screenshot2025-08-10at11.12.47AM_3cadf3f5-774d-4576-8321-fbeb4ac41272.png",
+            "title": "",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_ng8nEL": {
+          "type": "collection",
+          "settings": {
+            "collection": "kritt-wetrooms-1",
+            "image": "shopify://shop_images/Screenshot2025-08-10at11.29.30AM.png",
             "title": "",
             "description": "",
             "overlay_content": true,
@@ -92,10 +157,15 @@
         }
       },
       "block_order": [
-        "collection_zQPaqa"
+        "collection_fTm8BT",
+        "collection_7LTBQH",
+        "collection_wG4Hz3",
+        "collection_UY7tRy",
+        "collection_AgzJqz",
+        "collection_ng8nEL"
       ],
       "settings": {
-        "columns": 5,
+        "columns": 3,
         "carousel_on_desktop": false,
         "image_type": "collection",
         "image_ratio": "square",
