@@ -216,11 +216,26 @@
                                 {%- if item.line_level_discount_allocations != blank -%}
                                   <ul class="discounts grid gap-2" role="list" aria-label="{{ 'customer.order.discounts' | t | escape }}">
                                     {%- for discount_allocation in item.line_level_discount_allocations -%}
-                                      {%- comment -%} Calculate actual per-unit discount using price difference {%- endcomment -%}
+                                      {%- comment -%} Calculate discount percentage or amount based on discount type {%- endcomment -%}
                                       {%- assign unit_discount_amount = item.original_price | minus: item.final_price -%}
+                                      {%- assign discount_title = discount_allocation.discount_application.title -%}
+                                      
+                                      {%- comment -%} Get HubPRO discount info from centralized snippet {%- endcomment -%}
+                                      {%- assign is_hubpro_discount = false -%}
+                                      {%- assign discount_percentage = 0 -%}
+                                      
+                                      {%- if discount_title contains 'HUBPRO' -%}
+                                        {%- assign is_hubpro_discount = true -%}
+                                        {%- capture discount_percentage -%}{%- render 'hubpro-discount-simple', title: discount_title -%}{%- endcapture -%}
+                                      {%- endif -%}
+                                      
                                       <li class="discounts__discount text-xs flex flex-wrap items-center gap-1">
-                                        <span class="badge badge--highlight flex items-center gap-1d5 font-medium leading-none rounded-full">{{ discount_allocation.discount_application.title }}</span>
-                                        <span class="badge badge--onsale flex items-center gap-1d5 font-medium leading-none rounded-full">-{{ unit_discount_amount | money }}</span>
+                                        <span class="badge badge--highlight flex items-center gap-1d5 font-medium leading-none rounded-full">{{ discount_title }}</span>
+                                        {%- if is_hubpro_discount -%}
+                                          <span class="badge badge--onsale flex items-center gap-1d5 font-medium leading-none rounded-full">-{{ discount_percentage }}%</span>
+                                        {%- else -%}
+                                          <span class="badge badge--onsale flex items-center gap-1d5 font-medium leading-none rounded-full">-{{ unit_discount_amount | money }}</span>
+                                        {%- endif -%}
                                       </li>
                                     {%- endfor -%}
                                   </ul>
@@ -680,6 +695,15 @@
                           aria-label="{{ 'customer.order.discounts' | t | escape }}"
                         >
                           {%- for discount in cart.cart_level_discount_applications -%}
+                            {%- comment -%} Check if this is a HubPRO percentage discount {%- endcomment -%}
+                            {%- assign is_hubpro_discount = false -%}
+                            {%- assign discount_percentage = 0 -%}
+
+                            {%- if discount.title contains 'HUBPRO' -%}
+                              {%- assign is_hubpro_discount = true -%}
+                              {%- capture discount_percentage -%}{%- render 'hubpro-discount-simple', title: discount.title -%}{%- endcapture -%}
+                            {%- endif -%}
+
                             <li class="discounts__discount text-sm sm:text-base flex flex-wrap items-center justify-between gap-1d5">
                               <p class="flex items-center gap-1d5">
                                 {%- liquid
@@ -687,9 +711,15 @@
                                   echo discount.title
                                 -%}
                               </p>
-                              <span class="badge badge--onsale flex items-center gap-1d5 font-medium leading-none rounded-full"
-                                >-{{ discount.total_allocated_amount | money -}}
-                              </span>
+                              {%- if is_hubpro_discount -%}
+                                <span class="badge badge--onsale flex items-center gap-1d5 font-medium leading-none rounded-full"
+                                  >-{{ discount_percentage }}%</span
+                                >
+                              {%- else -%}
+                                <span class="badge badge--onsale flex items-center gap-1d5 font-medium leading-none rounded-full"
+                                  >-{{ discount.total_allocated_amount | money -}}
+                                </span>
+                              {%- endif -%}
                             </li>
                           {%- endfor -%}
                         </ul>

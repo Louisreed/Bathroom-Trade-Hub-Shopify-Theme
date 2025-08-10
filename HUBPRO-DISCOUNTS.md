@@ -9,23 +9,31 @@ The HubPRO discount system provides collection-based percentage discounts for me
 - **HubPRO Free**: Lower discount percentages
 - **HubPRO Plus**: Higher discount percentages
 
-**💡 DESIGN**: This system combines **Shopify discount codes** (for actual cart discounts) with **template enhancements** (for visual display of discount badges and labels).
+**💡 DESIGN**: This system combines **template-based previews** (for product page member pricing) with **Shopify discount codes** (for actual cart discounts).
 
 ## System Architecture
 
-### Shopify Discount Codes (Backend)
+### Template-Based Previews (Product Pages)
+
+- **Visual preview**: Shows member pricing before adding to cart
+- **Customer tag detection**: Detects hubpro-free vs hubpro-plus
+- **Collection-based**: Different discounts per collection
+- **Before/after pricing**: Struck-through original + discounted price
+- **Discount badges**: "HubPRO Kartell -35%" style labels
+
+### Shopify Discount Codes (Cart/Checkout)
 
 - **Real discounts**: Actually reduces prices in cart/checkout
 - **Tag-filtered**: Each discount restricted to specific customer tags
 - **Dual setup**: Two discount codes per collection (Free + Plus tiers)
 - **Automatic application**: Applied based on customer tags
+- **Percentage badges**: Shows "-35%" instead of money amounts
 
-### Template Enhancements (Frontend)
+### Centralized Logic
 
-- **Visual badges**: Shows "HubPRO Kartell -25%" style labels
-- **Before/after pricing**: Displays original vs discounted prices
-- **Collection detection**: Identifies which discounts apply
-- **Membership awareness**: Detects customer tier for appropriate display
+- **Single source**: `hubpro-discount-simple.liquid` maps discount codes to percentages
+- **Consistent percentages**: Same values used for preview and actual discounts
+- **Easy maintenance**: Update percentages in one place
 
 ## Shopify Admin Setup
 
