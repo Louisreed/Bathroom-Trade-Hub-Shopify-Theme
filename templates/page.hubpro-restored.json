@@ -512,6 +512,48 @@
         "rounded": false
       }
     },
+    "1754923679d8d98e86": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_77a9563_rGdyex": {
+          "type": "ai_gen_block_77a9563",
+          "settings": {
+            "heading": "Join Our Community",
+            "description": "<p>Create your account today and unlock exclusive benefits, special offers, and personalized shopping experiences.</p>",
+            "button_text": "Create a HubPRO Account",
+            "button_link": "",
+            "text_alignment": "center",
+            "max_width": 800,
+            "padding_top": 60,
+            "padding_bottom": 60,
+            "padding_horizontal": 20,
+            "spacing_below_heading": 20,
+            "spacing_below_description": 30,
+            "background_color": "#424242",
+            "heading_color": "#bba14f",
+            "description_color": "#ffffff",
+            "heading_size": 36,
+            "description_size": 16,
+            "button_background_color": "#bba14f",
+            "button_text_color": "#ffffff",
+            "button_hover_background_color": "#bba14f",
+            "button_hover_text_color": "#ffffff",
+            "button_border_color": "#bba14f",
+            "button_hover_border_color": "#bba14f",
+            "button_font_size": 18,
+            "button_padding_vertical": 16,
+            "button_padding_horizontal": 32,
+            "button_border_radius": 8,
+            "button_border_width": 2
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_77a9563_rGdyex"
+      ],
+      "settings": {}
+    },
     "custom_section_gCE33B": {
       "type": "custom-section",
       "blocks": {
@@ -521,9 +563,9 @@
             "form_id": "603784",
             "text_color": "#202020",
             "button_background_color": "#202020",
-            "button_label_color": "#FFFFFF",
-            "links_color": "#1878B9",
-            "errors_color": "#E02229",
+            "button_label_color": "#ffffff",
+            "links_color": "#1878b9",
+            "errors_color": "#e02229",
             "text_alignment": "center",
             "form_alignment": "center",
             "padding_top": 24,
@@ -536,6 +578,7 @@
       "block_order": [
         "forms_inline_847fBg"
       ],
+      "disabled": true,
       "name": "Section",
       "settings": {
         "content_direction": "col",
@@ -655,6 +698,16 @@
         "enable_parallax": false,
         "parallax_direction": "vertical"
       }
+    },
+    "empty_space_WdA8Kx": {
+      "type": "empty-space",
+      "name": "t:sections.empty-space.name",
+      "settings": {
+        "desktop_height": 40,
+        "mobile_height": 28,
+        "color_background": "",
+        "gradient_background": ""
+      }
     }
   },
   "order": [
@@ -665,7 +718,9 @@
     "rich_text_QHgKfz",
     "rich_text_qFQmBj",
     "rich_text_XCVJJH",
+    "1754923679d8d98e86",
     "custom_section_gCE33B",
-    "slideshow_UPFtEK"
+    "slideshow_UPFtEK",
+    "empty_space_WdA8Kx"
   ]
 }
