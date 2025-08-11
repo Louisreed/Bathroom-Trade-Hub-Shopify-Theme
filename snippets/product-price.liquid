@@ -63,45 +63,50 @@
     style="display:none;"
   ></span>
 
-  {%- comment -%} Multi-tier discount system for all customer segments {%- endcomment -%}
+  {%- comment -%} Multi-tier discount system for logged-in customer segments only {%- endcomment -%}
   {%- assign current_discount_percent = 0 -%}
   {%- assign current_display_name = '' -%}
-  {%- assign customer_segment = 'diy' -%}
+  {%- assign customer_segment = '' -%}
 
-  {%- comment -%} Determine customer segment {%- endcomment -%}
-  {%- if customer and customer.tags -%}
+  {%- comment -%} Determine customer segment - only for logged-in customers {%- endcomment -%}
+  {%- if customer -%}
     {%- if customer.tags contains 'hubpro-plus' -%}
       {%- assign customer_segment = 'hubpro-plus' -%}
     {%- elsif customer.tags contains 'hubpro-free' -%}
       {%- assign customer_segment = 'hubpro-free' -%}
+    {%- else -%}
+      {%- comment -%} Logged-in customer with no hubpro tags = DIY segment {%- endcomment -%}
+      {%- assign customer_segment = 'diy' -%}
     {%- endif -%}
   {%- endif -%}
 
-  {%- comment -%} Check product collections and get discounts from centralized source {%- endcomment -%}
-  {%- for c in product.collections -%}
-    {%- assign collection_handle = c.handle -%}
-    {%- assign discount_found = false -%}
+  {%- comment -%} Check product collections and get discounts from centralized source - only for logged-in customers {%- endcomment -%}
+  {%- if customer_segment != blank -%}
+    {%- for c in product.collections -%}
+      {%- assign collection_handle = c.handle -%}
+      {%- assign discount_found = false -%}
 
-    {%- if c.handle == 'kartell' or c.handle contains 'kartell' -%}
-      {%- assign current_display_name = 'Kartell' -%}
-      {%- assign discount_found = true -%}
-    {%- elsif c.handle contains 'scudo' -%}
-      {%- assign current_display_name = 'SCUDO' -%}
-      {%- assign discount_found = true -%}
-    {%- elsif c.handle contains 'maxi' or c.handle contains 'panel' or c.handle contains 'cladworks' -%}
-      {%- assign current_display_name = 'Maxi Panels' -%}
-      {%- assign discount_found = true -%}
-    {%- endif -%}
-
-    {%- if discount_found -%}
-      {%- comment -%} Get discount percentage from centralized lookup {%- endcomment -%}
-      {%- capture discount_percent_string -%}{%- render 'hubpro-discount-simple', collection: collection_handle, segment: customer_segment -%}{%- endcapture -%}
-      {%- assign current_discount_percent = discount_percent_string | plus: 0 -%}
-      {%- if current_discount_percent > 0 -%}
-        {%- break -%}
+      {%- if c.handle == 'kartell' or c.handle contains 'kartell' -%}
+        {%- assign current_display_name = 'Kartell' -%}
+        {%- assign discount_found = true -%}
+      {%- elsif c.handle contains 'scudo' -%}
+        {%- assign current_display_name = 'SCUDO' -%}
+        {%- assign discount_found = true -%}
+      {%- elsif c.handle contains 'maxi' or c.handle contains 'panel' or c.handle contains 'cladworks' -%}
+        {%- assign current_display_name = 'Maxi Panels' -%}
+        {%- assign discount_found = true -%}
       {%- endif -%}
-    {%- endif -%}
-  {%- endfor -%}
+
+      {%- if discount_found -%}
+        {%- comment -%} Get discount percentage from centralized lookup {%- endcomment -%}
+        {%- capture discount_percent_string -%}{%- render 'hubpro-discount-simple', collection: collection_handle, segment: customer_segment -%}{%- endcapture -%}
+        {%- assign current_discount_percent = discount_percent_string | plus: 0 -%}
+        {%- if current_discount_percent > 0 -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endif -%}
+    {%- endfor -%}
+  {%- endif -%}
 
   {%- liquid
     # Set up discount variables from configuration
