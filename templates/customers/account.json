@@ -15,16 +15,8 @@
         "account_details": {
           "type": "account_details",
           "settings": {
-            "width": "half",
-            "alignment": "left",
-            "margin_bottom": 32
-          }
-        },
-        "membership_program": {
-          "type": "membership_program",
-          "settings": {
-            "width": "half",
-            "alignment": "left",
+            "width": "full",
+            "alignment": "center",
             "margin_bottom": 32
           }
         },
@@ -39,7 +31,6 @@
       },
       "block_order": [
         "account_details",
-        "membership_program",
         "order_history"
       ],
       "settings": {
