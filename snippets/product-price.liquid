@@ -84,26 +84,68 @@
   {%- if customer_segment != blank -%}
     {%- for c in product.collections -%}
       {%- assign collection_handle = c.handle -%}
-      {%- assign discount_found = false -%}
 
-      {%- if c.handle == 'kartell' or c.handle contains 'kartell' -%}
-        {%- assign current_display_name = 'Kartell' -%}
-        {%- assign discount_found = true -%}
-      {%- elsif c.handle contains 'scudo' -%}
-        {%- assign current_display_name = 'SCUDO' -%}
-        {%- assign discount_found = true -%}
-      {%- elsif c.handle contains 'maxi' or c.handle contains 'panel' or c.handle contains 'cladworks' -%}
-        {%- assign current_display_name = 'Maxi Panels' -%}
-        {%- assign discount_found = true -%}
-      {%- endif -%}
+      {%- comment -%} Get discount percentage from centralized lookup for all collections {%- endcomment -%}
+      {%- capture discount_percent_string -%}{%- render 'hubpro-discount-simple', collection: collection_handle, segment: customer_segment -%}{%- endcapture -%}
+      {%- assign test_discount_percent = discount_percent_string | plus: 0 -%}
 
-      {%- if discount_found -%}
-        {%- comment -%} Get discount percentage from centralized lookup {%- endcomment -%}
-        {%- capture discount_percent_string -%}{%- render 'hubpro-discount-simple', collection: collection_handle, segment: customer_segment -%}{%- endcapture -%}
-        {%- assign current_discount_percent = discount_percent_string | plus: 0 -%}
-        {%- if current_discount_percent > 0 -%}
-          {%- break -%}
+      {%- if test_discount_percent > 0 -%}
+        {%- assign current_discount_percent = test_discount_percent -%}
+
+        {%- comment -%} Set display name based on collection {%- endcomment -%}
+        {%- if c.handle contains 'nule' -%}
+          {%- assign current_display_name = 'Nule' -%}
+        {%- elsif c.handle contains 'hudson-reed' -%}
+          {%- assign current_display_name = 'Hudson Reed' -%}
+        {%- elsif c.handle == 'kartell' or c.handle contains 'kartell' -%}
+          {%- assign current_display_name = 'Kartell' -%}
+        {%- elsif c.handle contains 'maxi-panels-only' -%}
+          {%- assign current_display_name = 'Maxi Panels Only' -%}
+        {%- elsif c.handle contains 'scudo' -%}
+          {%- assign current_display_name = 'SCUDO' -%}
+        {%- elsif c.handle contains 'hubessentials' or c.handle contains 'hub-essentials' -%}
+          {%- assign current_display_name = 'HubESSENTIALS' -%}
+        {%- elsif c.handle contains 'hubchoice' or c.handle contains 'hub-choice' -%}
+          {%- assign current_display_name = 'HubChoice' -%}
+        {%- elsif c.handle contains 'perform-panel' -%}
+          {%- assign current_display_name = 'Perform Panel' -%}
+        {%- elsif c.handle contains 'decorfloor' -%}
+          {%- assign current_display_name = 'Decorfloor' -%}
+        {%- elsif c.handle contains 'multipanel-tile-flooring' -%}
+          {%- assign current_display_name = 'Multipanel Tile Flooring' -%}
+        {%- elsif c.handle contains 'multipanel-timber-flooring' -%}
+          {%- assign current_display_name = 'Multipanel Timber Flooring' -%}
+        {%- elsif c.handle contains 'squidol' -%}
+          {%- assign current_display_name = 'Squidol' -%}
+        {%- elsif c.handle contains 'everbuild' or c.handle contains 'sika' -%}
+          {%- assign current_display_name = 'Everbuild/Sika' -%}
+        {%- elsif c.handle contains 'multipanel-chevron-flooring' -%}
+          {%- assign current_display_name = 'Multipanel Chevron Flooring' -%}
+        {%- elsif c.handle contains 'multipanel' -%}
+          {%- assign current_display_name = 'Multipanel' -%}
+        {%- elsif c.handle contains 'viva-essentials' -%}
+          {%- assign current_display_name = 'VIVA Essentials' -%}
+        {%- elsif c.handle contains 'viva' -%}
+          {%- assign current_display_name = 'VIVA' -%}
+        {%- elsif c.handle contains 'maxi-panel-trims' -%}
+          {%- assign current_display_name = 'Maxi Panel Trims' -%}
+        {%- elsif c.handle contains 'perform-trims' -%}
+          {%- assign current_display_name = 'Perform Trims' -%}
+        {%- elsif c.handle contains 'consumables' -%}
+          {%- assign current_display_name = 'Consumables' -%}
+        {%- elsif c.handle contains 'naturepanel' -%}
+          {%- assign current_display_name = 'Naturepanel' -%}
+        {%- elsif c.handle contains 'cladworks-pvc-panels' -%}
+          {%- assign current_display_name = 'Cladworks PVC Panels' -%}
+        {%- elsif c.handle contains 'hubpromo' -%}
+          {%- assign current_display_name = 'HubPROMO' -%}
+        {%- elsif c.handle contains 'maxi' or c.handle contains 'panel' or c.handle contains 'cladworks' -%}
+          {%- assign current_display_name = 'Panels' -%}
+        {%- else -%}
+          {%- assign current_display_name = c.title -%}
         {%- endif -%}
+
+        {%- break -%}
       {%- endif -%}
     {%- endfor -%}
   {%- endif -%}
