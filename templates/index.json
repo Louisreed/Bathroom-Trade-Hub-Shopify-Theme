@@ -22,7 +22,25 @@
             "heading_tag": "h2",
             "button_label": "Create a FREE Account",
             "button_link": "https://bathroomtradehub.co.uk/account/register",
-            "button_style": "secondary",
+            "button_style": "primary",
+            "button_external": false,
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": false,
+            "show_for_hubpro_plus": false
+          }
+        },
+        "image_7YVkgk": {
+          "type": "image",
+          "name": "CREATEANHUBPROACCOUNT",
+          "settings": {
+            "image": "shopify://shop_images/IMG_8017.heic",
+            "heading": "Are<em> you ready to become a HubPRO?</em>",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "button_label": "Create a HubPRO Account",
+            "button_link": "shopify://pages/hubpro",
+            "button_style": "primary",
             "button_external": false,
             "button_icon": false,
             "show_for_standard": true,
@@ -270,6 +288,7 @@
       },
       "block_order": [
         "image_h8F3QR",
+        "image_7YVkgk",
         "image_WPGiiB",
         "image_NhPc9m",
         "image_KkFJd6",
@@ -606,7 +625,7 @@
             "column_2_heading": "Create a DIY Account",
             "column_2_content": "<p>Working on a new project or just getting that weekend list done? Receive up to <strong>35% DISCOUNT </strong>on RRP across our vast ranges of products. Simply log in and see your prices! </p>",
             "column_2_button_text": "Create an Account",
-            "column_2_button_link": "https://bathroomtradehub.co.uk/account/register#shopify-section-template--25586045157708__main-register",
+            "column_2_button_link": "shopify://pages/diy",
             "column_2_heading_color": "#424242",
             "column_gap": 30,
             "columns_mobile": "1",

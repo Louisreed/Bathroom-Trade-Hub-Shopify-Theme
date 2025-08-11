@@ -69,6 +69,7 @@
         "image_QeYaD3",
         "image_Acyxdw"
       ],
+      "disabled": true,
       "name": "t:sections.slideshow.name",
       "settings": {
         "autoplay": false,
@@ -563,6 +564,7 @@
         "text_TfgHU4",
         "button_k6mcPA"
       ],
+      "disabled": true,
       "name": "t:sections.images-with-text.name",
       "settings": {
         "image": "shopify://shop_images/DIY_EXAMPLEArtboard_1_cf21198c-a230-4d4b-9407-26598c8ff975.png",
@@ -754,6 +756,7 @@
       "block_order": [
         "ai_gen_block_842a03a_L9aNzV"
       ],
+      "disabled": true,
       "settings": {}
     }
   },
