@@ -1,0 +1,671 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main-page": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left",
+        "heading_tag": "h1",
+        "text_size": "text-base",
+        "text_capitalization": "",
+        "content_capitalization": "",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "margin_left": 0,
+        "margin_right": 0,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "image_with_text_overlay_RyNcK6": {
+      "type": "image-with-text-overlay",
+      "blocks": {
+        "subheading_iVHtUk": {
+          "type": "subheading",
+          "disabled": true,
+          "settings": {
+            "subheading": "BECOME A",
+            "subheading_size": "subtitle-lg",
+            "secondary_color": true
+          }
+        },
+        "image_P4KjKp": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/HubPRO-Logo_2x_e6dcba64-cc06-42a4-9c2f-e5ad1d22ea95.png",
+            "image_width": "custom",
+            "image_max_width": 540,
+            "image_max_width_mobile": 360
+          }
+        }
+      },
+      "block_order": [
+        "subheading_iVHtUk",
+        "image_P4KjKp"
+      ],
+      "custom_css": [
+        ".banner {/* Remove header margin-bottom */ margin-top: -28px;}"
+      ],
+      "name": "Image with text overlay",
+      "settings": {
+        "transparent_header": false,
+        "image": "shopify://shop_images/IMG_8017.heic",
+        "image_height": "500px",
+        "content_width": "small",
+        "content_position": "md:items-center md:justify-center",
+        "text_alignment": "center",
+        "image_height_mobile": "auto",
+        "content_position_mobile": "items-center justify-center",
+        "text_alignment_mobile": "center",
+        "color_text": "#ffffff",
+        "color_highlight": "#bb9f4d",
+        "gradient_highlight": "",
+        "color_button_text": "#ffffff",
+        "color_button_background": "#bb9f4d",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 80,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": true,
+        "parallax_direction": "vertical"
+      }
+    },
+    "multicolumn_with_icons_VpViPm": {
+      "type": "multicolumn-with-icons",
+      "blocks": {
+        "column_HqANnV": {
+          "type": "column",
+          "settings": {
+            "icon": "truck",
+            "custom_icon": "",
+            "heading": "Fast Delivery in Dorset",
+            "text": "<p>Let us do the leg work. We offer fast delivery for in-stock products and click and collect service. Free delivery in Dorset on orders over £100+VAT.</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_edAWWd": {
+          "type": "column",
+          "settings": {
+            "icon": "star",
+            "custom_icon": "",
+            "heading": "Locked-in Pricing",
+            "text": "<p>No more inconsistent costs with the usual merchants. Maximise profit margins and enjoy a simple service to supplying your customers with our locked pricing. </p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_hHAkky": {
+          "type": "column",
+          "settings": {
+            "icon": "shield",
+            "custom_icon": "",
+            "heading": "Brochure/Sample Support",
+            "text": "<p>We've got you! We have a wide range of brochures to suit your customers. We can also offer full sample support on all of our panels and flooring. </p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_hbmmGG": {
+          "type": "column",
+          "settings": {
+            "icon": "trophy",
+            "custom_icon": "",
+            "heading": "Products Ready to Go!",
+            "text": "<p>We stock our range of HubESSENTIALS for every trade professional. Save the wait and get your products the same day, all for the best price!</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_WE8hcW": {
+          "type": "column",
+          "settings": {
+            "icon": "clipboard",
+            "custom_icon": "",
+            "heading": "Free QuotePAD",
+            "text": "<p>Utilise our quick quoting service. Creating for installers on the move, simply create a list of what you need and send it via our QR code!</p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_Kaan3j": {
+          "type": "column",
+          "settings": {
+            "icon": "support",
+            "custom_icon": "",
+            "heading": "Built from Experience",
+            "text": "<p>We know what the modern day bathroom installer needs. We are here to support you every step of the way. Full product and technical support included. </p>",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "column_HqANnV",
+        "column_edAWWd",
+        "column_hHAkky",
+        "column_hbmmGG",
+        "column_WE8hcW",
+        "column_Kaan3j"
+      ],
+      "name": "Multicolumn with icons",
+      "settings": {
+        "style": "with-background",
+        "columns": 3,
+        "text_alignment": "left",
+        "heading": "Built for the <em>Professional</em>",
+        "heading_size": "title-lg tracking-heading",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "Introducing HubPRO",
+        "description": "<p>Save even more with a HubPRO account designed for <strong>trade professionals only.</strong></p>",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "scribble",
+        "highlighted_scribble": "circle",
+        "color_text": "#ffffff",
+        "color_background": "#424242",
+        "gradient_background": "",
+        "color_highlight": "#bb9f4d",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "collection_list_kg7KnE": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_ibDQUq": {
+          "type": "collection",
+          "settings": {
+            "collection": "multipanel-tile-range",
+            "title": "The Tile Range",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_UpTM7a": {
+          "type": "collection",
+          "settings": {
+            "collection": "multipanel-classic",
+            "title": "The Classic Range",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_JTqVjX": {
+          "type": "collection",
+          "settings": {
+            "collection": "multipanel-contemporary",
+            "title": "The Contemporary Collection",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_JtXJxa": {
+          "type": "collection",
+          "settings": {
+            "collection": "multipanel-pure",
+            "title": "The Pure Collection",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_URAcUM": {
+          "type": "collection",
+          "settings": {
+            "collection": "linda-barker",
+            "title": "The Linda Barker Collection",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_ATd6TE": {
+          "type": "collection",
+          "settings": {
+            "collection": "multipanel-trims-consumables",
+            "title": "Trims & Consumables",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_ibDQUq",
+        "collection_UpTM7a",
+        "collection_JTqVjX",
+        "collection_JtXJxa",
+        "collection_URAcUM",
+        "collection_ATd6TE"
+      ],
+      "disabled": true,
+      "settings": {
+        "columns": 5,
+        "carousel_on_desktop": true,
+        "image_type": "collection",
+        "image_ratio": "square",
+        "show_products_count": true,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
+    "rich_text_QHgKfz": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_YLtnTA": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>1. Sign Up</em>",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "squiggle-underline"
+          }
+        },
+        "text_EzhfNx": {
+          "type": "text",
+          "settings": {
+            "text": "<p>To get started, provide us with a few basic details about yourself and your business below. Once the form is complete, click sign up you will receive a confirmation email shortly after.</p>",
+            "text_font": "body",
+            "text_size": "subtext-lg",
+            "text_max_size": 60,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_YLtnTA",
+        "text_EzhfNx"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "#bb9f4d",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 48,
+        "padding_bottom": 24,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "rich_text_qFQmBj": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_j9FXMi": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>2. Account Verification</em>",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "basic-underline"
+          }
+        },
+        "text_tMnHf7": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Bathroom Trade Hub will verify your account within 48 hours. During this process, you will receive an additional email confirming your account setup, along with details on your personalised site-wide pricing.</p>",
+            "text_font": "body",
+            "text_size": "subtext-lg",
+            "text_max_size": 60,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_j9FXMi",
+        "text_tMnHf7"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "#bb9f4d",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "rich_text_XCVJJH": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_PTcKKN": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>3. Start Shopping!</em>",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_HfRc7G": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Your account has now been activated and your trade-only pricing is live both online and in store! </p>",
+            "text_font": "body",
+            "text_size": "subtext-lg",
+            "text_max_size": 60,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_PTcKKN",
+        "text_HfRc7G"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "#bb9f4d",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "custom_section_gCE33B": {
+      "type": "custom-section",
+      "blocks": {
+        "forms_inline_847fBg": {
+          "type": "shopify://apps/forms/blocks/inline/8744a304-fcb1-4347-b211-bb6b4759a76a",
+          "settings": {
+            "form_id": "603784",
+            "text_color": "#202020",
+            "button_background_color": "#202020",
+            "button_label_color": "#FFFFFF",
+            "links_color": "#1878B9",
+            "errors_color": "#E02229",
+            "text_alignment": "center",
+            "form_alignment": "center",
+            "padding_top": 24,
+            "padding_bottom": 24,
+            "padding_right": 0,
+            "padding_left": 0
+          }
+        }
+      },
+      "block_order": [
+        "forms_inline_847fBg"
+      ],
+      "name": "Section",
+      "settings": {
+        "content_direction": "col",
+        "vertical_on_mobile": true,
+        "content_wrap": false,
+        "horizontal_alignment": "start",
+        "vertical_alignment": "center",
+        "horizontal_alignment_flex_direction_column": "center",
+        "vertical_alignment_flex_direction_column": "center",
+        "gap": 12,
+        "section_width": "page",
+        "section_height": "auto",
+        "section_height_custom": 50,
+        "section_height_mobile": "auto",
+        "section_height_custom_mobile": 50,
+        "background_media": "none",
+        "video_position": "cover",
+        "background_image_position": "cover",
+        "toggle_overlay": false,
+        "overlay_color": "#00000026",
+        "overlay_style": "solid",
+        "gradient_direction": "to top",
+        "color_text": "",
+        "color_background": "#fafafa",
+        "gradient_background": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "rounded": false
+      }
+    },
+    "slideshow_UPFtEK": {
+      "type": "slideshow",
+      "blocks": {
+        "image_DWGCea": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-06-26_at_13.09.45.jpg",
+            "heading": "DIY just got <strong>Trade Prices as well. </strong>",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "button_label": "Create a DIY Account",
+            "button_link": "shopify://pages/hubpro",
+            "button_style": "primary",
+            "button_external": false,
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
+          }
+        },
+        "image_wWkGaD": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "heading": "Image slide",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "primary",
+            "button_external": false,
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
+          }
+        },
+        "image_eh696V": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "heading": "Image slide",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "primary",
+            "button_external": false,
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
+          }
+        }
+      },
+      "block_order": [
+        "image_DWGCea",
+        "image_wWkGaD",
+        "image_eh696V"
+      ],
+      "name": "t:sections.slideshow.name",
+      "settings": {
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "show_navigation": true,
+        "image_height": "650px",
+        "content_width": "small",
+        "image_height_mobile": "auto",
+        "accessibility_info": "Slideshow about our brand",
+        "color_text": "#ffffff",
+        "color_background": "#ffffff",
+        "gradient_background": "",
+        "color_button_text": "#ffffff",
+        "color_button_background": "#47c8f5",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 20,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
+    }
+  },
+  "order": [
+    "main-page",
+    "image_with_text_overlay_RyNcK6",
+    "multicolumn_with_icons_VpViPm",
+    "collection_list_kg7KnE",
+    "rich_text_QHgKfz",
+    "rich_text_qFQmBj",
+    "rich_text_XCVJJH",
+    "custom_section_gCE33B",
+    "slideshow_UPFtEK"
+  ]
+}
