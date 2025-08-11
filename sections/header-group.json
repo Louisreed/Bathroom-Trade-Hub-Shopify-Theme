@@ -87,7 +87,7 @@
         "menu_button_kh3Yk7": {
           "type": "menu_button",
           "settings": {
-            "menu_handle": "create-a-free-account",
+            "menu_handle": "create-a-DIY-account",
             "button_style": "primary",
             "button_size": "large",
             "button_text_color": "#ffffff",
