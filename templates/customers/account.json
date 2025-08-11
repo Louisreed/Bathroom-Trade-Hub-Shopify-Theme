@@ -34,7 +34,7 @@
         "order_history"
       ],
       "settings": {
-        "layout_mode": "flexible",
+        "layout_mode": "grid",
         "blocks_gap": 32,
         "heading_size": "title-md",
         "heading_alignment": "md:items-end",

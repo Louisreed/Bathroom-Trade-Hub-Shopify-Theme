@@ -111,19 +111,6 @@
             "select_options": ""
           }
         },
-        "custom_field_dH3Ld7": {
-          "type": "custom_field",
-          "disabled": true,
-          "settings": {
-            "type": "text",
-            "title": "Company/Personal address",
-            "required": true,
-            "checked_value": "Yes",
-            "unchecked_value": "No",
-            "radio_options": "",
-            "select_options": ""
-          }
-        },
         "custom_field_p7Hh4A": {
           "type": "custom_field",
           "disabled": true,
@@ -157,7 +144,7 @@
             "title": "Request a HubPRO Account (Proof Required)",
             "required": false,
             "checked_value": "Yes",
-            "unchecked_value": "No",
+            "unchecked_value": "no",
             "radio_options": "",
             "select_options": ""
           }
@@ -165,7 +152,6 @@
       },
       "block_order": [
         "custom_field_iLCeKX",
-        "custom_field_dH3Ld7",
         "custom_field_p7Hh4A",
         "custom_field_EaErmq",
         "custom_field_nEdz7L"
