@@ -625,7 +625,7 @@
             "column_2_heading": "Create a DIY Account",
             "column_2_content": "<p>Working on a new project or just getting that weekend list done? Receive up to <strong>35% DISCOUNT </strong>on RRP across our vast ranges of products. Simply log in and see your prices! </p>",
             "column_2_button_text": "Create an Account",
-            "column_2_button_link": "https://bathroomtradehub.co.uk/account/register#shopify-section-template--25586045157708__main-register",
+            "column_2_button_link": "shopify://pages/diy",
             "column_2_heading_color": "#424242",
             "column_gap": 30,
             "columns_mobile": "1",
