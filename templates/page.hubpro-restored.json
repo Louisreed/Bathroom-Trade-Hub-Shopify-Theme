@@ -521,7 +521,7 @@
             "heading": "Join Our Community",
             "description": "<p>Create your account today and unlock exclusive benefits, special offers, and personalized shopping experiences.</p>",
             "button_text": "Create a HubPRO Account",
-            "button_link": "",
+            "button_link": "/account/register",
             "text_alignment": "center",
             "max_width": 800,
             "padding_top": 60,
