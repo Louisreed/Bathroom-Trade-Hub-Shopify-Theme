@@ -7,13 +7,21 @@
   - HubPRO: Customers with hubpro-free tag
   - HubPRO+: Customers with hubpro-plus tag
 
-  Discount Structure:
-  - Kartell DIY: 35% off
-  - Kartell HubPRO: 45% off
-  - Kartell HubPRO+: 45% off
-  - SCUDO DIY: 30% off
-  - Maxi Panels HubPRO: 50% off
-  - Maxi Panels HubPRO+: 50% off
+    Updated Discount Structure (Based on Shopify Admin):
+
+  DIY Customers:
+  - 35% off: Nule, Hudson Reed, Kartell, Maxi Panels Only
+  - 30% off: Scudo, HubESSENTIALS
+  - 25% off: HubChoice
+  - 20% off: Perform Panel, Decorfloor, Multipanel Tile Flooring, Multipanel Timber Flooring, Squidol, Everbuild/Sika
+  - 15% off: Multipanel, Multipanel Chevron Flooring, VIVA, VIVA Essentials, Maxi Panel Trims
+  - 10% off: Perform Trims & Consumables, Naturepanel, Cladworks PVC Panels
+
+  HubPRO Customers:
+  - 50% off: HubPROMO, Maxi Panels Only
+  - 45% off: Scudo, Nule, Hudson Reed, Kartell, HubESSENTIALS
+  - 35% off: VIVA, VIVA Essentials, HubChoice
+  - 30% off: Perform Panel, Decorfloor, Multipanel Tile Flooring, Multipanel Timber Flooring, Squidol, Everbuild/Sika
 
   Usage: {% render 'hubpro-discount-simple', collection: 'kartell', segment: 'diy' %}
   Returns: 35 (just the number)
@@ -22,24 +30,42 @@
 {%- liquid
   assign percentage = 0
 
-  # Kartell discounts
-  if collection contains 'kartell'
-    if segment == 'diy'
+  # DIY Customer Discounts
+  if segment == 'diy'
+    # 35% DIY discounts - 4 collections
+    if collection contains 'nule' or collection contains 'hudson-reed' or collection contains 'kartell' or collection contains 'maxi-panels-only'
       assign percentage = 35
-    elsif segment == 'hubpro-free' or segment == 'hubpro-plus'
-      assign percentage = 45
-    endif
-
-    # SCUDO discounts
-  elsif collection contains 'scudo'
-    if segment == 'diy'
+      # 30% DIY discounts - 2 collections
+    elsif collection contains 'scudo' or collection contains 'hubessentials' or collection contains 'hub-essentials'
       assign percentage = 30
+      # 25% DIY discounts - 1 collection
+    elsif collection contains 'hubchoice' or collection contains 'hub-choice'
+      assign percentage = 25
+      # 20% DIY discounts - 6 collections
+    elsif collection contains 'perform-panel' or collection contains 'decorfloor' or collection contains 'multipanel-tile-flooring' or collection contains 'multipanel-timber-flooring' or collection contains 'squidol' or collection contains 'everbuild' or collection contains 'sika'
+      assign percentage = 20
+      # 15% DIY discounts - 5 collections
+    elsif collection contains 'multipanel' or collection contains 'multipanel-chevron-flooring' or collection contains 'viva' or collection contains 'viva-essentials' or collection contains 'maxi-panel-trims'
+      assign percentage = 15
+      # 10% DIY discounts - 3 collections
+    elsif collection contains 'perform-trims' or collection contains 'consumables' or collection contains 'naturepanel' or collection contains 'cladworks-pvc-panels'
+      assign percentage = 10
     endif
 
-    # Maxi Panels discounts
-  elsif collection contains 'maxi' or collection contains 'panel' or collection contains 'cladworks'
-    if segment == 'hubpro-free' or segment == 'hubpro-plus'
+    # HubPRO Customer Discounts (hubpro-free and hubpro-plus)
+  elsif segment == 'hubpro-free' or segment == 'hubpro-plus'
+    # 50% HubPRO discounts - 2 collections
+    if collection contains 'hubpromo' or collection contains 'maxi-panels-only'
       assign percentage = 50
+      # 45% HubPRO discounts - 5 collections
+    elsif collection contains 'scudo' or collection contains 'nule' or collection contains 'hudson-reed' or collection contains 'kartell' or collection contains 'hubessentials' or collection contains 'hub-essentials'
+      assign percentage = 45
+      # 35% HubPRO discounts - 3 collections
+    elsif collection contains 'viva' or collection contains 'viva-essentials' or collection contains 'hubchoice' or collection contains 'hub-choice'
+      assign percentage = 35
+      # 30% HubPRO discounts - 6 collections
+    elsif collection contains 'perform-panel' or collection contains 'decorfloor' or collection contains 'multipanel-tile-flooring' or collection contains 'multipanel-timber-flooring' or collection contains 'squidol' or collection contains 'everbuild' or collection contains 'sika'
+      assign percentage = 30
     endif
   endif
 
