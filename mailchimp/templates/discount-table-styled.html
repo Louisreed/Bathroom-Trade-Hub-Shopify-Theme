@@ -1,0 +1,310 @@
+<!-- 
+Mailchimp Discount Table Template - Styled Version
+For Bathroom Trade Hub - Dynamic Customer Segment Discounts
+-->
+
+<style>
+  .discount-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px 0;
+    background: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .discount-table th {
+    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    color: #ffffff;
+    padding: 15px 20px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+  }
+
+  .discount-table th:last-child {
+    text-align: center;
+  }
+
+  .discount-table td {
+    padding: 15px 20px;
+    border-bottom: 1px solid #ecf0f1;
+    vertical-align: top;
+  }
+
+  .discount-table tr:nth-child(even) {
+    background-color: #f8f9fa;
+  }
+
+  .discount-table tr:hover {
+    background-color: #e8f4fd;
+    transition: background-color 0.3s ease;
+  }
+
+  .collection-name {
+    font-weight: 600;
+    font-size: 16px;
+    color: #2c3e50;
+    margin-bottom: 5px;
+  }
+
+  .collection-description {
+    color: #7f8c8d;
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .discount-badge {
+    text-align: center;
+  }
+
+  .hubpro-discount {
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 14px;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(231, 76, 60, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .diy-discount {
+    background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 14px;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(39, 174, 96, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .regular-price {
+    color: #95a5a6;
+    font-style: italic;
+    font-size: 14px;
+  }
+
+  .premium-badge {
+    background: linear-gradient(135deg, #f39c12 0%, #e67e22 100%);
+    color: #ffffff;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: bold;
+    margin-left: 8px;
+    text-transform: uppercase;
+  }
+
+  @media only screen and (max-width: 600px) {
+    .discount-table th,
+    .discount-table td {
+      padding: 10px 15px;
+    }
+
+    .collection-name {
+      font-size: 14px;
+    }
+
+    .collection-description {
+      font-size: 12px;
+    }
+  }
+</style>
+
+<table class="discount-table">
+  <thead>
+    <tr>
+      <th>🛁 Product Collection</th>
+      <th>💰 Your Exclusive Discount</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <div class="collection-name">
+          Kartell Collection <span class="premium-badge">Premium</span>
+        </div>
+        <div class="collection-description">
+          Luxury bathroom fixtures and contemporary designs
+        </div>
+      </td>
+      <td class="discount-badge">
+        *|IF:TAGS contains 'hubpro'|*
+        <span class="hubpro-discount">45% OFF</span>
+        *|ELSE:|*
+        <span class="diy-discount">35% OFF</span>
+        *|END:IF|*
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class="collection-name">Scudo Collection</div>
+        <div class="collection-description">
+          Quality bathroom suites and accessories
+        </div>
+      </td>
+      <td class="discount-badge">
+        *|IF:TAGS contains 'hubpro'|*
+        <span class="hubpro-discount">45% OFF</span>
+        *|ELSE:|*
+        <span class="diy-discount">30% OFF</span>
+        *|END:IF|*
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class="collection-name">
+          Maxi Panels Collection <span class="premium-badge">Premium</span>
+        </div>
+        <div class="collection-description">
+          Premium wall panels and cladding solutions
+        </div>
+      </td>
+      <td class="discount-badge">
+        *|IF:TAGS contains 'hubpro'|*
+        <span class="hubpro-discount">50% OFF</span>
+        *|ELSE:|*
+        <span class="diy-discount">35% OFF</span>
+        *|END:IF|*
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class="collection-name">VIVA Collection</div>
+        <div class="collection-description">
+          Stylish bathroom essentials and modern designs
+        </div>
+      </td>
+      <td class="discount-badge">
+        *|IF:TAGS contains 'hubpro'|*
+        <span class="hubpro-discount">35% OFF</span>
+        *|ELSE:|*
+        <span class="diy-discount">15% OFF</span>
+        *|END:IF|*
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class="collection-name">HubChoice Collection</div>
+        <div class="collection-description">
+          Curated selections and best-sellers
+        </div>
+      </td>
+      <td class="discount-badge">
+        *|IF:TAGS contains 'hubpro'|*
+        <span class="hubpro-discount">35% OFF</span>
+        *|ELSE:|*
+        <span class="diy-discount">25% OFF</span>
+        *|END:IF|*
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class="collection-name">Hudson Reed Collection</div>
+        <div class="collection-description">
+          Contemporary bathroom solutions
+        </div>
+      </td>
+      <td class="discount-badge">
+        *|IF:TAGS contains 'hubpro'|*
+        <span class="hubpro-discount">45% OFF</span>
+        *|ELSE:|*
+        <span class="diy-discount">35% OFF</span>
+        *|END:IF|*
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class="collection-name">Nule Collection</div>
+        <div class="collection-description">
+          Modern bathroom designs and fixtures
+        </div>
+      </td>
+      <td class="discount-badge">
+        *|IF:TAGS contains 'hubpro'|*
+        <span class="hubpro-discount">45% OFF</span>
+        *|ELSE:|*
+        <span class="diy-discount">35% OFF</span>
+        *|END:IF|*
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        <div class="collection-name">HubESSENTIALS Collection</div>
+        <div class="collection-description">
+          Essential bathroom products and accessories
+        </div>
+      </td>
+      <td class="discount-badge">
+        *|IF:TAGS contains 'hubpro'|*
+        <span class="hubpro-discount">45% OFF</span>
+        *|ELSE:|*
+        <span class="diy-discount">30% OFF</span>
+        *|END:IF|*
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- Customer Status Footer -->
+<div
+  style="
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px;
+    background: linear-gradient(135deg, #ecf0f1 0%, #bdc3c7 100%);
+    border-radius: 8px;
+  "
+>
+  *|IF:TAGS contains 'hubpro-plus'|*
+  <p style="margin: 0; font-size: 18px; font-weight: bold; color: #2c3e50">
+    🌟 <span style="color: #e74c3c">HubPRO+</span> Member - You're getting our
+    best trade prices!
+  </p>
+  *|ELSEIF:TAGS contains 'hubpro-free'|*
+  <p style="margin: 0; font-size: 18px; font-weight: bold; color: #2c3e50">
+    💼 <span style="color: #e74c3c">HubPRO</span> Member - Enjoy exclusive trade
+    discounts!
+  </p>
+  *|ELSEIF:TAGS contains 'diy'|*
+  <p style="margin: 0; font-size: 18px; font-weight: bold; color: #2c3e50">
+    🔨 <span style="color: #27ae60">DIY Customer</span> - Special pricing just
+    for you!
+  </p>
+  *|ELSE:|*
+  <p style="margin: 0; font-size: 18px; font-weight: bold; color: #2c3e50">
+    📧 Join our customer program for exclusive discounts!
+  </p>
+  <a
+    href="https://bathroomtradehub.co.uk/account/register"
+    style="
+      display: inline-block;
+      margin-top: 10px;
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 25px;
+      font-weight: bold;
+    "
+  >
+    Sign Up Now
+  </a>
+  *|END:IF|*
+</div>
