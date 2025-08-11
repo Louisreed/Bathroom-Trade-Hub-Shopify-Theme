@@ -1,22 +1,46 @@
 {%- comment -%}
-  Simple HubPRO discount percentage lookup for display purposes.
-  Maps discount code titles to their exact percentages.
+  Multi-tier discount percentage lookup for all customer segments.
+  Maps collection handles and customer segments to their exact percentages.
 
-  Current Structure (Only 2 discount codes):
-  - HubPRO Kartell: 25% off Kartell
-  - HubPRO Maxi Panels: 45% off Maxi Panels & Cladworks
+  Customer Segments:
+  - DIY: Standard customers with no hubpro tags
+  - HubPRO: Customers with hubpro-free tag
+  - HubPRO+: Customers with hubpro-plus tag
 
-  Usage: {% render 'hubpro-discount-simple', title: 'HubPRO Kartell' %}
-  Returns: 25 (just the number)
+  Discount Structure:
+  - Kartell DIY: 35% off
+  - Kartell HubPRO: 45% off
+  - Kartell HubPRO+: 45% off
+  - SCUDO DIY: 30% off
+  - Maxi Panels HubPRO: 50% off
+  - Maxi Panels HubPRO+: 50% off
+
+  Usage: {% render 'hubpro-discount-simple', collection: 'kartell', segment: 'diy' %}
+  Returns: 35 (just the number)
 {%- endcomment -%}
 
 {%- liquid
   assign percentage = 0
 
-  if title contains 'Kartell'
-    assign percentage = 25
-  elsif title contains 'Maxi Panels'
-    assign percentage = 45
+  # Kartell discounts
+  if collection contains 'kartell'
+    if segment == 'diy'
+      assign percentage = 35
+    elsif segment == 'hubpro-free' or segment == 'hubpro-plus'
+      assign percentage = 45
+    endif
+
+    # SCUDO discounts
+  elsif collection contains 'scudo'
+    if segment == 'diy'
+      assign percentage = 30
+    endif
+
+    # Maxi Panels discounts
+  elsif collection contains 'maxi' or collection contains 'panel' or collection contains 'cladworks'
+    if segment == 'hubpro-free' or segment == 'hubpro-plus'
+      assign percentage = 50
+    endif
   endif
 
   echo percentage
