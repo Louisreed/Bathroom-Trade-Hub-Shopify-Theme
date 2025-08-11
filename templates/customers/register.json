@@ -95,6 +95,78 @@
         "parallax_direction": "zoom"
       }
     },
+    "main-register": {
+      "type": "main-register",
+      "blocks": {
+        "custom_field_iLCeKX": {
+          "type": "custom_field",
+          "disabled": true,
+          "settings": {
+            "type": "text",
+            "title": "Company name (If applicable)",
+            "required": false,
+            "checked_value": "Yes",
+            "unchecked_value": "No",
+            "radio_options": "",
+            "select_options": ""
+          }
+        },
+        "custom_field_dH3Ld7": {
+          "type": "custom_field",
+          "disabled": true,
+          "settings": {
+            "type": "text",
+            "title": "Company/Personal address",
+            "required": true,
+            "checked_value": "Yes",
+            "unchecked_value": "No",
+            "radio_options": "",
+            "select_options": ""
+          }
+        },
+        "custom_field_p7Hh4A": {
+          "type": "custom_field",
+          "disabled": true,
+          "settings": {
+            "type": "text",
+            "title": "Contact telephone/mobile",
+            "required": true,
+            "checked_value": "Yes",
+            "unchecked_value": "No",
+            "radio_options": "",
+            "select_options": ""
+          }
+        },
+        "custom_field_EaErmq": {
+          "type": "custom_field",
+          "disabled": true,
+          "settings": {
+            "type": "checkbox",
+            "title": "Register for HubPRO - *we highly recommend this for our trade customers to keep up to date with our latest products/prices*",
+            "required": false,
+            "checked_value": "Yes",
+            "unchecked_value": "No",
+            "radio_options": "",
+            "select_options": ""
+          }
+        }
+      },
+      "block_order": [
+        "custom_field_iLCeKX",
+        "custom_field_dH3Ld7",
+        "custom_field_p7Hh4A",
+        "custom_field_EaErmq"
+      ],
+      "settings": {
+        "heading_size": "title-sm",
+        "heading_tag": "h1",
+        "show_email_consent": true,
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "divider": false,
+        "rounded": false
+      }
+    },
     "custom_section_rLAcwk": {
       "type": "custom-section",
       "blocks": {
@@ -449,7 +521,7 @@
         "text_TfgHU4": {
           "type": "text",
           "settings": {
-            "text": "<p>Working on a new project or just getting that weekend list done?  Simply log in and see your prices!</p><ul><li>Receive up to 35% discount of our range of products!</li><li>Easy-to-use Portal with full product information/pricing</li><li>Bulk deals on large orders</li><li>Incentives and rewards on orders over £500..</li><li>FREE local delivery on orders over £120!</li><li>Same-day delivery on in-stock items</li><li>Same-day collection at our Weymouth Branch</li><li>Browse products Inc VAT or Ex VAT</li><li>Exclusive product ranges</li><li>Full product/installation support</li><li>Monthly newsletters showcasing our latest offers/products</li></ul><h1><strong>Fill out our account form below to start the process!</strong></h1>",
+            "text": "<p>Working on a new project or just getting that weekend list done?  Simply log in and see your prices!</p><ul><li>Receive up to 35% discount of our range of products!</li><li>Easy-to-use Portal with full product information/pricing</li><li>Bulk deals on large orders</li><li>Incentives and rewards on orders over £500..</li><li>FREE local delivery on orders over £120!</li><li>Same-day delivery on in-stock items</li><li>Same-day collection at our Weymouth Branch</li><li>Browse products Inc VAT or Ex VAT</li><li>Exclusive product ranges</li><li>Full product/installation support</li><li>Monthly newsletters showcasing our latest offers/products</li></ul>",
             "text_font": "body",
             "text_size": "subtext-md",
             "text_max_size": 32,
@@ -502,78 +574,6 @@
         "full_width": false,
         "rounded": false,
         "enable_parallax": true
-      }
-    },
-    "main-register": {
-      "type": "main-register",
-      "blocks": {
-        "custom_field_iLCeKX": {
-          "type": "custom_field",
-          "disabled": true,
-          "settings": {
-            "type": "text",
-            "title": "Company name (If applicable)",
-            "required": false,
-            "checked_value": "Yes",
-            "unchecked_value": "No",
-            "radio_options": "",
-            "select_options": ""
-          }
-        },
-        "custom_field_dH3Ld7": {
-          "type": "custom_field",
-          "disabled": true,
-          "settings": {
-            "type": "text",
-            "title": "Company/Personal address",
-            "required": true,
-            "checked_value": "Yes",
-            "unchecked_value": "No",
-            "radio_options": "",
-            "select_options": ""
-          }
-        },
-        "custom_field_p7Hh4A": {
-          "type": "custom_field",
-          "disabled": true,
-          "settings": {
-            "type": "text",
-            "title": "Contact telephone/mobile",
-            "required": true,
-            "checked_value": "Yes",
-            "unchecked_value": "No",
-            "radio_options": "",
-            "select_options": ""
-          }
-        },
-        "custom_field_EaErmq": {
-          "type": "custom_field",
-          "disabled": true,
-          "settings": {
-            "type": "checkbox",
-            "title": "Register for HubPRO - *we highly recommend this for our trade customers to keep up to date with our latest products/prices*",
-            "required": false,
-            "checked_value": "Yes",
-            "unchecked_value": "No",
-            "radio_options": "",
-            "select_options": ""
-          }
-        }
-      },
-      "block_order": [
-        "custom_field_iLCeKX",
-        "custom_field_dH3Ld7",
-        "custom_field_p7Hh4A",
-        "custom_field_EaErmq"
-      ],
-      "settings": {
-        "heading_size": "title-md",
-        "heading_tag": "h1",
-        "show_email_consent": true,
-        "padding_top": 32,
-        "padding_bottom": 32,
-        "divider": false,
-        "rounded": false
       }
     },
     "slideshow_Ai9Qit": {
@@ -747,10 +747,10 @@
   },
   "order": [
     "slideshow_Bkt7tm",
+    "main-register",
     "custom_section_rLAcwk",
     "multicolumn_aGmfPC",
     "images_with_text_4gfzFq",
-    "main-register",
     "slideshow_Ai9Qit",
     "recently_viewed_83qjgT",
     "175415405802d3f547"
