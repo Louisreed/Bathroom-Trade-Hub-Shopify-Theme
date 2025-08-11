@@ -232,6 +232,7 @@
         },
         "column_2_WzwhPm": {
           "type": "column-2",
+          "disabled": true,
           "settings": {
             "column_1_heading": "Create a Trade Account - Professionals ONLY.",
             "column_1_content": "<p>Are you ready to become a HubPRO? Save time and money by becoming a member and get access to unique offers and deals you will not find anywhere else.</p>",
@@ -297,6 +298,7 @@
         "button_x4RH7i",
         "column_2_WzwhPm"
       ],
+      "disabled": true,
       "name": "t:sections.custom-section.name",
       "settings": {
         "content_direction": "col",
@@ -507,6 +509,7 @@
       "blocks": {
         "custom_field_iLCeKX": {
           "type": "custom_field",
+          "disabled": true,
           "settings": {
             "type": "text",
             "title": "Company name (If applicable)",
@@ -519,6 +522,7 @@
         },
         "custom_field_dH3Ld7": {
           "type": "custom_field",
+          "disabled": true,
           "settings": {
             "type": "text",
             "title": "Company/Personal address",
@@ -531,6 +535,7 @@
         },
         "custom_field_p7Hh4A": {
           "type": "custom_field",
+          "disabled": true,
           "settings": {
             "type": "text",
             "title": "Contact telephone/mobile",
