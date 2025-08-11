@@ -708,6 +708,16 @@
         "color_background": "",
         "gradient_background": ""
       }
+    },
+    "empty_space_p9pqw7": {
+      "type": "empty-space",
+      "name": "t:sections.empty-space.name",
+      "settings": {
+        "desktop_height": 40,
+        "mobile_height": 28,
+        "color_background": "",
+        "gradient_background": ""
+      }
     }
   },
   "order": [
@@ -719,8 +729,9 @@
     "rich_text_qFQmBj",
     "rich_text_XCVJJH",
     "1754923679d8d98e86",
+    "empty_space_WdA8Kx",
     "custom_section_gCE33B",
     "slideshow_UPFtEK",
-    "empty_space_WdA8Kx"
+    "empty_space_p9pqw7"
   ]
 }
