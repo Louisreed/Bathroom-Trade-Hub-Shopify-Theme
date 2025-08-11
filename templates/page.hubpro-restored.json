@@ -554,6 +554,16 @@
       ],
       "settings": {}
     },
+    "empty_space_WdA8Kx": {
+      "type": "empty-space",
+      "name": "t:sections.empty-space.name",
+      "settings": {
+        "desktop_height": 40,
+        "mobile_height": 28,
+        "color_background": "",
+        "gradient_background": ""
+      }
+    },
     "custom_section_gCE33B": {
       "type": "custom-section",
       "blocks": {
@@ -678,7 +688,7 @@
         "autoplay": false,
         "autoplay_speed": 5,
         "show_navigation": true,
-        "image_height": "650px",
+        "image_height": "400px",
         "content_width": "small",
         "image_height_mobile": "auto",
         "accessibility_info": "Slideshow about our brand",
@@ -697,16 +707,6 @@
         "rounded": false,
         "enable_parallax": false,
         "parallax_direction": "vertical"
-      }
-    },
-    "empty_space_WdA8Kx": {
-      "type": "empty-space",
-      "name": "t:sections.empty-space.name",
-      "settings": {
-        "desktop_height": 40,
-        "mobile_height": 28,
-        "color_background": "",
-        "gradient_background": ""
       }
     },
     "empty_space_p9pqw7": {
