@@ -384,7 +384,7 @@
         "heading_YLtnTA": {
           "type": "heading",
           "settings": {
-            "heading": "<em>1. Sign Up</em>",
+            "heading": "As easy as 1, 2, <em><strong>done!</strong></em>",
             "heading_size": "title-md",
             "heading_tag": "h2",
             "highlighted_text": "scribble",
@@ -394,7 +394,7 @@
         "text_EzhfNx": {
           "type": "text",
           "settings": {
-            "text": "<p>To get started, provide us with a few basic details about yourself and your business below. Once the form is complete, click sign up you will receive a confirmation email shortly after.</p>",
+            "text": "<p>To get started, simply click the link below and create an account on our website. You will immediately see your discounts on our website. </p>",
             "text_font": "body",
             "text_size": "subtext-lg",
             "text_max_size": 60,
@@ -449,7 +449,7 @@
         "heading_j9FXMi": {
           "type": "heading",
           "settings": {
-            "heading": "<em>2. Account Verification</em>",
+            "heading": "<em>Locked-in</em> Prices",
             "heading_size": "title-md",
             "heading_tag": "h2",
             "highlighted_text": "scribble",
@@ -459,7 +459,7 @@
         "text_tMnHf7": {
           "type": "text",
           "settings": {
-            "text": "<p>Bathroom Trade Hub will verify your account within 48 hours. During this process, you will receive an additional email confirming your account setup, along with details on your personalised site-wide pricing.</p>",
+            "text": "<p>Whether you are online or in-store, you can now enjoy consistent prices!</p>",
             "text_font": "body",
             "text_size": "subtext-lg",
             "text_max_size": 60,
@@ -514,7 +514,7 @@
         "heading_PTcKKN": {
           "type": "heading",
           "settings": {
-            "heading": "<em>3. Start Shopping!</em>",
+            "heading": "<em>Stay up to date!</em>",
             "heading_size": "title-md",
             "heading_tag": "h2",
             "highlighted_text": "scribble",
@@ -524,7 +524,7 @@
         "text_HfRc7G": {
           "type": "text",
           "settings": {
-            "text": "<p>Your account has now been activated and your trade-only pricing is live both online and in store! </p>",
+            "text": "<p>Sign up to our marketing emails and you'll be the first to know about our latest and best offers!</p>",
             "text_font": "body",
             "text_size": "subtext-lg",
             "text_max_size": 60,
