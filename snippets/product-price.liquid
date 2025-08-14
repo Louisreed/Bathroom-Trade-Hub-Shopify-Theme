@@ -140,7 +140,6 @@
 
 {%- liquid
   # Set up discount variables from configuration
-  assign should_strikethrough = false
   assign show_discounted_price = false
   assign discounted_price = 0
   assign show_badges = false
@@ -148,7 +147,6 @@
   assign badge_discount_percent = 0
 
   if current_discount_percent > 0
-    assign should_strikethrough = true
     assign show_discounted_price = true
     assign show_badges = true
     assign badge_discount_percent = current_discount_percent
@@ -197,41 +195,48 @@
     style="display:none;"
   ></span>
 
-  <span
-    class="price__regular whitespace-nowrap"
-    {% if should_strikethrough %}
-      style="text-decoration: line-through; opacity: 0.6; font-size: 0.875em;"
-    {% endif %}
-  >
-    {%- liquid
-      if product.quantity_price_breaks_configured? != true or skip_to_price
-        if target == product and product.price_varies
-          if settings.currency_code_enabled
-            assign price_min = product.price_min | money_with_currency
-          else
-            assign price_min = product.price_min | money
-          endif
-          echo 'products.price.from_price_html' | t: price: price_min
-        else
-          if settings.currency_code_enabled
-            echo price | money_with_currency
-          else
-            echo price | money
-          endif
-        endif
-      else
-        if settings.currency_code_enabled
-          assign price_min = product.price_min | money_with_currency
-        else
-          assign price_min = product.price_min | money
-        endif
-        echo 'products.price.from_price_html' | t: price: price_min
-      endif
-    -%}
-  </span>
+  {%- comment -%} Three-tier pricing: compare_at_price → regular price → HubPRO discounted price {%- endcomment -%}
 
-  {%- if show_discounted_price -%}
-    <span class="price__regular whitespace-nowrap">
+  {%- if compare_at_price and compare_at_price > price and show_discounted_price -%}
+    {%- comment -%} Show compare-at-price (highest) - SMALL {%- endcomment -%}
+    <span
+      class="price__regular inline-flex items-center h-auto relative"
+      style="text-decoration: line-through; opacity: 0.6; font-size: 0.75em; color: rgb(var(--color-foreground));"
+    >
+      {%- if settings.currency_code_enabled -%}
+        {{ compare_at_price | money_with_currency }}
+      {%- else -%}
+        {{ compare_at_price | money }}
+      {%- endif -%}
+      <span
+        class="tax-indicator"
+        data-product-tax-label
+        style="margin-left: 2px; font-size: 0.75em; opacity: 0.8;"
+      ></span>
+    </span>
+
+    {%- comment -%} Show regular price (middle) - MEDIUM {%- endcomment -%}
+    <span
+      class="price__regular inline-flex items-center h-auto relative"
+      style="text-decoration: line-through; opacity: 0.7; font-size: 0.875em; color: rgb(var(--color-foreground));"
+    >
+      {%- if settings.currency_code_enabled -%}
+        {{ price | money_with_currency }}
+      {%- else -%}
+        {{ price | money }}
+      {%- endif -%}
+      <span
+        class="tax-indicator"
+        data-product-tax-label
+        style="margin-left: 2px; font-size: 0.75em; opacity: 0.8;"
+      ></span>
+    </span>
+
+    {%- comment -%} Show HubPRO discounted price (final) - LARGE {%- endcomment -%}
+    <span
+      class="price__regular whitespace-nowrap"
+      style="font-size: 1.125em; color: rgb(var(--color-foreground));"
+    >
       {%- if settings.currency_code_enabled -%}
         {{ discounted_price | money_with_currency }}
       {%- else -%}
@@ -243,25 +248,91 @@
         style="margin-left: 2px; font-size: 0.75em; opacity: 0.8;"
       ></span>
     </span>
-  {%- endif -%}
 
-  {%- if on_sale -%}
+  {%- elsif show_discounted_price -%}
+    {%- comment -%} Two-tier pricing: regular price → HubPRO discounted price {%- endcomment -%}
+    <span
+      class="price__regular whitespace-nowrap"
+      style="text-decoration: line-through; opacity: 0.7; font-size: 0.875em; color: rgb(var(--color-foreground));"
+    >
+      {%- if settings.currency_code_enabled -%}
+        {{ price | money_with_currency }}
+      {%- else -%}
+        {{ price | money }}
+      {%- endif -%}
+    </span>
+
+    <span
+      class="price__regular whitespace-nowrap"
+      style="font-size: 1.125em; color: rgb(var(--color-foreground));"
+    >
+      {%- if settings.currency_code_enabled -%}
+        {{ discounted_price | money_with_currency }}
+      {%- else -%}
+        {{ discounted_price | money }}
+      {%- endif -%}
+      <span
+        class="tax-indicator"
+        data-product-tax-label
+        style="margin-left: 2px; font-size: 0.75em; opacity: 0.8;"
+      ></span>
+    </span>
+
+  {%- elsif on_sale -%}
+    {%- comment -%} Standard sale pricing: compare_at_price → regular price {%- endcomment -%}
     <span class="sr-only">{{ 'products.price.regular_price' | t }}</span>
     <span class="price__sale inline-flex items-center h-auto relative">
+      {%- if settings.currency_code_enabled -%}
+        {{ compare_at_price | money_with_currency }}
+      {%- else -%}
+        {{ compare_at_price | money }}
+      {%- endif -%}
+      <span
+        class="tax-indicator"
+        data-product-tax-label
+        style="margin-left: 2px; font-size: 0.75em; opacity: 0.8;"
+      ></span>
+    </span>
+
+    <span class="price__regular whitespace-nowrap">
+      {%- if settings.currency_code_enabled -%}
+        {{ price | money_with_currency }}
+      {%- else -%}
+        {{ price | money }}
+      {%- endif -%}
+      <span
+        class="tax-indicator"
+        data-product-tax-label
+        style="margin-left: 2px; font-size: 0.75em; opacity: 0.8;"
+      ></span>
+    </span>
+
+  {%- else -%}
+    {%- comment -%} Regular pricing: single price {%- endcomment -%}
+    <span class="price__regular whitespace-nowrap">
       {%- liquid
-        if target == product and product.price_varies
-          if settings.currency_code_enabled
-            assign original_price_min = product.price_min | money_with_currency
+        if product.quantity_price_breaks_configured? != true or skip_to_price
+          if target == product and product.price_varies
+            if settings.currency_code_enabled
+              assign price_min = product.price_min | money_with_currency
+            else
+              assign price_min = product.price_min | money
+            endif
+            echo 'products.price.from_price_html' | t: price: price_min
           else
-            assign original_price_min = product.price_min | money
+            if settings.currency_code_enabled
+              echo price | money_with_currency
+            else
+              echo price | money
+            endif
           endif
-          echo 'products.price.from_price_html' | t: price: original_price_min
         else
           if settings.currency_code_enabled
-            echo original_price | money_with_currency
+            assign price_min = product.price_min | money_with_currency
           else
-            echo original_price | money
+            assign price_min = product.price_min | money
           endif
+          echo 'products.price.from_price_html' | t: price: price_min
         endif
       -%}
       <span
