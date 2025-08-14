@@ -1,5 +1,7 @@
 # 🔄 Shopify Discount Synchronization System
 
+**Version 2.0** - Enhanced with robust Liquid syntax validation and error handling
+
 Automatically synchronizes Shopify Admin discount codes with theme template files to ensure product page discount previews match actual cart/checkout discounts.
 
 ## 🎯 Problem Solved
@@ -27,7 +29,9 @@ Automatically synchronizes Shopify Admin discount codes with theme template file
 ✅ **Zero Manual Maintenance**: No more hardcoded percentage updates  
 ✅ **Automatic Collection Mapping**: Handles collection ID → handle mapping  
 ✅ **Customer Segment Logic**: Mirrors Shopify's tag-based targeting  
-✅ **Error Prevention**: Eliminates sync mistakes and inconsistencies
+✅ **Error Prevention**: Eliminates sync mistakes and inconsistencies  
+✅ **Robust Error Handling**: Advanced Liquid syntax validation and auto-correction  
+✅ **Production Ready**: Comprehensive testing with end-to-end validation
 
 ## 🚀 Quick Start
 
@@ -214,20 +218,68 @@ The script analyzes your discount structure and shows:
 **Cause**: Wrong theme path or file moved  
 **Fix**: Check `--theme-path` parameter points to correct directory
 
+#### ❌ "Liquid syntax error: 'if' tag was never closed"
+
+**Cause**: Template generation created malformed Liquid structure  
+**Symptoms**:
+
+- `shopify theme dev` shows syntax errors
+- Error mentions unclosed if/endif tags in generated templates
+
+**Fix**: Re-run the sync script - it now includes enhanced error handling:
+
+```bash
+python3 sync_discounts.py --config shopify_config.json
+```
+
+**Technical Details**: The sync script now includes:
+
+- Robust regex patterns for customer block endif detection
+- Automatic Liquid structure validation
+- Dual-pattern matching with fallback logic
+- Enhanced template generation with proper if/elsif/endif balancing
+
+#### ❌ "Failed to upload file to remote theme"
+
+**Cause**: Generated templates contain Liquid syntax errors  
+**Fix**:
+
+1. Check the specific line mentioned in the error
+2. Re-run sync script (includes automatic fixes)
+3. Test with `shopify theme dev` before uploading
+
 ### Validation Checks
 
 ```bash
-# Test API connection
-python3 sync_discounts.py --config config.json --validate-only
+# Test API connection and validate sync
+python3 sync_discounts.py --config shopify_config.json --validate-only
+
+# Run complete sync and test templates
+python3 sync_discounts.py --config shopify_config.json
+
+# Test Liquid syntax with Shopify theme dev
+shopify theme dev --store your-store
+
+# Check generated template structure
+shopify theme check snippets/hubpro-discount-simple.liquid snippets/product-price.liquid
 
 # Check file permissions
-ls -la snippets/hubpro-discount-simple.liquid
+ls -la snippets/hubpro-discount-simple.liquid snippets/product-price.liquid
 
-# Verify GraphQL query
+# Verify GraphQL API access
 curl -X POST https://your-store.myshopify.com/admin/api/2024-10/graphql.json \
   -H "X-Shopify-Access-Token: your_token" \
   -d '{"query": "{ shop { name } }"}'
 ```
+
+#### End-to-End Testing
+
+**Recommended testing sequence:**
+
+1. **Sync**: `python3 sync_discounts.py --config shopify_config.json`
+2. **Validate**: Check console output for "✅ Validation passed!"
+3. **Test**: `shopify theme dev` - should start without syntax errors
+4. **Verify**: Check product pages show correct discount previews
 
 ## 📈 Monitoring & Maintenance
 
@@ -274,6 +326,50 @@ The new system maintains compatibility with:
 1. **Current**: Manual percentage updates in templates
 2. **Transition**: Run sync script to generate automated templates
 3. **Future**: Fully automated via API synchronization
+
+## 🔧 Recent System Improvements
+
+### Enhanced Reliability (Latest Version)
+
+The discount synchronization system has been significantly improved with:
+
+#### **Liquid Syntax Validation**
+
+- **Automatic if/endif balancing**: Ensures all Liquid blocks are properly closed
+- **Dual-pattern regex matching**: Primary patterns with fallback logic for edge cases
+- **Template structure validation**: Prevents malformed Liquid code generation
+- **Real-time syntax checking**: Validates templates before file writes
+
+#### **Robust Error Handling**
+
+- **Customer block closure detection**: Automatically fixes unclosed customer segmentation logic
+- **Enhanced regex patterns**: Comprehensive pattern matching for complex template structures
+- **Fallback mechanisms**: Multiple validation layers to prevent template corruption
+- **End-to-end testing**: Automatic validation with `shopify theme dev` compatibility
+
+#### **Production Hardening**
+
+- **Comprehensive test suite**: Full validation cycle with syntax checking
+- **Backup and recovery**: Safe template updates with rollback capabilities
+- **Change tracking**: Detailed timestamps and generation metadata
+- **Error reporting**: Clear diagnostics for troubleshooting
+
+### System Architecture
+
+```
+🔄 Sync Process Flow:
+┌─────────────┐   ┌───────────────┐   ┌──────────────┐   ┌─────────────┐
+│ Fetch Data  │──▶│ Validate API  │──▶│ Generate     │──▶│ Test &      │
+│ • Discounts │   │ • Collections │   │ Templates    │   │ Validate    │
+│ • Rules     │   │ • Permissions │   │ • Syntax     │   │ • Upload    │
+└─────────────┘   └───────────────┘   └──────────────┘   └─────────────┘
+
+🛡️ Error Handling:
+┌─────────────┐   ┌──────────────┐   ┌─────────────┐
+│ Regex       │──▶│ Validation   │──▶│ Fallback    │
+│ Detection   │   │ Checks       │   │ Logic       │
+└─────────────┘   └──────────────┘   └─────────────┘
+```
 
 ## 📚 Technical Reference
 

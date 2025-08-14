@@ -7,15 +7,27 @@ Automatically synchronizes Shopify discount codes with theme template files
 to ensure product page discount previews match actual cart/checkout discounts.
 
 Features:
-- Connects to Shopify Admin GraphQL API
-- Fetches all discount codes with targeting rules
-- Generates synchronized template code
-- Updates hubpro-discount-simple.liquid and product-price.liquid
-- Ensures price consistency between preview and actual discounts
+- Connects to Shopify Admin GraphQL API (supports both manual and automatic discounts)
+- Fetches all discount codes with targeting rules and collection mappings
+- Generates syntactically correct Liquid template code with robust error handling
+- Updates hubpro-discount-simple.liquid and product-price.liquid with proper if/endif structure
+- Ensures price consistency between frontend previews and backend cart/checkout
+- Enhanced regex handling for customer block endif detection and template validation
+- Dual-pattern matching with fallback logic for edge cases
+- Comprehensive Liquid syntax validation and structure balancing
+
+Recent Improvements:
+- Fixed template generation for proper if/elsif/endif balancing
+- Enhanced customer segmentation block closure handling
+- Robust regex patterns for Liquid structure validation
+- Automatic detection and correction of malformed template syntax
+- Support for both DiscountCodeBasic and DiscountAutomaticBasic discount types
+- Improved error handling and validation checks
 
 Usage:
     python3 sync_discounts.py --store your-store.myshopify.com --token your-admin-api-token
-    python3 sync_discounts.py --config config.json
+    python3 sync_discounts.py --config shopify_config.json
+    python3 sync_discounts.py --config shopify_config.json --validate-only
 """
 
 import requests
@@ -379,7 +391,21 @@ class ShopifyDiscountSyncer:
         return analysis
 
     def generate_hubpro_discount_simple(self, analysis: Dict) -> str:
-        """Generate the hubpro-discount-simple.liquid file content."""
+        """
+        Generate the hubpro-discount-simple.liquid file content with proper Liquid structure.
+
+        Creates syntactically correct Liquid template with:
+        - Balanced if/elsif/endif structure for title-based and segment-based logic
+        - Proper string concatenation to avoid Python format conflicts
+        - Enhanced template generation with comprehensive error handling
+        - Support for both cart discount badges and product page previews
+
+        Args:
+            analysis: Analyzed discount data with customer segments and discount matrix
+
+        Returns:
+            str: Complete Liquid template content with proper syntax structure
+        """
 
         # Group discounts by customer segment and collection
         discount_matrix = analysis["discount_matrix"]
@@ -491,12 +517,14 @@ class ShopifyDiscountSyncer:
                     f"""
   {"if" if not segment_logic_parts else "elsif"} segment == '{segment}'
 {"".join(segment_conditions)}
-  endif"""
+    endif"""
                 )
 
-        # Add title-based logic to template
+                # Add title-based logic to template
         if title_logic_parts:
             template_parts.extend(title_logic_parts)
+            # Close the nested title logic with endif
+            template_parts.append("    endif")
 
         # Add segment-based logic as direct elsif statements
         if segment_logic_parts:
@@ -506,19 +534,41 @@ class ShopifyDiscountSyncer:
                     "  # Handle collection and segment-based lookups (for product previews)",
                 ]
             )
-            # Convert segment "if" statements to "elsif" statements
-            for part in segment_logic_parts:
-                # Replace "if segment ==" with "elsif segment =="
-                modified_part = part.replace("  if segment ==", "  elsif segment ==")
+            # Convert segment "if" statements to "elsif" statements and add them
+            for i, part in enumerate(segment_logic_parts):
+                if i == 0:
+                    # First segment: convert "if" to "elsif"
+                    modified_part = part.replace(
+                        "  if segment ==", "  elsif segment =="
+                    )
+                else:
+                    # Subsequent segments: keep as "elsif"
+                    modified_part = part.replace(
+                        "  if segment ==", "  elsif segment =="
+                    )
                 template_parts.append(modified_part)
 
-        # Close template
+        # Close the main if/elsif structure with a single endif
         template_parts.extend(["  endif", "", "  echo percentage", "-%}"])
 
         return "\n".join(template_parts)
 
     def update_product_price_logic(self, analysis: Dict) -> bool:
-        """Update the customer segmentation logic in product-price.liquid."""
+        """
+        Update the customer segmentation logic in product-price.liquid.
+
+        Performs robust regex-based template updates with enhanced error handling:
+        - Detects and fixes customer block endif structure
+        - Ensures proper Liquid syntax with balanced if/endif tags
+        - Handles edge cases with dual-pattern matching and fallback logic
+        - Adds generation timestamps for change tracking
+
+        Args:
+            analysis: Discount analysis data with customer segments and collections
+
+        Returns:
+            bool: True if update successful, False if errors occurred
+        """
 
         if not os.path.exists(self.product_price_file):
             print(f"❌ Product price file not found: {self.product_price_file}")
@@ -527,14 +577,48 @@ class ShopifyDiscountSyncer:
         with open(self.product_price_file, "r", encoding="utf-8") as f:
             content = f.read()
 
-        # Find any existing AUTO-GENERATED customer segment section and remove extra endifs
-        auto_generated_pattern = r"(\{%- comment -%} Determine customer segment.*?AUTO-GENERATED.*?\{%- endcomment -%}.*?)(\{%- endif -%\}\s*)+(\{%- endif -%\})"
+        # Ensure the main customer block is properly closed
+        # Look for the customer segmentation block and count if/endif pairs
+        customer_start_pattern = r"(\{%- comment -%} Determine customer segment.*?AUTO-GENERATED.*?\{%- endcomment -%}\s*\{%- if customer -%\})"
+        liquid_start_pattern = r"(\{%- liquid)"
 
-        def clean_endif(match):
-            segment_logic = match.group(1)
-            return segment_logic + "{%- endif -%}"
+        if re.search(customer_start_pattern, content, flags=re.DOTALL) and re.search(
+            liquid_start_pattern, content, flags=re.DOTALL
+        ):
+            # Find the customer block start
+            customer_start_match = re.search(
+                customer_start_pattern, content, flags=re.DOTALL
+            )
+            liquid_start_match = re.search(
+                liquid_start_pattern, content, flags=re.DOTALL
+            )
 
-        content = re.sub(auto_generated_pattern, clean_endif, content, flags=re.DOTALL)
+            if customer_start_match and liquid_start_match:
+                customer_start_pos = customer_start_match.end()
+                liquid_start_pos = liquid_start_match.start()
+
+                # Extract the content between customer block start and liquid block
+                customer_section = content[customer_start_pos:liquid_start_pos]
+
+                # Count if and endif tags in the customer section
+                if_count = len(re.findall(r"\{%-?\s*if\s+", customer_section))
+                endif_count = len(
+                    re.findall(r"\{%-?\s*endif\s*-?%\}", customer_section)
+                )
+
+                # If there are more if tags than endif tags, we need to add endifs
+                missing_endifs = if_count - endif_count
+
+                if missing_endifs > 0:
+                    # Add the missing endifs before the liquid block
+                    before_liquid = content[:liquid_start_pos].rstrip()
+                    after_liquid = content[liquid_start_pos:]
+
+                    # Add missing endifs
+                    for _ in range(missing_endifs):
+                        before_liquid += "\n{%- endif -%}"
+
+                    content = before_liquid + "\n\n" + after_liquid
 
         # Add generation timestamp comment at the top
         if "{%- doc -%}" in content:

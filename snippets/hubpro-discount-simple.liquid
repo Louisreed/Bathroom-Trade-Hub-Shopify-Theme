@@ -1,6 +1,6 @@
 {%- comment -%}
   AUTO-GENERATED: Shopify Discount Sync System
-  Generated on: 2025-08-14T16:30:00
+  Generated on: 2025-08-14T23:09:21.386491
 
   This file is automatically synchronized with Shopify Admin discount codes.
   Do not edit manually - use sync_discounts.py to update.
@@ -19,55 +19,65 @@
 
   # Handle title-based lookups (for cart discount badges)
   if title != blank
-    if title contains '50%' or title contains 'HubPRO' 
+
+    if title contains '50%' or title contains '50%' or title contains '50%' or title contains '-' or title contains '-' or title contains '-'
       assign percentage = 50
-    elsif title contains '45%' or title contains 'HubPRO'
-      assign percentage = 45  
-    elsif title contains '35%' or title contains 'DIY'
+
+    elsif title contains '35%' or title contains '35%' or title contains '35%' or title contains '-' or title contains '-' or title contains '-'
       assign percentage = 35
-    elsif title contains '30%' or title contains 'HubPRO'
-      assign percentage = 30
-    elsif title contains '25%' or title contains 'DIY'
-      assign percentage = 25
-    elsif title contains '20%' or title contains 'DIY'
-      assign percentage = 20
-    elsif title contains '15%' or title contains 'DIY'
-      assign percentage = 15
-    elsif title contains '10%' or title contains 'DIY'
+
+    elsif title contains '10%' or title contains '10%' or title contains '10%' or title contains '-' or title contains '-' or title contains '-'
       assign percentage = 10
+
+    elsif title contains '15%' or title contains '15%' or title contains '15%' or title contains '-' or title contains '-' or title contains '-'
+      assign percentage = 15
+
+    elsif title contains '20%' or title contains '20%' or title contains '20%' or title contains '-' or title contains '-' or title contains '-'
+      assign percentage = 20
+
+    elsif title contains '25%' or title contains '25%' or title contains '25%' or title contains '-' or title contains '-' or title contains '-'
+      assign percentage = 25
+
+    elsif title contains '45%' or title contains '45%' or title contains '45%' or title contains '-' or title contains '-' or title contains '-'
+      assign percentage = 45
+
+    elsif title contains '30%' or title contains '30%' or title contains '30%' or title contains '-' or title contains '-' or title contains '-'
+      assign percentage = 30
+
+    elsif title contains '30%' or title contains '30%' or title contains '30%' or title contains '-' or title contains '-' or title contains '-'
+      assign percentage = 30
+
+    elsif title contains '25%' or title contains '25%' or title contains '25%' or title contains '-' or title contains '-' or title contains '-'
+      assign percentage = 25
+
+    elsif title contains '20%' or title contains '20%' or title contains '20%' or title contains '-' or title contains '-' or title contains '-'
+      assign percentage = 20
+
+    elsif title contains '35%' or title contains '35%' or title contains '35%' or title contains '-' or title contains '-' or title contains '-'
+      assign percentage = 35
+
+    elsif title contains '15%' or title contains '15%' or title contains '15%' or title contains '-' or title contains '-' or title contains '-'
+      assign percentage = 15
     endif
-  
+
   # Handle collection and segment-based lookups (for product previews)
+
   elsif segment == 'hubpro-free'
+
     if collection contains 'hubpromo' or collection contains 'maxi-panels-only'
       assign percentage = 50
     elsif collection contains 'scudo' or collection contains 'nuie' or collection contains 'hudson-reed' or collection contains 'kartell' or collection contains 'bathroom-trade-hub'
       assign percentage = 45
     elsif collection contains 'viva' or collection contains 'viva-essentials' or collection contains 'hubchoice'
-      assign percentage = 35  
+      assign percentage = 35
     elsif collection contains 'perform-panel' or collection contains 'decorfloor' or collection contains 'multipanel-tile-flooring' or collection contains 'multipanel-timber-flooring' or collection contains 'soudal' or collection contains 'everbuild-sika'
       assign percentage = 30
-    elsif collection contains 'multipanel' or collection contains 'multipanel-chevron-flooring' or collection contains 'cladworks-pvc-panels' or collection contains 'maxi-panel-trims'
+    elsif collection contains 'multipanel-1' or collection contains 'multipanel-chevron-flooring' or collection contains 'cladworks-pvc-panels' or collection contains 'maxi-panel-trims'
       assign percentage = 25
     elsif collection contains 'perform-trims-consumables'
       assign percentage = 20
     elsif collection contains 'nature-panel'
       assign percentage = 15
-    endif
-
-  elsif segment == 'diy'
-    if collection contains 'nule' or collection contains 'hudson-reed' or collection contains 'kartell' or collection contains 'maxi-panels-only'
-      assign percentage = 35
-    elsif collection contains 'scudo' or collection contains 'hubessentials'
-      assign percentage = 30
-    elsif collection contains 'hubchoice'
-      assign percentage = 25
-    elsif collection contains 'perform-panel' or collection contains 'decorfloor' or collection contains 'multipanel-tile-flooring' or collection contains 'multipanel-timber-flooring' or collection contains 'squidol' or collection contains 'everbuild'
-      assign percentage = 20
-    elsif collection contains 'multipanel' or collection contains 'multipanel-chevron-flooring' or collection contains 'viva' or collection contains 'viva-essentials' or collection contains 'maxi-panel-trims'
-      assign percentage = 15
-    elsif collection contains 'perform-trims' or collection contains 'consumables' or collection contains 'naturepanel' or collection contains 'cladworks-pvc-panels'
-      assign percentage = 10
     endif
   endif
 
