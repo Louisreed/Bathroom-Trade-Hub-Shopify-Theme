@@ -13,7 +13,7 @@
       "type": "main-page",
       "settings": {
         "heading_size": "title-sm",
-        "heading_alignment": "text-left",
+        "heading_alignment": "text-center",
         "heading_tag": "h1",
         "text_size": "text-base",
         "text_capitalization": "",
