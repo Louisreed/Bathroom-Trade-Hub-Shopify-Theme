@@ -444,17 +444,26 @@ class ShopifyDiscountSyncer:
                 continue
             processed_titles.add(rule.title)
 
-            # Create case-insensitive title matching
+            # Create intelligent title matching based on percentage and segment
             title_conditions = []
-            title_words = rule.title.split()
-            for word in title_words:
-                title_conditions.append(f"title contains '{word}'")
-                title_conditions.append(f"title contains '{word.upper()}'")
-                title_conditions.append(f"title contains '{word.lower()}'")
 
-            condition = " or ".join(
-                title_conditions[:6]
-            )  # Limit to avoid too complex conditions
+            # Extract percentage from title (e.g., "50%" from "50% - HubPRO")
+            percentage_str = f"{int(rule.percentage)}%"
+            title_conditions.append(f"title contains '{percentage_str}'")
+
+            # Extract segment identifier
+            if "HubPRO" in rule.title or "hubpro" in rule.title.lower():
+                title_conditions.append(f"title contains 'HubPRO'")
+                title_conditions.append(f"title contains 'hubpro'")
+                title_conditions.append(f"title contains 'HUBPRO'")
+            elif "DIY" in rule.title:
+                title_conditions.append(f"title contains 'DIY'")
+                title_conditions.append(f"title contains 'diy'")
+
+            # Also match the exact title for precision
+            title_conditions.append(f"title contains '{rule.title}'")
+
+            condition = " or ".join(title_conditions)
 
             title_logic_parts.append(
                 f"""
