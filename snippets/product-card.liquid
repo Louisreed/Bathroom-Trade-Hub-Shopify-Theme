@@ -305,16 +305,13 @@
         </div>
       {%- endif -%}
 
-      <div class="product-card__details flex flex-col lg:flex-row items-baseline gap-2 w-full">
-        <p class="grow">
+      <div class="product-card__details flex flex-col items-start gap-2 w-full">
+        <p class="w-full">
           <a class="product-card__title reversed-link text-base-xl font-medium leading-tight" href="{{ product_url }}">
             {{- product.title | escape -}}
           </a>
         </p>
-        {%- render 'product-price',
-          product: product,
-          class: 'flex flex-wrap lg:flex-col lg:items-end gap-2 md:gap-1d5'
-        -%}
+        {%- render 'product-price', product: product, class: 'flex flex-wrap gap-2 md:gap-1d5 w-full' -%}
         {%- if product.quantity_price_breaks_configured? -%}
           <div class="text-sm font-medium leading-tight">{{ 'products.volume_pricing.note' | t }}</div>
         {%- endif -%}
