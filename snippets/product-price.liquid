@@ -21,6 +21,8 @@
   %}
 {%- enddoc -%}
 
+{%- comment -%} AUTO-SYNCHRONIZED with Shopify discounts on: 2025-08-14T16:23:30.889732 {%- endcomment -%}
+
 {%- liquid
   if use_variant
     assign target = variant | default: product.selected_or_first_available_variant
@@ -46,38 +48,15 @@
   endif
 -%}
 
-<div
-  class="
-    price
-    {%- if on_sale %} price--on-sale{% endif -%}
-    {%- if class != blank %} {{ class }}{% endif -%}
-  "
->
-  {%- if on_sale -%}
-    <span class="sr-only">{{ 'products.price.sale_price' | t }}</span>
-  {%- endif -%}
-  <span
-    class="appstle_member_price appstle_membership_stand_alone_selector"
-    data-product-data="{{ product| json| escape }}"
-    data-product-collection-data="{{ product.collections | json | escape }}"
-    style="display:none;"
-  ></span>
-
-  {%- comment -%} Multi-tier discount system for logged-in customer segments only {%- endcomment -%}
-  {%- assign current_discount_percent = 0 -%}
-  {%- assign current_display_name = '' -%}
-  {%- assign customer_segment = '' -%}
-
-  {%- comment -%} Determine customer segment - only for logged-in customers {%- endcomment -%}
-  {%- if customer -%}
-    {%- if customer.tags contains 'hubpro-plus' -%}
-      {%- assign customer_segment = 'hubpro-plus' -%}
-    {%- elsif customer.tags contains 'hubpro-free' -%}
-      {%- assign customer_segment = 'hubpro-free' -%}
-    {%- else -%}
-      {%- comment -%} Logged-in customer with no hubpro tags = DIY segment {%- endcomment -%}
-      {%- assign customer_segment = 'diy' -%}
-    {%- endif -%}
+{%- comment -%} Determine customer segment - only for logged-in customers (AUTO-GENERATED) {%- endcomment -%}
+{%- if customer -%}
+  {%- if customer.tags contains 'hubpro-plus' -%}
+    {%- assign customer_segment = 'hubpro-plus' -%}
+  {%- elsif customer.tags contains 'hubpro-free' -%}
+    {%- assign customer_segment = 'hubpro-free' -%}
+  {%- else -%}
+    {%- comment -%} Logged-in customer with no hubpro tags = DIY segment {%- endcomment -%}
+    {%- assign customer_segment = 'diy' -%}
   {%- endif -%}
 
   {%- comment -%} Check product collections and get discounts from centralized source - only for logged-in customers {%- endcomment -%}
@@ -149,48 +128,66 @@
       {%- endif -%}
     {%- endfor -%}
   {%- endif -%}
+{%- endif -%}
 
-  {%- liquid
-    # Set up discount variables from configuration
-    assign should_strikethrough = false
-    assign show_discounted_price = false
-    assign discounted_price = 0
-    assign show_badges = false
-    assign badge_label = ''
-    assign badge_discount_percent = 0
+{%- liquid
+  # Set up discount variables from configuration
+  assign should_strikethrough = false
+  assign show_discounted_price = false
+  assign discounted_price = 0
+  assign show_badges = false
+  assign badge_label = ''
+  assign badge_discount_percent = 0
 
-    if current_discount_percent > 0
-      assign should_strikethrough = true
-      assign show_discounted_price = true
-      assign show_badges = true
-      assign badge_discount_percent = current_discount_percent
+  if current_discount_percent > 0
+    assign should_strikethrough = true
+    assign show_discounted_price = true
+    assign show_badges = true
+    assign badge_discount_percent = current_discount_percent
 
-      # Calculate discounted price
-      assign discount_amount = original_price | times: current_discount_percent | divided_by: 100
-      assign discounted_price = original_price | minus: discount_amount
+    # Calculate discounted price
+    assign discount_amount = original_price | times: current_discount_percent | divided_by: 100
+    assign discounted_price = original_price | minus: discount_amount
 
-      # Set badge label based on customer segment and collection
-      if customer_segment == 'diy'
-        if request.page_type == 'product'
-          assign badge_label = current_display_name | append: ' - DIY'
-        else
-          assign badge_label = 'DIY'
-        endif
-      elsif customer_segment == 'hubpro-free'
-        if request.page_type == 'product'
-          assign badge_label = current_display_name | append: ' - HubPRO'
-        else
-          assign badge_label = 'HubPRO'
-        endif
-      elsif customer_segment == 'hubpro-plus'
-        if request.page_type == 'product'
-          assign badge_label = current_display_name | append: ' - HubPRO+'
-        else
-          assign badge_label = 'HubPRO+'
-        endif
+    # Set badge label based on customer segment and collection
+    if customer_segment == 'diy'
+      if request.page_type == 'product'
+        assign badge_label = current_display_name | append: ' - DIY'
+      else
+        assign badge_label = 'DIY'
+      endif
+    elsif customer_segment == 'hubpro-free'
+      if request.page_type == 'product'
+        assign badge_label = current_display_name | append: ' - HubPRO'
+      else
+        assign badge_label = 'HubPRO'
+      endif
+    elsif customer_segment == 'hubpro-plus'
+      if request.page_type == 'product'
+        assign badge_label = current_display_name | append: ' - HubPRO+'
+      else
+        assign badge_label = 'HubPRO+'
       endif
     endif
-  -%}
+  endif
+-%}
+
+<div
+  class="
+    price
+    {%- if on_sale %} price--on-sale{% endif -%}
+    {%- if class != blank %} {{ class }}{% endif -%}
+  "
+>
+  {%- if on_sale -%}
+    <span class="sr-only">{{ 'products.price.sale_price' | t }}</span>
+  {%- endif -%}
+  <span
+    class="appstle_member_price appstle_membership_stand_alone_selector"
+    data-product-data="{{ product| json| escape }}"
+    data-product-collection-data="{{ product.collections | json | escape }}"
+    style="display:none;"
+  ></span>
 
   <span
     class="price__regular whitespace-nowrap"

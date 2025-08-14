@@ -1,0 +1,17 @@
+{
+  "store_url": "your-store.myshopify.com",
+  "access_token": "shpat_your_admin_api_token_here",
+  "api_version": "2024-10",
+  "sync_settings": {
+    "backup_before_sync": true,
+    "validate_after_sync": true,
+    "dry_run": false
+  },
+  "theme_settings": {
+    "theme_path": ".",
+    "target_files": [
+      "snippets/hubpro-discount-simple.liquid",
+      "snippets/product-price.liquid"
+    ]
+  }
+}

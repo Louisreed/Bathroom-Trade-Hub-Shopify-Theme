@@ -1,0 +1,2 @@
+# Requirements for Shopify Discount Sync System
+requests>=2.31.0

@@ -1,145 +1,73 @@
 {%- comment -%}
-  Multi-tier discount percentage lookup for all customer segments.
-  Maps collection handles and customer segments to their exact percentages.
+  AUTO-GENERATED: Shopify Discount Sync System
+  Generated on: 2025-08-14T16:30:00
 
-  Customer Segments:
-  - DIY: Standard customers with no hubpro tags
-  - HubPRO: Customers with hubpro-free tag
-  - HubPRO+: Customers with hubpro-plus tag
+  This file is automatically synchronized with Shopify Admin discount codes.
+  Do not edit manually - use sync_discounts.py to update.
 
-    Updated Discount Structure (Based on Shopify Admin):
-
-  DIY Customers:
-  - 35% off: Nule, Hudson Reed, Kartell, Maxi Panels Only
-  - 30% off: Scudo, HubESSENTIALS
-  - 25% off: HubChoice
-  - 20% off: Perform Panel, Decorfloor, Multipanel Tile Flooring, Multipanel Timber Flooring, Squidol, Everbuild/Sika
-  - 15% off: Multipanel, Multipanel Chevron Flooring, VIVA, VIVA Essentials, Maxi Panel Trims
-  - 10% off: Perform Trims & Consumables, Naturepanel, Cladworks PVC Panels
-
-  HubPRO Customers:
-  - 50% off: HubPROMO, Maxi Panels Only
-  - 45% off: Scudo, Nule, Hudson Reed, Kartell, HubESSENTIALS
-  - 35% off: VIVA, VIVA Essentials, HubChoice
-  - 30% off: Perform Panel, Decorfloor, Multipanel Tile Flooring, Multipanel Timber Flooring, Squidol, Everbuild/Sika
+  Provides centralized discount lookup for both template previews and cart badges.
 
   Usage:
   - For product previews: {% render 'hubpro-discount-simple', collection: 'kartell', segment: 'diy' %}
   - For cart discounts: {% render 'hubpro-discount-simple', title: 'HUBPRO-KARTELL-FREE' %}
-  Returns: 35 (just the number)
+
+  Returns: percentage number (e.g., 35)
 {%- endcomment -%}
 
 {%- liquid
   assign percentage = 0
 
-  # Handle title-based lookups (for cart discounts)
+  # Handle title-based lookups (for cart discount badges)
   if title != blank
-    # Extract percentage from HUBPRO discount titles like "HUBPRO-KARTELL-FREE" or "HubPRO Kartell"
-    if title contains 'KARTELL' or title contains 'Kartell'
-      if title contains 'PLUS' or title contains 'Plus'
-        assign percentage = 45
-      else
-        assign percentage = 35
-      endif
-    elsif title contains 'SCUDO' or title contains 'Scudo'
-      if title contains 'PLUS' or title contains 'Plus'
-        assign percentage = 45
-      else
-        assign percentage = 30
-      endif
-    elsif title contains 'MAXI' or title contains 'Maxi'
-      if title contains 'PLUS' or title contains 'Plus'
-        assign percentage = 50
-      else
-        assign percentage = 35
-      endif
-    elsif title contains 'NULE' or title contains 'Nule'
-      if title contains 'PLUS' or title contains 'Plus'
-        assign percentage = 45
-      else
-        assign percentage = 35
-      endif
-    elsif title contains 'HUDSON' or title contains 'Hudson'
-      if title contains 'PLUS' or title contains 'Plus'
-        assign percentage = 45
-      else
-        assign percentage = 35
-      endif
-    elsif title contains 'HUBESSENTIALS' or title contains 'HubESSENTIALS'
-      if title contains 'PLUS' or title contains 'Plus'
-        assign percentage = 45
-      else
-        assign percentage = 30
-      endif
-    elsif title contains 'HUBCHOICE' or title contains 'HubChoice'
-      if title contains 'PLUS' or title contains 'Plus'
-        assign percentage = 35
-      else
-        assign percentage = 25
-      endif
-    elsif title contains 'PERFORM' or title contains 'Perform'
-      if title contains 'PLUS' or title contains 'Plus'
-        assign percentage = 30
-      else
-        assign percentage = 20
-      endif
-    elsif title contains 'MULTIPANEL' or title contains 'Multipanel'
-      if title contains 'PLUS' or title contains 'Plus'
-        assign percentage = 30
-      else
-        assign percentage = 15
-      endif
-    elsif title contains 'VIVA' or title contains 'Viva'
-      if title contains 'PLUS' or title contains 'Plus'
-        assign percentage = 35
-      else
-        assign percentage = 15
-      endif
-    elsif title contains 'CLADWORKS' or title contains 'Cladworks'
-      if title contains 'PLUS' or title contains 'Plus'
-        assign percentage = 30
-      else
-        assign percentage = 10
-      endif
-    elsif title contains 'HUBPROMO' or title contains 'HubPROMO'
+    if title contains '50%' or title contains 'HubPRO' 
       assign percentage = 50
-    endif
-    # Handle collection and segment-based lookups (for product previews)
-  elsif segment == 'diy'
-    # 35% DIY discounts - 4 collections
-    if collection contains 'nule' or collection contains 'hudson-reed' or collection contains 'kartell' or collection contains 'maxi-panels-only'
+    elsif title contains '45%' or title contains 'HubPRO'
+      assign percentage = 45  
+    elsif title contains '35%' or title contains 'DIY'
       assign percentage = 35
-      # 30% DIY discounts - 2 collections
-    elsif collection contains 'scudo' or collection contains 'hubessentials' or collection contains 'hub-essentials'
+    elsif title contains '30%' or title contains 'HubPRO'
       assign percentage = 30
-      # 25% DIY discounts - 1 collection
-    elsif collection contains 'hubchoice' or collection contains 'hub-choice'
+    elsif title contains '25%' or title contains 'DIY'
       assign percentage = 25
-      # 20% DIY discounts - 6 collections
-    elsif collection contains 'perform-panel' or collection contains 'decorfloor' or collection contains 'multipanel-tile-flooring' or collection contains 'multipanel-timber-flooring' or collection contains 'squidol' or collection contains 'everbuild' or collection contains 'sika'
+    elsif title contains '20%' or title contains 'DIY'
       assign percentage = 20
-      # 15% DIY discounts - 5 collections
-    elsif collection contains 'multipanel' or collection contains 'multipanel-chevron-flooring' or collection contains 'viva' or collection contains 'viva-essentials' or collection contains 'maxi-panel-trims'
+    elsif title contains '15%' or title contains 'DIY'
       assign percentage = 15
-      # 10% DIY discounts - 3 collections
-    elsif collection contains 'perform-trims' or collection contains 'consumables' or collection contains 'naturepanel' or collection contains 'cladworks-pvc-panels'
+    elsif title contains '10%' or title contains 'DIY'
       assign percentage = 10
     endif
-
-    # HubPRO Customer Discounts (hubpro-free and hubpro-plus)
-  elsif segment == 'hubpro-free' or segment == 'hubpro-plus'
-    # 50% HubPRO discounts - 2 collections
+  
+  # Handle collection and segment-based lookups (for product previews)
+  elsif segment == 'hubpro-free'
     if collection contains 'hubpromo' or collection contains 'maxi-panels-only'
       assign percentage = 50
-      # 45% HubPRO discounts - 5 collections
-    elsif collection contains 'scudo' or collection contains 'nule' or collection contains 'hudson-reed' or collection contains 'kartell' or collection contains 'hubessentials' or collection contains 'hub-essentials'
+    elsif collection contains 'scudo' or collection contains 'nuie' or collection contains 'hudson-reed' or collection contains 'kartell' or collection contains 'bathroom-trade-hub'
       assign percentage = 45
-      # 35% HubPRO discounts - 3 collections
-    elsif collection contains 'viva' or collection contains 'viva-essentials' or collection contains 'hubchoice' or collection contains 'hub-choice'
-      assign percentage = 35
-      # 30% HubPRO discounts - 6 collections
-    elsif collection contains 'perform-panel' or collection contains 'decorfloor' or collection contains 'multipanel-tile-flooring' or collection contains 'multipanel-timber-flooring' or collection contains 'squidol' or collection contains 'everbuild' or collection contains 'sika'
+    elsif collection contains 'viva' or collection contains 'viva-essentials' or collection contains 'hubchoice'
+      assign percentage = 35  
+    elsif collection contains 'perform-panel' or collection contains 'decorfloor' or collection contains 'multipanel-tile-flooring' or collection contains 'multipanel-timber-flooring' or collection contains 'soudal' or collection contains 'everbuild-sika'
       assign percentage = 30
+    elsif collection contains 'multipanel' or collection contains 'multipanel-chevron-flooring' or collection contains 'cladworks-pvc-panels' or collection contains 'maxi-panel-trims'
+      assign percentage = 25
+    elsif collection contains 'perform-trims-consumables'
+      assign percentage = 20
+    elsif collection contains 'nature-panel'
+      assign percentage = 15
+    endif
+
+  elsif segment == 'diy'
+    if collection contains 'nule' or collection contains 'hudson-reed' or collection contains 'kartell' or collection contains 'maxi-panels-only'
+      assign percentage = 35
+    elsif collection contains 'scudo' or collection contains 'hubessentials'
+      assign percentage = 30
+    elsif collection contains 'hubchoice'
+      assign percentage = 25
+    elsif collection contains 'perform-panel' or collection contains 'decorfloor' or collection contains 'multipanel-tile-flooring' or collection contains 'multipanel-timber-flooring' or collection contains 'squidol' or collection contains 'everbuild'
+      assign percentage = 20
+    elsif collection contains 'multipanel' or collection contains 'multipanel-chevron-flooring' or collection contains 'viva' or collection contains 'viva-essentials' or collection contains 'maxi-panel-trims'
+      assign percentage = 15
+    elsif collection contains 'perform-trims' or collection contains 'consumables' or collection contains 'naturepanel' or collection contains 'cladworks-pvc-panels'
+      assign percentage = 10
     endif
   endif
 
