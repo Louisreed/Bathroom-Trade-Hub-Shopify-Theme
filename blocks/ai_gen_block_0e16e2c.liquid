@@ -1,0 +1,283 @@
+{% doc %}
+  @prompt
+    breadcrumb
+
+{% enddoc %}
+{% assign ai_gen_id = block.id | replace: '_', '' | downcase %}
+
+{% style %}
+  .ai-breadcrumb-{{ ai_gen_id }} {
+    padding: {{ block.settings.padding_top }}px 0 {{ block.settings.padding_bottom }}px;
+    background-color: {{ block.settings.background_color }};
+  }
+
+  .ai-breadcrumb-nav-{{ ai_gen_id }} {
+    max-width: {{ settings.page_width }}px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .ai-breadcrumb-list-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: {{ block.settings.spacing }}px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: {{ block.settings.font_size }}px;
+  }
+
+  .ai-breadcrumb-item-{{ ai_gen_id }} {
+    display: flex;
+    align-items: center;
+    gap: {{ block.settings.spacing }}px;
+  }
+
+  .ai-breadcrumb-link-{{ ai_gen_id }} {
+    color: {{ block.settings.link_color }};
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+  .ai-breadcrumb-link-{{ ai_gen_id }}:hover {
+    color: {{ block.settings.link_hover_color }};
+    text-decoration: underline;
+  }
+
+  .ai-breadcrumb-current-{{ ai_gen_id }} {
+    color: {{ block.settings.current_color }};
+    font-weight: 500;
+  }
+
+  .ai-breadcrumb-separator-{{ ai_gen_id }} {
+    color: {{ block.settings.separator_color }};
+    font-size: {{ block.settings.separator_size }}px;
+    user-select: none;
+  }
+
+  @media screen and (max-width: 749px) {
+    .ai-breadcrumb-nav-{{ ai_gen_id }} {
+      padding: 0 15px;
+    }
+    .ai-breadcrumb-list-{{ ai_gen_id }} {
+      font-size: {{ block.settings.font_size | times: 0.9 }}px;
+    }
+  }
+{% endstyle %}
+
+<div class="ai-breadcrumb-{{ ai_gen_id }}" {{ block.shopify_attributes }}>
+  <nav class="ai-breadcrumb-nav-{{ ai_gen_id }}" aria-label="Breadcrumb">
+    <ol class="ai-breadcrumb-list-{{ ai_gen_id }}">
+      <li class="ai-breadcrumb-item-{{ ai_gen_id }}">
+        <a href="{{ routes.root_url }}" class="ai-breadcrumb-link-{{ ai_gen_id }}">
+          {% if block.settings.show_home_icon %}
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+              <polyline points="9,22 9,12 15,12 15,22"/>
+            </svg>
+          {% endif %}
+          {{ block.settings.home_text }}
+        </a>
+      </li>
+
+      {% case template.name %}
+        {% when 'collection' %}
+          <li class="ai-breadcrumb-item-{{ ai_gen_id }}">
+            <span class="ai-breadcrumb-separator-{{ ai_gen_id }}">{{ block.settings.separator }}</span>
+            <span class="ai-breadcrumb-current-{{ ai_gen_id }}">{{ collection.title }}</span>
+          </li>
+
+        {% when 'product' %}
+          {% if collection %}
+            <li class="ai-breadcrumb-item-{{ ai_gen_id }}">
+              <span class="ai-breadcrumb-separator-{{ ai_gen_id }}">{{ block.settings.separator }}</span>
+              <a href="{{ collection.url }}" class="ai-breadcrumb-link-{{ ai_gen_id }}">{{ collection.title }}</a>
+            </li>
+          {% endif %}
+          <li class="ai-breadcrumb-item-{{ ai_gen_id }}">
+            <span class="ai-breadcrumb-separator-{{ ai_gen_id }}">{{ block.settings.separator }}</span>
+            <span class="ai-breadcrumb-current-{{ ai_gen_id }}">{{ product.title }}</span>
+          </li>
+
+        {% when 'article' %}
+          <li class="ai-breadcrumb-item-{{ ai_gen_id }}">
+            <span class="ai-breadcrumb-separator-{{ ai_gen_id }}">{{ block.settings.separator }}</span>
+            <a href="{{ blog.url }}" class="ai-breadcrumb-link-{{ ai_gen_id }}">{{ blog.title }}</a>
+          </li>
+          <li class="ai-breadcrumb-item-{{ ai_gen_id }}">
+            <span class="ai-breadcrumb-separator-{{ ai_gen_id }}">{{ block.settings.separator }}</span>
+            <span class="ai-breadcrumb-current-{{ ai_gen_id }}">{{ article.title }}</span>
+          </li>
+
+        {% when 'blog' %}
+          <li class="ai-breadcrumb-item-{{ ai_gen_id }}">
+            <span class="ai-breadcrumb-separator-{{ ai_gen_id }}">{{ block.settings.separator }}</span>
+            <span class="ai-breadcrumb-current-{{ ai_gen_id }}">{{ blog.title }}</span>
+          </li>
+
+        {% when 'page' %}
+          <li class="ai-breadcrumb-item-{{ ai_gen_id }}">
+            <span class="ai-breadcrumb-separator-{{ ai_gen_id }}">{{ block.settings.separator }}</span>
+            <span class="ai-breadcrumb-current-{{ ai_gen_id }}">{{ page.title }}</span>
+          </li>
+
+        {% when 'search' %}
+          <li class="ai-breadcrumb-item-{{ ai_gen_id }}">
+            <span class="ai-breadcrumb-separator-{{ ai_gen_id }}">{{ block.settings.separator }}</span>
+            <span class="ai-breadcrumb-current-{{ ai_gen_id }}">Search</span>
+          </li>
+
+        {% when 'cart' %}
+          <li class="ai-breadcrumb-item-{{ ai_gen_id }}">
+            <span class="ai-breadcrumb-separator-{{ ai_gen_id }}">{{ block.settings.separator }}</span>
+            <span class="ai-breadcrumb-current-{{ ai_gen_id }}">Cart</span>
+          </li>
+
+        {% when 'account' %}
+          <li class="ai-breadcrumb-item-{{ ai_gen_id }}">
+            <span class="ai-breadcrumb-separator-{{ ai_gen_id }}">{{ block.settings.separator }}</span>
+            <span class="ai-breadcrumb-current-{{ ai_gen_id }}">Account</span>
+          </li>
+
+        {% when '404' %}
+          <li class="ai-breadcrumb-item-{{ ai_gen_id }}">
+            <span class="ai-breadcrumb-separator-{{ ai_gen_id }}">{{ block.settings.separator }}</span>
+            <span class="ai-breadcrumb-current-{{ ai_gen_id }}">Page not found</span>
+          </li>
+
+        {% else %}
+          {% if page_title and page_title != 'General' %}
+            <li class="ai-breadcrumb-item-{{ ai_gen_id }}">
+              <span class="ai-breadcrumb-separator-{{ ai_gen_id }}">{{ block.settings.separator }}</span>
+              <span class="ai-breadcrumb-current-{{ ai_gen_id }}">{{ page_title }}</span>
+            </li>
+          {% endif %}
+      {% endcase %}
+    </ol>
+  </nav>
+</div>
+
+{% schema %}
+{
+  "name": "Breadcrumb",
+  "tag": null,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "home_text",
+      "label": "Home text",
+      "default": "Home"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_home_icon",
+      "label": "Show home icon",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "separator",
+      "label": "Separator",
+      "default": "/"
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "link_color",
+      "label": "Link color",
+      "default": "#666666"
+    },
+    {
+      "type": "color",
+      "id": "link_hover_color",
+      "label": "Link hover color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "current_color",
+      "label": "Current page color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "separator_color",
+      "label": "Separator color",
+      "default": "#cccccc"
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "label": "Font size",
+      "min": 12,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "separator_size",
+      "label": "Separator size",
+      "min": 10,
+      "max": 18,
+      "step": 1,
+      "unit": "px",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "spacing",
+      "label": "Item spacing",
+      "min": 4,
+      "max": 20,
+      "step": 2,
+      "unit": "px",
+      "default": 8
+    },
+    {
+      "type": "header",
+      "content": "Spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Top padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Bottom padding",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "px",
+      "default": 20
+    }
+  ],
+  "presets": [
+    {
+      "name": "Breadcrumb"
+    }
+  ]
+}
+{% endschema %}

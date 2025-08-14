@@ -11,6 +11,10 @@
   "name": "t:sections.overlay-group.name",
   "type": "custom.overlay",
   "sections": {
+    "1755152847d6510832": {
+      "type": "_blocks",
+      "settings": {}
+    },
     "cart-drawer": {
       "type": "cart-drawer",
       "settings": {
@@ -340,6 +344,7 @@
     }
   },
   "order": [
+    "1755152847d6510832",
     "cart-drawer",
     "search-drawer",
     "newsletter-popup",
