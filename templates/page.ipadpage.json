@@ -149,7 +149,7 @@
             "link_1_enabled": true,
             "link_1_title": "Shop HubESSENTIALS",
             "link_1_description": "In-stock items ready to go!",
-            "link_1_url": "shopify://collections/hubessentials-1",
+            "link_1_url": "shopify://collections/hubessentials",
             "link_1_icon": "shop",
             "link_1_bg_color": "#2acaf1",
             "link_1_text_color": "#ffffff",
