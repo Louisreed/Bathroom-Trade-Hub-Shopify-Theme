@@ -7278,8 +7278,13 @@ ol {
 }
 
 .drawer__menu-item {
-  padding-block: var(--sp-2d5);
+  padding-block: var(--sp-4);
   transition: transform var(--animation-primary);
+}
+
+.menu-button {
+  padding-block: var(--sp-4);
+  margin-block: var(--sp-1);
 }
 
 .drawer__submenu {
