@@ -38,17 +38,17 @@
         "heading_HXYVaC": {
           "type": "heading",
           "settings": {
-            "heading": "We're just running a few checks...",
+            "heading": "Exclusively for <em>HubPRO</em>",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
-            "highlighted_text": "none",
+            "highlighted_text": "scribble",
             "highlighted_scribble": "circle"
           }
         },
         "text_VUnV6W": {
           "type": "text",
           "settings": {
-            "text": "<p>After we've verified your account you will be able to login to your trade account and start saving. </p>",
+            "text": "<p>Receive up to 60% off products in our HubPROMO range!</p>",
             "text_font": "body",
             "text_size": "subtext-md",
             "text_max_size": 32,
@@ -59,25 +59,12 @@
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
-        },
-        "button_RGRpbz": {
-          "type": "button",
-          "settings": {
-            "button_label": "Browse products",
-            "button_link": "shopify://collections/all",
-            "button_style": "secondary",
-            "button_size": "md",
-            "button_external": false,
-            "button_icon": true
-          }
         }
       },
       "block_order": [
         "heading_HXYVaC",
-        "text_VUnV6W",
-        "button_RGRpbz"
+        "text_VUnV6W"
       ],
-      "disabled": true,
       "name": "t:sections.rich-text.name",
       "settings": {
         "text_alignment": "left",
@@ -188,12 +175,10 @@
       "name": "Image with text",
       "settings": {
         "image": "shopify://shop_images/Screenshot_2025-06-23_at_13.09.34.jpg",
-        "image_height": "adapt",
+        "image_ratio": "adapt",
         "image_width": "medium",
         "layout": "image_first",
         "text_alignment": "center",
-        "content_position": "align-self-center",
-        "image_height_mobile": "auto",
         "text_alignment_mobile": "center",
         "color_text": "",
         "color_background": "",
@@ -210,8 +195,8 @@
         "divider": false,
         "full_width": false,
         "rounded": false,
-        "enable_parallax": true,
-        "parallax_direction": "vertical"
+        "hide_for_hubpro_members": false,
+        "enable_parallax": true
       }
     },
     "173176303439daeef7": {
