@@ -1,6 +1,6 @@
 {%- comment -%}
   AUTO-GENERATED: Shopify Discount Sync System
-  Generated on: 2025-08-15T00:44:22.976960
+  Generated on: 2025-08-17T21:34:22.098323
 
   This file is automatically synchronized with Shopify Admin discount codes.
   Do not edit manually - use sync_discounts.py to update.
@@ -58,13 +58,18 @@
 
     elsif title contains '15%' or title contains 'HubPRO' or title contains 'hubpro' or title contains 'HUBPRO' or title contains '15% - HubPRO'
       assign percentage = 15
+
+    elsif title contains '60%' or title contains 'HubPRO' or title contains 'hubpro' or title contains 'HUBPRO' or title contains '60% - HubPROMO'
+      assign percentage = 60
     endif
 
   # Handle collection and segment-based lookups (for product previews)
 
   elsif segment == 'hubpro-free'
 
-    if collection contains 'hubpromo' or collection contains 'maxi-panels-only'
+    if collection contains 'hubpromo'
+      assign percentage = 60
+    elsif collection contains 'maxi-panels-only'
       assign percentage = 50
     elsif collection contains 'scudo' or collection contains 'nuie' or collection contains 'hudson-reed' or collection contains 'kartell' or collection contains 'bathroom-trade-hub'
       assign percentage = 45
