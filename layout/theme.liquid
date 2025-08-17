@@ -74,17 +74,20 @@
 
     {%- render 'js-variables' -%}
 
+    {%- comment -%}
+      jQuery fallback for third-party apps and legacy Shopify integrations
+      Only loads if jQuery is not already present
+    {%- endcomment -%}
     <script>
       if (typeof jQuery == 'undefined') {
         var headTag = document.getElementsByTagName('head')[0];
         var jqTag = document.createElement('script');
         jqTag.type = 'text/javascript';
-        jqTag.src = 'https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js';
-        jqTag.onload = '';
-        headTag.prepend(jqTag);
+        jqTag.src = 'https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js';
+        jqTag.defer = true;
+        headTag.appendChild(jqTag);
       }
     </script>
-    <script src="//staticxx.s3.amazonaws.com/aio_stats_lib_v1.min.js?v=1.0"></script>
   </head>
 
   <body
