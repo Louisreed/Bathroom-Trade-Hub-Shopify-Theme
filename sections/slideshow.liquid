@@ -58,9 +58,10 @@
             endcomment
 
             assign show_block = true
-            assign customer_type = 'standard'
+            assign customer_type = 'logged_out'
 
             if customer
+              assign customer_type = 'diy'
               for tag in customer.tags
                 if tag == 'hubpro-free'
                   assign customer_type = 'hubpro-free'
@@ -85,8 +86,12 @@
                 unless block.settings.show_for_hubpro_plus
                   assign show_block = false
                 endunless
-              when 'standard'
-                unless block.settings.show_for_standard
+              when 'diy'
+                unless block.settings.show_for_diy
+                  assign show_block = false
+                endunless
+              when 'logged_out'
+                unless block.settings.show_for_logged_out
                   assign show_block = false
                 endunless
             endcase
@@ -250,9 +255,10 @@
                 endcomment
 
                 assign show_block = true
-                assign customer_type = 'standard'
+                assign customer_type = 'logged_out'
 
                 if customer
+                  assign customer_type = 'diy'
                   for tag in customer.tags
                     if tag == 'hubpro-free'
                       assign customer_type = 'hubpro-free'
@@ -273,8 +279,12 @@
                     unless block.settings.show_for_hubpro_plus
                       assign show_block = false
                     endunless
-                  when 'standard'
-                    unless block.settings.show_for_standard
+                  when 'diy'
+                    unless block.settings.show_for_diy
+                      assign show_block = false
+                    endunless
+                  when 'logged_out'
+                    unless block.settings.show_for_logged_out
                       assign show_block = false
                     endunless
                 endcase
@@ -339,9 +349,10 @@
                     endcomment
 
                     assign show_block = true
-                    assign customer_type = 'standard'
+                    assign customer_type = 'logged_out'
 
                     if customer
+                      assign customer_type = 'diy'
                       for tag in customer.tags
                         if tag == 'hubpro-free'
                           assign customer_type = 'hubpro-free'
@@ -362,8 +373,12 @@
                         unless block.settings.show_for_hubpro_plus
                           assign show_block = false
                         endunless
-                      when 'standard'
-                        unless block.settings.show_for_standard
+                      when 'diy'
+                        unless block.settings.show_for_diy
+                          assign show_block = false
+                        endunless
+                      when 'logged_out'
+                        unless block.settings.show_for_logged_out
                           assign show_block = false
                         endunless
                     endcase
@@ -839,9 +854,16 @@
         },
         {
           "type": "checkbox",
-          "id": "show_for_standard",
-          "label": "Show for Standard Users",
-          "info": "Show this slide for customers without HubPro tags",
+          "id": "show_for_logged_out",
+          "label": "Show for Logged Out Users",
+          "info": "Show this slide for visitors who are not logged in",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_for_diy",
+          "label": "Show for DIY Users",
+          "info": "Show this slide for logged in customers without HubPro tags",
           "default": true
         },
         {
@@ -1049,9 +1071,16 @@
         },
         {
           "type": "checkbox",
-          "id": "show_for_standard",
-          "label": "Show for Standard Users",
-          "info": "Show this slide for customers without HubPro tags",
+          "id": "show_for_logged_out",
+          "label": "Show for Logged Out Users",
+          "info": "Show this slide for visitors who are not logged in",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_for_diy",
+          "label": "Show for DIY Users",
+          "info": "Show this slide for logged in customers without HubPro tags",
           "default": true
         },
         {
