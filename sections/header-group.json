@@ -207,7 +207,7 @@
             "promo_heading_3": "HubPROMO - 60% OFF!",
             "promo_subtext_3": "Even better discounts!",
             "promo_overlay_content_3": true,
-            "promo_link_3": "shopify://pages/promo",
+            "promo_link_3": "shopify://collections/hubpromo",
             "promo_tag_3": "",
             "promo_color_text_3": "#ffffff",
             "promo_color_overlay_3": "#000000",
