@@ -1,0 +1,404 @@
+{%- doc -%}
+  Renders product pricing with sale detection, unit prices, and dynamic price ranges.
+
+  Displays comprehensive pricing information including regular prices, sale prices, price ranges for products with variants, and unit pricing. Automatically detects sales, formats currencies, and handles various pricing scenarios with proper accessibility support.
+
+  @param {object} [product] - Shopify product object for pricing
+  @param {object} [variant] - Specific variant for single price display
+  @param {boolean} [use_variant] - Show variant price vs product range
+  @param {boolean} [placeholder] - Display placeholder $19.99 price
+  @param {boolean} [hide_unit_price] - Hide unit price information
+  @param {boolean} [skip_to_price] - Skip quantity break considerations
+  @param {boolean} [show_badges] - Show sale/sold out badges (reserved)
+  @param {string} [class] - Additional CSS classes
+
+  @example
+  {% render 'product-price',
+     product: product,
+     variant: product.selected_variant,
+     use_variant: true,
+
+  %}
+{%- enddoc -%}
+
+{%- comment -%} AUTO-SYNCHRONIZED with Shopify discounts on: 2025-08-17T21:34:22.100091 {%- endcomment -%}
+
+{%- comment -%} AUTO-SYNCHRONIZED with Shopify discounts on: 2025-08-15T00:44:22.978053 {%- endcomment -%}
+
+{%- comment -%} AUTO-SYNCHRONIZED with Shopify discounts on: 2025-08-15T00:07:10.780458 {%- endcomment -%}
+
+{%- comment -%}
+  CRITICAL FIX APPLIED: Fixed discount calculation sync error
+  Date: 2025-01-15T10:30:00
+
+  Issue: Template showed 45% discount (£207.90) but Shopify applied 50% (£189.00)
+  Root Cause: Template used 'break' to stop at first collection match instead of finding highest discount
+  Solution: Changed logic to find MAXIMUM discount across all collections (matches Shopify's behavior)
+
+  AUTO-SYNCHRONIZED with Shopify discounts on: 2025-08-15T00:03:16.279398
+{%- endcomment -%}
+
+{%- liquid
+  if use_variant
+    assign target = variant | default: product.selected_or_first_available_variant
+  elsif placeholder
+    assign target = null
+  else
+    assign target = product
+  endif
+
+  assign compare_at_price = target.compare_at_price
+  assign original_price = target.price | default: 1999
+  assign price = original_price
+
+  # Detect if this is a cart line item and use unit prices
+  if target.original_price
+    assign original_price = target.original_price
+    assign price = target.final_price
+  endif
+
+  assign on_sale = false
+  if compare_at_price > price
+    assign on_sale = true
+  endif
+-%}
+
+{%- comment -%} Determine customer segment - only for logged-in customers (AUTO-GENERATED) {%- endcomment -%}
+{%- if customer -%}
+  {%- if customer.tags contains 'hubpro-plus' -%}
+    {%- assign customer_segment = 'hubpro-plus' -%}
+  {%- elsif customer.tags contains 'hubpro-free' -%}
+    {%- assign customer_segment = 'hubpro-free' -%}
+  {%- else -%}
+    {%- comment -%} Logged-in customer with no hubpro tags = DIY segment {%- endcomment -%}
+    {%- assign customer_segment = 'diy' -%}
+  {%- endif -%}
+
+  {%- comment -%} Check product collections and get discounts from centralized source - only for logged-in customers {%- endcomment -%}
+  {%- assign current_discount_percent = 0 -%}
+  {%- assign current_display_name = '' -%}
+  {%- assign best_collection_handle = '' -%}
+
+  {%- if customer_segment != blank -%}
+    {%- comment -%} Find the HIGHEST discount across all collections (matches Shopify's behavior) {%- endcomment -%}
+    {%- for c in product.collections -%}
+      {%- assign collection_handle = c.handle -%}
+
+      {%- comment -%} Get discount percentage from centralized lookup for all collections {%- endcomment -%}
+      {%- capture discount_percent_string -%}{%- render 'hubpro-discount-simple', collection: collection_handle, segment: customer_segment -%}{%- endcapture -%}
+      {%- assign test_discount_percent = discount_percent_string | plus: 0 -%}
+
+      {%- comment -%} Keep the HIGHEST discount found (matches Shopify's automatic discount selection) {%- endcomment -%}
+      {%- if test_discount_percent > current_discount_percent -%}
+        {%- assign current_discount_percent = test_discount_percent -%}
+        {%- assign best_collection_handle = collection_handle -%}
+      {%- endif -%}
+    {%- endfor -%}
+
+    {%- comment -%} Set display name based on the collection with the highest discount {%- endcomment -%}
+    {%- if current_discount_percent > 0 -%}
+      {%- if best_collection_handle contains 'nule' -%}
+        {%- assign current_display_name = 'Nule' -%}
+      {%- elsif best_collection_handle contains 'hudson-reed' -%}
+        {%- assign current_display_name = 'Hudson Reed' -%}
+      {%- elsif best_collection_handle == 'kartell' or best_collection_handle contains 'kartell' -%}
+        {%- assign current_display_name = 'Kartell' -%}
+      {%- elsif best_collection_handle contains 'maxi-panels-only' -%}
+        {%- assign current_display_name = 'Maxi Panels Only' -%}
+      {%- elsif best_collection_handle contains 'scudo' -%}
+        {%- assign current_display_name = 'SCUDO' -%}
+      {%- elsif best_collection_handle contains 'hubessentials' or best_collection_handle contains 'hub-essentials' -%}
+        {%- assign current_display_name = 'HubESSENTIALS' -%}
+      {%- elsif best_collection_handle contains 'hubchoice' or best_collection_handle contains 'hub-choice' -%}
+        {%- assign current_display_name = 'HubChoice' -%}
+      {%- elsif best_collection_handle contains 'perform-panel' -%}
+        {%- assign current_display_name = 'Perform Panel' -%}
+      {%- elsif best_collection_handle contains 'decorfloor' -%}
+        {%- assign current_display_name = 'Decorfloor' -%}
+      {%- elsif best_collection_handle contains 'multipanel-tile-flooring' -%}
+        {%- assign current_display_name = 'Multipanel Tile Flooring' -%}
+      {%- elsif best_collection_handle contains 'multipanel-timber-flooring' -%}
+        {%- assign current_display_name = 'Multipanel Timber Flooring' -%}
+      {%- elsif best_collection_handle contains 'squidol' -%}
+        {%- assign current_display_name = 'Squidol' -%}
+      {%- elsif best_collection_handle contains 'everbuild' or best_collection_handle contains 'sika' -%}
+        {%- assign current_display_name = 'Everbuild/Sika' -%}
+      {%- elsif best_collection_handle contains 'multipanel-chevron-flooring' -%}
+        {%- assign current_display_name = 'Multipanel Chevron Flooring' -%}
+      {%- elsif best_collection_handle contains 'multipanel' -%}
+        {%- assign current_display_name = 'Multipanel' -%}
+      {%- elsif best_collection_handle contains 'viva-essentials' -%}
+        {%- assign current_display_name = 'VIVA Essentials' -%}
+      {%- elsif best_collection_handle contains 'viva' -%}
+        {%- assign current_display_name = 'VIVA' -%}
+      {%- elsif best_collection_handle contains 'maxi-panel-trims' -%}
+        {%- assign current_display_name = 'Maxi Panel Trims' -%}
+      {%- elsif best_collection_handle contains 'perform-trims' -%}
+        {%- assign current_display_name = 'Perform Trims' -%}
+      {%- elsif best_collection_handle contains 'consumables' -%}
+        {%- assign current_display_name = 'Consumables' -%}
+      {%- elsif best_collection_handle contains 'naturepanel' -%}
+        {%- assign current_display_name = 'Naturepanel' -%}
+      {%- elsif best_collection_handle contains 'cladworks-pvc-panels' -%}
+        {%- assign current_display_name = 'Cladworks PVC Panels' -%}
+      {%- elsif best_collection_handle contains 'hubpromo' -%}
+        {%- assign current_display_name = 'HubPROMO' -%}
+      {%- elsif best_collection_handle contains 'maxi'
+        or best_collection_handle contains 'panel'
+        or best_collection_handle contains 'cladworks'
+      -%}
+        {%- assign current_display_name = 'Panels' -%}
+      {%- else -%}
+        {%- comment -%} Find the collection with the best discount for display name {%- endcomment -%}
+        {%- for c in product.collections -%}
+          {%- if c.handle == best_collection_handle -%}
+            {%- assign current_display_name = c.title -%}
+            {%- break -%}
+          {%- endif -%}
+        {%- endfor -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endif -%}
+
+{%- liquid
+  # Set up discount variables from configuration
+  assign show_discounted_price = false
+  assign discounted_price = 0
+  assign show_badges = false
+  assign badge_label = ''
+  assign badge_discount_percent = 0
+
+  if current_discount_percent > 0
+    assign show_discounted_price = true
+    assign show_badges = true
+    assign badge_discount_percent = current_discount_percent
+
+    # Calculate discounted price
+    assign discount_amount = original_price | times: current_discount_percent | divided_by: 100
+    assign discounted_price = original_price | minus: discount_amount
+
+    # Set badge label based on customer segment and collection
+    if customer_segment == 'diy'
+      if request.page_type == 'product'
+        assign badge_label = current_display_name | append: ' - DIY'
+      else
+        assign badge_label = 'DIY'
+      endif
+    elsif customer_segment == 'hubpro-free'
+      if request.page_type == 'product'
+        assign badge_label = current_display_name | append: ' - HubPRO'
+      else
+        assign badge_label = 'HubPRO'
+      endif
+    elsif customer_segment == 'hubpro-plus'
+      if request.page_type == 'product'
+        assign badge_label = current_display_name | append: ' - HubPRO+'
+      else
+        assign badge_label = 'HubPRO+'
+      endif
+    endif
+  endif
+-%}
+
+<div
+  class="
+    price
+    {%- if on_sale %} price--on-sale{% endif -%}
+    {%- if class != blank %} {{ class }}{% endif -%}
+  "
+>
+  {%- if on_sale -%}
+    <span class="sr-only">{{ 'products.price.sale_price' | t }}</span>
+  {%- endif -%}
+  <span
+    class="appstle_member_price appstle_membership_stand_alone_selector"
+    data-product-data="{{ product| json| escape }}"
+    data-product-collection-data="{{ product.collections | json | escape }}"
+    style="display:none;"
+  ></span>
+
+  {%- comment -%} Three-tier pricing: compare_at_price → regular price → HubPRO discounted price {%- endcomment -%}
+
+  {%- if compare_at_price and compare_at_price > price and show_discounted_price -%}
+    {%- comment -%} Show compare-at-price (highest) - SMALL {%- endcomment -%}
+    <span
+      class="price__regular inline-flex items-center h-auto relative"
+      style="text-decoration: line-through; opacity: 0.6; font-size: 0.75em; color: rgb(var(--color-foreground));"
+    >
+      {%- if settings.currency_code_enabled -%}
+        {{ compare_at_price | money_with_currency }}
+      {%- else -%}
+        {{ compare_at_price | money }}
+      {%- endif -%}
+      <span
+        class="tax-indicator"
+        data-product-tax-label
+        style="margin-left: 2px; font-size: 0.75em; opacity: 0.8;"
+      ></span>
+    </span>
+
+    {%- comment -%} Show regular price (middle) - MEDIUM {%- endcomment -%}
+    <span
+      class="price__regular inline-flex items-center h-auto relative"
+      style="text-decoration: line-through; opacity: 0.7; font-size: 0.875em; color: rgb(var(--color-foreground));"
+    >
+      {%- if settings.currency_code_enabled -%}
+        {{ price | money_with_currency }}
+      {%- else -%}
+        {{ price | money }}
+      {%- endif -%}
+      <span
+        class="tax-indicator"
+        data-product-tax-label
+        style="margin-left: 2px; font-size: 0.75em; opacity: 0.8;"
+      ></span>
+    </span>
+
+    {%- comment -%} Show HubPRO discounted price (final) - LARGE {%- endcomment -%}
+    <span
+      class="price__regular whitespace-nowrap"
+      style="font-size: 1.125em; color: rgb(var(--color-foreground));"
+    >
+      {%- if settings.currency_code_enabled -%}
+        {{ discounted_price | money_with_currency }}
+      {%- else -%}
+        {{ discounted_price | money }}
+      {%- endif -%}
+      <span
+        class="tax-indicator"
+        data-product-tax-label
+        style="margin-left: 2px; font-size: 0.75em; opacity: 0.8;"
+      ></span>
+    </span>
+
+  {%- elsif show_discounted_price -%}
+    {%- comment -%} Two-tier pricing: regular price → HubPRO discounted price {%- endcomment -%}
+    <span
+      class="price__regular whitespace-nowrap"
+      style="text-decoration: line-through; opacity: 0.7; font-size: 0.875em; color: rgb(var(--color-foreground));"
+    >
+      {%- if settings.currency_code_enabled -%}
+        {{ price | money_with_currency }}
+      {%- else -%}
+        {{ price | money }}
+      {%- endif -%}
+    </span>
+
+    <span
+      class="price__regular whitespace-nowrap"
+      style="font-size: 1.125em; color: rgb(var(--color-foreground));"
+    >
+      {%- if settings.currency_code_enabled -%}
+        {{ discounted_price | money_with_currency }}
+      {%- else -%}
+        {{ discounted_price | money }}
+      {%- endif -%}
+      <span
+        class="tax-indicator"
+        data-product-tax-label
+        style="margin-left: 2px; font-size: 0.75em; opacity: 0.8;"
+      ></span>
+    </span>
+
+  {%- elsif on_sale -%}
+    {%- comment -%} Standard sale pricing: compare_at_price → regular price {%- endcomment -%}
+    <span class="sr-only">{{ 'products.price.regular_price' | t }}</span>
+    <span class="price__sale inline-flex items-center h-auto relative">
+      {%- if settings.currency_code_enabled -%}
+        {{ compare_at_price | money_with_currency }}
+      {%- else -%}
+        {{ compare_at_price | money }}
+      {%- endif -%}
+      <span
+        class="tax-indicator"
+        data-product-tax-label
+        style="margin-left: 2px; font-size: 0.75em; opacity: 0.8;"
+      ></span>
+    </span>
+
+    <span class="price__regular whitespace-nowrap">
+      {%- if settings.currency_code_enabled -%}
+        {{ price | money_with_currency }}
+      {%- else -%}
+        {{ price | money }}
+      {%- endif -%}
+      <span
+        class="tax-indicator"
+        data-product-tax-label
+        style="margin-left: 2px; font-size: 0.75em; opacity: 0.8;"
+      ></span>
+    </span>
+
+  {%- else -%}
+    {%- comment -%} Regular pricing: single price {%- endcomment -%}
+    <span class="price__regular whitespace-nowrap">
+      {%- liquid
+        if product.quantity_price_breaks_configured? != true or skip_to_price
+          if target == product and product.price_varies
+            if settings.currency_code_enabled
+              assign price_min = product.price_min | money_with_currency
+            else
+              assign price_min = product.price_min | money
+            endif
+            echo 'products.price.from_price_html' | t: price: price_min
+          else
+            if settings.currency_code_enabled
+              echo price | money_with_currency
+            else
+              echo price | money
+            endif
+          endif
+        else
+          if settings.currency_code_enabled
+            assign price_min = product.price_min | money_with_currency
+          else
+            assign price_min = product.price_min | money
+          endif
+          echo 'products.price.from_price_html' | t: price: price_min
+        endif
+      -%}
+      <span
+        class="tax-indicator"
+        data-product-tax-label
+        style="margin-left: 2px; font-size: 0.75em; opacity: 0.8;"
+      ></span>
+    </span>
+  {%- endif -%}
+
+  {%- if show_badges -%}
+    <ul class="discounts grid gap-2" role="list" aria-label="{{ 'customer.order.discounts' | t | escape }}">
+      <li class="discounts__discount text-xs flex flex-wrap items-center gap-1">
+        <span class="badge badge--highlight flex items-center gap-1d5 font-medium leading-none rounded-full">
+          {{- badge_label -}}
+        </span>
+        <span class="badge badge--onsale flex items-center gap-1d5 font-medium leading-none rounded-full">
+          -{{ badge_discount_percent }}%
+        </span>
+      </li>
+    </ul>
+  {%- endif -%}
+
+  {%- unless hide_unit_price -%}
+    {%- assign product_variant = product.selected_or_first_available_variant -%}
+    {%- if product_variant.unit_price_measurement -%}
+      <span class="sr-only">{{ 'products.price.unit_price' | t }}</span>
+      <span class="unit-price flex items-center">
+        {%- liquid
+          capture unit_price_base_unit
+            if product_variant.unit_price_measurement
+              if product_variant.unit_price_measurement.reference_value != 1
+                echo product_variant.unit_price_measurement.reference_value
+              endif
+              echo product_variant.unit_price_measurement.reference_unit
+            endif
+          endcapture
+        -%}
+        ({{ product_variant.unit_price | money }}
+        <span aria-hidden="true">/</span>
+        <span class="sr-only">&nbsp;{{ 'general.accessibility.unit_price_separator' | t }}&nbsp;</span>
+        {{ unit_price_base_unit }})
+      </span>
+    {%- endif -%}
+  {%- endunless -%}
+</div>

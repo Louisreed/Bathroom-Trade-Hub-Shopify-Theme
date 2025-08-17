@@ -1,0 +1,37 @@
+{
+  "name": "bathroom-trade-hub-discount-sync",
+  "version": "1.0.0",
+  "description": "Real-time discount synchronization app for Bathroom Trade Hub",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server-quick.js",
+    "dev": "nodemon server-private.js",
+    "start-public": "node server.js",
+    "dev-public": "nodemon server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "shopify",
+    "discount",
+    "sync",
+    "webhook",
+    "automation"
+  ],
+  "author": "Bathroom Trade Hub",
+  "license": "ISC",
+  "dependencies": {
+    "@shopify/admin-api-client": "^1.0.1",
+    "@shopify/shopify-app-express": "^3.0.0",
+    "@shopify/shopify-app-session-storage-memory": "^3.0.0",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
