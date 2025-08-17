@@ -11,6 +11,7 @@
   "sections": {
     "main-page": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "heading_size": "title-md",
         "heading_alignment": "text-center",
@@ -31,6 +32,55 @@
         "narrow": true,
         "rounded": false
       }
+    },
+    "blocks_xnHwck": {
+      "type": "_blocks",
+      "blocks": {
+        "ai_gen_block_e760d6b_t9Af3K": {
+          "type": "ai_gen_block_e760d6b",
+          "settings": {
+            "show_badge": true,
+            "badge_text": "Price Match Guarantee",
+            "heading": "We'll Beat Any Local Quote",
+            "description": "Found a better price from a local supplier? We'll match it and beat it by at least 5%. Our price match guarantee ensures you always get the best deal on quality bathroom products.",
+            "feature_1_title": "Local Price Match",
+            "feature_1_text": "We'll match any written quote from local bathroom suppliers",
+            "feature_2_title": "Quick Response",
+            "feature_2_text": "Get your price match confirmation within 24 hours",
+            "feature_3_title": "Quality Guaranteed",
+            "feature_3_text": "Same high-quality products with better pricing",
+            "button_text": "Submit Price Match Request",
+            "button_link": "shopify://pages/contact-us",
+            "contact_text": "<p>Send us a message via WhatsApp on <a href=\"https://wa.me/447538867530\" title=\"https://wa.me/447538867530\"><strong>07538 867530</strong> </a>or call us on <a href=\"tel:01305608599\" title=\"tel:01305608599\"><strong>01305 608599</strong></a> to discuss your quote!</p>",
+            "max_width": 800,
+            "padding": 40,
+            "border_radius": 8,
+            "border_width": 1,
+            "heading_size": 32,
+            "text_size": 16,
+            "button_text_size": 16,
+            "button_border_radius": 20,
+            "background_color": "#ffffff",
+            "border_color": "#e9ecef",
+            "badge_color": "#bba14f",
+            "badge_text_color": "#ffffff",
+            "heading_color": "#212529",
+            "text_color": "#6c757d",
+            "feature_title_color": "#495057",
+            "feature_icon_bg": "#e3f2fd",
+            "feature_icon_color": "#bba14f",
+            "button_color": "#bba14f",
+            "button_hover_color": "#bba14f",
+            "button_text_color": "#ffffff",
+            "link_color": "#bba14f"
+          },
+          "blocks": {}
+        }
+      },
+      "block_order": [
+        "ai_gen_block_e760d6b_t9Af3K"
+      ],
+      "settings": {}
     },
     "rich_text_KBAVRK": {
       "type": "rich-text",
@@ -222,6 +272,7 @@
         "collection_b6di6b",
         "collection_jD3feK"
       ],
+      "disabled": true,
       "settings": {
         "columns": 5,
         "carousel_on_desktop": true,
@@ -291,12 +342,10 @@
       "name": "Image with text",
       "settings": {
         "image": "shopify://shop_images/Screenshot_2025-06-23_at_13.09.34.jpg",
-        "image_height": "adapt",
+        "image_ratio": "adapt",
         "image_width": "medium",
         "layout": "image_first",
         "text_alignment": "center",
-        "content_position": "align-self-center",
-        "image_height_mobile": "auto",
         "text_alignment_mobile": "center",
         "color_text": "",
         "color_background": "",
@@ -313,8 +362,8 @@
         "divider": false,
         "full_width": false,
         "rounded": false,
-        "enable_parallax": true,
-        "parallax_direction": "vertical"
+        "hide_for_hubpro_members": false,
+        "enable_parallax": true
       }
     },
     "173176303439daeef7": {
@@ -484,6 +533,7 @@
         "collection_JgDzt9",
         "collection_HW7FxE"
       ],
+      "disabled": true,
       "name": "Collection list",
       "settings": {
         "columns": 4,
@@ -563,6 +613,7 @@
         "collection_9TpGwN",
         "collection_PqqpFq"
       ],
+      "disabled": true,
       "settings": {
         "columns": 4,
         "carousel_on_desktop": false,
@@ -598,6 +649,7 @@
   },
   "order": [
     "main-page",
+    "blocks_xnHwck",
     "rich_text_KBAVRK",
     "17157682575ad8f603",
     "collection_list_kg7KnE",
