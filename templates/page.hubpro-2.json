@@ -33,6 +33,83 @@
         "rounded": false
       }
     },
+    "rich_text_nrxXcN": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_Bp3nDW": {
+          "type": "heading",
+          "settings": {
+            "heading": "Coming Soon!",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_ntW6kD": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_font": "body",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_ExqMzc": {
+          "type": "button",
+          "settings": {
+            "button_label": "HubPRO",
+            "button_link": "shopify://pages/hubpro",
+            "button_style": "primary",
+            "button_size": "md",
+            "button_external": false,
+            "button_icon": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_Bp3nDW",
+        "text_ntW6kD",
+        "button_ExqMzc"
+      ],
+      "name": "t:sections.rich-text.name",
+      "settings": {
+        "text_alignment": "left",
+        "text_alignment_mobile": "left",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 100,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
     "image_with_text_overlay_RyNcK6": {
       "type": "image-with-text-overlay",
       "blocks": {
@@ -59,6 +136,7 @@
         "subheading_iVHtUk",
         "image_P4KjKp"
       ],
+      "disabled": true,
       "custom_css": [
         ".banner {/* Remove header margin-bottom */ margin-top: -28px;}"
       ],
@@ -168,6 +246,7 @@
         "column_WE8hcW",
         "column_Kaan3j"
       ],
+      "disabled": true,
       "name": "Multicolumn with icons",
       "settings": {
         "style": "with-background",
@@ -281,6 +360,7 @@
         "column_Tr4EVM",
         "column_NLcpxL"
       ],
+      "disabled": true,
       "name": "Multicolumn with icons",
       "settings": {
         "style": "with-background",
@@ -463,6 +543,7 @@
         "heading_YLtnTA",
         "text_EzhfNx"
       ],
+      "disabled": true,
       "name": "Rich text",
       "settings": {
         "text_alignment": "center",
@@ -528,6 +609,7 @@
         "heading_j9FXMi",
         "text_tMnHf7"
       ],
+      "disabled": true,
       "name": "Rich text",
       "settings": {
         "text_alignment": "center",
@@ -593,6 +675,7 @@
         "heading_PTcKKN",
         "text_HfRc7G"
       ],
+      "disabled": true,
       "name": "Rich text",
       "settings": {
         "text_alignment": "center",
@@ -632,7 +715,7 @@
           "type": "hubpro-html",
           "name": "HubPRO Notice",
           "settings": {
-            "custom_html": "<div class=\"membership-notice\" style=\"padding: 40px; background-color: #f8f9fa; border-radius: 8px; text-align: center;\"><h3 style=\"color: #333; margin-bottom: 20px;\">HubPRO Membership</h3><p style=\"color: #666; margin-bottom: 20px;\">Our membership system has been updated. Please contact us directly for trade account setup and membership information.</p><a href=\"/pages/contact\" class=\"btn btn-primary\" style=\"background-color: #BB9F4D; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px;\">Contact Us</a></div>",
+            "custom_html": "<div class=\"membership-notice\" style=\"padding: 40px; background-color: #f8f9fa; border-radius: 8px; text-align: center;\">\n<h3 style=\"color: #333; margin-bottom: 20px;\">HubPRO Membership</h3>\n<p style=\"color: #666; margin-bottom: 20px;\">Our membership system has been updated. Please contact us directly for trade account setup and membership information.</p>\n<a href=\"/pages/contact\" class=\"btn btn-primary\" style=\"background-color: #BB9F4D; color: white; padding: 12px 24px; text-decoration: none; border-radius: 4px;\">Contact Us</a>\n</div>",
             "custom_css": ".aaamembership_form .checkbox {\n  min-width: 31px !important;\n  margin-right: 8px !important;\n  text-align: center !important;\n}\n\n.membership-submit {\n  width: 100% !important;\n}\n\n.button-input { \n  width: 100% !important;\n}\n\ninput[type=checkbox]:not(.switch):after {\n    width: 8px;\n    height: 16px;\n    inset-inline-start: 10px;\n}",
             "max_width": 0,
             "text_alignment": "left",
@@ -652,6 +735,7 @@
       "block_order": [
         "hubpro_html_wfK4M3"
       ],
+      "disabled": true,
       "name": "Section",
       "settings": {
         "content_direction": "col",
@@ -701,7 +785,10 @@
             "button_link": "shopify://pages/hubpro",
             "button_style": "primary",
             "button_external": false,
-            "button_icon": false
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
           }
         },
         "image_wWkGaD": {
@@ -715,7 +802,10 @@
             "button_link": "",
             "button_style": "primary",
             "button_external": false,
-            "button_icon": false
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
           }
         },
         "image_eh696V": {
@@ -729,7 +819,10 @@
             "button_link": "",
             "button_style": "primary",
             "button_external": false,
-            "button_icon": false
+            "button_icon": false,
+            "show_for_standard": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
           }
         }
       },
@@ -768,6 +861,7 @@
   },
   "order": [
     "main-page",
+    "rich_text_nrxXcN",
     "image_with_text_overlay_RyNcK6",
     "multicolumn_with_icons_VpViPm",
     "multicolumn_with_icons_7jX73V",
