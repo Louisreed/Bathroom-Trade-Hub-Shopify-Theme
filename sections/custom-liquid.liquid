@@ -1,21 +1,68 @@
-<style>
-  #shopify-section-{{ section.id }} {
-    --section-padding-top: {{ section.settings.padding_top }}px;
-    --section-padding-bottom: {{ section.settings.padding_bottom }}px;
-    {%- render 'section-variables', section: section -%}
-  }
-</style>
+{%- liquid
+  comment
+    Check if section should be hidden based on customer type
+  endcomment
 
-<div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}">
-  <div class="page-width{% if section.settings.narrow %} page-width--narrow{% endif %} relative">
-    {{ section.settings.liquid }}
+  assign show_section = true
+  assign customer_type = 'logged_out'
 
-    {%- comment -%} Support for theme blocks {%- endcomment -%}
-    {%- for block in section.blocks -%}
-      {%- render block -%}
-    {%- endfor -%}
+  if customer
+    assign customer_type = 'diy'
+    for tag in customer.tags
+      if tag == 'hubpro-free'
+        assign customer_type = 'hubpro-free'
+        break
+      elsif tag == 'hubpro-plus'
+        assign customer_type = 'hubpro-plus'
+        break
+      endif
+    endfor
+  endif
+
+  comment
+    Check visibility settings for this customer type
+  endcomment
+
+  case customer_type
+    when 'hubpro-free'
+      unless section.settings.show_for_hubpro_free
+        assign show_section = false
+      endunless
+    when 'hubpro-plus'
+      unless section.settings.show_for_hubpro_plus
+        assign show_section = false
+      endunless
+    when 'diy'
+      unless section.settings.show_for_diy
+        assign show_section = false
+      endunless
+    when 'logged_out'
+      unless section.settings.show_for_logged_out
+        assign show_section = false
+      endunless
+  endcase
+-%}
+
+{%- if show_section -%}
+  <style>
+    #shopify-section-{{ section.id }} {
+      --section-padding-top: {{ section.settings.padding_top }}px;
+      --section-padding-bottom: {{ section.settings.padding_bottom }}px;
+      {%- render 'section-variables', section: section -%}
+    }
+  </style>
+
+  <div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}">
+    <div class="page-width{% if section.settings.narrow %} page-width--narrow{% endif %} relative">
+      {{ section.settings.liquid }}
+
+      {%- comment -%} Support for theme blocks {%- endcomment -%}
+      {%- for block in section.blocks -%}
+        {%- render block -%}
+      {%- endfor -%}
+    </div>
   </div>
-</div>
+{%- endif -%}
 
 {% schema %}
 {
@@ -61,6 +108,38 @@
       "type": "color_background",
       "id": "color_button_gradient",
       "label": "t:sections.global.settings.color_button_gradient.label"
+    },
+    {
+      "type": "header",
+      "content": "User Type Visibility"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_for_logged_out",
+      "label": "Show for Logged Out Users",
+      "info": "Show this section for visitors who are not logged in",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_for_diy",
+      "label": "Show for DIY Users",
+      "info": "Show this section for logged in customers without HubPro tags",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_for_hubpro_free",
+      "label": "Show for HubPro Free Users",
+      "info": "Show this section for customers with hubpro-free tag",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_for_hubpro_plus",
+      "label": "Show for HubPro Plus Users",
+      "info": "Show this section for customers with hubpro-plus tag",
+      "default": true
     },
     {
       "type": "header",

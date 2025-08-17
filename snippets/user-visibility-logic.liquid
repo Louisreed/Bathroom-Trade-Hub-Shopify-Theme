@@ -1,0 +1,62 @@
+{%- comment -%}
+  User Visibility Logic Snippet
+  ============================
+
+  Determines if a section should be shown based on customer type and settings.
+
+  Usage:
+  {% render 'user-visibility-logic', settings: section.settings %}
+
+  Returns: show_section (boolean)
+
+  Customer Types:
+  - logged_out: Visitors not signed in
+  - diy: Logged in customers without HubPro tags
+  - hubpro-free: Customers with hubpro-free tag
+  - hubpro-plus: Customers with hubpro-plus tag
+{%- endcomment -%}
+
+{%- liquid
+  comment
+    Check if section should be hidden based on customer type
+  endcomment
+
+  assign show_section = true
+  assign customer_type = 'logged_out'
+
+  if customer
+    assign customer_type = 'diy'
+    for tag in customer.tags
+      if tag == 'hubpro-free'
+        assign customer_type = 'hubpro-free'
+        break
+      elsif tag == 'hubpro-plus'
+        assign customer_type = 'hubpro-plus'
+        break
+      endif
+    endfor
+  endif
+
+  comment
+    Check visibility settings for this customer type
+  endcomment
+
+  case customer_type
+    when 'hubpro-free'
+      unless settings.show_for_hubpro_free
+        assign show_section = false
+      endunless
+    when 'hubpro-plus'
+      unless settings.show_for_hubpro_plus
+        assign show_section = false
+      endunless
+    when 'diy'
+      unless settings.show_for_diy
+        assign show_section = false
+      endunless
+    when 'logged_out'
+      unless settings.show_for_logged_out
+        assign show_section = false
+      endunless
+  endcase
+-%}

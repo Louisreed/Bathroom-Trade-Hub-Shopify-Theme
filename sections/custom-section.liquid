@@ -1,4 +1,47 @@
 {%- liquid
+  comment
+    Check if section should be hidden based on customer type
+  endcomment
+
+  assign show_section = true
+  assign customer_type = 'logged_out'
+
+  if customer
+    assign customer_type = 'diy'
+    for tag in customer.tags
+      if tag == 'hubpro-free'
+        assign customer_type = 'hubpro-free'
+        break
+      elsif tag == 'hubpro-plus'
+        assign customer_type = 'hubpro-plus'
+        break
+      endif
+    endfor
+  endif
+
+  comment
+    Check visibility settings for this customer type
+  endcomment
+
+  case customer_type
+    when 'hubpro-free'
+      unless section.settings.show_for_hubpro_free
+        assign show_section = false
+      endunless
+    when 'hubpro-plus'
+      unless section.settings.show_for_hubpro_plus
+        assign show_section = false
+      endunless
+    when 'diy'
+      unless section.settings.show_for_diy
+        assign show_section = false
+      endunless
+    when 'logged_out'
+      unless section.settings.show_for_logged_out
+        assign show_section = false
+      endunless
+  endcase
+
   if section.index == 1
     assign loading = 'eager'
     assign fetchpriority = 'high'
@@ -10,54 +53,59 @@
   endif
 -%}
 
-<style>
-  #shopify-section-{{ section.id }} {
-    --section-padding-top: {{ section.settings.padding_top }}px;
-    --section-padding-bottom: {{ section.settings.padding_bottom }}px;
-    {%- render 'section-variables', section: section -%}
-    {%- if section.settings.section_height == 'custom' -%}
-      --section-height: {{ section.settings.section_height_custom }}vh;
-      @supports (height: 100svh) {
-        --section-height: {{ section.settings.section_height_custom }}svh;
-      }
-    {%- endif -%}
-    {%- if section.settings.section_height_mobile == 'custom' -%}
-      --section-height-mobile: {{ section.settings.section_height_custom_mobile }}vh;
-      @supports (height: 100svh) {
-        --section-height-mobile: {{ section.settings.section_height_custom_mobile }}svh;
-      }
-    {%- endif -%}
-  }
-</style>
+{%- if show_section -%}
+  <style>
+    #shopify-section-{{ section.id }} {
+      --section-padding-top: {{ section.settings.padding_top }}px;
+      --section-padding-bottom: {{ section.settings.padding_bottom }}px;
+      {%- render 'section-variables', section: section -%}
+      {%- if section.settings.section_height == 'custom' -%}
+        --section-height: {{ section.settings.section_height_custom }}vh;
+        @supports (height: 100svh) {
+          --section-height: {{ section.settings.section_height_custom }}svh;
+        }
+      {%- endif -%}
+      {%- if section.settings.section_height_mobile == 'custom' -%}
+        --section-height-mobile: {{ section.settings.section_height_custom_mobile }}vh;
+        @supports (height: 100svh) {
+          --section-height-mobile: {{ section.settings.section_height_custom_mobile }}svh;
+        }
+      {%- endif -%}
+    }
+  </style>
 
-<div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}">
-  {%- render 'background-media',
-    background_media: section.settings.background_media,
-    background_video: section.settings.video,
-    background_video_position: section.settings.video_position,
-    background_image: section.settings.background_image,
-    background_image_position: section.settings.background_image_position,
-    loading: loading,
-    fetchpriority: fetchpriority,
-    lazyimage: lazyimage,
-    context: 'section'
-  -%}
-  {%- liquid
-    if section.settings.toggle_overlay
-      render 'section-overlay', settings: section.settings, layer: '0', context: 'section'
-    endif
+  <div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}">
+    {%- render 'background-media',
+      background_media: section.settings.background_media,
+      background_video: section.settings.video,
+      background_video_position: section.settings.video_position,
+      background_image: section.settings.background_image,
+      background_image_position: section.settings.background_image_position,
+      loading: loading,
+      fetchpriority: fetchpriority,
+      lazyimage: lazyimage,
+      context: 'section'
+    -%}
+    {%- liquid
+      if section.settings.toggle_overlay
+        render 'section-overlay', settings: section.settings, layer: '0', context: 'section'
+      endif
 
-    assign section_class = 'grid h-full relative'
-    if section.settings.section_width != ''
-      assign section_class = 'page-width page-width--' | append: section.settings.section_width | append: ' ' | append: section_class
-    endif
-  -%}
-  <div class="{{ section_class }}">
-    <div class="section-content media--{{ section.settings.section_height }} mobile:media--{{ section.settings.section_height_mobile }} {% render 'section-layout-class', settings: section.settings %} spacing-style" style="{% render 'section-gap-style', value: section.settings.gap %}">
-      {% content_for 'blocks' %}
+      assign section_class = 'grid h-full relative'
+      if section.settings.section_width != ''
+        assign section_class = 'page-width page-width--' | append: section.settings.section_width | append: ' ' | append: section_class
+      endif
+    -%}
+    <div class="{{ section_class }}">
+      <div
+        class="section-content media--{{ section.settings.section_height }} mobile:media--{{ section.settings.section_height_mobile }} {% render 'section-layout-class', settings: section.settings %} spacing-style"
+        style="{% render 'section-gap-style', value: section.settings.gap %}"
+      >
+        {% content_for 'blocks' %}
+      </div>
     </div>
   </div>
-</div>
+{%- endif -%}
 
 {% schema %}
 {
@@ -517,6 +565,38 @@
       "type": "color_background",
       "id": "color_button_gradient",
       "label": "t:sections.global.settings.color_button_gradient.label"
+    },
+    {
+      "type": "header",
+      "content": "User Type Visibility"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_for_logged_out",
+      "label": "Show for Logged Out Users",
+      "info": "Show this section for visitors who are not logged in",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_for_diy",
+      "label": "Show for DIY Users",
+      "info": "Show this section for logged in customers without HubPro tags",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_for_hubpro_free",
+      "label": "Show for HubPro Free Users",
+      "info": "Show this section for customers with hubpro-free tag",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_for_hubpro_plus",
+      "label": "Show for HubPro Plus Users",
+      "info": "Show this section for customers with hubpro-plus tag",
+      "default": true
     },
     {
       "type": "header",
