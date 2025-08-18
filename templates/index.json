@@ -55,7 +55,7 @@
           "name": "OPENINGSOON",
           "settings": {
             "image": "shopify://shop_images/OPENINGSOONBANNERArtboard_1_b991d9a2-b2b3-4bfd-992a-f3d48794c392.png",
-            "heading": "Weymouth Branch Opening 18th August 2025!",
+            "heading": "Weymouth Branch is now open! Come and meet the team.",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "button_label": "",
@@ -63,7 +63,7 @@
             "button_style": "secondary",
             "button_external": false,
             "button_icon": false,
-            "show_for_logged_out": false,
+            "show_for_logged_out": true,
             "show_for_diy": true,
             "show_for_hubpro_free": true,
             "show_for_hubpro_plus": false
@@ -122,6 +122,8 @@
             "button_style": "primary",
             "button_external": false,
             "button_icon": true,
+            "show_for_logged_out": true,
+            "show_for_diy": true,
             "show_for_hubpro_free": true,
             "show_for_hubpro_plus": false
           }
@@ -140,6 +142,8 @@
             "button_style": "primary",
             "button_external": false,
             "button_icon": true,
+            "show_for_logged_out": true,
+            "show_for_diy": true,
             "show_for_hubpro_free": false,
             "show_for_hubpro_plus": true
           }
@@ -176,6 +180,8 @@
             "button_style": "primary",
             "button_external": false,
             "button_icon": true,
+            "show_for_logged_out": true,
+            "show_for_diy": true,
             "show_for_hubpro_free": true,
             "show_for_hubpro_plus": false
           }
@@ -193,6 +199,8 @@
             "button_style": "primary",
             "button_external": false,
             "button_icon": true,
+            "show_for_logged_out": true,
+            "show_for_diy": true,
             "show_for_hubpro_free": false,
             "show_for_hubpro_plus": true
           }
@@ -229,6 +237,8 @@
             "button_style": "primary",
             "button_external": false,
             "button_icon": true,
+            "show_for_logged_out": true,
+            "show_for_diy": true,
             "show_for_hubpro_free": true,
             "show_for_hubpro_plus": false
           }
@@ -246,6 +256,8 @@
             "button_style": "primary",
             "button_external": false,
             "button_icon": true,
+            "show_for_logged_out": true,
+            "show_for_diy": true,
             "show_for_hubpro_free": false,
             "show_for_hubpro_plus": true
           }
@@ -712,6 +724,10 @@
         "color_button_text": "",
         "color_button_background": "",
         "color_button_gradient": "",
+        "show_for_logged_out": true,
+        "show_for_diy": true,
+        "show_for_hubpro_free": true,
+        "show_for_hubpro_plus": true,
         "padding_top": 48,
         "padding_bottom": 48,
         "divider": false,
