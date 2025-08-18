@@ -41,6 +41,10 @@ app.get('/api/health', (req, res) => {
 
 // Main dashboard route
 app.get('/', async (req, res) => {
+  const shop = req.query.shop || STORE_URL;
+  const host = req.query.host || '';
+  const embedded = req.query.embedded || 'true';
+  
   let discountCount = 'Unknown';
   let lastSyncStatus = 'Not configured';
   
@@ -77,7 +81,8 @@ app.get('/', async (req, res) => {
     <!DOCTYPE html>
     <html>
     <head>
-      <title>Discount Sync Dashboard - Private App</title>
+      <title>Discount Sync Dashboard</title>
+      <script src="https://unpkg.com/@shopify/app-bridge@3"></script>
       <style>
         body { 
           font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -173,8 +178,8 @@ app.get('/', async (req, res) => {
     <body>
       <div class="dashboard">
         <div class="header">
-          <h1>🔒 Private App Dashboard</h1>
-          <p>Real-time discount synchronization for <strong>${STORE_URL}</strong></p>
+          <h1>💰 Discount Sync Dashboard</h1>
+          <p>Real-time discount synchronization for <strong>${shop}</strong></p>
         </div>
         
         ${!shopifyClient ? `
@@ -187,7 +192,7 @@ app.get('/', async (req, res) => {
         <div class="status-grid">
           <div class="status-card">
             <h3>🏪 Store</h3>
-            <p>${STORE_URL}</p>
+            <p>${shop}</p>
           </div>
           
           <div class="status-card">
@@ -201,8 +206,8 @@ app.get('/', async (req, res) => {
           </div>
           
           <div class="status-card">
-            <h3>⚡ Sync Mode</h3>
-            <p>Private App</p>
+            <h3>⚡ Integration</h3>
+            <p>Shopify App</p>
           </div>
         </div>
         
@@ -220,6 +225,17 @@ app.get('/', async (req, res) => {
       </div>
       
       <script>
+        // Initialize Shopify App Bridge
+        const AppBridge = window['app-bridge'];
+        const createApp = AppBridge.default;
+        const { Toast } = AppBridge.actions;
+        
+        const app = createApp({
+          apiKey: 'f6f976725373eacf92074f69226d488e2',
+          host: '${host}',
+          forceRedirect: true
+        });
+        
         async function triggerManualSync() {
           const btn = event.target;
           btn.disabled = true;
@@ -234,12 +250,26 @@ app.get('/', async (req, res) => {
             const result = await response.json();
             
             if (result.success) {
-              alert('✅ Sync completed successfully!\\n\\nTemplates updated: ' + result.templatesUpdated);
+              const toastNotice = Toast.create(app, {
+                message: 'Sync completed successfully! Templates updated: ' + result.templatesUpdated,
+                duration: 5000
+              });
+              toastNotice.dispatch(Toast.Action.SHOW);
             } else {
-              alert('❌ Sync failed: ' + result.error);
+              const toastError = Toast.create(app, {
+                message: 'Sync failed: ' + result.error,
+                duration: 5000,
+                isError: true
+              });
+              toastError.dispatch(Toast.Action.SHOW);
             }
           } catch (error) {
-            alert('❌ Sync failed: ' + error.message);
+            const toastError = Toast.create(app, {
+              message: 'Sync failed: ' + error.message,
+              duration: 5000,
+              isError: true
+            });
+            toastError.dispatch(Toast.Action.SHOW);
           } finally {
             btn.disabled = false;
             btn.textContent = '🔄 Trigger Manual Sync';
@@ -251,9 +281,18 @@ app.get('/', async (req, res) => {
             const response = await fetch('/api/test-connection');
             const result = await response.json();
             
-            alert('API Test Result:\\n\\n' + JSON.stringify(result, null, 2));
+            const toast = Toast.create(app, {
+              message: 'API Connection: ' + (result.success ? 'Connected ✅' : 'Failed ❌'),
+              duration: 3000
+            });
+            toast.dispatch(Toast.Action.SHOW);
           } catch (error) {
-            alert('❌ Connection test failed: ' + error.message);
+            const toast = Toast.create(app, {
+              message: 'Connection test failed: ' + error.message,
+              duration: 5000,
+              isError: true
+            });
+            toast.dispatch(Toast.Action.SHOW);
           }
         }
       </script>
