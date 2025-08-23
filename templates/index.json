@@ -82,7 +82,7 @@
             "button_style": "primary",
             "button_external": false,
             "button_icon": true,
-            "show_for_logged_out": false,
+            "show_for_logged_out": true,
             "show_for_diy": true,
             "show_for_hubpro_free": true,
             "show_for_hubpro_plus": true
@@ -102,7 +102,7 @@
             "button_style": "primary",
             "button_external": false,
             "button_icon": true,
-            "show_for_logged_out": false,
+            "show_for_logged_out": true,
             "show_for_diy": true,
             "show_for_hubpro_free": false,
             "show_for_hubpro_plus": false
@@ -161,7 +161,7 @@
             "button_style": "primary",
             "button_external": false,
             "button_icon": true,
-            "show_for_logged_out": false,
+            "show_for_logged_out": true,
             "show_for_diy": true,
             "show_for_hubpro_free": false,
             "show_for_hubpro_plus": false
