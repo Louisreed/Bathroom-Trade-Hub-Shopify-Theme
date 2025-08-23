@@ -25,8 +25,8 @@
             "button_style": "primary",
             "button_external": false,
             "button_icon": false,
-            "show_for_logged_out": false,
-            "show_for_diy": true,
+            "show_for_logged_out": true,
+            "show_for_diy": false,
             "show_for_hubpro_free": false,
             "show_for_hubpro_plus": false
           }
@@ -44,8 +44,8 @@
             "button_style": "primary",
             "button_external": false,
             "button_icon": false,
-            "show_for_logged_out": false,
-            "show_for_diy": true,
+            "show_for_logged_out": true,
+            "show_for_diy": false,
             "show_for_hubpro_free": false,
             "show_for_hubpro_plus": false
           }
