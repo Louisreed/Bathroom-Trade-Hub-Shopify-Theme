@@ -283,14 +283,15 @@ class ShopifyDiscountSyncer:
         customer_tags = []
         if title:
             title_lower = title.lower()
-            if "hubpro" in title_lower or "hub-pro" in title_lower:
+            if "diy" in title_lower:
+                customer_tags = ["diy"]
+            elif "hubpro" in title_lower or "hub-pro" in title_lower:
                 if "plus" in title_lower:
                     customer_tags = ["hubpro-plus"]
                 elif "free" in title_lower:
                     customer_tags = ["hubpro-free"]
                 else:
                     customer_tags = ["hubpro-free"]  # Default to free if not specified
-            # Add more patterns as needed for DIY customers etc.
 
         # Other fields (only available for DiscountCodeBasic)
         usage_limit = None
