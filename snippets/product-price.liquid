@@ -69,7 +69,7 @@
   endif
 -%}
 
-{%- comment -%} Determine customer segment - only for logged-in customers (AUTO-GENERATED) {%- endcomment -%}
+{%- comment -%} Determine customer segment - for all visitors (logged-in and guests) {%- endcomment -%}
 {%- if customer -%}
   {%- if customer.tags contains 'hubpro-plus' -%}
     {%- assign customer_segment = 'hubpro-plus' -%}
@@ -79,90 +79,93 @@
     {%- comment -%} Logged-in customer with no hubpro tags = DIY segment {%- endcomment -%}
     {%- assign customer_segment = 'diy' -%}
   {%- endif -%}
+{%- else -%}
+  {%- comment -%} Non-logged-in visitors get DIY segment (same as logged-in DIY) {%- endcomment -%}
+  {%- assign customer_segment = 'diy' -%}
+{%- endif -%}
 
-  {%- comment -%} Check product collections and get discounts from centralized source - only for logged-in customers {%- endcomment -%}
-  {%- assign current_discount_percent = 0 -%}
-  {%- assign current_display_name = '' -%}
-  {%- assign best_collection_handle = '' -%}
+{%- comment -%} Check product collections and get discounts from centralized source - for all customer segments {%- endcomment -%}
+{%- assign current_discount_percent = 0 -%}
+{%- assign current_display_name = '' -%}
+{%- assign best_collection_handle = '' -%}
 
-  {%- if customer_segment != blank -%}
-    {%- comment -%} Find the HIGHEST discount across all collections (matches Shopify's behavior) {%- endcomment -%}
-    {%- for c in product.collections -%}
-      {%- assign collection_handle = c.handle -%}
+{%- if customer_segment != blank -%}
+  {%- comment -%} Find the HIGHEST discount across all collections (matches Shopify's behavior) {%- endcomment -%}
+  {%- for c in product.collections -%}
+    {%- assign collection_handle = c.handle -%}
 
-      {%- comment -%} Get discount percentage from centralized lookup for all collections {%- endcomment -%}
-      {%- capture discount_percent_string -%}{%- render 'hubpro-discount-simple', collection: collection_handle, segment: customer_segment -%}{%- endcapture -%}
-      {%- assign test_discount_percent = discount_percent_string | plus: 0 -%}
+    {%- comment -%} Get discount percentage from centralized lookup for all collections {%- endcomment -%}
+    {%- capture discount_percent_string -%}{%- render 'hubpro-discount-simple', collection: collection_handle, segment: customer_segment -%}{%- endcapture -%}
+    {%- assign test_discount_percent = discount_percent_string | plus: 0 -%}
 
-      {%- comment -%} Keep the HIGHEST discount found (matches Shopify's automatic discount selection) {%- endcomment -%}
-      {%- if test_discount_percent > current_discount_percent -%}
-        {%- assign current_discount_percent = test_discount_percent -%}
-        {%- assign best_collection_handle = collection_handle -%}
-      {%- endif -%}
-    {%- endfor -%}
+    {%- comment -%} Keep the HIGHEST discount found (matches Shopify's automatic discount selection) {%- endcomment -%}
+    {%- if test_discount_percent > current_discount_percent -%}
+      {%- assign current_discount_percent = test_discount_percent -%}
+      {%- assign best_collection_handle = collection_handle -%}
+    {%- endif -%}
+  {%- endfor -%}
 
-    {%- comment -%} Set display name based on the collection with the highest discount {%- endcomment -%}
-    {%- if current_discount_percent > 0 -%}
-      {%- if best_collection_handle contains 'nule' -%}
-        {%- assign current_display_name = 'Nule' -%}
-      {%- elsif best_collection_handle contains 'hudson-reed' -%}
-        {%- assign current_display_name = 'Hudson Reed' -%}
-      {%- elsif best_collection_handle == 'kartell' or best_collection_handle contains 'kartell' -%}
-        {%- assign current_display_name = 'Kartell' -%}
-      {%- elsif best_collection_handle contains 'maxi-panels-only' -%}
-        {%- assign current_display_name = 'Maxi Panels Only' -%}
-      {%- elsif best_collection_handle contains 'scudo' -%}
-        {%- assign current_display_name = 'SCUDO' -%}
-      {%- elsif best_collection_handle contains 'hubessentials' or best_collection_handle contains 'hub-essentials' -%}
-        {%- assign current_display_name = 'HubESSENTIALS' -%}
-      {%- elsif best_collection_handle contains 'hubchoice' or best_collection_handle contains 'hub-choice' -%}
-        {%- assign current_display_name = 'HubChoice' -%}
-      {%- elsif best_collection_handle contains 'perform-panel' -%}
-        {%- assign current_display_name = 'Perform Panel' -%}
-      {%- elsif best_collection_handle contains 'decorfloor' -%}
-        {%- assign current_display_name = 'Decorfloor' -%}
-      {%- elsif best_collection_handle contains 'multipanel-tile-flooring' -%}
-        {%- assign current_display_name = 'Multipanel Tile Flooring' -%}
-      {%- elsif best_collection_handle contains 'multipanel-timber-flooring' -%}
-        {%- assign current_display_name = 'Multipanel Timber Flooring' -%}
-      {%- elsif best_collection_handle contains 'squidol' -%}
-        {%- assign current_display_name = 'Squidol' -%}
-      {%- elsif best_collection_handle contains 'everbuild' or best_collection_handle contains 'sika' -%}
-        {%- assign current_display_name = 'Everbuild/Sika' -%}
-      {%- elsif best_collection_handle contains 'multipanel-chevron-flooring' -%}
-        {%- assign current_display_name = 'Multipanel Chevron Flooring' -%}
-      {%- elsif best_collection_handle contains 'multipanel' -%}
-        {%- assign current_display_name = 'Multipanel' -%}
-      {%- elsif best_collection_handle contains 'viva-essentials' -%}
-        {%- assign current_display_name = 'VIVA Essentials' -%}
-      {%- elsif best_collection_handle contains 'viva' -%}
-        {%- assign current_display_name = 'VIVA' -%}
-      {%- elsif best_collection_handle contains 'maxi-panel-trims' -%}
-        {%- assign current_display_name = 'Maxi Panel Trims' -%}
-      {%- elsif best_collection_handle contains 'perform-trims' -%}
-        {%- assign current_display_name = 'Perform Trims' -%}
-      {%- elsif best_collection_handle contains 'consumables' -%}
-        {%- assign current_display_name = 'Consumables' -%}
-      {%- elsif best_collection_handle contains 'naturepanel' -%}
-        {%- assign current_display_name = 'Naturepanel' -%}
-      {%- elsif best_collection_handle contains 'cladworks-pvc-panels' -%}
-        {%- assign current_display_name = 'Cladworks PVC Panels' -%}
-      {%- elsif best_collection_handle contains 'hubpromo' -%}
-        {%- assign current_display_name = 'HubPROMO' -%}
-      {%- elsif best_collection_handle contains 'maxi'
-        or best_collection_handle contains 'panel'
-        or best_collection_handle contains 'cladworks'
-      -%}
-        {%- assign current_display_name = 'Panels' -%}
-      {%- else -%}
-        {%- comment -%} Find the collection with the best discount for display name {%- endcomment -%}
-        {%- for c in product.collections -%}
-          {%- if c.handle == best_collection_handle -%}
-            {%- assign current_display_name = c.title -%}
-            {%- break -%}
-          {%- endif -%}
-        {%- endfor -%}
-      {%- endif -%}
+  {%- comment -%} Set display name based on the collection with the highest discount {%- endcomment -%}
+  {%- if current_discount_percent > 0 -%}
+    {%- if best_collection_handle contains 'nule' -%}
+      {%- assign current_display_name = 'Nule' -%}
+    {%- elsif best_collection_handle contains 'hudson-reed' -%}
+      {%- assign current_display_name = 'Hudson Reed' -%}
+    {%- elsif best_collection_handle == 'kartell' or best_collection_handle contains 'kartell' -%}
+      {%- assign current_display_name = 'Kartell' -%}
+    {%- elsif best_collection_handle contains 'maxi-panels-only' -%}
+      {%- assign current_display_name = 'Maxi Panels Only' -%}
+    {%- elsif best_collection_handle contains 'scudo' -%}
+      {%- assign current_display_name = 'SCUDO' -%}
+    {%- elsif best_collection_handle contains 'hubessentials' or best_collection_handle contains 'hub-essentials' -%}
+      {%- assign current_display_name = 'HubESSENTIALS' -%}
+    {%- elsif best_collection_handle contains 'hubchoice' or best_collection_handle contains 'hub-choice' -%}
+      {%- assign current_display_name = 'HubChoice' -%}
+    {%- elsif best_collection_handle contains 'perform-panel' -%}
+      {%- assign current_display_name = 'Perform Panel' -%}
+    {%- elsif best_collection_handle contains 'decorfloor' -%}
+      {%- assign current_display_name = 'Decorfloor' -%}
+    {%- elsif best_collection_handle contains 'multipanel-tile-flooring' -%}
+      {%- assign current_display_name = 'Multipanel Tile Flooring' -%}
+    {%- elsif best_collection_handle contains 'multipanel-timber-flooring' -%}
+      {%- assign current_display_name = 'Multipanel Timber Flooring' -%}
+    {%- elsif best_collection_handle contains 'squidol' -%}
+      {%- assign current_display_name = 'Squidol' -%}
+    {%- elsif best_collection_handle contains 'everbuild' or best_collection_handle contains 'sika' -%}
+      {%- assign current_display_name = 'Everbuild/Sika' -%}
+    {%- elsif best_collection_handle contains 'multipanel-chevron-flooring' -%}
+      {%- assign current_display_name = 'Multipanel Chevron Flooring' -%}
+    {%- elsif best_collection_handle contains 'multipanel' -%}
+      {%- assign current_display_name = 'Multipanel' -%}
+    {%- elsif best_collection_handle contains 'viva-essentials' -%}
+      {%- assign current_display_name = 'VIVA Essentials' -%}
+    {%- elsif best_collection_handle contains 'viva' -%}
+      {%- assign current_display_name = 'VIVA' -%}
+    {%- elsif best_collection_handle contains 'maxi-panel-trims' -%}
+      {%- assign current_display_name = 'Maxi Panel Trims' -%}
+    {%- elsif best_collection_handle contains 'perform-trims' -%}
+      {%- assign current_display_name = 'Perform Trims' -%}
+    {%- elsif best_collection_handle contains 'consumables' -%}
+      {%- assign current_display_name = 'Consumables' -%}
+    {%- elsif best_collection_handle contains 'naturepanel' -%}
+      {%- assign current_display_name = 'Naturepanel' -%}
+    {%- elsif best_collection_handle contains 'cladworks-pvc-panels' -%}
+      {%- assign current_display_name = 'Cladworks PVC Panels' -%}
+    {%- elsif best_collection_handle contains 'hubpromo' -%}
+      {%- assign current_display_name = 'HubPROMO' -%}
+    {%- elsif best_collection_handle contains 'maxi'
+      or best_collection_handle contains 'panel'
+      or best_collection_handle contains 'cladworks'
+    -%}
+      {%- assign current_display_name = 'Panels' -%}
+    {%- else -%}
+      {%- comment -%} Find the collection with the best discount for display name {%- endcomment -%}
+      {%- for c in product.collections -%}
+        {%- if c.handle == best_collection_handle -%}
+          {%- assign current_display_name = c.title -%}
+          {%- break -%}
+        {%- endif -%}
+      {%- endfor -%}
     {%- endif -%}
   {%- endif -%}
 {%- endif -%}
