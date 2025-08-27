@@ -221,6 +221,19 @@
     "collection_list_aAzPQV": {
       "type": "collection-list",
       "blocks": {
+        "collection_eQEqC9": {
+          "type": "collection",
+          "settings": {
+            "collection": "pvc-short-projection",
+            "image": "shopify://shop_images/Screenshot2025-08-27at1.49.42pm.png",
+            "title": "PVC Short Projection",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
         "collection_JbVd4T": {
           "type": "collection",
           "settings": {
@@ -481,6 +494,7 @@
         }
       },
       "block_order": [
+        "collection_eQEqC9",
         "collection_JbVd4T",
         "collection_6ML97V",
         "collection_VXejVC",
