@@ -221,6 +221,19 @@
     "collection_list_aAzPQV": {
       "type": "collection-list",
       "blocks": {
+        "collection_49UtCM": {
+          "type": "collection",
+          "settings": {
+            "collection": "mdf-floor-standing-unit",
+            "image": "shopify://shop_images/Screenshot_2025-08-27_at_2.20.54_pm.png",
+            "title": "MDF Floor Standing",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
         "collection_eQEqC9": {
           "type": "collection",
           "settings": {
@@ -494,6 +507,7 @@
         }
       },
       "block_order": [
+        "collection_49UtCM",
         "collection_eQEqC9",
         "collection_JbVd4T",
         "collection_6ML97V",
