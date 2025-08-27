@@ -221,6 +221,19 @@
     "collection_list_aAzPQV": {
       "type": "collection-list",
       "blocks": {
+        "collection_VXejVC": {
+          "type": "collection",
+          "settings": {
+            "collection": "vogue",
+            "image": "shopify://shop_images/Screenshot_2025-08-27_at_11.50.03.jpg",
+            "title": "Vogue",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
         "collection_FNCBfy": {
           "type": "collection",
           "settings": {
@@ -444,6 +457,7 @@
         }
       },
       "block_order": [
+        "collection_VXejVC",
         "collection_FNCBfy",
         "collection_DP4hzp",
         "collection_Br6nwN",
