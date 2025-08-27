@@ -221,6 +221,18 @@
     "collection_list_aAzPQV": {
       "type": "collection-list",
       "blocks": {
+        "collection_JbVd4T": {
+          "type": "collection",
+          "settings": {
+            "collection": "pvc-fluted",
+            "title": "",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
         "collection_6ML97V": {
           "type": "collection",
           "settings": {
@@ -469,6 +481,7 @@
         }
       },
       "block_order": [
+        "collection_JbVd4T",
         "collection_6ML97V",
         "collection_VXejVC",
         "collection_FNCBfy",
