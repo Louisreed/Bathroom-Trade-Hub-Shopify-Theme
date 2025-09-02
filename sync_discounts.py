@@ -61,14 +61,23 @@ class DiscountRule:
 
 
 class ShopifyDiscountSyncer:
-    def __init__(self, store_url: str, access_token: str, theme_path: str = "."):
+    def __init__(
+        self,
+        store_url: str,
+        access_token: str,
+        theme_path: str = ".",
+        api_version: str = "2025-10",
+    ):
         self.store_url = store_url.replace("https://", "").replace("http://", "")
         if not self.store_url.endswith(".myshopify.com"):
             self.store_url += ".myshopify.com"
 
         self.access_token = access_token
         self.theme_path = theme_path
-        self.api_url = f"https://{self.store_url}/admin/api/2024-10/graphql.json"
+        self.api_version = api_version
+        self.api_url = (
+            f"https://{self.store_url}/admin/api/{self.api_version}/graphql.json"
+        )
 
         # File paths
         self.discount_simple_file = os.path.join(
@@ -175,6 +184,9 @@ class ShopifyDiscountSyncer:
                             ... on DiscountAutomaticBasic {
                                 title
                                 status
+                                startsAt
+                                endsAt
+
                                 customerGets {
                                     value {
                                         ... on DiscountPercentage {
@@ -182,11 +194,16 @@ class ShopifyDiscountSyncer:
                                         }
                                     }
                                     items {
+                                        ... on AllDiscountItems {
+                                            allItems
+                                        }
                                         ... on DiscountCollections {
                                             collections(first: 50) {
                                                 edges {
                                                     node {
                                                         id
+                                                        handle
+                                                        title
                                                     }
                                                 }
                                             }
@@ -240,7 +257,12 @@ class ShopifyDiscountSyncer:
 
         # Check discount type
         discount_type = discount.get("__typename", "")
-        if discount_type not in ["DiscountCodeBasic", "DiscountAutomaticBasic"]:
+        if discount_type not in [
+            "DiscountCodeBasic",
+            "DiscountAutomaticBasic",
+            "DiscountAutomaticBxgy",
+            "DiscountAutomaticApp",
+        ]:
             return None
 
         # Extract basic info
@@ -257,33 +279,41 @@ class ShopifyDiscountSyncer:
             # For automatic discounts, use title as code identifier
             code = title
 
-        # Get percentage
+        # Get percentage (only available for Basic percentage discounts)
         percentage = 0.0
         customer_gets = discount.get("customerGets", {})
-        value = customer_gets.get("value", {})
-        if "percentage" in value:
-            percentage = float(value["percentage"]) * 100  # Convert 0.25 to 25.0
+        if customer_gets:  # Only process if customerGets exists (Basic types)
+            value = customer_gets.get("value", {})
+            if isinstance(value, dict) and "percentage" in value:
+                try:
+                    # API returns decimals (0.5 = 50%), multiply by 100 for percentage
+                    percentage = float(value["percentage"]) * 100
+                except Exception:
+                    percentage = 0.0
 
-        # Get collection IDs
+        # Get collection handles directly from the GraphQL response
         collection_ids = []
-        items = customer_gets.get("items", {})
-        if "collections" in items:
-            collections_edges = items["collections"].get("edges", [])
-            for coll_edge in collections_edges:
-                coll_id = coll_edge["node"]["id"].split("/")[-1]
-                collection_ids.append(coll_id)
+        collection_handles = []
+        if customer_gets:  # Only process if customerGets exists (Basic types)
+            items = customer_gets.get("items", {})
 
-        # Convert collection IDs to handles
-        collection_handles = [
-            self.collections_map.get(cid, f"unknown-{cid}") for cid in collection_ids
-        ]
+            if "allItems" in items:
+                # Discount applies to all items
+                collection_handles = []  # Empty means applies to all
+            elif "collections" in items:
+                collections_edges = items["collections"].get("edges", [])
+                for coll_edge in collections_edges:
+                    node = coll_edge["node"]
+                    coll_id = node["id"].split("/")[-1]
+                    coll_handle = node.get("handle", f"unknown-{coll_id}")
+                    collection_ids.append(coll_id)
+                    collection_handles.append(coll_handle)
 
-        # Get customer tags - Note: customerSelection field removed due to GraphQL schema issues
-        # Workaround: Detect customer tags from discount title patterns
+        # Get customer tags using title pattern matching (fallback approach)
         customer_tags = []
         if title:
             title_lower = title.lower()
-            if "diy" in title_lower:
+            if "diy" in title_lower or "save" in title_lower:
                 customer_tags = ["diy"]
             elif "hubpro" in title_lower or "hub-pro" in title_lower:
                 if "plus" in title_lower:
@@ -292,15 +322,17 @@ class ShopifyDiscountSyncer:
                     customer_tags = ["hubpro-free"]
                 else:
                     customer_tags = ["hubpro-free"]  # Default to free if not specified
+            elif "hubchoice" in title_lower:
+                customer_tags = ["hubpro-free"]  # hubchoice maps to hubpro-free
 
-        # Other fields (only available for DiscountCodeBasic)
+        # Date fields (available for both DiscountCodeBasic and DiscountAutomaticBasic)
         usage_limit = None
-        starts_at = None
-        ends_at = None
+        starts_at = discount.get("startsAt")
+        ends_at = discount.get("endsAt")
+
+        # Usage limit only available for DiscountCodeBasic
         if discount_type == "DiscountCodeBasic":
             usage_limit = discount.get("usageLimit")
-            starts_at = discount.get("startsAt")
-            ends_at = discount.get("endsAt")
 
         return DiscountRule(
             id=node["id"],
