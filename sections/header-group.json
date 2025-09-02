@@ -14,18 +14,6 @@
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
-        "announcement_JK3HPV": {
-          "type": "announcement",
-          "settings": {
-            "icon": "creadit_card",
-            "text": "IN-STORE ONLY DEALS! 18TH TO 31ST AUGUST.",
-            "link": "/account/register",
-            "hide_icon_mobile": true,
-            "text_mobile": "",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
         "announcement-1": {
           "type": "announcement",
           "settings": {
@@ -52,7 +40,6 @@
         }
       },
       "block_order": [
-        "announcement_JK3HPV",
         "announcement-1",
         "announcement-2"
       ],
