@@ -631,6 +631,7 @@
         },
         "column_2_x6TMYB": {
           "type": "column-2",
+          "disabled": true,
           "settings": {
             "column_1_heading": "Create a Trade Account - Professionals ONLY.",
             "column_1_content": "<p>Are you ready to become a HubPRO? Save time and money by becoming a member and get access to unique offers and deals you will not find anywhere else.</p>",
@@ -696,6 +697,7 @@
         "button_mhmPBr",
         "column_2_x6TMYB"
       ],
+      "disabled": true,
       "name": "t:sections.custom-section.name",
       "settings": {
         "content_direction": "col",
@@ -969,6 +971,7 @@
         "read_more",
         "spinning_text"
       ],
+      "disabled": true,
       "settings": {
         "product": "maxi-shower-panel-sparkle-white",
         "enable_sticky_info": true,
