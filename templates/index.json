@@ -17,10 +17,10 @@
           "name": "CREATEANACCOUNT",
           "settings": {
             "image": "shopify://shop_images/IMG_8017.heic",
-            "heading": "<em>Create an Account to view your amazing discounts!</em>",
+            "heading": "<em>Are you ready to become a HubPRO?</em>",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
-            "button_label": "Create a FREE Account",
+            "button_label": "Create a FREE Trade Account",
             "button_link": "https://bathroomtradehub.co.uk/account/register",
             "button_style": "primary",
             "button_external": false,
@@ -34,8 +34,9 @@
         "image_7YVkgk": {
           "type": "image",
           "name": "CREATEANHUBPROACCOUNT",
+          "disabled": true,
           "settings": {
-            "image": "shopify://shop_images/IMG_8017.heic",
+            "image": "shopify://shop_images/HUBPROLOGOBANNER.png",
             "heading": "Are<em> you ready to become a HubPRO?</em>",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
@@ -73,7 +74,7 @@
           "type": "image",
           "name": "HubESSENTIALS",
           "settings": {
-            "image": "shopify://shop_images/IMG_7740.heic",
+            "image": "shopify://shop_images/Warehouse.jpg",
             "heading": "Introducing Hub Essentials, in-stock ready to go!",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
