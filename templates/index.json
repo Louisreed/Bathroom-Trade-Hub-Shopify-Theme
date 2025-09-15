@@ -1060,11 +1060,11 @@
       ],
       "name": "HubPRO Banner",
       "settings": {
-        "image": "shopify://shop_images/merchant-taking-sale-with-chip-and-swipe-reader.jpg",
+        "image": "shopify://shop_images/IMG_8921.jpg",
         "image_ratio": "adapt",
         "image_width": "small",
         "layout": "image_first",
-        "text_alignment": "left",
+        "text_alignment": "center",
         "text_alignment_mobile": "center",
         "color_text": "#ffffff",
         "color_background": "#424242",
