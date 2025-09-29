@@ -388,23 +388,13 @@
             "font_size": 16,
             "opened": true
           }
-        },
-        "text_ABc6rB": {
-          "type": "text",
-          "settings": {
-            "heading": "Opening Times",
-            "text": "<p><strong>OPEN FROM 18TH AUGUST</strong></p><p>MON-FRI - 8AM - 5PM</p><p>SAT - 8AM - 12PM</p><p>SUN - CLOSED<br/><br/></p><p></p>",
-            "container_width": 50,
-            "opened": true
-          }
         }
       },
       "block_order": [
         "logo_social",
         "link_list-1",
         "brand_information",
-        "brand_information_VRRPmR",
-        "text_ABc6rB"
+        "brand_information_VRRPmR"
       ],
       "settings": {
         "invert_newsletter_others": true,
