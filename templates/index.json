@@ -377,7 +377,7 @@
             "image_ratio": "landscape",
             "heading": "Trade & DIY Counter",
             "heading_size": "text-lg-2xl",
-            "text": "<p>Our Weymouth Branch is the perfect place to shop bathroom supplies <strong>in-store</strong>. We are open 8am - 5pm Monday to Friday and 8am-12pm Saturdays. Feel free to pop down!</p>",
+            "text": "<p>Our Weymouth Branch is the perfect place to shop bathroom supplies <strong>in-store </strong></p>",
             "button_label": "",
             "button_link": "",
             "button_style": "secondary",
