@@ -28,6 +28,7 @@
           "type": "collection",
           "settings": {
             "collection": "all-heating",
+            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.02.00_am.png",
             "title": "Heating",
             "description": "",
             "overlay_content": true,
