@@ -1938,6 +1938,77 @@
         "ai_gen_block_7130068_Y8ydcQ"
       ],
       "settings": {}
+    },
+    "image_with_text_F6y8TE": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_RMmy73": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h2",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_7TEK4k": {
+          "type": "text",
+          "settings": {
+            "text": "",
+            "text_font": "body",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_wLTDhV": {
+          "type": "button",
+          "settings": {
+            "button_label": "",
+            "button_link": "",
+            "button_style": "primary",
+            "button_size": "md",
+            "button_external": false,
+            "button_icon": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_RMmy73",
+        "text_7TEK4k",
+        "button_wLTDhV"
+      ],
+      "name": "t:sections.image-with-text.name",
+      "settings": {
+        "image_ratio": "adapt",
+        "image_width": "medium",
+        "layout": "image_first",
+        "text_alignment": "left",
+        "text_alignment_mobile": "left",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_background_2": "",
+        "gradient_background_2": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "hide_for_hubpro_members": false,
+        "enable_parallax": false
+      }
     }
   },
   "order": [
@@ -1959,6 +2030,7 @@
     "logo_list_HAj8VP",
     "173167681616b98a6e",
     "featured_collection_ctYK44",
-    "1753954348ec27ebd8"
+    "1753954348ec27ebd8",
+    "image_with_text_F6y8TE"
   ]
 }
