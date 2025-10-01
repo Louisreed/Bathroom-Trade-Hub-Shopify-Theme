@@ -54,6 +54,7 @@
           "type": "collection",
           "settings": {
             "collection": "taps",
+            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.08.57_am.png",
             "title": "Taps",
             "description": "",
             "overlay_content": true,
