@@ -175,6 +175,7 @@
         "image_4FLVKU": {
           "type": "image",
           "name": "Maxi PanelsHUBPRO",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/MAXIPANELBANNER-01.png",
             "heading": "<strong>PVC Maxi Panels, Now 50% OFF!</strong>",
@@ -194,6 +195,7 @@
         "image_y3BqjL": {
           "type": "image",
           "name": "Maxi PanelsPROPLUS",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/MAXIPANELBANNER-01.png",
             "heading": "<strong>PVC Maxi Panels, Now 60% OFF!</strong>",
@@ -213,6 +215,7 @@
         "image_JK6ePW": {
           "type": "image",
           "name": "NUIEDIY",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/nuie-homepage-deco-bathroom-furniture.jpg",
             "heading": "30% off the Nuie Range!",
@@ -232,6 +235,7 @@
         "image_QCYpgM": {
           "type": "image",
           "name": "NUIEDIY",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/nuie-homepage-deco-bathroom-furniture.jpg",
             "heading": "45% off the Nuie Range!",
@@ -251,6 +255,7 @@
         "image_4MbLbY": {
           "type": "image",
           "name": "NUIEDIY",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/nuie-homepage-deco-bathroom-furniture.jpg",
             "heading": "50% off the Nuie Range!",
@@ -270,6 +275,7 @@
         "image_WNzL7A": {
           "type": "image",
           "name": "Consumables",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/IMG_7744.heic",
             "heading": "Browse our Range of Bathroom Consumables",
@@ -289,6 +295,7 @@
         "slide-1": {
           "type": "image",
           "name": "FREEDELIVERY",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Durdle_Door_Overview.jpg",
             "heading": "FREE Dorset Delivery over £100+vat",
