@@ -161,6 +161,42 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_pPTPh3": {
+          "type": "collection",
+          "settings": {
+            "collection": "suite-bundles",
+            "title": "Suite Sets",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_RDPQFx": {
+          "type": "collection",
+          "settings": {
+            "collection": "suite-bundles",
+            "title": "Suite Sets",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_HayVhw": {
+          "type": "collection",
+          "settings": {
+            "collection": "suite-bundles",
+            "title": "Suite Sets",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
@@ -175,7 +211,10 @@
         "collection_dMEG7G",
         "collection_N6deye",
         "collection_RF6zQB",
-        "collection_aNjYqW"
+        "collection_aNjYqW",
+        "collection_pPTPh3",
+        "collection_RDPQFx",
+        "collection_HayVhw"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
