@@ -78,6 +78,7 @@
           "type": "collection",
           "settings": {
             "collection": "all-showering",
+            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.05.32_am.png",
             "title": "Showering",
             "description": "",
             "overlay_content": true,
@@ -102,6 +103,7 @@
           "type": "collection",
           "settings": {
             "collection": "all-basins",
+            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.06.50_am.png",
             "title": "Basins",
             "description": "",
             "overlay_content": true,
