@@ -18,7 +18,7 @@
             "collection": "wall-panels",
             "title": "Wall Panels",
             "description": "",
-            "overlay_content": false,
+            "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 30
@@ -30,7 +30,7 @@
             "collection": "all-heating",
             "title": "Heating",
             "description": "",
-            "overlay_content": false,
+            "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 30
@@ -42,7 +42,7 @@
             "collection": "taps",
             "title": "Taps",
             "description": "",
-            "overlay_content": false,
+            "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 30
@@ -54,7 +54,7 @@
             "collection": "bathing",
             "title": "",
             "description": "",
-            "overlay_content": false,
+            "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 30
@@ -66,7 +66,7 @@
             "collection": "all-showering",
             "title": "Showering",
             "description": "",
-            "overlay_content": false,
+            "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 30
@@ -78,7 +78,7 @@
             "collection": "toilets",
             "title": "",
             "description": "",
-            "overlay_content": false,
+            "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 30
@@ -90,7 +90,7 @@
             "collection": "all-basins",
             "title": "Basins",
             "description": "",
-            "overlay_content": false,
+            "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 30
@@ -102,7 +102,7 @@
             "collection": "suite-bundles",
             "title": "Suite Sets",
             "description": "",
-            "overlay_content": false,
+            "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 30
