@@ -91,6 +91,7 @@
           "type": "collection",
           "settings": {
             "collection": "toilets",
+            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.07.55_am.png",
             "title": "",
             "description": "",
             "overlay_content": true,
