@@ -9,6 +9,168 @@
  */
 {
   "sections": {
+    "collection_list_TfCige": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_bB4cHT": {
+          "type": "collection",
+          "settings": {
+            "collection": "all-furniture",
+            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.03.33_am.png",
+            "title": "Furniture",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_UwG9AE": {
+          "type": "collection",
+          "settings": {
+            "collection": "wall-panels",
+            "title": "Wall Panels",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_E79gA3": {
+          "type": "collection",
+          "settings": {
+            "collection": "all-heating",
+            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.02.00_am.png",
+            "title": "Heating",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_GPAfKx": {
+          "type": "collection",
+          "settings": {
+            "collection": "taps",
+            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.08.57_am.png",
+            "title": "Taps",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_kFNW63": {
+          "type": "collection",
+          "settings": {
+            "collection": "bathing",
+            "title": "",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_DEMPHt": {
+          "type": "collection",
+          "settings": {
+            "collection": "all-showering",
+            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.05.32_am.png",
+            "title": "Showering",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_6AqmeH": {
+          "type": "collection",
+          "settings": {
+            "collection": "toilets",
+            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.07.55_am.png",
+            "title": "",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_QxAaKp": {
+          "type": "collection",
+          "settings": {
+            "collection": "all-basins",
+            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.06.50_am.png",
+            "title": "Basins",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_dMEG7G": {
+          "type": "collection",
+          "settings": {
+            "collection": "suite-bundles",
+            "title": "Suite Sets",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_bB4cHT",
+        "collection_UwG9AE",
+        "collection_E79gA3",
+        "collection_GPAfKx",
+        "collection_kFNW63",
+        "collection_DEMPHt",
+        "collection_6AqmeH",
+        "collection_QxAaKp",
+        "collection_dMEG7G"
+      ],
+      "name": "t:sections.collection-list.name",
+      "settings": {
+        "columns": 5,
+        "carousel_on_desktop": false,
+        "image_type": "collection",
+        "image_ratio": "square",
+        "show_products_count": false,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "SHOP BY CATEGORY",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
     "collage_Up3KWt": {
       "type": "collage",
       "blocks": {
@@ -211,168 +373,6 @@
         "rounded": false,
         "hide_for_hubpro_members": false,
         "enable_parallax": false
-      }
-    },
-    "collection_list_TfCige": {
-      "type": "collection-list",
-      "blocks": {
-        "collection_bB4cHT": {
-          "type": "collection",
-          "settings": {
-            "collection": "all-furniture",
-            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.03.33_am.png",
-            "title": "Furniture",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_UwG9AE": {
-          "type": "collection",
-          "settings": {
-            "collection": "wall-panels",
-            "title": "Wall Panels",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_E79gA3": {
-          "type": "collection",
-          "settings": {
-            "collection": "all-heating",
-            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.02.00_am.png",
-            "title": "Heating",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_GPAfKx": {
-          "type": "collection",
-          "settings": {
-            "collection": "taps",
-            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.08.57_am.png",
-            "title": "Taps",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_kFNW63": {
-          "type": "collection",
-          "settings": {
-            "collection": "bathing",
-            "title": "",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_DEMPHt": {
-          "type": "collection",
-          "settings": {
-            "collection": "all-showering",
-            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.05.32_am.png",
-            "title": "Showering",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_6AqmeH": {
-          "type": "collection",
-          "settings": {
-            "collection": "toilets",
-            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.07.55_am.png",
-            "title": "",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_QxAaKp": {
-          "type": "collection",
-          "settings": {
-            "collection": "all-basins",
-            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.06.50_am.png",
-            "title": "Basins",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_dMEG7G": {
-          "type": "collection",
-          "settings": {
-            "collection": "suite-bundles",
-            "title": "Suite Sets",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        }
-      },
-      "block_order": [
-        "collection_bB4cHT",
-        "collection_UwG9AE",
-        "collection_E79gA3",
-        "collection_GPAfKx",
-        "collection_kFNW63",
-        "collection_DEMPHt",
-        "collection_6AqmeH",
-        "collection_QxAaKp",
-        "collection_dMEG7G"
-      ],
-      "name": "t:sections.collection-list.name",
-      "settings": {
-        "columns": 5,
-        "carousel_on_desktop": false,
-        "image_type": "collection",
-        "image_ratio": "square",
-        "show_products_count": false,
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "heading": "SHOP BY CATEGORY",
-        "heading_size": "title-md",
-        "heading_alignment": "text-center md:items-center",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "",
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 28,
-        "padding_bottom": 28,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
       }
     },
     "slideshow": {
@@ -2145,9 +2145,9 @@
     }
   },
   "order": [
+    "collection_list_TfCige",
     "collage_Up3KWt",
     "image_with_text_F6y8TE",
-    "collection_list_TfCige",
     "slideshow",
     "multicolumn_zT87yk",
     "17548300328275163b",
