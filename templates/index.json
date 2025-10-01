@@ -12,6 +12,18 @@
     "collection_list_TfCige": {
       "type": "collection-list",
       "blocks": {
+        "collection_bB4cHT": {
+          "type": "collection",
+          "settings": {
+            "collection": "all-furniture",
+            "title": "Furniture",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
         "collection_UwG9AE": {
           "type": "collection",
           "settings": {
@@ -111,6 +123,7 @@
         }
       },
       "block_order": [
+        "collection_bB4cHT",
         "collection_UwG9AE",
         "collection_E79gA3",
         "collection_GPAfKx",
