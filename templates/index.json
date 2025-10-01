@@ -1438,7 +1438,7 @@
       ],
       "name": "HubPRO Banner",
       "settings": {
-        "image": "shopify://shop_images/IMG_8921.jpg",
+        "image": "shopify://shop_images/Card_machine.jpg",
         "image_ratio": "adapt",
         "image_width": "small",
         "layout": "image_first",
