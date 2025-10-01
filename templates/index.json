@@ -15,7 +15,7 @@
         "collection_6AqmeH": {
           "type": "collection",
           "settings": {
-            "collection": "",
+            "collection": "toilets",
             "title": "",
             "description": "",
             "overlay_content": false,
@@ -27,8 +27,8 @@
         "collection_QxAaKp": {
           "type": "collection",
           "settings": {
-            "collection": "",
-            "title": "",
+            "collection": "all-basins",
+            "title": "Basins",
             "description": "",
             "overlay_content": false,
             "color_text": "#ffffff",
@@ -39,8 +39,8 @@
         "collection_dMEG7G": {
           "type": "collection",
           "settings": {
-            "collection": "",
-            "title": "",
+            "collection": "suite-bundles",
+            "title": "Suite Sets",
             "description": "",
             "overlay_content": false,
             "color_text": "#ffffff",
