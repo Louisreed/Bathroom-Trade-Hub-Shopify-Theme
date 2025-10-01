@@ -16,6 +16,7 @@
           "type": "collection",
           "settings": {
             "collection": "all-furniture",
+            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.03.33_am.png",
             "title": "Furniture",
             "description": "",
             "overlay_content": true,
@@ -135,7 +136,7 @@
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
-        "columns": 5,
+        "columns": 3,
         "carousel_on_desktop": false,
         "image_type": "collection",
         "image_ratio": "square",
