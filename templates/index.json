@@ -40,8 +40,8 @@
         "button_wLTDhV": {
           "type": "button",
           "settings": {
-            "button_label": "",
-            "button_link": "",
+            "button_label": "SHOP THE RANGE",
+            "button_link": "shopify://pages/cladworks-walls",
             "button_style": "primary",
             "button_size": "md",
             "button_external": false,
