@@ -12,6 +12,18 @@
     "collection_list_TfCige": {
       "type": "collection-list",
       "blocks": {
+        "collection_UwG9AE": {
+          "type": "collection",
+          "settings": {
+            "collection": "wall-panels",
+            "title": "Wall Panels",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
         "collection_E79gA3": {
           "type": "collection",
           "settings": {
@@ -98,6 +110,7 @@
         }
       },
       "block_order": [
+        "collection_UwG9AE",
         "collection_E79gA3",
         "collection_GPAfKx",
         "collection_kFNW63",
