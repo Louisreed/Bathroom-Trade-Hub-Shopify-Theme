@@ -12,6 +12,18 @@
     "collection_list_TfCige": {
       "type": "collection-list",
       "blocks": {
+        "collection_E79gA3": {
+          "type": "collection",
+          "settings": {
+            "collection": "all-heating",
+            "title": "Heating",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
         "collection_GPAfKx": {
           "type": "collection",
           "settings": {
@@ -86,6 +98,7 @@
         }
       },
       "block_order": [
+        "collection_E79gA3",
         "collection_GPAfKx",
         "collection_kFNW63",
         "collection_DEMPHt",
