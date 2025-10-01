@@ -9,6 +9,84 @@
  */
 {
   "sections": {
+    "collection_list_TfCige": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_6AqmeH": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_QxAaKp": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_dMEG7G": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_6AqmeH",
+        "collection_QxAaKp",
+        "collection_dMEG7G"
+      ],
+      "name": "t:sections.collection-list.name",
+      "settings": {
+        "columns": 3,
+        "carousel_on_desktop": false,
+        "image_type": "collection",
+        "image_ratio": "square",
+        "show_products_count": false,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Shop By Category",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
     "slideshow": {
       "type": "slideshow",
       "blocks": {
@@ -330,6 +408,7 @@
         "image_WNzL7A",
         "slide-1"
       ],
+      "disabled": true,
       "settings": {
         "autoplay": true,
         "autoplay_speed": 4,
@@ -1778,6 +1857,7 @@
     }
   },
   "order": [
+    "collection_list_TfCige",
     "slideshow",
     "multicolumn_zT87yk",
     "17548300328275163b",
