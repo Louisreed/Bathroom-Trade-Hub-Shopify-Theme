@@ -646,6 +646,123 @@
         "full_width": false,
         "rounded": false
       }
+    },
+    "collection_list_E6WBUD": {
+      "type": "collection-list",
+      "blocks": {
+        "collection_Ln7DUW": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-elegance-abstract-range",
+            "title": "",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_LV7kMQ": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-elegance-mineral-range",
+            "title": "",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_idfgtF": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-elegance-contempo-range",
+            "title": "",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_6gfJYP": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_k36fhy": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-decorwall-elite-range",
+            "title": "",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_PRGM66": {
+          "type": "collection",
+          "settings": {
+            "collection": "the-decorwall-classic-range",
+            "title": "",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        }
+      },
+      "block_order": [
+        "collection_Ln7DUW",
+        "collection_LV7kMQ",
+        "collection_idfgtF",
+        "collection_6gfJYP",
+        "collection_k36fhy",
+        "collection_PRGM66"
+      ],
+      "name": "t:sections.collection-list.name",
+      "settings": {
+        "columns": 3,
+        "carousel_on_desktop": false,
+        "image_type": "collection",
+        "image_ratio": "square",
+        "show_products_count": false,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Collections",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
     }
   },
   "order": [
@@ -657,6 +774,7 @@
     "image_with_text_akrF6A",
     "173176303439daeef7",
     "collection_list_rN7xKg",
-    "collection_list_49gCqq"
+    "collection_list_49gCqq",
+    "collection_list_E6WBUD"
   ]
 }
