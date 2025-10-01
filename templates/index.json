@@ -15,6 +15,7 @@
         "image_h8F3QR": {
           "type": "image",
           "name": "CREATEANACCOUNT",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/IMG_8017.heic",
             "heading": "<em>Are you ready to become a HubPRO?</em>",
@@ -56,7 +57,7 @@
           "name": "OPENINGSOON",
           "settings": {
             "image": "shopify://shop_images/OPENINGSOONBANNERArtboard_1_b991d9a2-b2b3-4bfd-992a-f3d48794c392.png",
-            "heading": "Weymouth Branch is now open! Come and meet the team.",
+            "heading": "DIY just got trade prices.",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "button_label": "",
@@ -92,6 +93,7 @@
         "image_KkFJd6": {
           "type": "image",
           "name": "KARTELLDIY",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Carousel-Banner-scaled.jpg",
             "image_mobile": "shopify://shop_images/Carousel-Banner-scaled.jpg",
@@ -112,6 +114,7 @@
         "image_fWDXqc": {
           "type": "image",
           "name": "KARTELLHUBPRO",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Carousel-Banner-scaled.jpg",
             "image_mobile": "shopify://shop_images/Carousel-Banner-scaled.jpg",
@@ -132,6 +135,7 @@
         "image_wcjf8M": {
           "type": "image",
           "name": "KARTELLPRO+++",
+          "disabled": true,
           "settings": {
             "image": "shopify://shop_images/Carousel-Banner-scaled.jpg",
             "image_mobile": "shopify://shop_images/Carousel-Banner-scaled.jpg",
@@ -154,7 +158,7 @@
           "name": "Maxi PanelsDIY",
           "settings": {
             "image": "shopify://shop_images/MAXIPANELBANNER-01.png",
-            "heading": "<strong>PVC Maxi Panels, Now 35% OFF!</strong>",
+            "heading": "<strong>The perfect shower and wall panel!</strong>",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
             "button_label": "SHOP MAXI PANELS",
@@ -377,7 +381,7 @@
             "image_ratio": "landscape",
             "heading": "Trade & DIY Counter",
             "heading_size": "text-lg-2xl",
-            "text": "<p>Our Weymouth Branch is the perfect place to shop bathroom supplies <strong>in-store </strong></p>",
+            "text": "<p>Our Weymouth Branch is the perfect place to shop bathroom supplies <strong>in-store.</strong></p>",
             "button_label": "",
             "button_link": "",
             "button_style": "secondary",
