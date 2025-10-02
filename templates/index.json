@@ -2220,9 +2220,61 @@
         "ai_gen_block_7130068_Y8ydcQ"
       ],
       "settings": {}
+    },
+    "slideshow_CfARa3": {
+      "type": "slideshow",
+      "blocks": {
+        "image_pmKrc4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Copy_of_Beige_Brown_Modern_Aesthetic_Elegant_Interior_Design_Facebook_Cover.png",
+            "heading": "",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "primary",
+            "button_external": false,
+            "button_icon": false,
+            "show_for_logged_out": true,
+            "show_for_diy": true,
+            "show_for_hubpro_free": true,
+            "show_for_hubpro_plus": true
+          }
+        }
+      },
+      "block_order": [
+        "image_pmKrc4"
+      ],
+      "name": "t:sections.slideshow.name",
+      "settings": {
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "show_navigation": true,
+        "image_height": "650px",
+        "content_width": "small",
+        "image_height_mobile": "auto",
+        "accessibility_info": "Slideshow about our brand",
+        "color_text": "#ffffff",
+        "color_background": "#ffffff",
+        "gradient_background": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
     }
   },
   "order": [
+    "slideshow_CfARa3",
     "collection_list_TfCige",
     "collage_Up3KWt",
     "image_with_text_F6y8TE",
