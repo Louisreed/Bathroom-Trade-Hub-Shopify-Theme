@@ -362,7 +362,6 @@
         "mega_menu_rgQ6Xp": {
           "type": "mega_menu",
           "name": "HubESSENTIALS",
-          "disabled": true,
           "settings": {
             "menu_title": "HubESSENTIALS",
             "menu_width": "medium",
