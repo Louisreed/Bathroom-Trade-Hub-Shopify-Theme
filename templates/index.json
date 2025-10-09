@@ -180,8 +180,9 @@
         "collection_N6deye": {
           "type": "collection",
           "settings": {
-            "collection": "suite-bundles",
-            "title": "Suite Sets",
+            "collection": "clearance-goods",
+            "image": "shopify://shop_images/Screenshot_2025-10-09_at_8.48.21_am.png",
+            "title": "Clearance",
             "description": "",
             "overlay_content": true,
             "color_text": "#ffffff",
