@@ -298,19 +298,6 @@
             "overlay_opacity": 30
           }
         },
-        "collection_jxtnrH": {
-          "type": "collection",
-          "settings": {
-            "collection": "muro-plus",
-            "image": "shopify://shop_images/Screenshot_2024-09-30_at_11.33.09.jpg",
-            "title": "Muro Plus",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
         "collection_hXLAEL": {
           "type": "collection",
           "settings": {
@@ -371,7 +358,6 @@
         "collection_VXejVC",
         "collection_FNCBfy",
         "collection_kn3jYJ",
-        "collection_jxtnrH",
         "collection_hXLAEL",
         "collection_xyVPLU",
         "collection_m8Qd7B",
