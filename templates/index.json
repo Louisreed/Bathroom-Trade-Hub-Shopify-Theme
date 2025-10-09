@@ -2097,96 +2097,6 @@
         "rounded": false
       }
     },
-    "logo_list_HAj8VP": {
-      "type": "logo-list",
-      "blocks": {
-        "logo_e9TGjE": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/nuie_loho.jpg",
-            "height": 80,
-            "link": ""
-          }
-        },
-        "logo_6YCLjM": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/scudo_logo_fc32d616-c756-426d-9f85-1c7687bd73e2.jpg",
-            "height": 80,
-            "link": ""
-          }
-        },
-        "logo_iNKeRN": {
-          "type": "logo",
-          "settings": {
-            "image": "shopify://shop_images/Screenshot_2025-06-30_at_13.20.56.jpg",
-            "height": 80,
-            "link": ""
-          }
-        },
-        "logo_cQJj9J": {
-          "type": "logo",
-          "settings": {
-            "height": 80,
-            "link": ""
-          }
-        },
-        "logo_fGVbmj": {
-          "type": "logo",
-          "settings": {
-            "height": 80,
-            "link": ""
-          }
-        },
-        "logo_r6MtUT": {
-          "type": "logo",
-          "settings": {
-            "height": 80,
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "logo_e9TGjE",
-        "logo_6YCLjM",
-        "logo_iNKeRN",
-        "logo_cQJj9J",
-        "logo_fGVbmj",
-        "logo_r6MtUT"
-      ],
-      "disabled": true,
-      "settings": {
-        "layout": "default",
-        "grid_horizontal": 70,
-        "direction": "left",
-        "speed": 5,
-        "heading": "Popular Brands",
-        "heading_size": "title-md",
-        "heading_alignment": "text-center md:items-center",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "",
-        "button_label": "",
-        "button_link": "",
-        "button_external": false,
-        "button_icon": true,
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 72,
-        "padding_bottom": 72,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
-      }
-    },
     "173167681616b98a6e": {
       "type": "apps",
       "disabled": true,
@@ -2278,6 +2188,7 @@
         "logo_39GcgF": {
           "type": "logo",
           "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-10-09_at_8.29.28_am.png",
             "height": 80,
             "link": ""
           }
@@ -2285,6 +2196,7 @@
         "logo_nQ9JW6": {
           "type": "logo",
           "settings": {
+            "image": "shopify://shop_images/Kartell.jpg",
             "height": 80,
             "link": ""
           }
@@ -2344,13 +2256,13 @@
         "button_icon": true,
         "highlighted_text": "none",
         "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
+        "color_text": "#ffffff",
+        "color_background": "#424242",
         "gradient_background": "",
-        "color_highlight": "",
+        "color_highlight": "#ffffff",
         "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
+        "color_button_text": "#ffffff",
+        "color_button_background": "#ffffff",
         "color_button_gradient": "",
         "padding_top": 72,
         "padding_bottom": 72,
@@ -2379,7 +2291,6 @@
     "testimonials-banner",
     "scrolling-text-2",
     "blog-posts-collage",
-    "logo_list_HAj8VP",
     "173167681616b98a6e",
     "featured_collection_ctYK44",
     "1753954348ec27ebd8",
