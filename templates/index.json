@@ -2188,6 +2188,14 @@
     "logo_list_WMxzEt": {
       "type": "logo-list",
       "blocks": {
+        "logo_mbjJBn": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-10-09_at_2.37.22_pm.png",
+            "height": 144,
+            "link": "shopify://collections/nature-panel"
+          }
+        },
         "logo_YdWVFD": {
           "type": "logo",
           "settings": {
@@ -2278,6 +2286,7 @@
         }
       },
       "block_order": [
+        "logo_mbjJBn",
         "logo_YdWVFD",
         "logo_gNYzB9",
         "logo_NChtAW",
