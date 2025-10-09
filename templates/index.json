@@ -2271,6 +2271,93 @@
         "ai_gen_block_7130068_Y8ydcQ"
       ],
       "settings": {}
+    },
+    "logo_list_WMxzEt": {
+      "type": "logo-list",
+      "blocks": {
+        "logo_39GcgF": {
+          "type": "logo",
+          "settings": {
+            "height": 80,
+            "link": ""
+          }
+        },
+        "logo_nQ9JW6": {
+          "type": "logo",
+          "settings": {
+            "height": 80,
+            "link": ""
+          }
+        },
+        "logo_3DMqg8": {
+          "type": "logo",
+          "settings": {
+            "height": 80,
+            "link": ""
+          }
+        },
+        "logo_VkBdiG": {
+          "type": "logo",
+          "settings": {
+            "height": 80,
+            "link": ""
+          }
+        },
+        "logo_dhwwbF": {
+          "type": "logo",
+          "settings": {
+            "height": 80,
+            "link": ""
+          }
+        },
+        "logo_Jb6L3x": {
+          "type": "logo",
+          "settings": {
+            "height": 80,
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_39GcgF",
+        "logo_nQ9JW6",
+        "logo_3DMqg8",
+        "logo_VkBdiG",
+        "logo_dhwwbF",
+        "logo_Jb6L3x"
+      ],
+      "name": "t:sections.logo-list.name",
+      "settings": {
+        "layout": "default",
+        "grid_horizontal": 70,
+        "direction": "left",
+        "speed": 5,
+        "heading": "SHOP BY BRAND",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
     }
   },
   "order": [
@@ -2295,6 +2382,7 @@
     "logo_list_HAj8VP",
     "173167681616b98a6e",
     "featured_collection_ctYK44",
-    "1753954348ec27ebd8"
+    "1753954348ec27ebd8",
+    "logo_list_WMxzEt"
   ]
 }
