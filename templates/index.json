@@ -2229,8 +2229,9 @@
         "logo_Jb6L3x": {
           "type": "logo",
           "settings": {
-            "height": 80,
-            "link": ""
+            "image": "shopify://shop_images/Screenshot_2025-10-09_at_8.50.38_am.png",
+            "height": 144,
+            "link": "shopify://collections/artesan-shower-trays"
           }
         }
       },
