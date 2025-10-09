@@ -259,18 +259,6 @@
             "overlay_opacity": 30
           }
         },
-        "collection_6ML97V": {
-          "type": "collection",
-          "settings": {
-            "collection": "volcan",
-            "title": "",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
         "collection_VXejVC": {
           "type": "collection",
           "settings": {
@@ -297,110 +285,6 @@
             "overlay_opacity": 30
           }
         },
-        "collection_DP4hzp": {
-          "type": "collection",
-          "settings": {
-            "collection": "alfie",
-            "image": "shopify://shop_images/Screenshot_2024-09-30_at_11.19.49.jpg",
-            "title": "Alfie",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_Br6nwN": {
-          "type": "collection",
-          "settings": {
-            "collection": "ambience",
-            "image": "shopify://shop_images/Screenshot_2024-09-30_at_11.20.41.jpg",
-            "title": "Ambience",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_jQxkYC": {
-          "type": "collection",
-          "settings": {
-            "collection": "aubrey",
-            "image": "shopify://shop_images/Screenshot_2024-09-30_at_11.21.52.jpg",
-            "title": "Aubrey",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_TYNamX": {
-          "type": "collection",
-          "settings": {
-            "collection": "bella",
-            "image": "shopify://shop_images/Screenshot_2024-09-30_at_11.25.49.jpg",
-            "title": "Bella",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_D44M8g": {
-          "type": "collection",
-          "settings": {
-            "collection": "boho",
-            "image": "shopify://shop_images/Screenshot_2024-09-30_at_11.29.50.jpg",
-            "title": "BOHO",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_zAzNej": {
-          "type": "collection",
-          "settings": {
-            "collection": "chevron",
-            "image": "shopify://shop_images/Screenshot_2024-09-30_at_11.30.27.jpg",
-            "title": "Chevron",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_JMtWmJ": {
-          "type": "collection",
-          "settings": {
-            "collection": "ella",
-            "image": "shopify://shop_images/Screenshot_2024-09-30_at_11.31.16.jpg",
-            "title": "Ella",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_7kDVDp": {
-          "type": "collection",
-          "settings": {
-            "collection": "empire",
-            "image": "shopify://shop_images/Screenshot_2024-09-30_at_11.32.08.jpg",
-            "title": "Empire",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
         "collection_kn3jYJ": {
           "type": "collection",
           "settings": {
@@ -420,19 +304,6 @@
             "collection": "muro-plus",
             "image": "shopify://shop_images/Screenshot_2024-09-30_at_11.33.09.jpg",
             "title": "Muro Plus",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_QHYNWz": {
-          "type": "collection",
-          "settings": {
-            "collection": "rossini",
-            "image": "shopify://shop_images/Screenshot_2024-09-30_at_11.34.06.jpg",
-            "title": "Rossini",
             "description": "",
             "overlay_content": true,
             "color_text": "#ffffff",
@@ -491,44 +362,20 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
-        },
-        "collection_GEWhdr": {
-          "type": "collection",
-          "settings": {
-            "collection": "bota",
-            "image": "shopify://shop_images/Screenshot2025-08-11at3.46.50PM.png",
-            "title": "",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
         }
       },
       "block_order": [
         "collection_49UtCM",
         "collection_eQEqC9",
         "collection_JbVd4T",
-        "collection_6ML97V",
         "collection_VXejVC",
         "collection_FNCBfy",
-        "collection_DP4hzp",
-        "collection_Br6nwN",
-        "collection_jQxkYC",
-        "collection_TYNamX",
-        "collection_D44M8g",
-        "collection_zAzNej",
-        "collection_JMtWmJ",
-        "collection_7kDVDp",
         "collection_kn3jYJ",
         "collection_jxtnrH",
-        "collection_QHYNWz",
         "collection_hXLAEL",
         "collection_xyVPLU",
         "collection_m8Qd7B",
-        "collection_fMQ9YP",
-        "collection_GEWhdr"
+        "collection_fMQ9YP"
       ],
       "settings": {
         "columns": 5,
