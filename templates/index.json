@@ -16,6 +16,7 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Copy_of_Beige_Brown_Modern_Aesthetic_Elegant_Interior_Design_Facebook_Cover-2.png",
+            "image_mobile": "shopify://shop_images/Dark_Yellow_Motorbike_Sale_Promo_Poster.png",
             "heading": "",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
