@@ -2188,6 +2188,14 @@
     "logo_list_WMxzEt": {
       "type": "logo-list",
       "blocks": {
+        "logo_YdWVFD": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-10-09_at_2.33.46_pm.png",
+            "height": 144,
+            "link": "shopify://collections/kudos-shower-trays"
+          }
+        },
         "logo_gNYzB9": {
           "type": "logo",
           "settings": {
@@ -2270,6 +2278,7 @@
         }
       },
       "block_order": [
+        "logo_YdWVFD",
         "logo_gNYzB9",
         "logo_NChtAW",
         "logo_xV7LFH",
