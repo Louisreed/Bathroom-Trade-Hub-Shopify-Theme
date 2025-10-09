@@ -2187,6 +2187,14 @@
     "logo_list_WMxzEt": {
       "type": "logo-list",
       "blocks": {
+        "logo_i3MWYT": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-10-09_at_8.54.54_am.png",
+            "height": 144,
+            "link": "shopify://collections/multipanel-1"
+          }
+        },
         "logo_39GcgF": {
           "type": "logo",
           "settings": {
@@ -2237,6 +2245,7 @@
         }
       },
       "block_order": [
+        "logo_i3MWYT",
         "logo_39GcgF",
         "logo_nQ9JW6",
         "logo_3DMqg8",
