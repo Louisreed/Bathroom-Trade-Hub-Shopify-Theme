@@ -2385,10 +2385,10 @@
         "product_pFG3Wy": {
           "type": "product",
           "settings": {
-            "product": "",
+            "product": "rigid-riser-showers-serena-chrome-round",
             "color_text": "#ffffff",
             "vertical": 75,
-            "horizontal": 65,
+            "horizontal": 57,
             "vertical_mobile": 75,
             "horizontal_mobile": 65
           }
