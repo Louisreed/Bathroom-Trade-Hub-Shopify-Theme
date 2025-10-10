@@ -219,11 +219,6 @@
         "disabled": false,
         "settings": {}
       },
-      "13375938897875554821": {
-        "type": "shopify://apps/qikify-sales-pop-up/blocks/app-embed/688dd516-1cdc-4008-8329-23089a1c4e24",
-        "disabled": false,
-        "settings": {}
-      },
       "5877711596357593266": {
         "type": "shopify://apps/kaching-popup/blocks/popup/e910a01f-bb85-45d8-92ef-3667265465b1",
         "disabled": true,
@@ -232,6 +227,11 @@
       "18197795979873361081": {
         "type": "shopify://apps/ta-banner-pop-up/blocks/bss-banner-popup/2db47c8b-7637-4260-aa84-586b08e92aea",
         "disabled": false,
+        "settings": {}
+      },
+      "13375938897875554821": {
+        "type": "shopify://apps/qikify-sales-pop-up/blocks/app-embed/688dd516-1cdc-4008-8329-23089a1c4e24",
+        "disabled": true,
         "settings": {}
       }
     }
