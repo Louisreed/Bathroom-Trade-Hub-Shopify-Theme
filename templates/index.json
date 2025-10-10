@@ -2413,7 +2413,7 @@
       "name": "t:sections.lookbook.name",
       "settings": {
         "image": "shopify://shop_images/White_Brown_Simple_Photo_Collage.png",
-        "heading": "",
+        "heading": "BARGAIN LOOKBOOK",
         "heading_size": "title-md",
         "heading_alignment": "text-center md:items-center",
         "heading_tag": "h2",
@@ -2436,8 +2436,8 @@
         "color_button_gradient": "",
         "color_overlay": "#171717",
         "overlay_opacity": 30,
-        "padding_top": 72,
-        "padding_bottom": 72,
+        "padding_top": 24,
+        "padding_bottom": 24,
         "divider": false,
         "full_width": false,
         "rounded": false
