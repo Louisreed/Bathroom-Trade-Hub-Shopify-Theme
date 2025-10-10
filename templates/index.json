@@ -2382,6 +2382,17 @@
             "horizontal_mobile": 25
           }
         },
+        "product_epAn9j": {
+          "type": "product",
+          "settings": {
+            "product": "harmony-ceramics-500mm-basin-pedestal",
+            "color_text": "#ffffff",
+            "vertical": 36,
+            "horizontal": 50,
+            "vertical_mobile": 50,
+            "horizontal_mobile": 50
+          }
+        },
         "product_HG33DW": {
           "type": "product",
           "settings": {
@@ -2407,6 +2418,7 @@
       },
       "block_order": [
         "product_fGjjaQ",
+        "product_epAn9j",
         "product_HG33DW",
         "product_pFG3Wy"
       ],
