@@ -228,6 +228,33 @@
         "type": "shopify://apps/kaching-popup/blocks/popup/e910a01f-bb85-45d8-92ef-3667265465b1",
         "disabled": false,
         "settings": {}
+      },
+      "2361305494380943633": {
+        "type": "shopify://apps/discount-pop-up-mits/blocks/popup/4af6c0ec-92b5-4580-853d-dc1dc12b9128",
+        "disabled": false,
+        "settings": {
+          "popupName": "Default pop-up",
+          "size": "sm",
+          "fontSize": 14,
+          "darkMode": false,
+          "textColor": "#000000",
+          "buttonBgColor": "#3253C9",
+          "buttonTextColor": "#ffffff",
+          "bgColor": "#ffffff",
+          "backdropColor": "#1B692A",
+          "flat": true,
+          "fullScreenOnMobile": false,
+          "contentText": "<h1>Join Our Newsletter</h1><p>Join our mailing list to stay up to date on our upcoming sales.</p><p>Subscribe to our wonderful and occasional emails.</p>",
+          "formName": "Your Name",
+          "formEmail": "Your Email",
+          "formPhone": "Your Phone Number",
+          "gdprText": "I agree to subscribe to this newsletter and receive communications.",
+          "formSubmitButton": "Join Now",
+          "discountCode": "",
+          "arrangeItems": "text,\nimage,\nform,\n\nform_name,\nform_email,\nform_phone,\nform_gdpr,\nform_submit,",
+          "displayWidget": "0",
+          "afterClosing": "everyNewSession"
+        }
       }
     }
   },
