@@ -2414,13 +2414,25 @@
             "vertical_mobile": 75,
             "horizontal_mobile": 65
           }
+        },
+        "product_VcmVgU": {
+          "type": "product",
+          "settings": {
+            "product": "everbuild-wonder-wipes-large-size-500-wipes",
+            "color_text": "#ffffff",
+            "vertical": 67,
+            "horizontal": 78,
+            "vertical_mobile": 50,
+            "horizontal_mobile": 50
+          }
         }
       },
       "block_order": [
         "product_fGjjaQ",
         "product_epAn9j",
         "product_HG33DW",
-        "product_pFG3Wy"
+        "product_pFG3Wy",
+        "product_VcmVgU"
       ],
       "name": "t:sections.lookbook.name",
       "settings": {
