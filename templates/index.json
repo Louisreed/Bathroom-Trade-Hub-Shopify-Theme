@@ -231,6 +231,7 @@
         },
         "collection_RDPQFx": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "suite-bundles",
             "title": "Suite Sets",
@@ -243,6 +244,7 @@
         },
         "collection_HayVhw": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "suite-bundles",
             "title": "Suite Sets",
