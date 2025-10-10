@@ -2415,6 +2415,17 @@
             "horizontal_mobile": 65
           }
         },
+        "product_hixzzQ": {
+          "type": "product",
+          "settings": {
+            "product": "bathroom-trade-hub-eden-floor-standing-2-door-vanity-unit-with-mid-edge-basin-500mm",
+            "color_text": "#ffffff",
+            "vertical": 60,
+            "horizontal": 13,
+            "vertical_mobile": 50,
+            "horizontal_mobile": 50
+          }
+        },
         "product_VcmVgU": {
           "type": "product",
           "settings": {
@@ -2432,6 +2443,7 @@
         "product_epAn9j",
         "product_HG33DW",
         "product_pFG3Wy",
+        "product_hixzzQ",
         "product_VcmVgU"
       ],
       "name": "t:sections.lookbook.name",
