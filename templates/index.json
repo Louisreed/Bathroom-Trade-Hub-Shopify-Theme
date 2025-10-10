@@ -2382,6 +2382,17 @@
             "horizontal_mobile": 25
           }
         },
+        "product_HG33DW": {
+          "type": "product",
+          "settings": {
+            "product": "bathroom-trade-hub-mayford-floor-standing-single-door-vanity-unit-with-round-basin-450mm",
+            "color_text": "#ffffff",
+            "vertical": 30,
+            "horizontal": 77,
+            "vertical_mobile": 50,
+            "horizontal_mobile": 50
+          }
+        },
         "product_pFG3Wy": {
           "type": "product",
           "settings": {
@@ -2396,6 +2407,7 @@
       },
       "block_order": [
         "product_fGjjaQ",
+        "product_HG33DW",
         "product_pFG3Wy"
       ],
       "name": "t:sections.lookbook.name",
