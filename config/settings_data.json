@@ -219,13 +219,13 @@
         "disabled": false,
         "settings": {}
       },
-      "10508887350528622030": {
-        "type": "shopify://apps/appstle-bundles/blocks/appstle-bundle/8909921b-2d24-4d68-9b12-9d045d3dcb0a",
-        "disabled": false,
+      "13375938897875554821": {
+        "type": "shopify://apps/qikify-sales-pop-up/blocks/app-embed/688dd516-1cdc-4008-8329-23089a1c4e24",
+        "disabled": true,
         "settings": {}
       },
-      "10436698916776057164": {
-        "type": "shopify://apps/appstle-subscription/blocks/appstle-subscription-helper/fe257d39-6f88-4f35-ab08-bd437e3aa94e",
+      "16178409538858199964": {
+        "type": "shopify://apps/powr-popup/blocks/app-embed/c42eddd7-7bc0-47cc-aa8a-df388049f012",
         "disabled": false,
         "settings": {}
       }
