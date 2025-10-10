@@ -219,8 +219,8 @@
         "collection_pPTPh3": {
           "type": "collection",
           "settings": {
-            "collection": "suite-bundles",
-            "title": "Suite Sets",
+            "collection": "consumables-in-stock",
+            "title": "Consumables & Tools",
             "description": "",
             "overlay_content": true,
             "color_text": "#ffffff",
