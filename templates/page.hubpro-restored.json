@@ -240,6 +240,7 @@
       "block_order": [
         "ai_gen_block_77a9563_xVdaV8"
       ],
+      "disabled": true,
       "settings": {}
     },
     "collection_list_kg7KnE": {
@@ -365,11 +366,11 @@
         "heading_YLtnTA": {
           "type": "heading",
           "settings": {
-            "heading": "<em>1. Sign Up</em>",
+            "heading": "<em>How it Works</em>",
             "heading_size": "title-md",
             "heading_tag": "h2",
             "highlighted_text": "scribble",
-            "highlighted_scribble": "squiggle-underline"
+            "highlighted_scribble": "sketch-underline"
           }
         },
         "text_EzhfNx": {
@@ -391,6 +392,71 @@
       "block_order": [
         "heading_YLtnTA",
         "text_EzhfNx"
+      ],
+      "name": "Rich text",
+      "settings": {
+        "text_alignment": "center",
+        "text_alignment_mobile": "center",
+        "heading": "",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_width": "small",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "#bb9f4d",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 48,
+        "padding_bottom": 24,
+        "divider": false,
+        "narrow": true,
+        "rounded": false
+      }
+    },
+    "rich_text_McNxhY": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_BXNp4z": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em>1. Sign Up</em>",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "scribble",
+            "highlighted_scribble": "squiggle-underline"
+          }
+        },
+        "text_nUYExd": {
+          "type": "text",
+          "settings": {
+            "text": "<p>To get started, provide us with a few basic details about yourself and your business below. Once the form is complete, click sign up you will receive a confirmation email shortly after.</p>",
+            "text_font": "body",
+            "text_size": "subtext-lg",
+            "text_max_size": 60,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "heading_BXNp4z",
+        "text_nUYExd"
       ],
       "name": "Rich text",
       "settings": {
@@ -713,6 +779,7 @@
     "blocks_MggbGM",
     "collection_list_kg7KnE",
     "rich_text_QHgKfz",
+    "rich_text_McNxhY",
     "rich_text_qFQmBj",
     "rich_text_XCVJJH",
     "1754923679d8d98e86",
