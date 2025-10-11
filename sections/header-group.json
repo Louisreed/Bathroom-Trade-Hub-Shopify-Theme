@@ -168,6 +168,7 @@
         "mega_menu_fHrbe7": {
           "type": "mega_menu",
           "name": "HubPRO",
+          "disabled": true,
           "settings": {
             "menu_title": "HubPRO",
             "menu_width": "medium",
