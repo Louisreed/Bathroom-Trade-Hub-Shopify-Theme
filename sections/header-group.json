@@ -18,7 +18,7 @@
           "type": "announcement",
           "settings": {
             "icon": "alert",
-            "text": "YOU HAVE ACCESS TO 10% OFF AT CHECKOUT",
+            "text": "<strong>YOU HAVE ACCESS TO 10% OFF AT CHECKOUT</strong>",
             "link": "",
             "hide_icon_mobile": true,
             "text_mobile": "",
