@@ -18,12 +18,30 @@
           "type": "announcement",
           "settings": {
             "icon": "truck",
+            "text": "YOU HAVE ACCESS TO 10% OFF AT CHECKOUT",
+            "link": "",
+            "hide_icon_mobile": true,
+            "text_mobile": "",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "show_for_logged_out": false,
+            "show_for_logged_in": false,
+            "show_for_hubpro_free": true
+          }
+        },
+        "announcement_cCxaBK": {
+          "type": "announcement",
+          "settings": {
+            "icon": "truck",
             "text": "FREE DORSET DELIVERY OVER £100+VAT",
             "link": "",
             "hide_icon_mobile": true,
             "text_mobile": "",
             "highlighted_text": "none",
-            "highlighted_scribble": "circle"
+            "highlighted_scribble": "circle",
+            "show_for_logged_out": true,
+            "show_for_logged_in": true,
+            "show_for_hubpro_free": true
           }
         },
         "announcement-2": {
@@ -35,12 +53,16 @@
             "hide_icon_mobile": true,
             "text_mobile": "",
             "highlighted_text": "none",
-            "highlighted_scribble": "circle"
+            "highlighted_scribble": "circle",
+            "show_for_logged_out": true,
+            "show_for_logged_in": true,
+            "show_for_hubpro_free": true
           }
         }
       },
       "block_order": [
         "announcement-1",
+        "announcement_cCxaBK",
         "announcement-2"
       ],
       "settings": {
@@ -60,9 +82,6 @@
         "hubpro_free_color_text": "",
         "hubpro_free_color_background": "#bb9f4d",
         "hubpro_free_color_highlight": "",
-        "hubpro_plus_color_text": "",
-        "hubpro_plus_color_background": "#bb9f4d",
-        "hubpro_plus_color_highlight": "",
         "hide_homepage": false,
         "full_width": true,
         "rounded": true
