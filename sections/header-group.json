@@ -18,7 +18,7 @@
           "type": "announcement",
           "settings": {
             "icon": "wallet",
-            "text": "<strong>YOU HAVE ACCESS TO 10% OFF AT CHECKOUT</strong>",
+            "text": "<strong>YOUR 10% HUBPRO DISCOUNT HAS BEEN AUTOMATICALLY APPLIED AT CHECKOUT!</strong>",
             "link": "",
             "hide_icon_mobile": false,
             "text_mobile": "",
