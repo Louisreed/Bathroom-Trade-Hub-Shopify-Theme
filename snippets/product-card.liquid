@@ -311,7 +311,11 @@
             {{- product.title | escape -}}
           </a>
         </p>
-        {%- render 'product-price', product: product, class: 'flex flex-wrap gap-2 md:gap-1d5 w-full' -%}
+        {%- render 'product-price',
+          product: product,
+          use_variant: true,
+          class: 'flex flex-wrap gap-2 md:gap-1d5 w-full'
+        -%}
         {%- if product.quantity_price_breaks_configured? -%}
           <div class="text-sm font-medium leading-tight">{{ 'products.volume_pricing.note' | t }}</div>
         {%- endif -%}

@@ -14,19 +14,8 @@
   assign announcement_color_background = section.settings.color_background
   assign announcement_color_highlight = section.settings.color_highlight
 
-  # Check for HubPro customer variants and override colors if available
-  if customer and customer.tags contains 'hubpro-plus'
-    # HubPro Plus customer - use plus colors if available, otherwise fallback to default
-    if section.settings.hubpro_plus_color_text != blank
-      assign announcement_color_text = section.settings.hubpro_plus_color_text
-    endif
-    if section.settings.hubpro_plus_color_background != blank
-      assign announcement_color_background = section.settings.hubpro_plus_color_background
-    endif
-    if section.settings.hubpro_plus_color_highlight != blank
-      assign announcement_color_highlight = section.settings.hubpro_plus_color_highlight
-    endif
-  elsif customer and customer.tags contains 'hubpro-free'
+  # Check for HubPro customer and override colors if available
+  if customer and customer.tags contains 'hubpro-free'
     # HubPro Free customer - use free colors if available, otherwise fallback to default
     if section.settings.hubpro_free_color_text != blank
       assign announcement_color_text = section.settings.hubpro_free_color_text
@@ -92,14 +81,46 @@
             endif
           -%}
           {%- for block in section.blocks -%}
-            <div
-              class="announcement__slide flex h-full"
-              {% unless forloop.first %}
-                aria-hidden="true"
-              {% endunless %}
-              {{ block.shopify_attributes }}
-            >
-              {%- capture announcement__content -%}
+            {%- liquid
+              comment
+                Check visibility settings for customer type
+              endcomment
+
+              assign show_block = true
+              assign customer_type = 'logged_out'
+
+              if customer
+                assign customer_type = 'logged_in'
+                if customer.tags contains 'hubpro-free'
+                  assign customer_type = 'hubpro-free'
+                endif
+              endif
+
+              case customer_type
+                when 'hubpro-free'
+                  unless block.settings.show_for_hubpro_free
+                    assign show_block = false
+                  endunless
+                when 'logged_in'
+                  unless block.settings.show_for_logged_in
+                    assign show_block = false
+                  endunless
+                when 'logged_out'
+                  unless block.settings.show_for_logged_out
+                    assign show_block = false
+                  endunless
+              endcase
+            -%}
+
+            {%- if show_block -%}
+              <div
+                class="announcement__slide flex h-full"
+                {% unless forloop.first %}
+                  aria-hidden="true"
+                {% endunless %}
+                {{ block.shopify_attributes }}
+              >
+                {%- capture announcement__content -%}
                 {%- if block.settings.icon != 'none' -%}
                   <span class="announcement-icon{% if block.settings.hide_icon_mobile %} hidden md:block{% endif %}">
                     {%- render 'icon-announcement', icon: block.settings.icon, size: 'xs', class: 'stroke-1' -%}
@@ -120,30 +141,31 @@
                 {%- endif -%}
               {%- endcapture -%}
 
-              {%- if block.settings.link != blank -%}
-                {%- liquid
-                  assign accessibility = true
-                  if announcements_count > 1
-                    unless forloop.first
-                      assign accessibility = false
-                    endunless
-                  endif
-                -%}
-                <a
-                  class="announcement__content flex items-center gap-2"
-                  href="{{ block.settings.link }}"
-                  {% unless accessibility %}
-                    tabindex="-1"
-                  {% endunless %}
-                >
-                  {{- announcement__content -}}
-                </a>
-              {%- else -%}
-                <div class="announcement__content flex items-center gap-2">
-                  {{- announcement__content -}}
-                </div>
-              {%- endif -%}
-            </div>
+                {%- if block.settings.link != blank -%}
+                  {%- liquid
+                    assign accessibility = true
+                    if announcements_count > 1
+                      unless forloop.first
+                        assign accessibility = false
+                      endunless
+                    endif
+                  -%}
+                  <a
+                    class="announcement__content flex items-center gap-2"
+                    href="{{ block.settings.link }}"
+                    {% unless accessibility %}
+                      tabindex="-1"
+                    {% endunless %}
+                  >
+                    {{- announcement__content -}}
+                  </a>
+                {%- else -%}
+                  <div class="announcement__content flex items-center gap-2">
+                    {{- announcement__content -}}
+                  </div>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
           {%- endfor -%}
         </announcement-bar>
         {%- if section.settings.show_navigation and announcements_count > 1 -%}
@@ -468,28 +490,6 @@
       "id": "hubpro_free_color_highlight",
       "label": "HubPro Free Highlight Color",
       "info": "Highlight color for customers with 'hubpro-free' tag"
-    },
-    {
-      "type": "header",
-      "content": "HubPro Plus Colors"
-    },
-    {
-      "type": "color",
-      "id": "hubpro_plus_color_text",
-      "label": "HubPro Plus Text Color",
-      "info": "Text color for customers with 'hubpro-plus' tag"
-    },
-    {
-      "type": "color",
-      "id": "hubpro_plus_color_background",
-      "label": "HubPro Plus Background Color",
-      "info": "Background color for customers with 'hubpro-plus' tag"
-    },
-    {
-      "type": "color",
-      "id": "hubpro_plus_color_highlight",
-      "label": "HubPro Plus Highlight Color",
-      "info": "Highlight color for customers with 'hubpro-plus' tag"
     },
     {
       "type": "header",
@@ -852,6 +852,31 @@
           "default": "circle",
           "label": "t:sections.global.settings.highlighted_scribble.label",
           "info": "t:sections.global.settings.highlighted_scribble.info"
+        },
+        {
+          "type": "header",
+          "content": "User Type Visibility"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_for_logged_out",
+          "label": "Show for Logged Out Users",
+          "info": "Show this announcement for visitors who are not logged in",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_for_logged_in",
+          "label": "Show for Logged In Users",
+          "info": "Show this announcement for logged in customers (without hubpro-free tag)",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_for_hubpro_free",
+          "label": "Show for HubPro Free Users",
+          "info": "Show this announcement for customers with hubpro-free tag",
+          "default": true
         }
       ]
     }

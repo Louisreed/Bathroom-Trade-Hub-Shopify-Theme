@@ -194,6 +194,12 @@ if (!customElements.get('predictive-search')) {
         document.getElementById(id).innerHTML = new DOMParser()
           .parseFromString(responseText, 'text/html')
           .getElementById(id).innerHTML;
+
+        // Trigger T-selector VAT app to process new prices
+        document.dispatchEvent(new CustomEvent('tselectorReload'));
+        
+        // Also trigger generic price update event for other apps
+        document.dispatchEvent(new CustomEvent('theme:prices:update'));
       }
     }, { extends: 'form' }
   );

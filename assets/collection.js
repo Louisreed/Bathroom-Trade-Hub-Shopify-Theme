@@ -121,6 +121,10 @@ if (!customElements.get('facet-form')) {
         if (drawer) drawer.classList.remove('loading');
 
         document.dispatchEvent(new CustomEvent('collection:reloaded'));
+        
+        // Trigger T-selector VAT app to process new prices
+        document.dispatchEvent(new CustomEvent('tselectorReload'));
+        document.dispatchEvent(new CustomEvent('theme:prices:update'));
       }
 
       renderSection(url, event) {
@@ -557,6 +561,10 @@ if (!customElements.get('infinite-button')) {
           });
 
           destination.reload();
+          
+          // Trigger T-selector VAT app to process new prices
+          document.dispatchEvent(new CustomEvent('tselectorReload'));
+          document.dispatchEvent(new CustomEvent('theme:prices:update'));
         }
       }
       

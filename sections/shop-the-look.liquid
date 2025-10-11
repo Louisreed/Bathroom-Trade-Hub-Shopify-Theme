@@ -32,7 +32,10 @@
   {% endif -%}
 </style>
 
-<div class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}" data-section-id="{{ section.id }}">
+<div
+  class="section section--padding{% if section.settings.divider %} section--divider{% endif %}{% if section.settings.rounded %} section--rounded relative{% endif %}"
+  data-section-id="{{ section.id }}"
+>
   <div class="page-width{% if section.settings.full_width %} page-width--full{% endif %} relative">
     <shop-the-look class="shop-the-look grid gap-6">
       {%- render 'section-heading', section: section -%}
@@ -50,8 +53,17 @@
                   height="{{ section.settings.image_mobile.height }}"
                 >
               {%- endif -%}
-  
-              {{- section.settings.image | image_url: width: section.settings.image.width | image_tag: loading: 'lazy', sizes: sizes, widths: '300,400,500,600,700,800,900,1000,1200,1400,1600,1800,2000,2200,2400,2600,2800,3000,3200', is: 'lazy-image', class: 'banner__image' -}}
+
+              {{-
+                section.settings.image
+                | image_url: width: section.settings.image.width
+                | image_tag:
+                  loading: 'lazy',
+                  sizes: sizes,
+                  widths: '300,400,500,600,700,800,900,1000,1200,1400,1600,1800,2000,2200,2400,2600,2800,3000,3200',
+                  is: 'lazy-image',
+                  class: 'banner__image'
+              -}}
             {%- else -%}
               {{- 'lifestyle-1' | placeholder_svg_tag: 'banner__image banner__overlay placeholder' -}}
             {%- endif -%}
@@ -60,7 +72,7 @@
 
         {%- if section.blocks.size > 0 -%}
           <span class="banner__overlay absolute top-0 left-0 w-full h-full pointer-events-none"></span>
-          
+
           {%- for block in section.blocks -%}
             {%- liquid
               assign product = block.settings.product
@@ -70,40 +82,78 @@
             -%}
             {% if product != blank %}
               {%- if settings.product_quick_view -%}
-                <hover-element class="hotspot flex items-center justify-center absolute z-1 cursor-pointer" aria-controls="Quickview-{{ section.id }}-{{ product.id }}" aria-expanded="false" aria-current="{% if forloop.first %}true{% else %}false{% endif %}" id="shopify-block-{{ block.id }}" {{ block.shopify_attributes }}>
+                <hover-element
+                  class="hotspot flex items-center justify-center absolute z-1 cursor-pointer"
+                  aria-controls="Quickview-{{ section.id }}-{{ product.id }}"
+                  aria-expanded="false"
+                  aria-current="{% if forloop.first %}true{% else %}false{% endif %}"
+                  id="shopify-block-{{ block.id }}"
+                  {{ block.shopify_attributes }}
+                >
                   <div class="hotspot__content hidden md:flex gap-2 items-center absolute pointer-events-none{% if block.settings.horizontal < 15 %} with-left{% elsif block.settings.horizontal > 85 %} with-right{% endif %}{% if block.settings.vertical > 70 %} with-bottom{% endif %}">
                     {%- if product.featured_media -%}
                       <div class="hidden lg:block media media--{{ settings.product_image_ratio }}{% unless settings.product_image_fill %} media--contain{% endunless %} relative overflow-hidden shrink-0">
-                        {{- product.featured_media | image_url: width: product.featured_media.width | image_tag: loading: 'lazy', widths: '180,360,540', is: 'lazy-image' -}}
+                        {{-
+                          product.featured_media
+                          | image_url: width: product.featured_media.width
+                          | image_tag: loading: 'lazy', widths: '180,360,540', is: 'lazy-image'
+                        -}}
                       </div>
                     {%- endif -%}
                     <div class="rte text-sm leading-none grid gap-2">
-                      <p class="horizontal-product__title lg:text-base lg:font-medium leading-tight">{{ product.title }}</p>
+                      <p class="horizontal-product__title lg:text-base lg:font-medium leading-tight">
+                        {{ product.title }}
+                      </p>
 
-                      {%- render 'product-price', product: product, placeholder: placeholder -%}
+                      {%- render 'product-price', product: product, use_variant: true, placeholder: placeholder -%}
                     </div>
                     {%- render 'icon', icon: 'caret', class: 'absolute' -%}
                   </div>
                 </hover-element>
               {%- else -%}
-                <a class="hotspot flex items-center justify-center absolute z-1 cursor-pointer"{% if product != blank %} href="{{ product.url }}" aria-label="{{ product.title | escape }}"{% else %} role="link" aria-disabled="true"{% endif %} aria-current="{% if forloop.first %}true{% else %}false{% endif %}" id="shopify-block-{{ block.id }}" {{ block.shopify_attributes }}>
+                <a
+                  class="hotspot flex items-center justify-center absolute z-1 cursor-pointer"
+                  {% if product != blank %}
+                    href="{{ product.url }}" aria-label="{{ product.title | escape }}"
+                  {% else %}
+                    role="link" aria-disabled="true"
+                  {% endif %}
+                  aria-current="{% if forloop.first %}true{% else %}false{% endif %}"
+                  id="shopify-block-{{ block.id }}"
+                  {{ block.shopify_attributes }}
+                >
                   <div class="hotspot__content hidden md:flex gap-2 items-center absolute pointer-events-none{% if block.settings.horizontal < 15 %} with-left{% elsif block.settings.horizontal > 85 %} with-right{% endif %}{% if block.settings.vertical > 70 %} with-bottom{% endif %}">
                     {%- if product.featured_media -%}
                       <div class="hidden lg:block media media--{{ settings.product_image_ratio }}{% unless settings.product_image_fill %} media--contain{% endunless %} relative overflow-hidden shrink-0">
-                        {{- product.featured_media | image_url: width: product.featured_media.width | image_tag: loading: 'lazy', widths: '180,360,540', is: 'lazy-image' -}}
+                        {{-
+                          product.featured_media
+                          | image_url: width: product.featured_media.width
+                          | image_tag: loading: 'lazy', widths: '180,360,540', is: 'lazy-image'
+                        -}}
                       </div>
                     {%- endif -%}
                     <div class="rte text-sm leading-none grid gap-2">
-                      <p class="horizontal-product__title lg:text-base lg:font-medium leading-tight">{{ product.title }}</p>
+                      <p class="horizontal-product__title lg:text-base lg:font-medium leading-tight">
+                        {{ product.title }}
+                      </p>
 
-                      {%- render 'product-price', product: product, placeholder: placeholder -%}
+                      {%- render 'product-price', product: product, use_variant: true, placeholder: placeholder -%}
                     </div>
                     {%- render 'icon', icon: 'caret', class: 'absolute' -%}
                   </div>
                 </a>
               {%- endif -%}
             {%- else -%}
-              <button type="button" disabled class="hotspot flex items-center justify-center absolute z-1 cursor-pointer" aria-label="{{ 'onboarding.product_title' | t | escape }}" aria-disabled="true" aria-current="{% if forloop.first %}true{% else %}false{% endif %}" id="shopify-block-{{ block.id }}" {{ block.shopify_attributes }}></button>
+              <button
+                type="button"
+                disabled
+                class="hotspot flex items-center justify-center absolute z-1 cursor-pointer"
+                aria-label="{{ 'onboarding.product_title' | t | escape }}"
+                aria-disabled="true"
+                aria-current="{% if forloop.first %}true{% else %}false{% endif %}"
+                id="shopify-block-{{ block.id }}"
+                {{ block.shopify_attributes }}
+              ></button>
             {%- endif -%}
           {%- endfor -%}
         {%- endif -%}
@@ -554,9 +604,7 @@
     }
   ],
   "disabled_on": {
-    "templates": [
-      "password"
-    ]
+    "templates": ["password"]
   }
 }
 {% endschema %}

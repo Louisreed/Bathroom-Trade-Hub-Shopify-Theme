@@ -9,24 +9,7 @@
   assign vat_toggle_color = ''
 
   # Check customer tags and override colors accordingly
-  if customer and customer.tags contains 'hubpro-plus'
-    # HubPro Plus customer - use plus colors if available, otherwise fallback to default
-    if section.settings.hubpro_plus_color_background != blank
-      assign header_color_background = section.settings.hubpro_plus_color_background
-    endif
-    if section.settings.hubpro_plus_color_text != blank
-      assign header_color_text = section.settings.hubpro_plus_color_text
-    endif
-    if section.settings.hubpro_plus_transparent_color_text != blank
-      assign header_transparent_color_text = section.settings.hubpro_plus_transparent_color_text
-    endif
-    if section.settings.hubpro_plus_vat_toggle_text_color != blank
-      assign vat_toggle_text_color = section.settings.hubpro_plus_vat_toggle_text_color
-    endif
-    if section.settings.hubpro_plus_vat_toggle_color != blank
-      assign vat_toggle_color = section.settings.hubpro_plus_vat_toggle_color
-    endif
-  elsif customer and customer.tags contains 'hubpro-free'
+  if customer and customer.tags contains 'hubpro-free'
     # HubPro Free customer - use free colors if available, otherwise fallback to default
     if section.settings.hubpro_free_color_background != blank
       assign header_color_background = section.settings.hubpro_free_color_background

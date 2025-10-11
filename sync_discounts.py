@@ -506,30 +506,26 @@ class ShopifyDiscountSyncer:
 
         title_based_logic = "\n".join(title_logic_parts)
 
-        # Generate segment-based logic (for product previews)
-        segment_logic_parts = []
+        # Generate flat collection-based logic (for product previews - applies to ALL customers)
+        collection_logic_parts = []
 
-        # Group by customer segment
-        segments = ["diy", "hubpro-free", "hubpro-plus"]
+        # Use DIY segment as the basis for universal collection discounts
+        # These discounts apply to everyone regardless of login status
+        segment_discounts = []
 
-        for segment in segments:
-            segment_discounts = []
+        # Find all discounts tagged as DIY (which represent universal collection discounts)
+        for (tag, collection), discounts in discount_matrix.items():
+            if tag == "diy" or not tag:  # DIY or untagged discounts apply to everyone
+                for discount in discounts:
+                    segment_discounts.append(
+                        {
+                            "collection": collection,
+                            "percentage": int(discount["percentage"]),
+                            "title": discount["title"],
+                        }
+                    )
 
-            # Find all discounts for this segment
-            for (tag, collection), discounts in discount_matrix.items():
-                if (segment == "diy" and not tag) or (segment == tag):
-                    for discount in discounts:
-                        segment_discounts.append(
-                            {
-                                "collection": collection,
-                                "percentage": int(discount["percentage"]),
-                                "title": discount["title"],
-                            }
-                        )
-
-            if not segment_discounts:
-                continue
-
+        if segment_discounts:
             # Group by percentage for cleaner logic
             percentage_groups = {}
             for discount in segment_discounts:
@@ -538,57 +534,43 @@ class ShopifyDiscountSyncer:
                     percentage_groups[pct] = []
                 percentage_groups[pct].append(discount["collection"])
 
-            # Generate segment logic
-            segment_conditions = []
+            # Generate flat collection conditions (no segment check)
+            collection_conditions = []
             for percentage, collections in sorted(
                 percentage_groups.items(), reverse=True
             ):
-                collection_conditions = []
+                coll_conditions = []
                 for collection in collections:
-                    collection_conditions.append(f"collection contains '{collection}'")
+                    coll_conditions.append(f"collection contains '{collection}'")
 
-                condition = " or ".join(collection_conditions)
-                segment_conditions.append(
+                condition = " or ".join(coll_conditions)
+                collection_conditions.append(
                     f"""
-    {"if" if not segment_conditions else "elsif"} {condition}
+    {"if" if not collection_conditions else "elsif"} {condition}
       assign percentage = {percentage}"""
                 )
 
-            if segment_conditions:
-                segment_logic_parts.append(
-                    f"""
-  {"if" if not segment_logic_parts else "elsif"} segment == '{segment}'
-{"".join(segment_conditions)}
-    endif"""
-                )
+            collection_logic_parts = collection_conditions
 
-                # Add title-based logic to template
+        # Add title-based logic to template
         if title_logic_parts:
             template_parts.extend(title_logic_parts)
             # Close the nested title logic with endif
             template_parts.append("    endif")
 
-        # Add segment-based logic as direct elsif statements
-        if segment_logic_parts:
+        # Add flat collection-based logic (no segment filtering - applies to ALL customers)
+        if collection_logic_parts:
             template_parts.extend(
                 [
                     "",
-                    "  # Handle collection and segment-based lookups (for product previews)",
+                    "  # Handle collection-based lookups (applies to ALL customers)",
+                    "  elsif collection != blank",
                 ]
             )
-            # Convert segment "if" statements to "elsif" statements and add them
-            for i, part in enumerate(segment_logic_parts):
-                if i == 0:
-                    # First segment: convert "if" to "elsif"
-                    modified_part = part.replace(
-                        "  if segment ==", "  elsif segment =="
-                    )
-                else:
-                    # Subsequent segments: keep as "elsif"
-                    modified_part = part.replace(
-                        "  if segment ==", "  elsif segment =="
-                    )
-                template_parts.append(modified_part)
+            # Add flat collection conditions
+            template_parts.extend(collection_logic_parts)
+            # Close the collection logic
+            template_parts.append("    endif")
 
         # Close the main if/elsif structure with a single endif
         template_parts.extend(["  endif", "", "  echo percentage", "-%}"])

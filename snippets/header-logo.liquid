@@ -2,7 +2,7 @@
   Renders responsive header logo with white variants, HubPro customer logo variants, and SEO optimization.
 
   Displays site logo with mobile/desktop versions, overlay support, customer-specific logos, and text fallback.
-  Checks customer tags for 'hubpro-plus' and 'hubpro-free' to display corresponding logos.
+  Checks customer tags for 'hubpro-free' to display corresponding logos.
 
   @param {boolean} [logo_h1] - Wrap logo in H1 tag for homepage SEO
 
@@ -18,21 +18,7 @@
   assign white_logo_mobile = settings.white_logo_mobile | default: white_logo
 
   # Check customer tags and override logos accordingly
-  if customer and customer.tags contains 'hubpro-plus'
-    # HubPro Plus customer - use plus logos if available, otherwise fallback to default
-    if settings.hubpro_plus_logo != blank
-      assign logo = settings.hubpro_plus_logo
-    endif
-    if settings.hubpro_plus_logo_mobile != blank
-      assign logo_mobile = settings.hubpro_plus_logo_mobile | default: logo
-    endif
-    if settings.hubpro_plus_white_logo != blank
-      assign white_logo = settings.hubpro_plus_white_logo
-    endif
-    if settings.hubpro_plus_white_logo_mobile != blank
-      assign white_logo_mobile = settings.hubpro_plus_white_logo_mobile | default: white_logo
-    endif
-  elsif customer and customer.tags contains 'hubpro-free'
+  if customer and customer.tags contains 'hubpro-free'
     # HubPro Free customer - use free logos if available, otherwise fallback to default
     if settings.hubpro_free_logo != blank
       assign logo = settings.hubpro_free_logo
