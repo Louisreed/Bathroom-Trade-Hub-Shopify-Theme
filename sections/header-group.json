@@ -17,7 +17,7 @@
         "announcement-1": {
           "type": "announcement",
           "settings": {
-            "icon": "truck",
+            "icon": "sale",
             "text": "YOU HAVE ACCESS TO 10% OFF AT CHECKOUT",
             "link": "",
             "hide_icon_mobile": true,
