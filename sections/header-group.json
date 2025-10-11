@@ -41,7 +41,7 @@
             "highlighted_scribble": "circle",
             "show_for_logged_out": true,
             "show_for_logged_in": true,
-            "show_for_hubpro_free": true
+            "show_for_hubpro_free": false
           }
         },
         "announcement-2": {
@@ -56,7 +56,7 @@
             "highlighted_scribble": "circle",
             "show_for_logged_out": true,
             "show_for_logged_in": true,
-            "show_for_hubpro_free": true
+            "show_for_hubpro_free": false
           }
         }
       },
