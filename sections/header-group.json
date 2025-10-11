@@ -73,7 +73,7 @@
         "announcement_position": "center",
         "autoplay": true,
         "autoplay_speed": 5,
-        "show_navigation": true,
+        "show_navigation": false,
         "color_text": "#fafafa",
         "color_background": "#2acaf1",
         "gradient_background": "",
