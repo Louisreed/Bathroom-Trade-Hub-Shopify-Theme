@@ -17,7 +17,7 @@
         "announcement-1": {
           "type": "announcement",
           "settings": {
-            "icon": "check_mark",
+            "icon": "award",
             "text": "<strong>YOU HAVE ACCESS TO 10% OFF AT CHECKOUT</strong>",
             "link": "",
             "hide_icon_mobile": true,
