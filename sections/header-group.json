@@ -17,10 +17,10 @@
         "announcement-1": {
           "type": "announcement",
           "settings": {
-            "icon": "wash",
+            "icon": "wallet",
             "text": "<strong>YOU HAVE ACCESS TO 10% OFF AT CHECKOUT</strong>",
             "link": "",
-            "hide_icon_mobile": true,
+            "hide_icon_mobile": false,
             "text_mobile": "",
             "highlighted_text": "none",
             "highlighted_scribble": "circle",
