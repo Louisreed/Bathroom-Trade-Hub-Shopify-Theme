@@ -191,18 +191,6 @@
             "overlay_opacity": 30
           }
         },
-        "collection_aNjYqW": {
-          "type": "collection",
-          "settings": {
-            "collection": "suite-bundles",
-            "title": "Suite Sets",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
         "collection_pPTPh3": {
           "type": "collection",
           "settings": {
@@ -222,6 +210,19 @@
             "collection": "clearance-goods",
             "image": "shopify://shop_images/Screenshot_2025-10-09_at_8.48.21_am.png",
             "title": "Clearance",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_aNjYqW": {
+          "type": "collection",
+          "disabled": true,
+          "settings": {
+            "collection": "suite-bundles",
+            "title": "Suite Sets",
             "description": "",
             "overlay_content": true,
             "color_text": "#ffffff",
@@ -267,9 +268,9 @@
         "collection_QxAaKp",
         "collection_dMEG7G",
         "collection_RF6zQB",
-        "collection_aNjYqW",
         "collection_pPTPh3",
         "collection_N6deye",
+        "collection_aNjYqW",
         "collection_RDPQFx",
         "collection_HayVhw"
       ],
