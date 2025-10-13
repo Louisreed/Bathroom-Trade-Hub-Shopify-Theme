@@ -42,7 +42,7 @@
         "show_navigation": true,
         "image_height": "750px",
         "content_width": "large",
-        "image_height_mobile": "auto",
+        "image_height_mobile": "adapt",
         "accessibility_info": "",
         "color_text": "#ffffff",
         "color_background": "#ffffff",
