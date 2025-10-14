@@ -213,7 +213,7 @@
             "image": "shopify://shop_images/Screenshot_2025-10-09_at_8.48.21_am.png",
             "title": "",
             "description": "",
-            "overlay_content": true,
+            "overlay_content": false,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 0
