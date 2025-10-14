@@ -108,6 +108,7 @@
         },
         "menu_tag_gJEr7d": {
           "type": "menu_tag",
+          "name": "HUBPROTAG",
           "settings": {
             "menu_handle": "hubPRO",
             "tag_text": "EXCLUSIVE",
@@ -118,6 +119,7 @@
         },
         "menu_tag_gTBEJx": {
           "type": "menu_tag",
+          "name": "TILINGTAG",
           "settings": {
             "menu_handle": "Tiling-Consumables",
             "tag_text": "COMING SOON!",
@@ -137,6 +139,7 @@
         },
         "menu_tag_A69H4n": {
           "type": "menu_tag",
+          "name": "HUBCHOICETAG",
           "settings": {
             "menu_handle": "hubchoice",
             "tag_text": "featured",
@@ -157,6 +160,7 @@
         },
         "menu_tag_rAQQTm": {
           "type": "menu_tag",
+          "name": "CLEARANCETAG",
           "settings": {
             "menu_handle": "clearance",
             "tag_text": "hurry!",
@@ -274,7 +278,6 @@
         "mega_menu_rgQ6Xp": {
           "type": "mega_menu",
           "name": "HubESSENTIALS",
-          "disabled": true,
           "settings": {
             "menu_title": "HubESSENTIALS",
             "menu_width": "medium",
