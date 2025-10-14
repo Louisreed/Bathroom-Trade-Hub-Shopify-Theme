@@ -413,7 +413,7 @@
       ],
       "name": "t:sections.collage.name",
       "settings": {
-        "heading": "TILES ARE OUT.. PANELS ARE IN!",
+        "heading": "<em>Say goodbye to grout forever!</em>",
         "heading_size": "title-md",
         "heading_alignment": "text-left md:items-end md:flex-row",
         "heading_tag": "h2",
@@ -423,7 +423,7 @@
         "button_link": "shopify://pages/cladworks-walls",
         "button_external": false,
         "button_icon": true,
-        "highlighted_text": "none",
+        "highlighted_text": "half_text",
         "highlighted_scribble": "circle",
         "color_text": "",
         "color_background": "",
