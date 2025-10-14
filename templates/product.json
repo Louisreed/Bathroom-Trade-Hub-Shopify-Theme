@@ -504,7 +504,7 @@
         "divider": false,
         "full_width": false,
         "rounded": true,
-        "hide_for_hubpro_members": true,
+        "hide_for_hubpro_members": false,
         "enable_parallax": true
       }
     },
