@@ -279,11 +279,11 @@
           "type": "mega_menu",
           "name": "HubESSENTIALS",
           "settings": {
-            "menu_title": "HubESSENTIALS",
+            "menu_title": "SUPER DEALS!",
             "menu_width": "medium",
             "show_menu_image": true,
             "button_label": "",
-            "button_link": "shopify://pages/hubpro",
+            "button_link": "shopify://collections/hubessentials",
             "promo_image_1": "shopify://shop_images/HubPRO-Logo_2x_e6dcba64-cc06-42a4-9c2f-e5ad1d22ea95.png",
             "promo_image_ratio_1": "square",
             "promo_heading_1": "NEEDS CHANGING",
