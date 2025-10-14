@@ -140,9 +140,9 @@
           "settings": {
             "menu_handle": "hubchoice",
             "tag_text": "featured",
-            "background_color": "#434343",
+            "background_color": "#47c8f5",
             "text_color": "#ffffff",
-            "tag_style": "pill"
+            "tag_style": "rounded"
           }
         },
         "menu_tag_F6tjLe": {
