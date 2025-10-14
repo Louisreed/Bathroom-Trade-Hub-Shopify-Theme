@@ -211,12 +211,12 @@
           "settings": {
             "collection": "clearance-goods",
             "image": "shopify://shop_images/Screenshot_2025-10-09_at_8.48.21_am.png",
-            "title": "Clearance",
+            "title": "",
             "description": "",
             "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
-            "overlay_opacity": 30
+            "overlay_opacity": 0
           }
         },
         "collection_aNjYqW": {
