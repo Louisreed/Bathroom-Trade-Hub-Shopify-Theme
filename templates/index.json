@@ -113,7 +113,7 @@
             "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
-            "overlay_opacity": 30
+            "overlay_opacity": 0
           }
         },
         "collection_GPAfKx": {
@@ -126,7 +126,7 @@
             "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
-            "overlay_opacity": 30
+            "overlay_opacity": 0
           }
         },
         "collection_kFNW63": {
@@ -138,7 +138,7 @@
             "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
-            "overlay_opacity": 30
+            "overlay_opacity": 24
           }
         },
         "collection_DEMPHt": {
@@ -149,9 +149,9 @@
             "title": "Showering",
             "description": "",
             "overlay_content": true,
-            "color_text": "#ffffff",
+            "color_text": "#424242",
             "color_overlay": "#000000",
-            "overlay_opacity": 30
+            "overlay_opacity": 0
           }
         },
         "collection_6AqmeH": {
@@ -164,7 +164,7 @@
             "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
-            "overlay_opacity": 30
+            "overlay_opacity": 0
           }
         },
         "collection_QxAaKp": {
@@ -177,7 +177,7 @@
             "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
-            "overlay_opacity": 30
+            "overlay_opacity": 0
           }
         },
         "collection_RF6zQB": {
@@ -190,7 +190,7 @@
             "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
-            "overlay_opacity": 30
+            "overlay_opacity": 0
           }
         },
         "collection_pPTPh3": {
@@ -201,9 +201,9 @@
             "title": "Consumables & Tools",
             "description": "",
             "overlay_content": true,
-            "color_text": "#ffffff",
+            "color_text": "#424242",
             "color_overlay": "#000000",
-            "overlay_opacity": 30
+            "overlay_opacity": 5
           }
         },
         "collection_N6deye": {
