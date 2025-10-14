@@ -68,11 +68,11 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "Sign up and get your trade benefits..",
+            "heading": "<em>Extra 10% off your order!</em>",
             "heading_size": "text-2xl lg:text-3xl",
             "heading_tag": "h2",
             "highlighted_text": "scribble",
-            "highlighted_scribble": "basic-underline"
+            "highlighted_scribble": "circle"
           }
         },
         "spacing-1": {
@@ -128,13 +128,12 @@
         "media",
         "floating"
       ],
-      "disabled": true,
       "settings": {
         "mode": "enabled",
         "only_homepage": true,
         "only_visitor": true,
         "delay": 7,
-        "expiry": 30,
+        "expiry": 1,
         "text_alignment": "left",
         "content_position": "right-0",
         "color_drawer_text": "#171717",
