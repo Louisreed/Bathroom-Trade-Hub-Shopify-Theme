@@ -64,29 +64,43 @@
     "collection_list_TfCige": {
       "type": "collection-list",
       "blocks": {
-        "collection_bB4cHT": {
+        "collection_dMEG7G": {
           "type": "collection",
           "settings": {
-            "collection": "all-furniture",
-            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.03.33_am.png",
-            "title": "Furniture",
+            "collection": "suite-bundles",
+            "image": "shopify://shop_images/SUITE285Artboard_1_2x_e0131c49-6147-468e-ba06-f292e6345894.png",
+            "title": "Suite Sets",
             "description": "",
             "overlay_content": true,
-            "color_text": "#ffffff",
+            "color_text": "#424242",
             "color_overlay": "#000000",
-            "overlay_opacity": 30
+            "overlay_opacity": 9
           }
         },
         "collection_UwG9AE": {
           "type": "collection",
           "settings": {
             "collection": "wall-panels",
+            "image": "shopify://shop_images/panel14Artboard_1_2x_c856b7ad-5abc-46af-8e51-23d64a09cc38.png",
             "title": "Wall Panels",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#424242",
+            "color_overlay": "#000000",
+            "overlay_opacity": 0
+          }
+        },
+        "collection_bB4cHT": {
+          "type": "collection",
+          "settings": {
+            "collection": "all-furniture",
+            "image": "shopify://shop_images/basin96Artboard_1_2x_3fd237c4-be91-4b48-bce5-82e392f363c1.png",
+            "title": "Furniture",
             "description": "",
             "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
-            "overlay_opacity": 30
+            "overlay_opacity": 0
           }
         },
         "collection_E79gA3": {
@@ -159,18 +173,6 @@
             "collection": "all-basins",
             "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.06.50_am.png",
             "title": "Basins",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 30
-          }
-        },
-        "collection_dMEG7G": {
-          "type": "collection",
-          "settings": {
-            "collection": "suite-bundles",
-            "title": "Suite Sets",
             "description": "",
             "overlay_content": true,
             "color_text": "#ffffff",
@@ -258,15 +260,15 @@
         }
       },
       "block_order": [
-        "collection_bB4cHT",
+        "collection_dMEG7G",
         "collection_UwG9AE",
+        "collection_bB4cHT",
         "collection_E79gA3",
         "collection_GPAfKx",
         "collection_kFNW63",
         "collection_DEMPHt",
         "collection_6AqmeH",
         "collection_QxAaKp",
-        "collection_dMEG7G",
         "collection_RF6zQB",
         "collection_pPTPh3",
         "collection_N6deye",
