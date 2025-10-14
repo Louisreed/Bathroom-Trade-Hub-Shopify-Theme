@@ -151,7 +151,7 @@
         "menu_tag_F6tjLe": {
           "type": "menu_tag",
           "settings": {
-            "menu_handle": "SUPER DEALS!",
+            "menu_handle": "super-deals!",
             "tag_text": "UP TO 65% OFF!",
             "background_color": "#89f12a",
             "text_color": "#ffffff",
