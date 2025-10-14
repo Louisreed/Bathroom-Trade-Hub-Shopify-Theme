@@ -221,15 +221,15 @@
         },
         "collection_aNjYqW": {
           "type": "collection",
-          "disabled": true,
           "settings": {
-            "collection": "suite-bundles",
-            "title": "Suite Sets",
+            "collection": "lawton-1",
+            "image": "shopify://shop_images/bannerfbArtboard_1_2x_1cb4f117-b799-46d4-b287-f175b6a1e2af.png",
+            "title": "",
             "description": "",
             "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
-            "overlay_opacity": 30
+            "overlay_opacity": 0
           }
         },
         "collection_RDPQFx": {
