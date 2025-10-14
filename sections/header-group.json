@@ -148,9 +148,9 @@
         "menu_tag_F6tjLe": {
           "type": "menu_tag",
           "settings": {
-            "menu_handle": "SUPER DEALS!",
+            "menu_handle": "SUPER-DEALS!",
             "tag_text": "UP TO 65% OFF!",
-            "background_color": "#2acaf1",
+            "background_color": "#89f12a",
             "text_color": "#ffffff",
             "tag_style": "pill"
           }
