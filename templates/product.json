@@ -60,10 +60,6 @@
             "color_scheme": "accent-1"
           }
         },
-        "appstle_bundles_appstle_discounted_pricing_bundle_AKJmjY": {
-          "type": "shopify://apps/appstle-bundles/blocks/appstle-discounted-pricing-bundle/8909921b-2d24-4d68-9b12-9d045d3dcb0a",
-          "settings": {}
-        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -118,7 +114,6 @@
         "countdown",
         "variant_picker",
         "inventory",
-        "appstle_bundles_appstle_discounted_pricing_bundle_AKJmjY",
         "buy_buttons",
         "pickup_availability",
         "description",
@@ -485,6 +480,7 @@
         "text_cqepUW",
         "button_7YjPJ7"
       ],
+      "disabled": true,
       "name": "HubPRO Banner",
       "settings": {
         "image": "shopify://shop_images/merchant-taking-sale-with-chip-and-swipe-reader.jpg",
