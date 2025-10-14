@@ -64,6 +64,19 @@
     "collection_list_TfCige": {
       "type": "collection-list",
       "blocks": {
+        "collection_aNjYqW": {
+          "type": "collection",
+          "settings": {
+            "collection": "hubessentials",
+            "image": "shopify://shop_images/bannerfbArtboard_1_2x_52d7b681-f40b-49a6-aa3e-110b961236a3.png",
+            "title": "SUPER DEALS",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#fafafa",
+            "color_overlay": "#000000",
+            "overlay_opacity": 0
+          }
+        },
         "collection_dMEG7G": {
           "type": "collection",
           "settings": {
@@ -219,19 +232,6 @@
             "overlay_opacity": 0
           }
         },
-        "collection_aNjYqW": {
-          "type": "collection",
-          "settings": {
-            "collection": "lawton-1",
-            "image": "shopify://shop_images/bannerfbArtboard_1_2x_1cb4f117-b799-46d4-b287-f175b6a1e2af.png",
-            "title": "",
-            "description": "",
-            "overlay_content": true,
-            "color_text": "#ffffff",
-            "color_overlay": "#000000",
-            "overlay_opacity": 0
-          }
-        },
         "collection_RDPQFx": {
           "type": "collection",
           "disabled": true,
@@ -260,6 +260,7 @@
         }
       },
       "block_order": [
+        "collection_aNjYqW",
         "collection_dMEG7G",
         "collection_UwG9AE",
         "collection_bB4cHT",
@@ -272,7 +273,6 @@
         "collection_RF6zQB",
         "collection_pPTPh3",
         "collection_N6deye",
-        "collection_aNjYqW",
         "collection_RDPQFx",
         "collection_HayVhw"
       ],
