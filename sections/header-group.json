@@ -319,7 +319,7 @@
             "promo_heading_4": "SHOWER DEALS",
             "promo_subtext_4": "",
             "promo_overlay_content_4": true,
-            "promo_link_4": "",
+            "promo_link_4": "shopify://collections/shower-deals",
             "promo_tag_4": "",
             "promo_color_text_4": "#ffffff",
             "promo_color_overlay_4": "#000000",
