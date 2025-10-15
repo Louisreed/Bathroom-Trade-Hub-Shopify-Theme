@@ -226,8 +226,8 @@
             "image": "shopify://shop_images/Screenshot_2025-10-09_at_8.48.21_am.png",
             "title": "",
             "description": "",
-            "overlay_content": false,
-            "color_text": "#ffffff",
+            "overlay_content": true,
+            "color_text": "#424242",
             "color_overlay": "#000000",
             "overlay_opacity": 0
           }
