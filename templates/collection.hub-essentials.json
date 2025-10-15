@@ -93,7 +93,7 @@
         "subheading": {
           "type": "subheading",
           "settings": {
-            "subheading": "NEED IT FAST?",
+            "subheading": "Introducing",
             "subheading_size": "subtitle-lg",
             "secondary_color": true
           }
@@ -101,7 +101,7 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "HubESSENTIALS",
+            "heading": "SUPER DEALS",
             "heading_size": "title-xl tracking-heading",
             "heading_tag": "h2",
             "highlighted_text": "none",
@@ -111,7 +111,7 @@
         "text_DQ8ywC": {
           "type": "text",
           "settings": {
-            "text": "<p>Browse our range of In-stock items at our warehouse for same-day delivery or collection.  <em><strong>#SHOPLOCAL</strong></em></p>",
+            "text": "<p>Great products at even better prices... <em>Don't miss out!</em></p>",
             "text_font": "body",
             "text_size": "subtext-md",
             "text_max_size": 32,
