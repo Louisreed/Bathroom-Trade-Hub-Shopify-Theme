@@ -95,7 +95,7 @@
           "settings": {
             "subheading": "Introducing",
             "subheading_size": "subtitle-lg",
-            "secondary_color": true
+            "secondary_color": false
           }
         },
         "heading": {
@@ -149,8 +149,8 @@
         "color_button_text": "#171717",
         "color_button_background": "#ffffff",
         "color_button_gradient": "",
-        "color_overlay": "#424242",
-        "overlay_opacity": 100,
+        "color_overlay": "#47c8f5",
+        "overlay_opacity": 75,
         "padding_top": 0,
         "padding_bottom": 0,
         "divider": false,
