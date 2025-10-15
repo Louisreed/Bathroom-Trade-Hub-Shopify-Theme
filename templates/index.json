@@ -936,7 +936,7 @@
         "gap": "large",
         "columns": 3,
         "columns_mobile": "1",
-        "swipe_on_mobile": true,
+        "swipe_on_mobile": false,
         "heading": "Supporting the Local Trade and DIY of Dorset!",
         "heading_size": "title-md",
         "heading_alignment": "text-center md:items-center",
