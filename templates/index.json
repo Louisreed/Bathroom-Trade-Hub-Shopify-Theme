@@ -214,7 +214,7 @@
             "title": "Consumables & Tools",
             "description": "",
             "overlay_content": true,
-            "color_text": "#424242",
+            "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 5
           }
