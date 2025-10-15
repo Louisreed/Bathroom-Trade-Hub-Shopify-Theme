@@ -314,6 +314,7 @@
       "blocks": {
         "image_rEAXEy": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "subheading": "",
             "heading": "",
@@ -360,6 +361,7 @@
         },
         "image_6tcMNC": {
           "type": "image",
+          "disabled": true,
           "settings": {
             "subheading": "",
             "heading": "",
