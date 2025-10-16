@@ -222,10 +222,11 @@
         "collection_mx96fm": {
           "type": "collection",
           "settings": {
-            "collection": "",
-            "title": "",
+            "collection": "wire-accessories",
+            "image": "shopify://shop_images/Screenshot_2025-10-16_at_11.37.39_am.png",
+            "title": "The Wire Range",
             "description": "",
-            "overlay_content": false,
+            "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 30
