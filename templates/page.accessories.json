@@ -257,6 +257,43 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_MtcMMD": {
+          "type": "collection",
+          "settings": {
+            "collection": "premium-black-accessories",
+            "image": "shopify://shop_images/Screenshot_2025-10-16_at_11.40.20_am.png",
+            "title": "The Premium Black Range",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_dwHkhK": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
+        "collection_mJMmME": {
+          "type": "collection",
+          "settings": {
+            "collection": "",
+            "title": "",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
@@ -264,7 +301,10 @@
         "collection_67Kwyr",
         "collection_mx96fm",
         "collection_ThE9w8",
-        "collection_VjVpJL"
+        "collection_VjVpJL",
+        "collection_MtcMMD",
+        "collection_dwHkhK",
+        "collection_mJMmME"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
