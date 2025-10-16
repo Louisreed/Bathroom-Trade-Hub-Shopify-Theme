@@ -287,10 +287,11 @@
         "collection_mJMmME": {
           "type": "collection",
           "settings": {
-            "collection": "",
-            "title": "",
+            "collection": "premium-brushed-nickel",
+            "image": "shopify://shop_images/Screenshot_2025-10-16_at_11.41.36_am.png",
+            "title": "The Premium Brushed Nickel Range",
             "description": "",
-            "overlay_content": false,
+            "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 30
