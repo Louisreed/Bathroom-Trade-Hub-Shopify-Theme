@@ -244,13 +244,27 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_VjVpJL": {
+          "type": "collection",
+          "settings": {
+            "collection": "premier-accessories",
+            "image": "shopify://shop_images/Screenshot_2025-10-16_at_11.39.15_am.png",
+            "title": "The Premium Chrome Range",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
         "collection_n3gGwq",
         "collection_67Kwyr",
         "collection_mx96fm",
-        "collection_ThE9w8"
+        "collection_ThE9w8",
+        "collection_VjVpJL"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
