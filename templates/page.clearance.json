@@ -268,7 +268,7 @@
         "products": [],
         "product_limit": 12,
         "columns": 4,
-        "carousel_on_desktop": false,
+        "carousel_on_desktop": true,
         "show_view_all": true,
         "columns_mobile": "2",
         "swipe_on_mobile": false,
