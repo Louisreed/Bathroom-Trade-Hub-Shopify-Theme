@@ -386,8 +386,8 @@
         "image_Ft7FdX": {
           "type": "image",
           "settings": {
-            "subheading": "",
-            "heading": "Shop Matt Black",
+            "subheading": "<strong>Shop Matt Black </strong>→",
+            "heading": "",
             "link": "shopify://collections/matt-black",
             "invert_subheading_heading": true,
             "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.58.06_am.png",
