@@ -389,7 +389,7 @@
             "subheading": "",
             "heading": "",
             "link": "shopify://collections/matt-black",
-            "invert_subheading_heading": false,
+            "invert_subheading_heading": true,
             "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.58.06_am.png",
             "image_ratio": "portrait",
             "content_position": "md:items-end md:justify-start",
