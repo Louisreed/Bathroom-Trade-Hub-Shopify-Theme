@@ -340,7 +340,7 @@
       "name": "t:sections.image-comparison.name",
       "settings": {
         "layout": "horizontal",
-        "image_height": "800px",
+        "image_height": "adapt",
         "image_height_mobile": "adapt",
         "heading": "BRUSHED BRASS VS MATT BLACK?",
         "heading_size": "title-md",
