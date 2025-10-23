@@ -343,8 +343,8 @@
             "heading": "",
             "link": "shopify://collections/brushed-brass",
             "invert_subheading_heading": true,
-            "image": "shopify://shop_images/brushedbrasslinkArtboard_1_2x_1f259b8a-756c-4e22-a97b-b961491d2d90.png",
-            "image_ratio": "square",
+            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.08.57_am.png",
+            "image_ratio": "portrait",
             "content_position": "md:items-end md:justify-start",
             "text_alignment": "left",
             "image_ratio_mobile": "portrait",
@@ -355,8 +355,8 @@
             "color_text": "#ffffff",
             "color_highlight": "",
             "gradient_highlight": "",
-            "color_overlay": "#171717",
-            "overlay_opacity": 10
+            "color_overlay": "#bba14f",
+            "overlay_opacity": 100
           }
         },
         "image_6tcMNC": {
@@ -390,7 +390,7 @@
             "heading": "",
             "link": "shopify://collections/matt-black",
             "invert_subheading_heading": true,
-            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.58.06_am.png",
+            "image": "shopify://shop_images/image_91bfd24d-82e5-4e52-a61a-b0e520c38d18.jpg",
             "image_ratio": "portrait",
             "content_position": "md:items-end md:justify-start",
             "text_alignment": "left",
@@ -403,7 +403,7 @@
             "color_highlight": "",
             "gradient_highlight": "",
             "color_overlay": "#171717",
-            "overlay_opacity": 10
+            "overlay_opacity": 100
           }
         }
       },
@@ -419,8 +419,8 @@
         "heading_size": "title-md",
         "heading_alignment": "text-left md:items-end md:flex-row",
         "heading_tag": "h2",
-        "subheading": "",
-        "description": "<p>Looking for wall panels that offer both high-end luxury and affordability? Cladworks Walls are the perfect choice for you. </p><p>These panels are far more than budget-friendly; they embody premium quality at its finest. With six ranges to choose from, there's sure to be a panel for everyones taste.</p>",
+        "subheading": "Get the looks without the price tag!",
+        "description": "",
         "button_label": "",
         "button_link": "",
         "button_external": false,
