@@ -342,7 +342,7 @@
             "subheading": "<strong>Brushed Brass</strong>",
             "heading": "",
             "link": "shopify://collections/brushed-brass",
-            "invert_subheading_heading": false,
+            "invert_subheading_heading": true,
             "image": "shopify://shop_images/brushedbrasslinkArtboard_1_2x_1f259b8a-756c-4e22-a97b-b961491d2d90.png",
             "image_ratio": "square",
             "content_position": "md:items-end md:justify-start",
