@@ -309,6 +309,66 @@
         "rounded": false
       }
     },
+    "image_comparison_ymhEpM": {
+      "type": "image-comparison",
+      "blocks": {
+        "image_z4i8pc": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.08.57_am_aa36e833-832e-4f30-8d06-1202ec2144b6.png",
+            "subheading": "",
+            "heading": "",
+            "content_position": "end",
+            "color_text": "#ffffff"
+          }
+        },
+        "image_89r7yM": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/image_04794d1c-b35f-400f-8a28-2b35a1259986.jpg",
+            "subheading": "",
+            "heading": "",
+            "content_position": "end",
+            "color_text": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "image_z4i8pc",
+        "image_89r7yM"
+      ],
+      "name": "t:sections.image-comparison.name",
+      "settings": {
+        "layout": "horizontal",
+        "image_height": "adapt",
+        "image_height_mobile": "adapt",
+        "heading": "BRUSHED BRASS VS MATT BLACK?",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "Get the looks without the price tag!",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "#47c8f5",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
     "collage_Up3KWt": {
       "type": "collage",
       "blocks": {
@@ -442,66 +502,6 @@
         "full_width": false,
         "rounded": false,
         "enable_parallax": true
-      }
-    },
-    "image_comparison_ymhEpM": {
-      "type": "image-comparison",
-      "blocks": {
-        "image_z4i8pc": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.08.57_am_aa36e833-832e-4f30-8d06-1202ec2144b6.png",
-            "subheading": "",
-            "heading": "",
-            "content_position": "end",
-            "color_text": "#ffffff"
-          }
-        },
-        "image_89r7yM": {
-          "type": "image",
-          "settings": {
-            "image": "shopify://shop_images/image_04794d1c-b35f-400f-8a28-2b35a1259986.jpg",
-            "subheading": "",
-            "heading": "",
-            "content_position": "end",
-            "color_text": "#ffffff"
-          }
-        }
-      },
-      "block_order": [
-        "image_z4i8pc",
-        "image_89r7yM"
-      ],
-      "name": "t:sections.image-comparison.name",
-      "settings": {
-        "layout": "horizontal",
-        "image_height": "adapt",
-        "image_height_mobile": "adapt",
-        "heading": "BRUSHED BRASS VS MATT BLACK?",
-        "heading_size": "title-md",
-        "heading_alignment": "text-center md:items-center",
-        "heading_tag": "h2",
-        "subheading": "Get the looks without the price tag!",
-        "description": "",
-        "button_label": "",
-        "button_link": "",
-        "button_external": false,
-        "button_icon": true,
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "#47c8f5",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 72,
-        "padding_bottom": 72,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
       }
     },
     "slideshow": {
@@ -2519,8 +2519,8 @@
   "order": [
     "slideshow_CfARa3",
     "collection_list_TfCige",
-    "collage_Up3KWt",
     "image_comparison_ymhEpM",
+    "collage_Up3KWt",
     "slideshow",
     "featured_collection_JenbzF",
     "multicolumn_zT87yk",
