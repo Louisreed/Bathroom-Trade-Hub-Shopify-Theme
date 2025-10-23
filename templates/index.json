@@ -339,12 +339,12 @@
         "image_rCTwpT": {
           "type": "image",
           "settings": {
-            "subheading": "",
+            "subheading": "<strong>Brushed Brass</strong>",
             "heading": "",
-            "link": "",
+            "link": "shopify://collections",
             "invert_subheading_heading": false,
-            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.58.29_am.png",
-            "image_ratio": "portrait",
+            "image": "shopify://shop_images/brushedbrasslinkArtboard_1_2x_8908c650-261c-4cde-b66e-5693b3bd94d3.png",
+            "image_ratio": "square",
             "content_position": "md:items-end md:justify-start",
             "text_alignment": "left",
             "image_ratio_mobile": "portrait",
