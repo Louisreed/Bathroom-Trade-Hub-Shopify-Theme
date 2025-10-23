@@ -862,6 +862,45 @@
         "parallax_direction": "zoom"
       }
     },
+    "featured_collection_JenbzF": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.name",
+      "settings": {
+        "collection": "cladworks-pvc-panels",
+        "products": [
+          "vox-linerio-l-line-slat-panels-natural",
+          "nature-panel-brown-cuneo-oak",
+          "vox-linerio-s-line-slat-panels-white"
+        ],
+        "product_limit": 6,
+        "columns": 4,
+        "carousel_on_desktop": true,
+        "show_view_all": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "Featured collection",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
     "multicolumn_zT87yk": {
       "type": "multicolumn",
       "blocks": {
@@ -2494,6 +2533,7 @@
     "collage_Up3KWt",
     "image_with_text_F6y8TE",
     "slideshow",
+    "featured_collection_JenbzF",
     "multicolumn_zT87yk",
     "17548300328275163b",
     "custom_section_4yjtnX",
