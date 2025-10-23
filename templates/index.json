@@ -427,7 +427,7 @@
         "button_icon": true,
         "highlighted_text": "half_text",
         "highlighted_scribble": "circle",
-        "color_text": "",
+        "color_text": "#47c8f5",
         "color_background": "",
         "gradient_background": "",
         "color_highlight": "",
