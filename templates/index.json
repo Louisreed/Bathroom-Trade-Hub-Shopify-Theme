@@ -315,7 +315,7 @@
         "image_z4i8pc": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.08.57_am_aa36e833-832e-4f30-8d06-1202ec2144b6.png",
+            "image": "shopify://shop_images/IN10-10mm-Shower-Wetroom-Glass-Panel-400mm-Brushed-Brass-Wall-Profile-1.jpg",
             "subheading": "",
             "heading": "",
             "content_position": "end",
@@ -325,7 +325,7 @@
         "image_89r7yM": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/image_04794d1c-b35f-400f-8a28-2b35a1259986.jpg",
+            "image": "shopify://shop_images/scudo-matt-black-6mm-bath-screen-lifestyle.jpg",
             "subheading": "",
             "heading": "",
             "content_position": "end",
@@ -340,7 +340,7 @@
       "name": "t:sections.image-comparison.name",
       "settings": {
         "layout": "horizontal",
-        "image_height": "adapt",
+        "image_height": "800px",
         "image_height_mobile": "adapt",
         "heading": "BRUSHED BRASS VS MATT BLACK?",
         "heading_size": "title-md",
