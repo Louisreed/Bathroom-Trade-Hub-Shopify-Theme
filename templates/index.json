@@ -343,7 +343,7 @@
             "heading": "",
             "link": "shopify://collections",
             "invert_subheading_heading": false,
-            "image": "shopify://shop_images/brushedbrasslinkArtboard_1_2x_8908c650-261c-4cde-b66e-5693b3bd94d3.png",
+            "image": "shopify://shop_images/brushedbrasslinkArtboard_1_2x_1f259b8a-756c-4e22-a97b-b961491d2d90.png",
             "image_ratio": "square",
             "content_position": "md:items-end md:justify-start",
             "text_alignment": "left",
@@ -415,7 +415,7 @@
       ],
       "name": "t:sections.collage.name",
       "settings": {
-        "heading": "<em>Say goodbye to grout forever!</em>",
+        "heading": "BRUSHED BRASS VS MATT BLACK?",
         "heading_size": "title-md",
         "heading_alignment": "text-left md:items-end md:flex-row",
         "heading_tag": "h2",
