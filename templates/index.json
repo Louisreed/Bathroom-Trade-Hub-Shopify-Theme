@@ -443,64 +443,54 @@
         "enable_parallax": true
       }
     },
-    "image_with_text_F6y8TE": {
-      "type": "image-with-text",
+    "image_comparison_ymhEpM": {
+      "type": "image-comparison",
       "blocks": {
-        "heading_RMmy73": {
-          "type": "heading",
+        "image_z4i8pc": {
+          "type": "image",
           "settings": {
-            "heading": "TILES ARE OUT.. PANELS ARE IN!",
-            "heading_size": "h2",
-            "heading_tag": "h2",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
+            "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.08.57_am_aa36e833-832e-4f30-8d06-1202ec2144b6.png",
+            "subheading": "",
+            "heading": "",
+            "content_position": "end",
+            "color_text": "#ffffff"
           }
         },
-        "text_7TEK4k": {
-          "type": "text",
+        "image_89r7yM": {
+          "type": "image",
           "settings": {
-            "text": "<p>Looking for wall panels that offer both high-end luxury and affordability? Cladworks Walls are the perfect choice for you. </p><p>These panels are far more than budget-friendly; they embody premium quality at its finest. With six ranges to choose from, there's sure to be a panel for everyones taste.</p>",
-            "text_font": "body",
-            "text_size": "subtext-md",
-            "text_max_size": 32,
-            "text_line_height": 1.6,
-            "text_letter_spacing": 0,
-            "text_capitalize": false,
-            "secondary_color": false,
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "button_wLTDhV": {
-          "type": "button",
-          "settings": {
-            "button_label": "SHOP THE RANGE",
-            "button_link": "shopify://pages/cladworks-walls",
-            "button_style": "primary",
-            "button_size": "md",
-            "button_external": false,
-            "button_icon": true
+            "image": "shopify://shop_images/image_04794d1c-b35f-400f-8a28-2b35a1259986.jpg",
+            "subheading": "",
+            "heading": "",
+            "content_position": "end",
+            "color_text": "#ffffff"
           }
         }
       },
       "block_order": [
-        "heading_RMmy73",
-        "text_7TEK4k",
-        "button_wLTDhV"
+        "image_z4i8pc",
+        "image_89r7yM"
       ],
-      "disabled": true,
-      "name": "t:sections.image-with-text.name",
+      "name": "t:sections.image-comparison.name",
       "settings": {
-        "image_ratio": "adapt",
-        "image_width": "medium",
-        "layout": "image_first",
-        "text_alignment": "left",
-        "text_alignment_mobile": "left",
+        "layout": "horizontal",
+        "image_height": "adapt",
+        "image_height_mobile": "adapt",
+        "heading": "Image comparison",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
         "color_text": "",
         "color_background": "",
         "gradient_background": "",
-        "color_background_2": "",
-        "gradient_background_2": "",
         "color_highlight": "",
         "gradient_highlight": "",
         "color_button_text": "",
@@ -510,9 +500,7 @@
         "padding_bottom": 72,
         "divider": false,
         "full_width": false,
-        "rounded": false,
-        "hide_for_hubpro_members": false,
-        "enable_parallax": false
+        "rounded": false
       }
     },
     "slideshow": {
@@ -2531,7 +2519,7 @@
     "slideshow_CfARa3",
     "collection_list_TfCige",
     "collage_Up3KWt",
-    "image_with_text_F6y8TE",
+    "image_comparison_ymhEpM",
     "slideshow",
     "featured_collection_JenbzF",
     "multicolumn_zT87yk",
