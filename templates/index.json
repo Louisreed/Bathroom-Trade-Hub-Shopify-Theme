@@ -853,6 +853,14 @@
     "featured_collections_xLhWab": {
       "type": "featured-collections",
       "blocks": {
+        "collection_g3q74h": {
+          "type": "collection",
+          "settings": {
+            "collection": "choice-ceramics",
+            "products": [],
+            "title": "Choice"
+          }
+        },
         "collection_3tQptR": {
           "type": "collection",
           "settings": {
@@ -871,6 +879,7 @@
         }
       },
       "block_order": [
+        "collection_g3q74h",
         "collection_3tQptR",
         "collection_H7TMUd"
       ],
