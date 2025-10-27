@@ -665,7 +665,6 @@
         "collapsible_tab-3",
         "collapsible_tab-4"
       ],
-      "disabled": true,
       "settings": {
         "style": "with-border",
         "open_first_row": true,
