@@ -78,6 +78,7 @@
         },
         "description": {
           "type": "description",
+          "disabled": true,
           "settings": {
             "text_size": "text-base"
           }
@@ -138,6 +139,55 @@
         "padding_bottom": 84,
         "divider": false,
         "full_width": true,
+        "rounded": false
+      }
+    },
+    "product-details": {
+      "type": "product-details",
+      "blocks": {
+        "collapsible_tab-1": {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "none",
+            "iwidth": "custom",
+            "icon_width": 24,
+            "heading": "Product Description",
+            "content": "<p>Pronto features a soft square design that would make this a practical, stylish addition to any modern bathroom space. The open back pan includes the latest rimless hygienic technology and<br/>includes a toilet seat to offer outstanding value.</p><p>Projection: 650mmPan Fixing Kit Included: NoToilet Seat Included: YesToilet Pan Height: 390mmShape: RoundType: Close CoupleFloor to Centre of Soil Pipe: 180mm</p>",
+            "metafields": ""
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_tab-1"
+      ],
+      "settings": {
+        "style": "with-border",
+        "open_first_row": true,
+        "specifications_heading": "",
+        "heading": "Product details",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "#000000",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 16,
+        "padding_bottom": 28,
+        "divider": false,
+        "full_width": false,
         "rounded": false
       }
     },
@@ -611,91 +661,6 @@
         "enable_parallax": false
       }
     },
-    "product-details": {
-      "type": "product-details",
-      "blocks": {
-        "collapsible_tab-1": {
-          "type": "collapsible_tab",
-          "settings": {
-            "icon": "none",
-            "iwidth": "custom",
-            "icon_width": 24,
-            "heading": "Collapsible row 1",
-            "content": "<p>Collapsible content 1</p>",
-            "metafields": ""
-          }
-        },
-        "collapsible_tab-2": {
-          "type": "collapsible_tab",
-          "settings": {
-            "icon": "none",
-            "iwidth": "custom",
-            "icon_width": 24,
-            "heading": "Collapsible row 2",
-            "content": "<p>Collapsible content 2</p>",
-            "metafields": ""
-          }
-        },
-        "collapsible_tab-3": {
-          "type": "collapsible_tab",
-          "settings": {
-            "icon": "none",
-            "iwidth": "custom",
-            "icon_width": 24,
-            "heading": "Collapsible row 3",
-            "content": "<p>Collapsible content 3</p>",
-            "metafields": ""
-          }
-        },
-        "collapsible_tab-4": {
-          "type": "collapsible_tab",
-          "settings": {
-            "icon": "none",
-            "iwidth": "custom",
-            "icon_width": 24,
-            "heading": "Collapsible row 4",
-            "content": "<p>Collapsible content 4</p>",
-            "metafields": ""
-          }
-        }
-      },
-      "block_order": [
-        "collapsible_tab-1",
-        "collapsible_tab-2",
-        "collapsible_tab-3",
-        "collapsible_tab-4"
-      ],
-      "settings": {
-        "style": "with-border",
-        "open_first_row": true,
-        "specifications_heading": "",
-        "heading": "Product details",
-        "heading_size": "title-md",
-        "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "",
-        "button_label": "",
-        "button_link": "",
-        "button_external": false,
-        "button_icon": true,
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "#000000",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 28,
-        "padding_bottom": 28,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
-      }
-    },
     "faq": {
       "type": "faq",
       "blocks": {
@@ -862,13 +827,13 @@
   },
   "order": [
     "main-product",
+    "product-details",
     "help-drawer",
     "video-hero",
     "collage",
     "image_with_text_NhneBP",
     "scrolling-text",
     "image-with-text-2",
-    "product-details",
     "faq",
     "recently-viewed",
     "product-recommendations"
