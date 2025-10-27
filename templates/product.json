@@ -136,7 +136,7 @@
         "image_ratio_mobile": "adapt_first",
         "mobile_thumbnail": false,
         "padding_top": 0,
-        "padding_bottom": 84,
+        "padding_bottom": 8,
         "divider": false,
         "full_width": true,
         "rounded": false
@@ -151,7 +151,7 @@
             "icon": "none",
             "iwidth": "custom",
             "icon_width": 24,
-            "heading": "Product Description",
+            "heading": "",
             "content": "<p>Pronto features a soft square design that would make this a practical, stylish addition to any modern bathroom space. The open back pan includes the latest rimless hygienic technology and<br/>includes a toilet seat to offer outstanding value.</p><p>Projection: 650mmPan Fixing Kit Included: NoToilet Seat Included: YesToilet Pan Height: 390mmShape: RoundType: Close CoupleFloor to Centre of Soil Pipe: 180mm</p>",
             "metafields": ""
           }
