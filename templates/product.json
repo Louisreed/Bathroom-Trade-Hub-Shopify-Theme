@@ -78,7 +78,6 @@
         },
         "description": {
           "type": "description",
-          "disabled": true,
           "settings": {
             "text_size": "text-base"
           }
@@ -160,6 +159,7 @@
       "block_order": [
         "collapsible_tab-1"
       ],
+      "disabled": true,
       "settings": {
         "style": "with-border",
         "open_first_row": true,
