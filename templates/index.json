@@ -337,6 +337,7 @@
         "image_z4i8pc",
         "image_89r7yM"
       ],
+      "disabled": true,
       "name": "t:sections.image-comparison.name",
       "settings": {
         "layout": "horizontal",
@@ -885,7 +886,7 @@
       ],
       "name": "t:sections.featured-collections.name",
       "settings": {
-        "product_limit": 6,
+        "product_limit": 10,
         "columns": 4,
         "carousel_on_desktop": true,
         "show_view_all": true,
