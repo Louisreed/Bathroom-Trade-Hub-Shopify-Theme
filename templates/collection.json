@@ -209,7 +209,6 @@
         "subcollections",
         "promotion"
       ],
-      "disabled": true,
       "settings": {
         "products_per_page": 50,
         "columns": 5,
@@ -289,6 +288,7 @@
     },
     "featured_collection_6PtPbh": {
       "type": "featured-collection",
+      "disabled": true,
       "name": "t:sections.featured-collection.name",
       "settings": {
         "collection": "clearance-goods",
