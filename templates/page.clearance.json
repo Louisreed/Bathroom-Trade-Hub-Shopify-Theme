@@ -267,7 +267,7 @@
         "collection": "clearance-goods",
         "products": [],
         "product_limit": 12,
-        "columns": 4,
+        "columns": 5,
         "carousel_on_desktop": false,
         "show_view_all": true,
         "columns_mobile": "2",
