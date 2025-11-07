@@ -209,6 +209,7 @@
         "subcollections",
         "promotion"
       ],
+      "disabled": true,
       "settings": {
         "products_per_page": 50,
         "columns": 5,
