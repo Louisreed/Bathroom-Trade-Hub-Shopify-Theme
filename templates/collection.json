@@ -29,6 +29,7 @@
         "breadcrumb",
         "title"
       ],
+      "disabled": true,
       "settings": {
         "transparent_header": true,
         "show_image": false,
@@ -48,6 +49,75 @@
         "rounded": false,
         "enable_parallax": true,
         "parallax_direction": "vertical"
+      }
+    },
+    "images_with_text_overlay_CLATwH": {
+      "type": "images-with-text-overlay",
+      "blocks": {
+        "subheading_KayHP6": {
+          "type": "subheading",
+          "settings": {
+            "subheading": "Add a tagline",
+            "subheading_size": "subtitle-md",
+            "secondary_color": true
+          }
+        },
+        "heading_9rWqBg": {
+          "type": "heading",
+          "settings": {
+            "heading": "<strong>GET IT BEFORE ITS GONE..</strong>",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_eMWR6T": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Please keep an eye on our clearance section full of bargains! </p><p>*Clearance items come with no warranty unless otherwise stated*</p>",
+            "text_font": "body",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "subheading_KayHP6",
+        "heading_9rWqBg",
+        "text_eMWR6T"
+      ],
+      "name": "t:sections.images-with-text-overlay.name",
+      "settings": {
+        "transparent_header": false,
+        "image_height": "650px",
+        "content_width": "small",
+        "content_position": "md:items-end md:justify-start",
+        "text_alignment": "left",
+        "image_1": "shopify://shop_images/Screenshot_2025-10-09_at_8.48.21_am.png",
+        "image_height_mobile": "auto",
+        "content_position_mobile": "items-end justify-start",
+        "text_alignment_mobile": "left",
+        "color_text": "#ffffff",
+        "color_highlight": "#47c8f5",
+        "gradient_highlight": "",
+        "color_button_text": "#47c8f5",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 100,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": true
       }
     },
     "images-with-text-overlay": {
@@ -296,6 +366,7 @@
   },
   "order": [
     "main-collection-banner",
+    "images_with_text_overlay_CLATwH",
     "images-with-text-overlay",
     "main-collection",
     "recently-viewed",
