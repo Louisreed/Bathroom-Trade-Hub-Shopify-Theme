@@ -61,6 +61,108 @@
         "parallax_direction": "vertical"
       }
     },
+    "multicolumn_zT87yk": {
+      "type": "multicolumn",
+      "blocks": {
+        "column_JGfhgY": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/Warehouse.jpg",
+            "image_ratio": "landscape",
+            "heading": "Showroom / Trade Counter",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>Our Weymouth Branch is the perfect place to shop bathroom supplies <strong>in-store. </strong>We have a generous amount of bathroom products on display as well as stock to be delivered or collected the same day!</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_XDxCDy": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/Durdle_Door_Overview.jpg",
+            "image_ratio": "landscape",
+            "heading": "Dorset Based Business",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>We specifically cater for customers in Dorset. We offer <strong>FREE</strong> delivery on orders over £100+VAT within Dorset Postcodes. We also ship anywhere free in the UK over £500 inc VAT.</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "column_qTJKEz": {
+          "type": "column",
+          "settings": {
+            "show_border": false,
+            "text_alignment": "left",
+            "text_alignment_mobile": "left",
+            "image": "shopify://shop_images/Card_machine.jpg",
+            "image_ratio": "landscape",
+            "heading": "Trade Accounts",
+            "heading_size": "text-lg-2xl",
+            "text": "<p>Create a Bathroom Trade Hub Account to access our products at the <strong>BEST</strong> prices and see stock levels in real time quickly and efficiently giving you more time to focus on the project at hand!</p>",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "secondary",
+            "button_external": false,
+            "button_icon": true,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        }
+      },
+      "block_order": [
+        "column_JGfhgY",
+        "column_XDxCDy",
+        "column_qTJKEz"
+      ],
+      "name": "Multicolumn",
+      "settings": {
+        "gap": "large",
+        "columns": 3,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "heading": "Supporting the Local Trade and DIY of Dorset!",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "subheading": "#SHOPLOCAL",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 48,
+        "padding_bottom": 48,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
     "collection_list_TfCige": {
       "type": "collection-list",
       "blocks": {
@@ -910,108 +1012,6 @@
         "color_button_gradient": "",
         "padding_top": 72,
         "padding_bottom": 72,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
-      }
-    },
-    "multicolumn_zT87yk": {
-      "type": "multicolumn",
-      "blocks": {
-        "column_XDxCDy": {
-          "type": "column",
-          "settings": {
-            "show_border": false,
-            "text_alignment": "left",
-            "text_alignment_mobile": "left",
-            "image": "shopify://shop_images/Durdle_Door_Overview.jpg",
-            "image_ratio": "landscape",
-            "heading": "Dorset Based Business",
-            "heading_size": "text-lg-2xl",
-            "text": "<p>We specifically cater for customers in Dorset. We offer <strong>FREE</strong> delivery on orders over £100+VAT within Dorset Postcodes. We also ship anywhere free in the UK over £500 inc VAT.</p>",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "secondary",
-            "button_external": false,
-            "button_icon": true,
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "column_JGfhgY": {
-          "type": "column",
-          "settings": {
-            "show_border": false,
-            "text_alignment": "left",
-            "text_alignment_mobile": "left",
-            "image": "shopify://shop_images/Warehouse.jpg",
-            "image_ratio": "landscape",
-            "heading": "Trade & DIY Counter",
-            "heading_size": "text-lg-2xl",
-            "text": "<p>Our Weymouth Branch is the perfect place to shop bathroom supplies <strong>in-store.</strong></p>",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "secondary",
-            "button_external": false,
-            "button_icon": true,
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "column_qTJKEz": {
-          "type": "column",
-          "settings": {
-            "show_border": false,
-            "text_alignment": "left",
-            "text_alignment_mobile": "left",
-            "image": "shopify://shop_images/Card_machine.jpg",
-            "image_ratio": "landscape",
-            "heading": "Trade Accounts",
-            "heading_size": "text-lg-2xl",
-            "text": "<p>Create a Bathroom Trade Hub Account to access our products at the <strong>BEST</strong> prices and see stock levels in real time quickly and efficiently giving you more time to focus on the project at hand!</p>",
-            "button_label": "",
-            "button_link": "",
-            "button_style": "secondary",
-            "button_external": false,
-            "button_icon": true,
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        }
-      },
-      "block_order": [
-        "column_XDxCDy",
-        "column_JGfhgY",
-        "column_qTJKEz"
-      ],
-      "name": "Multicolumn",
-      "settings": {
-        "gap": "large",
-        "columns": 3,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "heading": "Supporting the Local Trade and DIY of Dorset!",
-        "heading_size": "title-md",
-        "heading_alignment": "text-center md:items-center",
-        "heading_tag": "h2",
-        "subheading": "#SHOPLOCAL",
-        "description": "",
-        "button_label": "",
-        "button_link": "",
-        "button_external": false,
-        "button_icon": true,
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 48,
-        "padding_bottom": 48,
         "divider": false,
         "full_width": false,
         "rounded": false
@@ -2286,12 +2286,12 @@
   },
   "order": [
     "slideshow_CfARa3",
+    "multicolumn_zT87yk",
     "collection_list_TfCige",
     "image_comparison_ymhEpM",
     "collage_Up3KWt",
     "slideshow",
     "featured_collections_xLhWab",
-    "multicolumn_zT87yk",
     "17548300328275163b",
     "custom_section_4yjtnX",
     "image_with_text_pJFCwV",
