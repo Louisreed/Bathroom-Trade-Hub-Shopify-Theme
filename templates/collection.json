@@ -29,7 +29,6 @@
         "breadcrumb",
         "title"
       ],
-      "disabled": true,
       "settings": {
         "transparent_header": true,
         "show_image": false,
@@ -93,6 +92,7 @@
         "heading_9rWqBg",
         "text_eMWR6T"
       ],
+      "disabled": true,
       "name": "t:sections.images-with-text-overlay.name",
       "settings": {
         "transparent_header": false,
