@@ -134,8 +134,8 @@
         "heading_xMdmNm": {
           "type": "heading",
           "settings": {
-            "heading": "Who we are",
-            "heading_size": "title-lg tracking-heading",
+            "heading": "<em><strong>Who we are</strong></em>",
+            "heading_size": "title-md",
             "heading_tag": "h2",
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
