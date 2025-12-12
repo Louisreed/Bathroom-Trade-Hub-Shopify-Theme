@@ -48,7 +48,7 @@
         "text_WByLra": {
           "type": "text",
           "settings": {
-            "text": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "text": "<h6><em>Visit Our Bathroom Showroom – See the Latest Styles & Exclusive Deals!</em></h6><p>Looking for fresh inspiration for your new bathroom? Come and explore our showroom, where you can see, touch, and experience our full range of bathroom products in person. From modern suites and luxury fixtures to practical everyday essentials, our displays are designed to help you visualise the perfect space for your home.</p><p>Our team is always on hand to offer friendly advice, product guidance, and ideas tailored to your budget and style. Plus, don’t miss out on our latest in-store deals and special offers - available only to showroom visitors!</p><p>Drop in today and discover what’s possible for your bathroom. We can’t wait to welcome you.</p>",
             "text_font": "body",
             "text_size": "subtext-md",
             "text_max_size": 32,
