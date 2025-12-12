@@ -155,23 +155,11 @@
             "highlighted_text": "none",
             "highlighted_scribble": "circle"
           }
-        },
-        "button_3U4Qbi": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style": "primary",
-            "button_size": "md",
-            "button_external": false,
-            "button_icon": true
-          }
         }
       },
       "block_order": [
         "heading_4tUApk",
-        "text_LbiXjX",
-        "button_3U4Qbi"
+        "text_LbiXjX"
       ],
       "name": "t:sections.images-with-text.name",
       "settings": {
@@ -197,78 +185,12 @@
         "rounded": false,
         "enable_parallax": true
       }
-    },
-    "rich_text_HgbnDe": {
-      "type": "rich-text",
-      "blocks": {
-        "heading_xMdmNm": {
-          "type": "heading",
-          "settings": {
-            "heading": "<em><strong>Who we are</strong></em>",
-            "heading_size": "title-md",
-            "heading_tag": "h2",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        },
-        "text_fBmwkD": {
-          "type": "text",
-          "settings": {
-            "text": "<p><strong>We’re Not Just Supplying Bathrooms — We’re Building an Empire.</strong></p><p></p><p><strong>At Bathroom Trade Hub, we’re proud to be launching a dedicated Trade & DIY Merchants Hub — a place built with one clear mission: to support the trade with honesty, unbeatable prices, and service you can count on.</strong></p><p></p><p><strong>Whether you’re a bathroom installer, plumber, tiler, or property developer, we’re here to build real relationships — not just transactions. No gimmicks. No inflated prices. Just straight-talking service and seriously competitive deals on quality bathroom products.</strong></p><p></p><p><strong>We’re growing fast, and we want the trade to grow with us.</strong></p><p></p><p><strong>Let’s build something better — together.</strong></p>",
-            "text_font": "body",
-            "text_size": "subtext-md",
-            "text_max_size": 32,
-            "text_line_height": 1.6,
-            "text_letter_spacing": 0,
-            "text_capitalize": false,
-            "secondary_color": false,
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle"
-          }
-        }
-      },
-      "block_order": [
-        "heading_xMdmNm",
-        "text_fBmwkD"
-      ],
-      "name": "t:sections.rich-text.name",
-      "settings": {
-        "text_alignment": "center",
-        "text_alignment_mobile": "center",
-        "heading": "",
-        "heading_size": "title-md",
-        "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_width": "small",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "",
-        "button_label": "",
-        "button_link": "",
-        "button_external": false,
-        "button_icon": true,
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 32,
-        "padding_bottom": 100,
-        "divider": false,
-        "narrow": true,
-        "rounded": false
-      }
     }
   },
   "order": [
     "main-page",
     "rich_text_9GdJq8",
     "images_with_text_F3LBcA",
-    "images_with_text_689dnj",
-    "rich_text_HgbnDe"
+    "images_with_text_689dnj"
   ]
 }
