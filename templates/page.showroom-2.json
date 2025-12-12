@@ -79,6 +79,8 @@
       ],
       "name": "t:sections.images-with-text.name",
       "settings": {
+        "image": "shopify://shop_images/0937554a-34ad-4e43-a80c-c4f4ec180e7d.jpg",
+        "image_2": "shopify://shop_images/IMG_5261.heic",
         "image_ratio": "portrait",
         "image_width": "medium",
         "layout": "image_first",
@@ -200,12 +202,12 @@
       ],
       "name": "t:sections.collage.name",
       "settings": {
-        "heading": "Multimedia collage",
+        "heading": "<em>What You’ll Find in Our Showroom</em>",
         "heading_size": "title-md",
         "heading_alignment": "text-left md:items-end md:flex-row",
         "heading_tag": "h2",
         "subheading": "",
-        "description": "<p>Share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+        "description": "<p>Our showroom is fully stocked with everything you need to create your perfect bathroom. When you visit, you’ll be able to explore a wide range of products on display, including:</p><p>• Wall Panels</p><p>Discover stylish, durable wall panels in a variety of colours, textures, and finishes - ideal for creating a modern, low-maintenance bathroom.</p><p>• Vanity Units</p><p>Browse our selection of practical and beautifully designed vanity units, available in multiple sizes and styles to suit any space.</p><p>• Mirrors & Cabinets</p><p>From LED-lit mirrors to space-saving mirrored cabinets, see how the right finishing touches can transform your bathroom.</p><p>• Brassware</p><p>Explore an impressive range of taps, mixers, and other brassware in various finishes - from classic chrome to modern matt black.</p><p>• Showers & Accessories</p><p>Check out our shower displays, including thermostatic showers, rainfall heads, enclosures, and all the essential accessories.</p><p>• Plumbing Essentials</p><p>Whether you’re a DIY enthusiast or a trade professional, we keep all the key plumbing components and fittings you need.</p><p>• Consumables</p><p>Pick up everyday essentials, from sealants and adhesives to maintenance products and cleaning solutions.</p><p><strong>& much more!</strong></p>",
         "button_label": "",
         "button_link": "",
         "button_external": false,
