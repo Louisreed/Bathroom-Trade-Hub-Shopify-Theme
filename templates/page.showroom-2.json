@@ -63,8 +63,8 @@
         "button_XN8Kad": {
           "type": "button",
           "settings": {
-            "button_label": "Button label",
-            "button_link": "",
+            "button_label": "Where we are",
+            "button_link": "https://maps.apple/p/BF-hIc5KB8FGjZ",
             "button_style": "primary",
             "button_size": "md",
             "button_external": false,
