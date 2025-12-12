@@ -31,6 +31,7 @@
         },
         "announcement_cCxaBK": {
           "type": "announcement",
+          "disabled": true,
           "settings": {
             "icon": "truck",
             "text": "FREE DORSET DELIVERY OVER £100+VAT",
@@ -333,7 +334,6 @@
             "promo_color_text_5": "#ffffff",
             "promo_color_overlay_5": "#000000",
             "promo_overlay_opacity_5": 0,
-            "promo_image_6": "shopify://shop_images/Clearance17.jpg",
             "promo_image_ratio_6": "adapt",
             "promo_heading_6": "ALL DEALS",
             "promo_subtext_6": "",
