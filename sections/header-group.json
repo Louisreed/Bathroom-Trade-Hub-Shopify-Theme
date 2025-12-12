@@ -31,10 +31,9 @@
         },
         "announcement_cCxaBK": {
           "type": "announcement",
-          "disabled": true,
           "settings": {
             "icon": "truck",
-            "text": "FREE DORSET DELIVERY OVER £100+VAT",
+            "text": "FREE LOCAL DELIVERY OVER £100+VAT",
             "link": "",
             "hide_icon_mobile": true,
             "text_mobile": "",
