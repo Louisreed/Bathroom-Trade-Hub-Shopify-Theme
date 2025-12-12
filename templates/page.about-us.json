@@ -128,6 +128,76 @@
         "enable_parallax": true
       }
     },
+    "images_with_text_689dnj": {
+      "type": "images-with-text",
+      "blocks": {
+        "heading_4tUApk": {
+          "type": "heading",
+          "settings": {
+            "heading": "<em><strong>About us..</strong></em>",
+            "heading_size": "title-md",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_LbiXjX": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Welcome to your local bathroom specialists in the heart of Weymouth. We’re proud to be a community-focused bathroom supply shop offering high-quality products, expert knowledge, and unbeatable value. Whether you’re a homeowner planning a refresh or a tradesperson tackling your next project, we believe everyone deserves access to trade prices - no exceptions.</p><p><br/></p><p>We’re also home to Hub Pro, our exclusive trade account designed for customers who want even more. Sign up and unlock special deals, early access to new product ranges, and members-only offers you won’t find anywhere else.</p><p>Our store is managed by Matt, who brings years of industry experience and a passion for great customer service. Matt and the team are always here to help you find the right products, offer guidance, and make your bathroom project as smooth as possible.</p><p><em>Quality products, honest pricing, and friendly expertise - that’s what we stand for.</em></p>",
+            "text_font": "body",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_3U4Qbi": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style": "primary",
+            "button_size": "md",
+            "button_external": false,
+            "button_icon": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_4tUApk",
+        "text_LbiXjX",
+        "button_3U4Qbi"
+      ],
+      "name": "t:sections.images-with-text.name",
+      "settings": {
+        "image": "shopify://shop_images/Screenshot_2025-12-12_at_1.00.27_pm.png",
+        "image_2": "shopify://shop_images/IMG_5264.heic",
+        "image_ratio": "portrait",
+        "image_width": "medium",
+        "layout": "image_first",
+        "text_alignment": "left",
+        "text_alignment_mobile": "left",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "enable_parallax": true
+      }
+    },
     "rich_text_HgbnDe": {
       "type": "rich-text",
       "blocks": {
@@ -198,6 +268,7 @@
     "main-page",
     "rich_text_9GdJq8",
     "images_with_text_F3LBcA",
+    "images_with_text_689dnj",
     "rich_text_HgbnDe"
   ]
 }
