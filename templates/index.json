@@ -173,7 +173,7 @@
             "image": "shopify://shop_images/bannerfbArtboard_1_2x_52d7b681-f40b-49a6-aa3e-110b961236a3.png",
             "title": "SUPER DEALS",
             "description": "",
-            "overlay_content": true,
+            "overlay_content": false,
             "color_text": "#fafafa",
             "color_overlay": "#000000",
             "overlay_opacity": 0
@@ -186,7 +186,7 @@
             "image": "shopify://shop_images/SUITE285Artboard_1_2x_e0131c49-6147-468e-ba06-f292e6345894.png",
             "title": "Suite Sets",
             "description": "",
-            "overlay_content": true,
+            "overlay_content": false,
             "color_text": "#424242",
             "color_overlay": "#000000",
             "overlay_opacity": 0
@@ -199,7 +199,7 @@
             "image": "shopify://shop_images/panel14Artboard_1_2x_c856b7ad-5abc-46af-8e51-23d64a09cc38.png",
             "title": "Wall Panels",
             "description": "",
-            "overlay_content": true,
+            "overlay_content": false,
             "color_text": "#424242",
             "color_overlay": "#000000",
             "overlay_opacity": 0
@@ -212,7 +212,7 @@
             "image": "shopify://shop_images/basin96Artboard_1_2x_3fd237c4-be91-4b48-bce5-82e392f363c1.png",
             "title": "Furniture",
             "description": "",
-            "overlay_content": true,
+            "overlay_content": false,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 0
@@ -225,7 +225,7 @@
             "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.02.00_am.png",
             "title": "Heating",
             "description": "",
-            "overlay_content": true,
+            "overlay_content": false,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 0
@@ -238,7 +238,7 @@
             "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.08.57_am.png",
             "title": "Taps",
             "description": "",
-            "overlay_content": true,
+            "overlay_content": false,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 0
@@ -250,7 +250,7 @@
             "collection": "bathing",
             "title": "",
             "description": "",
-            "overlay_content": true,
+            "overlay_content": false,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 0
@@ -263,7 +263,7 @@
             "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.05.32_am.png",
             "title": "Showering",
             "description": "",
-            "overlay_content": true,
+            "overlay_content": false,
             "color_text": "#424242",
             "color_overlay": "#000000",
             "overlay_opacity": 0
@@ -276,7 +276,7 @@
             "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.07.55_am.png",
             "title": "",
             "description": "",
-            "overlay_content": true,
+            "overlay_content": false,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 0
@@ -289,7 +289,7 @@
             "image": "shopify://shop_images/Screenshot_2025-10-01_at_10.06.50_am.png",
             "title": "Basins",
             "description": "",
-            "overlay_content": true,
+            "overlay_content": false,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 0
@@ -302,7 +302,7 @@
             "image": "shopify://shop_images/Screenshot_2025-10-09_at_8.52.48_am.png",
             "title": "Flooring",
             "description": "",
-            "overlay_content": true,
+            "overlay_content": false,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 0
@@ -315,7 +315,7 @@
             "image": "shopify://shop_images/WonderWipes-LargePack-500Wipes.png",
             "title": "Consumables & Tools",
             "description": "",
-            "overlay_content": true,
+            "overlay_content": false,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 0
@@ -328,8 +328,8 @@
             "image": "shopify://shop_images/VIVA_98ede3cd-e012-4591-abeb-ab3621c02fe4.jpg",
             "title": "Plumbing Essentials",
             "description": "",
-            "overlay_content": true,
-            "color_text": "#424242",
+            "overlay_content": false,
+            "color_text": "#ffffff",
             "color_overlay": "#000000",
             "overlay_opacity": 0
           }
@@ -341,7 +341,7 @@
             "image": "shopify://shop_images/Screenshot_2025-10-09_at_8.48.21_am.png",
             "title": "",
             "description": "",
-            "overlay_content": true,
+            "overlay_content": false,
             "color_text": "#424242",
             "color_overlay": "#000000",
             "overlay_opacity": 0
