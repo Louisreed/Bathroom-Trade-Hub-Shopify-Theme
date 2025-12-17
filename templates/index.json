@@ -189,7 +189,7 @@
             "overlay_content": true,
             "color_text": "#424242",
             "color_overlay": "#000000",
-            "overlay_opacity": 3
+            "overlay_opacity": 0
           }
         },
         "collection_UwG9AE": {
@@ -253,7 +253,7 @@
             "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
-            "overlay_opacity": 24
+            "overlay_opacity": 0
           }
         },
         "collection_DEMPHt": {
@@ -318,7 +318,7 @@
             "overlay_content": true,
             "color_text": "#ffffff",
             "color_overlay": "#000000",
-            "overlay_opacity": 5
+            "overlay_opacity": 0
           }
         },
         "collection_i6UEEi": {
