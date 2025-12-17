@@ -2235,11 +2235,11 @@
         "product_hixzzQ": {
           "type": "product",
           "settings": {
-            "product": "bathroom-trade-hub-eden-floor-standing-2-door-vanity-unit-with-mid-edge-basin-500mm",
+            "product": "maxi-shower-panel-sparkle-white",
             "color_text": "#ffffff",
-            "vertical": 60,
-            "horizontal": 13,
-            "vertical_mobile": 50,
+            "vertical": 25,
+            "horizontal": 14,
+            "vertical_mobile": 5,
             "horizontal_mobile": 50
           }
         },
