@@ -2077,6 +2077,16 @@
       ],
       "settings": {}
     },
+    "empty_space_XNHR9x": {
+      "type": "empty-space",
+      "name": "t:sections.empty-space.name",
+      "settings": {
+        "desktop_height": 40,
+        "mobile_height": 28,
+        "color_background": "",
+        "gradient_background": ""
+      }
+    },
     "logo_list_WMxzEt": {
       "type": "logo-list",
       "blocks": {
@@ -2191,6 +2201,7 @@
         "logo_dhwwbF",
         "logo_Jb6L3x"
       ],
+      "disabled": true,
       "name": "t:sections.logo-list.name",
       "settings": {
         "layout": "default",
@@ -2209,8 +2220,8 @@
         "button_icon": true,
         "highlighted_text": "none",
         "highlighted_scribble": "circle",
-        "color_text": "#424242",
-        "color_background": "#ffffff",
+        "color_text": "#ffffff",
+        "color_background": "#424242",
         "gradient_background": "",
         "color_highlight": "#ffffff",
         "gradient_highlight": "",
@@ -2281,6 +2292,7 @@
     "173167681616b98a6e",
     "featured_collection_ctYK44",
     "1753954348ec27ebd8",
+    "empty_space_XNHR9x",
     "logo_list_WMxzEt",
     "featured_collection_XRCkAp"
   ]
