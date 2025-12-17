@@ -956,6 +956,14 @@
     "featured_collections_xLhWab": {
       "type": "featured-collections",
       "blocks": {
+        "collection_pjj63n": {
+          "type": "collection",
+          "settings": {
+            "collection": "artesan-shower-trays",
+            "products": [],
+            "title": ""
+          }
+        },
         "collection_g3q74h": {
           "type": "collection",
           "settings": {
@@ -982,6 +990,7 @@
         }
       },
       "block_order": [
+        "collection_pjj63n",
         "collection_g3q74h",
         "collection_3tQptR",
         "collection_H7TMUd"
