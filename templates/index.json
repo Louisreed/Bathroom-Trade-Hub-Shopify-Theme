@@ -939,97 +939,6 @@
         "parallax_direction": "zoom"
       }
     },
-    "featured_collections_xLhWab": {
-      "type": "featured-collections",
-      "blocks": {
-        "collection_GQGzNV": {
-          "type": "collection",
-          "settings": {
-            "collection": "rigid-riser-showers",
-            "products": [],
-            "title": ""
-          }
-        },
-        "collection_pjj63n": {
-          "type": "collection",
-          "settings": {
-            "collection": "artesan-shower-trays",
-            "products": [],
-            "title": ""
-          }
-        },
-        "collection_g3q74h": {
-          "type": "collection",
-          "settings": {
-            "collection": "choice-ceramics",
-            "products": [],
-            "title": "Choice"
-          }
-        },
-        "collection_YHqJbR": {
-          "type": "collection",
-          "settings": {
-            "collection": "basins-brassware",
-            "products": [],
-            "title": ""
-          }
-        },
-        "collection_3tQptR": {
-          "type": "collection",
-          "settings": {
-            "collection": "cladworks",
-            "products": [],
-            "title": "Cladworks Walls"
-          }
-        },
-        "collection_H7TMUd": {
-          "type": "collection",
-          "settings": {
-            "collection": "slat-wall",
-            "products": [],
-            "title": "Slatwall"
-          }
-        }
-      },
-      "block_order": [
-        "collection_GQGzNV",
-        "collection_pjj63n",
-        "collection_g3q74h",
-        "collection_YHqJbR",
-        "collection_3tQptR",
-        "collection_H7TMUd"
-      ],
-      "name": "t:sections.featured-collections.name",
-      "settings": {
-        "product_limit": 10,
-        "columns": 4,
-        "carousel_on_desktop": true,
-        "show_view_all": true,
-        "columns_mobile": "1",
-        "swipe_on_mobile": true,
-        "heading": "POPULAR AT BATHROOM TRADE HUB",
-        "heading_size": "title-sm",
-        "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "",
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "#424242",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 72,
-        "padding_bottom": 72,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
-      }
-    },
     "lookbook_6PzgjX": {
       "type": "lookbook",
       "blocks": {
@@ -1189,6 +1098,97 @@
         "ai_gen_block_e760d6b_9WKEEq"
       ],
       "settings": {}
+    },
+    "featured_collections_xLhWab": {
+      "type": "featured-collections",
+      "blocks": {
+        "collection_GQGzNV": {
+          "type": "collection",
+          "settings": {
+            "collection": "rigid-riser-showers",
+            "products": [],
+            "title": ""
+          }
+        },
+        "collection_pjj63n": {
+          "type": "collection",
+          "settings": {
+            "collection": "artesan-shower-trays",
+            "products": [],
+            "title": ""
+          }
+        },
+        "collection_g3q74h": {
+          "type": "collection",
+          "settings": {
+            "collection": "choice-ceramics",
+            "products": [],
+            "title": "Choice"
+          }
+        },
+        "collection_YHqJbR": {
+          "type": "collection",
+          "settings": {
+            "collection": "basins-brassware",
+            "products": [],
+            "title": ""
+          }
+        },
+        "collection_3tQptR": {
+          "type": "collection",
+          "settings": {
+            "collection": "cladworks",
+            "products": [],
+            "title": "Cladworks Walls"
+          }
+        },
+        "collection_H7TMUd": {
+          "type": "collection",
+          "settings": {
+            "collection": "slat-wall",
+            "products": [],
+            "title": "Slatwall"
+          }
+        }
+      },
+      "block_order": [
+        "collection_GQGzNV",
+        "collection_pjj63n",
+        "collection_g3q74h",
+        "collection_YHqJbR",
+        "collection_3tQptR",
+        "collection_H7TMUd"
+      ],
+      "name": "t:sections.featured-collections.name",
+      "settings": {
+        "product_limit": 10,
+        "columns": 4,
+        "carousel_on_desktop": true,
+        "show_view_all": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "POPULAR AT BATHROOM TRADE HUB",
+        "heading_size": "title-sm",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "#424242",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
     },
     "custom_section_4yjtnX": {
       "type": "custom-section",
@@ -1992,42 +1992,6 @@
         "rounded": false
       }
     },
-    "blog-posts-collage": {
-      "type": "blog-posts-collage",
-      "disabled": true,
-      "settings": {
-        "blog": "",
-        "post_limit": 3,
-        "show_view_all": true,
-        "image_ratio": "landscape",
-        "show_tags": true,
-        "show_date": true,
-        "show_comments": true,
-        "show_author": false,
-        "show_excerpt": true,
-        "heading": "Latest Stories",
-        "heading_size": "title-md",
-        "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "",
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 100,
-        "padding_bottom": 100,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
-      }
-    },
     "173167681616b98a6e": {
       "type": "apps",
       "disabled": true,
@@ -2314,7 +2278,6 @@
     "shop-the-look",
     "testimonials-banner",
     "scrolling-text-2",
-    "blog-posts-collage",
     "173167681616b98a6e",
     "featured_collection_ctYK44",
     "1753954348ec27ebd8",
