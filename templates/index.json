@@ -2191,10 +2191,10 @@
         "product_fGjjaQ": {
           "type": "product",
           "settings": {
-            "product": "aztec-mono-basin-mixer",
+            "product": "piazza-mirror",
             "color_text": "#ffffff",
             "vertical": 25,
-            "horizontal": 25,
+            "horizontal": 48,
             "vertical_mobile": 25,
             "horizontal_mobile": 25
           }
@@ -2202,10 +2202,10 @@
         "product_epAn9j": {
           "type": "product",
           "settings": {
-            "product": "harmony-500mm-basin-1-tap-hole",
+            "product": "vari-wave-green",
             "color_text": "#ffffff",
-            "vertical": 36,
-            "horizontal": 50,
+            "vertical": 14,
+            "horizontal": 61,
             "vertical_mobile": 50,
             "horizontal_mobile": 50
           }
@@ -2265,8 +2265,8 @@
       ],
       "name": "t:sections.lookbook.name",
       "settings": {
-        "image": "shopify://shop_images/White_Brown_Simple_Photo_Collage.png",
-        "heading": "BARGAIN LOOKBOOK",
+        "image": "shopify://shop_images/IMG_5340.heic",
+        "heading": "SHOP THE LOOK",
         "heading_size": "title-md",
         "heading_alignment": "text-center md:items-center",
         "heading_tag": "h2",
