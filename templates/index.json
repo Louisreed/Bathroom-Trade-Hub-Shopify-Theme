@@ -2234,6 +2234,16 @@
         "rounded": false
       }
     },
+    "empty_space_W36yRq": {
+      "type": "empty-space",
+      "name": "t:sections.empty-space.name",
+      "settings": {
+        "desktop_height": 40,
+        "mobile_height": 28,
+        "color_background": "",
+        "gradient_background": ""
+      }
+    },
     "featured_collection_XRCkAp": {
       "type": "featured-collection",
       "disabled": true,
@@ -2293,6 +2303,7 @@
     "1753954348ec27ebd8",
     "empty_space_XNHR9x",
     "logo_list_WMxzEt",
+    "empty_space_W36yRq",
     "featured_collection_XRCkAp"
   ]
 }
