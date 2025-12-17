@@ -329,7 +329,7 @@
             "title": "Plumbing Essentials",
             "description": "",
             "overlay_content": true,
-            "color_text": "#ffffff",
+            "color_text": "#424242",
             "color_overlay": "#000000",
             "overlay_opacity": 0
           }
