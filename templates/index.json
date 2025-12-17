@@ -1321,6 +1321,117 @@
         "rounded": false
       }
     },
+    "lookbook_6PzgjX": {
+      "type": "lookbook",
+      "blocks": {
+        "product_fGjjaQ": {
+          "type": "product",
+          "settings": {
+            "product": "piazza-mirror",
+            "color_text": "#ffffff",
+            "vertical": 25,
+            "horizontal": 48,
+            "vertical_mobile": 25,
+            "horizontal_mobile": 25
+          }
+        },
+        "product_epAn9j": {
+          "type": "product",
+          "settings": {
+            "product": "vari-wave-green",
+            "color_text": "#ffffff",
+            "vertical": 14,
+            "horizontal": 61,
+            "vertical_mobile": 50,
+            "horizontal_mobile": 50
+          }
+        },
+        "product_HG33DW": {
+          "type": "product",
+          "settings": {
+            "product": "vari-wave-grey",
+            "color_text": "#ffffff",
+            "vertical": 32,
+            "horizontal": 77,
+            "vertical_mobile": 50,
+            "horizontal_mobile": 50
+          }
+        },
+        "product_pFG3Wy": {
+          "type": "product",
+          "settings": {
+            "product": "bathroom-trade-hub-freya-compact-rimless-pan-cistern-sandwich-seat-included",
+            "color_text": "#ffffff",
+            "vertical": 75,
+            "horizontal": 38,
+            "vertical_mobile": 75,
+            "horizontal_mobile": 65
+          }
+        },
+        "product_hixzzQ": {
+          "type": "product",
+          "settings": {
+            "product": "maxi-shower-panel-sparkle-white",
+            "color_text": "#ffffff",
+            "vertical": 25,
+            "horizontal": 14,
+            "vertical_mobile": 5,
+            "horizontal_mobile": 50
+          }
+        },
+        "product_VcmVgU": {
+          "type": "product",
+          "settings": {
+            "product": "ex-display-classique-500-2-door-vanity-unit-basin-1th-satin-white",
+            "color_text": "#ffffff",
+            "vertical": 67,
+            "horizontal": 60,
+            "vertical_mobile": 50,
+            "horizontal_mobile": 50
+          }
+        }
+      },
+      "block_order": [
+        "product_fGjjaQ",
+        "product_epAn9j",
+        "product_HG33DW",
+        "product_pFG3Wy",
+        "product_hixzzQ",
+        "product_VcmVgU"
+      ],
+      "name": "t:sections.lookbook.name",
+      "settings": {
+        "image": "shopify://shop_images/IMG_5340.heic",
+        "heading": "SHOP THE LOOK",
+        "heading_size": "title-md",
+        "heading_alignment": "text-center md:items-center",
+        "heading_tag": "h2",
+        "heading_position": "none",
+        "subheading": "Professional standards. DIY prices. Transform your bathroom for less!",
+        "description": "",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 30,
+        "padding_top": 24,
+        "padding_bottom": 24,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
     "image_with_text_pJFCwV": {
       "type": "image-with-text",
       "blocks": {
@@ -2002,117 +2113,6 @@
       ],
       "settings": {}
     },
-    "lookbook_6PzgjX": {
-      "type": "lookbook",
-      "blocks": {
-        "product_fGjjaQ": {
-          "type": "product",
-          "settings": {
-            "product": "piazza-mirror",
-            "color_text": "#ffffff",
-            "vertical": 25,
-            "horizontal": 48,
-            "vertical_mobile": 25,
-            "horizontal_mobile": 25
-          }
-        },
-        "product_epAn9j": {
-          "type": "product",
-          "settings": {
-            "product": "vari-wave-green",
-            "color_text": "#ffffff",
-            "vertical": 14,
-            "horizontal": 61,
-            "vertical_mobile": 50,
-            "horizontal_mobile": 50
-          }
-        },
-        "product_HG33DW": {
-          "type": "product",
-          "settings": {
-            "product": "vari-wave-grey",
-            "color_text": "#ffffff",
-            "vertical": 32,
-            "horizontal": 77,
-            "vertical_mobile": 50,
-            "horizontal_mobile": 50
-          }
-        },
-        "product_pFG3Wy": {
-          "type": "product",
-          "settings": {
-            "product": "bathroom-trade-hub-freya-compact-rimless-pan-cistern-sandwich-seat-included",
-            "color_text": "#ffffff",
-            "vertical": 75,
-            "horizontal": 38,
-            "vertical_mobile": 75,
-            "horizontal_mobile": 65
-          }
-        },
-        "product_hixzzQ": {
-          "type": "product",
-          "settings": {
-            "product": "maxi-shower-panel-sparkle-white",
-            "color_text": "#ffffff",
-            "vertical": 25,
-            "horizontal": 14,
-            "vertical_mobile": 5,
-            "horizontal_mobile": 50
-          }
-        },
-        "product_VcmVgU": {
-          "type": "product",
-          "settings": {
-            "product": "ex-display-classique-500-2-door-vanity-unit-basin-1th-satin-white",
-            "color_text": "#ffffff",
-            "vertical": 67,
-            "horizontal": 60,
-            "vertical_mobile": 50,
-            "horizontal_mobile": 50
-          }
-        }
-      },
-      "block_order": [
-        "product_fGjjaQ",
-        "product_epAn9j",
-        "product_HG33DW",
-        "product_pFG3Wy",
-        "product_hixzzQ",
-        "product_VcmVgU"
-      ],
-      "name": "t:sections.lookbook.name",
-      "settings": {
-        "image": "shopify://shop_images/IMG_5340.heic",
-        "heading": "SHOP THE LOOK",
-        "heading_size": "title-md",
-        "heading_alignment": "text-center md:items-center",
-        "heading_tag": "h2",
-        "heading_position": "none",
-        "subheading": "Professional standards. DIY prices. Transform your bathroom for less!",
-        "description": "",
-        "button_label": "",
-        "button_link": "",
-        "button_external": false,
-        "button_icon": true,
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "color_overlay": "#171717",
-        "overlay_opacity": 30,
-        "padding_top": 24,
-        "padding_bottom": 24,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
-      }
-    },
     "logo_list_WMxzEt": {
       "type": "logo-list",
       "blocks": {
@@ -2307,6 +2307,7 @@
     "featured_collections_xLhWab",
     "17548300328275163b",
     "custom_section_4yjtnX",
+    "lookbook_6PzgjX",
     "image_with_text_pJFCwV",
     "collection-list",
     "image-comparison",
@@ -2317,7 +2318,6 @@
     "173167681616b98a6e",
     "featured_collection_ctYK44",
     "1753954348ec27ebd8",
-    "lookbook_6PzgjX",
     "logo_list_WMxzEt",
     "featured_collection_XRCkAp"
   ]
