@@ -321,6 +321,19 @@
             "overlay_opacity": 5
           }
         },
+        "collection_i6UEEi": {
+          "type": "collection",
+          "settings": {
+            "collection": "viva",
+            "image": "shopify://shop_images/VIVA_98ede3cd-e012-4591-abeb-ab3621c02fe4.jpg",
+            "title": "Plumbing Essentials",
+            "description": "",
+            "overlay_content": true,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
         "collection_N6deye": {
           "type": "collection",
           "settings": {
@@ -374,6 +387,7 @@
         "collection_QxAaKp",
         "collection_RF6zQB",
         "collection_pPTPh3",
+        "collection_i6UEEi",
         "collection_N6deye",
         "collection_RDPQFx",
         "collection_HayVhw"
