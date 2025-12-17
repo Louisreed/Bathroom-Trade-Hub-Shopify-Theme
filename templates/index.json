@@ -956,6 +956,14 @@
     "featured_collections_xLhWab": {
       "type": "featured-collections",
       "blocks": {
+        "collection_GQGzNV": {
+          "type": "collection",
+          "settings": {
+            "collection": "rigid-riser-showers",
+            "products": [],
+            "title": ""
+          }
+        },
         "collection_pjj63n": {
           "type": "collection",
           "settings": {
@@ -990,6 +998,7 @@
         }
       },
       "block_order": [
+        "collection_GQGzNV",
         "collection_pjj63n",
         "collection_g3q74h",
         "collection_3tQptR",
