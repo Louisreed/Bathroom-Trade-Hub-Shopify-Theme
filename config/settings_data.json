@@ -19,10 +19,6 @@
     "hubpro_free_logo_mobile": "shopify://shop_images/HubPRO-Logo.png",
     "hubpro_free_white_logo": "shopify://shop_images/HubPRO-Logo.png",
     "hubpro_free_white_logo_mobile": "shopify://shop_images/HubPRO-Logo.png",
-    "hubpro_plus_logo": "shopify://shop_images/HubPRO-Logo.png",
-    "hubpro_plus_logo_mobile": "shopify://shop_images/HubPRO-Logo.png",
-    "hubpro_plus_white_logo": "shopify://shop_images/HubPRO-Logo.png",
-    "hubpro_plus_white_logo_mobile": "shopify://shop_images/HubPRO-Logo.png",
     "favicon": "shopify://shop_images/socialmediaprofileArtboard_1.png",
     "color_text": "#424242",
     "color_highlight": "#bba14f",
@@ -66,7 +62,7 @@
     "type_button_capitalize": false,
     "type_product_size": 16,
     "type_product_capitalize": false,
-    "page_width": 1900,
+    "page_width": 2000,
     "rounded_button": "round",
     "rounded_input": "round-slight",
     "rounded_swatch": "round",
@@ -123,6 +119,10 @@
     "share_telegram": true,
     "share_whatsapp": true,
     "share_email": true,
+    "hubpro_plus_logo": "shopify://shop_images/HubPRO-Logo.png",
+    "hubpro_plus_logo_mobile": "shopify://shop_images/HubPRO-Logo.png",
+    "hubpro_plus_white_logo": "shopify://shop_images/HubPRO-Logo.png",
+    "hubpro_plus_white_logo_mobile": "shopify://shop_images/HubPRO-Logo.png",
     "checkout_logo_position": "left",
     "checkout_logo_size": "small",
     "checkout_body_background_color": "#ffffff",
@@ -217,11 +217,6 @@
       "4644077978495408606": {
         "type": "shopify://apps/appstle-memberships/blocks/appstle-membership-helper/76528d70-5fbe-48f8-8e19-590d109aa2b7",
         "disabled": false,
-        "settings": {}
-      },
-      "5877711596357593266": {
-        "type": "shopify://apps/kaching-popup/blocks/popup/e910a01f-bb85-45d8-92ef-3667265465b1",
-        "disabled": true,
         "settings": {}
       },
       "18197795979873361081": {
