@@ -64,7 +64,7 @@
             "heading_size": "text-lg-2xl",
             "text": "<p>Whether you are DIY or Trade, creating a Bathroom Trade Hub Account will mean you can access our products at the <strong>BEST</strong> prices everytime. Seamlessly see stock levels in real time and order your bathroom from anywhere giving you more time to focus on the project at hand!</p>",
             "button_label": "Open Trade Account",
-            "button_link": "",
+            "button_link": "shopify://pages/diy",
             "button_style": "secondary",
             "button_external": false,
             "button_icon": true,
