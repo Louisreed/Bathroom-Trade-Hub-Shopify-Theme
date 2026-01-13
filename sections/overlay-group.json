@@ -333,6 +333,7 @@
         "mobile-dock-4",
         "mobile-dock-5"
       ],
+      "disabled": true,
       "settings": {
         "color_text": "#ffffff",
         "color_background": "#2acaf1",
