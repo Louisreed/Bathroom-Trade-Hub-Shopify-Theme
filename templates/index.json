@@ -111,39 +111,6 @@
         "rounded": false
       }
     },
-    "1768404852a76cade1": {
-      "type": "apps",
-      "blocks": {
-        "klarna_on_site_messaging_app_block_wPenez": {
-          "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
-          "settings": {
-            "data_key": "top-strip-promotion-auto-size",
-            "theme": "default",
-            "topPadding": "0",
-            "bottomPadding": "0",
-            "messagePrefix": "or"
-          }
-        }
-      },
-      "block_order": [
-        "klarna_on_site_messaging_app_block_wPenez"
-      ],
-      "settings": {
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 20,
-        "padding_bottom": 20,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
-      }
-    },
     "slideshow_CfARa3": {
       "type": "slideshow",
       "blocks": {
@@ -2307,7 +2274,6 @@
   },
   "order": [
     "multicolumn_zT87yk",
-    "1768404852a76cade1",
     "slideshow_CfARa3",
     "collection_list_TfCige",
     "image_comparison_ymhEpM",
