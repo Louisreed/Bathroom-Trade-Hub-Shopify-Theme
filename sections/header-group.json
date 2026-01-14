@@ -35,7 +35,7 @@
             "icon": "wallet",
             "text": "NOW ACCEPTING <em>KLARNA </em>PAYMENT OPTIONS",
             "link": "",
-            "hide_icon_mobile": true,
+            "hide_icon_mobile": false,
             "text_mobile": "",
             "highlighted_text": "none",
             "highlighted_scribble": "circle",
