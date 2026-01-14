@@ -33,7 +33,7 @@
           "type": "announcement",
           "settings": {
             "icon": "creadit_card",
-            "text": "NOW ACCEPTING <em>KLARNA </em>PAYMENT OPTIONS",
+            "text": "NOW ACCEPTING <em><strong>KLARNA</strong></em><em> </em>PAYMENT OPTIONS",
             "link": "",
             "hide_icon_mobile": false,
             "text_mobile": "",
