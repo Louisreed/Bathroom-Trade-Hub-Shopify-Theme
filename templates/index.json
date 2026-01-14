@@ -121,7 +121,7 @@
             "theme": "custom",
             "topPadding": "0",
             "bottomPadding": "0",
-            "messagePrefix": ""
+            "messagePrefix": "or"
           }
         }
       },
