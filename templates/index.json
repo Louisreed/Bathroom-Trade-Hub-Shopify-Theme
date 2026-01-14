@@ -2120,16 +2120,6 @@
       ],
       "settings": {}
     },
-    "empty_space_XNHR9x": {
-      "type": "empty-space",
-      "name": "t:sections.empty-space.name",
-      "settings": {
-        "desktop_height": 40,
-        "mobile_height": 28,
-        "color_background": "",
-        "gradient_background": ""
-      }
-    },
     "logo_list_WMxzEt": {
       "type": "logo-list",
       "blocks": {
@@ -2337,7 +2327,6 @@
     "173167681616b98a6e",
     "featured_collection_ctYK44",
     "1753954348ec27ebd8",
-    "empty_space_XNHR9x",
     "logo_list_WMxzEt",
     "featured_collection_XRCkAp"
   ]
