@@ -456,7 +456,7 @@
     "footer-copyright": {
       "type": "footer-copyright",
       "settings": {
-        "enable_language_selector": true,
+        "enable_language_selector": false,
         "enable_country_selector": true,
         "show_policy": true,
         "show_payment_icons": true,
