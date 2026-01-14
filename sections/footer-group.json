@@ -405,7 +405,7 @@
         "newsletter_text": "",
         "newsletter_logo_height": 50,
         "show_social": false,
-        "enable_follow_on_shop": true,
+        "enable_follow_on_shop": false,
         "color_text": "#ffffff",
         "color_background": "#424242",
         "gradient_background": "",
