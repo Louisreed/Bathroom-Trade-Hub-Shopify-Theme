@@ -141,7 +141,7 @@
           "type": "menu_tag",
           "name": "HUBCHOICETAG",
           "settings": {
-            "menu_handle": "hubchoice",
+            "menu_handle": "HubBUNDLES",
             "tag_text": "featured",
             "background_color": "#47c8f5",
             "text_color": "#ffffff",
