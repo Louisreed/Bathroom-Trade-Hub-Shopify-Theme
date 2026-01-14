@@ -11,39 +11,6 @@
   "type": "footer",
   "name": "t:sections.footer-group.name",
   "sections": {
-    "1768409360d15fa70b": {
-      "type": "apps",
-      "blocks": {
-        "klarna_on_site_messaging_app_block_VBVf4R": {
-          "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
-          "settings": {
-            "data_key": "sidebar-promotion-auto-size",
-            "theme": "default",
-            "topPadding": "0",
-            "bottomPadding": "0",
-            "messagePrefix": ""
-          }
-        }
-      },
-      "block_order": [
-        "klarna_on_site_messaging_app_block_VBVf4R"
-      ],
-      "settings": {
-        "color_text": "",
-        "color_background": "#47c8f5",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
-      }
-    },
     "featured_collections_Fr8YmF": {
       "type": "featured-collections",
       "blocks": {
@@ -451,6 +418,39 @@
         "full_width": true,
         "rounded": true,
         "enable_parallax": true
+      }
+    },
+    "1768409360d15fa70b": {
+      "type": "apps",
+      "blocks": {
+        "klarna_on_site_messaging_app_block_VBVf4R": {
+          "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
+          "settings": {
+            "data_key": "sidebar-promotion-auto-size",
+            "theme": "default",
+            "topPadding": "0",
+            "bottomPadding": "0",
+            "messagePrefix": ""
+          }
+        }
+      },
+      "block_order": [
+        "klarna_on_site_messaging_app_block_VBVf4R"
+      ],
+      "settings": {
+        "color_text": "",
+        "color_background": "#47c8f5",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 8,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
       }
     },
     "footer-copyright": {
