@@ -9,6 +9,39 @@
  */
 {
   "sections": {
+    "1768404852a76cade1": {
+      "type": "apps",
+      "blocks": {
+        "klarna_on_site_messaging_app_block_wPenez": {
+          "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
+          "settings": {
+            "data_key": "homepage-promotion-wide",
+            "theme": "custom",
+            "topPadding": "0",
+            "bottomPadding": "0",
+            "messagePrefix": ""
+          }
+        }
+      },
+      "block_order": [
+        "klarna_on_site_messaging_app_block_wPenez"
+      ],
+      "settings": {
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": true
+      }
+    },
     "multicolumn_zT87yk": {
       "type": "multicolumn",
       "blocks": {
@@ -62,7 +95,7 @@
             "image_ratio": "landscape",
             "heading": "Trade Accounts",
             "heading_size": "text-lg-2xl",
-            "text": "<p>Whether you are DIY or Trade, creating a Bathroom Trade Hub Account will mean you can access our products at the <strong>BEST</strong> prices everytime. Seamlessly see stock levels in real time and order your bathroom from anywhere giving you more time to focus on the project at hand!</p>",
+            "text": "<p>Whether you are DIY or Trade, creating a Bathroom Trade Hub Account will mean you have access to all of our products at the <strong>BEST</strong> prices. Seamlessly see stock levels in real time and order your bathroom from anywhere giving you more time to focus on the project at hand!</p>",
             "button_label": "Open Trade Account",
             "button_link": "shopify://pages/diy",
             "button_style": "secondary",
@@ -2273,6 +2306,7 @@
     }
   },
   "order": [
+    "1768404852a76cade1",
     "multicolumn_zT87yk",
     "slideshow_CfARa3",
     "collection_list_TfCige",
