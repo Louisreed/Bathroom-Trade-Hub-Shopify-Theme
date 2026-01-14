@@ -437,6 +437,7 @@
       "block_order": [
         "klarna_on_site_messaging_app_block_VBVf4R"
       ],
+      "disabled": true,
       "settings": {
         "color_text": "",
         "color_background": "#2acaf1",
