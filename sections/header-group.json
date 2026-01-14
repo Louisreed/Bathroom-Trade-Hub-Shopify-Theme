@@ -32,8 +32,8 @@
         "announcement_cCxaBK": {
           "type": "announcement",
           "settings": {
-            "icon": "truck",
-            "text": "FREE LOCAL DELIVERY OVER £100+VAT",
+            "icon": "wallet",
+            "text": "NOW ACCEPTING <em>KLARNA </em>PAYMENT OPTIONS",
             "link": "",
             "hide_icon_mobile": true,
             "text_mobile": "",
