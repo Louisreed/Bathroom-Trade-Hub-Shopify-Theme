@@ -32,7 +32,7 @@
         "announcement_cCxaBK": {
           "type": "announcement",
           "settings": {
-            "icon": "wallet",
+            "icon": "creadit_card",
             "text": "NOW ACCEPTING <em>KLARNA </em>PAYMENT OPTIONS",
             "link": "",
             "hide_icon_mobile": false,
