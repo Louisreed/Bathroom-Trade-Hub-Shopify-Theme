@@ -119,6 +119,7 @@
           "type": "collection",
           "settings": {
             "collection": "nero-wetrooms",
+            "image": "shopify://shop_images/NER-CONV.png",
             "title": "Nero",
             "description": "",
             "overlay_content": false,
