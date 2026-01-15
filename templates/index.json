@@ -16,7 +16,6 @@
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/bannerfittingArtboard_1_2x_b11dc88e-912c-4e3f-9af3-ad0042d9e865.png",
-            "image_mobile": "shopify://shop_images/bannermobileArtboard_1_2x_cde52511-da21-4f9b-bc6c-317f6d9c65f2.png",
             "heading": "",
             "heading_size": "title-lg tracking-heading",
             "heading_tag": "h2",
