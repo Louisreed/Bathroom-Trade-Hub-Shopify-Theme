@@ -89,6 +89,18 @@
             "overlay_opacity": 30
           }
         },
+        "collection_3P4DCb": {
+          "type": "collection",
+          "settings": {
+            "collection": "koncept",
+            "title": "Koncept",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
         "collection_x7qUmh": {
           "type": "collection",
           "settings": {
@@ -131,6 +143,7 @@
       },
       "block_order": [
         "collection_w733MM",
+        "collection_3P4DCb",
         "collection_x7qUmh",
         "collection_4Teac4",
         "collection_kqAPcX"
