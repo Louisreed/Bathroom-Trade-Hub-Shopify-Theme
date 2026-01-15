@@ -114,12 +114,25 @@
             "color_overlay": "#000000",
             "overlay_opacity": 30
           }
+        },
+        "collection_kqAPcX": {
+          "type": "collection",
+          "settings": {
+            "collection": "nero-wetrooms",
+            "title": "Nero",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
         }
       },
       "block_order": [
         "collection_w733MM",
         "collection_x7qUmh",
-        "collection_4Teac4"
+        "collection_4Teac4",
+        "collection_kqAPcX"
       ],
       "name": "t:sections.collection-list.name",
       "settings": {
