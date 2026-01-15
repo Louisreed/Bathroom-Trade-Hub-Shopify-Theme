@@ -61,6 +61,39 @@
         "parallax_direction": "vertical"
       }
     },
+    "176840645291d56ce6": {
+      "type": "apps",
+      "blocks": {
+        "klarna_on_site_messaging_app_block_aeabcK": {
+          "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
+          "settings": {
+            "data_key": "top-strip-promotion-badge",
+            "theme": "default",
+            "topPadding": "0",
+            "bottomPadding": "0",
+            "messagePrefix": ""
+          }
+        }
+      },
+      "block_order": [
+        "klarna_on_site_messaging_app_block_aeabcK"
+      ],
+      "settings": {
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
     "multicolumn_zT87yk": {
       "type": "multicolumn",
       "blocks": {
@@ -158,39 +191,6 @@
         "color_button_gradient": "",
         "padding_top": 48,
         "padding_bottom": 40,
-        "divider": false,
-        "full_width": false,
-        "rounded": false
-      }
-    },
-    "176840645291d56ce6": {
-      "type": "apps",
-      "blocks": {
-        "klarna_on_site_messaging_app_block_aeabcK": {
-          "type": "shopify://apps/klarna-on-site-messaging/blocks/app-block/b95936a9-74b6-4a95-8103-6a1b6459c25e",
-          "settings": {
-            "data_key": "top-strip-promotion-badge",
-            "theme": "default",
-            "topPadding": "0",
-            "bottomPadding": "0",
-            "messagePrefix": ""
-          }
-        }
-      },
-      "block_order": [
-        "klarna_on_site_messaging_app_block_aeabcK"
-      ],
-      "settings": {
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 72,
-        "padding_bottom": 72,
         "divider": false,
         "full_width": false,
         "rounded": false
@@ -2307,8 +2307,8 @@
   },
   "order": [
     "slideshow_CfARa3",
-    "multicolumn_zT87yk",
     "176840645291d56ce6",
+    "multicolumn_zT87yk",
     "empty_space_EDUdpR",
     "collection_list_TfCige",
     "image_comparison_ymhEpM",
