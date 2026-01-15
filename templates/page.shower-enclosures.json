@@ -92,8 +92,8 @@
         "collection_x7qUmh": {
           "type": "collection",
           "settings": {
-            "collection": "",
-            "title": "",
+            "collection": "kv8-shower-enclosure",
+            "title": "KV8",
             "description": "",
             "overlay_content": false,
             "color_text": "#ffffff",
