@@ -142,7 +142,7 @@
           "name": "HUBCHOICETAG",
           "settings": {
             "menu_handle": "HubBUNDLES",
-            "tag_text": "featured",
+            "tag_text": "SAVE £££",
             "background_color": "#47c8f5",
             "text_color": "#ffffff",
             "tag_style": "rounded"
@@ -151,7 +151,7 @@
         "menu_tag_F6tjLe": {
           "type": "menu_tag",
           "settings": {
-            "menu_handle": "super-deals!",
+            "menu_handle": "SUPER-DEALS!",
             "tag_text": "UP TO 65% OFF!",
             "background_color": "#89f12a",
             "text_color": "#ffffff",
@@ -277,7 +277,7 @@
         },
         "mega_menu_rgQ6Xp": {
           "type": "mega_menu",
-          "name": "SUPER-DEALS!",
+          "name": "INSTALLATION",
           "settings": {
             "menu_title": "INSTALLATION",
             "menu_width": "medium",
