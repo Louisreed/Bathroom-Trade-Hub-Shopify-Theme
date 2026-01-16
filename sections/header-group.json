@@ -121,7 +121,7 @@
           "type": "menu_tag",
           "name": "TILINGTAG",
           "settings": {
-            "menu_handle": "INSTALLATION",
+            "menu_handle": "installation-available",
             "tag_text": "COMING SOON!",
             "background_color": "#bba14f",
             "text_color": "#ffffff",
