@@ -121,9 +121,9 @@
           "type": "menu_tag",
           "name": "TILINGTAG",
           "settings": {
-            "menu_handle": "Tiling-Consumables",
+            "menu_handle": "INSTALLATION",
             "tag_text": "COMING SOON!",
-            "background_color": "#f59e0b",
+            "background_color": "#bba14f",
             "text_color": "#ffffff",
             "tag_style": "pill"
           }
