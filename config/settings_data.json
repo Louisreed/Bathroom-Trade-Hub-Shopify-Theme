@@ -231,7 +231,7 @@
       },
       "4090771392943522038": {
         "type": "shopify://apps/toastibar/blocks/app-embed/28a475c6-f06d-46d4-b40a-df8d869255ef",
-        "disabled": true,
+        "disabled": false,
         "settings": {}
       }
     }
