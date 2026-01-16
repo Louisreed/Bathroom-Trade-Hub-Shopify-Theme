@@ -80,6 +80,7 @@
       "block_order": [
         "ai_gen_block_e760d6b_t9Af3K"
       ],
+      "disabled": true,
       "settings": {}
     },
     "rich_text_KBAVRK": {
@@ -645,6 +646,57 @@
         "full_width": false,
         "rounded": false
       }
+    },
+    "slideshow_LbRQqh": {
+      "type": "slideshow",
+      "blocks": {
+        "image_xGjBWh": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/bannerfittingArtboard_1_2x_f011f1f0-2675-4e3a-ab16-eaa25141795f.png",
+            "heading": "",
+            "heading_size": "title-lg tracking-heading",
+            "heading_tag": "h2",
+            "button_label": "",
+            "button_link": "",
+            "button_style": "primary",
+            "button_external": false,
+            "button_icon": false,
+            "show_for_logged_out": true,
+            "show_for_diy": true,
+            "show_for_hubpro_free": false,
+            "show_for_hubpro_plus": false
+          }
+        }
+      },
+      "block_order": [
+        "image_xGjBWh"
+      ],
+      "name": "t:sections.slideshow.name",
+      "settings": {
+        "autoplay": false,
+        "autoplay_speed": 5,
+        "show_navigation": true,
+        "image_height": "650px",
+        "content_width": "small",
+        "image_height_mobile": "auto",
+        "accessibility_info": "Slideshow about our brand",
+        "color_text": "#ffffff",
+        "color_background": "#ffffff",
+        "gradient_background": "",
+        "color_button_text": "#171717",
+        "color_button_background": "#ffffff",
+        "color_button_gradient": "",
+        "color_overlay": "#171717",
+        "overlay_opacity": 0,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "divider": false,
+        "full_width": true,
+        "rounded": false,
+        "enable_parallax": false,
+        "parallax_direction": "vertical"
+      }
     }
   },
   "order": [
@@ -656,6 +708,7 @@
     "image_with_text_akrF6A",
     "173176303439daeef7",
     "collection_list_rN7xKg",
-    "collection_list_49gCqq"
+    "collection_list_49gCqq",
+    "slideshow_LbRQqh"
   ]
 }
