@@ -283,7 +283,7 @@
             "menu_width": "medium",
             "show_menu_image": true,
             "button_label": "",
-            "button_link": "shopify://collections/hubessentials",
+            "button_link": "shopify://pages/installation-available",
             "promo_image_1": "shopify://shop_images/emblem.png",
             "promo_image_ratio_1": "square",
             "promo_heading_1": "HOW IT WORKS",
