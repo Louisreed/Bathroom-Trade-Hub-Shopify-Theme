@@ -279,7 +279,7 @@
           "type": "mega_menu",
           "name": "INSTALLATION",
           "settings": {
-            "menu_title": "Installation",
+            "menu_title": "Installation-available",
             "menu_width": "medium",
             "show_menu_image": true,
             "button_label": "",
