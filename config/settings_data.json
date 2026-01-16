@@ -210,11 +210,6 @@
         "disabled": false,
         "settings": {}
       },
-      "13375938897875554821": {
-        "type": "shopify://apps/qikify-sales-pop-up/blocks/app-embed/688dd516-1cdc-4008-8329-23089a1c4e24",
-        "disabled": true,
-        "settings": {}
-      },
       "15683396631634586217": {
         "type": "shopify://apps/inbox/blocks/chat/841fc607-4181-4ad1-842d-e24d7f8bad6b",
         "disabled": true,
@@ -231,6 +226,11 @@
       },
       "4090771392943522038": {
         "type": "shopify://apps/toastibar/blocks/app-embed/28a475c6-f06d-46d4-b40a-df8d869255ef",
+        "disabled": false,
+        "settings": {}
+      },
+      "11158620501380966596": {
+        "type": "shopify://apps/trustz/blocks/trustz/539d151e-77d2-4b39-b20d-fbce59dc78c7",
         "disabled": false,
         "settings": {}
       }
