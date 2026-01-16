@@ -856,6 +856,33 @@
         "full_width": false,
         "rounded": false
       }
+    },
+    "1768558819683d4651": {
+      "type": "apps",
+      "blocks": {
+        "trustz_trust_badge_cBGkVT": {
+          "type": "shopify://apps/trustz/blocks/trust-badge/539d151e-77d2-4b39-b20d-fbce59dc78c7",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "trustz_trust_badge_cBGkVT"
+      ],
+      "settings": {
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
     }
   },
   "order": [
@@ -870,6 +897,7 @@
     "faq",
     "recently-viewed",
     "product-recommendations",
-    "176840210770ffcee2"
+    "176840210770ffcee2",
+    "1768558819683d4651"
   ]
 }
