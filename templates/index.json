@@ -208,6 +208,19 @@
     "collection_list_TfCige": {
       "type": "collection-list",
       "blocks": {
+        "collection_N3TYkC": {
+          "type": "collection",
+          "settings": {
+            "collection": "in-stock",
+            "image": "shopify://shop_images/IN-STOCK_TAKE_HOME_TODAY_d8bd6574-f7d4-44e0-9fec-0326e2efa974.png",
+            "title": "CLICK & COLLECT",
+            "description": "",
+            "overlay_content": false,
+            "color_text": "#ffffff",
+            "color_overlay": "#000000",
+            "overlay_opacity": 30
+          }
+        },
         "collection_aNjYqW": {
           "type": "collection",
           "settings": {
@@ -391,6 +404,7 @@
         }
       },
       "block_order": [
+        "collection_N3TYkC",
         "collection_aNjYqW",
         "collection_dMEG7G",
         "collection_UwG9AE",
