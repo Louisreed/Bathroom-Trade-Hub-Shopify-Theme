@@ -205,11 +205,47 @@
         "gradient_background": ""
       }
     },
+    "featured_collection_QHAqbh": {
+      "type": "featured-collection",
+      "name": "t:sections.featured-collection.name",
+      "settings": {
+        "collection": "in-stock",
+        "products": [],
+        "product_limit": 12,
+        "columns": 5,
+        "carousel_on_desktop": false,
+        "show_view_all": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "heading": "<strong>IN-STOCK.</strong> <em>Take Home Today</em>",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "",
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
     "collection_list_TfCige": {
       "type": "collection-list",
       "blocks": {
         "collection_N3TYkC": {
           "type": "collection",
+          "disabled": true,
           "settings": {
             "collection": "in-stock",
             "image": "shopify://shop_images/IN-STOCK_TAKE_HOME_TODAY_d8bd6574-f7d4-44e0-9fec-0326e2efa974.png",
@@ -2323,6 +2359,7 @@
     "176840645291d56ce6",
     "multicolumn_zT87yk",
     "empty_space_EDUdpR",
+    "featured_collection_QHAqbh",
     "collection_list_TfCige",
     "image_comparison_ymhEpM",
     "collage_Up3KWt",
