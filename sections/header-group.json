@@ -278,6 +278,7 @@
         "mega_menu_dKABT9": {
           "type": "mega_menu",
           "name": "SUPER-DEALS!",
+          "disabled": true,
           "settings": {
             "menu_title": "SUPER-DEALS!",
             "menu_width": "medium",
