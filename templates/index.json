@@ -60,6 +60,103 @@
         "parallax_direction": "vertical"
       }
     },
+    "featured_product_Kht7xM": {
+      "type": "featured-product",
+      "blocks": {
+        "title_jGxGKN": {
+          "type": "title",
+          "settings": {
+            "title_size": "product-title-md",
+            "title_size_mobile": "product-title-md",
+            "show_price": true,
+            "show_rating": true
+          }
+        },
+        "description_mbEKNY": {
+          "type": "description",
+          "settings": {
+            "text_size": "text-base"
+          }
+        },
+        "variant_picker_RVrcpU": {
+          "type": "variant_picker",
+          "settings": {
+            "show_variant_labels": true,
+            "picker_type": "button",
+            "enable_color_swatches": true,
+            "color_swatch_type": "color",
+            "size_chart": ""
+          }
+        },
+        "buy_buttons_bJDdDQ": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_quantity_selector": true,
+            "show_price": false,
+            "show_dynamic_checkout": true,
+            "show_gift_card_recipient": true,
+            "enable_back_in_stock": false,
+            "show_back_in_stock_name": false,
+            "show_back_in_stock_phone": false
+          }
+        },
+        "pickup_availability_tLfeph": {
+          "type": "pickup_availability",
+          "settings": {}
+        },
+        "share_xDnzyH": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share",
+            "show_help_desk": true,
+            "help_label": "Need help?",
+            "help_page": "",
+            "help_page_external": false
+          }
+        },
+        "read_more_fKqtFW": {
+          "type": "read_more",
+          "settings": {}
+        },
+        "spinning_text_EadfAL": {
+          "type": "spinning_text",
+          "settings": {
+            "text": "Featured product"
+          }
+        }
+      },
+      "block_order": [
+        "title_jGxGKN",
+        "description_mbEKNY",
+        "variant_picker_RVrcpU",
+        "buy_buttons_bJDdDQ",
+        "pickup_availability_tLfeph",
+        "share_xDnzyH",
+        "read_more_fKqtFW",
+        "spinning_text_EadfAL"
+      ],
+      "name": "t:sections.featured-product.name",
+      "settings": {
+        "product": "proton-rimless-wc-to-go",
+        "enable_sticky_info": true,
+        "media_size": 66,
+        "gallery_layout": "thumbnail",
+        "thumbnail_position": "beside",
+        "image_ratio": "adapt_first",
+        "image_zoom": "lightbox",
+        "hide_variants": false,
+        "enable_video_autoplay": false,
+        "enable_video_looping": false,
+        "mobile_layout": "partial",
+        "image_ratio_mobile": "adapt_first",
+        "mobile_thumbnail": false,
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
+    },
     "176840645291d56ce6": {
       "type": "apps",
       "blocks": {
@@ -2356,6 +2453,7 @@
   },
   "order": [
     "slideshow_CfARa3",
+    "featured_product_Kht7xM",
     "176840645291d56ce6",
     "multicolumn_zT87yk",
     "empty_space_EDUdpR",
