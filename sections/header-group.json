@@ -48,7 +48,7 @@
           "type": "announcement",
           "settings": {
             "icon": "phone",
-            "text": "NEED EXPERT ADVICE? CALL US ON 01305 608599",
+            "text": "NEED EXPERT ADVICE? CALL US ON <strong>01305 608599</strong>",
             "link": "",
             "hide_icon_mobile": false,
             "text_mobile": "",
