@@ -17,8 +17,8 @@
         "announcement-1": {
           "type": "announcement",
           "settings": {
-            "icon": "wallet",
-            "text": "<strong>EXTRA HUBPRO DISCOUNT APPLIED AT CHECKOUT*</strong>",
+            "icon": "map_pin",
+            "text": "A6, 83 Lynch Lane, DT4 9DN",
             "link": "",
             "hide_icon_mobile": false,
             "text_mobile": "",
