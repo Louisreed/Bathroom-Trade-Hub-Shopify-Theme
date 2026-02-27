@@ -24,8 +24,8 @@
             "text_mobile": "",
             "highlighted_text": "none",
             "highlighted_scribble": "circle",
-            "show_for_logged_out": false,
-            "show_for_logged_in": false,
+            "show_for_logged_out": true,
+            "show_for_logged_in": true,
             "show_for_hubpro_free": true
           }
         },
