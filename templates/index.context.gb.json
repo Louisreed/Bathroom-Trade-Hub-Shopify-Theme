@@ -12,14 +12,5 @@
   "context": {
     "market": "gb"
   },
-  "sections": {
-    "custom_section_4yjtnX": {
-      "settings": {
-        "show_for_diy": false,
-        "show_for_hubpro_free": false,
-        "show_for_hubpro_plus": false
-      },
-      "blocks": {}
-    }
-  }
+  "sections": {}
 }
