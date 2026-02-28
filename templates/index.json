@@ -876,7 +876,7 @@
           "settings": {
             "subheading": "",
             "heading": "",
-            "link": "",
+            "link": "shopify://collections/kartell",
             "invert_subheading_heading": false,
             "image": "shopify://shop_images/Kartell.jpg",
             "image_ratio": "adapt",
@@ -899,7 +899,7 @@
           "settings": {
             "subheading": "",
             "heading": "",
-            "link": "",
+            "link": "shopify://collections/nuie",
             "invert_subheading_heading": false,
             "image": "shopify://shop_images/Screenshot_2025-10-09_at_8.29.28_am.png",
             "image_ratio": "adapt",
@@ -922,7 +922,7 @@
           "settings": {
             "subheading": "",
             "heading": "",
-            "link": "",
+            "link": "shopify://collections/cladworks",
             "invert_subheading_heading": false,
             "image": "shopify://shop_images/Logo_WEB-09.jpg",
             "image_ratio": "adapt",
@@ -945,7 +945,7 @@
           "settings": {
             "subheading": "",
             "heading": "",
-            "link": "",
+            "link": "shopify://collections/viva",
             "invert_subheading_heading": false,
             "image": "shopify://shop_images/VIVA_98ede3cd-e012-4591-abeb-ab3621c02fe4.jpg",
             "image_ratio": "adapt",
