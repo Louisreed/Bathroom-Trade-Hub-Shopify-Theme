@@ -746,6 +746,138 @@
       ],
       "settings": {}
     },
+    "collage_EWx4XJ": {
+      "type": "collage",
+      "blocks": {
+        "image_ytnyTV": {
+          "type": "image",
+          "settings": {
+            "subheading": "",
+            "heading": "",
+            "link": "shopify://collections/kartell",
+            "invert_subheading_heading": false,
+            "image": "shopify://shop_images/Kartell.jpg",
+            "image_ratio": "adapt",
+            "content_position": "md:items-end md:justify-start",
+            "text_alignment": "left",
+            "image_ratio_mobile": "portrait",
+            "content_position_mobile": "items-end justify-start",
+            "text_alignment_mobile": "left",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#ffffff",
+            "color_highlight": "",
+            "gradient_highlight": "",
+            "color_overlay": "#171717",
+            "overlay_opacity": 10
+          }
+        },
+        "image_j3HAyz": {
+          "type": "image",
+          "settings": {
+            "subheading": "",
+            "heading": "",
+            "link": "shopify://collections/nuie",
+            "invert_subheading_heading": false,
+            "image": "shopify://shop_images/Screenshot_2025-10-09_at_8.29.28_am.png",
+            "image_ratio": "adapt",
+            "content_position": "md:items-end md:justify-start",
+            "text_alignment": "left",
+            "image_ratio_mobile": "portrait",
+            "content_position_mobile": "items-end justify-start",
+            "text_alignment_mobile": "left",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#ffffff",
+            "color_highlight": "",
+            "gradient_highlight": "",
+            "color_overlay": "#171717",
+            "overlay_opacity": 10
+          }
+        },
+        "image_cRmXDR": {
+          "type": "image",
+          "settings": {
+            "subheading": "",
+            "heading": "",
+            "link": "shopify://collections/cladworks",
+            "invert_subheading_heading": false,
+            "image": "shopify://shop_images/Logo_WEB-09.jpg",
+            "image_ratio": "adapt",
+            "content_position": "md:items-end md:justify-start",
+            "text_alignment": "left",
+            "image_ratio_mobile": "portrait",
+            "content_position_mobile": "items-end justify-start",
+            "text_alignment_mobile": "left",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#ffffff",
+            "color_highlight": "",
+            "gradient_highlight": "",
+            "color_overlay": "#171717",
+            "overlay_opacity": 10
+          }
+        },
+        "image_jgpBfL": {
+          "type": "image",
+          "settings": {
+            "subheading": "",
+            "heading": "",
+            "link": "shopify://collections/viva",
+            "invert_subheading_heading": false,
+            "image": "shopify://shop_images/VIVA_98ede3cd-e012-4591-abeb-ab3621c02fe4.jpg",
+            "image_ratio": "adapt",
+            "content_position": "md:items-end md:justify-start",
+            "text_alignment": "left",
+            "image_ratio_mobile": "portrait",
+            "content_position_mobile": "items-end justify-start",
+            "text_alignment_mobile": "left",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#ffffff",
+            "color_highlight": "",
+            "gradient_highlight": "",
+            "color_overlay": "#171717",
+            "overlay_opacity": 10
+          }
+        }
+      },
+      "block_order": [
+        "image_ytnyTV",
+        "image_j3HAyz",
+        "image_cRmXDR",
+        "image_jgpBfL"
+      ],
+      "name": "t:sections.collage.name",
+      "settings": {
+        "heading": "<strong>BIG</strong> brands, <em>small prices.</em>",
+        "heading_size": "title-md",
+        "heading_alignment": "text-left md:items-end md:flex-row",
+        "heading_tag": "h2",
+        "subheading": "",
+        "description": "<h6>Shop trusted, well-known brands at prices designed to fit every budget - quality you recognise without the extra cost.</h6>",
+        "button_label": "",
+        "button_link": "",
+        "button_external": false,
+        "button_icon": true,
+        "highlighted_text": "none",
+        "highlighted_scribble": "circle",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "enable_parallax": true
+      }
+    },
     "image_with_text_pJFCwV": {
       "type": "image-with-text",
       "blocks": {
@@ -867,138 +999,6 @@
         "ai_gen_block_7130068_Y8ydcQ"
       ],
       "settings": {}
-    },
-    "collage_EWx4XJ": {
-      "type": "collage",
-      "blocks": {
-        "image_ytnyTV": {
-          "type": "image",
-          "settings": {
-            "subheading": "",
-            "heading": "",
-            "link": "shopify://collections/kartell",
-            "invert_subheading_heading": false,
-            "image": "shopify://shop_images/Kartell.jpg",
-            "image_ratio": "adapt",
-            "content_position": "md:items-end md:justify-start",
-            "text_alignment": "left",
-            "image_ratio_mobile": "portrait",
-            "content_position_mobile": "items-end justify-start",
-            "text_alignment_mobile": "left",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle",
-            "color_text": "#ffffff",
-            "color_highlight": "",
-            "gradient_highlight": "",
-            "color_overlay": "#171717",
-            "overlay_opacity": 10
-          }
-        },
-        "image_j3HAyz": {
-          "type": "image",
-          "settings": {
-            "subheading": "",
-            "heading": "",
-            "link": "shopify://collections/nuie",
-            "invert_subheading_heading": false,
-            "image": "shopify://shop_images/Screenshot_2025-10-09_at_8.29.28_am.png",
-            "image_ratio": "adapt",
-            "content_position": "md:items-end md:justify-start",
-            "text_alignment": "left",
-            "image_ratio_mobile": "portrait",
-            "content_position_mobile": "items-end justify-start",
-            "text_alignment_mobile": "left",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle",
-            "color_text": "#ffffff",
-            "color_highlight": "",
-            "gradient_highlight": "",
-            "color_overlay": "#171717",
-            "overlay_opacity": 10
-          }
-        },
-        "image_cRmXDR": {
-          "type": "image",
-          "settings": {
-            "subheading": "",
-            "heading": "",
-            "link": "shopify://collections/cladworks",
-            "invert_subheading_heading": false,
-            "image": "shopify://shop_images/Logo_WEB-09.jpg",
-            "image_ratio": "adapt",
-            "content_position": "md:items-end md:justify-start",
-            "text_alignment": "left",
-            "image_ratio_mobile": "portrait",
-            "content_position_mobile": "items-end justify-start",
-            "text_alignment_mobile": "left",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle",
-            "color_text": "#ffffff",
-            "color_highlight": "",
-            "gradient_highlight": "",
-            "color_overlay": "#171717",
-            "overlay_opacity": 10
-          }
-        },
-        "image_jgpBfL": {
-          "type": "image",
-          "settings": {
-            "subheading": "",
-            "heading": "",
-            "link": "shopify://collections/viva",
-            "invert_subheading_heading": false,
-            "image": "shopify://shop_images/VIVA_98ede3cd-e012-4591-abeb-ab3621c02fe4.jpg",
-            "image_ratio": "adapt",
-            "content_position": "md:items-end md:justify-start",
-            "text_alignment": "left",
-            "image_ratio_mobile": "portrait",
-            "content_position_mobile": "items-end justify-start",
-            "text_alignment_mobile": "left",
-            "highlighted_text": "none",
-            "highlighted_scribble": "circle",
-            "color_text": "#ffffff",
-            "color_highlight": "",
-            "gradient_highlight": "",
-            "color_overlay": "#171717",
-            "overlay_opacity": 10
-          }
-        }
-      },
-      "block_order": [
-        "image_ytnyTV",
-        "image_j3HAyz",
-        "image_cRmXDR",
-        "image_jgpBfL"
-      ],
-      "name": "t:sections.collage.name",
-      "settings": {
-        "heading": "<strong>BIG</strong> brands, <em>small prices.</em>",
-        "heading_size": "title-md",
-        "heading_alignment": "text-left md:items-end md:flex-row",
-        "heading_tag": "h2",
-        "subheading": "",
-        "description": "<p>Shop trusted, well-known brands at prices designed to fit every budget - quality you recognise without the extra cost.</p>",
-        "button_label": "",
-        "button_link": "",
-        "button_external": false,
-        "button_icon": true,
-        "highlighted_text": "none",
-        "highlighted_scribble": "circle",
-        "color_text": "",
-        "color_background": "",
-        "gradient_background": "",
-        "color_highlight": "",
-        "gradient_highlight": "",
-        "color_button_text": "",
-        "color_button_background": "",
-        "color_button_gradient": "",
-        "padding_top": 72,
-        "padding_bottom": 72,
-        "divider": false,
-        "full_width": false,
-        "rounded": false,
-        "enable_parallax": true
-      }
     }
   },
   "order": [
@@ -1011,8 +1011,8 @@
     "collection_list_TfCige",
     "lookbook_6PzgjX",
     "17548300328275163b",
+    "collage_EWx4XJ",
     "image_with_text_pJFCwV",
-    "1753954348ec27ebd8",
-    "collage_EWx4XJ"
+    "1753954348ec27ebd8"
   ]
 }
