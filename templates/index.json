@@ -772,6 +772,29 @@
             "overlay_opacity": 10
           }
         },
+        "image_xHgJcV": {
+          "type": "image",
+          "settings": {
+            "subheading": "",
+            "heading": "",
+            "link": "shopify://collections/soudal",
+            "invert_subheading_heading": false,
+            "image": "shopify://shop_images/images_96072e47-ccea-47ac-a2f9-5798a4d91ff3.png",
+            "image_ratio": "adapt",
+            "content_position": "md:items-end md:justify-start",
+            "text_alignment": "left",
+            "image_ratio_mobile": "portrait",
+            "content_position_mobile": "items-end justify-start",
+            "text_alignment_mobile": "left",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle",
+            "color_text": "#ffffff",
+            "color_highlight": "",
+            "gradient_highlight": "",
+            "color_overlay": "#171717",
+            "overlay_opacity": 10
+          }
+        },
         "image_j3HAyz": {
           "type": "image",
           "settings": {
@@ -844,6 +867,7 @@
       },
       "block_order": [
         "image_ytnyTV",
+        "image_xHgJcV",
         "image_j3HAyz",
         "image_cRmXDR",
         "image_jgpBfL"
