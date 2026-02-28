@@ -34,10 +34,9 @@
         },
         "brand_information": {
           "type": "brand_information",
-          "disabled": true,
           "settings": {
-            "heading": "Trade Counter",
-            "button_label_1": "Bathroom Trade HubUnit A6, 83 Lynch LaneWeymouthDorsetDT4 9DN",
+            "heading": "Where to find us:",
+            "button_label_1": "Unit A6, 83 Lynch Lane, Weymouth Dorset DT4 9DN",
             "button_link_1": "",
             "button_label_2": "",
             "button_link_2": "",
