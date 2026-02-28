@@ -139,7 +139,7 @@
       "settings": {
         "product": "proton-rimless-wc-to-go",
         "enable_sticky_info": true,
-        "media_size": 66,
+        "media_size": 48,
         "gallery_layout": "thumbnail",
         "thumbnail_position": "beside",
         "image_ratio": "adapt_first",
