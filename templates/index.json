@@ -664,6 +664,7 @@
         "product_hixzzQ",
         "product_VcmVgU"
       ],
+      "disabled": true,
       "name": "t:sections.lookbook.name",
       "settings": {
         "image": "shopify://shop_images/IMG_5340.heic",
