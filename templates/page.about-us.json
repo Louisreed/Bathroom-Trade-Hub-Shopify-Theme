@@ -164,7 +164,6 @@
       "name": "t:sections.images-with-text.name",
       "settings": {
         "image": "shopify://shop_images/Screenshot_2025-12-12_at_1.00.27_pm.png",
-        "image_2": "shopify://shop_images/IMG_5264.heic",
         "image_ratio": "portrait",
         "image_width": "medium",
         "layout": "image_first",
