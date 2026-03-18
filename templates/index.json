@@ -34,6 +34,7 @@
       "block_order": [
         "image_pmKrc4"
       ],
+      "disabled": true,
       "name": "t:sections.slideshow.name",
       "settings": {
         "autoplay": false,
@@ -58,6 +59,79 @@
         "rounded": false,
         "enable_parallax": false,
         "parallax_direction": "vertical"
+      }
+    },
+    "image_with_text_qpqegd": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_qe9DCg": {
+          "type": "heading",
+          "settings": {
+            "heading": "",
+            "heading_size": "h2",
+            "heading_tag": "h2",
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "text_tixMm9": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>NEW OFFICE DATE: </strong><em>30th March 2026</em></p>",
+            "text_font": "body",
+            "text_size": "subtext-md",
+            "text_max_size": 32,
+            "text_line_height": 1.6,
+            "text_letter_spacing": 0,
+            "text_capitalize": false,
+            "secondary_color": false,
+            "highlighted_text": "none",
+            "highlighted_scribble": "circle"
+          }
+        },
+        "button_nRm6zW": {
+          "type": "button",
+          "settings": {
+            "button_label": "DIRECTIONS",
+            "button_link": "https://www.google.com/maps/place/Absolute+Bathrooms+Weymouth/@50.6271612,-2.463754,17z/data=!3m1!4b1!4m6!3m5!1s0x4872f7d713c3a6dd:0x14cc2a8cc8308afc!8m2!3d50.6271612!4d-2.4611791!16s%2Fg%2F11cmsmh374?entry=ttu&g_ep=EgoyMDI2MDMxNS4wIKXMDSoASAFQAw%3D%3D",
+            "button_style": "primary",
+            "button_size": "sm",
+            "button_external": false,
+            "button_icon": true
+          }
+        }
+      },
+      "block_order": [
+        "heading_qe9DCg",
+        "text_tixMm9",
+        "button_nRm6zW"
+      ],
+      "disabled": true,
+      "name": "t:sections.image-with-text.name",
+      "settings": {
+        "image": "shopify://shop_images/Champagne_Yellow_Modern_New_Outlet_Location_Announcement_Instagram_Post.png",
+        "image_ratio": "adapt",
+        "image_width": "medium",
+        "layout": "image_first",
+        "text_alignment": "left",
+        "text_alignment_mobile": "left",
+        "color_text": "",
+        "color_background": "",
+        "gradient_background": "",
+        "color_background_2": "",
+        "gradient_background_2": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false,
+        "hide_for_hubpro_members": false,
+        "enable_parallax": false
       }
     },
     "featured_product_Kht7xM": {
@@ -1053,6 +1127,7 @@
   },
   "order": [
     "slideshow_CfARa3",
+    "image_with_text_qpqegd",
     "featured_product_Kht7xM",
     "176840645291d56ce6",
     "multicolumn_zT87yk",
