@@ -81,7 +81,7 @@
       "settings": {
         "image": "shopify://shop_images/Champagne_Yellow_Modern_New_Outlet_Location_Announcement_Instagram_Post.png",
         "image_ratio": "adapt",
-        "image_width": "medium",
+        "image_width": "large",
         "layout": "image_first",
         "text_alignment": "left",
         "text_alignment_mobile": "left",
