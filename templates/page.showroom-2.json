@@ -80,6 +80,7 @@
       "name": "t:sections.images-with-text.name",
       "settings": {
         "image": "shopify://shop_images/Champagne_Yellow_Modern_New_Outlet_Location_Announcement_Instagram_Post_c1f214c2-0334-44ae-b7b9-d40dcaf8dbac.png",
+        "image_2": "shopify://shop_images/Red_White_and_Blue_4th_of_July_Independence_Day_Instagram_Post.png",
         "image_ratio": "adapt",
         "image_width": "medium",
         "layout": "image_first",
