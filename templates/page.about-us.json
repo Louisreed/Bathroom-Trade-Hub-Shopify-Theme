@@ -165,7 +165,7 @@
       "settings": {
         "image": "shopify://shop_images/Screenshot_2025-12-12_at_1.00.27_pm.png",
         "image_2": "shopify://shop_images/Screenshot_2026-03-19_at_12.31.12_pm.png",
-        "image_ratio": "portrait",
+        "image_ratio": "adapt",
         "image_width": "medium",
         "layout": "image_first",
         "text_alignment": "left",
