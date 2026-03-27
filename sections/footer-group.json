@@ -35,8 +35,8 @@
         "brand_information": {
           "type": "brand_information",
           "settings": {
-            "heading": "Where to find us:",
-            "button_label_1": "Click here for directions",
+            "heading": "We Have Now Moved Offices:",
+            "button_label_1": "Click Here For Directions",
             "button_link_1": "https://www.google.com/maps/place/Absolute+Bathrooms+Weymouth/@50.6271612,-2.463754,17z/data=!3m1!4b1!4m6!3m5!1s0x4872f7d713c3a6dd:0x14cc2a8cc8308afc!8m2!3d50.6271612!4d-2.4611791!16s%2Fg%2F11cmsmh374?entry=ttu&g_ep=EgoyMDI2MDMxNS4wIKXMDSoASAFQAw%3D%3D",
             "button_label_2": "",
             "button_link_2": "",
