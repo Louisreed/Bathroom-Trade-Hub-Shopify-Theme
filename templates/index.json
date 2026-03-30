@@ -1123,6 +1123,35 @@
         "ai_gen_block_7130068_Y8ydcQ"
       ],
       "settings": {}
+    },
+    "1774878536cbb7297d": {
+      "type": "apps",
+      "blocks": {
+        "google_reviews_rocket_app_block_NRJ7bx": {
+          "type": "shopify://apps/google-reviews-rocket/blocks/app-block/d11c8893-a181-4aff-a280-7446d42cec3b",
+          "settings": {
+            "widget_layout": "default"
+          }
+        }
+      },
+      "block_order": [
+        "google_reviews_rocket_app_block_NRJ7bx"
+      ],
+      "settings": {
+        "color_text": "",
+        "color_background": "#424242",
+        "gradient_background": "",
+        "color_highlight": "",
+        "gradient_highlight": "",
+        "color_button_text": "",
+        "color_button_background": "",
+        "color_button_gradient": "",
+        "padding_top": 72,
+        "padding_bottom": 72,
+        "divider": false,
+        "full_width": false,
+        "rounded": false
+      }
     }
   },
   "order": [
@@ -1138,6 +1167,7 @@
     "17548300328275163b",
     "collage_EWx4XJ",
     "image_with_text_pJFCwV",
-    "1753954348ec27ebd8"
+    "1753954348ec27ebd8",
+    "1774878536cbb7297d"
   ]
 }
